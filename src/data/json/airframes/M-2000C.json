@@ -1,0 +1,222 @@
+{
+  "aircraft": "M-2000C",
+  "displayName": "M-2000C",
+  "emptyWeight": 16755,
+  "maxTakeoffWeight": 36376,
+  "internalFuel": 6978,
+  "cmdsCapacity": 3024,
+  "chaffIncrement": 18,
+  "flareIncrement": 8,
+  "defaultChaff": 234,
+  "defaultFlare": 64,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "UHF Radio",
+      "presetCount": 20,
+      "min": 225,
+      "max": 400,
+      "step": 0.025
+    },
+    {
+      "name": "COM 2",
+      "description": "V/UHF Radio",
+      "presetCount": 20,
+      "min": 118,
+      "max": 400,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "name": "DEFA 554",
+      "capacity": 125,
+      "shells": [
+        {
+          "name": "DEFA554_30_HE",
+          "displayName": "30mm HE"
+        },
+        {
+          "name": "DEFA554_30_HE_TRACERS",
+          "displayName": "30mm HE tracers"
+        }
+      ],
+      "mixes": [
+        {
+          "sequence": ["DEFA554_30_HE", "DEFA554_30_HE_TRACERS"]
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "{MMagicII}",
+        "{MMagicII_DDM}",
+        "{Matra155RocketPod}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "{MMagicII}",
+        "{Matra_S530D}",
+        "{Matra155RocketPod}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{SAMP250LD}",
+        "{SAMP250HD}",
+        "{M2KC_RAFAUT_MK82}",
+        "{M2KC_RAFAUT_MK82S}",
+        "{M2KC_RAFAUT_MK82A}",
+        "{M2KC_RAFAUT_BLG66}",
+        "{M2KC_RAFAUT_SAMP250LD}",
+        "{M2KC_RAFAUT_SAMP250HD}",
+        "{M2KC_02_RPL541}",
+        "{M2KC_02_RPL541_EMPTY}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}",
+        "{SAMP250LD}",
+        "{SAMP250HD}"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{SAMP250LD}",
+        "{SAMP250HD}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{BLG66_BELOUGA_AC}",
+        "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}",
+        "{0D33DDAE-524F-4A4E-B5B8-621754FE3ADE}",
+        "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}",
+        "{M2KC_BAP100_6_RACK}",
+        "{M2KC_BAP100_12_RACK}",
+        "{M2KC_BAP100_18_RACK}",
+        "{M2KC_RAFAUT_GBU12}",
+        "{M2KC_RPL_522}",
+        "{M2KC_RPL_522_EMPTY}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": [
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{SAMP250LD}",
+        "{SAMP250HD}"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}",
+        "{SAMP250LD}",
+        "{SAMP250HD}"
+      ]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": [
+        "{MMagicII}",
+        "{Matra_S530D}",
+        "{Matra155RocketPod}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{Mk82SNAKEYE}",
+        "{Mk82AIR}",
+        "{BLG66_BELOUGA_AC}",
+        "{SAMP250LD}",
+        "{SAMP250HD}",
+        "{M2KC_RAFAUT_MK82}",
+        "{M2KC_RAFAUT_MK82S}",
+        "{M2KC_RAFAUT_MK82A}",
+        "{M2KC_RAFAUT_BLG66}",
+        "{M2KC_RAFAUT_SAMP250LD}",
+        "{M2KC_RAFAUT_SAMP250HD}",
+        "{M2KC_08_RPL541}",
+        "{M2KC_08_RPL541_EMPTY}"
+      ]
+    },
+    {
+      "station": 9,
+      "name": "Station 9",
+      "munitions": [
+        "{MMagicII}",
+        "{MMagicII_DDM}",
+        "{Matra155RocketPod}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}"
+      ]
+    },
+    {
+      "station": 10,
+      "name": "Station 10",
+      "munitions": [
+        "{Eclair}",
+        "{EclairM_06}",
+        "{EclairM_15}",
+        "{EclairM_24}",
+        "{EclairM_33}",
+        "{EclairM_42}",
+        "{EclairM_51}",
+        "{EclairM_60}"
+      ]
+    },
+    {
+      "station": 11,
+      "name": "Station 11",
+      "munitions": ["{M2KC_AGF}"]
+    }
+  ]
+}

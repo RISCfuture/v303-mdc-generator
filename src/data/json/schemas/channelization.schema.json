@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/channelization.schema.json",
+  "title": "Radio Channelization Configuration",
+  "description": "Radio preset configurations for different airframes and theaters",
+  "type": "object",
+  "required": ["radios"],
+  "properties": {
+    "radios": {
+      "type": "array",
+      "description": "Array of radio configurations, one per radio in the aircraft",
+      "items": {
+        "type": "object",
+        "required": ["presets"],
+        "properties": {
+          "presets": {
+            "type": "array",
+            "description": "Array of radio presets",
+            "items": {
+              "type": "object",
+              "required": ["number", "frequency", "description"],
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "description": "Preset number"
+                },
+                "frequency": {
+                  "type": "string",
+                  "description": "Frequency in MHz as a string (e.g., '303.1', '229.0')"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Human-readable description of the preset (e.g., 'NELLIS TOWER', can be empty)"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

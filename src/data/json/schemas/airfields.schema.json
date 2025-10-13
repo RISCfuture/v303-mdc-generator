@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/airfields.schema.json",
+  "title": "Airfields Database",
+  "description": "Airfield data for DCS theaters including positions, navigation aids, runways, and radio frequencies",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "position", "tacan", "runways", "radio"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Airfield name (e.g., 'Anapa-Vityazevo', 'Batumi')"
+      },
+      "position": {
+        "type": "object",
+        "required": ["latitude", "longitude"],
+        "properties": {
+          "latitude": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90,
+            "description": "Latitude in decimal degrees"
+          },
+          "longitude": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180,
+            "description": "Longitude in decimal degrees"
+          },
+          "elevation": {
+            "type": "integer",
+            "description": "Airfield elevation in feet MSL (Mean Sea Level). Sourced from DCS position.y or Open-Meteo Elevation API (Copernicus DEM 2021 GLO-90)"
+          }
+        },
+        "description": "Airfield reference position"
+      },
+      "tacan": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "object",
+            "required": ["callsign", "channel", "band"],
+            "properties": {
+              "callsign": {
+                "type": "string",
+                "description": "TACAN callsign (e.g., 'BTM', 'KTS')"
+              },
+              "channel": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 126,
+                "description": "TACAN channel number"
+              },
+              "band": {
+                "type": "string",
+                "enum": ["X", "Y"],
+                "description": "TACAN band (X or Y)"
+              }
+            }
+          }
+        ],
+        "description": "TACAN navigation aid (null if not available)"
+      },
+      "runways": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "heading", "ils"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Runway identifier (e.g., '12', '08', '26')"
+            },
+            "heading": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 359,
+              "description": "Magnetic heading in degrees"
+            },
+            "ils": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "required": ["name", "frequency", "channel", "position"],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "ILS identifier (e.g., 'ILU', 'IKS')"
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "ILS frequency in MHz (string to preserve decimal precision)"
+                    },
+                    "channel": {
+                      "type": ["integer", "null"],
+                      "description": "ILS channel (if applicable)"
+                    },
+                    "position": {
+                      "type": "object",
+                      "required": ["latitude", "longitude"],
+                      "properties": {
+                        "latitude": {
+                          "type": "number",
+                          "minimum": -90,
+                          "maximum": 90,
+                          "description": "Latitude in decimal degrees"
+                        },
+                        "longitude": {
+                          "type": "number",
+                          "minimum": -180,
+                          "maximum": 180,
+                          "description": "Longitude in decimal degrees"
+                        }
+                      },
+                      "description": "ILS transmitter position"
+                    }
+                  }
+                }
+              ],
+              "description": "ILS navigation aid (null if not available)"
+            }
+          }
+        },
+        "description": "Available runways (empty array if none)"
+      },
+      "radio": {
+        "oneOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "object",
+            "required": ["roles", "callsign", "frequencies"],
+            "properties": {
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["ground", "tower", "approach"]
+                },
+                "description": "ATC roles available"
+              },
+              "callsign": {
+                "type": ["string", "null"],
+                "description": "Radio callsign (e.g., 'Anapa', 'Kobuleti')"
+              },
+              "frequencies": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["band", "modulation", "frequency"],
+                      "properties": {
+                        "band": {
+                          "type": "string",
+                          "enum": ["UHF", "HF", "VHF_HI", "VHF_LOW"],
+                          "description": "Radio band"
+                        },
+                        "modulation": {
+                          "type": "string",
+                          "enum": ["AM", "FM"],
+                          "description": "Modulation type"
+                        },
+                        "frequency": {
+                          "type": "string",
+                          "description": "Frequency in MHz (string to preserve decimal precision)"
+                        }
+                      }
+                    },
+                    "description": "Available frequencies"
+                  }
+                ]
+              }
+            },
+            "description": "Radio frequencies and callsigns"
+          }
+        ]
+      }
+    }
+  }
+}

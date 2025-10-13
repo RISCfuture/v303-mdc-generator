@@ -1,0 +1,341 @@
+{
+  "radios": [
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "303.100",
+          "description": "v303d FS UHF"
+        },
+        {
+          "number": 2,
+          "frequency": "328.550",
+          "description": "SPANGDAHLEM GROUND"
+        },
+        {
+          "number": 3,
+          "frequency": "314.825",
+          "description": "SPANGDAHLEM TOWER"
+        },
+        {
+          "number": 4,
+          "frequency": "375.700",
+          "description": "LANGEN CONTROL"
+        },
+        {
+          "number": 5,
+          "frequency": "376.975",
+          "description": "SPANGDAHLEM ATIS"
+        },
+        {
+          "number": 6,
+          "frequency": "300.650",
+          "description": "RAMSTEIN GROUND"
+        },
+        {
+          "number": 7,
+          "frequency": "356.850",
+          "description": "RAMSTEIN TOWER"
+        },
+        {
+          "number": 8,
+          "frequency": "374.375",
+          "description": "RAMSTEIN ATIS"
+        },
+        {
+          "number": 9,
+          "frequency": "257.800",
+          "description": "NATO COMMON"
+        },
+        {
+          "number": 10,
+          "frequency": "342.300",
+          "description": "SPADES (BAUMHOLDER CONTROL)"
+        },
+        {
+          "number": 11,
+          "frequency": "361.600",
+          "description": "PANTHER 33B"
+        },
+        {
+          "number": 12,
+          "frequency": "340.300",
+          "description": "ACE (HAMMELBURG CONTROL)"
+        },
+        {
+          "number": 13,
+          "frequency": "362.600",
+          "description": "PANTHER 33H"
+        },
+        {
+          "number": 14,
+          "frequency": "225.450",
+          "description": "ARCO 2 44X (JOJO)"
+        },
+        {
+          "number": 15,
+          "frequency": "295.400",
+          "description": "TEXACO 2 31Y (A10, LUCA)"
+        },
+        {
+          "number": 16,
+          "frequency": "263.000",
+          "description": "MAGIC"
+        },
+        {
+          "number": 17,
+          "frequency": "348.700",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "360.700",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "143.600",
+          "description": "v303d FS VHF"
+        },
+        {
+          "number": 20,
+          "frequency": "47.600",
+          "description": "v303d FS FM"
+        },
+        {
+          "number": 21,
+          "frequency": "143.625",
+          "description": ""
+        },
+        {
+          "number": 22,
+          "frequency": "256.600",
+          "description": ""
+        },
+        {
+          "number": 23,
+          "frequency": "309.200",
+          "description": ""
+        },
+        {
+          "number": 24,
+          "frequency": "266.352",
+          "description": ""
+        },
+        {
+          "number": 25,
+          "frequency": "271.525",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "303.100",
+          "description": "v303d FS UHF"
+        },
+        {
+          "number": 2,
+          "frequency": "328.550",
+          "description": "SPANGDAHLEM GROUND"
+        },
+        {
+          "number": 3,
+          "frequency": "314.825",
+          "description": "SPANGDAHLEM TOWER"
+        },
+        {
+          "number": 4,
+          "frequency": "375.700",
+          "description": "LANGEN CONTROL"
+        },
+        {
+          "number": 5,
+          "frequency": "376.975",
+          "description": "SPANGDAHLEM ATIS"
+        },
+        {
+          "number": 6,
+          "frequency": "300.650",
+          "description": "RAMSTEIN GROUND"
+        },
+        {
+          "number": 7,
+          "frequency": "356.850",
+          "description": "RAMSTEIN TOWER"
+        },
+        {
+          "number": 8,
+          "frequency": "374.375",
+          "description": "RAMSTEIN ATIS"
+        },
+        {
+          "number": 9,
+          "frequency": "257.800",
+          "description": "NATO COMMON"
+        },
+        {
+          "number": 10,
+          "frequency": "342.300",
+          "description": "SPADES (BAUMHOLDER CONTROL)"
+        },
+        {
+          "number": 11,
+          "frequency": "361.600",
+          "description": "PANTHER 33B"
+        },
+        {
+          "number": 12,
+          "frequency": "340.300",
+          "description": "ACE (HAMMELBURG CONTROL)"
+        },
+        {
+          "number": 13,
+          "frequency": "362.600",
+          "description": "PANTHER 33H"
+        },
+        {
+          "number": 14,
+          "frequency": "225.450",
+          "description": "ARCO 2 44X (JOJO)"
+        },
+        {
+          "number": 15,
+          "frequency": "295.400",
+          "description": "TEXACO 2 31Y (A10, LUCA)"
+        },
+        {
+          "number": 16,
+          "frequency": "263.000",
+          "description": "MAGIC"
+        },
+        {
+          "number": 17,
+          "frequency": "348.700",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "360.700",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "256.600",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "300.050",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "47.600",
+          "description": "v303D FS"
+        },
+        {
+          "number": 2,
+          "frequency": "30.300",
+          "description": ""
+        },
+        {
+          "number": 3,
+          "frequency": "33.300",
+          "description": ""
+        },
+        {
+          "number": 4,
+          "frequency": "34.300",
+          "description": ""
+        },
+        {
+          "number": 5,
+          "frequency": "35.300",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "frequency": "36.300",
+          "description": ""
+        },
+        {
+          "number": 7,
+          "frequency": "37.300",
+          "description": ""
+        },
+        {
+          "number": 8,
+          "frequency": "38.300",
+          "description": ""
+        },
+        {
+          "number": 9,
+          "frequency": "39.300",
+          "description": ""
+        },
+        {
+          "number": 10,
+          "frequency": "40.300",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "frequency": "41.300",
+          "description": ""
+        },
+        {
+          "number": 12,
+          "frequency": "42.300",
+          "description": ""
+        },
+        {
+          "number": 13,
+          "frequency": "43.300",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "frequency": "44.300",
+          "description": ""
+        },
+        {
+          "number": 15,
+          "frequency": "45.300",
+          "description": ""
+        },
+        {
+          "number": 16,
+          "frequency": "46.300",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "frequency": "47.300",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "48.300",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "49.300",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "50.300",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

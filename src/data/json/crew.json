@@ -1,0 +1,288 @@
+{
+  "v93": [
+    {
+      "pilot": "Wing",
+      "callsign": ["FALCON", "VIPER1"],
+      "link16Prefix": "FN",
+      "stn": 3600,
+      "mode3": 577,
+      "freq": "56.1",
+      "aaTacan": 10,
+      "laserCode": 383,
+      "tailNumber": "86-0267"
+    },
+    {
+      "pilot": "JJnine",
+      "callsign": ["WARLOCK", "VIPER2"],
+      "link16Prefix": "WK",
+      "stn": 3605,
+      "mode3": 585,
+      "freq": "56.2",
+      "aaTacan": 11,
+      "laserCode": 382,
+      "tailNumber": "86-0314"
+    },
+    {
+      "pilot": "Guts",
+      "callsign": ["PSYCHO", "VIPER3"],
+      "link16Prefix": "PO",
+      "stn": 3610,
+      "mode3": 593,
+      "freq": "56.3",
+      "aaTacan": 12,
+      "laserCode": 381,
+      "tailNumber": "86-0435"
+    },
+    {
+      "pilot": "Stretch",
+      "callsign": ["BUSTER", "VIPER4"],
+      "link16Prefix": "BR",
+      "stn": 3615,
+      "mode3": 601,
+      "freq": "56.4",
+      "aaTacan": 13,
+      "laserCode": 380,
+      "tailNumber": "88-0404"
+    },
+    {
+      "pilot": "Beercan",
+      "callsign": ["BLACKCLOUD", "VIPER5"],
+      "link16Prefix": "BD",
+      "stn": 3620,
+      "mode3": 609,
+      "freq": "56.5",
+      "aaTacan": 14,
+      "laserCode": 379,
+      "tailNumber": "86-0337"
+    },
+    {
+      "pilot": "Recon",
+      "callsign": ["RATTLER", "VIPER6"],
+      "link16Prefix": "RR",
+      "stn": 3625,
+      "mode3": 617,
+      "freq": "56.6",
+      "aaTacan": 15,
+      "laserCode": 378,
+      "tailNumber": "88-0405"
+    },
+    {
+      "pilot": "Gaffer",
+      "callsign": ["TORCH", "VIPER7"],
+      "link16Prefix": "TH",
+      "stn": 3630,
+      "mode3": 625,
+      "freq": "56.7",
+      "aaTacan": 16,
+      "laserCode": 377,
+      "tailNumber": "86-0762"
+    },
+    {
+      "pilot": "Ledin",
+      "callsign": ["CONDOR", "VIPER8"],
+      "link16Prefix": "CR",
+      "stn": 3635,
+      "mode3": 633,
+      "freq": "56.8",
+      "aaTacan": 17,
+      "laserCode": 376,
+      "tailNumber": "87-0288"
+    },
+    {
+      "pilot": "Duchess",
+      "callsign": ["ARCHER", "VIPER9"],
+      "link16Prefix": "AR",
+      "stn": 3640,
+      "mode3": 641,
+      "freq": "56.9",
+      "aaTacan": 18,
+      "laserCode": 375,
+      "tailNumber": "85-1410"
+    },
+    {
+      "pilot": "Shooter",
+      "callsign": ["SABRE", "VIPER10"],
+      "link16Prefix": "SE",
+      "stn": 3645,
+      "mode3": 649,
+      "freq": "57.1",
+      "aaTacan": 19,
+      "laserCode": 374,
+      "tailNumber": "86-0232"
+    },
+    {
+      "pilot": "Hudson",
+      "callsign": ["OSPREY", "VIPER11"],
+      "link16Prefix": "OY",
+      "stn": 3650,
+      "mode3": 657,
+      "freq": "57.2",
+      "aaTacan": 20,
+      "laserCode": 373,
+      "tailNumber": "87-0290"
+    },
+    {
+      "pilot": "Juice",
+      "callsign": ["STALK", "VIPER12"],
+      "link16Prefix": "SK",
+      "stn": 3655,
+      "mode3": 665,
+      "freq": "57.3",
+      "aaTacan": 21,
+      "laserCode": 372,
+      "tailNumber": "86-0334"
+    },
+    {
+      "pilot": "Dez",
+      "callsign": ["PUP 1", "RATTLER1"],
+      "link16Prefix": "PP",
+      "stn": 3660,
+      "mode3": 673,
+      "freq": "57.4",
+      "aaTacan": 22,
+      "laserCode": 371
+    }
+  ],
+  "v303": [
+    {
+      "pilot": "Snoopy",
+      "callsign": ["CYLON", "TUSK 1"],
+      "link16Prefix": "CN",
+      "stn": 1130,
+      "mode3": 1561,
+      "freq": "30.3",
+      "aaTacan": 30,
+      "laserCode": 335,
+      "tailNumber": "78-0647"
+    },
+    {
+      "pilot": "Rattler",
+      "callsign": ["COBRA", "TUSK 2"],
+      "link16Prefix": "CA",
+      "stn": 1133,
+      "mode3": 1537,
+      "freq": "33.3",
+      "aaTacan": 33,
+      "laserCode": 338,
+      "tailNumber": "78-0605"
+    },
+    {
+      "pilot": "Matty8251",
+      "callsign": ["SPOOKY", "TUSK 3"],
+      "link16Prefix": "SY",
+      "stn": 1134,
+      "mode3": 1545,
+      "freq": "34.3",
+      "aaTacan": 34,
+      "laserCode": 339,
+      "tailNumber": "78-0655"
+    },
+    {
+      "pilot": "Emmy",
+      "callsign": ["BOBCAT"],
+      "link16Prefix": "BT",
+      "stn": 1135,
+      "mode3": 0,
+      "freq": "35.3",
+      "aaTacan": 35,
+      "laserCode": 340,
+      "tailNumber": "79-0090"
+    },
+    {
+      "pilot": "Meltdown",
+      "callsign": ["LARK", "TUSK 4"],
+      "link16Prefix": "JI",
+      "stn": 1136,
+      "mode3": 1553,
+      "freq": "36.3",
+      "aaTacan": 36,
+      "laserCode": 341,
+      "tailNumber": "79-0113"
+    },
+    {
+      "pilot": "Grunt",
+      "callsign": ["TROLL", "TUSK 5"],
+      "link16Prefix": "TL",
+      "stn": 1137,
+      "mode3": 1569,
+      "freq": "37.3",
+      "aaTacan": 37,
+      "laserCode": 342,
+      "tailNumber": "79-0114"
+    },
+    {
+      "pilot": "Brooklyn",
+      "callsign": ["SHOWTIME", "Tusk 6"],
+      "link16Prefix": "SE",
+      "stn": 1140,
+      "mode3": 1577,
+      "freq": "40.3",
+      "aaTacan": 40,
+      "laserCode": 334,
+      "tailNumber": "79-0118"
+    },
+    {
+      "pilot": "Papa Flare",
+      "callsign": ["SWEET TOOTH", "TUSK 7"],
+      "link16Prefix": "SH",
+      "stn": 1141,
+      "mode3": 1585,
+      "freq": "41.3",
+      "aaTacan": 41,
+      "laserCode": 344,
+      "tailNumber": "79-0119"
+    },
+    {
+      "pilot": "Muldoon",
+      "callsign": ["PUMA", "TUSK 8"],
+      "link16Prefix": "PA",
+      "stn": 1142,
+      "mode3": 1593,
+      "freq": "42.3",
+      "aaTacan": 42,
+      "laserCode": 345,
+      "tailNumber": "79-0121"
+    },
+    {
+      "pilot": "Pita",
+      "callsign": ["HABO", "TUSK 9"],
+      "link16Prefix": "HO",
+      "stn": 1143,
+      "mode3": 1601,
+      "freq": "43.3",
+      "aaTacan": 43,
+      "laserCode": 346,
+      "tailNumber": "79-0122"
+    },
+    {
+      "pilot": "Motown",
+      "callsign": ["MATRIX", "BOAR 1"],
+      "link16Prefix": "MX",
+      "stn": 1144,
+      "mode3": 1609,
+      "freq": "44.3",
+      "aaTacan": 44,
+      "laserCode": 347
+    },
+    {
+      "pilot": "Barney",
+      "callsign": ["EASY", "BOAR 6"],
+      "link16Prefix": "EY",
+      "stn": 1151,
+      "mode3": 1649,
+      "freq": "51.3",
+      "aaTacan": 51,
+      "laserCode": 353
+    },
+    {
+      "pilot": "Redman",
+      "callsign": ["SWIFTY 1", "PIG 1"],
+      "link16Prefix": "SY",
+      "stn": 1160,
+      "mode3": 1657,
+      "freq": "31.3",
+      "aaTacan": 31,
+      "laserCode": 328
+    }
+  ]
+}

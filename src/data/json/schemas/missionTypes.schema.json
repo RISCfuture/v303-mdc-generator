@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/missionTypes.schema.json",
+  "title": "Mission Types Configuration",
+  "description": "Available mission types for mission planning",
+  "type": "object",
+  "required": ["missionTypes"],
+  "properties": {
+    "missionTypes": {
+      "type": "array",
+      "description": "List of available mission types",
+      "items": {
+        "type": "string",
+        "description": "Mission type identifier (e.g., 'CAS', 'SEAD', 'CAP')"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

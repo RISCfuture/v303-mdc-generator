@@ -1,0 +1,647 @@
+[
+  {
+    "name": "Bagram",
+    "position": {
+      "latitude": 34.958798832452,
+      "longitude": 69.275381480107,
+      "elevation": 4895
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "21",
+        "heading": 206,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 26,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 206,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 26,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bamyan",
+    "position": {
+      "latitude": 34.806271271159,
+      "longitude": 67.806890400983,
+      "elevation": 8490
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 67,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 247,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bost",
+    "position": {
+      "latitude": 31.55201665208,
+      "longitude": 64.363255135089,
+      "elevation": 2546
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "1",
+        "heading": 7,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 187,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Camp Bastion",
+    "position": {
+      "latitude": 31.835819789783,
+      "longitude": 64.22020303609,
+      "elevation": 2886
+    },
+    "tacan": {
+      "channel": 98,
+      "callsign": "BAS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "1",
+        "heading": 10,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 190,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Camp Bastion Heliport",
+    "position": {
+      "latitude": 31.853777562069,
+      "longitude": 64.212513895988,
+      "elevation": 2901
+    },
+    "tacan": {
+      "channel": 98,
+      "callsign": "BAS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "1",
+        "heading": 10,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 190,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Chaghcharan",
+    "position": {
+      "latitude": 34.529394368153,
+      "longitude": 65.280155710858,
+      "elevation": 7450
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 245,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 65,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Dwyer",
+    "position": {
+      "latitude": 31.085639060294,
+      "longitude": 64.05755617642,
+      "elevation": 2398
+    },
+    "tacan": {
+      "channel": 46,
+      "callsign": "ADY",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "5",
+        "heading": 50,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 230,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "FOB Camp Dubs",
+    "position": {
+      "latitude": 0,
+      "longitude": 1.9839338563088e-6,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "FOB Clark",
+    "position": {
+      "latitude": 0,
+      "longitude": 1.9839338563088e-6,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "FOB Salerno",
+    "position": {
+      "latitude": 33.363209127216,
+      "longitude": 69.95874266605,
+      "elevation": 3777
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 265,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 85,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "FOB Thunder",
+    "position": {
+      "latitude": 0,
+      "longitude": 1.9839338563088e-6,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "Farah",
+    "position": {
+      "latitude": 32.354876963981,
+      "longitude": 62.173144056959,
+      "elevation": 2240
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 330,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 150,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gardez",
+    "position": {
+      "latitude": 33.621613058542,
+      "longitude": 69.233100368807,
+      "elevation": 7725
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 24,
+        "ils": null
+      },
+      {
+        "name": "20",
+        "heading": 204,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ghazni Heliport",
+    "position": {
+      "latitude": 33.502817894742,
+      "longitude": 68.414041758523,
+      "elevation": 7123
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 354,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 174,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Herat",
+    "position": {
+      "latitude": 34.220031212738,
+      "longitude": 62.230129665702,
+      "elevation": 3182
+    },
+    "tacan": {
+      "channel": 54,
+      "callsign": "HRT",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "18",
+        "heading": 188,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 8,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jalalabad",
+    "position": {
+      "latitude": 34.406067260016,
+      "longitude": 70.490638285078,
+      "elevation": 1841
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 127,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 307,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kabul",
+    "position": {
+      "latitude": 34.570238781269,
+      "longitude": 69.196330225221,
+      "elevation": 5869
+    },
+    "tacan": {
+      "channel": 65,
+      "callsign": "OKB",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "11",
+        "heading": 104,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 284,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kandahar",
+    "position": {
+      "latitude": 31.513217729616,
+      "longitude": 65.860714738417,
+      "elevation": 3336
+    },
+    "tacan": {
+      "channel": 75,
+      "callsign": "KAF",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "23",
+        "heading": 234,
+        "ils": {
+          "name": "OKN",
+          "frequency": "108.55",
+          "channel": null,
+          "position": {
+            "latitude": 31.4975,
+            "longitude": 65.834167
+          }
+        }
+      },
+      {
+        "name": "5",
+        "heading": 54,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kandahar Heliport",
+    "position": {
+      "latitude": 31.521070343338,
+      "longitude": 65.84696137969,
+      "elevation": 3337
+    },
+    "tacan": {
+      "channel": 75,
+      "callsign": "KAF",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "23",
+        "heading": 234,
+        "ils": {
+          "name": "OKN",
+          "frequency": "108.55",
+          "channel": null,
+          "position": {
+            "latitude": 31.4975,
+            "longitude": 65.834167
+          }
+        }
+      },
+      {
+        "name": "5",
+        "heading": 54,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Khost",
+    "position": {
+      "latitude": 33.336470141253,
+      "longitude": 69.959203338387,
+      "elevation": 3754
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 238,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 58,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Maymana Zahiraddin Faryabi",
+    "position": {
+      "latitude": 35.924391322221,
+      "longitude": 64.76619558641,
+      "elevation": 2758
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 322,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 142,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Nimroz",
+    "position": {
+      "latitude": 30.970914944055,
+      "longitude": 62.053757073272,
+      "elevation": 1585
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 140,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 320,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Qala i Naw",
+    "position": {
+      "latitude": 34.992086349078,
+      "longitude": 63.124538116342,
+      "elevation": 2921
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 220,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 40,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sharana",
+    "position": {
+      "latitude": 33.121102243001,
+      "longitude": 68.842034291196,
+      "elevation": 7391
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 322,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 142,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Shindand",
+    "position": {
+      "latitude": 33.383007536994,
+      "longitude": 62.260362260821,
+      "elevation": 3716
+    },
+    "tacan": {
+      "channel": 48,
+      "callsign": "ASD",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "36",
+        "heading": 2,
+        "ils": null
+      },
+      {
+        "name": "18",
+        "heading": 182,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Shindand Heliport",
+    "position": {
+      "latitude": 33.406894837978,
+      "longitude": 62.267975429692,
+      "elevation": 3799
+    },
+    "tacan": {
+      "channel": 48,
+      "callsign": "ASD",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "36",
+        "heading": 2,
+        "ils": null
+      },
+      {
+        "name": "18",
+        "heading": 182,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tarinkot",
+    "position": {
+      "latitude": 32.609904004956,
+      "longitude": 65.856509652753,
+      "elevation": 4374
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 123,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 303,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Urgoon Heliport",
+    "position": {
+      "latitude": 32.937884319207,
+      "longitude": 69.150001224526,
+      "elevation": 7493
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 92,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

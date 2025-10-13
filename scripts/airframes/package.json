@@ -1,0 +1,13 @@
+{
+  "name": "v303-airframes-generator",
+  "version": "1.0.0",
+  "description": "Generate airframe data from Quaggles DCS Lua Datamine",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "generate": "node generate-airframes.js"
+  }
+}

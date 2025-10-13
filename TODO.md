@@ -1,0 +1,4 @@
+- E2E tests for the bingo/rotation calculators
+- Export offset points to MDC JSON
+- Export HTS tables to MDC JSON
+- Tune rollup for better loading

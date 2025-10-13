@@ -1,0 +1,744 @@
+[
+  {
+    "name": "Almirante Schroeders",
+    "position": {
+      "latitude": -53.602106962831,
+      "longitude": -70.482981561644,
+      "elevation": 160
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 127,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 307,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 221,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Comandante Luis Piedrabuena",
+    "position": {
+      "latitude": -49.995185181266,
+      "longitude": -68.944056394903,
+      "elevation": 70
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 260,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 80,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cullen",
+    "position": {
+      "latitude": -52.883656785623,
+      "longitude": -68.403599038408,
+      "elevation": 127
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 242,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 62,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "El Calafate",
+    "position": {
+      "latitude": -50.279554751977,
+      "longitude": -72.036792945203,
+      "elevation": 655
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 253,
+        "ils": {
+          "name": "ec",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": -50.281576,
+            "longitude": -72.075212
+          }
+        }
+      },
+      {
+        "name": "7",
+        "heading": 73,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Franco Bianco",
+    "position": {
+      "latitude": -52.736735475736,
+      "longitude": -69.345004969929,
+      "elevation": 105
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 77,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 257,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gobernador Gregores",
+    "position": {
+      "latitude": -48.786184261892,
+      "longitude": -70.130773877354,
+      "elevation": 1168
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 274,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 94,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Goose Green",
+    "position": {
+      "latitude": -51.817545675258,
+      "longitude": -58.982587738564,
+      "elevation": 58
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 139,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 319,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gull Point",
+    "position": {
+      "latitude": -52.177611939608,
+      "longitude": -58.861619492089,
+      "elevation": 4
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 152,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 332,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 216,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 36,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hipico Flying Club",
+    "position": {
+      "latitude": -48.759556214993,
+      "longitude": -70.233347771283,
+      "elevation": 935
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 11,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 191,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mount Pleasant",
+    "position": {
+      "latitude": -51.817980450561,
+      "longitude": -58.472047399798,
+      "elevation": 222
+    },
+    "tacan": {
+      "channel": 59,
+      "callsign": "MPA",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "10",
+        "heading": 104,
+        "ils": {
+          "name": "imp",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": -51.817299,
+            "longitude": -58.477728
+          }
+        }
+      },
+      {
+        "name": "28",
+        "heading": 284,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 234,
+        "ils": {
+          "name": "imp",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": -51.817299,
+            "longitude": -58.477728
+          }
+        }
+      },
+      {
+        "name": "5",
+        "heading": 54,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "O'Higgins",
+    "position": {
+      "latitude": -48.474317662,
+      "longitude": -72.562251006541,
+      "elevation": 900
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 338,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 158,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Pampa Guanaco",
+    "position": {
+      "latitude": -54.050235516443,
+      "longitude": -68.803567106006,
+      "elevation": 520
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 260,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 80,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Port Stanley",
+    "position": {
+      "latitude": -51.686117636878,
+      "longitude": -57.768161639654,
+      "elevation": 69
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 269,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 89,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Porvenir",
+    "position": {
+      "latitude": -53.249805131035,
+      "longitude": -70.335774022577,
+      "elevation": 99
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 99,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 279,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 216,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 36,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Puerto Natales",
+    "position": {
+      "latitude": -51.674476117956,
+      "longitude": -72.5184341595,
+      "elevation": 217
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 287,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 107,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Puerto Santa Cruz",
+    "position": {
+      "latitude": -50.018361733319,
+      "longitude": -68.590805488818,
+      "elevation": 365
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 69,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 249,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Puerto Williams",
+    "position": {
+      "latitude": -54.93062328632,
+      "longitude": -67.636408605953,
+      "elevation": 84
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 82,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 262,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Punta Arenas",
+    "position": {
+      "latitude": -53.012694337599,
+      "longitude": -70.847155442369,
+      "elevation": 114
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 308,
+        "ils": {
+          "name": "INAS",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": -53.001231,
+            "longitude": -70.880082
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 128,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 258,
+        "ils": {
+          "name": "INAS",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": -53.001231,
+            "longitude": -70.880082
+          }
+        }
+      },
+      {
+        "name": "8",
+        "heading": 78,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 198,
+        "ils": {
+          "name": "INAS",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": -53.001231,
+            "longitude": -70.880082
+          }
+        }
+      },
+      {
+        "name": "2",
+        "heading": 18,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rio Chico",
+    "position": {
+      "latitude": -51.668466993473,
+      "longitude": -69.273094107185,
+      "elevation": 74
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 84,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 264,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rio Gallegos",
+    "position": {
+      "latitude": -51.608003842351,
+      "longitude": -69.289204778116,
+      "elevation": 53
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 256,
+        "ils": {
+          "name": "gl",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": -51.610309,
+            "longitude": -69.341866
+          }
+        }
+      },
+      {
+        "name": "8",
+        "heading": 76,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rio Grande",
+    "position": {
+      "latitude": -53.777683283628,
+      "longitude": -67.763501060719,
+      "elevation": 58
+    },
+    "tacan": {
+      "channel": 31,
+      "callsign": "gra",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "8",
+        "heading": 79,
+        "ils": {
+          "name": "gr",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": -53.778151,
+            "longitude": -67.771597
+          }
+        }
+      },
+      {
+        "name": "26",
+        "heading": 259,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rio Turbio",
+    "position": {
+      "latitude": -51.603040180552,
+      "longitude": -72.209321072798,
+      "elevation": 896
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 239,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 59,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "San Carlos FOB",
+    "position": {
+      "latitude": -51.502039629781,
+      "longitude": -59.00282194056,
+      "elevation": 66
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 288,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 108,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "San Julian",
+    "position": {
+      "latitude": -49.305371864521,
+      "longitude": -67.78993821762,
+      "elevation": 144
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 251,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 71,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tolhuin",
+    "position": {
+      "latitude": -54.4997037512,
+      "longitude": -67.180115132978,
+      "elevation": 355
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 77,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 257,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ushuaia",
+    "position": {
+      "latitude": -54.843736422025,
+      "longitude": -68.313832487555,
+      "elevation": 61
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 77,
+        "ils": {
+          "name": "us",
+          "frequency": "111.3",
+          "channel": null,
+          "position": {
+            "latitude": -54.844195,
+            "longitude": -68.318784
+          }
+        }
+      },
+      {
+        "name": "26",
+        "heading": 257,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ushuaia Helo Port",
+    "position": {
+      "latitude": -54.815912384167,
+      "longitude": -68.303936450893,
+      "elevation": 41
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 170,
+        "ils": {
+          "name": "us",
+          "frequency": "111.3",
+          "channel": null,
+          "position": {
+            "latitude": -54.844195,
+            "longitude": -68.318784
+          }
+        }
+      },
+      {
+        "name": "35",
+        "heading": 350,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

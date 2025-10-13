@@ -1,0 +1,1916 @@
+[
+  {
+    "name": "A",
+    "latitude": 53.417008,
+    "longitude": 11.748008,
+    "elevation": 144
+  },
+  {
+    "name": "ALF",
+    "latitude": 53.636303,
+    "longitude": 9.993739,
+    "elevation": 33
+  },
+  {
+    "name": "AR",
+    "latitude": 51.994426,
+    "longitude": 12.977758,
+    "elevation": 312
+  },
+  {
+    "name": "AS",
+    "latitude": 53.407054,
+    "longitude": 11.712166,
+    "elevation": 200
+  },
+  {
+    "name": "AT",
+    "latitude": 51.379075,
+    "longitude": 11.445329,
+    "elevation": 928
+  },
+  {
+    "name": "Anklam",
+    "latitude": 53.856053,
+    "longitude": 13.688091,
+    "elevation": 26
+  },
+  {
+    "name": "Aschersleben",
+    "latitude": 51.755955,
+    "longitude": 11.462133,
+    "elevation": 374
+  },
+  {
+    "name": "B",
+    "latitude": 53.311799,
+    "longitude": 12.785883,
+    "elevation": 240
+  },
+  {
+    "name": "B NCIRCLE",
+    "latitude": 49.6559445,
+    "longitude": 7.3728225,
+    "elevation": 1860
+  },
+  {
+    "name": "B SCIRCLE",
+    "latitude": 49.653868833333334,
+    "longitude": 7.376644833333334,
+    "elevation": 1847
+  },
+  {
+    "name": "B TOWER",
+    "latitude": 49.64921,
+    "longitude": 7.375559666666667,
+    "elevation": 1739
+  },
+  {
+    "name": "B TTS1",
+    "latitude": 49.647145,
+    "longitude": 7.373402666666666,
+    "elevation": 1647
+  },
+  {
+    "name": "B TTS2",
+    "latitude": 49.65085283333333,
+    "longitude": 7.371186833333334,
+    "elevation": 1690
+  },
+  {
+    "name": "B WSTRAFE",
+    "latitude": 49.655237,
+    "longitude": 7.376206,
+    "elevation": 1883
+  },
+  {
+    "name": "BA",
+    "latitude": 53.318903,
+    "longitude": 12.829615,
+    "elevation": 240
+  },
+  {
+    "name": "BIT",
+    "latitude": 49.938601,
+    "longitude": 6.555683,
+    "elevation": 1217
+  },
+  {
+    "name": "BKD",
+    "latitude": 53.034494,
+    "longitude": 11.546217,
+    "elevation": 52
+  },
+  {
+    "name": "BM",
+    "latitude": 51.990469,
+    "longitude": 13.058889,
+    "elevation": 236
+  },
+  {
+    "name": "BMN",
+    "latitude": 53.044199,
+    "longitude": 8.782206,
+    "elevation": 7
+  },
+  {
+    "name": "BRU",
+    "latitude": 52.322155,
+    "longitude": 10.606068,
+    "elevation": 246
+  },
+  {
+    "name": "BUE",
+    "latitude": 50.178211,
+    "longitude": 7.070576,
+    "elevation": 1562
+  },
+  {
+    "name": "BW",
+    "latitude": 53.04457,
+    "longitude": 8.670859,
+    "elevation": 23
+  },
+  {
+    "name": "BWG",
+    "latitude": 52.318368,
+    "longitude": 10.54111,
+    "elevation": 243
+  },
+  {
+    "name": "BYC",
+    "latitude": 52.291743,
+    "longitude": 9.091797,
+    "elevation": 203
+  },
+  {
+    "name": "BZ",
+    "latitude": 51.366004,
+    "longitude": 11.374373,
+    "elevation": 423
+  },
+  {
+    "name": "Bad Belzig",
+    "latitude": 52.140562,
+    "longitude": 12.586587,
+    "elevation": 305
+  },
+  {
+    "name": "Bad Bevensen",
+    "latitude": 53.080941,
+    "longitude": 10.574481,
+    "elevation": 108
+  },
+  {
+    "name": "Bad Fallingbostel",
+    "latitude": 52.865449,
+    "longitude": 9.693018,
+    "elevation": 138
+  },
+  {
+    "name": "Bad Kreuznach",
+    "latitude": 49.831043,
+    "longitude": 7.876043,
+    "elevation": 482
+  },
+  {
+    "name": "Bad Segeberg",
+    "latitude": 53.936935,
+    "longitude": 10.304477,
+    "elevation": 148
+  },
+  {
+    "name": "Barth",
+    "latitude": 54.369055,
+    "longitude": 12.725858,
+    "elevation": 20
+  },
+  {
+    "name": "Berlin",
+    "latitude": 52.517036,
+    "longitude": 13.38886,
+    "elevation": 141
+  },
+  {
+    "name": "Bernburg (Saale)",
+    "latitude": 51.793079,
+    "longitude": 11.73916,
+    "elevation": 299
+  },
+  {
+    "name": "Bielefeld",
+    "latitude": 52.023927,
+    "longitude": 8.538114,
+    "elevation": 367
+  },
+  {
+    "name": "Bitburg",
+    "latitude": 49.985912,
+    "longitude": 6.511769,
+    "elevation": 1115
+  },
+  {
+    "name": "Blankenburg (Harz)",
+    "latitude": 51.790268,
+    "longitude": 10.955198,
+    "elevation": 728
+  },
+  {
+    "name": "Boizenburg",
+    "latitude": 53.375079,
+    "longitude": 10.723236,
+    "elevation": 43
+  },
+  {
+    "name": "Brandenburg an der Havel",
+    "latitude": 52.410826,
+    "longitude": 12.549793,
+    "elevation": 115
+  },
+  {
+    "name": "Braunschweig",
+    "latitude": 52.264658,
+    "longitude": 10.523606,
+    "elevation": 259
+  },
+  {
+    "name": "Bremen",
+    "latitude": 53.07582,
+    "longitude": 8.807162,
+    "elevation": 49
+  },
+  {
+    "name": "Buchholz in der Nordheide",
+    "latitude": 53.333302,
+    "longitude": 9.866664,
+    "elevation": 233
+  },
+  {
+    "name": "Burg",
+    "latitude": 52.270563,
+    "longitude": 11.858819,
+    "elevation": 154
+  },
+  {
+    "name": "Butzow",
+    "latitude": 53.850005,
+    "longitude": 11.983295,
+    "elevation": 7
+  },
+  {
+    "name": "Buxtehude",
+    "latitude": 53.476735,
+    "longitude": 9.700393,
+    "elevation": 16
+  },
+  {
+    "name": "CEL",
+    "latitude": 52.600161,
+    "longitude": 10.116684,
+    "elevation": 128
+  },
+  {
+    "name": "CLH",
+    "latitude": 51.379743,
+    "longitude": 11.446762,
+    "elevation": 919
+  },
+  {
+    "name": "Celle",
+    "latitude": 52.624056,
+    "longitude": 10.081051,
+    "elevation": 151
+  },
+  {
+    "name": "Ch",
+    "latitude": 52.135488,
+    "longitude": 13.338653,
+    "elevation": 151
+  },
+  {
+    "name": "D",
+    "latitude": 53.602861,
+    "longitude": 13.338332,
+    "elevation": 210
+  },
+  {
+    "name": "DBR",
+    "latitude": 52.468499,
+    "longitude": 13.294584,
+    "elevation": 180
+  },
+  {
+    "name": "DG",
+    "latitude": 51.363087,
+    "longitude": 11.939056,
+    "elevation": 335
+  },
+  {
+    "name": "DIP",
+    "latitude": 52.472586,
+    "longitude": 13.471176,
+    "elevation": 108
+  },
+  {
+    "name": "DK",
+    "latitude": 51.364883,
+    "longitude": 11.962812,
+    "elevation": 341
+  },
+  {
+    "name": "DLE",
+    "latitude": 52.250863,
+    "longitude": 9.884677,
+    "elevation": 351
+  },
+  {
+    "name": "DLF",
+    "latitude": 50.040944,
+    "longitude": 8.590415,
+    "elevation": 364
+  },
+  {
+    "name": "DLS",
+    "latitude": 52.613929,
+    "longitude": 13.363683,
+    "elevation": 194
+  },
+  {
+    "name": "DT",
+    "latitude": 53.6039,
+    "longitude": 13.391705,
+    "elevation": 217
+  },
+  {
+    "name": "Dabendorf",
+    "latitude": 52.23962,
+    "longitude": 13.43268,
+    "elevation": 128
+  },
+  {
+    "name": "Demmin",
+    "latitude": 53.907002,
+    "longitude": 13.032784,
+    "elevation": 30
+  },
+  {
+    "name": "Dessau",
+    "latitude": 51.830996,
+    "longitude": 12.243072,
+    "elevation": 210
+  },
+  {
+    "name": "E",
+    "latitude": 54.173296,
+    "longitude": 13.749771,
+    "elevation": 0
+  },
+  {
+    "name": "EN",
+    "latitude": 54.194042,
+    "longitude": 13.715692,
+    "elevation": 0
+  },
+  {
+    "name": "Eberswalde",
+    "latitude": 52.835081,
+    "longitude": 13.799654,
+    "elevation": 75
+  },
+  {
+    "name": "Einbeck",
+    "latitude": 51.818507,
+    "longitude": 9.867845,
+    "elevation": 377
+  },
+  {
+    "name": "Elmshorn",
+    "latitude": 53.753249,
+    "longitude": 9.652455,
+    "elevation": 23
+  },
+  {
+    "name": "Erfurt",
+    "latitude": 50.993575,
+    "longitude": 11.023765,
+    "elevation": 614
+  },
+  {
+    "name": "Eutin",
+    "latitude": 54.136464,
+    "longitude": 10.615907,
+    "elevation": 115
+  },
+  {
+    "name": "F",
+    "latitude": 50.982045,
+    "longitude": 10.933471,
+    "elevation": 968
+  },
+  {
+    "name": "FDA",
+    "latitude": 50.541545,
+    "longitude": 9.635033,
+    "elevation": 974
+  },
+  {
+    "name": "FFM",
+    "latitude": 50.055115,
+    "longitude": 8.650293,
+    "elevation": 384
+  },
+  {
+    "name": "FR",
+    "latitude": 50.065653,
+    "longitude": 8.684068,
+    "elevation": 423
+  },
+  {
+    "name": "FSB",
+    "latitude": 52.921621,
+    "longitude": 10.202136,
+    "elevation": 236
+  },
+  {
+    "name": "FTZ",
+    "latitude": 51.112502,
+    "longitude": 9.282108,
+    "elevation": 558
+  },
+  {
+    "name": "FU",
+    "latitude": 53.575024,
+    "longitude": 9.875992,
+    "elevation": 138
+  },
+  {
+    "name": "FUL",
+    "latitude": 50.592461,
+    "longitude": 9.572224,
+    "elevation": 1096
+  },
+  {
+    "name": "FW",
+    "latitude": 50.009882,
+    "longitude": 8.439541,
+    "elevation": 302
+  },
+  {
+    "name": "FWE",
+    "latitude": 51.995227,
+    "longitude": 12.132402,
+    "elevation": 246
+  },
+  {
+    "name": "Frankfurt",
+    "latitude": 50.116661,
+    "longitude": 8.670233,
+    "elevation": 367
+  },
+  {
+    "name": "Fulda",
+    "latitude": 50.553317,
+    "longitude": 9.693899,
+    "elevation": 981
+  },
+  {
+    "name": "Furstenwalde",
+    "latitude": 52.358021,
+    "longitude": 14.064985,
+    "elevation": 157
+  },
+  {
+    "name": "G",
+    "latitude": 53.207768,
+    "longitude": 12.556267,
+    "elevation": 223
+  },
+  {
+    "name": "GBL",
+    "latitude": 49.648184,
+    "longitude": 9.980925,
+    "elevation": 971
+  },
+  {
+    "name": "GJ",
+    "latitude": 53.198916,
+    "longitude": 12.501801,
+    "elevation": 223
+  },
+  {
+    "name": "GK",
+    "latitude": 52.94779,
+    "longitude": 12.710109,
+    "elevation": 141
+  },
+  {
+    "name": "GL",
+    "latitude": 52.566982,
+    "longitude": 13.379742,
+    "elevation": 144
+  },
+  {
+    "name": "GN",
+    "latitude": 52.53274,
+    "longitude": 11.353838,
+    "elevation": 240
+  },
+  {
+    "name": "GO",
+    "latitude": 53.201216,
+    "longitude": 12.510701,
+    "elevation": 230
+  },
+  {
+    "name": "GS",
+    "latitude": 51.931701,
+    "longitude": 8.308174,
+    "elevation": 226
+  },
+  {
+    "name": "GSO",
+    "latitude": 51.924309,
+    "longitude": 8.286726,
+    "elevation": 203
+  },
+  {
+    "name": "GT",
+    "latitude": 53.71417,
+    "longitude": 9.924254,
+    "elevation": 85
+  },
+  {
+    "name": "GW",
+    "latitude": 52.46502,
+    "longitude": 13.155508,
+    "elevation": 164
+  },
+  {
+    "name": "GWW",
+    "latitude": 52.47367,
+    "longitude": 13.123815,
+    "elevation": 131
+  },
+  {
+    "name": "GX",
+    "latitude": 51.720105,
+    "longitude": 11.884382,
+    "elevation": 259
+  },
+  {
+    "name": "GZ",
+    "latitude": 53.875407,
+    "longitude": 14.172328,
+    "elevation": 75
+  },
+  {
+    "name": "Gardelegen",
+    "latitude": 52.526556,
+    "longitude": 11.392978,
+    "elevation": 161
+  },
+  {
+    "name": "Geesthacht",
+    "latitude": 53.437468,
+    "longitude": 10.367823,
+    "elevation": 36
+  },
+  {
+    "name": "Genthin",
+    "latitude": 52.406374,
+    "longitude": 12.156174,
+    "elevation": 135
+  },
+  {
+    "name": "Giessen",
+    "latitude": 50.584796,
+    "longitude": 8.670472,
+    "elevation": 518
+  },
+  {
+    "name": "Gottingen",
+    "latitude": 51.532833,
+    "longitude": 9.93518,
+    "elevation": 509
+  },
+  {
+    "name": "Greifswald",
+    "latitude": 54.095791,
+    "longitude": 13.381524,
+    "elevation": 33
+  },
+  {
+    "name": "Grevesmuhlen",
+    "latitude": 53.864471,
+    "longitude": 11.189884,
+    "elevation": 128
+  },
+  {
+    "name": "Gustrow",
+    "latitude": 53.793652,
+    "longitude": 12.175965,
+    "elevation": 56
+  },
+  {
+    "name": "H",
+    "latitude": 51.766733,
+    "longitude": 13.198752,
+    "elevation": 256
+  },
+  {
+    "name": "H CCIRCLE",
+    "latitude": 50.070985,
+    "longitude": 9.846221833333333,
+    "elevation": 876
+  },
+  {
+    "name": "H ECIRCLE",
+    "latitude": 50.072390166666665,
+    "longitude": 9.848861666666666,
+    "elevation": 896
+  },
+  {
+    "name": "H ESTRAFE",
+    "latitude": 50.06644983333333,
+    "longitude": 9.8416845,
+    "elevation": 912
+  },
+  {
+    "name": "H TOWER",
+    "latitude": 50.071902,
+    "longitude": 9.840264666666666,
+    "elevation": 912
+  },
+  {
+    "name": "H TTS1",
+    "latitude": 50.06639366666667,
+    "longitude": 9.836596,
+    "elevation": 919
+  },
+  {
+    "name": "H TTS2",
+    "latitude": 50.064556833333334,
+    "longitude": 9.836990833333333,
+    "elevation": 935
+  },
+  {
+    "name": "H WCIRCLE",
+    "latitude": 50.0697965,
+    "longitude": 9.843881833333333,
+    "elevation": 922
+  },
+  {
+    "name": "H WSTRAFE",
+    "latitude": 50.06635516666667,
+    "longitude": 9.839137833333334,
+    "elevation": 892
+  },
+  {
+    "name": "HA",
+    "latitude": 52.464041,
+    "longitude": 9.805069,
+    "elevation": 177
+  },
+  {
+    "name": "HAD",
+    "latitude": 52.46188,
+    "longitude": 9.688376,
+    "elevation": 161
+  },
+  {
+    "name": "HAE",
+    "latitude": 52.457983,
+    "longitude": 9.567773,
+    "elevation": 167
+  },
+  {
+    "name": "HAH",
+    "latitude": 49.958887,
+    "longitude": 7.276788,
+    "elevation": 1598
+  },
+  {
+    "name": "HAM",
+    "latitude": 53.677117,
+    "longitude": 10.083029,
+    "elevation": 89
+  },
+  {
+    "name": "HAN",
+    "latitude": 49.956334,
+    "longitude": 7.269749,
+    "elevation": 1578
+  },
+  {
+    "name": "HLI",
+    "latitude": 52.381795,
+    "longitude": 10.850063,
+    "elevation": 371
+  },
+  {
+    "name": "HLZ",
+    "latitude": 52.363646,
+    "longitude": 10.795417,
+    "elevation": 371
+  },
+  {
+    "name": "HO",
+    "latitude": 51.766396,
+    "longitude": 13.184532,
+    "elevation": 259
+  },
+  {
+    "name": "HVL",
+    "latitude": 52.456774,
+    "longitude": 13.132528,
+    "elevation": 144
+  },
+  {
+    "name": "HW",
+    "latitude": 52.468492,
+    "longitude": 9.546607,
+    "elevation": 144
+  },
+  {
+    "name": "HX",
+    "latitude": 51.766942,
+    "longitude": 13.19287,
+    "elevation": 262
+  },
+  {
+    "name": "Hagenow",
+    "latitude": 53.43058,
+    "longitude": 11.190482,
+    "elevation": 85
+  },
+  {
+    "name": "Haldensleben",
+    "latitude": 52.291124,
+    "longitude": 11.413272,
+    "elevation": 180
+  },
+  {
+    "name": "Halle",
+    "latitude": 51.482504,
+    "longitude": 11.970545,
+    "elevation": 322
+  },
+  {
+    "name": "Hameln",
+    "latitude": 52.103994,
+    "longitude": 9.356155,
+    "elevation": 246
+  },
+  {
+    "name": "Hannover",
+    "latitude": 52.374478,
+    "longitude": 9.738552,
+    "elevation": 217
+  },
+  {
+    "name": "Helmstedt",
+    "latitude": 52.227704,
+    "longitude": 11.010469,
+    "elevation": 427
+  },
+  {
+    "name": "Hildesheim",
+    "latitude": 52.152164,
+    "longitude": 9.951303,
+    "elevation": 302
+  },
+  {
+    "name": "Holzminden",
+    "latitude": 51.828835,
+    "longitude": 9.446657,
+    "elevation": 302
+  },
+  {
+    "name": "I",
+    "latitude": 53.032416,
+    "longitude": 13.583692,
+    "elevation": 203
+  },
+  {
+    "name": "IBIT",
+    "latitude": 49.948725,
+    "longitude": 6.574932,
+    "elevation": 1224
+  },
+  {
+    "name": "IBRE",
+    "latitude": 53.045136,
+    "longitude": 8.779481,
+    "elevation": 0
+  },
+  {
+    "name": "IBRW",
+    "latitude": 53.046556,
+    "longitude": 8.770125,
+    "elevation": 7
+  },
+  {
+    "name": "IDBR",
+    "latitude": 52.472259,
+    "longitude": 13.397245,
+    "elevation": 121
+  },
+  {
+    "name": "IDLB",
+    "latitude": 52.470713,
+    "longitude": 13.388612,
+    "elevation": 148
+  },
+  {
+    "name": "IFM",
+    "latitude": 50.046376,
+    "longitude": 8.588953,
+    "elevation": 335
+  },
+  {
+    "name": "IHEW",
+    "latitude": 53.882283,
+    "longitude": 14.130466,
+    "elevation": 59
+  },
+  {
+    "name": "IHFE",
+    "latitude": 53.528088,
+    "longitude": 9.820044,
+    "elevation": 7
+  },
+  {
+    "name": "IHFW",
+    "latitude": 53.537518,
+    "longitude": 9.83874,
+    "elevation": 20
+  },
+  {
+    "name": "IHHE",
+    "latitude": 53.621059,
+    "longitude": 9.972278,
+    "elevation": 20
+  },
+  {
+    "name": "IHHN",
+    "latitude": 53.656928,
+    "longitude": 9.972986,
+    "elevation": 36
+  },
+  {
+    "name": "IHHS",
+    "latitude": 53.652211,
+    "longitude": 9.978871,
+    "elevation": 43
+  },
+  {
+    "name": "IHHW",
+    "latitude": 53.615765,
+    "longitude": 9.95912,
+    "elevation": 30
+  },
+  {
+    "name": "IHNE",
+    "latitude": 52.468062,
+    "longitude": 9.65623,
+    "elevation": 164
+  },
+  {
+    "name": "IHNW",
+    "latitude": 52.466823,
+    "longitude": 9.703153,
+    "elevation": 167
+  },
+  {
+    "name": "IHSE",
+    "latitude": 52.45503,
+    "longitude": 9.672881,
+    "elevation": 174
+  },
+  {
+    "name": "IHSW",
+    "latitude": 52.453909,
+    "longitude": 9.715167,
+    "elevation": 171
+  },
+  {
+    "name": "IK",
+    "latitude": 53.032937,
+    "longitude": 13.629732,
+    "elevation": 246
+  },
+  {
+    "name": "IMA",
+    "latitude": 51.41898,
+    "longitude": 12.204437,
+    "elevation": 400
+  },
+  {
+    "name": "IREL",
+    "latitude": 49.437874,
+    "longitude": 7.623375,
+    "elevation": 768
+  },
+  {
+    "name": "IRF",
+    "latitude": 50.028721,
+    "longitude": 8.542056,
+    "elevation": 315
+  },
+  {
+    "name": "IRWR",
+    "latitude": 49.435961,
+    "longitude": 7.5777,
+    "elevation": 751
+  },
+  {
+    "name": "ISPA",
+    "latitude": 49.982906,
+    "longitude": 6.710131,
+    "elevation": 1194
+  },
+  {
+    "name": "ISPE",
+    "latitude": 49.969482,
+    "longitude": 6.6863,
+    "elevation": 1125
+  },
+  {
+    "name": "ITGE",
+    "latitude": 52.560578,
+    "longitude": 13.314592,
+    "elevation": 95
+  },
+  {
+    "name": "ITGW",
+    "latitude": 52.556133,
+    "longitude": 13.269712,
+    "elevation": 92
+  },
+  {
+    "name": "ITLE",
+    "latitude": 52.562597,
+    "longitude": 13.316048,
+    "elevation": 98
+  },
+  {
+    "name": "ITLW",
+    "latitude": 52.562605,
+    "longitude": 13.305049,
+    "elevation": 125
+  },
+  {
+    "name": "IZBU",
+    "latitude": 49.202004,
+    "longitude": 7.39602,
+    "elevation": 1115
+  },
+  {
+    "name": "Jena",
+    "latitude": 50.92807,
+    "longitude": 11.585796,
+    "elevation": 525
+  },
+  {
+    "name": "Juterbog",
+    "latitude": 51.991649,
+    "longitude": 13.080113,
+    "elevation": 253
+  },
+  {
+    "name": "K",
+    "latitude": 52.009396,
+    "longitude": 12.17762,
+    "elevation": 266
+  },
+  {
+    "name": "KD",
+    "latitude": 51.3525,
+    "longitude": 11.877481,
+    "elevation": 427
+  },
+  {
+    "name": "KIR",
+    "latitude": 49.850192,
+    "longitude": 7.371146,
+    "elevation": 1398
+  },
+  {
+    "name": "KJ",
+    "latitude": 51.998443,
+    "longitude": 12.148161,
+    "elevation": 262
+  },
+  {
+    "name": "KT",
+    "latitude": 51.720732,
+    "longitude": 11.975168,
+    "elevation": 299
+  },
+  {
+    "name": "Kaiserslautern",
+    "latitude": 49.436429,
+    "longitude": 7.759265,
+    "elevation": 810
+  },
+  {
+    "name": "Kaltenkirchen",
+    "latitude": 53.837171,
+    "longitude": 9.961488,
+    "elevation": 95
+  },
+  {
+    "name": "Kassel",
+    "latitude": 51.316397,
+    "longitude": 9.490107,
+    "elevation": 636
+  },
+  {
+    "name": "Koblenz",
+    "latitude": 50.383869,
+    "longitude": 7.582582,
+    "elevation": 233
+  },
+  {
+    "name": "Kothen (Anhalt)",
+    "latitude": 51.751033,
+    "longitude": 11.973698,
+    "elevation": 279
+  },
+  {
+    "name": "L",
+    "latitude": 51.400886,
+    "longitude": 12.429753,
+    "elevation": 420
+  },
+  {
+    "name": "LBE",
+    "latitude": 53.654074,
+    "longitude": 9.595031,
+    "elevation": -7
+  },
+  {
+    "name": "LD",
+    "latitude": 53.031197,
+    "longitude": 13.563669,
+    "elevation": 197
+  },
+  {
+    "name": "LEG",
+    "latitude": 51.436008,
+    "longitude": 12.473604,
+    "elevation": 449
+  },
+  {
+    "name": "LG",
+    "latitude": 51.405097,
+    "longitude": 12.44275,
+    "elevation": 443
+  },
+  {
+    "name": "LN",
+    "latitude": 53.032802,
+    "longitude": 13.521753,
+    "elevation": 184
+  },
+  {
+    "name": "LR",
+    "latitude": 53.911169,
+    "longitude": 12.363914,
+    "elevation": 75
+  },
+  {
+    "name": "LU",
+    "latitude": 51.395502,
+    "longitude": 11.517906,
+    "elevation": 787
+  },
+  {
+    "name": "LUB",
+    "latitude": 53.941661,
+    "longitude": 10.66841,
+    "elevation": 203
+  },
+  {
+    "name": "LWB",
+    "latitude": 52.003648,
+    "longitude": 12.155359,
+    "elevation": 262
+  },
+  {
+    "name": "LX",
+    "latitude": 53.30529,
+    "longitude": 12.740502,
+    "elevation": 210
+  },
+  {
+    "name": "LYE",
+    "latitude": 53.800833,
+    "longitude": 10.695843,
+    "elevation": 39
+  },
+  {
+    "name": "LZ",
+    "latitude": 53.307301,
+    "longitude": 12.76504,
+    "elevation": 210
+  },
+  {
+    "name": "Leipzig",
+    "latitude": 51.342248,
+    "longitude": 12.38866,
+    "elevation": 374
+  },
+  {
+    "name": "Lubeck",
+    "latitude": 53.866444,
+    "longitude": 10.684738,
+    "elevation": 56
+  },
+  {
+    "name": "Luchow",
+    "latitude": 52.968667,
+    "longitude": 11.156762,
+    "elevation": 56
+  },
+  {
+    "name": "Luckenwalde",
+    "latitude": 52.090204,
+    "longitude": 13.174188,
+    "elevation": 161
+  },
+  {
+    "name": "Ludwigslust",
+    "latitude": 53.330023,
+    "longitude": 11.499364,
+    "elevation": 125
+  },
+  {
+    "name": "Luneburg",
+    "latitude": 53.248706,
+    "longitude": 10.407854,
+    "elevation": 75
+  },
+  {
+    "name": "Lutherstadt Eisleben",
+    "latitude": 51.517707,
+    "longitude": 11.551967,
+    "elevation": 568
+  },
+  {
+    "name": "Lutherstadt Wittenberg",
+    "latitude": 51.866653,
+    "longitude": 12.64676,
+    "elevation": 249
+  },
+  {
+    "name": "M",
+    "latitude": 52.364489,
+    "longitude": 13.471727,
+    "elevation": 125
+  },
+  {
+    "name": "MA",
+    "latitude": 51.394884,
+    "longitude": 12.343411,
+    "elevation": 410
+  },
+  {
+    "name": "MK",
+    "latitude": 52.386733,
+    "longitude": 11.821375,
+    "elevation": 125
+  },
+  {
+    "name": "ML",
+    "latitude": 52.389135,
+    "longitude": 11.815601,
+    "elevation": 121
+  },
+  {
+    "name": "MO",
+    "latitude": 54.265475,
+    "longitude": 12.457648,
+    "elevation": 20
+  },
+  {
+    "name": "MV",
+    "latitude": 52.354716,
+    "longitude": 13.43082,
+    "elevation": 135
+  },
+  {
+    "name": "MVR",
+    "latitude": 52.379162,
+    "longitude": 13.533278,
+    "elevation": 141
+  },
+  {
+    "name": "Magdeburg",
+    "latitude": 52.131589,
+    "longitude": 11.63996,
+    "elevation": 200
+  },
+  {
+    "name": "Mainz",
+    "latitude": 50.006234,
+    "longitude": 8.251375,
+    "elevation": 299
+  },
+  {
+    "name": "Mannheim",
+    "latitude": 49.549269,
+    "longitude": 8.522608,
+    "elevation": 328
+  },
+  {
+    "name": "Merseburg",
+    "latitude": 51.356441,
+    "longitude": 11.996147,
+    "elevation": 308
+  },
+  {
+    "name": "Molln",
+    "latitude": 53.62892,
+    "longitude": 10.688017,
+    "elevation": 16
+  },
+  {
+    "name": "N",
+    "latitude": 54.143593,
+    "longitude": 13.798498,
+    "elevation": 7
+  },
+  {
+    "name": "NE",
+    "latitude": 54.122042,
+    "longitude": 13.833568,
+    "elevation": 10
+  },
+  {
+    "name": "NIE",
+    "latitude": 52.625896,
+    "longitude": 9.372113,
+    "elevation": 157
+  },
+  {
+    "name": "NMN",
+    "latitude": 50.367624,
+    "longitude": 7.314332,
+    "elevation": 584
+  },
+  {
+    "name": "NTM",
+    "latitude": 50.016666,
+    "longitude": 6.531656,
+    "elevation": 1329
+  },
+  {
+    "name": "NU",
+    "latitude": 52.388479,
+    "longitude": 11.749555,
+    "elevation": 131
+  },
+  {
+    "name": "NW",
+    "latitude": 54.249177,
+    "longitude": 12.368501,
+    "elevation": 0
+  },
+  {
+    "name": "NZ",
+    "latitude": 52.140199,
+    "longitude": 13.229676,
+    "elevation": 157
+  },
+  {
+    "name": "Naumburg (Saale)",
+    "latitude": 51.152565,
+    "longitude": 11.809918,
+    "elevation": 433
+  },
+  {
+    "name": "Neubrandenburg",
+    "latitude": 53.557446,
+    "longitude": 13.260278,
+    "elevation": 66
+  },
+  {
+    "name": "Neuruppin",
+    "latitude": 52.924386,
+    "longitude": 12.809292,
+    "elevation": 148
+  },
+  {
+    "name": "Neustadt",
+    "latitude": 54.10299,
+    "longitude": 10.818674,
+    "elevation": 62
+  },
+  {
+    "name": "Neustrelitz",
+    "latitude": 53.361716,
+    "longitude": 13.063,
+    "elevation": 253
+  },
+  {
+    "name": "Nienburg/Weser",
+    "latitude": 52.641085,
+    "longitude": 9.21819,
+    "elevation": 89
+  },
+  {
+    "name": "Nordhausen",
+    "latitude": 51.497892,
+    "longitude": 10.79224,
+    "elevation": 604
+  },
+  {
+    "name": "O",
+    "latitude": 53.196967,
+    "longitude": 12.489491,
+    "elevation": 240
+  },
+  {
+    "name": "OM",
+    "latitude": 52.819858,
+    "longitude": 13.761464,
+    "elevation": 135
+  },
+  {
+    "name": "OR",
+    "latitude": 53.189798,
+    "longitude": 12.445479,
+    "elevation": 207
+  },
+  {
+    "name": "OSN",
+    "latitude": 52.200022,
+    "longitude": 8.285068,
+    "elevation": 348
+  },
+  {
+    "name": "Oranienburg",
+    "latitude": 52.752938,
+    "longitude": 13.245759,
+    "elevation": 112
+  },
+  {
+    "name": "Osterode am Harz",
+    "latitude": 51.72784,
+    "longitude": 10.250819,
+    "elevation": 715
+  },
+  {
+    "name": "P",
+    "latitude": 53.031471,
+    "longitude": 13.503237,
+    "elevation": 177
+  },
+  {
+    "name": "PFF",
+    "latitude": 49.85647,
+    "longitude": 7.603373,
+    "elevation": 1286
+  },
+  {
+    "name": "PG",
+    "latitude": 53.03098,
+    "longitude": 13.456362,
+    "elevation": 217
+  },
+  {
+    "name": "PLG",
+    "latitude": 52.468662,
+    "longitude": 9.695199,
+    "elevation": 167
+  },
+  {
+    "name": "PM",
+    "latitude": 53.432656,
+    "longitude": 11.784527,
+    "elevation": 154
+  },
+  {
+    "name": "Paderborn",
+    "latitude": 51.721605,
+    "longitude": 8.751781,
+    "elevation": 361
+  },
+  {
+    "name": "Parchim",
+    "latitude": 53.425845,
+    "longitude": 11.847524,
+    "elevation": 174
+  },
+  {
+    "name": "Pasewalk",
+    "latitude": 53.505368,
+    "longitude": 13.988905,
+    "elevation": 52
+  },
+  {
+    "name": "Potsdam",
+    "latitude": 52.400931,
+    "longitude": 13.059139,
+    "elevation": 112
+  },
+  {
+    "name": "Prenzlau",
+    "latitude": 53.3167,
+    "longitude": 13.866575,
+    "elevation": 92
+  },
+  {
+    "name": "Q",
+    "latitude": 51.263386,
+    "longitude": 10.65408,
+    "elevation": 899
+  },
+  {
+    "name": "QI",
+    "latitude": 51.252276,
+    "longitude": 10.703495,
+    "elevation": 994
+  },
+  {
+    "name": "Quedlinburg",
+    "latitude": 51.785543,
+    "longitude": 11.151993,
+    "elevation": 394
+  },
+  {
+    "name": "Querfurt",
+    "latitude": 51.378527,
+    "longitude": 11.597443,
+    "elevation": 571
+  },
+  {
+    "name": "R",
+    "latitude": 53.920561,
+    "longitude": 12.247772,
+    "elevation": 131
+  },
+  {
+    "name": "RC",
+    "latitude": 51.722664,
+    "longitude": 12.038744,
+    "elevation": 262
+  },
+  {
+    "name": "RF",
+    "latitude": 50.969816,
+    "longitude": 11.080926,
+    "elevation": 764
+  },
+  {
+    "name": "RG",
+    "latitude": 52.835046,
+    "longitude": 13.620472,
+    "elevation": 141
+  },
+  {
+    "name": "RHM",
+    "latitude": 50.032752,
+    "longitude": 8.535441,
+    "elevation": 318
+  },
+  {
+    "name": "RL",
+    "latitude": 53.924359,
+    "longitude": 12.199907,
+    "elevation": 95
+  },
+  {
+    "name": "RMS",
+    "latitude": 49.434471,
+    "longitude": 7.591479,
+    "elevation": 755
+  },
+  {
+    "name": "ROD",
+    "latitude": 52.217786,
+    "longitude": 9.289077,
+    "elevation": 1001
+  },
+  {
+    "name": "RW",
+    "latitude": 52.545529,
+    "longitude": 13.151291,
+    "elevation": 92
+  },
+  {
+    "name": "Rathenow",
+    "latitude": 52.60637,
+    "longitude": 12.338225,
+    "elevation": 102
+  },
+  {
+    "name": "Rostock",
+    "latitude": 54.092444,
+    "longitude": 12.128612,
+    "elevation": 0
+  },
+  {
+    "name": "Rotenburg (Wumme)",
+    "latitude": 53.110891,
+    "longitude": 9.404928,
+    "elevation": 75
+  },
+  {
+    "name": "S",
+    "latitude": 52.380757,
+    "longitude": 13.539984,
+    "elevation": 141
+  },
+  {
+    "name": "SCF",
+    "latitude": 50.051586,
+    "longitude": 10.177669,
+    "elevation": 764
+  },
+  {
+    "name": "SEM",
+    "latitude": 49.506848,
+    "longitude": 7.869962,
+    "elevation": 1024
+  },
+  {
+    "name": "SEX",
+    "latitude": 49.567041,
+    "longitude": 8.042851,
+    "elevation": 807
+  },
+  {
+    "name": "SK",
+    "latitude": 51.43388,
+    "longitude": 12.118235,
+    "elevation": 344
+  },
+  {
+    "name": "SL",
+    "latitude": 52.390494,
+    "longitude": 13.580942,
+    "elevation": 128
+  },
+  {
+    "name": "SLL",
+    "latitude": 52.366108,
+    "longitude": 13.478514,
+    "elevation": 135
+  },
+  {
+    "name": "SLR",
+    "latitude": 52.388352,
+    "longitude": 13.548505,
+    "elevation": 131
+  },
+  {
+    "name": "SOG",
+    "latitude": 51.687377,
+    "longitude": 9.512164,
+    "elevation": 928
+  },
+  {
+    "name": "SPA",
+    "latitude": 49.976839,
+    "longitude": 6.702138,
+    "elevation": 1175
+  },
+  {
+    "name": "SR",
+    "latitude": 52.134881,
+    "longitude": 13.319215,
+    "elevation": 154
+  },
+  {
+    "name": "Salzwedel",
+    "latitude": 52.852846,
+    "longitude": 11.15397,
+    "elevation": 79
+  },
+  {
+    "name": "Sangerhausen",
+    "latitude": 51.482864,
+    "longitude": 11.297828,
+    "elevation": 584
+  },
+  {
+    "name": "Schneverdingen",
+    "latitude": 53.116597,
+    "longitude": 9.792589,
+    "elevation": 302
+  },
+  {
+    "name": "Schonebeck (Elbe)",
+    "latitude": 52.020618,
+    "longitude": 11.738391,
+    "elevation": 177
+  },
+  {
+    "name": "Schwedt",
+    "latitude": 53.058637,
+    "longitude": 14.284086,
+    "elevation": 10
+  },
+  {
+    "name": "Schweinfurt",
+    "latitude": 50.04399,
+    "longitude": 10.211814,
+    "elevation": 755
+  },
+  {
+    "name": "Schwerin",
+    "latitude": 53.62883,
+    "longitude": 11.414804,
+    "elevation": 161
+  },
+  {
+    "name": "Stabfurt",
+    "latitude": 51.851451,
+    "longitude": 11.592945,
+    "elevation": 223
+  },
+  {
+    "name": "Stade",
+    "latitude": 53.599794,
+    "longitude": 9.475436,
+    "elevation": 46
+  },
+  {
+    "name": "Stadthagen",
+    "latitude": 52.328969,
+    "longitude": 9.205347,
+    "elevation": 217
+  },
+  {
+    "name": "Stendal",
+    "latitude": 52.605078,
+    "longitude": 11.859428,
+    "elevation": 121
+  },
+  {
+    "name": "Stralsund",
+    "latitude": 54.309631,
+    "longitude": 13.082085,
+    "elevation": 16
+  },
+  {
+    "name": "Strausberg",
+    "latitude": 52.581401,
+    "longitude": 13.883395,
+    "elevation": 230
+  },
+  {
+    "name": "T",
+    "latitude": 53.601599,
+    "longitude": 13.273738,
+    "elevation": 62
+  },
+  {
+    "name": "TGL",
+    "latitude": 52.561496,
+    "longitude": 13.287589,
+    "elevation": 105
+  },
+  {
+    "name": "TOF",
+    "latitude": 52.473115,
+    "longitude": 13.405431,
+    "elevation": 161
+  },
+  {
+    "name": "Tangermunde",
+    "latitude": 52.54311,
+    "longitude": 11.972252,
+    "elevation": 157
+  },
+  {
+    "name": "Templin",
+    "latitude": 53.11935,
+    "longitude": 13.500556,
+    "elevation": 197
+  },
+  {
+    "name": "U",
+    "latitude": 52.631769,
+    "longitude": 11.848996,
+    "elevation": 135
+  },
+  {
+    "name": "UK",
+    "latitude": 52.6351,
+    "longitude": 11.886728,
+    "elevation": 92
+  },
+  {
+    "name": "UT",
+    "latitude": 52.436038,
+    "longitude": 12.458448,
+    "elevation": 95
+  },
+  {
+    "name": "UU",
+    "latitude": 53.446975,
+    "longitude": 11.854903,
+    "elevation": 184
+  },
+  {
+    "name": "Uelzen",
+    "latitude": 52.966684,
+    "longitude": 10.558485,
+    "elevation": 131
+  },
+  {
+    "name": "Verden (Aller)",
+    "latitude": 52.922341,
+    "longitude": 9.228151,
+    "elevation": 59
+  },
+  {
+    "name": "W",
+    "latitude": 52.938199,
+    "longitude": 12.819477,
+    "elevation": 144
+  },
+  {
+    "name": "WBD",
+    "latitude": 50.04609,
+    "longitude": 8.310909,
+    "elevation": 453
+  },
+  {
+    "name": "WC",
+    "latitude": 52.629948,
+    "longitude": 13.767737,
+    "elevation": 249
+  },
+  {
+    "name": "WIB",
+    "latitude": 50.049006,
+    "longitude": 8.328758,
+    "elevation": 456
+  },
+  {
+    "name": "WN",
+    "latitude": 51.831356,
+    "longitude": 12.222748,
+    "elevation": 197
+  },
+  {
+    "name": "WO",
+    "latitude": 52.93429,
+    "longitude": 12.864472,
+    "elevation": 164
+  },
+  {
+    "name": "WRB",
+    "latitude": 51.505745,
+    "longitude": 9.110843,
+    "elevation": 797
+  },
+  {
+    "name": "WSR",
+    "latitude": 53.347636,
+    "longitude": 8.875362,
+    "elevation": 23
+  },
+  {
+    "name": "WUH",
+    "latitude": 52.459383,
+    "longitude": 9.434693,
+    "elevation": 164
+  },
+  {
+    "name": "WUN",
+    "latitude": 52.459374,
+    "longitude": 9.454692,
+    "elevation": 151
+  },
+  {
+    "name": "Waren (Muritz)",
+    "latitude": 53.515625,
+    "longitude": 12.685061,
+    "elevation": 220
+  },
+  {
+    "name": "Weimar",
+    "latitude": 50.988118,
+    "longitude": 11.323693,
+    "elevation": 751
+  },
+  {
+    "name": "Weissenfels",
+    "latitude": 51.199979,
+    "longitude": 11.966785,
+    "elevation": 335
+  },
+  {
+    "name": "Wernigerode",
+    "latitude": 51.834417,
+    "longitude": 10.786252,
+    "elevation": 801
+  },
+  {
+    "name": "Wismar",
+    "latitude": 53.890983,
+    "longitude": 11.464793,
+    "elevation": 49
+  },
+  {
+    "name": "Wittenberge",
+    "latitude": 52.998372,
+    "longitude": 11.75072,
+    "elevation": 85
+  },
+  {
+    "name": "Wittenburg",
+    "latitude": 53.505962,
+    "longitude": 11.084783,
+    "elevation": 128
+  },
+  {
+    "name": "Wolfsburg",
+    "latitude": 52.420559,
+    "longitude": 10.786168,
+    "elevation": 220
+  },
+  {
+    "name": "Wolgast",
+    "latitude": 54.053647,
+    "longitude": 13.775781,
+    "elevation": 30
+  },
+  {
+    "name": "Wurzburg",
+    "latitude": 49.794783,
+    "longitude": 9.959447,
+    "elevation": 732
+  },
+  {
+    "name": "X",
+    "latitude": 51.769042,
+    "longitude": 13.135593,
+    "elevation": 279
+  },
+  {
+    "name": "XH",
+    "latitude": 51.770603,
+    "longitude": 13.092777,
+    "elevation": 246
+  },
+  {
+    "name": "Y",
+    "latitude": 53.879475,
+    "longitude": 13.232258,
+    "elevation": 52
+  },
+  {
+    "name": "YC",
+    "latitude": 53.90325,
+    "longitude": 13.224794,
+    "elevation": 10
+  },
+  {
+    "name": "Z",
+    "latitude": 51.991183,
+    "longitude": 12.115481,
+    "elevation": 240
+  },
+  {
+    "name": "ZB",
+    "latitude": 51.975273,
+    "longitude": 12.061143,
+    "elevation": 243
+  },
+  {
+    "name": "ZBU",
+    "latitude": 49.215874,
+    "longitude": 7.408222,
+    "elevation": 1109
+  },
+  {
+    "name": "ZG",
+    "latitude": 53.891628,
+    "longitude": 14.073345,
+    "elevation": 23
+  },
+  {
+    "name": "ZW",
+    "latitude": 52.388006,
+    "longitude": 11.904782,
+    "elevation": 164
+  },
+  {
+    "name": "Zeitz",
+    "latitude": 51.049164,
+    "longitude": 12.134999,
+    "elevation": 636
+  },
+  {
+    "name": "Zerbst",
+    "latitude": 51.964034,
+    "longitude": 12.085502,
+    "elevation": 233
+  }
+]

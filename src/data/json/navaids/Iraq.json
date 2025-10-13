@@ -1,0 +1,1862 @@
+[
+  {
+    "name": "Abi Sayda",
+    "latitude": 33.927962,
+    "longitude": 44.77264,
+    "elevation": 174
+  },
+  {
+    "name": "Abu Ghraib",
+    "latitude": 33.304525,
+    "longitude": 44.146337,
+    "elevation": 125
+  },
+  {
+    "name": "Ad Dawr",
+    "latitude": 34.458349,
+    "longitude": 43.795799,
+    "elevation": 308
+  },
+  {
+    "name": "Ad Duluiyah",
+    "latitude": 34.034258,
+    "longitude": 44.2254,
+    "elevation": 151
+  },
+  {
+    "name": "Adaim",
+    "latitude": 34.275441,
+    "longitude": 44.538533,
+    "elevation": 249
+  },
+  {
+    "name": "Aghjalar",
+    "latitude": 35.748699,
+    "longitude": 44.898488,
+    "elevation": 1995
+  },
+  {
+    "name": "Akre",
+    "latitude": 36.748739,
+    "longitude": 43.896393,
+    "elevation": 2142
+  },
+  {
+    "name": "Al Abaiji",
+    "latitude": 33.769789,
+    "longitude": 44.379869,
+    "elevation": 141
+  },
+  {
+    "name": "Al Abbarah",
+    "latitude": 33.814426,
+    "longitude": 44.657916,
+    "elevation": 171
+  },
+  {
+    "name": "Al Abbasi",
+    "latitude": 35.274795,
+    "longitude": 43.594879,
+    "elevation": 561
+  },
+  {
+    "name": "Al Alam",
+    "latitude": 34.688895,
+    "longitude": 43.713632,
+    "elevation": 328
+  },
+  {
+    "name": "Al Baaj",
+    "latitude": 36.04745,
+    "longitude": 41.716869,
+    "elevation": 1050
+  },
+  {
+    "name": "Al Hadar",
+    "latitude": 35.577312,
+    "longitude": 42.734024,
+    "elevation": 659
+  },
+  {
+    "name": "Al Hawl",
+    "latitude": 36.389444,
+    "longitude": 41.149722,
+    "elevation": 1430
+  },
+  {
+    "name": "Al Ishaqi",
+    "latitude": 34.047533,
+    "longitude": 43.986862,
+    "elevation": 203
+  },
+  {
+    "name": "Al Khalis",
+    "latitude": 33.856577,
+    "longitude": 44.516681,
+    "elevation": 148
+  },
+  {
+    "name": "Al Mansuriyah",
+    "latitude": 34.070649,
+    "longitude": 44.865133,
+    "elevation": 197
+  },
+  {
+    "name": "Al Mu`abbadah",
+    "latitude": 37.024661,
+    "longitude": 41.963794,
+    "elevation": 1568
+  },
+  {
+    "name": "Al Muhallabiyah",
+    "latitude": 36.266584,
+    "longitude": 42.702901,
+    "elevation": 1148
+  },
+  {
+    "name": "Al Mushahidah",
+    "latitude": 33.635742,
+    "longitude": 44.235354,
+    "elevation": 135
+  },
+  {
+    "name": "Al Mutasam",
+    "latitude": 34.077197,
+    "longitude": 44.063698,
+    "elevation": 184
+  },
+  {
+    "name": "Al Rumailan",
+    "latitude": 37.009738,
+    "longitude": 41.949288,
+    "elevation": 1499
+  },
+  {
+    "name": "Al Sharqat",
+    "latitude": 35.486038,
+    "longitude": 43.240801,
+    "elevation": 535
+  },
+  {
+    "name": "Al-Ayadiya",
+    "latitude": 36.487282,
+    "longitude": 42.419337,
+    "elevation": 1430
+  },
+  {
+    "name": "Al-Forat",
+    "latitude": 33.648557,
+    "longitude": 42.842255,
+    "elevation": 220
+  },
+  {
+    "name": "Al-Hasakah",
+    "latitude": 36.501374,
+    "longitude": 40.746995,
+    "elevation": 1001
+  },
+  {
+    "name": "Al-Malikiyah",
+    "latitude": 37.174937,
+    "longitude": 42.141336,
+    "elevation": 1604
+  },
+  {
+    "name": "Al-Qa'im",
+    "latitude": 34.395772,
+    "longitude": 40.994369,
+    "elevation": 574
+  },
+  {
+    "name": "Al-Qahtaniyah",
+    "latitude": 37.029088,
+    "longitude": 41.549123,
+    "elevation": 1329
+  },
+  {
+    "name": "Al-Qairawan",
+    "latitude": 36.159201,
+    "longitude": 42.031651,
+    "elevation": 1063
+  },
+  {
+    "name": "Al-Tall",
+    "latitude": 35.946602,
+    "longitude": 42.56514,
+    "elevation": 732
+  },
+  {
+    "name": "Aljwadea",
+    "latitude": 36.986553,
+    "longitude": 41.818879,
+    "elevation": 1362
+  },
+  {
+    "name": "Alqosh",
+    "latitude": 36.734772,
+    "longitude": 43.097405,
+    "elevation": 1736
+  },
+  {
+    "name": "Amedi",
+    "latitude": 37.091969,
+    "longitude": 43.487438,
+    "elevation": 3871
+  },
+  {
+    "name": "Amirli",
+    "latitude": 34.725433,
+    "longitude": 44.58354,
+    "elevation": 558
+  },
+  {
+    "name": "Anah",
+    "latitude": 34.372514,
+    "longitude": 41.985872,
+    "elevation": 561
+  },
+  {
+    "name": "Ankawa",
+    "latitude": 36.228359,
+    "longitude": 43.995335,
+    "elevation": 1355
+  },
+  {
+    "name": "Ar Rashidiyah",
+    "latitude": 33.552778,
+    "longitude": 44.3725,
+    "elevation": 128
+  },
+  {
+    "name": "Ar Riyad",
+    "latitude": 35.26944,
+    "longitude": 43.910713,
+    "elevation": 617
+  },
+  {
+    "name": "Arabit",
+    "latitude": 35.426888,
+    "longitude": 45.584267,
+    "elevation": 2329
+  },
+  {
+    "name": "Ash Shurah",
+    "latitude": 35.994738,
+    "longitude": 43.223401,
+    "elevation": 781
+  },
+  {
+    "name": "Az Zab",
+    "latitude": 35.2673,
+    "longitude": 43.449975,
+    "elevation": 512
+  },
+  {
+    "name": "BAP",
+    "latitude": 33.266576,
+    "longitude": 44.222644,
+    "elevation": 118
+  },
+  {
+    "name": "BGD",
+    "latitude": 33.292159,
+    "longitude": 44.225471,
+    "elevation": 118
+  },
+  {
+    "name": "BLD",
+    "latitude": 33.931403,
+    "longitude": 44.372948,
+    "elevation": 161
+  },
+  {
+    "name": "Baghdad",
+    "latitude": 33.302431,
+    "longitude": 44.378799,
+    "elevation": 128
+  },
+  {
+    "name": "Bahadre",
+    "latitude": 36.724378,
+    "longitude": 43.252609,
+    "elevation": 1627
+  },
+  {
+    "name": "Baharka",
+    "latitude": 36.318942,
+    "longitude": 44.038351,
+    "elevation": 1552
+  },
+  {
+    "name": "Bahriz",
+    "latitude": 33.702959,
+    "longitude": 44.659651,
+    "elevation": 157
+  },
+  {
+    "name": "Baiji",
+    "latitude": 34.929312,
+    "longitude": 43.494562,
+    "elevation": 358
+  },
+  {
+    "name": "Bakhdida",
+    "latitude": 36.271049,
+    "longitude": 43.376351,
+    "elevation": 889
+  },
+  {
+    "name": "Bakrajo",
+    "latitude": 35.557197,
+    "longitude": 45.34942,
+    "elevation": 2434
+  },
+  {
+    "name": "Balad",
+    "latitude": 34.000789,
+    "longitude": 44.164731,
+    "elevation": 148
+  },
+  {
+    "name": "Balad Ruz",
+    "latitude": 33.689286,
+    "longitude": 45.062403,
+    "elevation": 131
+  },
+  {
+    "name": "Balisan",
+    "latitude": 36.396477,
+    "longitude": 44.548492,
+    "elevation": 2917
+  },
+  {
+    "name": "Baneh",
+    "latitude": 35.994663,
+    "longitude": 45.884322,
+    "elevation": 4980
+  },
+  {
+    "name": "Baneh Verdeh",
+    "latitude": 34.970525,
+    "longitude": 46.360004,
+    "elevation": 5509
+  },
+  {
+    "name": "Bani Saad",
+    "latitude": 33.569909,
+    "longitude": 44.544799,
+    "elevation": 141
+  },
+  {
+    "name": "Baqubah",
+    "latitude": 33.743727,
+    "longitude": 44.649523,
+    "elevation": 157
+  },
+  {
+    "name": "Bardarash",
+    "latitude": 36.5027,
+    "longitude": 43.588907,
+    "elevation": 1240
+  },
+  {
+    "name": "Bartella",
+    "latitude": 36.354018,
+    "longitude": 43.381614,
+    "elevation": 945
+  },
+  {
+    "name": "Baruq",
+    "latitude": 36.954634,
+    "longitude": 46.324737,
+    "elevation": 4449
+  },
+  {
+    "name": "Barwana",
+    "latitude": 34.095793,
+    "longitude": 42.388824,
+    "elevation": 417
+  },
+  {
+    "name": "Barzan",
+    "latitude": 36.930451,
+    "longitude": 44.039377,
+    "elevation": 2533
+  },
+  {
+    "name": "Barzinja",
+    "latitude": 35.544937,
+    "longitude": 45.69495,
+    "elevation": 4183
+  },
+  {
+    "name": "Bashiqa",
+    "latitude": 36.450456,
+    "longitude": 43.349772,
+    "elevation": 1115
+  },
+  {
+    "name": "Basirma",
+    "latitude": 36.503805,
+    "longitude": 44.348437,
+    "elevation": 2064
+  },
+  {
+    "name": "Basne",
+    "latitude": 35.889069,
+    "longitude": 45.58266,
+    "elevation": 5144
+  },
+  {
+    "name": "Batel",
+    "latitude": 36.960806,
+    "longitude": 42.681008,
+    "elevation": 1677
+  },
+  {
+    "name": "Batifa",
+    "latitude": 37.174372,
+    "longitude": 43.013249,
+    "elevation": 2822
+  },
+  {
+    "name": "Bawakhoshen",
+    "latitude": 35.174979,
+    "longitude": 45.614026,
+    "elevation": 2060
+  },
+  {
+    "name": "Bayangan",
+    "latitude": 34.9813,
+    "longitude": 46.2709,
+    "elevation": 4173
+  },
+  {
+    "name": "Bazyan",
+    "latitude": 35.594704,
+    "longitude": 45.136861,
+    "elevation": 2654
+  },
+  {
+    "name": "Bingird",
+    "latitude": 36.066389,
+    "longitude": 45.047833,
+    "elevation": 2073
+  },
+  {
+    "name": "Bjeel",
+    "latitude": 36.728924,
+    "longitude": 44.015843,
+    "elevation": 2142
+  },
+  {
+    "name": "Bonab",
+    "latitude": 37.338605,
+    "longitude": 46.059291,
+    "elevation": 4232
+  },
+  {
+    "name": "Bowalhasan",
+    "latitude": 35.9942,
+    "longitude": 45.66,
+    "elevation": 5400
+  },
+  {
+    "name": "Bu'in-e Sofla",
+    "latitude": 35.938319,
+    "longitude": 45.934809,
+    "elevation": 5026
+  },
+  {
+    "name": "Bukan",
+    "latitude": 36.52151,
+    "longitude": 46.211184,
+    "elevation": 4462
+  },
+  {
+    "name": "Byara",
+    "latitude": 35.230827,
+    "longitude": 46.12064,
+    "elevation": 3760
+  },
+  {
+    "name": "Chahar Borj",
+    "latitude": 37.125002,
+    "longitude": 45.9772,
+    "elevation": 4209
+  },
+  {
+    "name": "Chamanki",
+    "latitude": 36.939347,
+    "longitude": 43.411646,
+    "elevation": 3186
+  },
+  {
+    "name": "Chamchamal",
+    "latitude": 35.5311,
+    "longitude": 44.827191,
+    "elevation": 2343
+  },
+  {
+    "name": "Chavar",
+    "latitude": 33.696719,
+    "longitude": 46.296763,
+    "elevation": 3389
+  },
+  {
+    "name": "Choman",
+    "latitude": 36.63631,
+    "longitude": 44.886767,
+    "elevation": 3668
+  },
+  {
+    "name": "Chwarqurna",
+    "latitude": 36.211513,
+    "longitude": 44.827069,
+    "elevation": 1772
+  },
+  {
+    "name": "Chwarta",
+    "latitude": 35.717567,
+    "longitude": 45.570245,
+    "elevation": 3789
+  },
+  {
+    "name": "Daquq",
+    "latitude": 35.137923,
+    "longitude": 44.446382,
+    "elevation": 745
+  },
+  {
+    "name": "Daratu",
+    "latitude": 36.476214,
+    "longitude": 43.728731,
+    "elevation": 1381
+  },
+  {
+    "name": "Darbandekhan",
+    "latitude": 35.115305,
+    "longitude": 45.682926,
+    "elevation": 1709
+  },
+  {
+    "name": "Darkar",
+    "latitude": 37.198652,
+    "longitude": 42.822544,
+    "elevation": 2123
+  },
+  {
+    "name": "Deir Ez Zor",
+    "latitude": 35.333334,
+    "longitude": 40.15,
+    "elevation": 696
+  },
+  {
+    "name": "Dibaga",
+    "latitude": 35.87532,
+    "longitude": 43.809997,
+    "elevation": 1145
+  },
+  {
+    "name": "Dinarta",
+    "latitude": 36.798636,
+    "longitude": 43.986556,
+    "elevation": 2546
+  },
+  {
+    "name": "Diraluk",
+    "latitude": 37.055263,
+    "longitude": 43.648005,
+    "elevation": 2142
+  },
+  {
+    "name": "Dizaj",
+    "latitude": 37.212436,
+    "longitude": 44.9282,
+    "elevation": 5108
+  },
+  {
+    "name": "Dizlli",
+    "latitude": 35.373771,
+    "longitude": 46.147214,
+    "elevation": 4560
+  },
+  {
+    "name": "Dubis",
+    "latitude": 35.673925,
+    "longitude": 44.074351,
+    "elevation": 791
+  },
+  {
+    "name": "Duhok",
+    "latitude": 36.85426,
+    "longitude": 42.992453,
+    "elevation": 1755
+  },
+  {
+    "name": "Dujail",
+    "latitude": 33.83707,
+    "longitude": 44.247461,
+    "elevation": 148
+  },
+  {
+    "name": "Dukan",
+    "latitude": 35.930643,
+    "longitude": 44.962935,
+    "elevation": 1437
+  },
+  {
+    "name": "En Sifne",
+    "latitude": 36.696868,
+    "longitude": 43.353063,
+    "elevation": 1709
+  },
+  {
+    "name": "Erbil",
+    "latitude": 36.191162,
+    "longitude": 44.009465,
+    "elevation": 1404
+  },
+  {
+    "name": "Eywan",
+    "latitude": 33.828241,
+    "longitude": 46.309637,
+    "elevation": 3881
+  },
+  {
+    "name": "Ezgeleh",
+    "latitude": 34.832214,
+    "longitude": 45.842497,
+    "elevation": 2267
+  },
+  {
+    "name": "Faidah",
+    "latitude": 36.759627,
+    "longitude": 42.928798,
+    "elevation": 1339
+  },
+  {
+    "name": "Fallujah",
+    "latitude": 33.344843,
+    "longitude": 43.784018,
+    "elevation": 144
+  },
+  {
+    "name": "Galala",
+    "latitude": 36.611836,
+    "longitude": 44.823147,
+    "elevation": 3448
+  },
+  {
+    "name": "Gapelon",
+    "latitude": 35.798442,
+    "longitude": 45.352432,
+    "elevation": 2982
+  },
+  {
+    "name": "Gayara",
+    "latitude": 35.798776,
+    "longitude": 43.291783,
+    "elevation": 607
+  },
+  {
+    "name": "Gechina",
+    "latitude": 35.869888,
+    "longitude": 45.053946,
+    "elevation": 2598
+  },
+  {
+    "name": "Gherdakshaneh",
+    "latitude": 36.808487,
+    "longitude": 45.264528,
+    "elevation": 4770
+  },
+  {
+    "name": "Glejal",
+    "latitude": 34.979806,
+    "longitude": 45.797056,
+    "elevation": 2730
+  },
+  {
+    "name": "Govaver",
+    "latitude": 34.0266,
+    "longitude": 46.329,
+    "elevation": 5072
+  },
+  {
+    "name": "Gulala",
+    "latitude": 34.27382,
+    "longitude": 45.166699,
+    "elevation": 394
+  },
+  {
+    "name": "Gwer",
+    "latitude": 36.040474,
+    "longitude": 43.495846,
+    "elevation": 712
+  },
+  {
+    "name": "Habbah",
+    "latitude": 33.784062,
+    "longitude": 44.506592,
+    "elevation": 144
+  },
+  {
+    "name": "Haditha",
+    "latitude": 34.135259,
+    "longitude": 42.377837,
+    "elevation": 397
+  },
+  {
+    "name": "Haft Cheshmeh",
+    "latitude": 33.627357,
+    "longitude": 46.359676,
+    "elevation": 4193
+  },
+  {
+    "name": "Haji Omaran",
+    "latitude": 36.675474,
+    "longitude": 45.044045,
+    "elevation": 5810
+  },
+  {
+    "name": "Hajiawa",
+    "latitude": 36.234307,
+    "longitude": 44.793875,
+    "elevation": 1886
+  },
+  {
+    "name": "Halabja",
+    "latitude": 35.179206,
+    "longitude": 45.987368,
+    "elevation": 2313
+  },
+  {
+    "name": "Halsho",
+    "latitude": 36.20902,
+    "longitude": 45.258809,
+    "elevation": 3488
+  },
+  {
+    "name": "Hamam al Alil",
+    "latitude": 36.164364,
+    "longitude": 43.255363,
+    "elevation": 696
+  },
+  {
+    "name": "Haqlaniyah",
+    "latitude": 34.083784,
+    "longitude": 42.360536,
+    "elevation": 443
+  },
+  {
+    "name": "Harir",
+    "latitude": 36.551844,
+    "longitude": 44.354093,
+    "elevation": 2372
+  },
+  {
+    "name": "Hawar Ghal",
+    "latitude": 35.905378,
+    "longitude": 43.485832,
+    "elevation": 774
+  },
+  {
+    "name": "Hiran",
+    "latitude": 36.27983,
+    "longitude": 44.492482,
+    "elevation": 3107
+  },
+  {
+    "name": "IANC",
+    "latitude": 33.953711,
+    "longitude": 44.356001,
+    "elevation": 157
+  },
+  {
+    "name": "IBLD",
+    "latitude": 33.932637,
+    "longitude": 44.373772,
+    "elevation": 161
+  },
+  {
+    "name": "INHA",
+    "latitude": 33.270747,
+    "longitude": 44.215377,
+    "elevation": 115
+  },
+  {
+    "name": "IRAA",
+    "latitude": 33.790471,
+    "longitude": 42.479599,
+    "elevation": 541
+  },
+  {
+    "name": "IREA",
+    "latitude": 36.21397,
+    "longitude": 43.946476,
+    "elevation": 1276
+  },
+  {
+    "name": "IREB",
+    "latitude": 36.262445,
+    "longitude": 43.946856,
+    "elevation": 1234
+  },
+  {
+    "name": "IRER",
+    "latitude": 36.245549,
+    "longitude": 43.955649,
+    "elevation": 1286
+  },
+  {
+    "name": "ISAD",
+    "latitude": 35.480386,
+    "longitude": 44.33257,
+    "elevation": 1033
+  },
+  {
+    "name": "ITAK",
+    "latitude": 33.240487,
+    "longitude": 44.236088,
+    "elevation": 112
+  },
+  {
+    "name": "IYCA",
+    "latitude": 33.287012,
+    "longitude": 44.228985,
+    "elevation": 115
+  },
+  {
+    "name": "IYDB",
+    "latitude": 33.249408,
+    "longitude": 44.254808,
+    "elevation": 92
+  },
+  {
+    "name": "Ibrahim Khalil",
+    "latitude": 37.138585,
+    "longitude": 42.566002,
+    "elevation": 1316
+  },
+  {
+    "name": "Isewe",
+    "latitude": 36.06602,
+    "longitude": 45.28471,
+    "elevation": 2776
+  },
+  {
+    "name": "Jabara",
+    "latitude": 34.593047,
+    "longitude": 44.934586,
+    "elevation": 489
+  },
+  {
+    "name": "KIR",
+    "latitude": 35.472658,
+    "longitude": 44.346018,
+    "elevation": 1050
+  },
+  {
+    "name": "KRK",
+    "latitude": 35.471265,
+    "longitude": 44.347581,
+    "elevation": 1056
+  },
+  {
+    "name": "Kabisa",
+    "latitude": 33.594103,
+    "longitude": 42.618463,
+    "elevation": 404
+  },
+  {
+    "name": "Kalah Sur",
+    "latitude": 35.832412,
+    "longitude": 43.517057,
+    "elevation": 807
+  },
+  {
+    "name": "Kalak",
+    "latitude": 36.26765,
+    "longitude": 43.633564,
+    "elevation": 840
+  },
+  {
+    "name": "Kalar",
+    "latitude": 34.629497,
+    "longitude": 45.315879,
+    "elevation": 719
+  },
+  {
+    "name": "Kanan",
+    "latitude": 33.693589,
+    "longitude": 44.798796,
+    "elevation": 157
+  },
+  {
+    "name": "Kanaqin",
+    "latitude": 34.347513,
+    "longitude": 45.391915,
+    "elevation": 617
+  },
+  {
+    "name": "Kandenawa",
+    "latitude": 36.119076,
+    "longitude": 43.596962,
+    "elevation": 797
+  },
+  {
+    "name": "Kani Sur",
+    "latitude": 36.0583,
+    "longitude": 45.7481,
+    "elevation": 4905
+  },
+  {
+    "name": "Kawrgosk",
+    "latitude": 36.3483,
+    "longitude": 43.802714,
+    "elevation": 974
+  },
+  {
+    "name": "Kerend-e Gharb",
+    "latitude": 34.282791,
+    "longitude": 46.243687,
+    "elevation": 5151
+  },
+  {
+    "name": "Keshavarz",
+    "latitude": 36.83555,
+    "longitude": 46.357378,
+    "elevation": 4344
+  },
+  {
+    "name": "Khabat",
+    "latitude": 36.277609,
+    "longitude": 43.678817,
+    "elevation": 938
+  },
+  {
+    "name": "Khalakan",
+    "latitude": 36.020016,
+    "longitude": 44.838172,
+    "elevation": 2680
+  },
+  {
+    "name": "Khalifan",
+    "latitude": 36.607823,
+    "longitude": 44.4019,
+    "elevation": 2254
+  },
+  {
+    "name": "Khansor",
+    "latitude": 36.465903,
+    "longitude": 41.624751,
+    "elevation": 1640
+  },
+  {
+    "name": "Khidran",
+    "latitude": 36.129563,
+    "longitude": 44.775818,
+    "elevation": 1841
+  },
+  {
+    "name": "Khraba",
+    "latitude": 35.91943,
+    "longitude": 44.783701,
+    "elevation": 1535
+  },
+  {
+    "name": "Khurmal",
+    "latitude": 35.298627,
+    "longitude": 46.035937,
+    "elevation": 1847
+  },
+  {
+    "name": "Khusheh Mehr",
+    "latitude": 37.309377,
+    "longitude": 46.138938,
+    "elevation": 4301
+  },
+  {
+    "name": "Kirkuk",
+    "latitude": 35.470341,
+    "longitude": 44.395723,
+    "elevation": 1201
+  },
+  {
+    "name": "Kore",
+    "latitude": 36.399929,
+    "longitude": 44.236906,
+    "elevation": 2628
+  },
+  {
+    "name": "Kukhan",
+    "latitude": 36.1229,
+    "longitude": 45.7216,
+    "elevation": 4360
+  },
+  {
+    "name": "Leylan",
+    "latitude": 37.011132,
+    "longitude": 46.205914,
+    "elevation": 4318
+  },
+  {
+    "name": "MAT",
+    "latitude": 33.339237,
+    "longitude": 43.593963,
+    "elevation": 262
+  },
+  {
+    "name": "Mahabad",
+    "latitude": 36.765174,
+    "longitude": 45.721814,
+    "elevation": 4311
+  },
+  {
+    "name": "Malekan",
+    "latitude": 37.142959,
+    "longitude": 46.104082,
+    "elevation": 4262
+  },
+  {
+    "name": "Mandali",
+    "latitude": 33.746499,
+    "longitude": 45.552242,
+    "elevation": 413
+  },
+  {
+    "name": "Mangesh",
+    "latitude": 37.03762,
+    "longitude": 43.095378,
+    "elevation": 3245
+  },
+  {
+    "name": "Maragheh",
+    "latitude": 37.391671,
+    "longitude": 46.239752,
+    "elevation": 4764
+  },
+  {
+    "name": "Marivan",
+    "latitude": 35.521906,
+    "longitude": 46.175889,
+    "elevation": 4304
+  },
+  {
+    "name": "Mawat",
+    "latitude": 35.902187,
+    "longitude": 45.414114,
+    "elevation": 3163
+  },
+  {
+    "name": "Maydan",
+    "latitude": 34.918897,
+    "longitude": 45.620497,
+    "elevation": 1063
+  },
+  {
+    "name": "Mehran",
+    "latitude": 33.123671,
+    "longitude": 46.166701,
+    "elevation": 499
+  },
+  {
+    "name": "Mergesor",
+    "latitude": 36.837688,
+    "longitude": 44.306501,
+    "elevation": 3747
+  },
+  {
+    "name": "Miandoab",
+    "latitude": 36.969559,
+    "longitude": 46.099381,
+    "elevation": 4255
+  },
+  {
+    "name": "Mir Deh",
+    "latitude": 36.1463,
+    "longitude": 46.0624,
+    "elevation": 5249
+  },
+  {
+    "name": "Mirabad",
+    "latitude": 36.405506,
+    "longitude": 45.371946,
+    "elevation": 4449
+  },
+  {
+    "name": "MobarakShahr",
+    "latitude": 37.183325,
+    "longitude": 46.057954,
+    "elevation": 4209
+  },
+  {
+    "name": "Mohammadyar",
+    "latitude": 36.984184,
+    "longitude": 45.516758,
+    "elevation": 4245
+  },
+  {
+    "name": "Mosul",
+    "latitude": 36.341584,
+    "longitude": 43.129139,
+    "elevation": 764
+  },
+  {
+    "name": "Multaqa Subdistrict",
+    "latitude": 35.470339,
+    "longitude": 44.127268,
+    "elevation": 791
+  },
+  {
+    "name": "NGA",
+    "latitude": 35.568367,
+    "longitude": 45.30317,
+    "elevation": 2425
+  },
+  {
+    "name": "Naft Shahr",
+    "latitude": 33.993356,
+    "longitude": 45.497316,
+    "elevation": 564
+  },
+  {
+    "name": "Nalas",
+    "latitude": 36.263792,
+    "longitude": 45.494149,
+    "elevation": 3428
+  },
+  {
+    "name": "Nalparez",
+    "latitude": 35.576882,
+    "longitude": 45.854405,
+    "elevation": 3573
+  },
+  {
+    "name": "Nalus",
+    "latitude": 36.983502,
+    "longitude": 45.143155,
+    "elevation": 4659
+  },
+  {
+    "name": "Nanor",
+    "latitude": 35.865284,
+    "longitude": 46.011553,
+    "elevation": 5476
+  },
+  {
+    "name": "New Halabja",
+    "latitude": 35.321172,
+    "longitude": 45.690133,
+    "elevation": 1768
+  },
+  {
+    "name": "Nowdeshah",
+    "latitude": 35.1808,
+    "longitude": 46.2544,
+    "elevation": 4948
+  },
+  {
+    "name": "Nowsud",
+    "latitude": 35.161268,
+    "longitude": 46.204246,
+    "elevation": 4029
+  },
+  {
+    "name": "Nusaybin",
+    "latitude": 37.069175,
+    "longitude": 41.216467,
+    "elevation": 1555
+  },
+  {
+    "name": "ORB",
+    "latitude": 36.531391,
+    "longitude": 44.344691,
+    "elevation": 2060
+  },
+  {
+    "name": "ORBI",
+    "latitude": 33.271384,
+    "longitude": 44.22265,
+    "elevation": 112
+  },
+  {
+    "name": "Oshnaviyeh",
+    "latitude": 37.041824,
+    "longitude": 45.09835,
+    "elevation": 4744
+  },
+  {
+    "name": "Paveh",
+    "latitude": 35.045831,
+    "longitude": 46.362219,
+    "elevation": 5226
+  },
+  {
+    "name": "Pebaz",
+    "latitude": 34.824686,
+    "longitude": 45.508479,
+    "elevation": 1089
+  },
+  {
+    "name": "Penjwen",
+    "latitude": 35.622207,
+    "longitude": 45.948845,
+    "elevation": 4173
+  },
+  {
+    "name": "Piramagroon",
+    "latitude": 35.731763,
+    "longitude": 45.143862,
+    "elevation": 2615
+  },
+  {
+    "name": "Piran",
+    "latitude": 36.906868,
+    "longitude": 44.353111,
+    "elevation": 2717
+  },
+  {
+    "name": "Piranshahr",
+    "latitude": 36.699456,
+    "longitude": 45.140337,
+    "elevation": 4751
+  },
+  {
+    "name": "Pirmam",
+    "latitude": 36.382703,
+    "longitude": 44.202575,
+    "elevation": 3488
+  },
+  {
+    "name": "Pirzin",
+    "latitude": 36.266807,
+    "longitude": 44.071456,
+    "elevation": 1614
+  },
+  {
+    "name": "Prde",
+    "latitude": 35.754096,
+    "longitude": 44.142761,
+    "elevation": 833
+  },
+  {
+    "name": "QYW",
+    "latitude": 35.770671,
+    "longitude": 43.121004,
+    "elevation": 741
+  },
+  {
+    "name": "Qadir Karam",
+    "latitude": 35.198224,
+    "longitude": 44.889424,
+    "elevation": 1280
+  },
+  {
+    "name": "Qaladiza",
+    "latitude": 36.180876,
+    "longitude": 45.124141,
+    "elevation": 1978
+  },
+  {
+    "name": "Qamishli",
+    "latitude": 37.040253,
+    "longitude": 41.232884,
+    "elevation": 1467
+  },
+  {
+    "name": "Qara Hanjir",
+    "latitude": 35.494863,
+    "longitude": 44.641881,
+    "elevation": 2520
+  },
+  {
+    "name": "Qara Tapa",
+    "latitude": 34.432775,
+    "longitude": 44.934786,
+    "elevation": 433
+  },
+  {
+    "name": "Qaradagh",
+    "latitude": 35.309874,
+    "longitude": 45.391495,
+    "elevation": 2890
+  },
+  {
+    "name": "Qaraj",
+    "latitude": 35.641539,
+    "longitude": 43.545778,
+    "elevation": 705
+  },
+  {
+    "name": "Qasre",
+    "latitude": 36.55799,
+    "longitude": 44.824508,
+    "elevation": 3570
+  },
+  {
+    "name": "Qazaniyat al Jadidah",
+    "latitude": 33.659634,
+    "longitude": 45.550529,
+    "elevation": 246
+  },
+  {
+    "name": "Qoratu",
+    "latitude": 34.606562,
+    "longitude": 45.494853,
+    "elevation": 912
+  },
+  {
+    "name": "Qushtapa",
+    "latitude": 36.006385,
+    "longitude": 44.031344,
+    "elevation": 1286
+  },
+  {
+    "name": "RAA",
+    "latitude": 33.78737,
+    "longitude": 42.443594,
+    "elevation": 587
+  },
+  {
+    "name": "RER",
+    "latitude": 36.243138,
+    "longitude": 43.966345,
+    "elevation": 1319
+  },
+  {
+    "name": "Rabat",
+    "latitude": 36.209211,
+    "longitude": 45.554247,
+    "elevation": 3832
+  },
+  {
+    "name": "Ramadi",
+    "latitude": 33.425986,
+    "longitude": 43.299922,
+    "elevation": 171
+  },
+  {
+    "name": "Ranya",
+    "latitude": 36.256525,
+    "longitude": 44.882789,
+    "elevation": 1883
+  },
+  {
+    "name": "Rashad",
+    "latitude": 35.134438,
+    "longitude": 44.087075,
+    "elevation": 604
+  },
+  {
+    "name": "Rawanduz",
+    "latitude": 36.614596,
+    "longitude": 44.526519,
+    "elevation": 2451
+  },
+  {
+    "name": "Rizgari",
+    "latitude": 34.660608,
+    "longitude": 45.237239,
+    "elevation": 853
+  },
+  {
+    "name": "Ruvia",
+    "latitude": 36.625098,
+    "longitude": 43.702024,
+    "elevation": 1391
+  },
+  {
+    "name": "SUL",
+    "latitude": 35.579578,
+    "longitude": 45.290032,
+    "elevation": 2470
+  },
+  {
+    "name": "Sab al Bor",
+    "latitude": 33.463237,
+    "longitude": 44.150801,
+    "elevation": 105
+  },
+  {
+    "name": "Sadiyah",
+    "latitude": 34.186303,
+    "longitude": 45.118283,
+    "elevation": 344
+  },
+  {
+    "name": "Said Sadiq",
+    "latitude": 35.35278,
+    "longitude": 45.86682,
+    "elevation": 1673
+  },
+  {
+    "name": "Saleh Abad",
+    "latitude": 33.469426,
+    "longitude": 46.188889,
+    "elevation": 2041
+  },
+  {
+    "name": "Samarra",
+    "latitude": 34.2,
+    "longitude": 43.9,
+    "elevation": 266
+  },
+  {
+    "name": "Sangasar",
+    "latitude": 36.243863,
+    "longitude": 45.005716,
+    "elevation": 1821
+  },
+  {
+    "name": "Sangaw",
+    "latitude": 35.285515,
+    "longitude": 45.179774,
+    "elevation": 2749
+  },
+  {
+    "name": "Saqqez",
+    "latitude": 36.242745,
+    "longitude": 46.270523,
+    "elevation": 4905
+  },
+  {
+    "name": "Sarableh",
+    "latitude": 33.76758,
+    "longitude": 46.565491,
+    "elevation": 3389
+  },
+  {
+    "name": "Sardasht",
+    "latitude": 36.155318,
+    "longitude": 45.479964,
+    "elevation": 4967
+  },
+  {
+    "name": "Sargaran",
+    "latitude": 35.704627,
+    "longitude": 43.894741,
+    "elevation": 879
+  },
+  {
+    "name": "Sarkapkan",
+    "latitude": 36.286664,
+    "longitude": 44.823302,
+    "elevation": 2201
+  },
+  {
+    "name": "Sarkawtn",
+    "latitude": 35.343439,
+    "longitude": 45.638266,
+    "elevation": 1824
+  },
+  {
+    "name": "Sarpol-e Zahab",
+    "latitude": 34.460769,
+    "longitude": 45.863763,
+    "elevation": 1791
+  },
+  {
+    "name": "Sarqala",
+    "latitude": 34.742806,
+    "longitude": 45.065683,
+    "elevation": 1115
+  },
+  {
+    "name": "Sarsang",
+    "latitude": 37.042485,
+    "longitude": 43.341777,
+    "elevation": 3314
+  },
+  {
+    "name": "Sarvabad",
+    "latitude": 35.31232,
+    "longitude": 46.365955,
+    "elevation": 3881
+  },
+  {
+    "name": "Sarwchawa",
+    "latitude": 36.277097,
+    "longitude": 44.75068,
+    "elevation": 1929
+  },
+  {
+    "name": "Sewsenan",
+    "latitude": 35.217301,
+    "longitude": 45.501566,
+    "elevation": 2589
+  },
+  {
+    "name": "Shaikh Tawil",
+    "latitude": 35.019269,
+    "longitude": 45.459911,
+    "elevation": 2470
+  },
+  {
+    "name": "Shanaf",
+    "latitude": 36.11513,
+    "longitude": 43.471909,
+    "elevation": 784
+  },
+  {
+    "name": "Shaqlawa",
+    "latitude": 36.400227,
+    "longitude": 44.335124,
+    "elevation": 2979
+  },
+  {
+    "name": "Sharqat",
+    "latitude": 35.518314,
+    "longitude": 43.233828,
+    "elevation": 495
+  },
+  {
+    "name": "Shawes",
+    "latitude": 36.247689,
+    "longitude": 44.08476,
+    "elevation": 1686
+  },
+  {
+    "name": "Shervenineh",
+    "latitude": 34.828,
+    "longitude": 46.3578,
+    "elevation": 3497
+  },
+  {
+    "name": "Sheykh Salleh",
+    "latitude": 34.970788,
+    "longitude": 45.926027,
+    "elevation": 2352
+  },
+  {
+    "name": "Shkarta",
+    "latitude": 36.296073,
+    "longitude": 44.706323,
+    "elevation": 2139
+  },
+  {
+    "name": "Shorsh",
+    "latitude": 35.50741,
+    "longitude": 44.845682,
+    "elevation": 2323
+  },
+  {
+    "name": "Shovi",
+    "latitude": 36.048293,
+    "longitude": 45.862193,
+    "elevation": 4875
+  },
+  {
+    "name": "Shwan",
+    "latitude": 35.736396,
+    "longitude": 44.480301,
+    "elevation": 2172
+  },
+  {
+    "name": "SidaKan",
+    "latitude": 36.804736,
+    "longitude": 44.663646,
+    "elevation": 3199
+  },
+  {
+    "name": "Sileman Bag",
+    "latitude": 34.795151,
+    "longitude": 44.66697,
+    "elevation": 669
+  },
+  {
+    "name": "Silvaneh",
+    "latitude": 37.421653,
+    "longitude": 44.854321,
+    "elevation": 5253
+  },
+  {
+    "name": "Simelan",
+    "latitude": 36.679759,
+    "longitude": 44.731882,
+    "elevation": 3304
+  },
+  {
+    "name": "Simineh",
+    "latitude": 36.730345,
+    "longitude": 46.153419,
+    "elevation": 4291
+  },
+  {
+    "name": "Sinjar",
+    "latitude": 36.319273,
+    "longitude": 41.859858,
+    "elevation": 1709
+  },
+  {
+    "name": "Sirwan",
+    "latitude": 35.254165,
+    "longitude": 45.939939,
+    "elevation": 1690
+  },
+  {
+    "name": "Sitak",
+    "latitude": 35.635874,
+    "longitude": 45.515799,
+    "elevation": 3353
+  },
+  {
+    "name": "Sktan",
+    "latitude": 36.236085,
+    "longitude": 44.61612,
+    "elevation": 2218
+  },
+  {
+    "name": "Snooni",
+    "latitude": 36.463624,
+    "longitude": 41.705499,
+    "elevation": 1683
+  },
+  {
+    "name": "Soran",
+    "latitude": 36.653242,
+    "longitude": 44.539015,
+    "elevation": 2175
+  },
+  {
+    "name": "Sory",
+    "latitude": 37.017953,
+    "longitude": 43.814387,
+    "elevation": 1903
+  },
+  {
+    "name": "Sulaymaniyah",
+    "latitude": 35.559143,
+    "longitude": 45.431101,
+    "elevation": 2746
+  },
+  {
+    "name": "Suldoz",
+    "latitude": 36.955597,
+    "longitude": 45.387893,
+    "elevation": 4341
+  },
+  {
+    "name": "Sumar",
+    "latitude": 33.886205,
+    "longitude": 45.638824,
+    "elevation": 974
+  },
+  {
+    "name": "Surdash",
+    "latitude": 35.861654,
+    "longitude": 45.103342,
+    "elevation": 3356
+  },
+  {
+    "name": "TAJI",
+    "latitude": 33.527615,
+    "longitude": 44.256536,
+    "elevation": 131
+  },
+  {
+    "name": "TKT",
+    "latitude": 34.666151,
+    "longitude": 43.539306,
+    "elevation": 440
+  },
+  {
+    "name": "Takiay Kaka Mand",
+    "latitude": 35.625816,
+    "longitude": 44.959749,
+    "elevation": 2887
+  },
+  {
+    "name": "Tal Afar",
+    "latitude": 36.374043,
+    "longitude": 42.443479,
+    "elevation": 1253
+  },
+  {
+    "name": "Tal Awinat",
+    "latitude": 36.680373,
+    "longitude": 42.396857,
+    "elevation": 1125
+  },
+  {
+    "name": "Tall Birak",
+    "latitude": 36.685135,
+    "longitude": 41.050203,
+    "elevation": 1165
+  },
+  {
+    "name": "Tall Hamis",
+    "latitude": 36.751401,
+    "longitude": 41.399917,
+    "elevation": 1148
+  },
+  {
+    "name": "Tamugheh",
+    "latitude": 36.2048,
+    "longitude": 46.1245,
+    "elevation": 5020
+  },
+  {
+    "name": "Tanahi",
+    "latitude": 36.863724,
+    "longitude": 42.901862,
+    "elevation": 1703
+  },
+  {
+    "name": "Taqtaq",
+    "latitude": 35.888861,
+    "longitude": 44.585565,
+    "elevation": 1129
+  },
+  {
+    "name": "Tasluja",
+    "latitude": 35.595758,
+    "longitude": 45.2282,
+    "elevation": 2635
+  },
+  {
+    "name": "Tawela",
+    "latitude": 35.199444,
+    "longitude": 46.186111,
+    "elevation": 4777
+  },
+  {
+    "name": "Taza Khurmatu",
+    "latitude": 35.301228,
+    "longitude": 44.331285,
+    "elevation": 787
+  },
+  {
+    "name": "Tazehabad",
+    "latitude": 34.739018,
+    "longitude": 46.149584,
+    "elevation": 4022
+  },
+  {
+    "name": "Telkif",
+    "latitude": 36.490324,
+    "longitude": 43.120574,
+    "elevation": 912
+  },
+  {
+    "name": "Tesqopa",
+    "latitude": 36.601327,
+    "longitude": 43.107054,
+    "elevation": 1112
+  },
+  {
+    "name": "Tikrit",
+    "latitude": 34.615807,
+    "longitude": 43.678606,
+    "elevation": 367
+  },
+  {
+    "name": "Topzawe",
+    "latitude": 36.281169,
+    "longitude": 43.734165,
+    "elevation": 1007
+  },
+  {
+    "name": "Tuz Khormato",
+    "latitude": 34.891401,
+    "longitude": 44.62834,
+    "elevation": 735
+  },
+  {
+    "name": "Umm adh Dhiban",
+    "latitude": 36.275399,
+    "longitude": 41.369358,
+    "elevation": 1519
+  },
+  {
+    "name": "Uraman Takht",
+    "latitude": 35.2526,
+    "longitude": 46.2624,
+    "elevation": 4892
+  },
+  {
+    "name": "Urmia",
+    "latitude": 37.549347,
+    "longitude": 45.068286,
+    "elevation": 4442
+  },
+  {
+    "name": "Warte",
+    "latitude": 36.501611,
+    "longitude": 44.7535,
+    "elevation": 3304
+  },
+  {
+    "name": "Yaaroubia",
+    "latitude": 36.81229,
+    "longitude": 42.062403,
+    "elevation": 1289
+  },
+  {
+    "name": "Yathrib",
+    "latitude": 33.995563,
+    "longitude": 44.349785,
+    "elevation": 141
+  },
+  {
+    "name": "Yaychi",
+    "latitude": 35.439894,
+    "longitude": 44.232795,
+    "elevation": 869
+  },
+  {
+    "name": "Zakho",
+    "latitude": 37.143376,
+    "longitude": 42.682291,
+    "elevation": 1417
+  },
+  {
+    "name": "Zalan",
+    "latitude": 35.679332,
+    "longitude": 45.689849,
+    "elevation": 3222
+  },
+  {
+    "name": "Zarayan",
+    "latitude": 35.314722,
+    "longitude": 45.668775,
+    "elevation": 1831
+  },
+  {
+    "name": "Zarneh",
+    "latitude": 33.928499,
+    "longitude": 46.18262,
+    "elevation": 3537
+  },
+  {
+    "name": "Zharawa",
+    "latitude": 36.222932,
+    "longitude": 45.067245,
+    "elevation": 1808
+  },
+  {
+    "name": "Zinana Big",
+    "latitude": 34.878739,
+    "longitude": 44.854257,
+    "elevation": 1161
+  },
+  {
+    "name": "koya",
+    "latitude": 36.084808,
+    "longitude": 44.627689,
+    "elevation": 1991
+  },
+  {
+    "name": "new Bazalan",
+    "latitude": 36.814677,
+    "longitude": 42.914364,
+    "elevation": 1496
+  },
+  {
+    "name": "new Rawa",
+    "latitude": 34.483308,
+    "longitude": 41.923679,
+    "elevation": 617
+  }
+]

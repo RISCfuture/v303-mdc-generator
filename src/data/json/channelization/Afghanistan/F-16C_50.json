@@ -1,0 +1,212 @@
+{
+  "radios": [
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "229.000",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "300.200",
+          "description": "KANDAHAR (OAKN) GROUND"
+        },
+        {
+          "number": 3,
+          "frequency": "360.200",
+          "description": "KANDAHAR (OAKN) TOWER"
+        },
+        {
+          "number": 4,
+          "frequency": "242.675",
+          "description": "KANDAHAR (OAKN) ATIS"
+        },
+        {
+          "number": 5,
+          "frequency": "256.600",
+          "description": "AWACS (E-7, MAGIC)"
+        },
+        {
+          "number": 6,
+          "frequency": "256.700",
+          "description": "ELINT (RC-135, COBRA/PYTHON)"
+        },
+        {
+          "number": 7,
+          "frequency": "251.300",
+          "description": "WINDCTRL (MQ9, GHOST/WHISPER)"
+        },
+        {
+          "number": 8,
+          "frequency": "251.400",
+          "description": "WINDCTRL (RQ-4, NEVIN/ALLISTER)"
+        },
+        {
+          "number": 9,
+          "frequency": "251.200",
+          "description": ""
+        },
+        {
+          "number": 10,
+          "frequency": "251.500",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "frequency": "272.200",
+          "description": "OCTANE (TEXACO 32Y)"
+        },
+        {
+          "number": 12,
+          "frequency": "272.100",
+          "description": "VAPORTRAIL (SHELL 31Y)"
+        },
+        {
+          "number": 13,
+          "frequency": "251.525",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "frequency": "225.450",
+          "description": ""
+        },
+        {
+          "number": 15,
+          "frequency": "257.950",
+          "description": ""
+        },
+        {
+          "number": 16,
+          "frequency": "354.300",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "frequency": "348.700",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "257.950",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "354.300",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "300.050",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "138.250",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "118.300",
+          "description": ""
+        },
+        {
+          "number": 3,
+          "frequency": "122.900",
+          "description": ""
+        },
+        {
+          "number": 4,
+          "frequency": "119.700",
+          "description": ""
+        },
+        {
+          "number": 5,
+          "frequency": "142.800",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "frequency": "121.900",
+          "description": ""
+        },
+        {
+          "number": 7,
+          "frequency": "124.000",
+          "description": ""
+        },
+        {
+          "number": 8,
+          "frequency": "119.400",
+          "description": ""
+        },
+        {
+          "number": 9,
+          "frequency": "143.000",
+          "description": ""
+        },
+        {
+          "number": 10,
+          "frequency": "123.600",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "frequency": "123.325",
+          "description": "CAMP BASTION (OAZI) GROUND"
+        },
+        {
+          "number": 12,
+          "frequency": "123.300",
+          "description": "CAMP BASTION (OAZI) TOWER"
+        },
+        {
+          "number": 13,
+          "frequency": "123.375",
+          "description": "CAMP BASTION (OAZI) ATIS"
+        },
+        {
+          "number": 14,
+          "frequency": "128.000",
+          "description": "TARINKOT (OATN) TOWER"
+        },
+        {
+          "number": 15,
+          "frequency": "128.025",
+          "description": "TARINKOT (OATN) ATIS"
+        },
+        {
+          "number": 16,
+          "frequency": "124.700",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "frequency": "122.500",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "124.850",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "127.250",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "126.100",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

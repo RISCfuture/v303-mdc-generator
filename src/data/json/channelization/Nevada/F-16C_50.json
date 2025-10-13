@@ -1,0 +1,212 @@
+{
+  "radios": [
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "229.0",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "275.8",
+          "description": "NELLIS GROUND"
+        },
+        {
+          "number": 3,
+          "frequency": "327.1",
+          "description": "NELLIS TOWER"
+        },
+        {
+          "number": 4,
+          "frequency": "385.4",
+          "description": "NELLIS APPROACH/DEPARTURE"
+        },
+        {
+          "number": 5,
+          "frequency": "317.525",
+          "description": "NELLIS CONTROL -- SALLY"
+        },
+        {
+          "number": 6,
+          "frequency": "254.4",
+          "description": "NELLIS CONTROL - LEE"
+        },
+        {
+          "number": 7,
+          "frequency": "270.1",
+          "description": "NELLIS ATIS"
+        },
+        {
+          "number": 8,
+          "frequency": "360.626",
+          "description": "CREECH TOWER"
+        },
+        {
+          "number": 9,
+          "frequency": "360.8",
+          "description": "CREECH ATIS"
+        },
+        {
+          "number": 10,
+          "frequency": "377.8",
+          "description": "BLACKJACK"
+        },
+        {
+          "number": 11,
+          "frequency": "361.6",
+          "description": "FATNESS 63"
+        },
+        {
+          "number": 12,
+          "frequency": "288.8",
+          "description": "FATNESS 64"
+        },
+        {
+          "number": 13,
+          "frequency": "295.5",
+          "description": "TEXACO 2 32Y (AR641A)"
+        },
+        {
+          "number": 14,
+          "frequency": "225.5",
+          "description": "ARCO 2 45X (AR231V)"
+        },
+        {
+          "number": 15,
+          "frequency": "257.95",
+          "description": "SILVERBOW (TTR) TOWER"
+        },
+        {
+          "number": 16,
+          "frequency": "354.3",
+          "description": "TONOPAH TEST RANGE ATIS"
+        },
+        {
+          "number": 17,
+          "frequency": "348.7",
+          "description": "JOSHUA"
+        },
+        {
+          "number": 18,
+          "frequency": "301.0",
+          "description": "CHINA LAKE"
+        },
+        {
+          "number": 19,
+          "frequency": "256.6",
+          "description": "MAGIC"
+        },
+        {
+          "number": 20,
+          "frequency": "300.05",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "138.3",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "56.1",
+          "description": ""
+        },
+        {
+          "number": 3,
+          "frequency": "56.2",
+          "description": ""
+        },
+        {
+          "number": 4,
+          "frequency": "56.3",
+          "description": ""
+        },
+        {
+          "number": 5,
+          "frequency": "56.4",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "frequency": "56.5",
+          "description": ""
+        },
+        {
+          "number": 7,
+          "frequency": "56.6",
+          "description": ""
+        },
+        {
+          "number": 8,
+          "frequency": "56.7",
+          "description": ""
+        },
+        {
+          "number": 9,
+          "frequency": "56.8",
+          "description": ""
+        },
+        {
+          "number": 10,
+          "frequency": "56.9",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "frequency": "57.0",
+          "description": ""
+        },
+        {
+          "number": 12,
+          "frequency": "57.1",
+          "description": ""
+        },
+        {
+          "number": 13,
+          "frequency": "57.2",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "frequency": "57.3",
+          "description": ""
+        },
+        {
+          "number": 15,
+          "frequency": "57.4",
+          "description": ""
+        },
+        {
+          "number": 16,
+          "frequency": "57.5",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "frequency": "57.6",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "57.7",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "57.8",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "57.9",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

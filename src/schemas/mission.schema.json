@@ -1,0 +1,742 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/compact-mission.json",
+  "title": "Compact Mission Storage Format",
+  "description": "JSON Schema for validating v303 MDC Generator mission storage format (v2)",
+  "type": "object",
+  "required": ["version", "missions"],
+  "properties": {
+    "version": {
+      "type": "number",
+      "const": 2,
+      "description": "Storage format version"
+    },
+    "missions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CompactMission"
+      }
+    }
+  },
+  "definitions": {
+    "CompactMission": {
+      "type": "object",
+      "required": [
+        "id",
+        "n",
+        "d",
+        "t",
+        "sq",
+        "th",
+        "cr",
+        "cs",
+        "l16",
+        "wp",
+        "ld",
+        "dr",
+        "tld",
+        "f",
+        "det",
+        "ca",
+        "ua",
+        "ecmp",
+        "htsp",
+        "cl",
+        "pm",
+        "sa",
+        "imgIds"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique mission identifier"
+        },
+        "n": {
+          "type": "string",
+          "description": "Mission name"
+        },
+        "cs": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Callsign (required for export)"
+        },
+        "fco": {
+          "type": "string",
+          "description": "Flight callsign override (optional)"
+        },
+        "l16": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Link16 prefix (required for export)"
+        },
+        "d": {
+          "type": "string",
+          "format": "date",
+          "description": "Mission date (YYYY-MM-DD)"
+        },
+        "mn": {
+          "type": "string",
+          "description": "Mission number"
+        },
+        "t": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Mission type (e.g., SEAD, CAS, STRIKE)"
+        },
+        "sq": {
+          "type": "string",
+          "description": "Squadron (e.g., 'v93', 'v303'). Squadron determines the airframe."
+        },
+        "th": {
+          "type": "string",
+          "description": "Theater of operations (e.g., 'Afghanistan', 'Syria'). Values are dynamic and defined in theaters.json."
+        },
+        "cr": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Crew pilot names (references to crew database)"
+        },
+        "wp": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompactWaypoint"
+          },
+          "minItems": 1,
+          "description": "Mission waypoints/steerpoints"
+        },
+        "be": {
+          "$ref": "#/definitions/Bullseye",
+          "description": "Bullseye reference point"
+        },
+        "ld": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": [
+              {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 11
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          },
+          "minItems": 0,
+          "description": "Loadout stations [station number, item name] (EMPTY stations omitted, empty array if all stations are EMPTY)"
+        },
+        "cmds": {
+          "$ref": "#/definitions/CMDSData",
+          "description": "CMDS/ECM settings (only if modified from defaults)"
+        },
+        "c1": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RadioPreset"
+          },
+          "description": "Comm 1 radio presets (only if different from theater defaults)"
+        },
+        "c2": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RadioPreset"
+          },
+          "description": "Comm 2 radio presets"
+        },
+        "c3": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RadioPreset"
+          },
+          "description": "Comm 3 radio presets (A-10C only)"
+        },
+        "dr": {
+          "$ref": "#/definitions/DepartureRecoveryData",
+          "description": "Departure and recovery procedures and airport selections"
+        },
+        "tld": {
+          "$ref": "#/definitions/TOLDData",
+          "description": "Takeoff and landing data"
+        },
+        "f": {
+          "$ref": "#/definitions/FuelData",
+          "description": "Fuel data"
+        },
+        "wx": {
+          "type": "string",
+          "description": "Weather information"
+        },
+        "det": {
+          "$ref": "#/definitions/MissionDetails",
+          "description": "Mission details and target information"
+        },
+        "ca": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp"
+        },
+        "ua": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Updated at timestamp"
+        },
+        "gt": {
+          "type": "string",
+          "description": "Gun ammunition type"
+        },
+        "cmdsp": {
+          "type": "string",
+          "description": "CMDS profile"
+        },
+        "ecmp": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "ECM programs"
+        },
+        "htsp": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "HTS threat tables"
+        },
+        "cl": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "description": "Comm ladders"
+        },
+        "pm": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PackageMember"
+          },
+          "description": "Package members"
+        },
+        "sa": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SupportAsset"
+          },
+          "description": "Support assets"
+        },
+        "imgIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Image IDs referenced in remarks/threats"
+        }
+      }
+    },
+    "CompactWaypoint": {
+      "type": "object",
+      "required": ["seq", "name", "lat", "lon", "alt"],
+      "properties": {
+        "seq": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Waypoint sequence number"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Waypoint name"
+        },
+        "lat": {
+          "type": ["number", "null"],
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Latitude in decimal degrees (required non-null for export)"
+        },
+        "lon": {
+          "type": ["number", "null"],
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Longitude in decimal degrees (required non-null for export)"
+        },
+        "elev": {
+          "type": "number",
+          "description": "Ground elevation in feet MSL"
+        },
+        "alt": {
+          "type": ["number", "null"],
+          "description": "Planned altitude in feet MSL (required non-null for export)"
+        },
+        "spd": {
+          "type": "number",
+          "description": "Indicated airspeed in knots"
+        },
+        "tot": {
+          "type": "string",
+          "description": "Time on target (e.g., 1800Z)"
+        },
+        "type": {
+          "type": "string",
+          "description": "Waypoint type (e.g., IP, TGT, EP)"
+        },
+        "tgt": {
+          "type": "boolean",
+          "description": "Target flag"
+        },
+        "ccip": {
+          "$ref": "#/definitions/CCIPData",
+          "description": "CCIP delivery data (only for TGT type steerpoints)"
+        }
+      }
+    },
+    "Bullseye": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "properties": {
+        "lat": {
+          "type": ["number", "null"],
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Bullseye latitude in decimal degrees"
+        },
+        "lon": {
+          "type": ["number", "null"],
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Bullseye longitude in decimal degrees"
+        },
+        "wpn": {
+          "type": "number",
+          "description": "Associated waypoint number"
+        },
+        "desc": {
+          "type": "string",
+          "description": "Bullseye description"
+        }
+      }
+    },
+    "CMDSData": {
+      "type": "object",
+      "properties": {
+        "prg": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CMDSProgram"
+          },
+          "description": "CMDS programs"
+        },
+        "cb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Chaff bingo count"
+        },
+        "fb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Flare bingo count"
+        },
+        "ct": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total chaff count"
+        },
+        "ft": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total flare count"
+        }
+      }
+    },
+    "CMDSProgram": {
+      "type": "object",
+      "required": [
+        "number",
+        "flareBurstQty",
+        "flareBurstInterval",
+        "flareSalvoQty",
+        "flareSalvoInterval",
+        "chaffBurstQty",
+        "chaffBurstInterval",
+        "chaffSalvoQty",
+        "chaffSalvoInterval"
+      ],
+      "properties": {
+        "number": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Program number"
+        },
+        "flareBurstQty": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Flares per burst"
+        },
+        "flareBurstInterval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Interval between flares in burst (seconds)"
+        },
+        "flareSalvoQty": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of bursts per salvo"
+        },
+        "flareSalvoInterval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Interval between bursts (seconds)"
+        },
+        "chaffBurstQty": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Chaff per burst"
+        },
+        "chaffBurstInterval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Interval between chaff in burst (seconds)"
+        },
+        "chaffSalvoQty": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of bursts per salvo"
+        },
+        "chaffSalvoInterval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Interval between bursts (seconds)"
+        }
+      }
+    },
+    "RadioPreset": {
+      "type": "object",
+      "required": ["number", "frequency", "description"],
+      "properties": {
+        "number": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 25,
+          "description": "Preset number"
+        },
+        "frequency": {
+          "type": "string",
+          "pattern": "^\\d{2,3}\\.\\d{3}$",
+          "minLength": 1,
+          "description": "Radio frequency (e.g., 251.000)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Preset description/label"
+        }
+      }
+    },
+    "DepartureRecoveryData": {
+      "type": "object",
+      "required": ["depApt", "depRwy", "recApt", "recRwy"],
+      "properties": {
+        "depProc": {
+          "type": "string",
+          "description": "Departure procedure"
+        },
+        "depApt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Departure airport ID (required for export)"
+        },
+        "depRwy": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Departure runway name (required for export)"
+        },
+        "depRwyHdg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Departure runway heading"
+        },
+        "depFldElev": {
+          "type": "number",
+          "description": "Departure field elevation in feet MSL"
+        },
+        "recProc": {
+          "type": "string",
+          "description": "Recovery procedure"
+        },
+        "recApt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Recovery airport ID (required for export)"
+        },
+        "recRwy": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Recovery runway name (required for export)"
+        },
+        "recRwyHdg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Recovery runway heading"
+        },
+        "recFldElev": {
+          "type": "number",
+          "description": "Recovery field elevation in feet MSL"
+        },
+        "altApt": {
+          "type": "string",
+          "description": "Alternate airport ID (optional)"
+        }
+      }
+    },
+    "TOLDData": {
+      "type": "object",
+      "required": ["rot", "ref"],
+      "properties": {
+        "rot": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Rotation speed in knots (must be > 0)"
+        },
+        "ref": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Refusal speed in knots (must be > 0)"
+        },
+        "minAgl": {
+          "type": "number",
+          "description": "Minimum AGL altitude in feet"
+        },
+        "minMsl": {
+          "type": "number",
+          "description": "Minimum MSL altitude in feet"
+        },
+        "cp": {
+          "type": "object",
+          "description": "Calculator parameters (F16CalculatorParams or A10CalculatorParams)"
+        }
+      }
+    },
+    "FuelData": {
+      "type": "object",
+      "required": ["to", "j", "b"],
+      "properties": {
+        "to": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Takeoff fuel in pounds"
+        },
+        "j": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Joker fuel in pounds"
+        },
+        "b": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Bingo fuel in pounds"
+        }
+      }
+    },
+    "MissionDetails": {
+      "type": "object",
+      "required": ["rem"],
+      "properties": {
+        "rem": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Mission remarks"
+        },
+        "pt": {
+          "$ref": "#/definitions/TargetData",
+          "description": "Primary target"
+        },
+        "st": {
+          "$ref": "#/definitions/TargetData",
+          "description": "Secondary target"
+        },
+        "tot": {
+          "type": "string",
+          "description": "Time on target"
+        }
+      }
+    },
+    "CCIPReferencePoint": {
+      "type": "object",
+      "properties": {
+        "b": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Bearing in degrees (0.1 precision)"
+        },
+        "d": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Distance in feet"
+        },
+        "e": {
+          "type": "number",
+          "description": "Elevation offset in feet (can be negative)"
+        }
+      }
+    },
+    "CCIPData": {
+      "type": "object",
+      "properties": {
+        "rpt": {
+          "type": "string",
+          "enum": ["VIP", "VRP"],
+          "description": "Reference point type (VIP or VRP)"
+        },
+        "vip": {
+          "$ref": "#/definitions/CCIPReferencePoint",
+          "description": "Visual Initial Point"
+        },
+        "vrp": {
+          "$ref": "#/definitions/CCIPReferencePoint",
+          "description": "Visual Reference Point"
+        },
+        "oa1": {
+          "$ref": "#/definitions/CCIPReferencePoint",
+          "description": "Offset Aimpoint 1"
+        },
+        "oa2": {
+          "$ref": "#/definitions/CCIPReferencePoint",
+          "description": "Offset Aimpoint 2"
+        },
+        "pup": {
+          "$ref": "#/definitions/CCIPReferencePoint",
+          "description": "Pull-up Point"
+        }
+      }
+    },
+    "TargetData": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "string",
+          "description": "Target name"
+        },
+        "d": {
+          "type": "string",
+          "description": "DMPI (Desired Mean Point of Impact)"
+        },
+        "lat": {
+          "type": ["number", "null"],
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Target latitude in decimal degrees"
+        },
+        "lon": {
+          "type": ["number", "null"],
+          "minimum": -180,
+          "maximum": 180,
+          "description": "Target longitude in decimal degrees"
+        },
+        "elev": {
+          "type": "number",
+          "description": "Target elevation in feet MSL"
+        },
+        "ah": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Attack heading in degrees"
+        },
+        "ia": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Ingress altitude in feet MSL"
+        },
+        "rem": {
+          "type": "string",
+          "description": "Target remarks"
+        },
+        "imgIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Image IDs referenced in target remarks"
+        }
+      }
+    },
+    "PackageMember": {
+      "type": "object",
+      "required": ["callsign", "aircraft", "time", "comms", "stn", "aaTacan", "task"],
+      "properties": {
+        "callsign": {
+          "type": "string",
+          "description": "Package member callsign"
+        },
+        "aircraft": {
+          "type": "string",
+          "description": "Aircraft type"
+        },
+        "time": {
+          "type": "string",
+          "description": "Time in Zulu format"
+        },
+        "comms": {
+          "type": "string",
+          "description": "VHF frequency"
+        },
+        "stn": {
+          "type": ["number", "null"],
+          "description": "STN number"
+        },
+        "aaTacan": {
+          "type": "string",
+          "description": "AA TACAN"
+        },
+        "task": {
+          "type": "string",
+          "description": "Mission task"
+        }
+      }
+    },
+    "SupportAsset": {
+      "type": "object",
+      "required": ["callsign", "role", "frequency", "preset", "aaTacan", "location", "altitude"],
+      "properties": {
+        "callsign": {
+          "type": "string",
+          "description": "Support asset callsign"
+        },
+        "role": {
+          "type": "string",
+          "description": "Support asset role"
+        },
+        "frequency": {
+          "type": "string",
+          "description": "UHF frequency"
+        },
+        "preset": {
+          "type": ["number", "null"],
+          "description": "Preset number"
+        },
+        "aaTacan": {
+          "type": "string",
+          "description": "AA TACAN"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location"
+        },
+        "altitude": {
+          "type": "number",
+          "description": "Altitude in feet"
+        }
+      }
+    }
+  }
+}

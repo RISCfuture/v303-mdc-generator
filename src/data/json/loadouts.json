@@ -1,0 +1,855 @@
+{
+  "F-16C_50": [
+    {
+      "name": "ALPHA (SA-1, SA-2, SA-3, NSA)",
+      "description": "B-Course Training",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{TER_9A_3*BDU-33}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{TER_9A_3*BDU-33}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "BRAVO (SA-4)",
+      "description": "B-Course Training - SEAD",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{GBU-38}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{GBU-38}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "CHARLIE (SAT-1)",
+      "description": "MQT Training",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{E6A6262A-CA08-4B3D-B030-E1A993B98452}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{BRU57_2*CBU-105}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "DELTA (SAT-2)",
+      "description": "MQT Training",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{TER_9A_2L*GBU-12}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "ECHO (SAT-3)",
+      "description": "MQT Training - SEAD",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "FOXTROT (SAT-4)",
+      "description": "MQT Training - Mixed",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{TER_9A_2L*GBU-12}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{BRU57_2*CBU-105}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "GULF (NSAT-1)",
+      "description": "MQT Training - Night",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{TER_9A_2L*GBU-12}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{TER_9A_2R*GBU-12}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "HOTEL (NSAT-2)",
+      "description": "MQT Training - Night",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{AIS_ASQ_T50}"
+        },
+        {
+          "station": 3,
+          "item": "{E6A6262A-CA08-4B3D-B030-E1A993B98452}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{BRU57_2*CBU-105}"
+        },
+        {
+          "station": 8,
+          "item": "EMPTY"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "INDIA (ACBT-1 through ACBT-5)",
+      "description": "Air Combat Training",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 3,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 4,
+          "item": "EMPTY"
+        },
+        {
+          "station": 5,
+          "item": "{8A0BE8AE-58D4-4572-9263-3144C0D06364}"
+        },
+        {
+          "station": 10,
+          "item": "EMPTY"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "JULIET (SEAD)",
+      "description": "Suppression of Enemy Air Defenses - Operation Iraqi Freedom",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "KILO (DEAD)",
+      "description": "Destruction of Enemy Air Defenses - Operation Iraqi Freedom",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{E6A6262A-CA08-4B3D-B030-E1A993B98452}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{E6A6262A-CA08-4B3D-B030-E1A993B98453}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "LIMA (DEAD - CLUSTER MUNS)",
+      "description": "DEAD with cluster munitions - Operation Iraqi Freedom",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{BRU57_2*CBU-105}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{BRU57_2*CBU-105}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "MIKE (DEAD)",
+      "description": "DEAD with precision guided munitions - Operation Iraqi Freedom",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{TER_9A_2L*GBU-12}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{TER_9A_2R*GBU-12}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "NOVEMBER (AI, CAS, STRIKE)",
+      "description": "Interdiction, Close Air Support, or Strike",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{BRU57_2*GBU-38}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "LAU_88_AGM_65D_ONE"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "OSCAR (DEEP-STRIKE)",
+      "description": "Deep strike with heavy precision munitions",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{BRU-32 GBU-24}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{BRU-32 GBU-24}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "PAPA (CAP, SWEEP, INTERCEPT)",
+      "description": "Combat Air Patrol, Sweep, or Intercept",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "EMPTY"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    },
+    {
+      "name": "QUEBEC (SEAD, DEAD)",
+      "description": "Mixed SEAD/Strike - Operation Odyssey Dawn, Libya 2011",
+      "stations": [
+        {
+          "station": 1,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 2,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        },
+        {
+          "station": 3,
+          "item": "{GBU-31}"
+        },
+        {
+          "station": 4,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 5,
+          "item": "ALQ_184"
+        },
+        {
+          "station": 10,
+          "item": "{AN_ASQ_213}"
+        },
+        {
+          "station": 11,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 6,
+          "item": "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}"
+        },
+        {
+          "station": 7,
+          "item": "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}"
+        },
+        {
+          "station": 8,
+          "item": "{C8E06185-7CD6-4C90-959F-044679E90751}"
+        },
+        {
+          "station": 9,
+          "item": "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}"
+        }
+      ]
+    }
+  ],
+  "A-10C_2": []
+}

@@ -1,0 +1,5 @@
+- This project uses Vue.js, Yarn, and Naive UI.
+- Components with non-trivial behavior should have associated unit tests.
+- All major user flows should have end-to-end tests.
+- The v303rd Fighter Group (v303 FG) consists of the v303rd Fighter Squadron (v303 FS), which flies the A-10C, and the V93rd Fighter Squadron (v93 FS), which flies the F-16C.
+- Waypoints are locations (lat/lon + altitude) in a navigation database. Steerpoints are waypoints that are part of a flight plan.

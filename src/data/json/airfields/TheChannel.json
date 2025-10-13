@@ -1,0 +1,366 @@
+[
+  {
+    "name": "Abbeville Drucat",
+    "position": {
+      "latitude": 50.149531917406,
+      "longitude": 1.8362860929554,
+      "elevation": 184
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 203,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 23,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Biggin Hill",
+    "position": {
+      "latitude": 51.328410172904,
+      "longitude": 0.034490518670974,
+      "elevation": 553
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 228,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 48,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 288,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 108,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 208,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 28,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Detling",
+    "position": {
+      "latitude": 51.308241263359,
+      "longitude": 0.60552410588841,
+      "elevation": 623
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 227,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 47,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Dunkirk Mardyck",
+    "position": {
+      "latitude": 51.029470822466,
+      "longitude": 2.2484347681531,
+      "elevation": 16
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 81,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 261,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Eastchurch",
+    "position": {
+      "latitude": 51.390814422965,
+      "longitude": 0.84044302594886,
+      "elevation": 40
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 97,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 277,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 203,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 23,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hawkinge",
+    "position": {
+      "latitude": 51.115113231725,
+      "longitude": 1.1605724302277,
+      "elevation": 525
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 180,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 0,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 219,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 39,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Headcorn",
+    "position": {
+      "latitude": 51.182949227001,
+      "longitude": 0.68148244699714,
+      "elevation": 115
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 93,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 273,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 12,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 192,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "High Halden",
+    "position": {
+      "latitude": 51.122666449012,
+      "longitude": 0.68734669867666,
+      "elevation": 105
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 102,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 211,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 31,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lympne",
+    "position": {
+      "latitude": 51.083691076152,
+      "longitude": 1.0124369664514,
+      "elevation": 351
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 134,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 314,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Manston",
+    "position": {
+      "latitude": 51.344455587934,
+      "longitude": 1.3279982667496,
+      "elevation": 161
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 102,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 57,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 237,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 102,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Merville Calonne",
+    "position": {
+      "latitude": 50.615302099484,
+      "longitude": 2.6433201424095,
+      "elevation": 52
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 319,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 139,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 258,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 78,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint Omer Longuenesse",
+    "position": {
+      "latitude": 50.728779428768,
+      "longitude": 2.2275923344968,
+      "elevation": 220
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 87,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 267,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

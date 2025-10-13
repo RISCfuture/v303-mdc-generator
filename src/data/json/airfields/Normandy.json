@@ -1,0 +1,2392 @@
+[
+  {
+    "name": "Abbeville Drucat",
+    "position": {
+      "latitude": 50.134532535559,
+      "longitude": 1.8439526359288,
+      "elevation": 217
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 306,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 126,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 198,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 18,
+        "ils": null
+      },
+      {
+        "name": "20",
+        "heading": 265,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 85,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Alderney",
+    "position": {
+      "latitude": 49.706372706338,
+      "longitude": -2.2200939055554,
+      "elevation": 210
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 79,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 259,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 26,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 206,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 133,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 313,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Amiens-Glisy",
+    "position": {
+      "latitude": 49.874790069125,
+      "longitude": 2.382581378096,
+      "elevation": 192
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 221,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Argentan",
+    "position": {
+      "latitude": 48.766300374642,
+      "longitude": -0.02473851639817,
+      "elevation": 610
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 297,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 117,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Avranches Le Val-Saint-Pere",
+    "position": {
+      "latitude": 48.671025241496,
+      "longitude": -1.3856964037138,
+      "elevation": 47
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 126,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 306,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Azeville",
+    "position": {
+      "latitude": 49.479645985249,
+      "longitude": -1.3248029504349,
+      "elevation": 75
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 70,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 250,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Barville",
+    "position": {
+      "latitude": 48.475043195505,
+      "longitude": 0.31809621236938,
+      "elevation": 463
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 327,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 147,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 276,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 96,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bazenville",
+    "position": {
+      "latitude": 49.301185444271,
+      "longitude": -0.57147718061433,
+      "elevation": 200
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 53,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 233,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beaumont-le-Roger",
+    "position": {
+      "latitude": 49.093399507989,
+      "longitude": 0.7997031280961,
+      "elevation": 489
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 321,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 141,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 231,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 51,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 263,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 83,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beauvais-Tille",
+    "position": {
+      "latitude": 49.458129886799,
+      "longitude": 2.1048858545138,
+      "elevation": 331
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 120,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 300,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 218,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 38,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bembridg",
+    "position": {
+      "latitude": 50.676114508638,
+      "longitude": -1.1047610079383,
+      "elevation": 82
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 297,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 117,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beny-sur-Mer",
+    "position": {
+      "latitude": 49.293694134644,
+      "longitude": -0.42630152319567,
+      "elevation": 199
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 352,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 172,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bernay Saint Martin",
+    "position": {
+      "latitude": 49.108775526108,
+      "longitude": 0.59914659231489,
+      "elevation": 511
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "18",
+        "heading": 180,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 0,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beuzeville",
+    "position": {
+      "latitude": 49.417372661189,
+      "longitude": -1.3050028791131,
+      "elevation": 114
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 49,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 229,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Biggin Hill",
+    "position": {
+      "latitude": 51.335585704026,
+      "longitude": 0.036439950517284,
+      "elevation": 568
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 203,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 23,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 283,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 103,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Biniville",
+    "position": {
+      "latitude": 49.432935771579,
+      "longitude": -1.464839860343,
+      "elevation": 107
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 320,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 140,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Broglie",
+    "position": {
+      "latitude": 49.013140496195,
+      "longitude": 0.50456652077028,
+      "elevation": 595
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 297,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 117,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Brucheville",
+    "position": {
+      "latitude": 49.370367224617,
+      "longitude": -1.2085023978246,
+      "elevation": 46
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 246,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 66,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cardonville",
+    "position": {
+      "latitude": 49.356790598392,
+      "longitude": -1.0545660353278,
+      "elevation": 102
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 154,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 334,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Carpiquet",
+    "position": {
+      "latitude": 49.179410933131,
+      "longitude": -0.46293063913438,
+      "elevation": 187
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 124,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Chailey",
+    "position": {
+      "latitude": 50.9567879764,
+      "longitude": -0.050298499516322,
+      "elevation": 95
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 151,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 331,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 253,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 73,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Chippelle",
+    "position": {
+      "latitude": 49.244719127895,
+      "longitude": -0.96291359917858,
+      "elevation": 125
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 240,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Conches",
+    "position": {
+      "latitude": 48.939213203782,
+      "longitude": 0.96885160391477,
+      "elevation": 541
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 223,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 43,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cormeilles-en-Vexin",
+    "position": {
+      "latitude": 49.098179542458,
+      "longitude": 2.0430071933138,
+      "elevation": 312
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 219,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 39,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 114,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 294,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Creil",
+    "position": {
+      "latitude": 49.248973544184,
+      "longitude": 2.51129264699,
+      "elevation": 269
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 310,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 130,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 241,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 61,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cretteville",
+    "position": {
+      "latitude": 49.332240103531,
+      "longitude": -1.3723781500981,
+      "elevation": 95
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 310,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 130,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cricqueville-en-Bessin",
+    "position": {
+      "latitude": 49.359830528062,
+      "longitude": -1.0065584422026,
+      "elevation": 81
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 353,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 173,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Deanland",
+    "position": {
+      "latitude": 50.886701786396,
+      "longitude": 0.1676503970125,
+      "elevation": 95
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 234,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 54,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Deauville",
+    "position": {
+      "latitude": 49.366312891587,
+      "longitude": 0.1521651618818,
+      "elevation": 459
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 115,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 295,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Detling",
+    "position": {
+      "latitude": 51.302454997527,
+      "longitude": 0.59587645957101,
+      "elevation": 558
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 221,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Deux Jumeaux",
+    "position": {
+      "latitude": 49.349374634953,
+      "longitude": -0.99000843174538,
+      "elevation": 124
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 105,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 285,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Dinan-Trelivan",
+    "position": {
+      "latitude": 48.442519519966,
+      "longitude": -2.108142560274,
+      "elevation": 377
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 70,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 250,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Dunkirk-Mardyck",
+    "position": {
+      "latitude": 51.029995069357,
+      "longitude": 2.2481103690343,
+      "elevation": 26
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 79,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 259,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Eastchurch",
+    "position": {
+      "latitude": 51.391886557125,
+      "longitude": 0.84272034749567,
+      "elevation": 34
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 108,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 288,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 203,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 23,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Essay",
+    "position": {
+      "latitude": 48.519684451158,
+      "longitude": 0.26456187162727,
+      "elevation": 500
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 275,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 95,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Evreux",
+    "position": {
+      "latitude": 49.029131045994,
+      "longitude": 1.2201470243157,
+      "elevation": 423
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 215,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 35,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 164,
+        "ils": null
+      },
+      {
+        "name": "34",
+        "heading": 344,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Farnborough",
+    "position": {
+      "latitude": 51.283694440682,
+      "longitude": -0.77509584092947,
+      "elevation": 246
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 172,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 352,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 240,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Fecamp-Benouville",
+    "position": {
+      "latitude": 49.750648252643,
+      "longitude": 0.3567964650222,
+      "elevation": 295
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "18",
+        "heading": 180,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 0,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Flers",
+    "position": {
+      "latitude": 48.751571899857,
+      "longitude": -0.58997335441683,
+      "elevation": 651
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 232,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 52,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ford",
+    "position": {
+      "latitude": 50.82312673049,
+      "longitude": -0.59582938921762,
+      "elevation": 29
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 143,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 323,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 237,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 57,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Friston",
+    "position": {
+      "latitude": 50.759963586045,
+      "longitude": 0.16513005669875,
+      "elevation": 309
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 240,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Funtington",
+    "position": {
+      "latitude": 50.862831119589,
+      "longitude": -0.86498524173818,
+      "elevation": 125
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 330,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 150,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 85,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 265,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Goulet",
+    "position": {
+      "latitude": 48.745888077639,
+      "longitude": -0.1151149908078,
+      "elevation": 617
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 27,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 207,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gravesend",
+    "position": {
+      "latitude": 51.425121856193,
+      "longitude": 0.39715192411425,
+      "elevation": 178
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "18",
+        "heading": 177,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 357,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 236,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 56,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Guernsey",
+    "position": {
+      "latitude": 49.434104879543,
+      "longitude": -2.5908338696859,
+      "elevation": 258
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Guyancourt",
+    "position": {
+      "latitude": 48.761472303348,
+      "longitude": 2.0766245267576,
+      "elevation": 525
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 133,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 313,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 42,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 222,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 75,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 255,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hauterive",
+    "position": {
+      "latitude": 48.503768752726,
+      "longitude": 0.19651014589584,
+      "elevation": 490
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 142,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 322,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hawkinge",
+    "position": {
+      "latitude": 51.108663783447,
+      "longitude": 1.1526487718314,
+      "elevation": 543
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 221,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 193,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 13,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Headcorn",
+    "position": {
+      "latitude": 51.183023819732,
+      "longitude": 0.68001829056529,
+      "elevation": 110
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 86,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 266,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 5,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 185,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Heathrow",
+    "position": {
+      "latitude": 51.477793647134,
+      "longitude": -0.47370486229341,
+      "elevation": 89
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 88,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 268,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "High Halden",
+    "position": {
+      "latitude": 51.129371737733,
+      "longitude": 0.71020075403521,
+      "elevation": 95
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 206,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 26,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 96,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 276,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Holmsley South",
+    "position": {
+      "latitude": 50.787873563629,
+      "longitude": -1.693186594177,
+      "elevation": 197
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 290,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 110,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 349,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 169,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 235,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 55,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jersey",
+    "position": {
+      "latitude": 49.207508376857,
+      "longitude": -2.2054997935255,
+      "elevation": 246
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 83,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 263,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kenley",
+    "position": {
+      "latitude": 51.305838437226,
+      "longitude": -0.10020469354122,
+      "elevation": 561
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 121,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 301,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 21,
+        "ils": null
+      },
+      {
+        "name": "20",
+        "heading": 201,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lantheuil",
+    "position": {
+      "latitude": 49.269369163912,
+      "longitude": -0.54523951312511,
+      "elevation": 175
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 240,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lashenden",
+    "position": {
+      "latitude": 51.15799390794,
+      "longitude": 0.63554967428024,
+      "elevation": 66
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 102,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 178,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 358,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Le Molay",
+    "position": {
+      "latitude": 49.257857924532,
+      "longitude": -0.88742969402272,
+      "elevation": 105
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 221,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lessay",
+    "position": {
+      "latitude": 49.20639879045,
+      "longitude": -1.5167927455128,
+      "elevation": 66
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 124,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 243,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 63,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lignerolles",
+    "position": {
+      "latitude": 49.177205076844,
+      "longitude": -0.79587361615105,
+      "elevation": 405
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 110,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 290,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Longues-sur-Mer",
+    "position": {
+      "latitude": 49.340171765207,
+      "longitude": -0.70073311259402,
+      "elevation": 223
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 300,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 120,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lonrai",
+    "position": {
+      "latitude": 48.465355029373,
+      "longitude": 0.029870855290843,
+      "elevation": 515
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 240,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lymington",
+    "position": {
+      "latitude": 50.76606925793,
+      "longitude": -1.5189505608685,
+      "elevation": 20
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 136,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 316,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 58,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 238,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lympne",
+    "position": {
+      "latitude": 51.084619509904,
+      "longitude": 1.0140942714542,
+      "elevation": 221
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 110,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 290,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 19,
+        "ils": null
+      },
+      {
+        "name": "20",
+        "heading": 199,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Manston",
+    "position": {
+      "latitude": 51.344974443012,
+      "longitude": 1.3277831920523,
+      "elevation": 157
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 98,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 278,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Maupertus",
+    "position": {
+      "latitude": 49.648178545876,
+      "longitude": -1.4571390047502,
+      "elevation": 441
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 281,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 101,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Meautis",
+    "position": {
+      "latitude": 49.283764130409,
+      "longitude": -1.2919970628765,
+      "elevation": 83
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 260,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 80,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Merville Calonne",
+    "position": {
+      "latitude": 50.621577079441,
+      "longitude": 2.6625666483085,
+      "elevation": 131
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 253,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 73,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 316,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 136,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 214,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 34,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Needs Oar Point",
+    "position": {
+      "latitude": 50.769114473194,
+      "longitude": -1.4428111849848,
+      "elevation": 20
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 60,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 240,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 170,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 350,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Northolt",
+    "position": {
+      "latitude": 51.55480631068,
+      "longitude": -0.40943230925363,
+      "elevation": 131
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 247,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 67,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Odiham",
+    "position": {
+      "latitude": 51.233416562265,
+      "longitude": -0.93136699437397,
+      "elevation": 366
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 275,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 95,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Orly",
+    "position": {
+      "latitude": 48.734054334565,
+      "longitude": 2.3853408155267,
+      "elevation": 272
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 68,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 248,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 14,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 194,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Picauville",
+    "position": {
+      "latitude": 49.398516904975,
+      "longitude": -1.4185337289775,
+      "elevation": 73
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 110,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 290,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Poix",
+    "position": {
+      "latitude": 49.813907439167,
+      "longitude": 1.9697073048785,
+      "elevation": 547
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 39,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 219,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ronai",
+    "position": {
+      "latitude": 48.819736217262,
+      "longitude": -0.15437083794614,
+      "elevation": 860
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 124,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 253,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 73,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rouen-Boos",
+    "position": {
+      "latitude": 49.390370457743,
+      "longitude": 1.1837279655846,
+      "elevation": 492
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 218,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 38,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rucqueville",
+    "position": {
+      "latitude": 49.25191484988,
+      "longitude": -0.58983778986352,
+      "elevation": 193
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint Pierre du Mont",
+    "position": {
+      "latitude": 49.389798020385,
+      "longitude": -0.94718271684883,
+      "elevation": 103
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 92,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint-Andre-de-lEure",
+    "position": {
+      "latitude": 48.895893183011,
+      "longitude": 1.2606701967411,
+      "elevation": 478
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 127,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 307,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 229,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 49,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint-Aubin",
+    "position": {
+      "latitude": 49.882420775809,
+      "longitude": 1.0850680875239,
+      "elevation": 328
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 124,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint-Omer Wizernes",
+    "position": {
+      "latitude": 50.72838769597,
+      "longitude": 2.2363849574561,
+      "elevation": 213
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 210,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 30,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saint-Pol-Bryas",
+    "position": {
+      "latitude": 50.399973482136,
+      "longitude": 2.354093896106,
+      "elevation": 451
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 205,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 25,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sainte-Croix-sur-Mer",
+    "position": {
+      "latitude": 49.320698972053,
+      "longitude": -0.52528139999776,
+      "elevation": 160
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sainte-Laurent-sur-Mer",
+    "position": {
+      "latitude": 49.362172246506,
+      "longitude": -0.86457429662564,
+      "elevation": 62
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 287,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 107,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sommervieu",
+    "position": {
+      "latitude": 49.300287630575,
+      "longitude": -0.67900958382261,
+      "elevation": 187
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 86,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 266,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Stoney Cross",
+    "position": {
+      "latitude": 50.921058255566,
+      "longitude": -1.6524379623946,
+      "elevation": 384
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 181,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 1,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 62,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 242,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tangmere",
+    "position": {
+      "latitude": 50.840469181964,
+      "longitude": -0.69829401469449,
+      "elevation": 48
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 332,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 152,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 62,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 242,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Triqueville",
+    "position": {
+      "latitude": 49.331957145747,
+      "longitude": 0.46006097902079,
+      "elevation": 402
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 339,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 159,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Villacoublay",
+    "position": {
+      "latitude": 48.764077145048,
+      "longitude": 2.2109212406269,
+      "elevation": 558
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 303,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 123,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Vrigny",
+    "position": {
+      "latitude": 48.675792205427,
+      "longitude": -0.0064338278151999,
+      "elevation": 591
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 135,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 315,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "West Malling",
+    "position": {
+      "latitude": 51.272842872613,
+      "longitude": 0.41496611848712,
+      "elevation": 305
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 64,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]
