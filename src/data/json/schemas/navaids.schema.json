@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/navaids.schema.json",
+  "title": "Navigation Aids Database",
+  "description": "Navigation aid waypoints for DCS theaters with coordinates and elevations",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "latitude", "longitude", "elevation"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Navigation aid name/identifier"
+      },
+      "latitude": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 90,
+        "description": "Latitude in decimal degrees"
+      },
+      "longitude": {
+        "type": "number",
+        "minimum": -180,
+        "maximum": 180,
+        "description": "Longitude in decimal degrees"
+      },
+      "elevation": {
+        "type": "number",
+        "description": "Elevation in feet (from SRTM/NASA Digital Elevation Model)"
+      }
+    }
+  }
+}

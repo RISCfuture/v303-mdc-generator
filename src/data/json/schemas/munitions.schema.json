@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/munitions.schema.json",
+  "title": "Munitions Database",
+  "description": "Database of munitions with weights and categories",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": ["id", "name", "shortName", "weight", "category"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "DCS weapon CLSID (e.g., 'Mk_82', 'AGM_65D')"
+      },
+      "name": {
+        "type": "string",
+        "description": "Full display name (e.g., 'Mk-82 500-lb bomb', 'AGM-65D Maverick EO missile')"
+      },
+      "shortName": {
+        "type": "string",
+        "description": "Short display name (e.g., 'Mk-82', 'AGM-65')"
+      },
+      "weight": {
+        "type": "number",
+        "description": "Weight in pounds (can be negative for pylon removal/weight adjustments)"
+      },
+      "category": {
+        "type": "string",
+        "enum": ["air-to-air", "air-to-ground", "fuel", "pod", "rack", "empty"],
+        "description": "Munition category"
+      }
+    }
+  }
+}

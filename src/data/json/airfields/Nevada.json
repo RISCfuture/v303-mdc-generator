@@ -1,0 +1,566 @@
+[
+  {
+    "name": "Beatty",
+    "position": {
+      "latitude": 36.868394298081,
+      "longitude": -116.78608313042,
+      "elevation": 3173
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 180,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 0,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Boulder City",
+    "position": {
+      "latitude": 35.943681644578,
+      "longitude": -114.86055178579,
+      "elevation": 2122
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 344,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 164,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 278,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 98,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Creech",
+    "position": {
+      "latitude": 36.584429875554,
+      "longitude": -115.68681060569,
+      "elevation": 3126
+    },
+    "tacan": {
+      "channel": 87,
+      "callsign": "INS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "8",
+        "heading": 92,
+        "ils": {
+          "name": "ICRR",
+          "frequency": "108.7",
+          "channel": 24,
+          "position": {
+            "latitude": 36.583327,
+            "longitude": -115.661273
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 145,
+        "ils": {
+          "name": "ICRR",
+          "frequency": "108.7",
+          "channel": 24,
+          "position": {
+            "latitude": 36.583327,
+            "longitude": -115.661273
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 325,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Echo Bay",
+    "position": {
+      "latitude": 36.310471394437,
+      "longitude": -114.46933764146,
+      "elevation": 1549
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 77,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 257,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Groom Lake",
+    "position": {
+      "latitude": 37.21913894289,
+      "longitude": -115.78531067518,
+      "elevation": 4494
+    },
+    "tacan": {
+      "channel": 18,
+      "callsign": "GRL",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "32",
+        "heading": 336,
+        "ils": {
+          "name": "GLRI",
+          "frequency": "109.3",
+          "channel": 30,
+          "position": {
+            "latitude": 37.250797,
+            "longitude": -115.801637
+          }
+        }
+      },
+      {
+        "name": "16",
+        "heading": 156,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Henderson Executive",
+    "position": {
+      "latitude": 35.96746878808,
+      "longitude": -115.13347108341,
+      "elevation": 2492
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 0,
+        "ils": null
+      },
+      {
+        "name": "18",
+        "heading": 180,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 359,
+        "ils": null
+      },
+      {
+        "name": "18",
+        "heading": 179,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jean",
+    "position": {
+      "latitude": 35.773785550964,
+      "longitude": -115.32570272555,
+      "elevation": 2824
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 211,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 31,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 211,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 31,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Laughlin",
+    "position": {
+      "latitude": 35.165905267476,
+      "longitude": -114.55986431857,
+      "elevation": 656
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 175,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 355,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lincoln County",
+    "position": {
+      "latitude": 37.793389585399,
+      "longitude": -114.41923699635,
+      "elevation": 4815
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 181,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 1,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "McCarran International",
+    "position": {
+      "latitude": 36.076670073498,
+      "longitude": -115.16219006293,
+      "elevation": 2170
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 89,
+        "ils": {
+          "name": "I-RLE",
+          "frequency": "111.75",
+          "channel": null,
+          "position": {
+            "latitude": 36.073641,
+            "longitude": -115.164803
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 269,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 89,
+        "ils": {
+          "name": "I-RLE",
+          "frequency": "111.75",
+          "channel": null,
+          "position": {
+            "latitude": 36.073641,
+            "longitude": -115.164803
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 269,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mesquite",
+    "position": {
+      "latitude": 36.827345248734,
+      "longitude": -114.06033514493,
+      "elevation": 1859
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "1",
+        "heading": 28,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 208,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mina",
+    "position": {
+      "latitude": 38.374546852088,
+      "longitude": -118.09349931622,
+      "elevation": 4562
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 332,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 152,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Nellis",
+    "position": {
+      "latitude": 36.225662018016,
+      "longitude": -115.04380774353,
+      "elevation": 1842
+    },
+    "tacan": {
+      "channel": 12,
+      "callsign": "LSV",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "3",
+        "heading": 40,
+        "ils": {
+          "name": "IDIQ",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 36.222242,
+            "longitude": -115.047062
+          }
+        }
+      },
+      {
+        "name": "22",
+        "heading": 220,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 40,
+        "ils": {
+          "name": "IDIQ",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 36.222242,
+            "longitude": -115.047062
+          }
+        }
+      },
+      {
+        "name": "22",
+        "heading": 220,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "North Las Vegas",
+    "position": {
+      "latitude": 36.213364566271,
+      "longitude": -115.18673756618,
+      "elevation": 2229
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 267,
+        "ils": {
+          "name": "I-HWG",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.203486,
+            "longitude": -115.185139
+          }
+        }
+      },
+      {
+        "name": "9",
+        "heading": 87,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 313,
+        "ils": {
+          "name": "I-HWG",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.203486,
+            "longitude": -115.185139
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 133,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 133,
+        "ils": {
+          "name": "I-HWG",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.203486,
+            "longitude": -115.185139
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 313,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Pahute Mesa",
+    "position": {
+      "latitude": 37.094831346541,
+      "longitude": -116.31539962949,
+      "elevation": 5057
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "36",
+        "heading": 13,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 193,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tonopah",
+    "position": {
+      "latitude": 38.058024445654,
+      "longitude": -117.07591711356,
+      "elevation": 5394
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 305,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 125,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 345,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 165,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tonopah Test Range",
+    "position": {
+      "latitude": 37.78403952166,
+      "longitude": -116.77330290767,
+      "elevation": 5534
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 337,
+        "ils": {
+          "name": "I-RVP",
+          "frequency": "108.3",
+          "channel": null,
+          "position": {
+            "latitude": 37.778583,
+            "longitude": -116.770052
+          }
+        }
+      },
+      {
+        "name": "16",
+        "heading": 157,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

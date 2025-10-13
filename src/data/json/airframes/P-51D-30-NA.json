@@ -1,0 +1,142 @@
+{
+  "aircraft": "P-51D-30-NA",
+  "displayName": "P-51D-30-NA",
+  "emptyWeight": 7824,
+  "maxTakeoffWeight": 10582,
+  "internalFuel": 1614,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "SCR-522",
+      "presetCount": 4,
+      "min": 38,
+      "max": 156,
+      "step": 0.025
+    },
+    {
+      "name": "COM 2",
+      "description": "BC-1206",
+      "presetCount": 1,
+      "min": 100,
+      "max": 200,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "name": "Browning .50 M2",
+      "capacity": 270,
+      "shells": [
+        {
+          "name": "50Browning_Ball_M2",
+          "displayName": "50Browning_Ball_M2"
+        },
+        {
+          "name": "50Browning_AP_M2",
+          "displayName": "50Browning_AP_M2"
+        },
+        {
+          "name": "50Browning_API_M8",
+          "displayName": "50Browning_API_M8"
+        },
+        {
+          "name": "50Browning_APIT_M20",
+          "displayName": "50Browning_APIT_M20"
+        },
+        {
+          "name": "50Browning_I_M1",
+          "displayName": "50Browning_I_M1"
+        },
+        {
+          "name": "50Browning_T_M1",
+          "displayName": "50Browning_T_M1"
+        }
+      ],
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_API_M8",
+            "50Browning_T_M1",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_APIT_M20",
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_T_M1"
+          ]
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{HVAR}", "{HVAR_SMOKE_GENERATOR}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["{AN-M64}", "{DT75GAL}", "{HVAR}"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": ["{AN-M64}", "{DT75GAL}", "{HVAR}"]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 9,
+      "name": "Station 9",
+      "munitions": ["{HVAR}"]
+    },
+    {
+      "station": 10,
+      "name": "Station 10",
+      "munitions": ["{HVAR}", "{HVAR_SMOKE_GENERATOR}"]
+    }
+  ]
+}

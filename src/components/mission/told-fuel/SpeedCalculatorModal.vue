@@ -1,0 +1,366 @@
+<script setup lang="ts">
+import { ref, computed, watch } from 'vue'
+import { NModal, NSelect, NSpace, NButton, NInputNumber, NText, NInput, NCard } from 'naive-ui'
+import AirportSelector from './AirportSelector.vue'
+import WeatherInputs from './WeatherInputs.vue'
+import type { Mission, Airframe, F16CalculatorParams, A10CalculatorParams } from '@/types'
+import {
+  calculateSpeeds as calculateF16Speeds,
+  calculateHeadwindComponent as calculateF16Headwind,
+  calculateCrosswindComponent as calculateF16Crosswind,
+  type PowerSetting,
+} from '@/utils/f16RotationCalculator'
+import {
+  calculateSpeeds as calculateA10Speeds,
+  calculateHeadwindComponent as calculateA10Headwind,
+  calculateCrosswindComponent as calculateA10Crosswind,
+  type FlapSetting,
+  type SpeedBrakeSetting,
+} from '@/utils/a10RotationCalculator'
+
+interface Props {
+  show: boolean
+  mission: Mission
+  airframe: Airframe
+  grossWeight: number
+}
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<{
+  'update:show': [value: boolean]
+  'speeds-calculated': [
+    rotation: number,
+    refusal: number,
+    params: F16CalculatorParams | A10CalculatorParams,
+    departureRecovery: {
+      departureAirportId?: string
+      departureRunwayName?: string
+      departureRunwayHeading?: number
+      departureFieldElevation?: number
+    },
+  ]
+}>()
+
+// Airport/runway selection state
+const selectedAirfieldName = ref<string | null>(null)
+const selectedRunwayName = ref<string | null>(null)
+const selectedRunwayHeading = ref<number | undefined>(undefined)
+const fieldElevation = ref<number | null>(null)
+
+// Common parameters
+const windDirection = ref<number>(0)
+const windSpeed = ref<number>(0)
+const temperature = ref<number>(15)
+const runwayConditionF16 = ref<'dry' | 'wet' | 'snow' | 'ice'>('dry')
+const runwayConditionA10 = ref<'dry' | 'wet' | 'icy'>('dry')
+
+// F-16 specific parameters
+const powerSetting = ref<PowerSetting>('AB')
+const cgPercent = ref<number>(35)
+const pitchAttitude = ref<number>(10)
+const runwaySlope = ref<number>(0)
+
+// A-10 specific parameters
+const flapSetting = ref<FlapSetting>(0)
+const speedBrake = ref<SpeedBrakeSetting>('open')
+
+// Computed wind components
+const runwayHeading = computed(() => selectedRunwayHeading.value ?? 0)
+
+const headwindComponent = computed(() => {
+  if (windSpeed.value === 0) return 0
+  if (props.airframe === 'F-16C_50') {
+    return calculateF16Headwind(windDirection.value, windSpeed.value, runwayHeading.value)
+  } else {
+    return calculateA10Headwind(windDirection.value, windSpeed.value, runwayHeading.value)
+  }
+})
+
+const crosswindComponent = computed(() => {
+  if (windSpeed.value === 0) return 0
+  if (props.airframe === 'F-16C_50') {
+    return calculateF16Crosswind(windDirection.value, windSpeed.value, runwayHeading.value)
+  } else {
+    return calculateA10Crosswind(windDirection.value, windSpeed.value, runwayHeading.value)
+  }
+})
+
+// Calculated speeds preview
+const calculatedSpeeds = computed(() => {
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  if (props.airframe === 'F-16C_50') {
+    return calculateF16Speeds({
+      grossWeight: props.grossWeight,
+      powerSetting: powerSetting.value,
+      cgPercent: cgPercent.value,
+      pitchAttitude: pitchAttitude.value,
+      runwayCondition: runwayConditionF16.value,
+      headwindComponent: headwindComponent.value,
+      runwaySlope: runwaySlope.value,
+    })
+  } else if (props.airframe === 'A-10C_2') {
+    return calculateA10Speeds({
+      grossWeight: props.grossWeight,
+      flapSetting: flapSetting.value,
+      speedBrakes: speedBrake.value,
+      runwayCondition: runwayConditionA10.value,
+    })
+  }
+
+  return null
+})
+
+// Initialize form with existing calculator params and departure airport
+watch(
+  () => props.show,
+  (isOpen) => {
+    if (isOpen) {
+      // Load departure airport/runway from departureRecovery
+      selectedAirfieldName.value = props.mission.departureRecovery.departureAirportId ?? null
+      selectedRunwayName.value = props.mission.departureRecovery.departureRunwayName ?? null
+      fieldElevation.value = props.mission.departureRecovery.departureFieldElevation ?? null
+
+      // Load calculator params if available
+      const params = props.mission.told.calculatorParams
+      if (params) {
+        windDirection.value = params.windDirection ?? 0
+        windSpeed.value = params.windSpeed ?? 0
+        temperature.value = params.temperature ?? 15
+
+        // Load aircraft-specific params
+        if (props.airframe === 'F-16C_50' && 'powerSetting' in params) {
+          runwayConditionF16.value = params.runwayCondition
+          powerSetting.value = params.powerSetting
+          cgPercent.value = params.cgPercent ?? 35
+          pitchAttitude.value = params.pitchAttitude ?? 10
+          runwaySlope.value = params.runwaySlope ?? 0
+        } else if (props.airframe === 'A-10C_2' && 'flapSetting' in params) {
+          runwayConditionA10.value = params.runwayCondition
+          flapSetting.value = params.flapSetting
+          speedBrake.value = params.speedBrake
+        }
+      }
+    }
+  },
+)
+
+function handleCalculate() {
+  if (!calculatedSpeeds.value) return
+
+  // Build calculator params object (weather/configuration only)
+  let params: F16CalculatorParams | A10CalculatorParams
+
+  if (props.airframe === 'F-16C_50') {
+    params = {
+      windDirection: windDirection.value,
+      windSpeed: windSpeed.value,
+      temperature: temperature.value,
+      runwayCondition: runwayConditionF16.value,
+      powerSetting: powerSetting.value,
+      cgPercent: cgPercent.value,
+      pitchAttitude: pitchAttitude.value,
+      runwaySlope: runwaySlope.value,
+    }
+  } else {
+    params = {
+      windDirection: windDirection.value,
+      windSpeed: windSpeed.value,
+      temperature: temperature.value,
+      runwayCondition: runwayConditionA10.value,
+      flapSetting: flapSetting.value,
+      speedBrake: speedBrake.value,
+    }
+  }
+
+  // Build departure recovery data (airport/runway selections)
+  const departureRecovery = {
+    departureAirportId: selectedAirfieldName.value ?? undefined,
+    departureRunwayName: selectedRunwayName.value ?? undefined,
+    departureRunwayHeading: selectedRunwayHeading.value ?? undefined,
+    departureFieldElevation: fieldElevation.value ?? undefined,
+  }
+
+  emit(
+    'speeds-calculated',
+    calculatedSpeeds.value.rotationSpeed,
+    calculatedSpeeds.value.refusalSpeed,
+    params,
+    departureRecovery,
+  )
+  emit('update:show', false)
+}
+
+function handleCancel() {
+  emit('update:show', false)
+}
+</script>
+
+<template>
+  <NModal
+    :show="show"
+    @update:show="(v: boolean) => emit('update:show', v)"
+    preset="card"
+    :title="`Calculate Takeoff Speeds - ${airframe === 'F-16C_50' ? 'F-16C' : 'A-10C'}`"
+    style="width: 600px; max-height: 85vh; overflow-y: auto"
+  >
+    <NSpace vertical>
+      <!-- Airport Section -->
+      <AirportSelector
+        :theater="mission.theater"
+        :airport-id="selectedAirfieldName"
+        :runway-name="selectedRunwayName"
+        :field-elevation="fieldElevation"
+        :disabled="true"
+        @update:airport-id="(v: string | null) => (selectedAirfieldName = v)"
+        @update:runway-name="(v: string | null) => (selectedRunwayName = v)"
+        @update:runway-heading="(v: number | undefined) => (selectedRunwayHeading = v)"
+        @update:field-elevation="(v: number | null) => (fieldElevation = v)"
+      />
+
+      <!-- Weather Section -->
+      <WeatherInputs
+        :temperature="temperature"
+        :wind-direction="windDirection"
+        :wind-speed="windSpeed"
+        :headwind-component="headwindComponent"
+        :crosswind-component="crosswindComponent"
+        :show-wind-components="windSpeed > 0 && selectedRunwayHeading !== undefined"
+        @update:temperature="(v: number) => (temperature = v)"
+        @update:wind-direction="(v: number) => (windDirection = v)"
+        @update:wind-speed="(v: number) => (windSpeed = v)"
+      />
+
+      <!-- Runway Section -->
+      <NCard title="Runway" size="small">
+        <div style="display: grid; gap: 12px">
+          <div>
+            <label>Condition</label>
+            <NSelect
+              v-if="airframe === 'F-16C_50'"
+              v-model:value="runwayConditionF16"
+              :options="[
+                { label: 'Dry', value: 'dry' },
+                { label: 'Wet', value: 'wet' },
+                { label: 'Snow', value: 'snow' },
+                { label: 'Ice', value: 'ice' },
+              ]"
+            />
+            <NSelect
+              v-else-if="airframe === 'A-10C_2'"
+              v-model:value="runwayConditionA10"
+              :options="[
+                { label: 'Dry', value: 'dry' },
+                { label: 'Wet', value: 'wet' },
+                { label: 'Icy', value: 'icy' },
+              ]"
+            />
+          </div>
+
+          <!-- F-16 Runway Slope -->
+          <div v-if="airframe === 'F-16C_50'">
+            <label>Slope (%)</label>
+            <NInputNumber
+              v-model:value="runwaySlope"
+              :min="-5"
+              :max="5"
+              :step="0.1"
+              style="width: 100%"
+            />
+            <NText depth="3" style="font-size: 12px; margin-top: 4px">
+              Positive = upslope, Negative = downslope
+            </NText>
+          </div>
+        </div>
+      </NCard>
+
+      <!-- Configuration Section -->
+      <NCard title="Configuration" size="small">
+        <div style="display: grid; gap: 12px">
+          <div>
+            <label class="small-label">Gross Weight</label>
+            <NInput :value="`${grossWeight.toLocaleString()} lbs`" disabled size="small" />
+          </div>
+
+          <!-- F-16 Specific Parameters -->
+          <template v-if="airframe === 'F-16C_50'">
+            <div>
+              <label>Power Setting</label>
+              <NSelect
+                v-model:value="powerSetting"
+                :options="[
+                  { label: 'Military (MIL)', value: 'MIL' },
+                  { label: 'Afterburner (AB)', value: 'AB' },
+                ]"
+              />
+            </div>
+
+            <div>
+              <label>CG Position (% MAC)</label>
+              <NInputNumber v-model:value="cgPercent" :min="20" :max="35" style="width: 100%" />
+            </div>
+
+            <div>
+              <label>Pitch Attitude (degrees)</label>
+              <NSelect
+                v-model:value="pitchAttitude"
+                :options="[
+                  { label: '8°', value: 8 },
+                  { label: '10° (standard)', value: 10 },
+                ]"
+              />
+            </div>
+          </template>
+
+          <!-- A-10 Specific Parameters -->
+          <template v-else-if="airframe === 'A-10C_2'">
+            <div>
+              <label>Flap Setting</label>
+              <NSelect
+                v-model:value="flapSetting"
+                :options="[
+                  { label: '0° (flaps up)', value: 0 },
+                  { label: '7° (flaps takeoff)', value: 7 },
+                ]"
+              />
+            </div>
+
+            <div>
+              <label>Speed Brake</label>
+              <NSelect
+                v-model:value="speedBrake"
+                :options="[
+                  { label: 'Open (extended)', value: 'open' as const },
+                  { label: 'Closed (retracted)', value: 'closed' as const },
+                ]"
+              />
+            </div>
+          </template>
+        </div>
+      </NCard>
+    </NSpace>
+
+    <template #footer>
+      <NSpace justify="end">
+        <NButton @click="handleCancel">Cancel</NButton>
+        <NButton type="primary" @click="handleCalculate" :disabled="!calculatedSpeeds">
+          Calculate
+        </NButton>
+      </NSpace>
+    </template>
+  </NModal>
+</template>
+
+<style scoped>
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.small-label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+</style>

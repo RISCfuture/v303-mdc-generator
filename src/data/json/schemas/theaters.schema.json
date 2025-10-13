@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/theaters.schema.json",
+  "title": "Theater Database",
+  "description": "DCS theater configurations with display names and navaid URLs",
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "type": "object",
+      "required": ["name", "displayName"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Theater identifier (internal DCS ID)"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable theater name"
+        },
+        "navaidsUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the v303rd Fighter Group navaids page for this theater (optional)"
+        },
+        "ifgUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the v303rd Fighter Group In-Flight Guide (IFG) for this theater (optional)"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

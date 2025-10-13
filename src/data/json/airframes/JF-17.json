@@ -1,0 +1,215 @@
+{
+  "aircraft": "JF-17",
+  "displayName": "JF-17",
+  "emptyWeight": 14520,
+  "maxTakeoffWeight": 27558,
+  "internalFuel": 5126,
+  "cmdsCapacity": 68,
+  "chaffIncrement": 4,
+  "flareIncrement": 4,
+  "defaultChaff": 36,
+  "defaultFlare": 32,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "COMM 1/2 Preset",
+      "presetCount": 20,
+      "min": 30,
+      "max": 399.995,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "name": "GSh-2-23",
+      "capacity": 180,
+      "shells": [
+        {
+          "name": "GSH23_23_HE_T",
+          "displayName": "23mm HE"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "DIS_PL-5EII",
+        "DIS_SMOKE_GENERATOR_R",
+        "DIS_SMOKE_GENERATOR_G",
+        "DIS_SMOKE_GENERATOR_B",
+        "DIS_SMOKE_GENERATOR_W",
+        "DIS_SMOKE_GENERATOR_Y",
+        "DIS_SMOKE_GENERATOR_O"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "DIS_PL-5EII",
+        "DIS_SD-10",
+        "DIS_SD-10_DUAL_L",
+        "DIS_LD-10",
+        "DIS_LD-10_DUAL_L",
+        "DIS_C-701T",
+        "DIS_C-701IR",
+        "DIS_LS_6_500",
+        "DIS_LS_6_250",
+        "DIS_LS_6_250_DUAL_L",
+        "DIS_LS_6_100_DUAL_L",
+        "{Mk82SNAKEYE}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+        "DIS_MK_20",
+        "DIS_GBU_12",
+        "DIS_TYPE200",
+        "DIS_TYPE200_DUAL_L",
+        "DIS_MK_82_DUAL_GDJ_II19_L",
+        "DIS_MK_82S_DUAL_GDJ_II19_L",
+        "DIS_MK_20_DUAL_GDJ_II19_L",
+        "DIS_GBU_12_DUAL_GDJ_II19_L",
+        "DIS_BRM1_90",
+        "DIS_RKT_90_UG",
+        "DIS_LAU68_MK5_DUAL_GDJ_II19_L",
+        "DIS_WMD7",
+        "DIS_AKG_DLPOD",
+        "DIS_SMOKE_GENERATOR_R",
+        "DIS_SMOKE_GENERATOR_G",
+        "DIS_SMOKE_GENERATOR_B",
+        "DIS_SMOKE_GENERATOR_W",
+        "DIS_SMOKE_GENERATOR_Y",
+        "DIS_SMOKE_GENERATOR_O"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "DIS_C-802AK",
+        "DIS_CM-802AKG",
+        "DIS_CM-802AKG_AI",
+        "DIS_LS_6_500",
+        "DIS_GB6",
+        "DIS_GB6_TSP",
+        "DIS_GB6_HE",
+        "DIS_TANK800",
+        "DIS_TANK1100",
+        "DIS_TANK800_EMPTY",
+        "DIS_TANK1100_EMPTY",
+        "{Mk82SNAKEYE}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+        "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
+        "DIS_MK_20",
+        "DIS_GBU_10",
+        "DIS_GBU_16",
+        "DIS_GBU_12",
+        "DIS_TYPE200"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "DIS_TANK800",
+        "DIS_TANK800_EMPTY",
+        "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+        "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
+        "DIS_GBU_10",
+        "DIS_GBU_16",
+        "DIS_WMD7",
+        "DIS_AKG_DLPOD",
+        "DIS_SPJ_POD",
+        "DIS_SMOKE_GENERATOR_R",
+        "DIS_SMOKE_GENERATOR_G",
+        "DIS_SMOKE_GENERATOR_B",
+        "DIS_SMOKE_GENERATOR_W",
+        "DIS_SMOKE_GENERATOR_Y",
+        "DIS_SMOKE_GENERATOR_O"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "DIS_C-802AK",
+        "DIS_CM-802AKG",
+        "DIS_CM-802AKG_AI",
+        "DIS_LS_6_500",
+        "DIS_GB6",
+        "DIS_GB6_TSP",
+        "DIS_GB6_HE",
+        "DIS_TANK800",
+        "DIS_TANK1100",
+        "DIS_TANK800_EMPTY",
+        "DIS_TANK1100_EMPTY",
+        "{Mk82SNAKEYE}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+        "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}",
+        "DIS_MK_20",
+        "DIS_GBU_10",
+        "DIS_GBU_16",
+        "DIS_GBU_12",
+        "DIS_TYPE200"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": [
+        "DIS_PL-5EII",
+        "DIS_SD-10",
+        "DIS_SD-10_DUAL_R",
+        "DIS_LD-10",
+        "DIS_LD-10_DUAL_R",
+        "DIS_C-701T",
+        "DIS_C-701IR",
+        "DIS_LS_6_500",
+        "DIS_LS_6_250",
+        "DIS_LS_6_250_DUAL_R",
+        "DIS_LS_6_100_DUAL_R",
+        "{Mk82SNAKEYE}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{7A44FF09-527C-4B7E-B42B-3F111CFE50FB}",
+        "DIS_MK_20",
+        "DIS_GBU_12",
+        "DIS_TYPE200",
+        "DIS_TYPE200_DUAL_R",
+        "DIS_MK_82_DUAL_GDJ_II19_R",
+        "DIS_MK_82S_DUAL_GDJ_II19_R",
+        "DIS_MK_20_DUAL_GDJ_II19_R",
+        "DIS_GBU_12_DUAL_GDJ_II19_R",
+        "DIS_BRM1_90",
+        "DIS_RKT_90_UG",
+        "DIS_LAU68_MK5_DUAL_GDJ_II19_R",
+        "DIS_WMD7",
+        "DIS_AKG_DLPOD",
+        "DIS_SMOKE_GENERATOR_R",
+        "DIS_SMOKE_GENERATOR_G",
+        "DIS_SMOKE_GENERATOR_B",
+        "DIS_SMOKE_GENERATOR_W",
+        "DIS_SMOKE_GENERATOR_Y",
+        "DIS_SMOKE_GENERATOR_O"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "DIS_PL-5EII",
+        "DIS_SMOKE_GENERATOR_R",
+        "DIS_SMOKE_GENERATOR_G",
+        "DIS_SMOKE_GENERATOR_B",
+        "DIS_SMOKE_GENERATOR_W",
+        "DIS_SMOKE_GENERATOR_Y",
+        "DIS_SMOKE_GENERATOR_O"
+      ]
+    }
+  ]
+}

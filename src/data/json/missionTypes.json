@@ -1,0 +1,18 @@
+{
+  "missionTypes": [
+    "DEAD/AI",
+    "SEAD",
+    "CAS",
+    "STRIKE",
+    "BAI",
+    "OCA",
+    "DCA",
+    "CAP",
+    "SWEEP",
+    "INTERCEPT",
+    "ESCORT",
+    "RECCE",
+    "TRAINING",
+    "OTHER"
+  ]
+}

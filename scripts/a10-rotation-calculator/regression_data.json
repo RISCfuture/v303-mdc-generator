@@ -1,0 +1,79 @@
+{
+  "aircraft": "A-10A",
+  "engines": "(2) TF34-GE-100/-100A",
+  "source": "TO 1A-10A-1 Flight Manual, Pages 437, 446 (Figures A2-2, A2-11)",
+  "date": "30 November 1982",
+  "method": "Polynomial regression (degree 2)",
+  "notes": [
+    "Polynomial regression provides better fit for slightly curved chart lines",
+    "Quadratic fit (degree 2) provides R\u00b2 > 0.9999 for all curves",
+    "Coefficients in descending order: [a, b, c] for a*x\u00b2 + b*x + c",
+    "For rotation: x = gross weight in thousands of lbs",
+    "For refusal: x = RCR value, separate coefficients for each weight"
+  ],
+  "rotationSpeed": {
+    "flaps0": {
+      "coefficients": [
+        -0.00227778208579489,
+        1.991139917531865,
+        59.88846766540069
+      ],
+      "r_squared": 0.9997478158931694,
+      "degree": 2,
+      "equation": "-0.002278*gw\u00b2 + 1.991140*gw + 59.888468"
+    },
+    "flaps7": {
+      "coefficients": [
+        -0.005928793855341546,
+        2.308479485550139,
+        56.07904953506883
+      ],
+      "r_squared": 0.999770245243727,
+      "degree": 2,
+      "equation": "-0.005929*gw\u00b2 + 2.308479*gw + 56.079050"
+    }
+  },
+  "refusalSpeed": {
+    "flaps0or7": {
+      "speedBrakesOpen": {
+        "gw30": {
+          "coefficients": [
+            0.09703993546422594,
+            -5.822582973153588,
+            177.53709027494932
+          ],
+          "r_squared": 0.9960044352167602,
+          "degree": 2
+        },
+        "gw35": {
+          "coefficients": [
+            0.09633176870990379,
+            -6.025244876088941,
+            188.63819763817
+          ],
+          "r_squared": 0.997268069597384,
+          "degree": 2
+        },
+        "gw40": {
+          "coefficients": [
+            0.09633176870990394,
+            -6.0252448760889425,
+            195.63819763817003
+          ],
+          "r_squared": 0.997268069597384,
+          "degree": 2
+        },
+        "gw45": {
+          "coefficients": [
+            0.09633176870990372,
+            -6.0252448760889346,
+            200.6381976381699
+          ],
+          "r_squared": 0.997268069597384,
+          "degree": 2
+        }
+      },
+      "method": "2D interpolation: polynomial in RCR for each weight, linear between weights"
+    }
+  }
+}

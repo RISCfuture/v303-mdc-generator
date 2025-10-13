@@ -1,0 +1,231 @@
+[
+  {
+    "name": "Andersen AFB",
+    "position": {
+      "latitude": 13.57604707035,
+      "longitude": 144.91745889539,
+      "elevation": 545
+    },
+    "tacan": {
+      "channel": 54,
+      "callsign": "UAM",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "6",
+        "heading": 66,
+        "ils": {
+          "name": "IUAM",
+          "frequency": "110.1",
+          "channel": null,
+          "position": {
+            "latitude": 13.589357,
+            "longitude": 144.948539
+          }
+        }
+      },
+      {
+        "name": "25",
+        "heading": 246,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 66,
+        "ils": {
+          "name": "IUAM",
+          "frequency": "110.1",
+          "channel": null,
+          "position": {
+            "latitude": 13.589357,
+            "longitude": 144.948539
+          }
+        }
+      },
+      {
+        "name": "25",
+        "heading": 246,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Antonio B. Won Pat Intl",
+    "position": {
+      "latitude": 13.479569370694,
+      "longitude": 144.78477470703,
+      "elevation": 255
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 65,
+        "ils": {
+          "name": "IGUM",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 13.493032,
+            "longitude": 144.814772
+          }
+        }
+      },
+      {
+        "name": "25",
+        "heading": 245,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 65,
+        "ils": {
+          "name": "IGUM",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 13.493032,
+            "longitude": 144.814772
+          }
+        }
+      },
+      {
+        "name": "25",
+        "heading": 245,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "North West Field",
+    "position": {
+      "latitude": 13.629365787313,
+      "longitude": 144.86661164669,
+      "elevation": 522
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "Olf Orote",
+    "position": {
+      "latitude": 13.4398309259,
+      "longitude": 144.64680955858,
+      "elevation": 94
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "25",
+        "heading": 247,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 67,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Pagan Airstrip",
+    "position": {
+      "latitude": 18.12420628516,
+      "longitude": 145.76106359949,
+      "elevation": 50
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 111,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 291,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rota Intl",
+    "position": {
+      "latitude": 14.174905098823,
+      "longitude": 145.23248560973,
+      "elevation": 569
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 92,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Saipan Intl",
+    "position": {
+      "latitude": 15.115121634075,
+      "longitude": 145.71879827825,
+      "elevation": 213
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 68,
+        "ils": {
+          "name": "IGSN",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 15.124498,
+            "longitude": 145.743327
+          }
+        }
+      },
+      {
+        "name": "25",
+        "heading": 248,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tinian Intl",
+    "position": {
+      "latitude": 14.997429376954,
+      "longitude": 145.60830605924,
+      "elevation": 240
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 79,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 259,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

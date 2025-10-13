@@ -1,0 +1,14 @@
+{
+  "v93": {
+    "id": "v93",
+    "name": "v93rd Fighter Squadron",
+    "displayName": "v93 FS",
+    "aircraft": "F-16C_50"
+  },
+  "v303": {
+    "id": "v303",
+    "name": "v303rd Fighter Squadron",
+    "displayName": "v303 FS",
+    "aircraft": "A-10C_2"
+  }
+}

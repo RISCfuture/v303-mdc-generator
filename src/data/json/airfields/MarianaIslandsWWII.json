@@ -1,0 +1,244 @@
+[
+  {
+    "name": "Agana",
+    "position": {
+      "latitude": 13.480570510924,
+      "longitude": 144.78375440456,
+      "elevation": 258
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 69,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 249,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Airfield 3",
+    "position": {
+      "latitude": 15.068688009698,
+      "longitude": 145.63126613072,
+      "elevation": 85
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 97,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 277,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Charon Kanoa",
+    "position": {
+      "latitude": 15.157222744004,
+      "longitude": 145.70336992978,
+      "elevation": 11
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 34,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 214,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gurguan Point",
+    "position": {
+      "latitude": 15.002242729021,
+      "longitude": 145.59428185507,
+      "elevation": 266
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 91,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 271,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Isley",
+    "position": {
+      "latitude": 15.11995904168,
+      "longitude": 145.72239915037,
+      "elevation": 191
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 92,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kagman",
+    "position": {
+      "latitude": 15.167955482239,
+      "longitude": 145.768807509,
+      "elevation": 230
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 91,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 271,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marpi",
+    "position": {
+      "latitude": 15.28335933455,
+      "longitude": 145.80921450329,
+      "elevation": 148
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 113,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 293,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Orote",
+    "position": {
+      "latitude": 13.439825959115,
+      "longitude": 144.63358199588,
+      "elevation": 82
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Pagan",
+    "position": {
+      "latitude": 18.124273146159,
+      "longitude": 145.76083357182,
+      "elevation": 49
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 111,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 291,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rota",
+    "position": {
+      "latitude": 14.17485135792,
+      "longitude": 145.23727951673,
+      "elevation": 595
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 92,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ushi",
+    "position": {
+      "latitude": 15.078659931179,
+      "longitude": 145.63407699137,
+      "elevation": 87
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 95,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 275,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

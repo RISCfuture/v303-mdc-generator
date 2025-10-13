@@ -1,0 +1,183 @@
+{
+  "aircraft": "MiG-21Bis",
+  "displayName": "MiG-21Bis",
+  "emptyWeight": 13790,
+  "maxTakeoffWeight": 22928,
+  "internalFuel": 5027,
+  "cmdsCapacity": 58,
+  "chaffIncrement": 18,
+  "flareIncrement": 40,
+  "defaultChaff": 18,
+  "defaultFlare": 40,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "R-832",
+      "presetCount": 20,
+      "min": 118,
+      "max": 390,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "name": "GSH_23",
+      "capacity": 260,
+      "shells": [
+        {
+          "name": "GSH_23_HE",
+          "displayName": "GSH 23 HE"
+        },
+        {
+          "name": "GSH_23_AP",
+          "displayName": "GSH 23 AP"
+        }
+      ],
+      "mixes": [
+        {
+          "sequence": [
+            "GSH_23_HE",
+            "GSH_23_AP",
+            "GSH_23_AP",
+            "GSH_23_HE",
+            "GSH_23_AP",
+            "GSH_23_HE",
+            "GSH_23_AP",
+            "GSH_23_HE"
+          ]
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "{UB-16_S5M}",
+        "{S-24B}",
+        "{S-24A}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+        "{FAB-250-M54-TU}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{R-13M}",
+        "{R-13M1}",
+        "{R-3R}",
+        "{R-3S}",
+        "{RS-2US}",
+        "{R-60}",
+        "{R-60M}",
+        "{R-60M 2L}",
+        "{R-60 2L}",
+        "{PTB_490_MIG21}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "{UB-16_S5M}",
+        "{UB-32_S5M}",
+        "{S-24B}",
+        "{S-24A}",
+        "{FAB-100-4}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
+        "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+        "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+        "{D5435F26-F120-4FA3-9867-34ACE562EF1B}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{Kh-66_Grom}",
+        "{R-13M}",
+        "{R-13M1}",
+        "{R-3R}",
+        "{R-3S}",
+        "{RS-2US}",
+        "{R-55}",
+        "{R-60}",
+        "{R-60M}",
+        "{R-60M 2L}",
+        "{R-60 2L}",
+        "{UPK-23-250 MiG-21}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["{RN-24}", "{RN-28}", "{SPS-141-100}", "{PTB_490C_MIG21}", "{PTB_800_MIG21}"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "{UB-16_S5M}",
+        "{UB-32_S5M}",
+        "{S-24B}",
+        "{S-24A}",
+        "{FAB-100-4}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{35B698AC-9FEF-4EC4-AD29-484A0085F62B}",
+        "{BD289E34-DF84-4C5E-9220-4B14C346E79D}",
+        "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+        "{D5435F26-F120-4FA3-9867-34ACE562EF1B}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{Kh-66_Grom}",
+        "{R-13M}",
+        "{R-13M1}",
+        "{R-3R}",
+        "{R-3S}",
+        "{RS-2US}",
+        "{R-55}",
+        "{R-60}",
+        "{R-60M}",
+        "{R-60M 2R}",
+        "{R-60 2R}",
+        "{UPK-23-250 MiG-21}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{UB-16_S5M}",
+        "{S-24B}",
+        "{S-24A}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{4203753F-8198-4E85-9924-6F8FF679F9FF}",
+        "{FAB-250-M54-TU}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{R-13M}",
+        "{R-13M1}",
+        "{R-3R}",
+        "{R-3S}",
+        "{RS-2US}",
+        "{R-60}",
+        "{R-60M}",
+        "{R-60M 2R}",
+        "{R-60 2R}",
+        "{PTB_490_MIG21}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["{ASO-2}", "{SPRD}"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": ["{MIG21_SMOKE_WHITE}"]
+    }
+  ]
+}

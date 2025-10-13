@@ -1,0 +1,946 @@
+[
+  {
+    "name": "Afrikanda",
+    "position": {
+      "latitude": 67.454209308693,
+      "longitude": 32.809867003807,
+      "elevation": 495
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 275,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 95,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Alakurtti",
+    "position": {
+      "latitude": 66.966442577835,
+      "longitude": 30.365890979232,
+      "elevation": 548
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 302,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 122,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Alta",
+    "position": {
+      "latitude": 69.973570823623,
+      "longitude": 23.382161407144,
+      "elevation": 9
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 299,
+        "ils": {
+          "name": "AT",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 69.971912,
+            "longitude": 23.391668
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 119,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Andoya",
+    "position": {
+      "latitude": 69.306748786526,
+      "longitude": 16.121185338387,
+      "elevation": 22
+    },
+    "tacan": {
+      "channel": 28,
+      "callsign": "OYA",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "14",
+        "heading": 154,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 334,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Arvidsjaur",
+    "position": {
+      "latitude": 65.598218042846,
+      "longitude": 19.258236004629,
+      "elevation": 1240
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 130,
+        "ils": {
+          "name": "nx",
+          "frequency": "111.5",
+          "channel": null,
+          "position": {
+            "latitude": 65.599936,
+            "longitude": 19.251909
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 310,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Banak",
+    "position": {
+      "latitude": 70.057759938201,
+      "longitude": 24.975276128064,
+      "elevation": 17
+    },
+    "tacan": {
+      "channel": 47,
+      "callsign": "BNK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "34",
+        "heading": 352,
+        "ils": {
+          "name": "ba",
+          "frequency": "108.3",
+          "channel": null,
+          "position": {
+            "latitude": 70.081661,
+            "longitude": 24.970528
+          }
+        }
+      },
+      {
+        "name": "17",
+        "heading": 172,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bardufoss",
+    "position": {
+      "latitude": 69.052218763948,
+      "longitude": 18.56643200482,
+      "elevation": 225
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 291,
+        "ils": {
+          "name": "BF",
+          "frequency": "108.7",
+          "channel": null,
+          "position": {
+            "latitude": 69.057549,
+            "longitude": 18.516214
+          }
+        }
+      },
+      {
+        "name": "11",
+        "heading": 111,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Boden Heli Base",
+    "position": {
+      "latitude": 65.810454438002,
+      "longitude": 21.692645019956,
+      "elevation": 42
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 134,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 314,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bodo",
+    "position": {
+      "latitude": 67.266972958478,
+      "longitude": 14.335477876481,
+      "elevation": 26
+    },
+    "tacan": {
+      "channel": 45,
+      "callsign": "BOO",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "7",
+        "heading": 84,
+        "ils": {
+          "name": "BO",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 67.272439,
+            "longitude": 14.404079
+          }
+        }
+      },
+      {
+        "name": "26",
+        "heading": 264,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Enontekio",
+    "position": {
+      "latitude": 68.35595842342,
+      "longitude": 23.410974328677,
+      "elevation": 998
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 32,
+        "ils": {
+          "name": "ET",
+          "frequency": "111.3",
+          "channel": null,
+          "position": {
+            "latitude": 68.352907,
+            "longitude": 23.406158
+          }
+        }
+      },
+      {
+        "name": "21",
+        "heading": 212,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Evenes",
+    "position": {
+      "latitude": 68.502509738721,
+      "longitude": 16.677568310734,
+      "elevation": 86
+    },
+    "tacan": {
+      "channel": 73,
+      "callsign": "Evenes",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "17",
+        "heading": 182,
+        "ils": {
+          "name": "ev",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 68.47619,
+            "longitude": 16.679865
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 2,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hemavan",
+    "position": {
+      "latitude": 65.799747854691,
+      "longitude": 15.090086702003,
+      "elevation": 1502
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 338,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 158,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hosio",
+    "position": {
+      "latitude": 65.898610297114,
+      "longitude": 25.721761763633,
+      "elevation": 379
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 245,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 65,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ivalo",
+    "position": {
+      "latitude": 68.613255832994,
+      "longitude": 27.42397023339,
+      "elevation": 468
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 221,
+        "ils": {
+          "name": "iv",
+          "frequency": "212.0",
+          "channel": null,
+          "position": {
+            "latitude": 68.597925,
+            "longitude": 27.377829
+          }
+        }
+      },
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jokkmokk",
+    "position": {
+      "latitude": 66.503493337335,
+      "longitude": 20.134919897777,
+      "elevation": 879
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 145,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 325,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kalevala",
+    "position": {
+      "latitude": 65.211794991244,
+      "longitude": 31.138350746148,
+      "elevation": 400
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 207,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 27,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kalixfors",
+    "position": {
+      "latitude": 67.769859948236,
+      "longitude": 20.249609559672,
+      "elevation": 1552
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 171,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 351,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kallax",
+    "position": {
+      "latitude": 65.554610417652,
+      "longitude": 22.098573223073,
+      "elevation": 65
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 136,
+        "ils": {
+          "name": "SPA",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 65.556679,
+            "longitude": 22.093108
+          }
+        }
+      },
+      {
+        "name": "32",
+        "heading": 316,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kemi Tornio",
+    "position": {
+      "latitude": 65.792105051259,
+      "longitude": 24.586346222607,
+      "elevation": 47
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "18",
+        "heading": 184,
+        "ils": {
+          "name": "ke",
+          "frequency": "110.9",
+          "channel": null,
+          "position": {
+            "latitude": 65.768598,
+            "longitude": 24.578158
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 4,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kilpyavr",
+    "position": {
+      "latitude": 69.10181266965,
+      "longitude": 32.420331722439,
+      "elevation": 305
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "21",
+        "heading": 213,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 33,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kirkenes",
+    "position": {
+      "latitude": 69.727983333228,
+      "longitude": 29.911999144029,
+      "elevation": 282
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 241,
+        "ils": {
+          "name": "KR",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 69.721532,
+            "longitude": 29.861209
+          }
+        }
+      },
+      {
+        "name": "6",
+        "heading": 61,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kiruna",
+    "position": {
+      "latitude": 67.830309878359,
+      "longitude": 20.352317498997,
+      "elevation": 1435
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "21",
+        "heading": 214,
+        "ils": {
+          "name": "nq",
+          "frequency": "110.3",
+          "channel": 0,
+          "position": {
+            "latitude": 67.809341,
+            "longitude": 20.314502
+          }
+        }
+      },
+      {
+        "name": "3",
+        "heading": 34,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kittila",
+    "position": {
+      "latitude": 67.710631959972,
+      "longitude": 24.841317611833,
+      "elevation": 637
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 163,
+        "ils": {
+          "name": "KT",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": 67.714603,
+            "longitude": 24.837988
+          }
+        }
+      },
+      {
+        "name": "34",
+        "heading": 343,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Koshka Yavr",
+    "position": {
+      "latitude": 69.262938386234,
+      "longitude": 31.208859335559,
+      "elevation": 471
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 190,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 10,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kuusamo",
+    "position": {
+      "latitude": 65.994669583674,
+      "longitude": 29.22114678071,
+      "elevation": 864
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 125,
+        "ils": {
+          "name": "KO",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 65.978239,
+            "longitude": 29.264668
+          }
+        }
+      },
+      {
+        "name": "30",
+        "heading": 305,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Luostari Pechenga",
+    "position": {
+      "latitude": 69.406969527919,
+      "longitude": 30.999282652782,
+      "elevation": 249
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 201,
+        "ils": null
+      },
+      {
+        "name": "2",
+        "heading": 21,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Monchegorsk",
+    "position": {
+      "latitude": 67.980068235154,
+      "longitude": 33.00554585351,
+      "elevation": 548
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "1",
+        "heading": 16,
+        "ils": null
+      },
+      {
+        "name": "20",
+        "heading": 196,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Murmansk International",
+    "position": {
+      "latitude": 68.790779721545,
+      "longitude": 32.735392362593,
+      "elevation": 249
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 135,
+        "ils": {
+          "name": "ird",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 68.794244,
+            "longitude": 32.728113
+          }
+        }
+      },
+      {
+        "name": "32",
+        "heading": 315,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Olenya",
+    "position": {
+      "latitude": 68.165641193625,
+      "longitude": 33.478248615765,
+      "elevation": 722
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 188,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 8,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Poduzhemye",
+    "position": {
+      "latitude": 64.916729252139,
+      "longitude": 34.286119258887,
+      "elevation": 157
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 268,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 88,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rovaniemi",
+    "position": {
+      "latitude": 66.574566219304,
+      "longitude": 25.849959054083,
+      "elevation": 612
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "21",
+        "heading": 213,
+        "ils": {
+          "name": "ro",
+          "frequency": "111.7",
+          "channel": null,
+          "position": {
+            "latitude": 66.551531,
+            "longitude": 25.805009
+          }
+        }
+      },
+      {
+        "name": "3",
+        "heading": 33,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Severomorsk-1",
+    "position": {
+      "latitude": 69.041038945947,
+      "longitude": 33.404833413526,
+      "elevation": 262
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 135,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 315,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Severomorsk-3",
+    "position": {
+      "latitude": 68.85677411136,
+      "longitude": 33.715938376222,
+      "elevation": 567
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 351,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 171,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sodankyla",
+    "position": {
+      "latitude": 67.401033010698,
+      "longitude": 26.615792287862,
+      "elevation": 595
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 160,
+        "ils": null
+      },
+      {
+        "name": "34",
+        "heading": 340,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Vidsel",
+    "position": {
+      "latitude": 65.879746507972,
+      "longitude": 20.129464603728,
+      "elevation": 594
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 117,
+        "ils": {
+          "name": "VDL",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": 65.881272,
+            "longitude": 20.120534
+          }
+        }
+      },
+      {
+        "name": "30",
+        "heading": 297,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Vuojarvi",
+    "position": {
+      "latitude": 67.075946867342,
+      "longitude": 26.560454027496,
+      "elevation": 736
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 223,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 43,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

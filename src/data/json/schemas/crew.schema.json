@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/crew.schema.json",
+  "title": "Crew Database Schema",
+  "description": "Schema for crew member data organized by squadron. Squadron IDs are dynamic and extensible.",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_]+$": {
+      "type": "array",
+      "description": "Squadron crew members",
+      "items": {
+        "$ref": "#/definitions/crewMember"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "crewMember": {
+      "type": "object",
+      "properties": {
+        "pilot": {
+          "type": "string",
+          "description": "Pilot's name or handle"
+        },
+        "callsign": {
+          "type": "array",
+          "description": "Array of callsign options for the pilot",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "link16Prefix": {
+          "type": "string",
+          "description": "Two-letter Link16 prefix (e.g., 'FN', 'BR')",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "stn": {
+          "type": "integer",
+          "description": "STN (Station) number - 5 digit integer",
+          "minimum": 0,
+          "maximum": 99999
+        },
+        "mode3": {
+          "type": "integer",
+          "description": "Mode 3 transponder code - octal integer (0000 to 7777 in octal = 0 to 4095 in decimal)",
+          "minimum": 0,
+          "maximum": 4095
+        },
+        "freq": {
+          "type": "string",
+          "description": "Intraflight frequency (e.g., '56.1', '30.3')"
+        },
+        "aaTacan": {
+          "type": "integer",
+          "description": "Air-to-air TACAN channel (1-63). Band is always Y. Reciprocal is +63 (e.g., 5Y -> 68Y)",
+          "minimum": 1,
+          "maximum": 63
+        },
+        "laserCode": {
+          "type": "integer",
+          "description": "Laser code - stored as decimal conversion of octal with digits 1-8. Original format 1111-1688 converts to 0000-0577 octal = 0-383 decimal",
+          "minimum": 0,
+          "maximum": 383
+        }
+      },
+      "required": [
+        "pilot",
+        "callsign",
+        "link16Prefix",
+        "stn",
+        "mode3",
+        "freq",
+        "aaTacan",
+        "laserCode"
+      ]
+    }
+  }
+}
