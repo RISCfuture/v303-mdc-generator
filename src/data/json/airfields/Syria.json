@@ -1,0 +1,3499 @@
+[
+  {
+    "name": "Abu al-Duhur",
+    "position": {
+      "latitude": 35.731462428174,
+      "longitude": 37.118801734534,
+      "elevation": 820
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 274,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 94,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Adana Sakirpasa",
+    "position": {
+      "latitude": 36.988281127829,
+      "longitude": 35.291372307265,
+      "elevation": 56
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 236,
+        "ils": {
+          "name": "IADA",
+          "frequency": "108.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.990667,
+            "longitude": 35.294835
+          }
+        }
+      },
+      {
+        "name": "6",
+        "heading": 56,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Akrotiri",
+    "position": {
+      "latitude": 34.594065664734,
+      "longitude": 32.974818319372,
+      "elevation": 69
+    },
+    "tacan": {
+      "channel": 107,
+      "callsign": "AKR",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "10",
+        "heading": 111,
+        "ils": {
+          "name": "IAK",
+          "frequency": "109.7",
+          "channel": null,
+          "position": {
+            "latitude": 34.595184,
+            "longitude": 32.96954
+          }
+        }
+      },
+      {
+        "name": "29",
+        "heading": 291,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al Qusayr",
+    "position": {
+      "latitude": 34.566877297302,
+      "longitude": 36.5854147754,
+      "elevation": 1729
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 102,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Dumayr",
+    "position": {
+      "latitude": 33.614742620751,
+      "longitude": 36.762473838401,
+      "elevation": 2067
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 246,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 66,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Aleppo",
+    "position": {
+      "latitude": 36.179023598091,
+      "longitude": 37.238349864832,
+      "elevation": 1254
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 278,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 98,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "An Nasiriyah",
+    "position": {
+      "latitude": 33.92656597361,
+      "longitude": 36.875344527767,
+      "elevation": 2737
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 225,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 45,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "At Tanf",
+    "position": {
+      "latitude": 33.506450704749,
+      "longitude": 38.614883357324,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "Bassel Al-Assad",
+    "position": {
+      "latitude": 35.411589930353,
+      "longitude": 35.95003283514,
+      "elevation": 93
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 179,
+        "ils": {
+          "name": "IBA",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 35.387532,
+            "longitude": 35.951361
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 359,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beirut-Rafic Hariri",
+    "position": {
+      "latitude": 33.836465479357,
+      "longitude": 35.487416760577,
+      "elevation": 39
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 179,
+        "ils": {
+          "name": "IKK",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 33.828534,
+            "longitude": 35.504347
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 359,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 35,
+        "ils": {
+          "name": "IKK",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 33.828534,
+            "longitude": 35.504347
+          }
+        }
+      },
+      {
+        "name": "21",
+        "heading": 215,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 169,
+        "ils": {
+          "name": "IKK",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 33.828534,
+            "longitude": 35.504347
+          }
+        }
+      },
+      {
+        "name": "35",
+        "heading": 349,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ben Gurion",
+    "position": {
+      "latitude": 32.01241757156,
+      "longitude": 34.870943187745,
+      "elevation": 134
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 124,
+        "ils": {
+          "name": "BG",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 31.998505,
+            "longitude": 34.896858
+          }
+        }
+      },
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 211,
+        "ils": {
+          "name": "BG",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 31.998505,
+            "longitude": 34.896858
+          }
+        }
+      },
+      {
+        "name": "3",
+        "heading": 31,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 262,
+        "ils": {
+          "name": "BG",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 31.998505,
+            "longitude": 34.896858
+          }
+        }
+      },
+      {
+        "name": "8",
+        "heading": 82,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Damascus",
+    "position": {
+      "latitude": 33.415340013895,
+      "longitude": 36.504254828586,
+      "elevation": 2008
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 50,
+        "ils": {
+          "name": "IDA",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 33.412415,
+            "longitude": 36.500792
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 230,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 50,
+        "ils": {
+          "name": "IDA",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 33.412415,
+            "longitude": 36.500792
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 230,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Deir ez-Zor",
+    "position": {
+      "latitude": 35.290032560408,
+      "longitude": 40.161449069656,
+      "elevation": 713
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 109,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 289,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ercan",
+    "position": {
+      "latitude": 35.159249791336,
+      "longitude": 33.49011058133,
+      "elevation": 312
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 115,
+        "ils": {
+          "name": "IECR",
+          "frequency": "108.3",
+          "channel": null,
+          "position": {
+            "latitude": 35.160518,
+            "longitude": 33.485367
+          }
+        }
+      },
+      {
+        "name": "30",
+        "heading": 295,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Eyn Shemer",
+    "position": {
+      "latitude": 32.439769207088,
+      "longitude": 35.014693873498,
+      "elevation": 109
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 280,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 100,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gaziantep",
+    "position": {
+      "latitude": 36.951779086764,
+      "longitude": 37.46274216945,
+      "elevation": 2294
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 106,
+        "ils": {
+          "name": "IGNP",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 36.952192,
+            "longitude": 37.459536
+          }
+        }
+      },
+      {
+        "name": "29",
+        "heading": 286,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gazipasa",
+    "position": {
+      "latitude": 36.297823085147,
+      "longitude": 32.286068490305,
+      "elevation": 36
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 86,
+        "ils": {
+          "name": "IGZP",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 36.300663,
+            "longitude": 32.312336
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 266,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gecitkale",
+    "position": {
+      "latitude": 35.236403909864,
+      "longitude": 33.707277702803,
+      "elevation": 148
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 94,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 274,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.924213405835,
+      "longitude": 33.603721539854,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.830848687747,
+      "longitude": 33.478191314395,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.311946877043,
+      "longitude": 33.290077237503,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.267204280016,
+      "longitude": 33.495895303281,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.093868254051,
+      "longitude": 33.885780366706,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.084003446186,
+      "longitude": 33.897190088859,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.96187979609,
+      "longitude": 35.550067894329,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.982101466622,
+      "longitude": 35.51471328854,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.981166881216,
+      "longitude": 35.515167219761,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.882232699564,
+      "longitude": 35.71898650878,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.937675470855,
+      "longitude": 35.568729402615,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.805606791595,
+      "longitude": 35.401592270515,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.808124489766,
+      "longitude": 35.42528153808,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.60624701311,
+      "longitude": 34.97301866793,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.823078102358,
+      "longitude": 35.436180106495,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.994808130309,
+      "longitude": 35.484073653413,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.017097467072,
+      "longitude": 35.704505925324,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.338550565161,
+      "longitude": 36.074306479516,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.789131188116,
+      "longitude": 37.724784910076,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.279041299389,
+      "longitude": 36.085319522503,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.644828805048,
+      "longitude": 36.743644738639,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.060356119221,
+      "longitude": 37.343139693207,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.050689697576,
+      "longitude": 37.332313468456,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.386337223248,
+      "longitude": 36.272712708139,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.415748581935,
+      "longitude": 36.284515378262,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.610935195186,
+      "longitude": 38.252986877867,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.627048486848,
+      "longitude": 38.242950486703,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.987838718073,
+      "longitude": 37.414272351271,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.394596118867,
+      "longitude": 36.35973738526,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.455406213918,
+      "longitude": 36.087089536896,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.745689371804,
+      "longitude": 36.803543104582,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.429515785619,
+      "longitude": 36.118743899721,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.457618741197,
+      "longitude": 36.130844112049,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.444789954952,
+      "longitude": 36.30988311293,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.1819572794,
+      "longitude": 36.572013860238,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.707950559611,
+      "longitude": 36.672862981013,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.411659201621,
+      "longitude": 36.191734306941,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.353466034953,
+      "longitude": 36.48482514146,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.624008220919,
+      "longitude": 35.379085552734,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.945545252823,
+      "longitude": 35.204643214124,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.010471388664,
+      "longitude": 35.662956242242,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.762866916274,
+      "longitude": 35.30269624008,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.98332208454,
+      "longitude": 35.727111820198,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.848220778752,
+      "longitude": 34.721374470572,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.207393606306,
+      "longitude": 35.571163198693,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.004291537258,
+      "longitude": 34.059131685589,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.343963625294,
+      "longitude": 33.194805141473,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.333282469499,
+      "longitude": 33.324344639938,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.146530151765,
+      "longitude": 36.753379835299,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.14432526216,
+      "longitude": 33.353881839935,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 37.052940344175,
+      "longitude": 35.278846726256,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.516700748777,
+      "longitude": 35.791236881794,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.955951678446,
+      "longitude": 38.989261482313,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.974998476599,
+      "longitude": 33.847999626952,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.576164201812,
+      "longitude": 36.19892119793,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.570587017782,
+      "longitude": 35.846153262343,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.892997763616,
+      "longitude": 35.523025514202,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.833473199123,
+      "longitude": 34.986785871694,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.128021239665,
+      "longitude": 33.378604823263,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.78553777963,
+      "longitude": 34.980602287664,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.707988747512,
+      "longitude": 32.981914561885,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.921447750404,
+      "longitude": 33.604270865567,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.787979125164,
+      "longitude": 32.445278116741,
+      "elevation": 0
+    },
+    "tacan": {
+      "channel": 79,
+      "callsign": "PHA",
+      "band": "X"
+    },
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 37.011604359568,
+      "longitude": 35.352592444177,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.528228775705,
+      "longitude": 36.298248293878,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.116771694437,
+      "longitude": 36.761856058302,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.560508741921,
+      "longitude": 35.744415279282,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.216018691966,
+      "longitude": 37.156711604888,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.1460952849,
+      "longitude": 33.314098385798,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.999065373404,
+      "longitude": 35.329559339337,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.046852052069,
+      "longitude": 39.608337314316,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.74610518144,
+      "longitude": 35.879589080077,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.138225525042,
+      "longitude": 35.504535672751,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.173721337882,
+      "longitude": 35.275310531968,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.75793832989,
+      "longitude": 35.89785385228,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.804145848054,
+      "longitude": 36.149845118963,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.709880899057,
+      "longitude": 35.966697690482,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.264350881514,
+      "longitude": 36.483222975536,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.365203877218,
+      "longitude": 36.512111645294,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.203769654152,
+      "longitude": 35.353057865945,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.262176575527,
+      "longitude": 35.418498996673,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.427551259547,
+      "longitude": 35.93489074701,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.305877734695,
+      "longitude": 35.540962230124,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 37.050693529423,
+      "longitude": 37.389831574811,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.338798522607,
+      "longitude": 40.129428952541,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.558055882423,
+      "longitude": 38.278747480063,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.960659006137,
+      "longitude": 38.04177470053,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.194000229376,
+      "longitude": 37.09792707481,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 31.719398622887,
+      "longitude": 35.797813416525,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.89345929156,
+      "longitude": 35.567333234514,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.692108167618,
+      "longitude": 32.960266267114,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 31.881648944342,
+      "longitude": 36.009780886168,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.455982144654,
+      "longitude": 36.23522949698,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.165340386935,
+      "longitude": 34.845363640698,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.821048669843,
+      "longitude": 34.990642565621,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.708160449058,
+      "longitude": 35.302074429148,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.523601491732,
+      "longitude": 36.354866009957,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.720741271288,
+      "longitude": 36.732967348909,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 36.206241621489,
+      "longitude": 36.152400974396,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.883777614074,
+      "longitude": 35.886966706036,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.181804649138,
+      "longitude": 34.978767413946,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 31.993190858159,
+      "longitude": 35.890022269686,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.328834525205,
+      "longitude": 40.105461264367,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.194103239514,
+      "longitude": 40.081764325169,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.191097257569,
+      "longitude": 39.902969530885,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.337806707221,
+      "longitude": 39.760841514122,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.602756509506,
+      "longitude": 37.901714240384,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 37.028118065541,
+      "longitude": 35.351902005119,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 35.791042296311,
+      "longitude": 37.726268775719,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.657680495105,
+      "longitude": 38.289161632859,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.46785735811,
+      "longitude": 35.023208592469,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.669692985279,
+      "longitude": 38.29828266183,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.274970963131,
+      "longitude": 36.270191194507,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.251735737635,
+      "longitude": 36.270973197852,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.281158484433,
+      "longitude": 36.264183043218,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 37.019718196187,
+      "longitude": 35.343608867132,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.999347742658,
+      "longitude": 35.407543193628,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.084785384337,
+      "longitude": 34.781246183314,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.182910961482,
+      "longitude": 35.234249107609,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.14348599449,
+      "longitude": 34.815280945087,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 31.74750334801,
+      "longitude": 34.935722367619,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.087600705346,
+      "longitude": 34.919761650073,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.76112367939,
+      "longitude": 35.400592814209,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.476516776483,
+      "longitude": 36.063327785674,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.484176514132,
+      "longitude": 36.065887455026,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.586731028232,
+      "longitude": 35.924606321003,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.313846566175,
+      "longitude": 38.702709117518,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.153758983881,
+      "longitude": 35.196449252248,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.132564531977,
+      "longitude": 35.393306740053,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.18284224561,
+      "longitude": 35.49583054782,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.169387872269,
+      "longitude": 35.187007916922,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.265525869621,
+      "longitude": 35.216251378951,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.075859127486,
+      "longitude": 36.14458847099,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.732975020271,
+      "longitude": 36.50904082389,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.113990717597,
+      "longitude": 36.106201173646,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.82522205981,
+      "longitude": 35.996227262628,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.587032347774,
+      "longitude": 35.399848951473,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 32.438259163099,
+      "longitude": 36.019165038278,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.552185063062,
+      "longitude": 36.447208401946,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.234722139047,
+      "longitude": 36.148784642263,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 33.035232597373,
+      "longitude": 35.138645144527,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H",
+    "position": {
+      "latitude": 34.927536012138,
+      "longitude": 35.992031097975,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "H3",
+    "position": {
+      "latitude": 32.940993052246,
+      "longitude": 39.732582868536,
+      "elevation": 2541
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 65,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 245,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H3 Northwest",
+    "position": {
+      "latitude": 33.070356444511,
+      "longitude": 39.60662588777,
+      "elevation": 2578
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 302,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 122,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H3 Southwest",
+    "position": {
+      "latitude": 32.738030133825,
+      "longitude": 39.612247285995,
+      "elevation": 2671
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 301,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 121,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H4",
+    "position": {
+      "latitude": 32.536851104207,
+      "longitude": 38.206376228872,
+      "elevation": 2257
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 283,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 103,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Haifa",
+    "position": {
+      "latitude": 32.80645293353,
+      "longitude": 35.04502076035,
+      "elevation": 20
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 342,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 162,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hama",
+    "position": {
+      "latitude": 35.116099484431,
+      "longitude": 36.72547347191,
+      "elevation": 984
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 280,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 100,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hatay",
+    "position": {
+      "latitude": 36.371269972814,
+      "longitude": 36.298090184913,
+      "elevation": 228
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 224,
+        "ils": {
+          "name": "IHAT",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 36.374642,
+            "longitude": 36.301483
+          }
+        }
+      },
+      {
+        "name": "4",
+        "heading": 44,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Hatzor",
+    "position": {
+      "latitude": 31.766167169984,
+      "longitude": 34.735268495639,
+      "elevation": 110
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 237,
+        "ils": {
+          "name": "HZR",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 31.768108,
+            "longitude": 34.737933
+          }
+        }
+      },
+      {
+        "name": "6",
+        "heading": 57,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 114,
+        "ils": {
+          "name": "HZR",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 31.768108,
+            "longitude": 34.737933
+          }
+        }
+      },
+      {
+        "name": "29",
+        "heading": 294,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 294,
+        "ils": {
+          "name": "HZR",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 31.768108,
+            "longitude": 34.737933
+          }
+        }
+      },
+      {
+        "name": "11",
+        "heading": 114,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Herzliya",
+    "position": {
+      "latitude": 32.177311447923,
+      "longitude": 34.844128549667,
+      "elevation": 118
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 291,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 111,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Incirlik",
+    "position": {
+      "latitude": 36.994254281542,
+      "longitude": 35.412713065757,
+      "elevation": 157
+    },
+    "tacan": {
+      "channel": 21,
+      "callsign": "DAN",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "5",
+        "heading": 55,
+        "ils": {
+          "name": "IDAN",
+          "frequency": "109.3",
+          "channel": null,
+          "position": {
+            "latitude": 37.012552,
+            "longitude": 35.443402
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 235,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jirah",
+    "position": {
+      "latitude": 36.09941017878,
+      "longitude": 37.920906422972,
+      "elevation": 1138
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 101,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 281,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Khalkhalah",
+    "position": {
+      "latitude": 33.088309599132,
+      "longitude": 36.534633016515,
+      "elevation": 2323
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 151,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 331,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 76,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 256,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kharab Ishk",
+    "position": {
+      "latitude": 36.54686730458,
+      "longitude": 38.587486267557,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "King Abdullah II",
+    "position": {
+      "latitude": 31.999048928296,
+      "longitude": 36.23215395181,
+      "elevation": 2297
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 312,
+        "ils": {
+          "name": "",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 32.01363,
+            "longitude": 36.212404
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "King Hussein Air College",
+    "position": {
+      "latitude": 32.348793954817,
+      "longitude": 36.270213489366,
+      "elevation": 2205
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 312,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kingsfield",
+    "position": {
+      "latitude": 35.016621196807,
+      "longitude": 33.721655835024,
+      "elevation": 276
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 64,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kiryat Shmona",
+    "position": {
+      "latitude": 33.212372031645,
+      "longitude": 35.592419825247,
+      "elevation": 341
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 38,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 218,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kuweires",
+    "position": {
+      "latitude": 36.18937442608,
+      "longitude": 37.570439309206,
+      "elevation": 1186
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 101,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 281,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lakatamia",
+    "position": {
+      "latitude": 35.106311731529,
+      "longitude": 33.321670653775,
+      "elevation": 758
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 175,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 355,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Larnaca",
+    "position": {
+      "latitude": 34.865619667975,
+      "longitude": 33.613584325006,
+      "elevation": 16
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 48,
+        "ils": {
+          "name": "ILC",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 34.860647,
+            "longitude": 33.608001
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 228,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marj Ruhayyil",
+    "position": {
+      "latitude": 33.284184302241,
+      "longitude": 36.44430365559,
+      "elevation": 2161
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 64,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marj as Sultan North",
+    "position": {
+      "latitude": 33.500422745428,
+      "longitude": 36.466321617972,
+      "elevation": 2008
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 81,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 261,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marj as Sultan South",
+    "position": {
+      "latitude": 33.487475571119,
+      "longitude": 36.474470882541,
+      "elevation": 2006
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marka",
+    "position": {
+      "latitude": 31.978746874839,
+      "longitude": 36.007006556646,
+      "elevation": 2455
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 246,
+        "ils": {
+          "name": "IAMN",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": 31.964856,
+            "longitude": 35.972564
+          }
+        }
+      },
+      {
+        "name": "7",
+        "heading": 66,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Megiddo",
+    "position": {
+      "latitude": 32.597577825283,
+      "longitude": 35.220203449454,
+      "elevation": 180
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 93,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 273,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mezzeh",
+    "position": {
+      "latitude": 33.482713511778,
+      "longitude": 36.235064059083,
+      "elevation": 2356
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "24",
+        "heading": 242,
+        "ils": null
+      },
+      {
+        "name": "6",
+        "heading": 62,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Minakh",
+    "position": {
+      "latitude": 36.522812218953,
+      "longitude": 37.033622455645,
+      "elevation": 1614
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 102,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 282,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 42,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 222,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Muwaffaq Salti",
+    "position": {
+      "latitude": 31.819165796503,
+      "longitude": 36.790783114807,
+      "elevation": 1636
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 261,
+        "ils": {
+          "name": "IGHS",
+          "frequency": "109.7",
+          "channel": null,
+          "position": {
+            "latitude": 31.815141,
+            "longitude": 36.76229
+          }
+        }
+      },
+      {
+        "name": "8",
+        "heading": 81,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 312,
+        "ils": {
+          "name": "IGHS",
+          "frequency": "109.7",
+          "channel": null,
+          "position": {
+            "latitude": 31.815141,
+            "longitude": 36.76229
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Naqoura",
+    "position": {
+      "latitude": 33.107906290458,
+      "longitude": 35.127285028127,
+      "elevation": 0
+    },
+    "tacan": null,
+    "runways": [],
+    "radio": null
+  },
+  {
+    "name": "Nicosia",
+    "position": {
+      "latitude": 35.143830848376,
+      "longitude": 33.28214369405,
+      "elevation": 689
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "32",
+        "heading": 329,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 149,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 92,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 272,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Palmachim",
+    "position": {
+      "latitude": 31.894923418195,
+      "longitude": 34.688797604068,
+      "elevation": 45
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 27,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 207,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 27,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 207,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Palmyra",
+    "position": {
+      "latitude": 34.558235536659,
+      "longitude": 38.331123062337,
+      "elevation": 1267
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 265,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 85,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Paphos",
+    "position": {
+      "latitude": 34.72239325815,
+      "longitude": 32.471801697209,
+      "elevation": 86
+    },
+    "tacan": {
+      "channel": 79,
+      "callsign": "PHA",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "11",
+        "heading": 114,
+        "ils": {
+          "name": "IPA",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 34.723276,
+            "longitude": 32.467959
+          }
+        }
+      },
+      {
+        "name": "29",
+        "heading": 294,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Pinarbashi",
+    "position": {
+      "latitude": 35.278334798852,
+      "longitude": 33.26701429987,
+      "elevation": 771
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 167,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 347,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Prince Hassan",
+    "position": {
+      "latitude": 32.152160716832,
+      "longitude": 37.160581283742,
+      "elevation": 2148
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 312,
+        "ils": {
+          "name": "ABC",
+          "frequency": "111.7",
+          "channel": null,
+          "position": {
+            "latitude": 32.171799,
+            "longitude": 37.134339
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Qabr as Sitt",
+    "position": {
+      "latitude": 33.458595294111,
+      "longitude": 36.356858556196,
+      "elevation": 2134
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 59,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 239,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ramat David",
+    "position": {
+      "latitude": 32.675080513325,
+      "longitude": 35.177259768519,
+      "elevation": 133
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 147,
+        "ils": {
+          "name": "RMD",
+          "frequency": "111.1",
+          "channel": null,
+          "position": {
+            "latitude": 32.677163,
+            "longitude": 35.175038
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 327,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 110,
+        "ils": {
+          "name": "RMD",
+          "frequency": "111.1",
+          "channel": null,
+          "position": {
+            "latitude": 32.677163,
+            "longitude": 35.175038
+          }
+        }
+      },
+      {
+        "name": "29",
+        "heading": 290,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 89,
+        "ils": {
+          "name": "RMD",
+          "frequency": "111.1",
+          "channel": null,
+          "position": {
+            "latitude": 32.677163,
+            "longitude": 35.175038
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 269,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rayak",
+    "position": {
+      "latitude": 33.84290182523,
+      "longitude": 35.976931824797,
+      "elevation": 2976
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 47,
+        "ils": null
+      },
+      {
+        "name": "23",
+        "heading": 227,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rene Mouawad",
+    "position": {
+      "latitude": 34.583953310218,
+      "longitude": 35.9986872567,
+      "elevation": 14
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 64,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Rosh Pina",
+    "position": {
+      "latitude": 32.97928167649,
+      "longitude": 35.572651208285,
+      "elevation": 866
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 332,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 152,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ruwayshid",
+    "position": {
+      "latitude": 32.403696420912,
+      "longitude": 39.142215977076,
+      "elevation": 2979
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 276,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 96,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sanliurfa",
+    "position": {
+      "latitude": 37.460456062347,
+      "longitude": 38.912852189935,
+      "elevation": 2703
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 222,
+        "ils": {
+          "name": "ISUR",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": 37.463397,
+            "longitude": 38.915738
+          }
+        }
+      },
+      {
+        "name": "4",
+        "heading": 42,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sayqal",
+    "position": {
+      "latitude": 33.68005202351,
+      "longitude": 37.204068913935,
+      "elevation": 2274
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 91,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 271,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Shayrat",
+    "position": {
+      "latitude": 34.494640308217,
+      "longitude": 36.894468654443,
+      "elevation": 2638
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tabqa",
+    "position": {
+      "latitude": 35.755613770805,
+      "longitude": 38.551250775516,
+      "elevation": 1099
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 93,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 273,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Taftanaz",
+    "position": {
+      "latitude": 35.973223381816,
+      "longitude": 36.785894108748,
+      "elevation": 1020
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 281,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 101,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tal Siman",
+    "position": {
+      "latitude": 36.263473166914,
+      "longitude": 38.924054611964,
+      "elevation": 981
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 103,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 283,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tel Nof",
+    "position": {
+      "latitude": 31.829715739755,
+      "longitude": 34.837948575971,
+      "elevation": 209
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 333,
+        "ils": {
+          "name": "AKR",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 31.848832,
+            "longitude": 34.818557
+          }
+        }
+      },
+      {
+        "name": "15",
+        "heading": 153,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 185,
+        "ils": {
+          "name": "AKR",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 31.848832,
+            "longitude": 34.818557
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 5,
+        "ils": null
+      },
+      {
+        "name": "18",
+        "heading": 333,
+        "ils": {
+          "name": "AKR",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 31.848832,
+            "longitude": 34.818557
+          }
+        }
+      },
+      {
+        "name": "15",
+        "heading": 153,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tha'lah",
+    "position": {
+      "latitude": 32.698127090612,
+      "longitude": 36.402739126137,
+      "elevation": 2381
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 58,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 238,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tiyas",
+    "position": {
+      "latitude": 34.522531432479,
+      "longitude": 37.645765105063,
+      "elevation": 1798
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Wujah Al Hajar",
+    "position": {
+      "latitude": 34.286960508475,
+      "longitude": 35.683990308563,
+      "elevation": 619
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "20",
+        "heading": 209,
+        "ils": null
+      },
+      {
+        "name": "3",
+        "heading": 29,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

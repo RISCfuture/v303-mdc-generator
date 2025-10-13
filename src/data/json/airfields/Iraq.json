@@ -1,0 +1,636 @@
+[
+  {
+    "name": "Al-Asad Airbase",
+    "position": {
+      "latitude": 33.781070361046,
+      "longitude": 42.407292937235,
+      "elevation": 568
+    },
+    "tacan": {
+      "channel": 80,
+      "callsign": "RAA",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": {
+          "name": "ISAD",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 33.789427,
+            "longitude": 42.429473
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 90,
+        "ils": {
+          "name": "IRAA",
+          "frequency": "108.8",
+          "channel": null,
+          "position": {
+            "latitude": 33.790471,
+            "longitude": 42.479599
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Kut Airport",
+    "position": {
+      "latitude": 32.48775700507,
+      "longitude": 45.743050577687,
+      "elevation": 40
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 108,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 288,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 108,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 288,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Sahra Airport",
+    "position": {
+      "latitude": 34.676326600432,
+      "longitude": 43.529009055047,
+      "elevation": 428
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 143,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 323,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 143,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 323,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Salam Airbase",
+    "position": {
+      "latitude": 33.287275487508,
+      "longitude": 44.488032783503,
+      "elevation": 76
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 147,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 327,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Taji Airport",
+    "position": {
+      "latitude": 33.517000292005,
+      "longitude": 44.259247615052,
+      "elevation": 116
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 341,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 161,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Taquddum Airport",
+    "position": {
+      "latitude": 33.346036835017,
+      "longitude": 43.584803434161,
+      "elevation": 260
+    },
+    "tacan": {
+      "channel": 70,
+      "callsign": "MAT",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "12",
+        "heading": 120,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 300,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 120,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 300,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Baghdad International Airport",
+    "position": {
+      "latitude": 33.267636612195,
+      "longitude": 44.21788645786,
+      "elevation": 96
+    },
+    "tacan": {
+      "channel": 64,
+      "callsign": "BAP",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "15",
+        "heading": 150,
+        "ils": {
+          "name": "IYCA",
+          "frequency": "110.1",
+          "channel": null,
+          "position": {
+            "latitude": 33.287012,
+            "longitude": 44.228985
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 330,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 150,
+        "ils": {
+          "name": "IYCA",
+          "frequency": "110.1",
+          "channel": null,
+          "position": {
+            "latitude": 33.287012,
+            "longitude": 44.228985
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 330,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Balad Airbase",
+    "position": {
+      "latitude": 33.952586408149,
+      "longitude": 44.3595048199,
+      "elevation": 144
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 146,
+        "ils": {
+          "name": "IANC",
+          "frequency": "109.95",
+          "channel": null,
+          "position": {
+            "latitude": 33.928397,
+            "longitude": 44.378928
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 326,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 126,
+        "ils": {
+          "name": "IANC",
+          "frequency": "109.95",
+          "channel": null,
+          "position": {
+            "latitude": 33.928397,
+            "longitude": 44.378928
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 306,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bashur Airport",
+    "position": {
+      "latitude": 36.540088661994,
+      "longitude": 44.333529446039,
+      "elevation": 2004
+    },
+    "tacan": {
+      "channel": 47,
+      "callsign": "ORB",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "13",
+        "heading": 139,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 319,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Erbil International Airport",
+    "position": {
+      "latitude": 36.258346243316,
+      "longitude": 43.94714629154,
+      "elevation": 1226
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "18",
+        "heading": 181,
+        "ils": {
+          "name": "IREB",
+          "frequency": "109.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.262445,
+            "longitude": 43.946856
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 1,
+        "ils": null
+      },
+      {
+        "name": "36",
+        "heading": 152,
+        "ils": {
+          "name": "IREB",
+          "frequency": "109.7",
+          "channel": null,
+          "position": {
+            "latitude": 36.262445,
+            "longitude": 43.946856
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 332,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H-2 Airbase",
+    "position": {
+      "latitude": 33.363763753745,
+      "longitude": 40.586066869404,
+      "elevation": 2070
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 165,
+        "ils": null
+      },
+      {
+        "name": "35",
+        "heading": 345,
+        "ils": null
+      },
+      {
+        "name": "34",
+        "heading": 115,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 295,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H-3 Main Airbase",
+    "position": {
+      "latitude": 32.940568097901,
+      "longitude": 39.733777541448,
+      "elevation": 2542
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 115,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 295,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 68,
+        "ils": null
+      },
+      {
+        "name": "25",
+        "heading": 248,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H-3 Northwest Airbase",
+    "position": {
+      "latitude": 33.081532499175,
+      "longitude": 39.586629117505,
+      "elevation": 2551
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "12",
+        "heading": 125,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 305,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "H-3 Southwest Airbase",
+    "position": {
+      "latitude": 32.74812146418,
+      "longitude": 39.593540286645,
+      "elevation": 2648
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 124,
+        "ils": null
+      },
+      {
+        "name": "30",
+        "heading": 304,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "K1 Base",
+    "position": {
+      "latitude": 35.507194180781,
+      "longitude": 44.289369515415,
+      "elevation": 976
+    },
+    "tacan": {
+      "channel": 86,
+      "callsign": "KRK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "32",
+        "heading": 321,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 141,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kirkuk International Airport",
+    "position": {
+      "latitude": 35.476630768488,
+      "longitude": 44.337932724551,
+      "elevation": 1027
+    },
+    "tacan": {
+      "channel": 86,
+      "callsign": "KRK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "13",
+        "heading": 134,
+        "ils": {
+          "name": "ISAD",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 35.480386,
+            "longitude": 44.33257
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 314,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 146,
+        "ils": {
+          "name": "ISAD",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 35.480386,
+            "longitude": 44.33257
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 326,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mosul International Airport",
+    "position": {
+      "latitude": 36.315016927184,
+      "longitude": 43.143027968416,
+      "elevation": 742
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 159,
+        "ils": null
+      },
+      {
+        "name": "34",
+        "heading": 339,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Qayyarah Airfield West",
+    "position": {
+      "latitude": 35.778104244046,
+      "longitude": 43.114841933697,
+      "elevation": 721
+    },
+    "tacan": {
+      "channel": 72,
+      "callsign": "QYW",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "15",
+        "heading": 154,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 334,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sulaimaniyah International Airport",
+    "position": {
+      "latitude": 35.570506124024,
+      "longitude": 45.302468286783,
+      "elevation": 2430
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 133,
+        "ils": {
+          "name": "SUL",
+          "frequency": "111.7",
+          "channel": null,
+          "position": {
+            "latitude": 35.57404,
+            "longitude": 45.297338
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 313,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

@@ -1,0 +1,876 @@
+[
+  {
+    "name": "Abu Dhabi Intl",
+    "position": {
+      "latitude": 24.464722760717,
+      "longitude": 54.639226001065,
+      "elevation": 92
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 129,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 309,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 309,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 129,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 129,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 309,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Abu Musa Island",
+    "position": {
+      "latitude": 25.875041761239,
+      "longitude": 55.021382072783,
+      "elevation": 16
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 84,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 264,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al Ain Intl",
+    "position": {
+      "latitude": 24.276767283196,
+      "longitude": 55.611735832913,
+      "elevation": 814
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 188,
+        "ils": null
+      },
+      {
+        "name": "1",
+        "heading": 8,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al Dhafra AFB",
+    "position": {
+      "latitude": 24.25792911231,
+      "longitude": 54.534202504328,
+      "elevation": 52
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 128,
+        "ils": {
+          "name": "MMA",
+          "frequency": "109.1",
+          "channel": 28,
+          "position": {
+            "latitude": 24.26012,
+            "longitude": 54.530469
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 308,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 128,
+        "ils": {
+          "name": "MMA",
+          "frequency": "109.1",
+          "channel": 28,
+          "position": {
+            "latitude": 24.26012,
+            "longitude": 54.530469
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 308,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al Maktoum Intl",
+    "position": {
+      "latitude": 24.888624487709,
+      "longitude": 55.174919966811,
+      "elevation": 123
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 302,
+        "ils": {
+          "name": "IJEA",
+          "frequency": "111.75",
+          "channel": null,
+          "position": {
+            "latitude": 24.884666,
+            "longitude": 55.182751
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 122,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al Minhad AFB",
+    "position": {
+      "latitude": 25.026805920475,
+      "longitude": 55.383678016973,
+      "elevation": 191
+    },
+    "tacan": {
+      "channel": 99,
+      "callsign": "MIN",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": {
+          "name": "IMNW",
+          "frequency": "110.7",
+          "channel": null,
+          "position": {
+            "latitude": 25.027125,
+            "longitude": 55.388944
+          }
+        }
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Al-Bateen",
+    "position": {
+      "latitude": 24.434059322946,
+      "longitude": 54.450706215697,
+      "elevation": 12
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 129,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 309,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bandar Abbas Intl",
+    "position": {
+      "latitude": 27.203638553985,
+      "longitude": 56.3703560378,
+      "elevation": 18
+    },
+    "tacan": {
+      "channel": 78,
+      "callsign": "BND",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "3",
+        "heading": 28,
+        "ils": {
+          "name": "IBND",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 27.19893,
+            "longitude": 56.367921
+          }
+        }
+      },
+      {
+        "name": "21",
+        "heading": 208,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bandar Lengeh",
+    "position": {
+      "latitude": 26.530817420578,
+      "longitude": 54.813116140778,
+      "elevation": 81
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 82,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 262,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bandar-e-Jask",
+    "position": {
+      "latitude": 25.650484470488,
+      "longitude": 57.792125537415,
+      "elevation": 26
+    },
+    "tacan": {
+      "channel": 110,
+      "callsign": "JSK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "6",
+        "heading": 62,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 242,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Dubai Intl",
+    "position": {
+      "latitude": 25.248265300858,
+      "longitude": 55.379295777402,
+      "elevation": 16
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 302,
+        "ils": {
+          "name": "IDBW",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": 25.233579,
+            "longitude": 55.398979
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 122,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 302,
+        "ils": {
+          "name": "IDBW",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": 25.233579,
+            "longitude": 55.398979
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 122,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Fujairah Intl",
+    "position": {
+      "latitude": 25.105735807567,
+      "longitude": 56.340423943738,
+      "elevation": 61
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 293,
+        "ils": {
+          "name": "IFJR",
+          "frequency": "111.5",
+          "channel": null,
+          "position": {
+            "latitude": 25.11971,
+            "longitude": 56.303773
+          }
+        }
+      },
+      {
+        "name": "11",
+        "heading": 113,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Havadarya",
+    "position": {
+      "latitude": 27.159927526116,
+      "longitude": 56.183089447173,
+      "elevation": 51
+    },
+    "tacan": {
+      "channel": 47,
+      "callsign": "HDR",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "26",
+        "heading": 259,
+        "ils": {
+          "name": "IBHD",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 27.160724,
+            "longitude": 56.186029
+          }
+        }
+      },
+      {
+        "name": "8",
+        "heading": 79,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Jiroft",
+    "position": {
+      "latitude": 28.731593220974,
+      "longitude": 57.664118826397,
+      "elevation": 2664
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 128,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 308,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kerman",
+    "position": {
+      "latitude": 30.257695568151,
+      "longitude": 56.958269051762,
+      "elevation": 5746
+    },
+    "tacan": {
+      "channel": 97,
+      "callsign": "KER",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "34",
+        "heading": 338,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 158,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Khasab",
+    "position": {
+      "latitude": 26.179806360704,
+      "longitude": 56.24317158197,
+      "elevation": 48
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "19",
+        "heading": 194,
+        "ils": {
+          "name": "IBKS",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 26.158057,
+            "longitude": 56.236991
+          }
+        }
+      },
+      {
+        "name": "1",
+        "heading": 14,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kish Intl",
+    "position": {
+      "latitude": 26.529651099908,
+      "longitude": 53.964909162786,
+      "elevation": 115
+    },
+    "tacan": {
+      "channel": 112,
+      "callsign": "KIH",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "10",
+        "heading": 96,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 276,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 96,
+        "ils": null
+      },
+      {
+        "name": "28",
+        "heading": 276,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lar",
+    "position": {
+      "latitude": 27.674804842122,
+      "longitude": 54.368317250382,
+      "elevation": 2636
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Lavan Island",
+    "position": {
+      "latitude": 26.815354172873,
+      "longitude": 53.3416042246,
+      "elevation": 75
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      },
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Liwa AFB",
+    "position": {
+      "latitude": 23.660697450016,
+      "longitude": 53.812497591899,
+      "elevation": 400
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      },
+      {
+        "name": "31",
+        "heading": 312,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Qeshm Island",
+    "position": {
+      "latitude": 26.76633161238,
+      "longitude": 55.918070160223,
+      "elevation": 26
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 230,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 50,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Quasoura_airport",
+    "position": {
+      "latitude": 22.775988239359,
+      "longitude": 55.077137969517,
+      "elevation": 330
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Ras Al Khaimah Intl",
+    "position": {
+      "latitude": 25.602262321804,
+      "longitude": 55.941864730965,
+      "elevation": 71
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "35",
+        "heading": 345,
+        "ils": null
+      },
+      {
+        "name": "17",
+        "heading": 165,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sas Al Nakheel",
+    "position": {
+      "latitude": 24.448211362508,
+      "longitude": 54.514696522843,
+      "elevation": 10
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "16",
+        "heading": 162,
+        "ils": null
+      },
+      {
+        "name": "34",
+        "heading": 342,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sharjah Intl",
+    "position": {
+      "latitude": 25.322796067752,
+      "longitude": 55.531388153673,
+      "elevation": 98
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 303,
+        "ils": {
+          "name": "ISRE",
+          "frequency": "108.55",
+          "channel": null,
+          "position": {
+            "latitude": 25.319219,
+            "longitude": 55.538154
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 123,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 303,
+        "ils": {
+          "name": "ISRE",
+          "frequency": "108.55",
+          "channel": null,
+          "position": {
+            "latitude": 25.319219,
+            "longitude": 55.538154
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 123,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Shiraz Intl",
+    "position": {
+      "latitude": 29.533103964275,
+      "longitude": 52.609894223947,
+      "elevation": 4879
+    },
+    "tacan": {
+      "channel": 94,
+      "callsign": "SYZ1",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "29",
+        "heading": 297,
+        "ils": {
+          "name": "ISYZ",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 29.546777,
+            "longitude": 52.564998
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 117,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 297,
+        "ils": {
+          "name": "ISYZ",
+          "frequency": "108.5",
+          "channel": null,
+          "position": {
+            "latitude": 29.546777,
+            "longitude": 52.564998
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 117,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sir Abu Nuayr",
+    "position": {
+      "latitude": 25.216154518016,
+      "longitude": 54.23693990531,
+      "elevation": 25
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "28",
+        "heading": 280,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 100,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sirri Island",
+    "position": {
+      "latitude": 25.903343862392,
+      "longitude": 54.548214653399,
+      "elevation": 18
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 307,
+        "ils": null
+      },
+      {
+        "name": "13",
+        "heading": 127,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tunb Island AFB",
+    "position": {
+      "latitude": 26.251538702312,
+      "longitude": 55.311280020098,
+      "elevation": 43
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "3",
+        "heading": 28,
+        "ils": null
+      },
+      {
+        "name": "21",
+        "heading": 208,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tunb Kochak",
+    "position": {
+      "latitude": 26.243605485601,
+      "longitude": 55.149352101732,
+      "elevation": 15
+    },
+    "tacan": {
+      "channel": 89,
+      "callsign": "KCK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "26",
+        "heading": 262,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 82,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A-10C JAFDTC Configuration",
+  "description": "JSON schema for A-10C mission data export compatible with JAFDTC application",
+  "type": "object",
+  "required": ["Version", "Airframe", "UID"],
+  "properties": {
+    "DSMS": {
+      "type": "object",
+      "properties": {
+        "LaserCode": { "type": "string" },
+        "ProfileOrder": { "type": "null" }
+      }
+    },
+    "Misc": {
+      "type": "object",
+      "properties": {
+        "TACANMode": { "type": "string", "enum": ["1", "2", "3", "4"] },
+        "TACANBand": { "type": "string", "enum": ["0", "1"] },
+        "TACANChannel": { "type": "string" },
+        "IFFMasterMode": { "type": "string", "enum": ["0", "1", "2"] },
+        "IFFMode3Code": { "type": "string", "pattern": "^[0-7]{4}$" },
+        "IFFMode4On": { "type": "string", "enum": ["True", "False"] }
+      }
+    },
+    "Radio": {
+      "type": "object",
+      "properties": {
+        "IsPresetMode": {
+          "type": "array",
+          "items": { "type": "boolean" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "DefaultSetting": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "IsDefault": { "type": "boolean" },
+        "Presets": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Preset": { "type": "integer" },
+                "Frequency": { "type": "string" },
+                "Modulation": { "type": "string" },
+                "Description": { "type": "string" }
+              }
+            }
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "TGP": {
+      "type": "object",
+      "properties": {
+        "LaserCode": { "type": "string" },
+        "LSS": { "type": "string" }
+      }
+    },
+    "WYPT": {
+      "type": "object",
+      "properties": {
+        "Points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Alt": { "type": "string" },
+              "Number": { "type": "integer", "minimum": 1 },
+              "Name": { "type": "string" },
+              "Lat": { "type": "string", "pattern": "^-?\\d+\\.\\d{8}$" },
+              "Lon": { "type": "string", "pattern": "^-?\\d+\\.\\d{8}$" }
+            }
+          }
+        }
+      }
+    },
+    "Version": {
+      "type": "string",
+      "description": "JAFDTC format version"
+    },
+    "Airframe": {
+      "type": "integer",
+      "enum": [1],
+      "description": "Airframe type (1 = A-10C)"
+    },
+    "UID": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "Unique identifier (UUID v4)"
+    },
+    "Filename": {
+      "type": "string",
+      "description": "Configuration filename"
+    },
+    "LinkedSysMap": {
+      "type": "object",
+      "description": "Linked systems mapping"
+    },
+    "LastSystemEdited": {
+      "type": "integer",
+      "description": "Last edited system identifier"
+    },
+    "IsFavorite": {
+      "type": "boolean",
+      "description": "Favorite flag"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Configuration name"
+    }
+  }
+}

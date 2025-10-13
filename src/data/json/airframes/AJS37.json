@@ -1,0 +1,148 @@
+{
+  "aircraft": "AJS37",
+  "displayName": "AJS37",
+  "emptyWeight": 23697,
+  "maxTakeoffWeight": 44092,
+  "internalFuel": 9868,
+  "cmdsCapacity": 1152,
+  "chaffIncrement": 1080,
+  "flareIncrement": 72,
+  "defaultChaff": 1080,
+  "defaultFlare": 72,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "Radio frequencies",
+      "presetCount": 47,
+      "min": 103,
+      "max": 400,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{Robot24J}", "{Robot24}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "{Robot74}",
+        "{Robot24J}",
+        "{Robot24}",
+        "{BK90}",
+        "{BK90MJ1}",
+        "{BK90MJ2}",
+        "{AKAN}",
+        "{AKAN_NO_TRC}",
+        "{ARAKM70BHE}",
+        "{ARAKM70BAP}",
+        "{ARAKM70BAPPX}",
+        "{Rb04_HB}",
+        "{Rb15_HB}",
+        "{Rb04AI}",
+        "{Rb15AI}",
+        "{KB}",
+        "{LYSBOMB_V7V}",
+        "{M71BOMB}",
+        "{M71BOMBD}",
+        "{MERPYLON}",
+        "{RB75}",
+        "{RB75B}",
+        "{RB75T}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "{Robot74}",
+        "{Robot24J}",
+        "{Robot24}",
+        "{BK90}",
+        "{BK90MJ1}",
+        "{BK90MJ2}",
+        "{ARAKM70BHE}",
+        "{ARAKM70BAP}",
+        "{ARAKM70BAPPX}",
+        "{Robot05}",
+        "{LYSBOMB_S7V}",
+        "{M71BOMB}",
+        "{M71BOMBD}",
+        "{MERPYLON}",
+        "{RB75}",
+        "{RB75B}",
+        "{RB75T}"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["{VIGGEN_X-TANK}"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{Robot74}",
+        "{Robot24J}",
+        "{Robot24}",
+        "{BK90}",
+        "{BK90MJ1}",
+        "{BK90MJ2}",
+        "{ARAKM70BHE}",
+        "{ARAKM70BAP}",
+        "{ARAKM70BAPPX}",
+        "{Robot05}",
+        "{LYSBOMB_S7H}",
+        "{M71BOMB}",
+        "{M71BOMBD}",
+        "{RB75}",
+        "{RB75B}",
+        "{RB75T}",
+        "{MERPYLON}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": [
+        "{Robot74}",
+        "{Robot24J}",
+        "{Robot24}",
+        "{BK90}",
+        "{BK90MJ1}",
+        "{BK90MJ2}",
+        "{AKAN}",
+        "{AKAN_NO_TRC}",
+        "{ARAKM70BHE}",
+        "{ARAKM70BAP}",
+        "{ARAKM70BAPPX}",
+        "{Rb04_HB}",
+        "{Rb15_HB}",
+        "{Rb04AI}",
+        "{Rb15AI}",
+        "{KB}",
+        "{U22}",
+        "{U22A}",
+        "{LYSBOMB_V7H}",
+        "{M71BOMB}",
+        "{M71BOMBD}",
+        "{MERPYLON}",
+        "{RB75}",
+        "{RB75B}",
+        "{RB75T}"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": ["{Robot24J}", "{Robot24}"]
+    }
+  ]
+}

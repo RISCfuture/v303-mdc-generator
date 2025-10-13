@@ -1,0 +1,580 @@
+[
+  {
+    "name": "Anapa-Vityazevo",
+    "position": {
+      "latitude": 45.013174733772,
+      "longitude": 37.359783477556,
+      "elevation": 141
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 221,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 41,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Batumi",
+    "position": {
+      "latitude": 41.603279859649,
+      "longitude": 41.60927548351,
+      "elevation": 33
+    },
+    "tacan": {
+      "channel": 16,
+      "callsign": "BTM",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "31",
+        "heading": 306,
+        "ils": {
+          "name": "ILU",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 41.601731,
+            "longitude": 41.612203
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 126,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Beslan",
+    "position": {
+      "latitude": 43.208500987381,
+      "longitude": 44.588922553543,
+      "elevation": 1719
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "10",
+        "heading": 94,
+        "ils": {
+          "name": "ICH",
+          "frequency": "110.5",
+          "channel": null,
+          "position": {
+            "latitude": 43.202754,
+            "longitude": 44.62558
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 274,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gelendzhik",
+    "position": {
+      "latitude": 44.567674586004,
+      "longitude": 38.004146350528,
+      "elevation": 72
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "1",
+        "heading": 40,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 220,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Gudauta",
+    "position": {
+      "latitude": 43.124233340197,
+      "longitude": 40.564175768401,
+      "elevation": 69
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "15",
+        "heading": 151,
+        "ils": null
+      },
+      {
+        "name": "33",
+        "heading": 331,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kobuleti",
+    "position": {
+      "latitude": 41.932105353453,
+      "longitude": 41.876483823101,
+      "elevation": 59
+    },
+    "tacan": {
+      "channel": 67,
+      "callsign": "KBL",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "25",
+        "heading": 250,
+        "ils": {
+          "name": "IKB",
+          "frequency": "111.5",
+          "channel": null,
+          "position": {
+            "latitude": 41.932878,
+            "longitude": 41.879171
+          }
+        }
+      },
+      {
+        "name": "7",
+        "heading": 70,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Krasnodar-Center",
+    "position": {
+      "latitude": 45.087429883845,
+      "longitude": 38.925202300775,
+      "elevation": 98
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "9",
+        "heading": 87,
+        "ils": null
+      },
+      {
+        "name": "27",
+        "heading": 267,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Krasnodar-Pashkovsky",
+    "position": {
+      "latitude": 45.046099641543,
+      "longitude": 39.203066906325,
+      "elevation": 112
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "23",
+        "heading": 227,
+        "ils": null
+      },
+      {
+        "name": "5",
+        "heading": 47,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Krymsk",
+    "position": {
+      "latitude": 44.961383022734,
+      "longitude": 37.985886938697,
+      "elevation": 66
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 40,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 220,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kutaisi",
+    "position": {
+      "latitude": 42.17915393769,
+      "longitude": 42.4956840774,
+      "elevation": 148
+    },
+    "tacan": {
+      "channel": 44,
+      "callsign": "KTS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "25",
+        "heading": 254,
+        "ils": {
+          "name": "IKS",
+          "frequency": "109.75",
+          "channel": null,
+          "position": {
+            "latitude": 42.179695,
+            "longitude": 42.49782
+          }
+        }
+      },
+      {
+        "name": "7",
+        "heading": 74,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Maykop-Khanskaya",
+    "position": {
+      "latitude": 44.671440257355,
+      "longitude": 40.021427482236,
+      "elevation": 591
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "4",
+        "heading": 39,
+        "ils": null
+      },
+      {
+        "name": "22",
+        "heading": 219,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mineralnye Vody",
+    "position": {
+      "latitude": 44.218646823807,
+      "longitude": 43.100679733081,
+      "elevation": 1050
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 295,
+        "ils": {
+          "name": "IMW",
+          "frequency": "109.3",
+          "channel": null,
+          "position": {
+            "latitude": 44.238297,
+            "longitude": 43.058263
+          }
+        }
+      },
+      {
+        "name": "12",
+        "heading": 115,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mozdok",
+    "position": {
+      "latitude": 43.791303250938,
+      "longitude": 44.620327262102,
+      "elevation": 507
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 263,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 83,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Nalchik",
+    "position": {
+      "latitude": 43.51007143853,
+      "longitude": 43.625108736098,
+      "elevation": 1411
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 55,
+        "ils": {
+          "name": "INL",
+          "frequency": "110.5",
+          "channel": null,
+          "position": {
+            "latitude": 43.508738,
+            "longitude": 43.622345
+          }
+        }
+      },
+      {
+        "name": "24",
+        "heading": 235,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Novorossiysk",
+    "position": {
+      "latitude": 44.673329604127,
+      "longitude": 37.78622606048,
+      "elevation": 131
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "22",
+        "heading": 222,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 42,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Senaki-Kolkhi",
+    "position": {
+      "latitude": 42.238728081573,
+      "longitude": 42.061021312856,
+      "elevation": 43
+    },
+    "tacan": {
+      "channel": 31,
+      "callsign": "TSK",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "27",
+        "heading": 275,
+        "ils": {
+          "name": "ITS",
+          "frequency": "108.9",
+          "channel": null,
+          "position": {
+            "latitude": 42.238667,
+            "longitude": 42.0634
+          }
+        }
+      },
+      {
+        "name": "9",
+        "heading": 95,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sochi-Adler",
+    "position": {
+      "latitude": 43.439378434051,
+      "longitude": 39.924231880466,
+      "elevation": 98
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 62,
+        "ils": {
+          "name": "ISO",
+          "frequency": "111.1",
+          "channel": null,
+          "position": {
+            "latitude": 43.450492,
+            "longitude": 39.960744
+          }
+        }
+      },
+      {
+        "name": "24",
+        "heading": 242,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Soganlug",
+    "position": {
+      "latitude": 41.641163266787,
+      "longitude": 44.947183065317,
+      "elevation": 1474
+    },
+    "tacan": {
+      "channel": 25,
+      "callsign": "GTB",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "14",
+        "heading": 312,
+        "ils": {
+          "name": "IVP",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 41.657953,
+            "longitude": 44.967988
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 132,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sukhumi-Babushara",
+    "position": {
+      "latitude": 42.852741071635,
+      "longitude": 41.142447588488,
+      "elevation": 44
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 296,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 116,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tbilisi-Lochini",
+    "position": {
+      "latitude": 41.674720064437,
+      "longitude": 44.946875226153,
+      "elevation": 1574
+    },
+    "tacan": {
+      "channel": 25,
+      "callsign": "GTB",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "13",
+        "heading": 128,
+        "ils": {
+          "name": "IVP",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 41.657953,
+            "longitude": 44.967988
+          }
+        }
+      },
+      {
+        "name": "31",
+        "heading": 308,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Vaziani",
+    "position": {
+      "latitude": 41.637735936262,
+      "longitude": 45.01909093846,
+      "elevation": 1524
+    },
+    "tacan": {
+      "channel": 22,
+      "callsign": "VAS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "13",
+        "heading": 135,
+        "ils": {
+          "name": "IVZ",
+          "frequency": "108.75",
+          "channel": null,
+          "position": {
+            "latitude": 41.619095,
+            "longitude": 45.037014
+          }
+        }
+      },
+      {
+        "name": "32",
+        "heading": 315,
+        "ils": null
+      }
+    ],
+    "radio": null
+  }
+]

@@ -1,0 +1,212 @@
+{
+  "radios": [
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "229.0",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "328.550",
+          "description": "SPANGDAHLEM GROUND"
+        },
+        {
+          "number": 3,
+          "frequency": "314.825",
+          "description": "SPANGDAHLEM TOWER"
+        },
+        {
+          "number": 4,
+          "frequency": "375.700",
+          "description": "LANGEN CONTROL"
+        },
+        {
+          "number": 5,
+          "frequency": "376.975",
+          "description": "SPANGDAHLEM ATIS"
+        },
+        {
+          "number": 6,
+          "frequency": "300.650",
+          "description": "RAMSTEIN GROUND"
+        },
+        {
+          "number": 7,
+          "frequency": "356.850",
+          "description": "RAMSTEIN TOWER"
+        },
+        {
+          "number": 8,
+          "frequency": "374.375",
+          "description": "RAMSTEIN ATIS"
+        },
+        {
+          "number": 9,
+          "frequency": "257.800",
+          "description": "NATO COMMON"
+        },
+        {
+          "number": 10,
+          "frequency": "342.300",
+          "description": "SPADES (BAUMHOLDER CONTROL)"
+        },
+        {
+          "number": 11,
+          "frequency": "361.600",
+          "description": "PANTHER 33B"
+        },
+        {
+          "number": 12,
+          "frequency": "340.300",
+          "description": "ACE (HAMMELBURG CONTROL)"
+        },
+        {
+          "number": 13,
+          "frequency": "362.600",
+          "description": "PANTHER 33H"
+        },
+        {
+          "number": 14,
+          "frequency": "225.500",
+          "description": "ARCO 1 45X (F16, JOJO)"
+        },
+        {
+          "number": 15,
+          "frequency": "295.500",
+          "description": "TEXACO 1 32Y (F16, VIRGIN)"
+        },
+        {
+          "number": 16,
+          "frequency": "263.000",
+          "description": "MAGIC"
+        },
+        {
+          "number": 17,
+          "frequency": "230.500",
+          "description": "SHELL 1 51Y (F16, SAXON)"
+        },
+        {
+          "number": 18,
+          "frequency": "342.400",
+          "description": "JOKER (EDR-20A CONTROL)"
+        },
+        {
+          "number": 19,
+          "frequency": "362.500",
+          "description": "PANTHER 20A"
+        },
+        {
+          "number": 20,
+          "frequency": "300.050",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "presets": [
+        {
+          "number": 1,
+          "frequency": "138.250",
+          "description": "v93 FS"
+        },
+        {
+          "number": 2,
+          "frequency": "120.9",
+          "description": ""
+        },
+        {
+          "number": 3,
+          "frequency": "121.80",
+          "description": ""
+        },
+        {
+          "number": 4,
+          "frequency": "132.65",
+          "description": ""
+        },
+        {
+          "number": 5,
+          "frequency": "135.10",
+          "description": ""
+        },
+        {
+          "number": 6,
+          "frequency": "124.95",
+          "description": ""
+        },
+        {
+          "number": 7,
+          "frequency": "126.7",
+          "description": ""
+        },
+        {
+          "number": 8,
+          "frequency": "119.4",
+          "description": ""
+        },
+        {
+          "number": 9,
+          "frequency": "143.0",
+          "description": ""
+        },
+        {
+          "number": 10,
+          "frequency": "123.6",
+          "description": ""
+        },
+        {
+          "number": 11,
+          "frequency": "118.300",
+          "description": ""
+        },
+        {
+          "number": 12,
+          "frequency": "122.900",
+          "description": ""
+        },
+        {
+          "number": 13,
+          "frequency": "119.700",
+          "description": ""
+        },
+        {
+          "number": 14,
+          "frequency": "142.800",
+          "description": ""
+        },
+        {
+          "number": 15,
+          "frequency": "121.900",
+          "description": ""
+        },
+        {
+          "number": 16,
+          "frequency": "124.700",
+          "description": ""
+        },
+        {
+          "number": 17,
+          "frequency": "122.500",
+          "description": ""
+        },
+        {
+          "number": 18,
+          "frequency": "124.900",
+          "description": ""
+        },
+        {
+          "number": 19,
+          "frequency": "127.300",
+          "description": ""
+        },
+        {
+          "number": 20,
+          "frequency": "137.000",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/squadrons.schema.json",
+  "title": "Squadrons Database Schema",
+  "description": "Schema for squadron data mapping squadron IDs to names and aircraft",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_]+$": {
+      "$ref": "#/definitions/squadron"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "squadron": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique squadron identifier (e.g., 'v93', 'v303')"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full squadron name (e.g., 'v93rd Fighter Squadron')"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Short display name (e.g., 'v93 FS')"
+        },
+        "aircraft": {
+          "type": "string",
+          "description": "Aircraft type flown by this squadron (e.g., 'F-16C_50', 'A-10C_2')"
+        }
+      },
+      "required": ["id", "name", "displayName", "aircraft"]
+    }
+  }
+}

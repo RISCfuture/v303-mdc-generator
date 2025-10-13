@@ -1,0 +1,195 @@
+{
+  "aircraft": "F-15C",
+  "displayName": "F-15C",
+  "emptyWeight": 29498,
+  "maxTakeoffWeight": 68002,
+  "internalFuel": 13455,
+  "cmdsCapacity": 240,
+  "chaffIncrement": 30,
+  "flareIncrement": 15,
+  "defaultChaff": 120,
+  "defaultFlare": 60,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [],
+  "guns": [
+    {
+      "name": "M-61",
+      "capacity": 940,
+      "shells": [
+        {
+          "name": "M61_20_HE",
+          "displayName": "20mm HE"
+        },
+        {
+          "name": "M61_20_AP",
+          "displayName": "20mm AP"
+        },
+        {
+          "name": "M61_20_TP",
+          "displayName": "M61_20_TP"
+        },
+        {
+          "name": "M61_20_TP_T",
+          "displayName": "M61_20_TP_T"
+        },
+        {
+          "name": "M61_20_PGU28",
+          "displayName": "PGU-28/B SAPHEI"
+        },
+        {
+          "name": "M61_20_PGU27",
+          "displayName": "PGU-27/B TP"
+        },
+        {
+          "name": "M61_20_PGU30",
+          "displayName": "PGU-30/B TP-T"
+        }
+      ],
+      "mixes": [
+        {
+          "sequence": [
+            "M61_20_HE",
+            "M61_20_AP",
+            "M61_20_TP",
+            "M61_20_TP_T",
+            "M61_20_PGU28",
+            "M61_20_PGU27",
+            "M61_20_PGU30"
+          ]
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}",
+        "{AIS_ASQ_T50}",
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{AIM-9P3}",
+        "{AIM-9P5}",
+        "{AIM-9L}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{E1F29B21-F291-4589-9FD8-3272EEC69506}"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{AIM-9P3}",
+        "{AIM-9P5}",
+        "{AIM-9L}"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+        "{AIM-7F}",
+        "{AIM-7H}",
+        "{AIM-7E}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+        "{AIM-7F}",
+        "{AIM-7H}",
+        "{AIM-7E}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["{E1F29B21-F291-4589-9FD8-3272EEC69506}"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+        "{AIM-7F}",
+        "{AIM-7H}",
+        "{AIM-7E}"
+      ]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{8D399DDA-FF81-4F14-904D-099B34FE7918}",
+        "{AIM-7F}",
+        "{AIM-7H}",
+        "{AIM-7E}"
+      ]
+    },
+    {
+      "station": 9,
+      "name": "Station 9",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{AIM-9P3}",
+        "{AIM-9P5}",
+        "{AIM-9L}"
+      ]
+    },
+    {
+      "station": 10,
+      "name": "Station 10",
+      "munitions": ["{E1F29B21-F291-4589-9FD8-3272EEC69506}"]
+    },
+    {
+      "station": 11,
+      "name": "Station 11",
+      "munitions": [
+        "{C8E06185-7CD6-4C90-959F-044679E90751}",
+        "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}",
+        "{AIS_ASQ_T50}",
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{AIM-9P3}",
+        "{AIM-9P5}",
+        "{AIM-9L}"
+      ]
+    }
+  ]
+}

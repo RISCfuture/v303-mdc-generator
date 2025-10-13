@@ -1,0 +1,343 @@
+{
+  "aircraft": "F-14B",
+  "displayName": "F-14B",
+  "emptyWeight": 44039,
+  "maxTakeoffWeight": 74349,
+  "internalFuel": 16200,
+  "cmdsCapacity": 200,
+  "chaffIncrement": 10,
+  "flareIncrement": 10,
+  "defaultChaff": 140,
+  "defaultFlare": 60,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "name": "COM 1",
+      "description": "UHF AN/ARC-159",
+      "presetCount": 20,
+      "min": 225,
+      "max": 399.975,
+      "step": 0.025
+    },
+    {
+      "name": "COM 2",
+      "description": "VHF/UHF AN/ARC-182",
+      "presetCount": 30,
+      "min": 30,
+      "max": 399.975,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "name": "M-61A1",
+      "capacity": 676,
+      "shells": [
+        {
+          "name": "M56A3_HE_RED",
+          "displayName": "M56A3 20mm HEI"
+        },
+        {
+          "name": "M53_AP_RED",
+          "displayName": "M53 20mm API"
+        },
+        {
+          "name": "M55A2_TP_RED",
+          "displayName": "M55A2 20mm TP"
+        },
+        {
+          "name": "M53_APT_RED",
+          "displayName": "20mm tracer"
+        }
+      ],
+      "mixes": [
+        {
+          "sequence": [
+            "M56A3_HE_RED",
+            "M56A3_HE_RED",
+            "M56A3_HE_RED",
+            "M56A3_HE_RED",
+            "M53_APT_RED",
+            "M53_AP_RED",
+            "M53_AP_RED",
+            "M53_AP_RED",
+            "M53_AP_RED",
+            "M53_APT_RED",
+            "M56A3_HE_RED",
+            "M53_AP_RED",
+            "M56A3_HE_RED",
+            "M53_AP_RED",
+            "M53_APT_RED",
+            "M55A2_TP_RED",
+            "M55A2_TP_RED",
+            "M55A2_TP_RED",
+            "M55A2_TP_RED",
+            "M53_APT_RED"
+          ]
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "1A",
+      "munitions": [
+        "{LAU-138 wtip - AIM-9M}",
+        "{LAU-138 wtip - AIM-9L}",
+        "{LAU-138 wtip - TCTS L}",
+        "CATM-9M",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "1B",
+      "munitions": [
+        "{SHOULDER AIM_54C_Mk47 L}",
+        "{SHOULDER AIM_54C_Mk60 L}",
+        "{SHOULDER AIM_54A_Mk47 L}",
+        "{SHOULDER AIM_54A_Mk60 L}",
+        "{SHOULDER AIM-7M}",
+        "{SHOULDER AIM-7F}",
+        "{SHOULDER AIM-7MH}",
+        "{LAU-7 - AIM-9M}",
+        "{LAU-7 - AIM-9L}",
+        "{LAU-7 - TCTS}",
+        "{SHOULDER AIM-7P}",
+        "{PHXBRU3242_2*LAU10 LS}",
+        "{PHXBRU3242_2*MK81 LS}",
+        "{PHXBRU3242_2*MK82 LS}",
+        "{PHXBRU3242_2*MK82AIR LS}",
+        "{PHXBRU3242_2*MK82SE LS}",
+        "{PHXBRU3242_2*MK20 LS}",
+        "{PHXBRU3242_2*CBU99 LS}",
+        "{PHXBRU3242_MK83 LS}",
+        "{PHXBRU3242_BDU33}",
+        "{PHXBRU3242_2*BDU45 LS}",
+        "{PHXBRU3242_2*BDU45B LS}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "2",
+      "munitions": ["{F14-300gal}", "{F14-300gal-empty}"]
+    },
+    {
+      "station": 4,
+      "name": "3",
+      "munitions": [
+        "{AIM_54A_Mk47}",
+        "{AIM_54A_Mk60}",
+        "{AIM_54C_Mk47}",
+        "{AIM_54C_Mk60}",
+        "{BELLY AIM-7M}",
+        "{BELLY AIM-7F}",
+        "{BELLY AIM-7MH}",
+        "{BELLY AIM-7P}",
+        "{BRU-32 MK-82}",
+        "{F14-ECA}",
+        "{BRU-32 MK-82AIR}",
+        "{BRU-32 MK-82SE}",
+        "{BRU-32 BDU-45}",
+        "{BRU-32 BDU-45B}",
+        "{BRU3242_3*BDU33}",
+        "{BRU-32 MK-83}",
+        "{BRU-32 GBU-12}",
+        "{BRU-32 GBU-16}",
+        "{BRU-32 MK-20}",
+        "{BRU-32 CBU-99}",
+        "{BRU3242_ADM141}",
+        "{BRU-32 MK-84}",
+        "{BRU3242_2*LAU10 R}",
+        "{BRU-32 GBU-10}",
+        "{BRU-32 GBU-24}",
+        "{MAK79_MK81 4}",
+        "{MAK79_MK82 4}",
+        "{MAK79_BDU45 4}",
+        "{MAK79_BDU45B 4}",
+        "{MAK79_BDU33 4}",
+        "{MAK79_MK82AIR 4}",
+        "{MAK79_MK82SE 4}",
+        "{MAK79_MK83 3L}",
+        "{MAK79_MK20 2L}",
+        "{MAK79_CBU99 2L}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "4",
+      "munitions": [
+        "{AIM_54A_Mk47}",
+        "{AIM_54A_Mk60}",
+        "{AIM_54C_Mk47}",
+        "{AIM_54C_Mk60}",
+        "{BELLY AIM-7M}",
+        "{BELLY AIM-7F}",
+        "{BELLY AIM-7MH}",
+        "{BELLY AIM-7P}",
+        "{BRU-32 MK-82}",
+        "{BRU-32 MK-82AIR}",
+        "{BRU-32 MK-82SE}",
+        "{BRU-32 BDU-45}",
+        "{BRU-32 BDU-45B}",
+        "{BRU3242_3*BDU33}",
+        "{BRU-32 MK-83}",
+        "{BRU-32 GBU-12}",
+        "{BRU-32 GBU-16}",
+        "{BRU-32 MK-20}",
+        "{BRU-32 CBU-99}",
+        "{BRU3242_ADM141}",
+        "{BRU-32 MK-84}",
+        "{BRU3242_2*SUU25 R}",
+        "{MAK79_MK81 3L}",
+        "{MAK79_MK82 3L}",
+        "{MAK79_BDU45 3L}",
+        "{MAK79_BDU45B 3L}",
+        "{MAK79_BDU33 3L}",
+        "{MAK79_MK82AIR 3L}",
+        "{MAK79_MK82SE 3L}",
+        "{MAK79_MK83 1L}",
+        "{MAK79_MK20 1L}",
+        "{MAK79_CBU99 1L}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "5",
+      "munitions": [
+        "{F14-TARPS}",
+        "{AIM_54A_Mk47}",
+        "{AIM_54A_Mk60}",
+        "{AIM_54C_Mk47}",
+        "{AIM_54C_Mk60}",
+        "{BELLY AIM-7M}",
+        "{BELLY AIM-7F}",
+        "{BELLY AIM-7MH}",
+        "{BELLY AIM-7P}",
+        "{BRU-32 MK-82}",
+        "{BRU-32 MK-82AIR}",
+        "{BRU-32 MK-82SE}",
+        "{BRU-32 BDU-45}",
+        "{BRU-32 BDU-45B}",
+        "{BRU3242_3*BDU33}",
+        "{BRU-32 MK-83}",
+        "{BRU-32 GBU-12}",
+        "{BRU-32 GBU-16}",
+        "{BRU-32 MK-20}",
+        "{BRU-32 CBU-99}",
+        "{BRU3242_ADM141}",
+        "{BRU-32 MK-84}",
+        "{BRU-32 GBU-24}",
+        "{BRU3242_SUU25}",
+        "{MAK79_MK81 3R}",
+        "{MAK79_MK82 3R}",
+        "{MAK79_BDU45 3R}",
+        "{MAK79_BDU45B 3R}",
+        "{MAK79_BDU33 3R}",
+        "{MAK79_MK82AIR 3R}",
+        "{MAK79_MK82SE 3R}",
+        "{MAK79_MK83 1R}",
+        "{MAK79_MK20 1R}",
+        "{MAK79_CBU99 1R}"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "6",
+      "munitions": [
+        "{AIM_54A_Mk47}",
+        "{AIM_54A_Mk60}",
+        "{AIM_54C_Mk47}",
+        "{AIM_54C_Mk60}",
+        "{BELLY AIM-7M}",
+        "{BELLY AIM-7F}",
+        "{BELLY AIM-7MH}",
+        "{BELLY AIM-7P}",
+        "{BRU-32 MK-82}",
+        "{F14-ALQ167}",
+        "{BRU-32 MK-82AIR}",
+        "{BRU-32 MK-82SE}",
+        "{BRU-32 BDU-45}",
+        "{BRU-32 BDU-45B}",
+        "{BRU3242_3*BDU33}",
+        "{BRU-32 MK-83}",
+        "{BRU-32 GBU-12}",
+        "{BRU-32 GBU-16}",
+        "{BRU-32 MK-20}",
+        "{BRU-32 CBU-99}",
+        "{BRU3242_ADM141}",
+        "{BRU-32 MK-84}",
+        "{BRU3242_LAU10}",
+        "{BRU-32 GBU-10}",
+        "{MAK79_MK81 4}",
+        "{MAK79_MK82 4}",
+        "{MAK79_BDU45 4}",
+        "{MAK79_BDU45B 4}",
+        "{MAK79_BDU33 4}",
+        "{MAK79_MK82AIR 4}",
+        "{MAK79_MK82SE 4}",
+        "{MAK79_MK83 3R}",
+        "{MAK79_MK20 2R}",
+        "{MAK79_CBU99 2R}"
+      ]
+    },
+    {
+      "station": 8,
+      "name": "7",
+      "munitions": ["{F14-300gal}", "{F14-300gal-empty}"]
+    },
+    {
+      "station": 9,
+      "name": "8B",
+      "munitions": [
+        "{SHOULDER AIM_54C_Mk47 R}",
+        "{SHOULDER AIM_54C_Mk60 R}",
+        "{SHOULDER AIM_54A_Mk47 R}",
+        "{SHOULDER AIM_54A_Mk60 R}",
+        "{SHOULDER AIM-7M}",
+        "{SHOULDER AIM-7F}",
+        "{SHOULDER AIM-7MH}",
+        "{LAU-7 - AIM-9M}",
+        "{LAU-7 - AIM-9L}",
+        "{LAU-7 - TCTS}",
+        "{SHOULDER AIM-7P}",
+        "{PHXBRU3242_2*LAU10 RS}",
+        "{PHXBRU3242_2*MK81 RS}",
+        "{PHXBRU3242_2*MK82 RS}",
+        "{PHXBRU3242_2*MK82AIR RS}",
+        "{PHXBRU3242_2*MK82SE RS}",
+        "{PHXBRU3242_2*MK20 RS}",
+        "{PHXBRU3242_2*CBU99 RS}",
+        "{PHXBRU3242_MK83 RS}",
+        "{PHXBRU3242_BDU33}",
+        "{PHXBRU3242_2*BDU45 RS}",
+        "{PHXBRU3242_2*BDU45B RS}",
+        "{F14-LANTIRN-TP}"
+      ]
+    },
+    {
+      "station": 10,
+      "name": "8A",
+      "munitions": [
+        "{LAU-138 wtip - AIM-9M}",
+        "{LAU-138 wtip - AIM-9L}",
+        "{LAU-138 wtip - TCTS R}",
+        "CATM-9M",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}",
+        "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}"
+      ]
+    }
+  ],
+  "ammoTypes": ["20mm HEI", "20mm API", "20mm AP&HE", "20mm TP"]
+}

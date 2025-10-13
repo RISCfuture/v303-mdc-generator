@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/airframes.schema.json",
+  "title": "Airframe Configuration",
+  "description": "Airframe performance data, capabilities, and station configurations",
+  "type": "object",
+  "required": [
+    "aircraft",
+    "displayName",
+    "emptyWeight",
+    "maxTakeoffWeight",
+    "internalFuel",
+    "cmdsCapacity",
+    "chaffIncrement",
+    "flareIncrement",
+    "defaultChaff",
+    "defaultFlare",
+    "defaultJoker",
+    "defaultBingo",
+    "radios",
+    "stations"
+  ],
+  "properties": {
+    "aircraft": {
+      "type": "string",
+      "description": "Aircraft CLSID (e.g., 'F-16C_50', 'A-10C_2')"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Human-readable aircraft name"
+    },
+    "emptyWeight": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Empty weight in pounds"
+    },
+    "maxTakeoffWeight": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Maximum takeoff weight in pounds"
+    },
+    "internalFuel": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Internal fuel capacity in pounds"
+    },
+    "cmdsCapacity": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total countermeasure dispenser capacity (chaff + flare combined)"
+    },
+    "chaffIncrement": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Slider step size for chaff adjustment"
+    },
+    "flareIncrement": {
+      "type": "number",
+      "minimum": 1,
+      "description": "Slider step size for flare adjustment"
+    },
+    "defaultChaff": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Default chaff count"
+    },
+    "defaultFlare": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Default flare count"
+    },
+    "defaultJoker": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Default joker fuel level in pounds"
+    },
+    "defaultBingo": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Default bingo fuel level in pounds"
+    },
+    "radios": {
+      "type": "array",
+      "description": "Radio configurations for this airframe",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "presetCount", "min", "max", "step"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Radio name (e.g., 'COM1', 'COM2')"
+          },
+          "description": {
+            "type": "string",
+            "description": "Radio description including type and model"
+          },
+          "presetCount": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Number of presets available for this radio"
+          },
+          "min": {
+            "type": ["number", "null"],
+            "description": "Minimum frequency in MHz (null if not available)"
+          },
+          "max": {
+            "type": ["number", "null"],
+            "description": "Maximum frequency in MHz (null if not available)"
+          },
+          "step": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Frequency step size in MHz (0.025 for airband, 1 for others)"
+          }
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "description": "Station/pylon configurations",
+      "items": {
+        "type": "object",
+        "required": ["station", "name", "munitions"],
+        "properties": {
+          "station": {
+            "oneOf": [{ "type": "integer", "minimum": 1 }, { "type": "string" }],
+            "description": "Station number or identifier (e.g., 1, '5L', '5R')"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name for the station (from DCS DisplayName)"
+          },
+          "munitions": {
+            "type": "array",
+            "description": "Flat list of all munition CLSIDs compatible with this station",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "guns": {
+      "type": "array",
+      "description": "Gun configurations for this airframe",
+      "items": {
+        "type": "object",
+        "required": ["name", "capacity", "shells"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Gun name (e.g., 'GAU-8', 'M-61')"
+          },
+          "capacity": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Maximum ammunition capacity"
+          },
+          "shells": {
+            "type": "array",
+            "description": "Available shell types",
+            "items": {
+              "type": "object",
+              "required": ["name", "displayName"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Shell type identifier"
+                },
+                "displayName": {
+                  "type": "string",
+                  "description": "Human-readable shell name"
+                }
+              }
+            }
+          },
+          "mixes": {
+            "type": "array",
+            "description": "Ammunition loading patterns",
+            "items": {
+              "type": "object",
+              "required": ["sequence"],
+              "properties": {
+                "sequence": {
+                  "type": "array",
+                  "description": "Sequence of shell types",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ammoTypes": {
+      "type": "array",
+      "description": "Gun ammunition type names (e.g., 'CM - Combat Mix', 'HEI - High Explosive Incendiary')",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cmdsProfiles": {
+      "type": "array",
+      "description": "Countermeasure program names",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ecmPrograms": {
+      "type": "array",
+      "description": "ECM program names",
+      "items": {
+        "type": "string"
+      }
+    },
+    "htsThreatTables": {
+      "type": "array",
+      "description": "HTS threat table names (F-16 specific)",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

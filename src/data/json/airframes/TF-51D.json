@@ -1,0 +1,27 @@
+{
+  "aircraft": "TF-51D",
+  "displayName": "TF-51D",
+  "emptyWeight": 7251,
+  "maxTakeoffWeight": 10582,
+  "internalFuel": 1105,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": []
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": []
+    }
+  ]
+}

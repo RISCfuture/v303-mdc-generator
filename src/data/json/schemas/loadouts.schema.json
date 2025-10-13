@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://v303fg.com/schemas/loadouts.schema.json",
+  "title": "Loadouts Database",
+  "description": "Prefab loadouts for F-16C and A-10C aircraft",
+  "type": "object",
+  "required": ["F-16C_50", "A-10C_2"],
+  "properties": {
+    "F-16C_50": {
+      "type": "array",
+      "description": "F-16C prefab loadout configurations",
+      "items": {
+        "$ref": "#/definitions/loadout"
+      }
+    },
+    "A-10C_2": {
+      "type": "array",
+      "description": "A-10C prefab loadout configurations",
+      "items": {
+        "$ref": "#/definitions/loadout"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "loadout": {
+      "type": "object",
+      "required": ["name", "description", "stations"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Loadout name (may include mission types)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed loadout description"
+        },
+        "stations": {
+          "type": "array",
+          "description": "Station configurations for this loadout",
+          "items": {
+            "type": "object",
+            "required": ["station", "item"],
+            "properties": {
+              "station": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 11,
+                "description": "Station number (1-9 for F-16C, 1-11 for A-10C)"
+              },
+              "item": {
+                "type": "string",
+                "description": "Munition or store identifier"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

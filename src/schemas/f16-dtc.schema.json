@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "F-16C DCS-DTC Mission Data Card",
+  "description": "JSON schema for F-16C mission data export compatible with DCS-DTC application",
+  "type": "object",
+  "required": ["Aircraft", "Version"],
+  "definitions": {
+    "DTCReferencePoint": {
+      "type": "object",
+      "description": "Reference point for CCIP delivery (VIP, VRP, OA, PUP)",
+      "required": ["Range", "Bearing", "Elevation"],
+      "properties": {
+        "Range": {
+          "type": "number",
+          "description": "Distance in feet"
+        },
+        "Bearing": {
+          "type": "number",
+          "description": "Bearing in degrees",
+          "minimum": 0,
+          "maximum": 360
+        },
+        "Elevation": {
+          "type": "number",
+          "description": "Elevation in feet"
+        }
+      }
+    }
+  },
+  "properties": {
+    "Aircraft": {
+      "type": "string",
+      "enum": ["F16C"],
+      "description": "Aircraft type identifier"
+    },
+    "Upload": {
+      "type": ["object", "null"],
+      "description": "Upload configuration flags",
+      "properties": {
+        "Waypoints": { "type": "boolean" },
+        "CMS": { "type": "boolean" },
+        "Radios": { "type": "boolean" },
+        "MFDs": { "type": "boolean" },
+        "HARMHTS": { "type": "boolean" },
+        "Datalink": { "type": "boolean" },
+        "Misc": { "type": "boolean" },
+        "Kneeboard": { "type": "boolean" }
+      }
+    },
+    "WaypointsCapture": {
+      "type": "null"
+    },
+    "Waypoints": {
+      "type": ["object", "null"],
+      "properties": {
+        "Waypoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Sequence": { "type": "integer", "minimum": 1 },
+              "Name": { "type": "string" },
+              "Latitude": { "type": "string", "pattern": "^[NS] \\d{2}°\\d{2}(\\.\\d+)?'$" },
+              "Longitude": { "type": "string", "pattern": "^[EW] \\d{3}°\\d{2}(\\.\\d+)?'$" },
+              "Elevation": { "type": "integer" },
+              "TimeOverSteerpoint": { "type": ["string", "null"] },
+              "Target": { "type": "boolean" },
+              "UseOA": { "type": "boolean" },
+              "OffsetAimpoint1": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              },
+              "OffsetAimpoint2": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              },
+              "UseVIP": { "type": "boolean" },
+              "VIPtoTGT": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              },
+              "VIPtoPUP": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              },
+              "UseVRP": { "type": "boolean" },
+              "TGTtoVRP": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              },
+              "TGTtoPUP": {
+                "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/DTCReferencePoint" }]
+              }
+            }
+          }
+        }
+      }
+    },
+    "CMS": {
+      "type": ["object", "null"],
+      "properties": {
+        "Programs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Number": { "type": "integer" },
+              "FlareBurstQty": { "type": "integer" },
+              "FlareBurstInterval": { "type": "number" },
+              "FlareSalvoQty": { "type": "integer" },
+              "FlareSalvoInterval": { "type": "number" },
+              "ChaffBurstQty": { "type": "integer" },
+              "ChaffBurstInterval": { "type": "number" },
+              "ChaffSalvoQty": { "type": "integer" },
+              "ChaffSalvoInterval": { "type": "number" },
+              "ToBeUpdated": { "type": "boolean" }
+            }
+          }
+        },
+        "ChaffBingo": { "type": "integer" },
+        "FlareBingo": { "type": "integer" }
+      }
+    },
+    "Radios": {
+      "type": ["object", "null"],
+      "properties": {
+        "Radio1": {
+          "type": "object",
+          "properties": {
+            "Presets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Number": { "type": "integer" },
+                  "Name": { "type": "string" },
+                  "Frequency": { "type": "string" }
+                }
+              }
+            },
+            "SelectedFrequency": { "type": "string" },
+            "SelectedPreset": { "type": ["string", "null"] },
+            "EnableGuard": { "type": "boolean" },
+            "Mode": { "type": "integer", "enum": [0, 1] }
+          }
+        },
+        "Radio2": {
+          "type": "object",
+          "properties": {
+            "Presets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Number": { "type": "integer" },
+                  "Name": { "type": "string" },
+                  "Frequency": { "type": "string" }
+                }
+              }
+            },
+            "SelectedFrequency": { "type": "string" },
+            "SelectedPreset": { "type": ["string", "null"] },
+            "EnableGuard": { "type": "boolean" },
+            "Mode": { "type": "integer", "enum": [0, 1] }
+          }
+        }
+      }
+    },
+    "MFD": {
+      "type": ["object", "null"]
+    },
+    "HARM": {
+      "type": "null"
+    },
+    "HTS": {
+      "type": "null"
+    },
+    "Datalink": {
+      "type": ["object", "null"],
+      "properties": {
+        "EnableOwnCallsign": { "type": "boolean" },
+        "OwnCallsign": { "type": "string" },
+        "FlightLead": { "type": "boolean" },
+        "EnableMembers": { "type": "boolean" },
+        "OwnshipIndex": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "Members": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 8,
+          "maxItems": 8
+        },
+        "TDOAMembers": {
+          "type": "array",
+          "items": { "type": "boolean" },
+          "minItems": 8,
+          "maxItems": 8
+        },
+        "DatalinkMode": { "type": "integer", "enum": [0, 1] }
+      }
+    },
+    "Misc": {
+      "type": ["object", "null"],
+      "properties": {
+        "Bingo": { "type": "integer" },
+        "BingoToBeUpdated": { "type": "boolean" },
+        "BullseyeToBeUpdated": { "type": "boolean" },
+        "BullseyeWP": { "type": "integer" },
+        "CARAALOW": { "type": "integer" },
+        "CARAALOWToBeUpdated": { "type": "boolean" },
+        "MSLFloor": { "type": "integer" },
+        "MSLFloorToBeUpdated": { "type": "boolean" },
+        "LaserSettingsToBeUpdated": { "type": "boolean" },
+        "TGPCode": { "type": "integer" },
+        "LSTCode": { "type": "integer" },
+        "LaserStartTime": { "type": "integer" },
+        "TACANChannel": { "type": "integer", "minimum": 1, "maximum": 126 },
+        "TACANBand": { "type": "integer", "enum": [0, 1] },
+        "TACANToBeUpdated": { "type": "boolean" },
+        "ILSFrequency": { "type": "number" },
+        "ILSCourse": { "type": "integer" },
+        "ILSToBeUpdated": { "type": "boolean" }
+      }
+    },
+    "Version": {
+      "type": "integer",
+      "description": "DCS-DTC format version"
+    },
+    "KneeboardNotes": {
+      "type": "null"
+    }
+  }
+}

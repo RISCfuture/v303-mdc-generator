@@ -1,0 +1,142 @@
+{
+  "MFD": {
+    "Configurations": [
+      {
+        "Mode": 1,
+        "LeftMFD": {
+          "SelectedPage": 1,
+          "Page1": 2,
+          "Page2": 1,
+          "Page3": 1,
+          "FCRMode": 1,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "RightMFD": {
+          "SelectedPage": 2,
+          "Page1": 4,
+          "Page2": 3,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "ToBeUpdated": true
+      },
+      {
+        "Mode": 2,
+        "LeftMFD": {
+          "SelectedPage": 1,
+          "Page1": 2,
+          "Page2": 5,
+          "Page3": 1,
+          "FCRMode": 1,
+          "FCRAzimuth": 6,
+          "FCRBars": 2,
+          "FCRRange": 80
+        },
+        "RightMFD": {
+          "SelectedPage": 2,
+          "Page1": 4,
+          "Page2": 3,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "ToBeUpdated": true
+      },
+      {
+        "Mode": 3,
+        "LeftMFD": {
+          "SelectedPage": 1,
+          "Page1": 5,
+          "Page2": 6,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "RightMFD": {
+          "SelectedPage": 2,
+          "Page1": 4,
+          "Page2": 3,
+          "Page3": 7,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "ToBeUpdated": true
+      },
+      {
+        "Mode": 4,
+        "LeftMFD": {
+          "SelectedPage": 1,
+          "Page1": 2,
+          "Page2": 5,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "RightMFD": {
+          "SelectedPage": 2,
+          "Page1": 4,
+          "Page2": 3,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "ToBeUpdated": true
+      },
+      {
+        "Mode": 5,
+        "LeftMFD": {
+          "SelectedPage": 1,
+          "Page1": 2,
+          "Page2": 5,
+          "Page3": 1,
+          "FCRMode": 1,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "RightMFD": {
+          "SelectedPage": 2,
+          "Page1": 4,
+          "Page2": 3,
+          "Page3": 1,
+          "FCRMode": null,
+          "FCRAzimuth": 6,
+          "FCRBars": 4,
+          "FCRRange": 40
+        },
+        "ToBeUpdated": true
+      }
+    ]
+  },
+  "Misc": {
+    "LaserStartTime": 8
+  },
+  "Radios": {
+    "Radio1": {
+      "EnableGuard": false,
+      "Mode": 1
+    },
+    "Radio2": {
+      "EnableGuard": false,
+      "Mode": 1
+    }
+  },
+  "Datalink": {
+    "DatalinkMode": 1
+  }
+}
