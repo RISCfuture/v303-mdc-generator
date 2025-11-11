@@ -43,13 +43,17 @@ export function useWaypointManagement(
     const lastWaypoint = waypoints.value[waypoints.value.length - 1]
     const coordinateFormat = lastWaypoint?.coordinateFormat
 
+    // First steerpoint should default to PARK, all others to NAV
+    const isFirstSteerpoint = waypoints.value.length === 0
+    const defaultType = isFirstSteerpoint ? 'PARK' : 'NAV'
+
     const newWaypoint: Waypoint = {
       sequence: waypoints.value.length + 1,
       name: '',
       latitude: null,
       longitude: null,
       altitude: null,
-      type: 'NAV',
+      type: defaultType,
       ...(coordinateFormat && { coordinateFormat }),
     }
     missionsStore.updateMission(missionId.value, {
@@ -67,6 +71,10 @@ export function useWaypointManagement(
     const lastWaypoint = waypoints.value[waypoints.value.length - 1]
     const coordinateFormat = lastWaypoint?.coordinateFormat
 
+    // First steerpoint should default to PARK, all others to NAV
+    const isFirstSteerpoint = waypoints.value.length === 0
+    const defaultType = isFirstSteerpoint ? 'PARK' : 'NAV'
+
     const newWaypoint: Waypoint = {
       sequence: waypoints.value.length + 1,
       name: navaid.name,
@@ -74,7 +82,7 @@ export function useWaypointManagement(
       longitude: navaid.longitude,
       elevation: navaid.elevation ? Math.round(navaid.elevation) : undefined, // Elevation already in feet
       altitude: navaid.elevation ? Math.round(navaid.elevation) : 0, // Pre-fill altitude with elevation, or 0 as default
-      type: 'NAV',
+      type: defaultType,
       ...(coordinateFormat && { coordinateFormat }),
     }
     missionsStore.updateMission(missionId.value, {
