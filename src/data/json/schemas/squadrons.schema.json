@@ -29,6 +29,10 @@
         "aircraft": {
           "type": "string",
           "description": "Aircraft type flown by this squadron (e.g., 'F-16C_50', 'A-10C_2')"
+        },
+        "defaultGunAmmo": {
+          "type": ["string", "null"],
+          "description": "Default gun ammo type for this squadron (must match an option in the airframe's ammoTypes)"
         }
       },
       "required": ["id", "name", "displayName", "aircraft"]

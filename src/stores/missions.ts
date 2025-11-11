@@ -8,7 +8,7 @@ import {
   type SerializedMission,
 } from '@/utils/missionStorage'
 import { getAirframeData, getRadioCount } from '@/utils/airframeHelpers'
-import { getSquadronAirframe } from '@/data/squadrons'
+import { getSquadronAirframe, squadronDatabase } from '@/data/squadrons'
 import { STATION_COUNTS } from '@/data/constants'
 import { imageStorage } from '@/services/imageStorage'
 import { theaterDatabase } from '@/data/theaters'
@@ -182,6 +182,7 @@ export const useMissionsStore = defineStore('missions', () => {
         joker: airframeData.defaultJoker,
         bingo: airframeData.defaultBingo,
       },
+      gunAmmoType: squadronDatabase[squadron]?.defaultGunAmmo || undefined,
       weather: '',
       details: {
         remarks: '',
