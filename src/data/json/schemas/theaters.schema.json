@@ -28,6 +28,10 @@
           "type": "string",
           "format": "uri",
           "description": "URL to the v303rd Fighter Group In-Flight Guide (IFG) for this theater (optional)"
+        },
+        "defaultAirfield": {
+          "type": ["string", "null"],
+          "description": "Default airfield name for this theater (pre-selected for takeoff/landing)"
         }
       }
     }

@@ -6,6 +6,7 @@ export interface TheaterData {
   displayName: string
   navaidsUrl: string
   ifgUrl?: string
+  defaultAirfield?: string | null
 }
 
 // Theater data imported from JSON

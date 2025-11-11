@@ -11,6 +11,7 @@ import { getAirframeData, getRadioCount } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
 import { STATION_COUNTS } from '@/data/constants'
 import { imageStorage } from '@/services/imageStorage'
+import { theaterDatabase } from '@/data/theaters'
 
 const STORAGE_KEY = 'v303-missions'
 const STORAGE_VERSION = 2
@@ -164,7 +165,17 @@ export const useMissionsStore = defineStore('missions', () => {
         }
         return radios
       })(),
-      departureRecovery: {},
+      departureRecovery: (() => {
+        const theaterData = theaterDatabase[theater]
+        const defaultAirfield = theaterData?.defaultAirfield
+        if (defaultAirfield) {
+          return {
+            departureAirportId: defaultAirfield,
+            recoveryAirportId: defaultAirfield,
+          }
+        }
+        return {}
+      })(),
       told: {},
       fuel: {
         takeoff: airframeData.internalFuel,
