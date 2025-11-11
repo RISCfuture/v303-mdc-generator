@@ -246,7 +246,7 @@ export interface Mission {
   // Countermeasures and ECM
   ecmCmds: ECMCMDSProfiles
   cmdsProfile?: string // CMDS profile (e.g., "PRGM 1" for F-16, "PRGM A" for A-10)
-  ecmPrograms?: string[] // ECM programs (e.g., ["1", "2", "3"] for F-16, ["AIR", "SAM1"] for A-10)
+  ecmProgram?: string // ECM program (e.g., "XMIT 1" for F-16, "AIR" for A-10)
   htsThreatTables?: string[] // HTS threat tables (e.g., ["CLASS 1", "CLASS 2"] for F-16) - DEPRECATED: use harmTables and htsThreatData
   harmTables?: HARMTable[] // F-16C HARM threat tables (1-3 tables)
   htsThreatData?: HTSThreatData // F-16C HTS manual threat configuration

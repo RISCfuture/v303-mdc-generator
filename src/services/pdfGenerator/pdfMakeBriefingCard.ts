@@ -555,8 +555,7 @@ function generateLoadoutTable(mission: Mission): unknown {
   const chaffBingo = mission.ecmCmds.chaffBingo || 0
   const flareBingo = mission.ecmCmds.flareBingo || 0
   const cmdsProfile = mission.cmdsProfile || 'PRGM 1'
-  const ecmPrograms =
-    mission.ecmPrograms && mission.ecmPrograms.length > 0 ? mission.ecmPrograms.join(', ') : ''
+  const ecmPrograms = mission.ecmProgram || ''
 
   const cmData = [
     { text: 'CHAFF', fillColor: '#DCDCDC', bold: true },

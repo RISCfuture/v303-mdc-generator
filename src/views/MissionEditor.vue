@@ -537,7 +537,7 @@ function handleSelectMDCExport(key: string) {
               @update:cmds-profile="
                 (v: string | null) => updateField('cmdsProfile', v ?? undefined)
               "
-              @update:ecm-programs="(v: string[]) => updateField('ecmPrograms', v)"
+              @update:ecm-program="(v: string | null) => updateField('ecmProgram', v ?? undefined)"
               @update:hts-threat-tables="(v: string[]) => updateField('htsThreatTables', v)"
               @update:chaff-total="(v: number) => updateNestedField('ecmCmds', 'chaffTotal', v)"
               @update:flare-total="(v: number) => updateNestedField('ecmCmds', 'flareTotal', v)"

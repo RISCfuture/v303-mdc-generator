@@ -135,7 +135,7 @@ export interface SerializedMission {
 
   // CMDS/ECM
   cmdsp?: string // cmdsProfile
-  ecmp: string[] // ecmPrograms - required, defaults to empty array
+  ecmp?: string // ecmProgram - optional
   htsp: string[] // htsThreatTables - required, defaults to empty array
 
   // Comm ladder - required, defaults to empty array
@@ -338,7 +338,6 @@ export function serializeMission(mission: Mission): SerializedMission {
     ua: mission.updatedAt,
 
     // Required array fields - will be set below, initialized here for type safety
-    ecmp: [],
     htsp: [],
     cl: [],
     pm: [],
@@ -424,8 +423,10 @@ export function serializeMission(mission: Mission): SerializedMission {
   if (mission.cmdsProfile) {
     serialized.cmdsp = mission.cmdsProfile
   }
-  // ECM programs - required field, defaults to empty array
-  serialized.ecmp = mission.ecmPrograms && mission.ecmPrograms.length > 0 ? mission.ecmPrograms : []
+  // ECM program - optional field
+  if (mission.ecmProgram) {
+    serialized.ecmp = mission.ecmProgram
+  }
   // HTS threat tables - required field, defaults to empty array
   serialized.htsp =
     mission.htsThreatTables && mission.htsThreatTables.length > 0 ? mission.htsThreatTables : []
@@ -654,7 +655,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
     loadout,
     gunAmmoType: serialized.gt,
     cmdsProfile: serialized.cmdsp,
-    ecmPrograms: serialized.ecmp,
+    ecmProgram: serialized.ecmp,
     htsThreatTables: serialized.htsp,
     ecmCmds,
     commLadders: serialized.cl,

@@ -39,7 +39,6 @@
         "det",
         "ca",
         "ua",
-        "ecmp",
         "htsp",
         "cl",
         "pm",
@@ -196,11 +195,8 @@
           "description": "CMDS profile"
         },
         "ecmp": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "ECM programs"
+          "type": "string",
+          "description": "ECM program"
         },
         "htsp": {
           "type": "array",

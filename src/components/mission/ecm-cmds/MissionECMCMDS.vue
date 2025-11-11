@@ -1,15 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import {
-  NCard,
-  NForm,
-  NFormItem,
-  NSelect,
-  NCheckboxGroup,
-  NCheckbox,
-  NSlider,
-  NSpace,
-} from 'naive-ui'
+import { NCard, NForm, NFormItem, NSelect, NSlider, NSpace } from 'naive-ui'
 import { FORM } from '@/styles/design-tokens'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import type { Mission, Airframe } from '@/types'
@@ -23,7 +14,7 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<{
   'update:cmds-profile': [value: string | null]
-  'update:ecm-programs': [value: string[]]
+  'update:ecm-program': [value: string | null]
   'update:hts-threat-tables': [value: string[]]
   'update:chaff-total': [value: number]
   'update:flare-total': [value: number]
@@ -53,15 +44,12 @@ const htsThreatTableOptions = computed(() => {
   return airframeData.value.htsThreatTables
 })
 
-// For F-16, use multi-select dropdown; for A-10, use checkboxes
-const isF16 = computed(() => props.airframe === 'F-16C_50')
-
 function updateCmdsProfile(value: string | null) {
   emit('update:cmds-profile', value)
 }
 
-function updateEcmPrograms(value: string[]) {
-  emit('update:ecm-programs', value)
+function updateEcmProgram(value: string | null) {
+  emit('update:ecm-program', value)
 }
 
 function updateHtsThreatTables(value: string[]) {
@@ -170,33 +158,18 @@ function updateFlareTotal(value: number | null) {
         :label-width="FORM.labelWidth"
         :style="{ maxWidth: FORM.maxWidth }"
       >
-        <!-- ECM Programs -->
-        <NFormItem v-if="ecmProgramOptions.length > 0" label="ECM Programs">
-          <!-- Multi-select dropdown for F-16 -->
+        <!-- ECM Program -->
+        <NFormItem v-if="ecmProgramOptions.length > 0" label="ECM Program">
           <NSelect
-            v-if="isF16"
-            :value="mission.ecmPrograms || []"
-            @update:value="updateEcmPrograms"
-            :options="ecmProgramOptions.map((prog: string) => ({ label: prog, value: prog }))"
-            multiple
-            placeholder="Select ECM programs"
+            :value="mission.ecmProgram"
+            @update:value="updateEcmProgram"
+            :options="[
+              { label: '(None)', value: null },
+              ...ecmProgramOptions.map((prog: string) => ({ label: prog, value: prog })),
+            ]"
+            placeholder="Select ECM program"
             clearable
           />
-
-          <!-- Checkboxes for A-10 -->
-          <NCheckboxGroup
-            v-else
-            :value="mission.ecmPrograms || []"
-            @update:value="updateEcmPrograms"
-          >
-            <NCheckbox
-              v-for="program in ecmProgramOptions"
-              :key="program"
-              :value="program"
-              :label="program"
-              style="margin-right: 12px"
-            />
-          </NCheckboxGroup>
         </NFormItem>
 
         <!-- HTS Threat Tables -->

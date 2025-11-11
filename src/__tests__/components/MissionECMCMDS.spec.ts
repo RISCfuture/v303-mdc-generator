@@ -5,7 +5,7 @@ import type { Mission, Airframe } from '@/types'
 
 const createMockMission = (overrides = {}): Partial<Mission> => ({
   cmdsProfile: 'Profile 1',
-  ecmPrograms: ['1', '2'],
+  ecmProgram: 'XMIT 1',
   ecmCmds: {
     cmdsPrograms: [],
     chaffBingo: 10,
@@ -77,20 +77,7 @@ describe('MissionECMCMDS', () => {
     })
   })
 
-  describe('ECM Programs - F-16 multi-select', () => {
-    it('should display multi-select dropdown for F-16', () => {
-      const mission = createMockMission()
-
-      const wrapper = mount(MissionECMCMDS, {
-        props: {
-          mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
-        },
-      })
-
-      expect(wrapper.vm.isF16).toBe(true)
-    })
-
+  describe('ECM Program - Single select dropdown', () => {
     it('should populate ECM program options for F-16', () => {
       const mission = createMockMission()
 
@@ -104,7 +91,7 @@ describe('MissionECMCMDS', () => {
       expect(wrapper.vm.ecmProgramOptions.length).toBeGreaterThan(0)
     })
 
-    it('should emit update:ecm-programs when F-16 programs change', async () => {
+    it('should emit update:ecm-program when F-16 program changes', async () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -114,14 +101,14 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      wrapper.vm.updateEcmPrograms(['1', '2', '3'])
+      wrapper.vm.updateEcmProgram('XMIT 2')
 
-      expect(wrapper.emitted('update:ecm-programs')).toBeTruthy()
-      expect(wrapper.emitted('update:ecm-programs')?.[0]).toEqual([['1', '2', '3']])
+      expect(wrapper.emitted('update:ecm-program')).toBeTruthy()
+      expect(wrapper.emitted('update:ecm-program')?.[0]).toEqual(['XMIT 2'])
     })
 
-    it('should handle empty ECM programs array for F-16', () => {
-      const mission = createMockMission({ ecmPrograms: [] })
+    it('should handle undefined ECM program for F-16', () => {
+      const mission = createMockMission({ ecmProgram: undefined })
 
       const wrapper = mount(MissionECMCMDS, {
         props: {
@@ -130,26 +117,13 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      // Mission has empty ECM programs array
-      expect(wrapper.props('mission').ecmPrograms).toEqual([])
+      // Mission has undefined ECM program
+      expect(wrapper.props('mission').ecmProgram).toBeUndefined()
     })
   })
 
-  describe('ECM Programs - A-10 checkboxes', () => {
-    it('should display checkboxes for A-10', () => {
-      const mission = createMockMission()
-
-      const wrapper = mount(MissionECMCMDS, {
-        props: {
-          mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
-        },
-      })
-
-      expect(wrapper.vm.isF16).toBe(false)
-    })
-
-    it('should not have ECM program options for A-10 (no ECM programs)', () => {
+  describe('ECM Program - A-10 dropdown', () => {
+    it('should have ECM program options for A-10', () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -163,7 +137,7 @@ describe('MissionECMCMDS', () => {
       expect(wrapper.vm.ecmProgramOptions.length).toBe(4)
     })
 
-    it('should emit update:ecm-programs when A-10 programs change', async () => {
+    it('should emit update:ecm-program when A-10 program changes', async () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -173,14 +147,14 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      wrapper.vm.updateEcmPrograms(['MAN 1', 'MAN 2'])
+      wrapper.vm.updateEcmProgram('AIR')
 
-      expect(wrapper.emitted('update:ecm-programs')).toBeTruthy()
-      expect(wrapper.emitted('update:ecm-programs')?.[0]).toEqual([['MAN 1', 'MAN 2']])
+      expect(wrapper.emitted('update:ecm-program')).toBeTruthy()
+      expect(wrapper.emitted('update:ecm-program')?.[0]).toEqual(['AIR'])
     })
 
-    it('should handle undefined ECM programs for A-10', () => {
-      const mission = createMockMission({ ecmPrograms: undefined })
+    it('should handle undefined ECM program for A-10', () => {
+      const mission = createMockMission({ ecmProgram: undefined })
 
       const wrapper = mount(MissionECMCMDS, {
         props: {
@@ -189,27 +163,13 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      // Verify the mission prop has undefined ecmPrograms
-      expect(wrapper.props('mission').ecmPrograms).toBeUndefined()
-    })
-
-    it('should render checkbox for each A-10 ECM program', () => {
-      const mission = createMockMission()
-
-      const wrapper = mount(MissionECMCMDS, {
-        props: {
-          mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
-        },
-      })
-
-      // A-10C has 4 ECM programs that should be rendered as options
-      expect(wrapper.vm.ecmProgramOptions.length).toBe(4)
+      // Verify the mission prop has undefined ecmProgram
+      expect(wrapper.props('mission').ecmProgram).toBeUndefined()
     })
   })
 
   describe('Airframe-specific rendering', () => {
-    it('should render NSelect for F-16 ECM programs', () => {
+    it('should render NSelect for F-16 ECM program', () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -219,12 +179,11 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      // F-16 uses isF16 flag to determine multi-select rendering
-      expect(wrapper.vm.isF16).toBe(true)
+      // F-16 uses single-select dropdown
       expect(wrapper.vm.ecmProgramOptions.length).toBeGreaterThan(0)
     })
 
-    it('should not render ECM controls for A-10 (no ECM programs)', () => {
+    it('should render NSelect for A-10 ECM program', () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -234,8 +193,7 @@ describe('MissionECMCMDS', () => {
         },
       })
 
-      // A-10 doesn't use F-16 controls, but has 4 ECM programs
-      expect(wrapper.vm.isF16).toBe(false)
+      // A-10 also uses single-select dropdown and has 4 ECM programs
       expect(wrapper.vm.ecmProgramOptions.length).toBe(4)
     })
   })
@@ -259,7 +217,7 @@ describe('MissionECMCMDS', () => {
       }
     })
 
-    it('should not display ECM programs if airframe has no programs', () => {
+    it('should not display ECM program if airframe has no programs', () => {
       const mission = createMockMission()
 
       const wrapper = mount(MissionECMCMDS, {
@@ -272,7 +230,7 @@ describe('MissionECMCMDS', () => {
       // If airframe data doesn't have ECM programs, component should handle it gracefully
       if (wrapper.vm.ecmProgramOptions.length === 0) {
         const formItems = wrapper.findAllComponents({ name: 'NFormItem' })
-        const ecmFormItem = formItems.find((item) => item.props('label') === 'ECM Programs')
+        const ecmFormItem = formItems.find((item) => item.props('label') === 'ECM Program')
         expect(ecmFormItem).toBeUndefined()
       }
     })
