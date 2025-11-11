@@ -32,6 +32,41 @@
         "defaultAirfield": {
           "type": ["string", "null"],
           "description": "Default airfield name for this theater (pre-selected for takeoff/landing)"
+        },
+        "defaultSupportAssets": {
+          "type": "array",
+          "description": "Default support assets pre-populated when creating a new mission",
+          "items": {
+            "type": "object",
+            "required": ["callsign", "role", "frequency", "location"],
+            "properties": {
+              "callsign": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "frequency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "preset": {
+                "type": ["number", "null"]
+              },
+              "aaTacan": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string",
+                "minLength": 1
+              },
+              "altitude": {
+                "type": ["number", "null"]
+              }
+            }
+          }
         }
       }
     }

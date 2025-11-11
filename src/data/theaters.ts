@@ -1,4 +1,4 @@
-import type { Theater } from '@/types'
+import type { Theater, SupportAsset } from '@/types'
 import theaterDataJson from '@/data/json/theaters.json'
 
 export interface TheaterData {
@@ -7,6 +7,7 @@ export interface TheaterData {
   navaidsUrl: string
   ifgUrl?: string
   defaultAirfield?: string | null
+  defaultSupportAssets?: SupportAsset[]
 }
 
 // Theater data imported from JSON

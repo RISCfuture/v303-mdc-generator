@@ -4,33 +4,148 @@
     "displayName": "Afghanistan",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/afghanistan_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/operation-prevailing-liberty-phase-2-opl-p2-ifg.352/download",
-    "defaultAirfield": "Kandahar"
+    "defaultAirfield": "Kandahar",
+    "defaultSupportAssets": [
+      {
+        "callsign": "MAGIC",
+        "role": "AWACS",
+        "location": "North",
+        "altitude": 30000,
+        "frequency": "256.6",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "TEXACO",
+        "role": "AAR",
+        "location": "Octane.S",
+        "altitude": 15000,
+        "frequency": "272.200",
+        "preset": null,
+        "aaTacan": "32Y"
+      },
+      {
+        "callsign": "SHELL",
+        "role": "AAR",
+        "location": "Vaportrail",
+        "altitude": 15000,
+        "frequency": "272.100",
+        "preset": null,
+        "aaTacan": "31Y"
+      },
+      {
+        "callsign": "GHOST/WINDBLADE",
+        "role": "ISR/AFAC",
+        "location": "Windblade",
+        "altitude": 35000,
+        "frequency": "251.300",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "COBRA/PYTHON",
+        "role": "ISR",
+        "location": "Octane.S",
+        "altitude": 30000,
+        "frequency": "256.700",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "NEVIN/ALLISTER",
+        "role": "ISR/AFAC",
+        "location": "Steeljaw",
+        "altitude": 35000,
+        "frequency": "251.400",
+        "preset": null,
+        "aaTacan": ""
+      }
+    ]
   },
   "GermanyCW": {
     "name": "GermanyCW",
     "displayName": "Cold War Germany",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/germany_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-germany-in-flight-guide.348/download",
-    "defaultAirfield": "Spangdahlem"
+    "defaultAirfield": "Spangdahlem",
+    "defaultSupportAssets": [
+      {
+        "callsign": "MAGIC",
+        "role": "AWACS",
+        "location": "North",
+        "altitude": 30000,
+        "frequency": "263.3",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "ARCO1",
+        "role": "AAR",
+        "location": "JOJO",
+        "altitude": 24000,
+        "frequency": "225.500",
+        "preset": null,
+        "aaTacan": "45X"
+      },
+      {
+        "callsign": "ARCO2",
+        "role": "AAR",
+        "location": "JOJO",
+        "altitude": 15000,
+        "frequency": "225.450",
+        "preset": null,
+        "aaTacan": "44X"
+      },
+      {
+        "callsign": "TEXACO2",
+        "role": "AAR",
+        "location": "LUCA",
+        "altitude": 15000,
+        "frequency": "295.400",
+        "preset": null,
+        "aaTacan": "31Y"
+      },
+      {
+        "callsign": "SHELL1",
+        "role": "AAR",
+        "location": "SAXON",
+        "altitude": 24000,
+        "frequency": "230.500",
+        "preset": null,
+        "aaTacan": "51Y"
+      },
+      {
+        "callsign": "TEXACO1",
+        "role": "AAR",
+        "location": "VIRGIN",
+        "altitude": 24000,
+        "frequency": "295.900",
+        "preset": null,
+        "aaTacan": "32Y"
+      }
+    ]
   },
   "MarianaIslands": {
     "name": "MarianaIslands",
     "displayName": "Marianas",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/marianas_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-pgua-in-flight-guide.74/download",
-    "defaultAirfield": null
+    "defaultAirfield": null,
+    "defaultSupportAssets": []
   },
   "Nevada": {
     "name": "Nevada",
     "displayName": "Nevada (NTTR)",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/nevada_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-nttr-in-flight-guide.28/download",
-    "defaultAirfield": null
+    "defaultAirfield": null,
+    "defaultSupportAssets": []
   },
   "Syria": {
     "name": "Syria",
     "displayName": "Syria",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/syria_navaids/",
-    "defaultAirfield": null
+    "defaultAirfield": null,
+    "defaultSupportAssets": []
   }
 }
