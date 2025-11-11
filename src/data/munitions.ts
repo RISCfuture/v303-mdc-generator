@@ -2,6 +2,7 @@
 // Data source: DCS World data via Quaggles DCS Lua Datamine
 // Aircraft specifications and station configurations from DCS
 import munitionsDataJson from '@/data/json/munitions.json'
+import munitionsShortnamesJson from '@/data/json/munitions-shortnames.json'
 import { airframeDatabase } from '@/data/airframes'
 
 export interface MunitionData {
@@ -22,6 +23,12 @@ export interface RackConfiguration {
 const munitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
   string,
   MunitionData
+>
+
+// Database of custom shortnames for munitions (for PDF export)
+const munitionsShortnamesDatabase: Record<string, string> = munitionsShortnamesJson as Record<
+  string,
+  string
 >
 
 /**
@@ -158,6 +165,22 @@ function _parseRackComboId(
 // Get munition weight, returns 0 if not found
 function getMunitionWeight(munitionKey: string): number {
   return munitionsDatabase[munitionKey]?.weight ?? 0
+}
+
+/**
+ * Get the short display name for a DCS CLSID (for PDF export)
+ * Returns the custom shortname if available, otherwise falls back to full display name
+ */
+export function getMunitionShortName(itemId: string): string {
+  if (itemId === 'EMPTY') return 'Empty'
+
+  // Check if we have a custom shortname for this CLSID
+  if (munitionsShortnamesDatabase[itemId]) {
+    return munitionsShortnamesDatabase[itemId]
+  }
+
+  // Fall back to full display name
+  return getMunitionDisplayName(itemId)
 }
 
 /**

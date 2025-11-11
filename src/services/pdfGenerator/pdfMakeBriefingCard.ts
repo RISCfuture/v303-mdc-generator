@@ -9,7 +9,7 @@ import { mdpdfmake } from 'mdpdfmake'
 import { imageStorage } from '@/services/imageStorage'
 import type { Mission } from '@/types'
 import { formatNumber } from '@/utils/formatting'
-import { getMunitionDisplayName } from '@/data/munitions'
+import { getMunitionShortName } from '@/data/munitions'
 import { getLoadoutOnlyWeight, getFuelCapacity } from '@/data/munitions'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
@@ -603,7 +603,7 @@ function generateLoadoutTable(mission: Mission): unknown {
   stations.forEach((station, index) => {
     const stationData = mission.loadout.find((s) => String(s.station) === String(station.station))
     const item =
-      stationData && stationData.item !== 'EMPTY' ? getMunitionDisplayName(stationData.item) : ''
+      stationData && stationData.item !== 'EMPTY' ? getMunitionShortName(stationData.item) : ''
     const cmIndex = gunRowCount + index
 
     // Strip "STA " or "Station " prefix to shorten the label
