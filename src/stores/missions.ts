@@ -181,6 +181,7 @@ export const useMissionsStore = defineStore('missions', () => {
         takeoff: airframeData.internalFuel,
         joker: airframeData.defaultJoker,
         bingo: airframeData.defaultBingo,
+        fuelLoadPercentage: 100,
       },
       gunAmmoType: squadronDatabase[squadron]?.defaultGunAmmo || undefined,
       weather: '',

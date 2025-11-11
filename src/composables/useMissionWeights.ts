@@ -44,7 +44,11 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
       return total
     }, 0)
 
-    return internalFuel + externalFuel
+    const maxFuel = internalFuel + externalFuel
+
+    // Apply fuel load percentage (defaults to 100%)
+    const fuelLoadPercentage = mission.value.fuel.fuelLoadPercentage ?? 100
+    return (maxFuel * fuelLoadPercentage) / 100
   })
 
   // Calculate gross weight (empty + loadout + fuel)
@@ -194,9 +198,31 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     }
   })
 
+  // Calculate max fuel capacity (for fuel load slider)
+  const maxFuelCapacity = computed(() => {
+    if (!mission.value) return 0
+
+    const airframe = getMissionAirframe(mission.value)
+    const airframeData = getAirframeData(airframe)
+    const internalFuel = airframeData?.internalFuel || 0
+
+    // External fuel from tanks in loadout
+    const externalFuel = mission.value.loadout.reduce((total, station) => {
+      const item = station.item
+      const fuelCapacity = getFuelCapacity(item)
+      if (fuelCapacity > 0) {
+        return total + fuelCapacity
+      }
+      return total
+    }, 0)
+
+    return internalFuel + externalFuel
+  })
+
   return {
     loadoutWeight,
     fuelWeight,
+    maxFuelCapacity,
     grossWeight,
     calculatedSpeeds,
     calculatedBingo,

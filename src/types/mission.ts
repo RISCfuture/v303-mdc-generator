@@ -138,6 +138,7 @@ export interface FuelData {
   takeoff: number // pounds
   joker: number // pounds
   bingo: number // pounds
+  fuelLoadPercentage?: number // Percentage of max fuel (0-100), defaults to 100
   bingoCalculatorParams?: F16BingoCalculatorParams
 }
 

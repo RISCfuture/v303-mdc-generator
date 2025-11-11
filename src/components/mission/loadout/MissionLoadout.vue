@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NButton, NCard, NSelect, NSpace, NDivider, NFormItem } from 'naive-ui'
+import { NButton, NCard, NSelect, NSpace, NDivider, NFormItem, NSlider } from 'naive-ui'
 import { getShortStationLabel } from '@/utils/stationLabels'
 import { getLoadoutItemWeight, buildStationLoadoutOptions } from '@/data/munitions'
 import { formatWeight } from '@/utils/formatting'
@@ -17,6 +17,8 @@ interface Props {
   selectedSCL: string | null
   loadoutWeight: number
   fuelWeight: number
+  maxFuelCapacity: number
+  fuelLoadPercentage: number
   grossWeight: number
   gunAmmoType?: string
 }
@@ -29,6 +31,7 @@ const emit = defineEmits<{
   'clear-all-loadout': []
   'update-loadout-station': [stationNumber: number, munition: string]
   'update:gun-ammo-type': [value: string | null]
+  'update:fuel-load-percentage': [value: number]
 }>()
 
 function handleLoadPrefab(value: string | null) {
@@ -132,7 +135,34 @@ const gunAmmoOptions = computed(() => {
       <h3 class="section-title">Weights</h3>
       <NSpace vertical>
         <div><strong>Loadout Weight:</strong> {{ formatWeight(loadoutWeight) }}</div>
-        <div><strong>Fuel Weight:</strong> {{ formatWeight(fuelWeight) }}</div>
+
+        <!-- Fuel Weight Slider -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <strong>Fuel Weight:</strong>
+            <div style="width: 300px">
+              <NSlider
+                :value="fuelLoadPercentage"
+                @update:value="(v: number) => emit('update:fuel-load-percentage', v)"
+                :min="0"
+                :max="100"
+                :step="1"
+                :tooltip="true"
+                :format-tooltip="
+                  (v: number) => `${v}% (${formatWeight((maxFuelCapacity * v) / 100)})`
+                "
+              />
+            </div>
+            <span style="min-width: 50px; text-align: right">{{ fuelLoadPercentage }}%</span>
+            <span style="opacity: 0.6; font-size: 14px"
+              >Max: {{ formatWeight(maxFuelCapacity) }}</span
+            >
+          </div>
+          <div style="width: 300px; margin-left: 116px; text-align: center; margin-top: 4px">
+            {{ formatWeight(fuelWeight) }}
+          </div>
+        </div>
+
         <div><strong>Gross Weight:</strong> {{ formatWeight(grossWeight) }}</div>
       </NSpace>
     </div>

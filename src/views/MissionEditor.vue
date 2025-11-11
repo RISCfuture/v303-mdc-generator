@@ -106,8 +106,14 @@ function updateNestedField(
   }
 }
 
-const { loadoutWeight, fuelWeight, grossWeight, calculatedSpeeds, calculatedBingo } =
-  useMissionWeights(mission)
+const {
+  loadoutWeight,
+  fuelWeight,
+  maxFuelCapacity,
+  grossWeight,
+  calculatedSpeeds,
+  calculatedBingo,
+} = useMissionWeights(mission)
 
 const {
   effectiveFlightCallsign,
@@ -504,6 +510,8 @@ function handleSelectMDCExport(key: string) {
               :selected-s-c-l="selectedSCL"
               :loadout-weight="loadoutWeight"
               :fuel-weight="fuelWeight"
+              :max-fuel-capacity="maxFuelCapacity"
+              :fuel-load-percentage="mission.fuel.fuelLoadPercentage ?? 100"
               :gross-weight="grossWeight"
               :gun-ammo-type="mission.gunAmmoType"
               @update:selected-scl="(v: string | null) => (selectedSCL = v)"
@@ -511,6 +519,9 @@ function handleSelectMDCExport(key: string) {
               @clear-all-loadout="clearAllLoadout"
               @update-loadout-station="updateLoadoutStation"
               @update:gun-ammo-type="(v: string | null) => updateField('gunAmmoType', v)"
+              @update:fuel-load-percentage="
+                (v: number) => updateField('fuel', { ...mission.fuel, fuelLoadPercentage: v })
+              "
             />
           </NTabPane>
 
