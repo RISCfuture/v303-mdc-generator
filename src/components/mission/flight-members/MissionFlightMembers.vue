@@ -33,22 +33,6 @@ const emit = defineEmits<{
 <template>
   <div>
     <NCard title="Flight Composition" :style="{ marginBottom: SPACING['2xl'] }">
-      <template #header-extra>
-        <NSelect
-          :options="
-            availableCrewForDropdown.map((c: CrewDatabaseEntry) => ({
-              label: `${c.pilot} (${c.callsign.join(' / ')})`,
-              value: c.pilot,
-            }))
-          "
-          placeholder="Add crew member"
-          @update:value="(v: string) => emit('add-crew-member', v)"
-          :style="{ width: WIDTH.dropdown }"
-          clearable
-          filterable
-        />
-      </template>
-
       <div v-if="crew.length === 0" class="empty-state">
         <NText type="error" strong>At least one flight member is required</NText>
       </div>
@@ -69,6 +53,22 @@ const emit = defineEmits<{
           @dragstart="crewDragDrop.handleDragStart(index)"
           @dragover="crewDragDrop.handleDragOver"
           @drop="emit('crew-drop', index)"
+        />
+      </div>
+
+      <div class="add-crew-container">
+        <NSelect
+          :options="
+            availableCrewForDropdown.map((c: CrewDatabaseEntry) => ({
+              label: `${c.pilot} (${c.callsign.join(' / ')})`,
+              value: c.pilot,
+            }))
+          "
+          placeholder="Add crew member"
+          @update:value="(v: string) => emit('add-crew-member', v)"
+          :style="{ width: WIDTH.dropdown }"
+          clearable
+          filterable
         />
       </div>
     </NCard>
@@ -135,5 +135,11 @@ const emit = defineEmits<{
 .crew-list {
   display: grid;
   gap: v-bind('SPACING.md');
+}
+
+.add-crew-container {
+  margin-top: v-bind('SPACING.md');
+  padding-top: v-bind('SPACING.md');
+  border-top: 1px solid rgb(128 128 128 / 20%);
 }
 </style>

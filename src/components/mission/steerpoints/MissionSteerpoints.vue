@@ -74,21 +74,6 @@ const formatTime = (minutes: number) => {
 
 <template>
   <NCard title="Flight Plan">
-    <template #header-extra>
-      <NSpace>
-        <NSelect
-          v-model:value="selectedNavaid"
-          :options="availableNavaids.map((n: Navaid) => ({ label: n.name, value: n.name }))"
-          placeholder="Add from database"
-          @update:value="handleNavaidSelect"
-          :style="{ width: GRID.waypointAutocomplete }"
-          clearable
-          filterable
-        />
-        <NButton @click="emit('add-waypoint')">+ Custom Steerpoint</NButton>
-      </NSpace>
-    </template>
-
     <div v-if="waypoints.length === 0" class="empty-state">
       <NText type="error" strong>At least one steerpoint is required</NText>
     </div>
@@ -134,6 +119,21 @@ const formatTime = (minutes: number) => {
         </div>
       </template>
     </div>
+
+    <div class="add-waypoint-container">
+      <NSpace>
+        <NSelect
+          v-model:value="selectedNavaid"
+          :options="availableNavaids.map((n: Navaid) => ({ label: n.name, value: n.name }))"
+          placeholder="Add from database"
+          @update:value="handleNavaidSelect"
+          :style="{ width: GRID.waypointAutocomplete }"
+          clearable
+          filterable
+        />
+        <NButton @click="emit('add-waypoint')">+ Custom Steerpoint</NButton>
+      </NSpace>
+    </div>
   </NCard>
 </template>
 
@@ -146,5 +146,11 @@ const formatTime = (minutes: number) => {
 .waypoints-list {
   display: grid;
   gap: v-bind('SPACING.md');
+}
+
+.add-waypoint-container {
+  margin-top: v-bind('SPACING.md');
+  padding-top: v-bind('SPACING.md');
+  border-top: 1px solid rgb(128 128 128 / 20%);
 }
 </style>
