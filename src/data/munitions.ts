@@ -491,6 +491,9 @@ export function buildStationLoadoutOptions(
   // Group munitions by category
   const grouped = new Map<string, Array<{ label: string; value: string }>>()
 
+  // Always include EMPTY as the first option
+  grouped.set('empty', [{ label: 'Empty', value: 'EMPTY' }])
+
   for (const clsid of station.munitions) {
     // Parse the CLSID to determine category
     const parsed = parseLoadoutId(clsid)
