@@ -1260,24 +1260,28 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
  */
 export async function generatePdfMakeBriefingCard(mission: Mission): Promise<void> {
   const content: unknown[] = [
-    // Page 1
+    // Page 1 - Full width sections
     generateHeaderBanner(mission),
     generateMissionInfoTable(mission),
     generateFlightTable(mission),
+
+    // Two-column section: Radios, Presets, Weather/Bullseye, Loadout
+    // Left and right columns flow independently without trying to align horizontally
     {
       columns: [
-        { width: '*', ...(generateRadiosTable(mission) as object) },
-        { width: '*', ...(generateWeatherBullseyeTable(mission) as object) },
+        {
+          width: '48%',
+          stack: [generateRadiosTable(mission), generatePresetsTable(mission)],
+        },
+        {
+          width: '48%',
+          stack: [generateWeatherBullseyeTable(mission), generateLoadoutTable(mission)],
+        },
       ],
-      columnGap: 5,
+      columnGap: 10,
     },
-    {
-      columns: [
-        { width: '*', ...(generatePresetsTable(mission) as object) },
-        { width: '*', ...(generateLoadoutTable(mission) as object) },
-      ],
-      columnGap: 5,
-    },
+
+    // Back to full width sections
     generateToldTable(mission),
     generateDepartureRecoveryTable(mission),
     generateFlightPlanTable(mission),
