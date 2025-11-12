@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NButton, NCard, NSelect, NSpace, NDivider, NFormItem, NSlider } from 'naive-ui'
+import { NButton, NCard, NSelect, NSpace, NDivider, NFormItem, NSlider, NText } from 'naive-ui'
 import { getShortStationLabel } from '@/utils/stationLabels'
 import { getLoadoutItemWeight, buildStationLoadoutOptions } from '@/data/munitions'
 import { formatWeight } from '@/utils/formatting'
@@ -99,7 +99,7 @@ const gunAmmoOptions = computed(() => {
           filterable
           style="flex: 1"
         />
-        <div class="station-weight">
+        <n-text depth="2" class="station-weight">
           {{
             formatWeight(
               getLoadoutItemWeight(
@@ -107,14 +107,16 @@ const gunAmmoOptions = computed(() => {
               ),
             )
           }}
-        </div>
+        </n-text>
       </div>
     </div>
 
     <NDivider />
 
     <div v-if="gunAmmoOptions" class="guns-container">
-      <h3 class="section-title">Guns</h3>
+      <n-text tag="h3" strong style="font-size: 16px; margin-bottom: 12px; margin-top: 0"
+        >Guns</n-text
+      >
       <div class="gun-ammo-row">
         <NFormItem :label="gunAmmoOptions.label" label-placement="left" class="gun-ammo-form-item">
           <NSelect
@@ -132,7 +134,9 @@ const gunAmmoOptions = computed(() => {
     <NDivider v-if="gunAmmoOptions" />
 
     <div class="weights-container">
-      <h3 class="section-title">Weights</h3>
+      <n-text tag="h3" strong style="font-size: 16px; margin-bottom: 12px; margin-top: 0"
+        >Weights</n-text
+      >
       <NSpace vertical>
         <div><strong>Loadout Weight:</strong> {{ formatWeight(loadoutWeight) }}</div>
 
@@ -154,9 +158,7 @@ const gunAmmoOptions = computed(() => {
               />
             </div>
             <span style="min-width: 50px; text-align: right">{{ fuelLoadPercentage }}%</span>
-            <span style="opacity: 0.6; font-size: 14px"
-              >Max: {{ formatWeight(maxFuelCapacity) }}</span
-            >
+            <n-text depth="2">Max: {{ formatWeight(maxFuelCapacity) }}</n-text>
           </div>
           <div style="width: 300px; margin-left: 116px; text-align: center; margin-top: 4px">
             {{ formatWeight(fuelWeight) }}
@@ -189,15 +191,6 @@ const gunAmmoOptions = computed(() => {
 .station-weight {
   width: 120px;
   text-align: right;
-  font-size: 14px;
-  opacity: 0.6;
-}
-
-.section-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  margin-top: 0;
 }
 
 .guns-container,

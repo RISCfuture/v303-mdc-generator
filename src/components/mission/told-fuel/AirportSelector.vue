@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch, toRef } from 'vue'
-import { NCard, NSelect, NInput } from 'naive-ui'
+import { NCard, NSelect, NInput, NText } from 'naive-ui'
 import { useAirportSelection } from '@/composables/useAirportSelection'
 import { formatInteger } from '@/utils/numberFormatting'
 import type { Theater } from '@/types'
@@ -53,7 +53,7 @@ function handleRunwayChange(value: string | null) {
   <NCard title="Airport" size="small">
     <div style="display: grid; gap: 12px">
       <div>
-        <label>Airport</label>
+        <n-text tag="label" strong style="display: block; margin-bottom: 8px">Airport</n-text>
         <NSelect
           :value="airport.selectedAirfieldName.value"
           @update:value="handleAirportChange"
@@ -65,7 +65,7 @@ function handleRunwayChange(value: string | null) {
         />
       </div>
       <div>
-        <label>Runway</label>
+        <n-text tag="label" strong style="display: block; margin-bottom: 8px">Runway</n-text>
         <NSelect
           :value="airport.selectedRunwayName.value"
           @update:value="handleRunwayChange"
@@ -77,7 +77,9 @@ function handleRunwayChange(value: string | null) {
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
         <div v-if="airport.fieldElevation.value !== null">
-          <label class="small-label">Field Elevation</label>
+          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+            >Field Elevation</n-text
+          >
           <NInput
             :value="`${airport.fieldElevation.value.toLocaleString()} ft MSL`"
             disabled
@@ -85,7 +87,9 @@ function handleRunwayChange(value: string | null) {
           />
         </div>
         <div v-if="airport.selectedRunway.value">
-          <label class="small-label">Runway Heading</label>
+          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+            >Runway Heading</n-text
+          >
           <NInput
             :value="`${formatInteger(airport.selectedRunway.value.heading)}°`"
             disabled
@@ -96,16 +100,3 @@ function handleRunwayChange(value: string | null) {
     </div>
   </NCard>
 </template>
-
-<style scoped>
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.small-label {
-  font-size: 12px;
-  opacity: 0.7;
-}
-</style>

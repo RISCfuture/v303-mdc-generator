@@ -168,7 +168,9 @@ function handleCancel() {
       <NCard title="Mission Info" size="small">
         <div style="display: grid; gap: 12px">
           <div>
-            <label class="small-label">Flight Size</label>
+            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Flight Size</n-text
+            >
             <NInput
               :value="`${numberOfPilots} pilot${numberOfPilots !== 1 ? 's' : ''}`"
               disabled
@@ -176,22 +178,22 @@ function handleCancel() {
             />
           </div>
           <div v-if="distanceHomeToTarget !== null">
-            <label class="small-label">Distance: Home → Target</label>
+            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Distance: Home → Target</n-text
+            >
             <NInput :value="`${distanceHomeToTarget.toFixed(1)} nm`" disabled size="small" />
           </div>
           <div v-if="distanceHomeToAlternate !== null">
-            <label class="small-label">Distance: Home → Alternate</label>
+            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Distance: Home → Alternate</n-text
+            >
             <NInput :value="`${distanceHomeToAlternate.toFixed(1)} nm`" disabled size="small" />
           </div>
           <div v-if="!recoveryLocation">
-            <NText type="warning" style="font-size: 12px">
-              ⚠️ Recovery airport not specified or location not found
-            </NText>
+            <NText type="warning"> ⚠️ Recovery airport not specified or location not found </NText>
           </div>
           <div v-if="!targetLocation">
-            <NText type="warning" style="font-size: 12px">
-              ⚠️ No target waypoint found (waypoint with target flag)
-            </NText>
+            <NText type="warning"> ⚠️ No target waypoint found (waypoint with target flag) </NText>
           </div>
         </div>
       </NCard>
@@ -200,14 +202,18 @@ function handleCancel() {
       <NCard title="Configuration" size="small">
         <div style="display: grid; gap: 12px">
           <div>
-            <label>AAR Expected</label>
+            <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+              >AAR Expected</n-text
+            >
             <NSwitch v-model:value="aarExpected" />
           </div>
 
           <!-- Show these fields only if AAR is NOT expected -->
           <template v-if="!aarExpected">
             <div>
-              <label>Approach Type</label>
+              <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+                >Approach Type</n-text
+              >
               <NSelect
                 v-model:value="approachType"
                 :options="[
@@ -219,7 +225,9 @@ function handleCancel() {
           </template>
 
           <div>
-            <label>Altitude Profile</label>
+            <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+              >Altitude Profile</n-text
+            >
             <NSelect
               v-model:value="altitudeProfile"
               :options="[
@@ -240,16 +248,3 @@ function handleCancel() {
     </template>
   </NModal>
 </template>
-
-<style scoped>
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.small-label {
-  font-size: 12px;
-  opacity: 0.7;
-}
-</style>

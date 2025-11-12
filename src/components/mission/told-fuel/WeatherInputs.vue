@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NCard, NInputNumber, NInput } from 'naive-ui'
+import { NCard, NInputNumber, NInput, NText } from 'naive-ui'
 
 interface Props {
   temperature: number
@@ -31,7 +31,9 @@ const formatDecimal = (value: number, decimals: number = 1) => {
   <NCard title="Weather" size="small">
     <div style="display: grid; gap: 12px">
       <div>
-        <label>Temperature (°C)</label>
+        <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+          >Temperature (°C)</n-text
+        >
         <NInputNumber
           :value="temperature"
           @update:value="(v: number | null) => emit('update:temperature', v ?? 15)"
@@ -42,7 +44,9 @@ const formatDecimal = (value: number, decimals: number = 1) => {
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
         <div>
-          <label>Wind Direction (magnetic, °)</label>
+          <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+            >Wind Direction (magnetic, °)</n-text
+          >
           <NInputNumber
             :value="windDirection"
             @update:value="(v: number | null) => emit('update:windDirection', v ?? 0)"
@@ -53,7 +57,9 @@ const formatDecimal = (value: number, decimals: number = 1) => {
           />
         </div>
         <div>
-          <label>Wind Speed (knots)</label>
+          <n-text tag="label" strong style="display: block; margin-bottom: 8px"
+            >Wind Speed (knots)</n-text
+          >
           <NInputNumber
             :value="windSpeed"
             @update:value="(v: number | null) => emit('update:windSpeed', v ?? 0)"
@@ -68,11 +74,15 @@ const formatDecimal = (value: number, decimals: number = 1) => {
         style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px"
       >
         <div>
-          <label class="small-label">Headwind Component</label>
+          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+            >Headwind Component</n-text
+          >
           <NInput :value="`${formatDecimal(headwindComponent)} kt`" disabled size="small" />
         </div>
         <div>
-          <label class="small-label">Crosswind Component</label>
+          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
+            >Crosswind Component</n-text
+          >
           <NInput
             :value="`${formatDecimal(Math.abs(crosswindComponent))} kt ${crosswindComponent >= 0 ? '(right)' : '(left)'}`"
             disabled
@@ -83,16 +93,3 @@ const formatDecimal = (value: number, decimals: number = 1) => {
     </div>
   </NCard>
 </template>
-
-<style scoped>
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.small-label {
-  font-size: 12px;
-  opacity: 0.7;
-}
-</style>

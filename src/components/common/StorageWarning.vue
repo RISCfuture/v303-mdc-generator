@@ -12,18 +12,22 @@
       <div class="storage-stats">
         <n-space vertical :size="4">
           <div class="stat-row">
-            <span class="stat-label">Missions stored:</span>
-            <span class="stat-value">{{ formatInteger(missionCount) }}</span>
+            <n-text depth="2">Missions stored:</n-text>
+            <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace">{{
+              formatInteger(missionCount)
+            }}</n-text>
           </div>
           <div class="stat-row">
-            <span class="stat-label">Storage used:</span>
-            <span class="stat-value"
-              >{{ formattedUsage }} ({{ percentFormatter.format(percentUsed) }})</span
+            <n-text depth="2">Storage used:</n-text>
+            <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace"
+              >{{ formattedUsage }} ({{ percentFormatter.format(percentUsed) }})</n-text
             >
           </div>
           <div class="stat-row">
-            <span class="stat-label">Estimated capacity:</span>
-            <span class="stat-value">~{{ formatInteger(estimatedRemaining) }} more missions</span>
+            <n-text depth="2">Estimated capacity:</n-text>
+            <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace"
+              >~{{ formatInteger(estimatedRemaining) }} more missions</n-text
+            >
           </div>
         </n-space>
       </div>
@@ -45,17 +49,28 @@
           <n-divider />
           <n-space vertical :size="4">
             <div class="stat-row">
-              <span class="stat-label">Space remaining:</span>
-              <span class="stat-value">{{ formattedRemaining }}</span>
+              <n-text depth="2">Space remaining:</n-text>
+              <n-text
+                strong
+                tag="span"
+                style="font-family: 'SF Mono', Monaco, Consolas, monospace"
+                >{{ formattedRemaining }}</n-text
+              >
             </div>
             <div class="stat-row">
-              <span class="stat-label">Average mission size:</span>
-              <span class="stat-value">{{ formatBytes(stats?.averageMissionSize ?? 0) }}</span>
+              <n-text depth="2">Average mission size:</n-text>
+              <n-text
+                strong
+                tag="span"
+                style="font-family: 'SF Mono', Monaco, Consolas, monospace"
+                >{{ formatBytes(stats?.averageMissionSize ?? 0) }}</n-text
+              >
             </div>
-            <p class="help-text">
-              <strong>Tip:</strong> Export missions you want to keep long-term as JSON files, then
-              delete them from the app to free up space. You can re-import them later if needed.
-            </p>
+            <n-text depth="3" tag="p" style="margin: 0; line-height: 1.5">
+              <n-text strong>Tip:</n-text> Export missions you want to keep long-term as JSON files,
+              then delete them from the app to free up space. You can re-import them later if
+              needed.
+            </n-text>
           </n-space>
         </n-space>
       </n-collapse-transition>
@@ -65,7 +80,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { NAlert, NSpace, NButton, NCollapseTransition, NDivider } from 'naive-ui'
+import { NAlert, NSpace, NButton, NCollapseTransition, NDivider, NText } from 'naive-ui'
 import { useStorageMonitor } from '@/composables/useStorageMonitor'
 import { formatBytes } from '@/utils/storageAnalysis'
 import { formatInteger } from '@/utils/numberFormatting'
@@ -155,26 +170,9 @@ function handleDismiss() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 13px;
-}
-
-.stat-label {
-  color: var(--n-text-color-2);
-}
-
-.stat-value {
-  font-weight: 500;
-  font-family: 'SF Mono', Monaco, Consolas, monospace;
 }
 
 .storage-actions {
   margin-top: 4px;
-}
-
-.help-text {
-  margin: 0;
-  font-size: 12px;
-  color: var(--n-text-color-3);
-  line-height: 1.5;
 }
 </style>
