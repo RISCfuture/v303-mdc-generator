@@ -955,6 +955,26 @@ async function processAircraft(fileName) {
 }
 
 /**
+ * Load munitions database to validate CLSIDs
+ */
+function loadMunitionsDatabase() {
+  const munitionsPath = join(__dirname, '../../src/data/json/munitions.json');
+  if (!existsSync(munitionsPath)) {
+    console.error(`⚠️  munitions.json not found at ${munitionsPath}`);
+    console.error(`   Please run 'node scripts/munitions/generate-munitions.js' first`);
+    return null;
+  }
+
+  try {
+    const content = readFileSync(munitionsPath, 'utf8');
+    return JSON.parse(content);
+  } catch (error) {
+    console.error(`⚠️  Failed to load munitions database: ${error.message}`);
+    return null;
+  }
+}
+
+/**
  * Load custom airframe data from data.json
  */
 function loadCustomData() {
@@ -973,16 +993,51 @@ function loadCustomData() {
 }
 
 /**
+ * Filter invalid CLSIDs from station munitions
+ */
+function filterValidMunitions(stations, munitionsDb) {
+  let invalidCount = 0;
+  const invalidCLSIDs = new Set();
+
+  const filteredStations = stations.map(station => {
+    const validMunitions = station.munitions.filter(clsid => {
+      if (munitionsDb[clsid]) {
+        return true;
+      } else {
+        invalidCount++;
+        invalidCLSIDs.add(clsid);
+        return false;
+      }
+    });
+
+    return {
+      ...station,
+      munitions: validMunitions
+    };
+  });
+
+  return { filteredStations, invalidCount, invalidCLSIDs };
+}
+
+/**
  * Main execution
  */
 async function main() {
   console.log('🚀 Generating airframe configurations from Quaggles DCS Lua Datamine');
   console.log('=' .repeat(70));
 
+  // Load munitions database
+  const munitionsDb = loadMunitionsDatabase();
+  if (!munitionsDb) {
+    console.error('\n❌ Failed to load munitions database. Exiting.');
+    process.exit(1);
+  }
+  console.log(`\n✓ Loaded munitions database with ${Object.keys(munitionsDb).length} entries`);
+
   // Load custom data
   const customData = loadCustomData();
   if (Object.keys(customData).length > 0) {
-    console.log(`\n📝 Loaded custom data for ${Object.keys(customData).length} aircraft\n`);
+    console.log(`📝 Loaded custom data for ${Object.keys(customData).length} aircraft`);
   }
 
   // Fetch all aircraft files
@@ -993,6 +1048,8 @@ async function main() {
   const airframes = {};
   let successCount = 0;
   let skipCount = 0;
+  let totalInvalidCLSIDs = 0;
+  const allInvalidCLSIDs = new Set();
 
   for (const file of aircraftFiles) {
     const fileName = file.name;
@@ -1001,6 +1058,17 @@ async function main() {
     let data = await processAircraft(fileName);
 
     if (data) {
+      // Filter out invalid CLSIDs
+      const { filteredStations, invalidCount, invalidCLSIDs } = filterValidMunitions(data.stations, munitionsDb);
+
+      if (invalidCount > 0) {
+        console.log(`  ⚠️  Filtered out ${invalidCount} invalid CLSID(s): ${Array.from(invalidCLSIDs).join(', ')}`);
+        totalInvalidCLSIDs += invalidCount;
+        invalidCLSIDs.forEach(clsid => allInvalidCLSIDs.add(clsid));
+      }
+
+      data.stations = filteredStations;
+
       // Merge custom data if it exists for this aircraft
       if (customData[aircraftId]) {
         data = { ...data, ...customData[aircraftId] };
@@ -1026,6 +1094,12 @@ async function main() {
   console.log('\n' + '='.repeat(70));
   console.log(`✅ Generated ${successCount} airframe files`);
   console.log(`⏭️  Skipped ${skipCount} aircraft (insufficient data)`);
+
+  if (totalInvalidCLSIDs > 0) {
+    console.log(`⚠️  Filtered out ${totalInvalidCLSIDs} invalid CLSID reference(s) across all aircraft`);
+    console.log(`   Invalid CLSIDs: ${Array.from(allInvalidCLSIDs).join(', ')}`);
+  }
+
   console.log(`📁 Output directory: src/data/json/airframes/`);
 }
 

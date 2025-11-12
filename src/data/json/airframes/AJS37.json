@@ -51,7 +51,6 @@
         "{LYSBOMB_V7V}",
         "{M71BOMB}",
         "{M71BOMBD}",
-        "{MERPYLON}",
         "{RB75}",
         "{RB75B}",
         "{RB75T}"
@@ -74,7 +73,6 @@
         "{LYSBOMB_S7V}",
         "{M71BOMB}",
         "{M71BOMBD}",
-        "{MERPYLON}",
         "{RB75}",
         "{RB75B}",
         "{RB75T}"
@@ -104,8 +102,7 @@
         "{M71BOMBD}",
         "{RB75}",
         "{RB75B}",
-        "{RB75T}",
-        "{MERPYLON}"
+        "{RB75T}"
       ]
     },
     {
@@ -133,7 +130,6 @@
         "{LYSBOMB_V7H}",
         "{M71BOMB}",
         "{M71BOMBD}",
-        "{MERPYLON}",
         "{RB75}",
         "{RB75B}",
         "{RB75T}"

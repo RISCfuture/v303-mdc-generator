@@ -17,6 +17,7 @@ The `generate-airframes.js` script automatically fetches aircraft data from the 
 - Node.js (version 18 or later)
 - Yarn package manager
 - Internet connection (to fetch data from GitHub)
+- The munitions database (`src/data/json/munitions.json`) must be generated first by running `node scripts/munitions/generate-munitions.js`
 
 ## Running the Script
 
@@ -30,9 +31,14 @@ The `generate-airframes.js` script automatically fetches aircraft data from the 
    yarn install
    ```
 
-3. **Run the extraction script:**
+3. **Generate the munitions database first** (if not already done):
    ```bash
-   node scripts/generate-airframes.js
+   node scripts/munitions/generate-munitions.js
+   ```
+
+4. **Run the airframes extraction script:**
+   ```bash
+   node scripts/airframes/generate-airframes.js
    ```
 
 ## Output
@@ -127,6 +133,10 @@ The script only generates files for aircraft that:
 1. Are marked as flyable (`_file_flyable` in Lua data)
 2. Have a non-zero empty weight
 3. Have at least one station/pylon with munitions
+
+### CLSID Validation
+
+The script automatically validates all munition CLSIDs against the munitions database and filters out any invalid references. This handles cases where the Quaggles DCS Lua Datamine contains references to launchers that don't have corresponding definition files. Invalid CLSIDs are reported during script execution.
 
 ## Rate Limiting
 
