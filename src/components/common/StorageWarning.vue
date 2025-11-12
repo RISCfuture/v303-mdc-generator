@@ -41,8 +41,8 @@
         </n-button>
       </n-space>
       <n-collapse-transition :show="showDetails">
-        <div class="storage-details">
-          <n-divider style="margin: 12px 0" />
+        <n-space vertical :size="12" class="storage-details">
+          <n-divider />
           <n-space vertical :size="4">
             <div class="stat-row">
               <span class="stat-label">Space remaining:</span>
@@ -57,7 +57,7 @@
               delete them from the app to free up space. You can re-import them later if needed.
             </p>
           </n-space>
-        </div>
+        </n-space>
       </n-collapse-transition>
     </div>
   </n-alert>
@@ -171,12 +171,8 @@ function handleDismiss() {
   margin-top: 4px;
 }
 
-.storage-details {
-  margin-top: 8px;
-}
-
 .help-text {
-  margin: 8px 0 0;
+  margin: 0;
   font-size: 12px;
   color: var(--n-text-color-3);
   line-height: 1.5;

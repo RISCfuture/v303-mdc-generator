@@ -370,24 +370,20 @@ function handleSelectMDCExport(key: string) {
                     <AlertCircleOutline />
                   </NIcon>
                 </template>
-                <div style="max-width: 400px">
-                  <h4 style="margin: 0 0 12px">Required Fields Missing</h4>
-                  <div v-if="fieldErrors.size > 0" style="font-size: 13px">
-                    <div
-                      v-for="[field, error] in fieldErrors"
-                      :key="field"
-                      style="margin-bottom: 8px"
-                    >
+                <NSpace vertical :size="12" style="max-width: 400px">
+                  <h4 style="margin: 0">Required Fields Missing</h4>
+                  <NSpace v-if="fieldErrors.size > 0" vertical :size="8" style="font-size: 13px">
+                    <div v-for="[field, error] in fieldErrors" :key="field">
                       <strong>{{ field }}:</strong> {{ error }}
                     </div>
-                  </div>
-                  <div v-else style="font-size: 13px; color: #999">
+                  </NSpace>
+                  <NSpace v-else vertical :size="8" style="font-size: 13px; color: #999">
                     <p>Mission validation failed but no specific errors were found.</p>
-                    <p style="margin-top: 8px; font-family: monospace; font-size: 11px">
+                    <p style="font-family: monospace; font-size: 11px">
                       Debug: Check browser console for validation details.
                     </p>
-                  </div>
-                </div>
+                  </NSpace>
+                </NSpace>
               </NPopover>
               <NButton type="primary" :disabled="!isComplete" @click="handleExportPDF(mission)"
                 >Export PDF</NButton

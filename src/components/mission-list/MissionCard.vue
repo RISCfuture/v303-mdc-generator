@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NButton, NCard, NTag, NIcon, NText, NDivider } from 'naive-ui'
+import { NButton, NCard, NTag, NIcon, NText, NDivider, NSpace } from 'naive-ui'
 import { CreateOutline, CopyOutline, TrashOutline } from '@vicons/ionicons5'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
@@ -21,14 +21,14 @@ const emit = defineEmits<{
 
 <template>
   <NCard size="small" class="mission-card">
-    <div class="mission-card-content">
-      <div class="mission-header">
+    <NSpace vertical :size="16">
+      <NSpace vertical :size="8">
         <h3>{{ mission.name || 'Untitled Mission' }}</h3>
         <div class="mission-meta">
           <NTag v-if="mission.callsign" type="default" size="small">{{ mission.callsign }}</NTag>
           <NTag v-if="mission.type" type="info" size="small">{{ mission.type }}</NTag>
         </div>
-      </div>
+      </NSpace>
 
       <div class="mission-details">
         <div class="detail-row">
@@ -51,7 +51,7 @@ const emit = defineEmits<{
         </div>
       </div>
 
-      <NDivider style="margin: 8px 0" />
+      <NDivider />
 
       <div class="mission-actions">
         <NButton size="small" @click="emit('edit')">
@@ -73,7 +73,7 @@ const emit = defineEmits<{
           Delete
         </NButton>
       </div>
-    </div>
+    </NSpace>
   </NCard>
 </template>
 
@@ -82,14 +82,8 @@ const emit = defineEmits<{
   height: 100%;
 }
 
-.mission-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.mission-header h3 {
-  margin: 0 0 8px;
+.mission-card h3 {
+  margin: 0;
   font-size: 18px;
   font-weight: 600;
 }

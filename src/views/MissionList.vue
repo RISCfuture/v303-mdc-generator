@@ -191,7 +191,7 @@ function handleCancelImport() {
                 </NButton>
               </NBadge>
             </template>
-            <div class="filter-popover">
+            <NSpace vertical :size="12" class="filter-popover">
               <h4>Filter Missions</h4>
               <NSpace vertical :size="12">
                 <div>
@@ -230,7 +230,7 @@ function handleCancelImport() {
                   Clear Filters
                 </NButton>
               </NSpace>
-            </div>
+            </NSpace>
           </NPopover>
           <NButton @click="exportMissionList" :disabled="missionsStore.missionsList.length === 0">
             Export Missions...
@@ -374,7 +374,7 @@ function handleCancelImport() {
 }
 
 .filter-popover h4 {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 16px;
   font-weight: 600;
 }
