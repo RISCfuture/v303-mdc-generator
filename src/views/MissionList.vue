@@ -286,6 +286,13 @@ function handleCancelImport() {
       </div>
     </NCard>
 
+    <!-- Footer -->
+    <div class="footer">
+      <NSpace justify="center">
+        <RouterLink to="/squadron-data" class="footer-link"> Edit Squadron Info </RouterLink>
+      </NSpace>
+    </div>
+
     <CreateMissionModal v-model:show="showCreateModal" @create="handleCreateMission" />
 
     <!-- Import Confirmation Modal -->
@@ -408,6 +415,26 @@ function handleCancelImport() {
 .confirm-text {
   margin-top: 16px;
   font-weight: 500;
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 32px;
+  padding: 20px 0;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* Mobile responsive styles */

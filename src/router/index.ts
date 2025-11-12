@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'mission',
       component: () => import('@/views/MissionEditor.vue'),
     },
+    {
+      path: '/squadron-data',
+      name: 'squadron-data',
+      component: () => import('@/views/SquadronDataEdit.vue'),
+    },
   ],
 })
 
