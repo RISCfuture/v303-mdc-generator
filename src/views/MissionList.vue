@@ -11,10 +11,11 @@ import {
   NBadge,
   NModal,
   NUpload,
+  NText,
   type UploadFileInfo,
   useMessage,
 } from 'naive-ui'
-import { FunnelOutline } from '@vicons/ionicons5'
+import { FunnelOutline, ShareOutline } from '@vicons/ionicons5'
 import { useMissionsStore } from '@/stores/missions'
 import { useMissionActions } from '@/composables/useMissionActions'
 import { useMissionListExport, type ImportPreview } from '@/composables/useMissionListExport'
@@ -45,6 +46,8 @@ const showFilterPopover = ref(false)
 const showImportModal = ref(false)
 const importPreview = ref<ImportPreview | null>(null)
 const uploadFileList = ref<UploadFileInfo[]>([])
+const isDragging = ref(false)
+const dragCounter = ref(0)
 
 // Filter state
 const filterState = ref<'all' | 'ready' | 'draft'>('all')
@@ -206,11 +209,89 @@ function handleCancelImport() {
 function handleExport(mission: Mission) {
   exportSingleMission(mission)
 }
+
+// Drag and drop handlers
+function handleDragEnter(e: DragEvent) {
+  e.preventDefault()
+  e.stopPropagation()
+  dragCounter.value++
+
+  // Check if the dragged item is a file
+  if (e.dataTransfer?.types.includes('Files')) {
+    isDragging.value = true
+  }
+}
+
+function handleDragLeave(e: DragEvent) {
+  e.preventDefault()
+  e.stopPropagation()
+  dragCounter.value--
+
+  // Only set isDragging to false when leaving the entire drop zone
+  if (dragCounter.value === 0) {
+    isDragging.value = false
+  }
+}
+
+function handleDragOver(e: DragEvent) {
+  e.preventDefault()
+  e.stopPropagation()
+
+  // This is necessary to allow drop
+  if (e.dataTransfer) {
+    e.dataTransfer.dropEffect = 'copy'
+  }
+}
+
+async function handleDrop(e: DragEvent) {
+  e.preventDefault()
+  e.stopPropagation()
+
+  isDragging.value = false
+  dragCounter.value = 0
+
+  const files = e.dataTransfer?.files
+  if (!files || files.length === 0) {
+    return
+  }
+
+  // Process only the first JSON file
+  const file = files[0]
+  if (!file || !file.name.endsWith('.json')) {
+    message.error('Please drop a JSON file')
+    return
+  }
+
+  try {
+    const result = await parseImportFile(file)
+
+    // Check if it's a single mission import (has 'mission' property)
+    if ('mission' in result) {
+      // Single mission import - apply immediately without modal
+      await applySingleMissionImport(result)
+      message.success('Mission imported successfully')
+    } else {
+      // Full backup import - show modal for confirmation
+      importPreview.value = result as ImportPreview
+      showImportModal.value = true
+    }
+  } catch (error) {
+    message.error(`Failed to import file: ${error}`)
+    console.error('Drag and drop import error:', error)
+  }
+}
 </script>
 
 <template>
   <div class="mission-list">
-    <NCard title="v303 FG Mission Data Card Generator">
+    <NCard
+      title="v303 FG Mission Data Card Generator"
+      :class="{ 'drag-over': isDragging }"
+      @dragenter="handleDragEnter"
+      @dragleave="handleDragLeave"
+      @dragover="handleDragOver"
+      @drop="handleDrop"
+    >
       <template #header-extra>
         <NSpace :size="12">
           <NPopover v-model:show="showFilterPopover" trigger="click" placement="bottom-end">
@@ -320,6 +401,16 @@ function handleExport(mission: Mission) {
       >
         <p>No missions match the current filters.</p>
         <NButton @click="clearFilters">Clear Filters</NButton>
+      </div>
+
+      <!-- Drag and Drop Overlay -->
+      <div v-if="isDragging" class="drag-overlay">
+        <NSpace vertical align="center" justify="center" :size="16">
+          <NIcon size="48" color="var(--n-primary-color)">
+            <ShareOutline />
+          </NIcon>
+          <NText strong style="font-size: 20px">Drop JSON file to import</NText>
+        </NSpace>
       </div>
     </NCard>
 
@@ -472,6 +563,33 @@ function handleExport(mission: Mission) {
 .footer-link:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+/* Drag and drop styles */
+.drag-over {
+  position: relative;
+  border: 2px dashed var(--n-primary-color);
+  background-color: rgb(24 160 88 / 3%);
+  transition: all 0.2s ease;
+}
+
+.drag-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Dark mode support for overlay */
+@media (prefers-color-scheme: dark) {
+  .drag-overlay {
+    background-color: rgb(0 0 0 / 85%);
+  }
 }
 
 /* Mobile responsive styles */
