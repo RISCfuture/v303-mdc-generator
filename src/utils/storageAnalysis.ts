@@ -161,6 +161,7 @@ export async function getStorageStatus(): Promise<StorageStatus> {
 
 /**
  * Estimate the size of a mission if it were to be stored
+ * @internal - Only exported for testing
  */
 export function estimateMissionSize(mission: Mission): number {
   const serialized = serializeMission(mission)

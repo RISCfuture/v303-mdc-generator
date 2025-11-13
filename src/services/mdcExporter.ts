@@ -869,15 +869,3 @@ export function downloadMDC(mission: Mission, crewMemberIndex: number = 0) {
   document.body.removeChild(link)
   URL.revokeObjectURL(url)
 }
-
-/**
- * Validate MDC export against JSON schema
- * Note: This is a placeholder for future implementation with a JSON schema validator library
- * For now, TypeScript type checking provides compile-time validation
- */
-export function validateMDCExport(_mdc: DCSF16MDC | JAFDTCA10MDC, _airframe: string): boolean {
-  // Type checking is done at compile time via TypeScript
-  // Runtime validation could be added here with a library like Ajv
-  // For now, we trust the TypeScript types and export functions
-  return true
-}

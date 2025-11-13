@@ -1,7 +1,6 @@
 // Crew database from v303-crew.tsv
 // Virtual 303rd Fighter Group pilot roster with assigned codes and identifiers
 import crewDataJson from '@/data/json/crew.json'
-import squadronsData from '@/data/json/squadrons.json'
 
 export interface PilotData {
   pilot: string
@@ -26,6 +25,3 @@ export const crewBySquadron: Record<string, PilotData[]> = crewData
 
 // Flatten the crew database into a single array
 export const crewDatabase: PilotData[] = Object.values(crewData).flat()
-
-// Export squadron list derived from squadrons.json
-export type SquadronId = keyof typeof squadronsData

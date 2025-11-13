@@ -14,12 +14,6 @@ export interface MunitionData {
   additionalFuel?: number // pounds of fuel only (for fuel tanks)
 }
 
-export interface RackConfiguration {
-  rack: string
-  capacity: number
-  compatibleMunitions: string[]
-}
-
 const munitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
   string,
   MunitionData
@@ -142,24 +136,6 @@ function parseLoadoutId(itemId: string): {
     totalWeight: weight,
     components: [{ id: cleanId, weight, quantity: 1 }],
   }
-}
-
-/**
- * Parse a rack combo ID back into its components (legacy format)
- * Returns null if the ID is not a valid rack combo format
- */
-function _parseRackComboId(
-  comboId: string,
-): { rack: string; munition: string; quantity: number } | null {
-  const parts = comboId.split(':')
-  if (parts.length !== 3) return null
-
-  const [rack, munition, qtyStr] = parts
-  const quantity = parseInt(qtyStr!, 10)
-
-  if (!rack || !munition || isNaN(quantity)) return null
-
-  return { rack, munition, quantity }
 }
 
 // Get munition weight, returns 0 if not found
@@ -310,106 +286,6 @@ export function getLoadoutOnlyWeight(itemId: string): number {
   }
 
   return totalWeight
-}
-
-/**
- * Normalize a label to a munition ID for lookup
- * Examples:
- *   "Mk. 82" -> "MK_82"
- *   "AGM-65D Maverick (IIR)" -> "AGM_65D"
- *   "70mm Hydra 70" -> "HYDRA_70"
- */
-function normalizeLabelToId(label: string): string {
-  if (label === '(empty)') return 'EMPTY'
-
-  // Extract main part before parentheses or extra description
-  let main = label.split('(')[0]?.trim() ?? label
-  main = main.split(' - ')[0]?.trim() ?? main
-
-  // Common patterns
-  if (main.match(/^Mk\.?\s*\d+/i)) {
-    return main.replace(/\./g, '_').replace(/\s+/g, '_').replace(/-/g, '_').toUpperCase()
-  }
-
-  if (main.match(/^(AGM|AIM|GBU|BDU|CBU)-?\d+/i)) {
-    const match = main.match(/^([A-Z]+)-?(\d+[A-Z]?)/i)
-    if (match) return `${match[1]}_${match[2]}`.toUpperCase()
-  }
-
-  if (main.match(/^LAU-?\d+/i)) {
-    const match = main.match(/^(LAU)-?(\d+)/i)
-    if (match) return `${match[1]}_${match[2]}`
-  }
-
-  if (main.match(/^BRU-?\d+/i)) {
-    const match = main.match(/^(BRU)-?(\d+)/i)
-    if (match) return `${match[1]}-${match[2]}`
-  }
-
-  if (main.match(/^TER-?\d+/i)) {
-    const match = main.match(/^(TER)-?(\d+[A-Z]?)/i)
-    if (match) return `${match[1]}_${match[2]}`
-  }
-
-  if (main.includes('70mm') || main.includes('Hydra')) {
-    return 'HYDRA_70'
-  }
-
-  if (main.match(/^M\d+/)) {
-    const match = main.match(/^(M\d+)\s+([A-Z]+)/i)
-    if (match) return `${match[1]}_${match[2]}`
-  }
-
-  if (main.match(/^FT\d+/i)) {
-    const match = main.match(/^FT(\d+)/i)
-    if (match) return `FT_${match[1]}_GAL`
-  }
-
-  // Default: replace spaces and special chars
-  return main.replace(/\./g, '_').replace(/\s+/g, '_').replace(/-/g, '_').toUpperCase()
-}
-
-/**
- * Build an encoded ID from a path through the hierarchy
- * Path is array of labels from hierarchy traversal
- *
- * Examples:
- *   ["(empty)"] -> "EMPTY"
- *   ["Bombs", "Mk. 82"] -> "MK_82"
- *   ["Bombs", "BRU-42", "3x Mk. 82"] -> "BRU-42:MK_82:3"
- *   ["Rockets", "TER-9A", "2x LAU-131", "70mm Hydra", "M151 HE"] -> "TER_9A:LAU_131:2:HYDRA_70:M151_HE"
- */
-function _buildIdFromPath(path: string[]): string {
-  if (path.length === 0) return 'EMPTY'
-  if (path[0] === '(empty)') return 'EMPTY'
-
-  // Skip category level (first element after empty check)
-  const relevantPath = path.slice(1)
-
-  if (relevantPath.length === 0) return 'EMPTY'
-
-  if (relevantPath.length === 1) {
-    // Direct mount munition
-    return normalizeLabelToId(relevantPath[0]!)
-  }
-
-  // Complex mount - extract components
-  const components: string[] = []
-
-  for (let i = 0; i < relevantPath.length; i++) {
-    const part = relevantPath[i]!
-
-    // Check for quantity prefix (e.g., "2x LAU-131", "3x Mk. 82")
-    const qtyMatch = part.match(/^(\d+)x\s+(.+)$/i)
-    if (qtyMatch) {
-      components.push(normalizeLabelToId(qtyMatch[2]!)) // Item
-      components.push(qtyMatch[1]!) // Quantity
-    } else {
-      components.push(normalizeLabelToId(part))
-    }
-  }
-
-  return components.join(':')
 }
 
 /**

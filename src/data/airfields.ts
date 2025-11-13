@@ -37,6 +37,7 @@ export function getAirfieldsForTheater(theater: string): Airfield[] {
 /**
  * Get all available theater names with airfield data
  * @returns Array of theater names
+ * @internal - Only exported for testing
  */
 export function getAvailableTheaters(): string[] {
   return Object.keys(airfieldsDatabase).sort()

@@ -122,6 +122,7 @@ export function parseCoordinate(
  * @param toFormat The format to convert to
  * @param mgrsPrecision Precision for MGRS output (0-5, default 5)
  * @returns Converted coordinate string, or empty string if invalid
+ * @internal - Only exported for testing
  */
 export function convertCoordinate(
   input: string,
