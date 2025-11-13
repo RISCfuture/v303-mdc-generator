@@ -1,0 +1,48 @@
+{
+  "radios": [
+    {
+      "name": "FRONT"
+    },
+    {
+      "name": "MID"
+    },
+    {
+      "name": "AFT"
+    }
+  ],
+  "stations": [
+    {
+      "name": "STA 1"
+    },
+    {
+      "name": "STA 2"
+    },
+    {
+      "name": "STA 3"
+    },
+    {
+      "name": "STA 4"
+    },
+    {
+      "name": "STA 5"
+    },
+    {
+      "name": "STA 6"
+    },
+    {
+      "name": "STA 7"
+    },
+    {
+      "name": "STA 8"
+    },
+    {
+      "name": "STA 9"
+    },
+    {
+      "name": "STA 10"
+    },
+    {
+      "name": "STA 11"
+    }
+  ]
+}

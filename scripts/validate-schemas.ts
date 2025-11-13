@@ -49,6 +49,11 @@ const schemaMappings: SchemaMapping[] = [
     description: 'airframe data files',
   },
   {
+    pattern: /^airframe-overrides\/.*\.json$/,
+    schemaPath: join(schemasDir, 'airframe-overrides.schema.json'),
+    description: 'airframe override files',
+  },
+  {
     pattern: /^theaters\.json$/,
     schemaPath: join(schemasDir, 'theaters.schema.json'),
     description: 'theaters configuration',
