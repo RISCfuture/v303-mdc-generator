@@ -5,7 +5,7 @@
         {
           "number": 1,
           "frequency": "143.600",
-          "description": "v303d FS"
+          "description": "v303 FS"
         },
         {
           "number": 2,
@@ -25,87 +25,87 @@
         {
           "number": 5,
           "frequency": "256.600",
-          "description": "MAGIC 1-1 (EASTERN AWACS)"
+          "description": "AWACS (E-7, MAGIC)"
         },
         {
           "number": 6,
           "frequency": "256.700",
-          "description": "DARKSTAR 1-1 (WESTERN AWACS)"
+          "description": "ELINT (RC-135, COBRA/PYTHON)"
         },
         {
           "number": 7,
           "frequency": "251.300",
-          "description": "GALVATRON CTRL (MQ1, GHOST/WHISPER)"
+          "description": "WINDCTRL (MQ9, GHOST/WHISPER)"
         },
         {
           "number": 8,
           "frequency": "251.400",
-          "description": "MEGATRON CTRL (MQ9, COBRA/PYTHON)"
+          "description": "STEELCTRL (RQ-4, NEVIN/ALLISTER)"
         },
         {
           "number": 9,
           "frequency": "251.200",
-          "description": "SOUNDWAVE CTRL (RC135, NEVIN/ALLISTER)"
+          "description": "SHOCKCTRL (N/A)"
         },
         {
           "number": 10,
           "frequency": "251.500",
-          "description": "STARSCREAM CTRL (RQ4, APEX/ZENITH)"
+          "description": "SENTCTRL (N/A)"
         },
         {
           "number": 11,
           "frequency": "272.200",
-          "description": "TEXACO 32Y (BUMBLEBEE)"
+          "description": "OCTANE (TEXACO 32Y)"
         },
         {
           "number": 12,
           "frequency": "272.100",
-          "description": "SHELL 31Y (GRIMLOCK)"
+          "description": "VAPORTRAIL (SHELL 31Y)"
         },
         {
           "number": 13,
-          "frequency": "272.300",
-          "description": "ARCO 33Y (OPTIMUS)"
+          "frequency": "123.325",
+          "description": ""
         },
         {
           "number": 14,
-          "frequency": "123.325",
-          "description": "CAMP (OAZI) BASTION GROUND"
-        },
-        {
-          "number": 15,
           "frequency": "123.300",
           "description": "CAMP BASTION (OAZI) TOWER"
         },
         {
-          "number": 16,
+          "number": 15,
           "frequency": "123.375",
           "description": "CAMP BASTION (OAZI) ATIS"
         },
         {
-          "number": 17,
+          "number": 16,
           "frequency": "128.000",
           "description": "TARINKOT (OATN) TOWER"
         },
         {
-          "number": 18,
+          "number": 17,
           "frequency": "128.025",
           "description": "TARINKOT (OATN) ATIS"
         },
         {
-          "number": 19,
+          "number": 18,
           "frequency": "124.850",
           "description": ""
         },
         {
-          "number": 20,
+          "number": 19,
           "frequency": "47.6",
-          "description": "v303D FS"
+          "description": "v303 FS"
+        },
+        {
+          "number": 20,
+          "frequency": "303.100",
+          "description": "v303 FS"
         },
         {
           "number": 21,
-          "frequency": "303.100",
-          "description": "v303d FS"
+          "frequency": "269.000",
+          "description": ""
         },
         {
           "number": 22,
@@ -134,7 +134,7 @@
         {
           "number": 1,
           "frequency": "303.100",
-          "description": "v303d FS"
+          "description": "v303 FS"
         },
         {
           "number": 2,
@@ -154,52 +154,52 @@
         {
           "number": 5,
           "frequency": "256.600",
-          "description": "MAGIC 1-1 (EASTERN AWACS)"
+          "description": "AWACS (E-7, MAGIC)"
         },
         {
           "number": 6,
           "frequency": "256.700",
-          "description": "DARKSTAR 1-1 (WESTERN AWACS)"
+          "description": "ELINT (RC-135, COBRA/PYTHON)"
         },
         {
           "number": 7,
           "frequency": "251.300",
-          "description": "GALVATRON CTRL (MQ1, GHOST/WHISPER)"
+          "description": "WINDCTRL (MQ9, GHOST/WHISPER)"
         },
         {
           "number": 8,
           "frequency": "251.400",
-          "description": "MEGATRON CTRL (MQ9, COBRA/PYTHON)"
+          "description": "STEELCTRL (RQ-4, NEVIN/ALLISTER)"
         },
         {
           "number": 9,
           "frequency": "251.200",
-          "description": "SOUNDWAVE CTRL (RC135, NEVIN/ALLISTER)"
+          "description": "SHOCKCTRL (N/A)"
         },
         {
           "number": 10,
           "frequency": "251.500",
-          "description": "STARSCREAM CTRL (RQ4, APEX/ZENITH)"
+          "description": "SENTCTRL (N/A)"
         },
         {
           "number": 11,
           "frequency": "272.200",
-          "description": "TEXACO 32Y (BUMBLEBEE)"
+          "description": "OCTANE (TEXACO 32Y)"
         },
         {
           "number": 12,
           "frequency": "272.100",
-          "description": "SHELL 31Y (GRIMLOCK)"
+          "description": "VAPORTRAIL (SHELL 31Y)"
         },
         {
           "number": 13,
-          "frequency": "272.300",
-          "description": "ARCO 33Y (OPTIMUS)"
+          "frequency": "230.000",
+          "description": "FOB KHOST (OAKS) TOWER"
         },
         {
           "number": 14,
           "frequency": "365.225",
-          "description": ""
+          "description": "FOB KHOST (OAKS) ATIS"
         },
         {
           "number": 15,
