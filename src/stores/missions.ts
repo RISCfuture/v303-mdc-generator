@@ -183,7 +183,14 @@ export const useMissionsStore = defineStore('missions', () => {
         bingo: airframeData.defaultBingo,
         fuelLoadPercentage: 100,
       },
-      gunAmmoType: squadronDatabase[squadron]?.defaultGunAmmo || undefined,
+      gunAmmoType: (() => {
+        const squadronAmmo = squadronDatabase[squadron]?.defaultGunAmmo
+        if (!squadronAmmo) return undefined
+
+        // Check if theater is training to determine which ammo type to use
+        const isTraining = theaterDatabase[theater]?.isTraining ?? false
+        return isTraining ? squadronAmmo.training : squadronAmmo.combat
+      })(),
       weather: '',
       details: {
         remarks: '',

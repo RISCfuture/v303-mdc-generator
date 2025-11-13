@@ -5,6 +5,7 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/afghanistan_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/operation-prevailing-liberty-phase-2-opl-p2-ifg.352/download",
     "defaultAirfield": "Kandahar",
+    "isTraining": false,
     "defaultSupportAssets": [
       {
         "callsign": "MAGIC",
@@ -68,6 +69,7 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/germany_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-germany-in-flight-guide.348/download",
     "defaultAirfield": "Spangdahlem",
+    "isTraining": true,
     "defaultSupportAssets": [
       {
         "callsign": "MAGIC",
@@ -131,6 +133,7 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/marianas_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-pgua-in-flight-guide.74/download",
     "defaultAirfield": null,
+    "isTraining": true,
     "defaultSupportAssets": []
   },
   "Nevada": {
@@ -139,6 +142,7 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/nevada_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-nttr-in-flight-guide.28/download",
     "defaultAirfield": null,
+    "isTraining": true,
     "defaultSupportAssets": []
   },
   "Syria": {
@@ -146,6 +150,7 @@
     "displayName": "Syria",
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/syria_navaids/",
     "defaultAirfield": null,
+    "isTraining": false,
     "defaultSupportAssets": []
   }
 }

@@ -8,6 +8,7 @@ export interface TheaterData {
   ifgUrl?: string
   defaultAirfield?: string | null
   defaultSupportAssets?: SupportAsset[]
+  isTraining: boolean // Whether this theater is used for training missions
 }
 
 // Theater data imported from JSON

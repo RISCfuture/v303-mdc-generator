@@ -31,8 +31,20 @@
           "description": "Aircraft type flown by this squadron (e.g., 'F-16C_50', 'A-10C_2')"
         },
         "defaultGunAmmo": {
-          "type": ["string", "null"],
-          "description": "Default gun ammo type for this squadron (must match an option in the airframe's ammoTypes)"
+          "type": "object",
+          "properties": {
+            "training": {
+              "type": "string",
+              "description": "Gun ammo type for training missions (must match airframe's ammoTypes)"
+            },
+            "combat": {
+              "type": "string",
+              "description": "Gun ammo type for combat missions (must match airframe's ammoTypes)"
+            }
+          },
+          "required": ["training", "combat"],
+          "additionalProperties": false,
+          "description": "Default gun ammo types for training and combat missions"
         }
       },
       "required": ["id", "name", "displayName", "aircraft"]

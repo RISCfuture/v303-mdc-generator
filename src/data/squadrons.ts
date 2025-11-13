@@ -10,7 +10,10 @@ export interface Squadron {
   name: string
   displayName: string
   aircraft: string // Airframe type (e.g., 'F-16C_50', 'A-10C_2')
-  defaultGunAmmo?: string | null // Default gun ammo type (must match airframe's ammoTypes)
+  defaultGunAmmo?: {
+    training: string
+    combat: string
+  } // Default gun ammo types for training and combat missions (must match airframe's ammoTypes)
 }
 
 // Derive Squadron ID type dynamically from squadrons.json

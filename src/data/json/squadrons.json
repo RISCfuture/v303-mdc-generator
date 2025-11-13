@@ -4,13 +4,19 @@
     "name": "v93rd Fighter Squadron",
     "displayName": "v93 FS",
     "aircraft": "F-16C_50",
-    "defaultGunAmmo": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)"
+    "defaultGunAmmo": {
+      "training": "TP (Target Practice-Tracer PGU)",
+      "combat": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)"
+    }
   },
   "v303": {
     "id": "v303",
     "name": "v303rd Fighter Squadron",
     "displayName": "v303 FS",
     "aircraft": "A-10C_2",
-    "defaultGunAmmo": "CM - Combat Mix"
+    "defaultGunAmmo": {
+      "training": "TP - Target Practice",
+      "combat": "HEI - High Explosive Incendiary"
+    }
   }
 }
