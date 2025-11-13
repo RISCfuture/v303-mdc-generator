@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NButton, NCard, NTag, NIcon, NText, NDivider, NSpace } from 'naive-ui'
-import { CreateOutline, CopyOutline, TrashOutline } from '@vicons/ionicons5'
+import { CreateOutline, CopyOutline, TrashOutline, ShareOutline } from '@vicons/ionicons5'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
 import { formatDate, formatDateTime } from '@/utils/formatting'
@@ -16,6 +16,7 @@ const emit = defineEmits<{
   edit: []
   duplicate: []
   delete: []
+  export: []
 }>()
 </script>
 
@@ -65,6 +66,12 @@ const emit = defineEmits<{
             ><NIcon><CopyOutline /></NIcon
           ></template>
           Duplicate
+        </NButton>
+        <NButton size="small" @click="emit('export')">
+          <template #icon
+            ><NIcon><ShareOutline /></NIcon
+          ></template>
+          Export
         </NButton>
         <NButton size="small" type="error" @click="emit('delete')">
           <template #icon

@@ -12,6 +12,7 @@ const emit = defineEmits<{
   edit: [mission: Mission]
   duplicate: [mission: Mission]
   delete: [mission: Mission]
+  export: [mission: Mission]
 }>()
 </script>
 
@@ -24,6 +25,7 @@ const emit = defineEmits<{
       @edit="emit('edit', mission)"
       @duplicate="emit('duplicate', mission)"
       @delete="emit('delete', mission)"
+      @export="emit('export', mission)"
     />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import {
   NButton,
   NCard,
@@ -31,13 +31,20 @@ import type { Squadron, Theater, Mission } from '@/types'
 
 const missionsStore = useMissionsStore()
 const { handleCreate, handleEdit, handleDelete, handleDuplicate } = useMissionActions()
-const { exportMissionList, parseImportFile, applyMissionImport } = useMissionListExport()
+const {
+  exportMissionList,
+  exportSingleMission,
+  parseImportFile,
+  applyMissionImport,
+  applySingleMissionImport,
+} = useMissionListExport()
 const message = useMessage()
 
 const showCreateModal = ref(false)
 const showFilterPopover = ref(false)
 const showImportModal = ref(false)
 const importPreview = ref<ImportPreview | null>(null)
+const uploadFileList = ref<UploadFileInfo[]>([])
 
 // Filter state
 const filterState = ref<'all' | 'ready' | 'draft'>('all')
@@ -142,16 +149,37 @@ function handleCreateMission(squadron: Squadron, theater: Theater) {
 async function handleImportFile({ file }: { file: UploadFileInfo }) {
   if (!file.file) {
     message.error('No file selected')
-    return
+    uploadFileList.value = []
+    return false
   }
 
   try {
-    const preview = await parseImportFile(file.file)
-    importPreview.value = preview
-    showImportModal.value = true
+    const result = await parseImportFile(file.file)
+
+    // Check if it's a single mission import (has 'mission' property)
+    if ('mission' in result) {
+      // Single mission import - apply immediately without modal
+      await applySingleMissionImport(result)
+      // Clear the upload file list to reset the component
+      await nextTick()
+      uploadFileList.value = []
+      return false
+    } else {
+      // Full backup import - show modal for confirmation
+      importPreview.value = result as ImportPreview
+      showImportModal.value = true
+      // Clear the upload file list to reset the component
+      await nextTick()
+      uploadFileList.value = []
+      return false
+    }
   } catch (error) {
     message.error(`Failed to parse backup file: ${error}`)
     console.error('Import parse error:', error)
+    // Clear the upload file list on error
+    await nextTick()
+    uploadFileList.value = []
+    return false
   }
 }
 
@@ -165,12 +193,18 @@ async function handleConfirmImport() {
   } catch (error) {
     // Error is already handled in applyMissionImport
     console.error('Import error:', error)
+    showImportModal.value = false
+    importPreview.value = null
   }
 }
 
 function handleCancelImport() {
   showImportModal.value = false
   importPreview.value = null
+}
+
+function handleExport(mission: Mission) {
+  exportSingleMission(mission)
 }
 </script>
 
@@ -236,6 +270,7 @@ function handleCancelImport() {
             Export Missions...
           </NButton>
           <NUpload
+            v-model:file-list="uploadFileList"
             :show-file-list="false"
             accept=".json"
             :max="1"
@@ -258,6 +293,7 @@ function handleCancelImport() {
           @edit="handleEdit"
           @duplicate="handleDuplicate"
           @delete="handleDelete"
+          @export="handleExport"
         />
       </div>
 
@@ -269,6 +305,7 @@ function handleCancelImport() {
           @edit="handleEdit"
           @duplicate="handleDuplicate"
           @delete="handleDelete"
+          @export="handleExport"
         />
       </div>
 

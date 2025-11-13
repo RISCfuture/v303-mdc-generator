@@ -14,6 +14,7 @@ const emit = defineEmits<{
   edit: [mission: Mission]
   duplicate: [mission: Mission]
   delete: [mission: Mission]
+  export: [mission: Mission]
 }>()
 
 const columns = computed(() =>
@@ -21,6 +22,7 @@ const columns = computed(() =>
     (mission) => emit('edit', mission),
     (mission) => emit('duplicate', mission),
     (mission) => emit('delete', mission),
+    (mission) => emit('export', mission),
   ),
 )
 </script>

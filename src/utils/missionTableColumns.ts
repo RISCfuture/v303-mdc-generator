@@ -1,7 +1,7 @@
 import { h } from 'vue'
 import { NTag, NSpace, NButton, NIcon } from 'naive-ui'
 import type { DataTableColumns } from 'naive-ui'
-import { CreateOutline, CopyOutline, TrashOutline } from '@vicons/ionicons5'
+import { CreateOutline, CopyOutline, TrashOutline, ShareOutline } from '@vicons/ionicons5'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
 import { formatDate, formatDateTime } from '@/utils/formatting'
@@ -39,6 +39,7 @@ export function createMissionTableColumns(
   onEdit: (mission: Mission) => void,
   onDuplicate: (mission: Mission) => void,
   onDelete: (mission: Mission) => void,
+  onExport: (mission: Mission) => void,
 ): DataTableColumns<Mission> {
   return [
     {
@@ -102,7 +103,7 @@ export function createMissionTableColumns(
     {
       title: 'Actions',
       key: 'actions',
-      width: 130,
+      width: 170,
       render: (row) => {
         return h(
           NSpace,
@@ -130,6 +131,17 @@ export function createMissionTableColumns(
                   'aria-label': 'Duplicate mission',
                 },
                 { icon: () => h(NIcon, null, { default: () => h(CopyOutline) }) },
+              ),
+              h(
+                NButton,
+                {
+                  size: 'small',
+                  onClick: () => onExport(row),
+                  quaternary: true,
+                  circle: true,
+                  'aria-label': 'Export mission',
+                },
+                { icon: () => h(NIcon, null, { default: () => h(ShareOutline) }) },
               ),
               h(
                 NButton,
