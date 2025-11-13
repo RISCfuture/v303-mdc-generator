@@ -1,42 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
 
-// Helper function to add a steerpoint with valid coordinates to enable PDF export
-async function addValidSteerpoint(page: Page) {
-  // Wait for the mission editor to load by checking for the Basic Info tab
-  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' });
-
-  await page.getByText('Steerpoints', { exact: true }).click();
-  await page.waitForTimeout(500);
-
-  await page.getByRole('button', { name: /Custom Steerpoint/ }).click();
-
-  // Wait for the waypoint to be added
-  await page.waitForTimeout(1000);
-
-  // Fill in the waypoint name - find the first visible input with aria-label "Name"
-  const waypointNameInput = page.locator('[aria-label="Name"] input').first();
-  await waypointNameInput.waitFor({ state: 'visible', timeout: 10000 });
-  await waypointNameInput.click();
-  await waypointNameInput.pressSequentially('WP1', { delay: 50 });
-  await waypointNameInput.blur(); // Trigger blur to save
-  await page.waitForTimeout(300);
-
-  // Fill in coordinates using the CoordinateField component
-  // Find the coordinate input within the coordinate field
-  const coordInput = page.locator('.coordinate-input input').first();
-  await coordInput.waitFor({ state: 'visible', timeout: 10000 });
-  await coordInput.click();
-  await coordInput.fill("N 33°30.346', E 065°50.859'");
-  await coordInput.blur();
-  await page.waitForTimeout(300);
-
-  const altInput = page.locator('[aria-label="Altitude"] input').first();
-  await altInput.click();
-  await altInput.pressSequentially('5000', { delay: 30 });
-  await altInput.blur();
-  await page.waitForTimeout(300);
-}
-
 // Helper function to set mission type (required field)
 async function setMissionType(page: Page, type: string = 'CAS') {
   // Navigate to Basic Info tab if not already there
@@ -158,8 +121,9 @@ async function fillRequiredFields(page: Page) {
   await remarksEditor.fill('Test mission remarks');
   await page.waitForTimeout(200);
 
-  // Add at least one steerpoint with valid coordinates (required)
-  await addValidSteerpoint(page);
+  // Note: A steerpoint is auto-created from the departure airport selection above,
+  // so we don't need to manually add one anymore. This auto-created waypoint has
+  // valid coordinates from the airfield database and satisfies the waypoint requirement.
 
   // Navigate to TOLD & Fuel tab to fill in required rotation/refusal speeds
   await page.getByText('TOLD & Fuel', { exact: true }).click();

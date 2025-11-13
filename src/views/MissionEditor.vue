@@ -17,12 +17,14 @@ import { useMissionsStore } from '@/stores/missions'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { getCrewPositionShort } from '@/data/constants'
+import { getAirfieldsForTheater } from '@/data/airfields'
 import type {
   TargetData,
   RadioPreset,
   F16CalculatorParams,
   A10CalculatorParams,
   F16BingoCalculatorParams,
+  Waypoint,
 } from '@/types'
 
 // Composables
@@ -83,6 +85,32 @@ function updateNestedField(
 ) {
   try {
     updateNestedFieldBase(parent, field, value)
+
+    // If departureAirportId was updated, auto-create steerpoint 1 if it doesn't exist
+    if (field === 'departureAirportId' && parent === 'departureRecovery' && value) {
+      const currentMission = mission.value
+      if (currentMission && currentMission.waypoints.length === 0) {
+        const airportId = value as string
+        const airfields = getAirfieldsForTheater(currentMission.theater)
+        const airfield = airfields.find((af) => af.name === airportId)
+
+        if (airfield) {
+          const newWaypoint: Waypoint = {
+            sequence: 1,
+            name: airfield.name,
+            latitude: airfield.position.latitude,
+            longitude: airfield.position.longitude,
+            elevation: airfield.position.elevation, // Already in feet MSL
+            altitude: airfield.position.elevation ?? 0, // Pre-fill altitude with elevation, or 0 if undefined
+            type: 'PARK',
+          }
+
+          missionsStore.updateMission(missionId.value, {
+            waypoints: [newWaypoint],
+          })
+        }
+      }
+    }
 
     // If imageIds were updated, schedule cleanup of unused images (debounced)
     if (field === 'imageIds' && parent === 'details') {

@@ -12,7 +12,8 @@ describe('useWaypointManagement', () => {
 
   it('should create custom waypoint with null lat/lon', () => {
     const missionsStore = useMissionsStore()
-    const mission = missionsStore.createMission('v93', 'Afghanistan')
+    // Use Nevada which has no default airfield, so starts with 0 waypoints
+    const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
     const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])
@@ -37,7 +38,8 @@ describe('useWaypointManagement', () => {
 
   it('should create waypoint from navaid with valid coordinates', () => {
     const missionsStore = useMissionsStore()
-    const mission = missionsStore.createMission('v93', 'Afghanistan')
+    // Use Nevada which has no default airfield, so starts with 0 waypoints
+    const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
     const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])
@@ -68,7 +70,8 @@ describe('useWaypointManagement', () => {
 
   it('should handle distance calculation with null coordinates', async () => {
     const missionsStore = useMissionsStore()
-    const mission = missionsStore.createMission('v93', 'Afghanistan')
+    // Use Nevada which has no default airfield, so starts with 0 waypoints
+    const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
     const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { Mission, Squadron, Theater } from '@/types'
+import type { Mission, Squadron, Theater, Waypoint } from '@/types'
 import { getDefaultRadioPresets } from '@/data/channelization'
 import {
   serializeMission,
@@ -12,6 +12,7 @@ import { getSquadronAirframe, squadronDatabase } from '@/data/squadrons'
 import { STATION_COUNTS } from '@/data/constants'
 import { imageStorage } from '@/services/imageStorage'
 import { theaterDatabase } from '@/data/theaters'
+import { getAirfieldsForTheater } from '@/data/airfields'
 
 const STORAGE_KEY = 'v303-missions'
 const STORAGE_VERSION = 2
@@ -132,7 +133,6 @@ export const useMissionsStore = defineStore('missions', () => {
       crew: [],
       packageMembers: [],
       supportAssets: theaterDatabase[theater]?.defaultSupportAssets || [],
-      waypoints: [],
       bullseye: undefined,
       loadout: Array.from({ length: STATION_COUNTS[airframe] || 11 }, (_, i) => ({
         station: i + 1,
@@ -175,6 +175,28 @@ export const useMissionsStore = defineStore('missions', () => {
           }
         }
         return {}
+      })(),
+      waypoints: (() => {
+        // Auto-create steerpoint 1 from default airfield if set
+        const theaterData = theaterDatabase[theater]
+        const defaultAirfield = theaterData?.defaultAirfield
+        if (defaultAirfield) {
+          const airfields = getAirfieldsForTheater(theater)
+          const airfield = airfields.find((af) => af.name === defaultAirfield)
+          if (airfield) {
+            const steerpoint1: Waypoint = {
+              sequence: 1,
+              name: airfield.name,
+              latitude: airfield.position.latitude,
+              longitude: airfield.position.longitude,
+              elevation: airfield.position.elevation, // Already in feet MSL
+              altitude: airfield.position.elevation ?? 0, // Pre-fill altitude with elevation, or 0 if undefined
+              type: 'PARK',
+            }
+            return [steerpoint1]
+          }
+        }
+        return []
       })(),
       told: {},
       fuel: {

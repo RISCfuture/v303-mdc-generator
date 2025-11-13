@@ -114,7 +114,8 @@ describe('Missions Store', () => {
   it('should initialize with default values for new missions', () => {
     const store = useMissionsStore()
 
-    const mission = store.createMission('v93', 'Afghanistan')
+    // Use Nevada which has no default airfield
+    const mission = store.createMission('v93', 'Nevada')
 
     // Check default values
     expect(mission.crew).toEqual([])
@@ -133,6 +134,41 @@ describe('Missions Store', () => {
     expect(mission.radioPresets.length).toBeGreaterThan(0)
     expect(mission.radioPresets[0]).toBeDefined()
     expect(mission.radioPresets[0].length).toBeGreaterThan(0)
+  })
+
+  it('should auto-create steerpoint 1 from default airfield when creating mission', () => {
+    const store = useMissionsStore()
+
+    // Afghanistan has a default airfield of Kandahar
+    const mission = store.createMission('v93', 'Afghanistan')
+
+    // Should have departure and recovery set
+    expect(mission.departureRecovery.departureAirportId).toBe('Kandahar')
+    expect(mission.departureRecovery.recoveryAirportId).toBe('Kandahar')
+
+    // Should have auto-created steerpoint 1
+    expect(mission.waypoints).toHaveLength(1)
+    expect(mission.waypoints[0].sequence).toBe(1)
+    expect(mission.waypoints[0].name).toBe('Kandahar')
+    expect(mission.waypoints[0].type).toBe('PARK')
+    expect(mission.waypoints[0].latitude).toBeDefined()
+    expect(mission.waypoints[0].longitude).toBeDefined()
+    expect(mission.waypoints[0].elevation).toBeDefined()
+    expect(mission.waypoints[0].altitude).toBe(mission.waypoints[0].elevation)
+  })
+
+  it('should not auto-create steerpoint 1 when theater has no default airfield', () => {
+    const store = useMissionsStore()
+
+    // Nevada has no default airfield
+    const mission = store.createMission('v93', 'Nevada')
+
+    // Should not have departure and recovery set
+    expect(mission.departureRecovery.departureAirportId).toBeUndefined()
+    expect(mission.departureRecovery.recoveryAirportId).toBeUndefined()
+
+    // Should not have auto-created waypoints
+    expect(mission.waypoints).toHaveLength(0)
   })
 
   it('should preserve mission id when updating', () => {
