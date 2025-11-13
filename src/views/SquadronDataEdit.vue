@@ -73,6 +73,23 @@ const dataCategories: DataCategory[] = [
       },
     ],
   },
+  {
+    title: 'Data Overrides',
+    files: [
+      {
+        name: 'munitions-overrides.json',
+        path: 'munitions-overrides.json',
+        description: 'Override munition properties (shortName, weight, category, etc.)',
+        note: 'Use this to customize auto-generated munition data',
+      },
+      {
+        name: 'airframe-overrides/',
+        path: 'airframe-overrides',
+        description: 'Override aircraft properties by airframe',
+        note: 'Customize radio names, station names, and other aircraft-specific data',
+      },
+    ],
+  },
 ]
 
 function goBack() {
@@ -101,7 +118,9 @@ function goBack() {
           </p>
           <p class="intro-text">
             Click on any file below to open it on GitHub and begin editing. Auto-generated files
-            (munitions, airframes, navaids, and airfields) are not included in this list.
+            (munitions, airframes, navaids, and airfields) are not included in this list. Override
+            files (munitions-overrides, airframe-overrides) are editable and can be used to
+            customize generated data.
           </p>
         </NSpace>
 

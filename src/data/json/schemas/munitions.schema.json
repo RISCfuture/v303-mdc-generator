@@ -6,7 +6,7 @@
   "type": "object",
   "additionalProperties": {
     "type": "object",
-    "required": ["id", "name", "shortName", "weight", "category"],
+    "required": ["id", "name", "weight", "category"],
     "properties": {
       "id": {
         "type": "string",
@@ -15,10 +15,6 @@
       "name": {
         "type": "string",
         "description": "Full display name (e.g., 'Mk-82 500-lb bomb', 'AGM-65D Maverick EO missile')"
-      },
-      "shortName": {
-        "type": "string",
-        "description": "Short display name (e.g., 'Mk-82', 'AGM-65')"
       },
       "weight": {
         "type": "number",

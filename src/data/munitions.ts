@@ -2,28 +2,43 @@
 // Data source: DCS World data via Quaggles DCS Lua Datamine
 // Aircraft specifications and station configurations from DCS
 import munitionsDataJson from '@/data/json/munitions.json'
-import munitionsShortnamesJson from '@/data/json/munitions-shortnames.json'
+import munitionsOverridesJson from '@/data/json/munitions-overrides.json'
 import { airframeDatabase } from '@/data/airframes'
 
 export interface MunitionData {
   id: string // DCS weapon ID (e.g., "Mk_82", "AGM_65D")
   name: string // Full display name (e.g., "Mk-82", "AGM-65D")
-  shortName: string // Short display name (e.g., "Mk-82", "AGM-65")
+  shortName?: string // Short display name (e.g., "Mk-82", "AGM-65")
   weight: number // pounds (total weight including fuel for fuel tanks)
   category: 'air-to-air' | 'air-to-ground' | 'fuel' | 'pod' | 'gun' | 'rack' | 'empty'
   additionalFuel?: number // pounds of fuel only (for fuel tanks)
 }
 
+export interface MunitionOverride {
+  name?: string
+  shortName?: string
+  weight?: number
+  category?: 'air-to-air' | 'air-to-ground' | 'fuel' | 'pod' | 'gun' | 'rack' | 'empty'
+}
+
+// Load base munitions data
 const munitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
   string,
   MunitionData
 >
 
-// Database of custom shortnames for munitions (for PDF export)
-const munitionsShortnamesDatabase: Record<string, string> = munitionsShortnamesJson as Record<
+// Load overrides
+const munitionsOverrides: Record<string, MunitionOverride> = munitionsOverridesJson as Record<
   string,
-  string
+  MunitionOverride
 >
+
+// Merge overrides into base data
+for (const [id, override] of Object.entries(munitionsOverrides)) {
+  if (munitionsDatabase[id]) {
+    munitionsDatabase[id] = { ...munitionsDatabase[id], ...override }
+  }
+}
 
 /**
  * Parse a DCS CLSID to extract components and calculate weight
@@ -145,14 +160,14 @@ function getMunitionWeight(munitionKey: string): number {
 
 /**
  * Get the short display name for a DCS CLSID (for PDF export)
- * Returns the custom shortname if available, otherwise falls back to full display name
+ * Returns the shortname from merged data if available, otherwise falls back to full display name
  */
 export function getMunitionShortName(itemId: string): string {
   if (itemId === 'EMPTY') return 'Empty'
 
-  // Check if we have a custom shortname for this CLSID
-  if (munitionsShortnamesDatabase[itemId]) {
-    return munitionsShortnamesDatabase[itemId]
+  // Check if we have a shortname in the merged database
+  if (munitionsDatabase[itemId]?.shortName) {
+    return munitionsDatabase[itemId].shortName!
   }
 
   // Fall back to full display name

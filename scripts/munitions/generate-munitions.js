@@ -243,17 +243,9 @@ function extractMunitionData(luaContent, fallbackClsid) {
   // Categorize the munition
   const category = categorizeMunition(clsid, name);
 
-  // Create short name (remove prefixes, simplify)
-  let shortName = name
-    .replace(/^(AGM|AIM|GBU|Mk\.?|BDU|CBU|LAU|BRU|TER|ALQ|AN\/|FAB|BETAB|KAB)/i, '')
-    .replace(/ - .*$/, '') // Remove everything after " - "
-    .trim();
-  if (!shortName) shortName = name;
-
   const result = {
     id: clsid,
     name,
-    shortName,
     weight: weightLbs,
     category
   };

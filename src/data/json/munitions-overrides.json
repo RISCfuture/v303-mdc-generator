@@ -1,0 +1,680 @@
+{
+  "ALQ_184": {
+    "shortName": "ALQ-184"
+  },
+  "ALQ_184_Long": {
+    "shortName": "ALQ-184L"
+  },
+  "BRU-42_3*BDU-33": {
+    "shortName": "BRU-42 3×BDU-33"
+  },
+  "BRU-42_3*GBU-12": {
+    "shortName": "BRU-42 3×GBU-12"
+  },
+  "BRU-42_LS": {
+    "shortName": "BRU-42"
+  },
+  "CATM-9M": {
+    "shortName": "CATM-9M"
+  },
+  "Fuel_Tank_FT600": {
+    "shortName": "FT600"
+  },
+  "LAU-105": {
+    "shortName": "LAU-105"
+  },
+  "LAU-105_1*AIM-9L_L": {
+    "shortName": "LAU-105 AIM-9L"
+  },
+  "LAU-105_1*AIM-9L_R": {
+    "shortName": "LAU-105 AIM-9L"
+  },
+  "LAU-105_1*AIM-9M_L": {
+    "shortName": "LAU-105 AIM-9M"
+  },
+  "LAU-105_1*AIM-9M_R": {
+    "shortName": "LAU-105 AIM-9M"
+  },
+  "LAU-105_1*CATM-9M_L": {
+    "shortName": "LAU-105 CATM-9M"
+  },
+  "LAU-105_1*CATM-9M_R": {
+    "shortName": "LAU-105 CATM-9M"
+  },
+  "LAU-105_2*AIM-9L": {
+    "shortName": "LAU-105 2×AIM-9L"
+  },
+  "LAU-105_2*CATM-9M": {
+    "shortName": "LAU-105 2×CATM-9M"
+  },
+  "LAU-105_AIS_ASQ_T50_L": {
+    "shortName": "LAU-105 AN/ASQ-T50"
+  },
+  "LAU-105_AIS_ASQ_T50_R": {
+    "shortName": "LAU-105 AN/ASQ-T50"
+  },
+  "LAU3_HE5": {
+    "shortName": "LAU-3 Mk.5×19"
+  },
+  "LAU3_HE151": {
+    "shortName": "LAU-3 M151×19"
+  },
+  "LAU3_WP1B": {
+    "shortName": "LAU-3 WTU-1/B×19"
+  },
+  "LAU3_WP61": {
+    "shortName": "LAU-3 Mk.61×19"
+  },
+  "LAU3_WP156": {
+    "shortName": "LAU-3 M156×19"
+  },
+  "LAU_88_AGM_65D_ONE": {
+    "shortName": "LAU-88 AGM-65D"
+  },
+  "LAU_88_AGM_65H": {
+    "shortName": "LAU-88 AGM-65H"
+  },
+  "LAU_88_AGM_65H_2_L": {
+    "shortName": "LAU-88 2×AGM-65H"
+  },
+  "LAU_88_AGM_65H_2_R": {
+    "shortName": "LAU-88 2×AGM-65H"
+  },
+  "LAU_88_AGM_65H_3": {
+    "shortName": "LAU-88 3×AGM-65H"
+  },
+  "LAU_117_AGM_65G": {
+    "shortName": "LAU-117 AGM-65G"
+  },
+  "LAU_117_AGM_65H": {
+    "shortName": "LAU-117 AGM-65H"
+  },
+  "LAU_117_AGM_65L": {
+    "shortName": "LAU-117 AGM-65E2/L"
+  },
+  "LAU_117_CATM_65K": {
+    "shortName": "LAU-117 CATM-65K"
+  },
+  "LAU_117_TGM_65D": {
+    "shortName": "LAU-117 TGM-65D"
+  },
+  "LAU_117_TGM_65G": {
+    "shortName": "LAU-117 TGM-65G"
+  },
+  "LAU_117_TGM_65H": {
+    "shortName": "LAU-117 TGM-65H"
+  },
+  "LAU_131x3_HYDRA_70_M151": {
+    "shortName": "BRU-42 3×LAU-131 7×M151"
+  },
+  "LAU_131x3_HYDRA_70_M156": {
+    "shortName": "BRU-42 3×LAU-131 7×M156"
+  },
+  "LAU_131x3_HYDRA_70_M257": {
+    "shortName": "BRU-42 3×LAU-131 7×M257"
+  },
+  "LAU_131x3_HYDRA_70_M274": {
+    "shortName": "BRU-42 3×LAU-131 7×M274"
+  },
+  "LAU_131x3_HYDRA_70_M278": {
+    "shortName": "BRU-42 3×LAU_131 7×M278"
+  },
+  "LAU_131x3_HYDRA_70_MK1": {
+    "shortName": "BRU-42 3×LAU-131 7×Mk.1"
+  },
+  "LAU_131x3_HYDRA_70_MK5": {
+    "shortName": "BRU-42 3×LAU-131 7×Mk.5"
+  },
+  "LAU_131x3_HYDRA_70_MK61": {
+    "shortName": "BRU-42 3×LAU-131 7×Mk.61"
+  },
+  "LAU_131x3_HYDRA_70_WTU1B": {
+    "shortName": "BRU-42 3×LAU-131 7×WTU-1/B"
+  },
+  "MXU-648-TP": {
+    "shortName": "MXU-648"
+  },
+  "{1CA5E00B-D545-4ff9-9B53-5970E292F14D}": {
+    "shortName": "LAU-131 7×Mk.61"
+  },
+  "{1F7136CB-8120-4e77-B97B-945FF01FB67C}": {
+    "shortName": "LAU-68 7×WTU-1/B"
+  },
+  "{2AF2EC3F-9065-4de5-93E1-1739C9A71EF7}": {
+    "shortName": "LAU-131 7×M156"
+  },
+  "{4C044B08-886B-46c8-9B1F-AB05B3ED9C1D}": {
+    "shortName": "BRU-42 3×LAU-68 7×M274"
+  },
+  "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}": {
+    "shortName": "LAU-68 7×M156"
+  },
+  "{5CE2FF2A-645A-4197-B48D-8720AC69394F}": {
+    "shortName": "AIM-9X"
+  },
+  "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}": {
+    "shortName": "AIM-9M"
+  },
+  "{6D6D5C07-2A90-4a68-9A74-C5D0CFFB05D9}": {
+    "shortName": "LAU-131 7×M274"
+  },
+  "{6D21ECEA-F85B-4E8D-9D51-31DC9B8AA4EF}": {
+    "shortName": "ALQ-131"
+  },
+  "{8A0BE8AE-58D4-4572-9263-3144C0D06364}": {
+    "shortName": "FT300"
+  },
+  "{9BC82B3D-FE70-4910-B2B7-3E54EFE73262}": {
+    "shortName": "BRU-42 3×LAU-68 7×Mk.5"
+  },
+  "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}": {
+    "shortName": "AIM-9P"
+  },
+  "{40EF17B7-F508-45de-8566-6FFECC0C1AB8}": {
+    "shortName": "AIM-120C"
+  },
+  "{51F9AAE5-964F-4D21-83FB-502E3BFE5F8A}": {
+    "shortName": "GBU-10"
+  },
+  "{60CC734F-0AFA-4E2E-82B8-93B941AB11CF}": {
+    "shortName": "BRU-42 3×Mk-82"
+  },
+  "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}": {
+    "shortName": "LAU-117 AGM-65K"
+  },
+  "{174C6E6D-0C3D-42ff-BCB3-0853CB371F5C}": {
+    "shortName": "LAU-68 7×Mk.5"
+  },
+  "{444BA8AE-82A7-4345-842E-76154EFCCA46}": {
+    "shortName": "LAU-117 AGM-65D"
+  },
+  "{647C5F26-BDD1-41e6-A371-8DE1E4CC0E94}": {
+    "shortName": "LAU-68 7×M257"
+  },
+  "{0877B74B-5A00-4e61-BA8A-A56450BA9E27}": {
+    "shortName": "LAU-68 7×M274"
+  },
+  "{5335D97A-35A5-4643-9D9B-026C75961E52}": {
+    "shortName": "CBU-97"
+  },
+  "{34759BBC-AF1E-4AEE-A581-498FF7A6EBCE}": {
+    "shortName": "GBU-24A/B"
+  },
+  "{64329ED9-B14C-4c0b-A923-A3C911DA1527}": {
+    "shortName": "BRU-42 3×LAU-68 7×M151"
+  },
+  "{319293F2-392C-4617-8315-7C88C22AF7C4}": {
+    "shortName": "LAU-131 7×Mk.5"
+  },
+  "{443364AE-D557-488e-9499-45EDB3BA6730}": {
+    "shortName": "BRU-42 3×LAU-68 7×Mk.1"
+  },
+  "{65396399-9F5C-4ec3-A7D2-5A8F4C1D90C4}": {
+    "shortName": "LAU-68 7×Mk.61"
+  },
+  "{69926055-0DA8-4530-9F2F-C86B157EA9F6}": {
+    "shortName": "LAU-131 7×M151"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E741}": {
+    "shortName": "Smoke (red)"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E742}": {
+    "shortName": "Smoke (green)"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E743}": {
+    "shortName": "Smoke (blue)"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E744}": {
+    "shortName": "Smoke (white)"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E745}": {
+    "shortName": "Smoke (yellow)"
+  },
+  "{A4BCC903-06C8-47bb-9937-A30FEDB4E746}": {
+    "shortName": "Smoke (orange)"
+  },
+  "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}": {
+    "shortName": "LAU-68 7×M151"
+  },
+  "{A1853B38-2160-4ffe-B7E9-9BF81E6C3D77}": {
+    "shortName": "BRU-42 3×LAU-68 7×WTU-1/B"
+  },
+  "{A111396E-D3E8-4b9c-8AC9-2432489304D5}": {
+    "shortName": "AN/AAQ-28"
+  },
+  "{AB8B8299-F1CC-4359-89B5-2172E0CF4A5A}": {
+    "shortName": "Mk.84"
+  },
+  "{AGM-154A}": {
+    "shortName": "AGM-154A"
+  },
+  "{AIM-9L}": {
+    "shortName": "AIM-9L"
+  },
+  "{AIM-9P3}": {
+    "shortName": "AIM-9P3"
+  },
+  "{AIM-9P5}": {
+    "shortName": "AIM-9P5"
+  },
+  "{AIS_ASQ_T50}": {
+    "shortName": "AN/ASQ-T50"
+  },
+  "{AN_AAQ_33}": {
+    "shortName": "AN/AAQ-33"
+  },
+  "{AN_ASQ_213}": {
+    "shortName": "AN/ASQ-213"
+  },
+  "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}": {
+    "shortName": "AGM-88C"
+  },
+  "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}": {
+    "shortName": "Mk.82"
+  },
+  "{BDU-50HD}": {
+    "shortName": "BDU-50HD"
+  },
+  "{BDU-50LD}": {
+    "shortName": "BDU-50LD"
+  },
+  "{BDU-50LGB}": {
+    "shortName": "BDU-50LGB"
+  },
+  "{BRU-42_3*Mk-82AIR}": {
+    "shortName": "BRU-42 3×Mk.82 AIR"
+  },
+  "{BRU-42_LS_1*SUU-25_8*LUU-2}": {
+    "shortName": "BRU-42 SUU-25 8×LUU-2"
+  },
+  "{BRU-42_LS_2*SUU-25_8*LUU-2_L}": {
+    "shortName": "BRU-42 2×SUU-25 8×LUU-2"
+  },
+  "{BRU-42_LS_2*SUU-25_8*LUU-2_R}": {
+    "shortName": "BRU-42 2×SUU-25 8×LUU-2"
+  },
+  "{BRU-42_LS_3*SUU-25_8*LUU-2}": {
+    "shortName": "BRU-42 3×SUU-25 8×LUU-2"
+  },
+  "{BRU42_1X_GBU-12}": {
+    "shortName": "BRU-42 GBU-12"
+  },
+  "{BRU42_1X_MK-82AIR}": {
+    "shortName": "BRU-42 Mk.82 AIR"
+  },
+  "{BRU42_1X_MK-82}": {
+    "shortName": "BRU-42 Mk.82"
+  },
+  "{BRU42_2X_GBU-12_L}": {
+    "shortName": "BRU-42 2×GBU-12"
+  },
+  "{BRU42_2X_GBU-12_R}": {
+    "shortName": "BRU-42 2×GBU-12"
+  },
+  "{BRU42_2X_MK-82_L}": {
+    "shortName": "BRU-42 2×Mk.82"
+  },
+  "{BRU42_2X_MK-82_R}": {
+    "shortName": "BRU-42 2×Mk.82"
+  },
+  "{BRU42_2X_MK-82AIR_L}": {
+    "shortName": "BRU-42 2×Mk.82 AIR"
+  },
+  "{BRU42_2X_MK-82AIR_R}": {
+    "shortName": "BRU-42 2×Mk.82 AIR"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M151_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×M151"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M151_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×M151"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M156_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×M156"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M156_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×M156"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M257_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×M257"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M257_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×M257"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M274_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×M274"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_M274_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×M274"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK1_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.1"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK1_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.1"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK5_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.5"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK5_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.5"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK61_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.61"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_MK61_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×Mk.61"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_WTU1B_L}": {
+    "shortName": "BRU-42 2×LAU-68 7×WTU-1/B"
+  },
+  "{BRU42LS_2*LAU68_HYDRA_70_WTU1B_R}": {
+    "shortName": "BRU-42 2×LAU-68 7×WTU-1/B"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M151_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M151"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M151_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M151"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M156_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M156"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M156_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M156"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M257_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M257"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M257_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M257"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M274_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M274"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_M274_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M274"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK1_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.1"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK1_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.1"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK5_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.5"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK5_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.5"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK61_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.61"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_MK61_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×Mk.61"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_WTU1B_L}": {
+    "shortName": "BRU-42 2×LAU-131 7×WTU-1/B"
+  },
+  "{BRU42LS_2*LAU131_HYDRA_70_WTU1B_R}": {
+    "shortName": "BRU-42 2×LAU-131 7×WTU-1/B"
+  },
+  "{BRU57_2*AGM-154A}": {
+    "shortName": "BRU-57 2×AGM-154A"
+  },
+  "{BRU57_2*CBU-103}": {
+    "shortName": "BRU-57 2×CBU-103"
+  },
+  "{BRU57_2*CBU-105}": {
+    "shortName": "BRU-57 2×CBU-105"
+  },
+  "{BRU57_2*GBU-38}": {
+    "shortName": "BRU-57 2×GBU-38"
+  },
+  "{C8E06185-7CD6-4C90-959F-044679E90751}": {
+    "shortName": "AIM-120B"
+  },
+  "{C2593383-3CA8-4b18-B73D-0E750BCA1C85}": {
+    "shortName": "BRU-42 3×LAU-68 7×M156"
+  },
+  "{CAE48299-A294-4bad-8EE6-89EFC5DCDF00}": {
+    "shortName": "SUU-25 8×LUU-2"
+  },
+  "{CBU-87}": {
+    "shortName": "CBU-87"
+  },
+  "{CBU_103}": {
+    "shortName": "CBU-103"
+  },
+  "{CBU_105}": {
+    "shortName": "CBU-105"
+  },
+  "{C0FA251E-B645-4ce5-926B-F4BC20822F8B}": {
+    "shortName": "BRU-42 3×LAU-68 7×Mk.61"
+  },
+  "{D22C2D63-E5C9-4247-94FB-5E8F3DE22B71}": {
+    "shortName": "LAU-131 7×Mk.1"
+  },
+  "{DAC53A2F-79CA-42FF-A77A-F5649B601308}": {
+    "shortName": "LAU-88 3×AGM-65D"
+  },
+  "{DAD45FE5-CFF0-4a2b-99D4-5D044D3BC22F}": {
+    "shortName": "LAU-131 7×M257"
+  },
+  "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}": {
+    "shortName": "GBU-12"
+  },
+  "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}": {
+    "shortName": "LAU-105 2×AIM-9M"
+  },
+  "{DDCE7D70-5313-4181-8977-F11018681662}": {
+    "shortName": "LAU-131 7×WTU-1/B"
+  },
+  "{E6A6262A-CA08-4B3D-B030-E1A993B98452}": {
+    "shortName": "LAU-88 2×AGM-65D"
+  },
+  "{E6A6262A-CA08-4B3D-B030-E1A993B98453}": {
+    "shortName": "LAU-88 2×AGM-65D"
+  },
+  "{E6966004-A525-4f47-AF94-BCFEDF8FDBDA}": {
+    "shortName": "BRU-42 3×LAU-68 7×M257"
+  },
+  "{F376DBEE-4CAE-41BA-ADD9-B2910AC95DEC}": {
+    "shortName": "FT370"
+  },
+  "{FC85D2ED-501A-48ce-9863-49D468DDD5FC}": {
+    "shortName": "LAU-68 7×Mk.1"
+  },
+  "{GBU-31V3B}": {
+    "shortName": "GBU-31(V)3/B"
+  },
+  "{GBU-31}": {
+    "shortName": "GBU-31(V)1/B"
+  },
+  "{GBU-38}": {
+    "shortName": "GBU-38(V)1/B"
+  },
+  "{GBU_54_V_1B}": {
+    "shortName": "GBU-54(V)1/B"
+  },
+  "{INV-SMOKE-BLUE}": {
+    "shortName": "Smoke (blue)"
+  },
+  "{INV-SMOKE-GREEN}": {
+    "shortName": "Smoke (green)"
+  },
+  "{INV-SMOKE-ORANGE}": {
+    "shortName": "Smoke (orange)"
+  },
+  "{INV-SMOKE-RED}": {
+    "shortName": "Smoke (red)"
+  },
+  "{INV-SMOKE-WHITE}": {
+    "shortName": "Smoke (white)"
+  },
+  "{INV-SMOKE-YELLOW}": {
+    "shortName": "Smoke (yellow)"
+  },
+  "{LAU-131 - 7 AGR-20 M282}": {
+    "shortName": "LAU-131 7×M282 APKWS"
+  },
+  "{LAU-131 - 7 AGR-20A}": {
+    "shortName": "LAU-131 7×M151 APKWS"
+  },
+  "{LAU-131x2 - 7 AGR-20 M282 L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M282 APKWS"
+  },
+  "{LAU-131x2 - 7 AGR-20 M282 R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M282 APKWS"
+  },
+  "{LAU-131x2 - 7 AGR-20A L}": {
+    "shortName": "BRU-42 2×LAU-131 7×M151 APKWS"
+  },
+  "{LAU-131x2 - 7 AGR-20A R}": {
+    "shortName": "BRU-42 2×LAU-131 7×M151 APKWS"
+  },
+  "{LAU-131x3 - 7 AGR-20 M282}": {
+    "shortName": "BRU-42 3×LAU-131 7×M282 APKWS"
+  },
+  "{LAU-131x3 - 7 AGR-20A}": {
+    "shortName": "BRU-42 3×LAU-131 7×M151 APKWS"
+  },
+  "{Mk82AIR}": {
+    "shortName": "Mk.82 AIR"
+  },
+  "{Mk82SNAKEYE}": {
+    "shortName": "Mk.82 SE"
+  },
+  "{Mk_84AIR_GP}": {
+    "shortName": "Mk.84 AIR GP"
+  },
+  "{Mk_84AIR_TP}": {
+    "shortName": "Mk.84 AIR TP"
+  },
+  "{TER_9A_2L*BDU-50LGB}": {
+    "shortName": "TER-9A 2×BDU-50LGB"
+  },
+  "{TER_9A_2L*CBU-87}": {
+    "shortName": "TER-9A 2×CBU-87"
+  },
+  "{TER_9A_2L*CBU-97}": {
+    "shortName": "TER-9A 2×CBU-97"
+  },
+  "{TER_9A_2L*GBU-12}": {
+    "shortName": "TER-9A 2×GBU-12"
+  },
+  "{TER_9A_2L*LAU-68_M151}": {
+    "shortName": "TER-9A 2×LAU-68 7×M151"
+  },
+  "{TER_9A_2L*LAU-68_M156}": {
+    "shortName": "TER-9A 2×LAU-68 7×M156"
+  },
+  "{TER_9A_2L*LAU-68_MK5}": {
+    "shortName": "TER-9A 2×LAU-68 7×Mk.5"
+  },
+  "{TER_9A_2L*LAU-68_MK61}": {
+    "shortName": "TER-9A 2×LAU-68 7×Mk.61"
+  },
+  "{TER_9A_2L*LAU-68_WTU-1/B}": {
+    "shortName": "TER-9A 2×LAU-68 7×WTU-1/B"
+  },
+  "{TER_9A_2L*LAU-131_M151}": {
+    "shortName": "TER-9A 2×LAU-131 7×M151"
+  },
+  "{TER_9A_2L*LAU-131_M156}": {
+    "shortName": "TER-9A 2×LAU-131 7×M156"
+  },
+  "{TER_9A_2L*LAU-131_MK5}": {
+    "shortName": "TER-9A 2×LAU-131 7×Mk.5"
+  },
+  "{TER_9A_2L*LAU-131_MK61}": {
+    "shortName": "TER-9A 2×LAU-131 7×Mk.61"
+  },
+  "{TER_9A_2L*LAU-131_WTU-1/B}": {
+    "shortName": "TER-9A 2×LAU-131 7×WTU-1/B"
+  },
+  "{TER_9A_2L*MK-82_Snakeye}": {
+    "shortName": "TER-9A 2×Mk.82 SE"
+  },
+  "{TER_9A_2L*MK-82AIR}": {
+    "shortName": "TER-9A 2×Mk.82 AIR"
+  },
+  "{TER_9A_2L*MK-82}": {
+    "shortName": "TER-9A 2×Mk.82"
+  },
+  "{TER_9A_2R*BDU-50LGB}": {
+    "shortName": "TER-9A 2×BDU-50LGB"
+  },
+  "{TER_9A_2R*CBU-87}": {
+    "shortName": "TER-9A 2×CBU-87"
+  },
+  "{TER_9A_2R*CBU-97}": {
+    "shortName": "TER-9A 2×CBU-97"
+  },
+  "{TER_9A_2R*GBU-12}": {
+    "shortName": "TER-9A 2×GBU-12"
+  },
+  "{TER_9A_2R*LAU-68_M151}": {
+    "shortName": "TER-9A 2×LAU-68 7×M151"
+  },
+  "{TER_9A_2R*LAU-68_M156}": {
+    "shortName": "TER-9A 2×LAU-68 7×M156"
+  },
+  "{TER_9A_2R*LAU-68_MK5}": {
+    "shortName": "TER-9A 2×LAU-68 7×Mk.5"
+  },
+  "{TER_9A_2R*LAU-68_MK61}": {
+    "shortName": "TER-9A 2×LAU-68 7×Mk.61"
+  },
+  "{TER_9A_2R*LAU-68_WTU-1/B}": {
+    "shortName": "TER-9A 2×LAU-68 7×WTU-1/B"
+  },
+  "{TER_9A_2R*LAU-131_M151}": {
+    "shortName": "TER-9A 2×LAU-131 7×M151"
+  },
+  "{TER_9A_2R*LAU-131_M156}": {
+    "shortName": "TER-9A 2×LAU-131 7×M156"
+  },
+  "{TER_9A_2R*LAU-131_MK5}": {
+    "shortName": "TER-9A 2×LAU-131 7×Mk.5"
+  },
+  "{TER_9A_2R*LAU-131_MK61}": {
+    "shortName": "TER-9A 2×LAU-131 7×Mk.61"
+  },
+  "{TER_9A_2R*LAU-131_WTU-1/B}": {
+    "shortName": "TER-9A 2×LAU-131 7×WTU-1/B"
+  },
+  "{TER_9A_2R*MK-82_Snakeye}": {
+    "shortName": "TER-9A 2×Mk-82 SE"
+  },
+  "{TER_9A_2R*MK-82AIR}": {
+    "shortName": "TER-9A 2×Mk-82 AIR"
+  },
+  "{TER_9A_2R*MK-82}": {
+    "shortName": "TER-9A 2×Mk-82"
+  },
+  "{TER_9A_3*BDU-33}": {
+    "shortName": "TER-9A 3×BDU-33"
+  },
+  "{TER_9A_3*BDU-50HD}": {
+    "shortName": "TER-9A 3×BDU-50HD"
+  },
+  "{TER_9A_3*BDU-50LD}": {
+    "shortName": "TER-9A 3×BDU-50LD"
+  },
+  "{TER_9A_3*CBU-87}": {
+    "shortName": "TER-9A 3×CBU-87"
+  },
+  "{TER_9A_3*CBU-97}": {
+    "shortName": "TER-9A 3×CBU-97"
+  },
+  "{TER_9A_3*MK-82_Snakeye}": {
+    "shortName": "TER-9A 3×Mk.82 SE"
+  },
+  "{TER_9A_3*MK-82AIR}": {
+    "shortName": "TER-9A 3×Mk-82 AIR"
+  },
+  "{TER_9A_3*MK-82}": {
+    "shortName": "TER-9A 3×Mk.82"
+  }
+}

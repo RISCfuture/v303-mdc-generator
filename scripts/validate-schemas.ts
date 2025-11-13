@@ -69,9 +69,9 @@ const schemaMappings: SchemaMapping[] = [
     description: 'munitions configuration',
   },
   {
-    pattern: /^munitions-shortnames\.json$/,
-    schemaPath: join(schemasDir, 'munitions-shortnames.schema.json'),
-    description: 'munitions shortnames configuration',
+    pattern: /^munitions-overrides\.json$/,
+    schemaPath: join(schemasDir, 'munitions-overrides.schema.json'),
+    description: 'munitions overrides configuration',
   },
   {
     pattern: /^squadrons\.json$/,
