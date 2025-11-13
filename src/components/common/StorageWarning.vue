@@ -11,24 +11,24 @@
       <p>{{ warningMessage }}</p>
       <div class="storage-stats">
         <n-space vertical :size="4">
-          <div class="stat-row">
+          <n-flex justify="space-between" align="center">
             <n-text depth="2">Missions stored:</n-text>
             <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace">{{
               formatInteger(missionCount)
             }}</n-text>
-          </div>
-          <div class="stat-row">
+          </n-flex>
+          <n-flex justify="space-between" align="center">
             <n-text depth="2">Storage used:</n-text>
             <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace"
               >{{ formattedUsage }} ({{ percentFormatter.format(percentUsed) }})</n-text
             >
-          </div>
-          <div class="stat-row">
+          </n-flex>
+          <n-flex justify="space-between" align="center">
             <n-text depth="2">Estimated capacity:</n-text>
             <n-text strong tag="span" style="font-family: 'SF Mono', Monaco, Consolas, monospace"
               >~{{ formatInteger(estimatedRemaining) }} more missions</n-text
             >
-          </div>
+          </n-flex>
         </n-space>
       </div>
       <n-space class="storage-actions" :size="8">
@@ -48,7 +48,7 @@
         <n-space vertical :size="12" class="storage-details">
           <n-divider />
           <n-space vertical :size="4">
-            <div class="stat-row">
+            <n-flex justify="space-between" align="center">
               <n-text depth="2">Space remaining:</n-text>
               <n-text
                 strong
@@ -56,8 +56,8 @@
                 style="font-family: 'SF Mono', Monaco, Consolas, monospace"
                 >{{ formattedRemaining }}</n-text
               >
-            </div>
-            <div class="stat-row">
+            </n-flex>
+            <n-flex justify="space-between" align="center">
               <n-text depth="2">Average mission size:</n-text>
               <n-text
                 strong
@@ -65,7 +65,7 @@
                 style="font-family: 'SF Mono', Monaco, Consolas, monospace"
                 >{{ formatBytes(stats?.averageMissionSize ?? 0) }}</n-text
               >
-            </div>
+            </n-flex>
             <n-text depth="3" tag="p" style="margin: 0; line-height: 1.5">
               <n-text strong>Tip:</n-text> Export missions you want to keep long-term as JSON files,
               then delete them from the app to free up space. You can re-import them later if
@@ -80,7 +80,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { NAlert, NSpace, NButton, NCollapseTransition, NDivider, NText } from 'naive-ui'
+import { NAlert, NSpace, NButton, NCollapseTransition, NDivider, NText, NFlex } from 'naive-ui'
 import { useStorageMonitor } from '@/composables/useStorageMonitor'
 import { formatBytes } from '@/utils/storageAnalysis'
 import { formatInteger } from '@/utils/numberFormatting'
@@ -164,12 +164,6 @@ function handleDismiss() {
   background: rgb(0 0 0 / 5%);
   padding: 12px;
   border-radius: 4px;
-}
-
-.stat-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .storage-actions {

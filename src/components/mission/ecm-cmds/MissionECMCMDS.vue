@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NCard, NForm, NFormItem, NSelect, NSlider, NSpace } from 'naive-ui'
+import { NCard, NForm, NFormItem, NSelect, NSlider, NSpace, NFlex } from 'naive-ui'
 import { FORM } from '@/styles/design-tokens'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import type { Mission, Airframe } from '@/types'
@@ -117,7 +117,7 @@ function updateFlareTotal(value: number | null) {
 
         <!-- Chaff Total -->
         <NFormItem v-if="cmdsCapacity > 0" label="Chaff">
-          <div style="display: flex; align-items: center; gap: 12px; width: 100%">
+          <NFlex align="center" :wrap="false" style="width: 100%">
             <div style="flex: 1; min-width: 0">
               <NSlider
                 :value="chaffTotal"
@@ -129,12 +129,12 @@ function updateFlareTotal(value: number | null) {
               />
             </div>
             <span style="min-width: 40px; text-align: right">{{ chaffTotal }}</span>
-          </div>
+          </NFlex>
         </NFormItem>
 
         <!-- Flare Total -->
         <NFormItem v-if="cmdsCapacity > 0" label="Flare">
-          <div style="display: flex; align-items: center; gap: 12px; width: 100%">
+          <NFlex align="center" :wrap="false" style="width: 100%">
             <div style="flex: 1; min-width: 0">
               <NSlider
                 :value="flareTotal"
@@ -146,7 +146,7 @@ function updateFlareTotal(value: number | null) {
               />
             </div>
             <span style="min-width: 40px; text-align: right">{{ flareTotal }}</span>
-          </div>
+          </NFlex>
         </NFormItem>
       </NForm>
     </NCard>

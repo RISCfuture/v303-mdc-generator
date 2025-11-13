@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NFormItem, NInput, NInputNumber, NA } from 'naive-ui'
+import { NFormItem, NInput, NInputNumber, NA, NFlex } from 'naive-ui'
 import CoordinateField from '@/components/common/CoordinateField.vue'
 import MarkdownEditor from '@/components/common/MarkdownEditor.vue'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
@@ -32,8 +32,8 @@ const emit = defineEmits<{
         autocorrect="off"
       />
     </NFormItem>
-    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px">
-      <NFormItem label="Coordinate">
+    <NFlex :wrap="false" :size="16">
+      <NFormItem label="Coordinate" style="flex: 1; max-width: 600px">
         <CoordinateField
           :latitude="target?.latitude ?? null"
           :longitude="target?.longitude ?? null"
@@ -42,22 +42,24 @@ const emit = defineEmits<{
           @update:longitude="(v: number | null) => emit('update-field', 'longitude', v)"
           @update:format="(v: CoordinateFormat) => emit('update-field', 'coordinateFormat', v)"
           label=""
+          style="width: 100%"
         />
       </NFormItem>
-      <NFormItem label="Elevation">
+      <NFormItem label="Elevation" style="width: 200px">
         <NInputNumber
           :value="target?.elevation"
           @update:value="(v: number | null) => emit('update-field', 'elevation', v ?? undefined)"
           :show-button="false"
           :format="formatInteger"
           :parse="parseInteger"
+          style="width: 100%"
         >
           <template #suffix>ft</template>
         </NInputNumber>
       </NFormItem>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
-      <NFormItem label="Attack Heading">
+    </NFlex>
+    <NFlex :wrap="false" :size="16">
+      <NFormItem label="Attack Heading" style="flex: 1; max-width: 300px">
         <NInputNumber
           :value="target?.attackHeading"
           @update:value="
@@ -67,11 +69,12 @@ const emit = defineEmits<{
           :format="formatInteger"
           :parse="parseInteger"
           placeholder="Attack heading"
+          style="width: 100%"
         >
           <template #suffix>°</template>
         </NInputNumber>
       </NFormItem>
-      <NFormItem label="Ingress Altitude">
+      <NFormItem label="Ingress Altitude" style="flex: 1; max-width: 300px">
         <NInputNumber
           :value="target?.ingressAltitude"
           @update:value="
@@ -81,11 +84,12 @@ const emit = defineEmits<{
           :format="formatInteger"
           :parse="parseInteger"
           placeholder="Ingress altitude"
+          style="width: 100%"
         >
           <template #suffix>ft</template>
         </NInputNumber>
       </NFormItem>
-    </div>
+    </NFlex>
     <NFormItem>
       <template #label>
         Target Remarks (<NA href="https://www.markdownguide.org/cheat-sheet/" target="_blank"
@@ -103,15 +107,3 @@ const emit = defineEmits<{
     </NFormItem>
   </div>
 </template>
-
-<style scoped>
-/* Mobile responsive styles */
-@media (width <= 768px) {
-  div[style*='grid-template-columns: 1fr 1fr 1fr'],
-  div[style*='grid-template-columns: 1fr 1fr'] {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-</style>

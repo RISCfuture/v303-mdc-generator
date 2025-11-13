@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NButton, NCard, NSelect, NSpace, NDivider, NFormItem, NSlider, NText } from 'naive-ui'
+import {
+  NButton,
+  NCard,
+  NSelect,
+  NSpace,
+  NDivider,
+  NFormItem,
+  NSlider,
+  NText,
+  NFlex,
+} from 'naive-ui'
 import { getShortStationLabel } from '@/utils/stationLabels'
 import { getLoadoutItemWeight, buildStationLoadoutOptions } from '@/data/munitions'
 import { formatWeight } from '@/utils/formatting'
@@ -142,7 +152,7 @@ const gunAmmoOptions = computed(() => {
 
         <!-- Fuel Weight Slider -->
         <div>
-          <div style="display: flex; align-items: center; gap: 12px">
+          <n-flex align="center" :size="12">
             <strong>Fuel Weight:</strong>
             <div style="width: 300px">
               <NSlider
@@ -159,7 +169,7 @@ const gunAmmoOptions = computed(() => {
             </div>
             <span style="min-width: 50px; text-align: right">{{ fuelLoadPercentage }}%</span>
             <n-text depth="2">Max: {{ formatWeight(maxFuelCapacity) }}</n-text>
-          </div>
+          </n-flex>
           <div style="width: 300px; margin-left: 116px; text-align: center; margin-top: 4px">
             {{ formatWeight(fuelWeight) }}
           </div>

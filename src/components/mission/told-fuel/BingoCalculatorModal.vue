@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { NModal, NSelect, NSpace, NButton, NInput, NCard, NSwitch, NText } from 'naive-ui'
+import {
+  NModal,
+  NSelect,
+  NSpace,
+  NButton,
+  NInput,
+  NCard,
+  NSwitch,
+  NText,
+  NGrid,
+  NGridItem,
+} from 'naive-ui'
 import type { Mission, F16BingoCalculatorParams } from '@/types'
 import { calculateBingoFuel } from '@/utils/f16BingoCalculator'
 import { calculateDistance } from '@/composables/useWaypointCalculations'
@@ -166,67 +177,61 @@ function handleCancel() {
     <NSpace vertical>
       <!-- Mission Info Section -->
       <NCard title="Mission Info" size="small">
-        <div style="display: grid; gap: 12px">
-          <div>
-            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Flight Size</n-text
+        <NGrid :cols="1" :y-gap="12">
+          <NGridItem>
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Flight Size</NText
             >
-            <NInput
-              :value="`${numberOfPilots} pilot${numberOfPilots !== 1 ? 's' : ''}`"
-              disabled
-              size="small"
-            />
-          </div>
-          <div v-if="distanceHomeToTarget !== null">
-            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Distance: Home → Target</n-text
+            <NInput :value="`${numberOfPilots} pilot${numberOfPilots !== 1 ? 's' : ''}`" disabled />
+          </NGridItem>
+          <NGridItem v-if="distanceHomeToTarget !== null">
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Distance: Home → Target</NText
             >
-            <NInput :value="`${distanceHomeToTarget.toFixed(1)} nm`" disabled size="small" />
-          </div>
-          <div v-if="distanceHomeToAlternate !== null">
-            <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Distance: Home → Alternate</n-text
+            <NInput :value="`${distanceHomeToTarget.toFixed(1)} nm`" disabled />
+          </NGridItem>
+          <NGridItem v-if="distanceHomeToAlternate !== null">
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Distance: Home → Alternate</NText
             >
-            <NInput :value="`${distanceHomeToAlternate.toFixed(1)} nm`" disabled size="small" />
-          </div>
-          <div v-if="!recoveryLocation">
+            <NInput :value="`${distanceHomeToAlternate.toFixed(1)} nm`" disabled />
+          </NGridItem>
+          <NGridItem v-if="!recoveryLocation">
             <NText type="warning"> ⚠️ Recovery airport not specified or location not found </NText>
-          </div>
-          <div v-if="!targetLocation">
+          </NGridItem>
+          <NGridItem v-if="!targetLocation">
             <NText type="warning"> ⚠️ No target waypoint found (waypoint with target flag) </NText>
-          </div>
-        </div>
+          </NGridItem>
+        </NGrid>
       </NCard>
 
       <!-- Configuration Section -->
       <NCard title="Configuration" size="small">
-        <div style="display: grid; gap: 12px">
-          <div>
-            <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-              >AAR Expected</n-text
+        <NGrid :cols="1" :y-gap="12">
+          <NGridItem>
+            <NText tag="label" strong style="display: block; margin-bottom: 8px"
+              >AAR Expected</NText
             >
             <NSwitch v-model:value="aarExpected" />
-          </div>
+          </NGridItem>
 
           <!-- Show these fields only if AAR is NOT expected -->
-          <template v-if="!aarExpected">
-            <div>
-              <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-                >Approach Type</n-text
-              >
-              <NSelect
-                v-model:value="approachType"
-                :options="[
-                  { label: 'VFR (Visual)', value: 'VFR' },
-                  { label: 'IFR (Instrument)', value: 'IFR' },
-                ]"
-              />
-            </div>
-          </template>
+          <NGridItem v-if="!aarExpected">
+            <NText tag="label" strong style="display: block; margin-bottom: 8px"
+              >Approach Type</NText
+            >
+            <NSelect
+              v-model:value="approachType"
+              :options="[
+                { label: 'VFR (Visual)', value: 'VFR' },
+                { label: 'IFR (Instrument)', value: 'IFR' },
+              ]"
+            />
+          </NGridItem>
 
-          <div>
-            <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-              >Altitude Profile</n-text
+          <NGridItem>
+            <NText tag="label" strong style="display: block; margin-bottom: 8px"
+              >Altitude Profile</NText
             >
             <NSelect
               v-model:value="altitudeProfile"
@@ -235,8 +240,8 @@ function handleCancel() {
                 { label: 'Low Altitude', value: 'low' },
               ]"
             />
-          </div>
-        </div>
+          </NGridItem>
+        </NGrid>
       </NCard>
     </NSpace>
 

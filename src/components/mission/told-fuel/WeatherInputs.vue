@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NCard, NInputNumber, NInput, NText } from 'naive-ui'
+import { NCard, NInputNumber, NInput, NText, NGrid, NGridItem } from 'naive-ui'
 
 interface Props {
   temperature: number
@@ -29,10 +29,10 @@ const formatDecimal = (value: number, decimals: number = 1) => {
 
 <template>
   <NCard title="Weather" size="small">
-    <div style="display: grid; gap: 12px">
-      <div>
-        <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-          >Temperature (°C)</n-text
+    <NGrid :cols="1" :y-gap="12">
+      <NGridItem>
+        <NText tag="label" strong style="display: block; margin-bottom: 8px"
+          >Temperature (°C)</NText
         >
         <NInputNumber
           :value="temperature"
@@ -41,55 +41,55 @@ const formatDecimal = (value: number, decimals: number = 1) => {
           :max="60"
           style="width: 100%"
         />
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-        <div>
-          <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-            >Wind Direction (magnetic, °)</n-text
-          >
-          <NInputNumber
-            :value="windDirection"
-            @update:value="(v: number | null) => emit('update:windDirection', v ?? 0)"
-            :min="0"
-            :max="359"
-            style="width: 100%"
-            placeholder="Direction wind is FROM"
-          />
-        </div>
-        <div>
-          <n-text tag="label" strong style="display: block; margin-bottom: 8px"
-            >Wind Speed (knots)</n-text
-          >
-          <NInputNumber
-            :value="windSpeed"
-            @update:value="(v: number | null) => emit('update:windSpeed', v ?? 0)"
-            :min="0"
-            :max="100"
-            style="width: 100%"
-          />
-        </div>
-      </div>
-      <div
-        v-if="showWindComponents"
-        style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px"
-      >
-        <div>
-          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-            >Headwind Component</n-text
-          >
-          <NInput :value="`${formatDecimal(headwindComponent)} kt`" disabled size="small" />
-        </div>
-        <div>
-          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-            >Crosswind Component</n-text
-          >
-          <NInput
-            :value="`${formatDecimal(Math.abs(crosswindComponent))} kt ${crosswindComponent >= 0 ? '(right)' : '(left)'}`"
-            disabled
-            size="small"
-          />
-        </div>
-      </div>
-    </div>
+      </NGridItem>
+      <NGridItem>
+        <NGrid :cols="2" :x-gap="8">
+          <NGridItem>
+            <NText tag="label" strong style="display: block; margin-bottom: 8px"
+              >Wind Direction (magnetic, °)</NText
+            >
+            <NInputNumber
+              :value="windDirection"
+              @update:value="(v: number | null) => emit('update:windDirection', v ?? 0)"
+              :min="0"
+              :max="359"
+              style="width: 100%"
+              placeholder="Direction wind is FROM"
+            />
+          </NGridItem>
+          <NGridItem>
+            <NText tag="label" strong style="display: block; margin-bottom: 8px"
+              >Wind Speed (knots)</NText
+            >
+            <NInputNumber
+              :value="windSpeed"
+              @update:value="(v: number | null) => emit('update:windSpeed', v ?? 0)"
+              :min="0"
+              :max="100"
+              style="width: 100%"
+            />
+          </NGridItem>
+        </NGrid>
+      </NGridItem>
+      <NGridItem v-if="showWindComponents">
+        <NGrid :cols="2" :x-gap="8">
+          <NGridItem>
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Headwind Component</NText
+            >
+            <NInput :value="`${formatDecimal(headwindComponent)} kt`" disabled />
+          </NGridItem>
+          <NGridItem>
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Crosswind Component</NText
+            >
+            <NInput
+              :value="`${formatDecimal(Math.abs(crosswindComponent))} kt ${crosswindComponent >= 0 ? '(right)' : '(left)'}`"
+              disabled
+            />
+          </NGridItem>
+        </NGrid>
+      </NGridItem>
+    </NGrid>
   </NCard>
 </template>

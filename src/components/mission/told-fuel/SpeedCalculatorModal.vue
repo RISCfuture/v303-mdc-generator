@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
-import { NModal, NSelect, NSpace, NButton, NInputNumber, NText, NInput, NCard } from 'naive-ui'
+import {
+  NModal,
+  NSelect,
+  NSpace,
+  NButton,
+  NInputNumber,
+  NText,
+  NInput,
+  NCard,
+  NGrid,
+  NGridItem,
+} from 'naive-ui'
 import AirportSelector from './AirportSelector.vue'
 import WeatherInputs from './WeatherInputs.vue'
 import type { Mission, Airframe, F16CalculatorParams, A10CalculatorParams } from '@/types'
@@ -234,8 +245,8 @@ function handleCancel() {
 
       <!-- Runway Section -->
       <NCard title="Runway" size="small">
-        <div style="display: grid; gap: 12px">
-          <div>
+        <NGrid :cols="1" :y-gap="12">
+          <NGridItem>
             <label>Condition</label>
             <NSelect
               v-if="airframe === 'F-16C_50'"
@@ -256,10 +267,10 @@ function handleCancel() {
                 { label: 'Icy', value: 'icy' },
               ]"
             />
-          </div>
+          </NGridItem>
 
           <!-- F-16 Runway Slope -->
-          <div v-if="airframe === 'F-16C_50'">
+          <NGridItem v-if="airframe === 'F-16C_50'">
             <label>Slope (%)</label>
             <NInputNumber
               v-model:value="runwaySlope"
@@ -268,24 +279,34 @@ function handleCancel() {
               :step="0.1"
               style="width: 100%"
             />
-            <NText depth="3" style="font-size: 12px; margin-top: 4px">
-              Positive = upslope, Negative = downslope
-            </NText>
-          </div>
-        </div>
+            <NSpace vertical :size="4">
+              <NText depth="3" style="font-size: 12px">
+                Positive = upslope, Negative = downslope
+              </NText>
+            </NSpace>
+          </NGridItem>
+        </NGrid>
       </NCard>
 
       <!-- Configuration Section -->
       <NCard title="Configuration" size="small">
-        <div style="display: grid; gap: 12px">
-          <div>
-            <label class="small-label">Gross Weight</label>
-            <NInput :value="`${grossWeight.toLocaleString()} lbs`" disabled size="small" />
-          </div>
-
+        <NGrid :cols="1" :y-gap="12">
           <!-- F-16 Specific Parameters -->
           <template v-if="airframe === 'F-16C_50'">
-            <div>
+            <NGridItem>
+              <NGrid :cols="2" :x-gap="8">
+                <NGridItem>
+                  <label>Gross Weight</label>
+                  <NInput :value="`${grossWeight.toLocaleString()} lbs`" disabled />
+                </NGridItem>
+                <NGridItem>
+                  <label>CG Position (% MAC)</label>
+                  <NInputNumber v-model:value="cgPercent" :min="20" :max="35" style="width: 100%" />
+                </NGridItem>
+              </NGrid>
+            </NGridItem>
+
+            <NGridItem>
               <label>Power Setting</label>
               <NSelect
                 v-model:value="powerSetting"
@@ -294,14 +315,9 @@ function handleCancel() {
                   { label: 'Afterburner (AB)', value: 'AB' },
                 ]"
               />
-            </div>
+            </NGridItem>
 
-            <div>
-              <label>CG Position (% MAC)</label>
-              <NInputNumber v-model:value="cgPercent" :min="20" :max="35" style="width: 100%" />
-            </div>
-
-            <div>
+            <NGridItem>
               <label>Pitch Attitude (degrees)</label>
               <NSelect
                 v-model:value="pitchAttitude"
@@ -310,12 +326,17 @@ function handleCancel() {
                   { label: '10° (standard)', value: 10 },
                 ]"
               />
-            </div>
+            </NGridItem>
           </template>
 
           <!-- A-10 Specific Parameters -->
           <template v-else-if="airframe === 'A-10C_2'">
-            <div>
+            <NGridItem>
+              <label>Gross Weight</label>
+              <NInput :value="`${grossWeight.toLocaleString()} lbs`" disabled />
+            </NGridItem>
+
+            <NGridItem>
               <label>Flap Setting</label>
               <NSelect
                 v-model:value="flapSetting"
@@ -324,9 +345,9 @@ function handleCancel() {
                   { label: '7° (flaps takeoff)', value: 7 },
                 ]"
               />
-            </div>
+            </NGridItem>
 
-            <div>
+            <NGridItem>
               <label>Speed Brake</label>
               <NSelect
                 v-model:value="speedBrake"
@@ -335,9 +356,9 @@ function handleCancel() {
                   { label: 'Closed (retracted)', value: 'closed' as const },
                 ]"
               />
-            </div>
+            </NGridItem>
           </template>
-        </div>
+        </NGrid>
       </NCard>
     </NSpace>
 
@@ -357,10 +378,5 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-}
-
-.small-label {
-  font-size: 12px;
-  opacity: 0.7;
 }
 </style>

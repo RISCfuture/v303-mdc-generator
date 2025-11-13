@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NInputNumber, NText } from 'naive-ui'
+import { NInputNumber, NText, NGrid, NGridItem } from 'naive-ui'
 import { formatInteger, parseInteger, formatDecimal, parseDecimal } from '@/utils/numberFormatting'
 import { useCCIPCalculations } from '@/composables/useCCIPCalculations'
 import type { CCIPReferencePoint } from '@/types'
@@ -40,8 +40,8 @@ const parseElevation = (input: string): number | null => {
 </script>
 
 <template>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px">
-    <div>
+  <NGrid :cols="3" :x-gap="12" responsive="screen" cols-s="1" cols-m="3">
+    <NGridItem>
       <NInputNumber
         :value="point?.bearing"
         @update:value="(v: number | null) => emit('update:bearing', v)"
@@ -52,8 +52,8 @@ const parseElevation = (input: string): number | null => {
       >
         <template #suffix>°</template>
       </NInputNumber>
-    </div>
-    <div>
+    </NGridItem>
+    <NGridItem>
       <NInputNumber
         :value="point?.distance"
         @update:value="(v: number | null) => emit('update:distance', v)"
@@ -65,8 +65,8 @@ const parseElevation = (input: string): number | null => {
         <template #suffix>ft</template>
       </NInputNumber>
       <NText depth="3" style="font-size: 11px">{{ formatDistanceWithNM(point?.distance) }}</NText>
-    </div>
-    <div>
+    </NGridItem>
+    <NGridItem>
       <NInputNumber
         :value="point?.elevation"
         @update:value="(v: number | null) => emit('update:elevation', v)"
@@ -80,17 +80,6 @@ const parseElevation = (input: string): number | null => {
       <NText depth="3" style="font-size: 11px">{{
         formatElevationWithMSL(point?.elevation, props.targetSteerpointAltitude)
       }}</NText>
-    </div>
-  </div>
+    </NGridItem>
+  </NGrid>
 </template>
-
-<style scoped>
-/* Mobile responsive styles */
-@media (width <= 768px) {
-  div[style*='grid-template-columns: 1fr 1fr 1fr'] {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-}
-</style>

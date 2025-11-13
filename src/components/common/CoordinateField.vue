@@ -22,7 +22,7 @@ const props = withDefaults(
     label?: string
   }>(),
   {
-    size: 'small',
+    size: 'medium',
     placeholder: '',
     label: 'Coordinate',
     format: 'DDM',

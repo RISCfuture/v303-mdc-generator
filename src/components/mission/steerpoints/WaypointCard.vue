@@ -53,49 +53,53 @@ const emit = defineEmits<{
     @drop="emit('drop')"
   >
     <NCard size="small">
-      <div class="waypoint-row">
-        <NText depth="3" class="waypoint-drag-handle">
-          <NIcon size="20"><ReorderThreeOutline /></NIcon>
-        </NText>
-        <div class="waypoint-mobile-controls">
-          <NButton size="tiny" quaternary circle @click="emit('move-up')" :disabled="isFirst">
-            <template #icon
-              ><NIcon><ArrowUpOutline /></NIcon
-            ></template>
-          </NButton>
-          <NButton size="tiny" quaternary circle @click="emit('move-down')" :disabled="isLast">
-            <template #icon
-              ><NIcon><ArrowDownOutline /></NIcon
-            ></template>
-          </NButton>
+      <div class="waypoint-content">
+        <div class="waypoint-main">
+          <div class="waypoint-row">
+            <NText depth="3" class="waypoint-drag-handle">
+              <NIcon size="20"><ReorderThreeOutline /></NIcon>
+            </NText>
+            <div class="waypoint-mobile-controls">
+              <NButton size="tiny" quaternary circle @click="emit('move-up')" :disabled="isFirst">
+                <template #icon
+                  ><NIcon><ArrowUpOutline /></NIcon
+                ></template>
+              </NButton>
+              <NButton size="tiny" quaternary circle @click="emit('move-down')" :disabled="isLast">
+                <template #icon
+                  ><NIcon><ArrowDownOutline /></NIcon
+                ></template>
+              </NButton>
+            </div>
+            <div class="waypoint-seq">{{ formatInteger(waypoint.sequence) }}</div>
+            <WaypointFields
+              :waypoint="waypoint"
+              :tot-placeholder="totPlaceholder"
+              :is-waypoint-field-incomplete="isWaypointFieldIncomplete"
+              @update-field="
+                (field: keyof Waypoint, value: unknown) => emit('update-field', field, value)
+              "
+              @blur="emit('blur')"
+            />
+          </div>
+
+          <!-- CCIP Fields for TGT type waypoints -->
+          <WaypointCCIPFields
+            v-if="waypoint.type === 'TGT'"
+            :waypoint="waypoint"
+            :is-first-tgt="props.isFirstTgt"
+            @update-field="
+              (field: keyof Waypoint, value: unknown) => emit('update-field', field, value)
+            "
+            @blur="emit('blur')"
+          />
         </div>
-        <div class="waypoint-seq">{{ formatInteger(waypoint.sequence) }}</div>
-        <WaypointFields
-          :waypoint="waypoint"
-          :tot-placeholder="totPlaceholder"
-          :is-waypoint-field-incomplete="isWaypointFieldIncomplete"
-          @update-field="
-            (field: keyof Waypoint, value: unknown) => emit('update-field', field, value)
-          "
-          @blur="emit('blur')"
-        />
         <NButton class="waypoint-delete" size="small" @click="emit('remove')" type="error">
           <template #icon>
             <NIcon><TrashOutline /></NIcon>
           </template>
         </NButton>
       </div>
-
-      <!-- CCIP Fields for TGT type waypoints -->
-      <WaypointCCIPFields
-        v-if="waypoint.type === 'TGT'"
-        :waypoint="waypoint"
-        :is-first-tgt="props.isFirstTgt"
-        @update-field="
-          (field: keyof Waypoint, value: unknown) => emit('update-field', field, value)
-        "
-        @blur="emit('blur')"
-      />
     </NCard>
   </div>
 </template>
@@ -110,12 +114,21 @@ const emit = defineEmits<{
   opacity: 0.5;
 }
 
+.waypoint-content {
+  display: flex;
+  align-items: center;
+  gap: v-bind('SPACING.md');
+}
+
+.waypoint-main {
+  flex: 1;
+}
+
 .waypoint-row {
   display: grid;
   grid-template-columns:
     v-bind('GRID.dragHandle') v-bind('GRID.position') 1fr v-bind('GRID.columnSmall')
-    1fr 1fr v-bind('GRID.columnTOT') v-bind('GRID.columnMedium') v-bind('GRID.columnSmall')
-    v-bind('SPACING["4xl"]');
+    1fr 1fr v-bind('GRID.columnTOT') v-bind('GRID.columnMedium') v-bind('GRID.columnSmall');
   gap: v-bind('SPACING.md');
   align-items: end;
 }
@@ -145,13 +158,17 @@ const emit = defineEmits<{
 }
 
 .waypoint-delete {
-  align-self: center;
+  flex-shrink: 0;
 }
 
 /* Mobile responsive styles */
 
 /* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
+  .waypoint-content {
+    flex-direction: column;
+  }
+
   .waypoint-row {
     display: flex;
     flex-direction: column;

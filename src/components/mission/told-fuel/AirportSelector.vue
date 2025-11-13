@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch, toRef } from 'vue'
-import { NCard, NSelect, NInput, NText } from 'naive-ui'
+import { NCard, NSelect, NInput, NText, NGrid, NGridItem } from 'naive-ui'
 import { useAirportSelection } from '@/composables/useAirportSelection'
 import { formatInteger } from '@/utils/numberFormatting'
 import type { Theater } from '@/types'
@@ -51,9 +51,9 @@ function handleRunwayChange(value: string | null) {
 
 <template>
   <NCard title="Airport" size="small">
-    <div style="display: grid; gap: 12px">
-      <div>
-        <n-text tag="label" strong style="display: block; margin-bottom: 8px">Airport</n-text>
+    <NGrid :cols="1" :y-gap="12">
+      <NGridItem>
+        <NText tag="label" strong style="display: block; margin-bottom: 8px">Airport</NText>
         <NSelect
           :value="airport.selectedAirfieldName.value"
           @update:value="handleAirportChange"
@@ -63,9 +63,9 @@ function handleRunwayChange(value: string | null) {
           clearable
           :disabled="disabled"
         />
-      </div>
-      <div>
-        <n-text tag="label" strong style="display: block; margin-bottom: 8px">Runway</n-text>
+      </NGridItem>
+      <NGridItem>
+        <NText tag="label" strong style="display: block; margin-bottom: 8px">Runway</NText>
         <NSelect
           :value="airport.selectedRunwayName.value"
           @update:value="handleRunwayChange"
@@ -74,29 +74,23 @@ function handleRunwayChange(value: string | null) {
           :disabled="disabled"
           clearable
         />
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
-        <div v-if="airport.fieldElevation.value !== null">
-          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-            >Field Elevation</n-text
-          >
-          <NInput
-            :value="`${airport.fieldElevation.value.toLocaleString()} ft MSL`"
-            disabled
-            size="small"
-          />
-        </div>
-        <div v-if="airport.selectedRunway.value">
-          <n-text tag="label" depth="2" style="display: block; margin-bottom: 8px"
-            >Runway Heading</n-text
-          >
-          <NInput
-            :value="`${formatInteger(airport.selectedRunway.value.heading)}°`"
-            disabled
-            size="small"
-          />
-        </div>
-      </div>
-    </div>
+      </NGridItem>
+      <NGridItem>
+        <NGrid :cols="2" :x-gap="8">
+          <NGridItem v-if="airport.fieldElevation.value !== null">
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Field Elevation</NText
+            >
+            <NInput :value="`${airport.fieldElevation.value.toLocaleString()} ft MSL`" disabled />
+          </NGridItem>
+          <NGridItem v-if="airport.selectedRunway.value">
+            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
+              >Runway Heading</NText
+            >
+            <NInput :value="`${formatInteger(airport.selectedRunway.value.heading)}°`" disabled />
+          </NGridItem>
+        </NGrid>
+      </NGridItem>
+    </NGrid>
   </NCard>
 </template>
