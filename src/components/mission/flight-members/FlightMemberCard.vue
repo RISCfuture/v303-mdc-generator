@@ -9,6 +9,8 @@ import {
 } from '@vicons/ionicons5'
 import { getCrewPositionShort } from '@/data/constants'
 import { getFlightNumber } from '@/utils/callsignHelpers'
+import { airframeDatabase } from '@/data/airframes'
+import { getDatalinkType, getDatalinkLabel, shouldShowSTN } from '@/utils/datalinkHelpers'
 import { FONT_SIZE, SPACING } from '@/styles/design-tokens'
 import type { CrewMember } from '@/types'
 
@@ -19,6 +21,7 @@ interface Props {
   isLast: boolean
   effectiveFlightCallsign: string
   effectiveLink16Prefix: string
+  airframe: string
 }
 
 const props = defineProps<Props>()
@@ -37,6 +40,17 @@ const emit = defineEmits<{
  * Returns the trailing digit (1-9) if present, otherwise "1"
  */
 const flightNumber = computed(() => getFlightNumber(props.effectiveFlightCallsign))
+
+/**
+ * Get datalink type and label for display
+ */
+const datalinkType = computed(() => {
+  const aircraftData = airframeDatabase[props.airframe]
+  return getDatalinkType(aircraftData)
+})
+
+const datalinkLabel = computed(() => getDatalinkLabel(datalinkType.value))
+const showSTN = computed(() => shouldShowSTN(datalinkType.value))
 </script>
 
 <template>
@@ -71,9 +85,11 @@ const flightNumber = computed(() => getFlightNumber(props.effectiveFlightCallsig
             <strong>{{ member.pilot }}</strong> ({{ member.position }})
           </div>
           <NText depth="3" class="crew-details">
-            Link16: {{ effectiveLink16Prefix }}{{ flightNumber }}{{ index + 1 }} | STN:
-            {{ member.stn }} | Mode 3: {{ member.mode3 }} | Laser: {{ member.laser }} | Tail:
-            {{ member.tailNumber }}
+            <template v-if="datalinkLabel"
+              >{{ datalinkLabel }}: {{ effectiveLink16Prefix }}{{ flightNumber }}{{ index + 1 }} |
+            </template>
+            <template v-if="showSTN">STN: {{ member.stn }} | </template>
+            Mode 3: {{ member.mode3 }} | Laser: {{ member.laser }} | Tail: {{ member.tailNumber }}
           </NText>
         </div>
         <NButton size="small" @click="emit('remove')" type="error">

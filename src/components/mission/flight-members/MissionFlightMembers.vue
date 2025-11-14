@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { NCard, NSelect, NForm, NFormItem, NInput, NAutoComplete, NText } from 'naive-ui'
 import { FORM, SPACING, WIDTH } from '@/styles/design-tokens'
+import { airframeDatabase } from '@/data/airframes'
+import { getDatalinkType, getDatalinkLabel } from '@/utils/datalinkHelpers'
 import FlightMemberCard from '@/components/mission/flight-members/FlightMemberCard.vue'
 import type { CrewMember } from '@/types'
 import type { DragAndDropReturn } from '@/utils/useDragAndDrop'
@@ -15,9 +18,10 @@ interface Props {
   flightCallsignOverride: string
   link16PrefixOverride: string
   availableCallsignOptions: { label: string; value: string }[]
+  airframe: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
   'add-crew-member': [pilotName: string]
@@ -28,6 +32,15 @@ const emit = defineEmits<{
   'update:flight-callsign': [value: string]
   'update:link16-prefix': [value: string]
 }>()
+
+// Get datalink type and label for display
+const datalinkType = computed(() => {
+  const aircraftData = airframeDatabase[props.airframe]
+  return getDatalinkType(aircraftData)
+})
+
+const datalinkLabel = computed(() => getDatalinkLabel(datalinkType.value) || 'Link16')
+const showDatalinkPrefix = computed(() => datalinkType.value !== null)
 </script>
 
 <template>
@@ -47,6 +60,7 @@ const emit = defineEmits<{
           :is-last="index === crew.length - 1"
           :effective-flight-callsign="effectiveFlightCallsign"
           :effective-link16-prefix="effectiveLink16Prefix"
+          :airframe="airframe"
           @remove="emit('remove-crew-member', index)"
           @move-up="emit('move-crew-up', index)"
           @move-down="emit('move-crew-down', index)"
@@ -92,9 +106,10 @@ const emit = defineEmits<{
             />
           </NFormItem>
           <NFormItem
-            label="Link16 Prefix"
+            v-if="showDatalinkPrefix"
+            :label="`${datalinkLabel} Prefix`"
             :validation-status="!link16PrefixOverride ? 'error' : undefined"
-            :feedback="!link16PrefixOverride ? 'Link16 prefix is required' : undefined"
+            :feedback="!link16PrefixOverride ? `${datalinkLabel} prefix is required` : undefined"
             class="link16-prefix-field"
           >
             <NInput

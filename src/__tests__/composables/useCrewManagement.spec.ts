@@ -114,8 +114,9 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
-      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew)
+      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew, airframe)
 
       // Add first pilot as lead
       addCrewMember('Pilot A')
@@ -129,8 +130,9 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
-      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew)
+      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew, airframe)
 
       // Add 4-ship flight
       addCrewMember('Pilot A') // Lead: 1301
@@ -164,7 +166,8 @@ describe('useCrewManagement', () => {
       }
 
       const availableCrew = computed(() => [pilotNearBoundary, ...mockCrewDatabase])
-      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
+      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew, airframe)
 
       // Add lead with mode-3 1307
       addCrewMember('Boundary Pilot') // Lead: 1307
@@ -186,11 +189,13 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
       const { addCrewMember, moveCrewMemberUp } = useCrewManagement(
         missionIdRef,
         crew,
         availableCrew,
+        airframe,
       )
 
       // Build 4-ship with Pilot A as lead
@@ -219,11 +224,13 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
       const { addCrewMember, moveCrewMemberDown } = useCrewManagement(
         missionIdRef,
         crew,
         availableCrew,
+        airframe,
       )
 
       // Build 4-ship with Pilot A as lead
@@ -249,11 +256,13 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
       const { addCrewMember, removeCrewMember } = useCrewManagement(
         missionIdRef,
         crew,
         availableCrew,
+        airframe,
       )
 
       // Build 4-ship
@@ -282,11 +291,13 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
       const { addCrewMember, removeCrewMember } = useCrewManagement(
         missionIdRef,
         crew,
         availableCrew,
+        airframe,
       )
 
       // Build 3-ship
@@ -313,8 +324,9 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
-      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew)
+      const { addCrewMember } = useCrewManagement(missionIdRef, crew, availableCrew, airframe)
 
       addCrewMember('Pilot A')
       addCrewMember('Pilot B')
@@ -337,11 +349,13 @@ describe('useCrewManagement', () => {
       const mission = computed(() => missionsStore.getMission(missionId))
       const crew = computed(() => mission.value?.crew || [])
       const availableCrew = computed(() => mockCrewDatabase)
+      const airframe = computed(() => mission.value?.airframe || 'F-16C')
 
       const { addCrewMember, moveCrewMemberUp } = useCrewManagement(
         missionIdRef,
         crew,
         availableCrew,
+        airframe,
       )
 
       addCrewMember('Pilot A')

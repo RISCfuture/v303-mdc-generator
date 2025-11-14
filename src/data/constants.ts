@@ -49,6 +49,10 @@ export function getCrewPositionLabel(index: number): string {
   if (index === 1) return 'WING'
   if (index === 2) return 'ELEMENT LEAD'
   if (index === 3) return 'ELEMENT WING'
+  if (index === 4) return '-5'
+  if (index === 5) return '-6'
+  if (index === 6) return '-7'
+  if (index === 7) return '-8'
   return `POSITION ${index + 1}`
 }
 

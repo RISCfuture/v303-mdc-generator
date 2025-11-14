@@ -79,6 +79,11 @@
       "minimum": 0,
       "description": "Default bingo fuel level in pounds"
     },
+    "datalinkType": {
+      "type": ["string", "null"],
+      "enum": ["link16", "sadl", null],
+      "description": "Type of datalink system used by the aircraft (link16, sadl, or null for no datalink)"
+    },
     "radios": {
       "type": "array",
       "description": "Radio configurations for this airframe",

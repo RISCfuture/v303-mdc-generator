@@ -27,6 +27,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -44,6 +45,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -62,6 +64,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -79,6 +82,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -98,6 +102,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -115,6 +120,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -132,6 +138,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -149,6 +156,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -166,6 +174,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -185,6 +194,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -208,6 +218,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -232,6 +243,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -252,6 +264,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -270,6 +283,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -290,6 +304,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -310,6 +325,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -332,6 +348,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -350,6 +367,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -371,6 +389,7 @@ describe('FlightMemberCard', () => {
           isLast: true,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 
@@ -394,6 +413,7 @@ describe('FlightMemberCard', () => {
           isLast: false,
           effectiveFlightCallsign: 'Viper',
           effectiveLink16Prefix: 'VP',
+          airframe: 'F-16C_50',
         },
       })
 

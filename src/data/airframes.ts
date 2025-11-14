@@ -71,6 +71,7 @@ export interface GunData {
 export interface AirframeData {
   aircraft: string
   displayName: string
+  datalinkType?: 'link16' | 'sadl' | null // Type of datalink system (link16, sadl, or null for no datalink)
   emptyWeight: number
   maxTakeoffWeight: number
   internalFuel: number

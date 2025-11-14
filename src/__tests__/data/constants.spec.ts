@@ -96,13 +96,16 @@ describe('constants', () => {
       expect(getCrewPositionLabel(3)).toBe('ELEMENT WING')
     })
 
-    it('should return "POSITION N" for index >= 4', () => {
-      expect(getCrewPositionLabel(4)).toBe('POSITION 5')
-      expect(getCrewPositionLabel(5)).toBe('POSITION 6')
-      expect(getCrewPositionLabel(10)).toBe('POSITION 11')
+    it('should return "-N" for indices 4-7', () => {
+      expect(getCrewPositionLabel(4)).toBe('-5')
+      expect(getCrewPositionLabel(5)).toBe('-6')
+      expect(getCrewPositionLabel(6)).toBe('-7')
+      expect(getCrewPositionLabel(7)).toBe('-8')
     })
 
-    it('should handle large indices', () => {
+    it('should return "POSITION N" for index >= 8', () => {
+      expect(getCrewPositionLabel(8)).toBe('POSITION 9')
+      expect(getCrewPositionLabel(10)).toBe('POSITION 11')
       expect(getCrewPositionLabel(99)).toBe('POSITION 100')
     })
   })

@@ -168,6 +168,9 @@ const {
   moveWaypointDown,
 } = useWaypointManagement(missionId, waypoints)
 
+// Get airframe first since it's needed by multiple composables
+const airframe = computed(() => (mission.value ? getMissionAirframe(mission.value) : ''))
+
 // Crew management
 const crew = computed(() => mission.value?.crew || [])
 const {
@@ -177,10 +180,9 @@ const {
   handleCrewDrop,
   moveCrewMemberUp,
   moveCrewMemberDown,
-} = useCrewManagement(missionId, crew, availableCrew)
+} = useCrewManagement(missionId, crew, availableCrew, airframe)
 
 // Loadout management
-const airframe = computed(() => (mission.value ? getMissionAirframe(mission.value) : ''))
 const loadout = computed(() => mission.value?.loadout || [])
 const { selectedSCL, airframeStations, loadPrefabLoadout, clearAllLoadout, updateLoadoutStation } =
   useLoadoutManagement(missionId, airframe, loadout, availableLoadouts)
@@ -458,6 +460,7 @@ function handleSelectMDCExport(key: string) {
               :crew-drag-drop="crewDragDrop"
               :effective-flight-callsign="effectiveFlightCallsign"
               :effective-link16-prefix="effectiveLink16Prefix"
+              :airframe="airframe"
               :flight-callsign-override="mission.flightCallsignOverride"
               :link16-prefix-override="mission.link16PrefixOverride"
               :available-callsign-options="availableCallsignOptions"

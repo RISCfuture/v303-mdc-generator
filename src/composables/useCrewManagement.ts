@@ -1,8 +1,10 @@
 import { type ComputedRef } from 'vue'
 import { useMissionsStore } from '@/stores/missions'
 import { useDragAndDrop } from '@/utils/useDragAndDrop'
-import { formatSTN, formatMode3, incrementMode3, formatLaserCode } from '@/utils/crewFormatting'
+import { formatMode3, incrementMode3, formatLaserCode } from '@/utils/crewFormatting'
 import { getCrewPositionLabel } from '@/data/constants'
+import { airframeDatabase } from '@/data/airframes'
+import { getDatalinkType, getCrewMemberSTN, formatSTNForDatalink } from '@/utils/datalinkHelpers'
 import type { CrewMember } from '@/types'
 
 export interface CrewDatabaseEntry {
@@ -24,6 +26,7 @@ export function useCrewManagement(
   missionId: ComputedRef<string>,
   crew: ComputedRef<CrewMember[]>,
   availableCrew: ComputedRef<CrewDatabaseEntry[]>,
+  airframe: ComputedRef<string>,
 ) {
   const missionsStore = useMissionsStore()
   const crewDragDrop = useDragAndDrop<CrewMember>()
@@ -97,12 +100,23 @@ export function useCrewManagement(
     if (!pilot) return
 
     const index = crew.value.length
+    const aircraftData = airframeDatabase[airframe.value]
+    const datalinkType = getDatalinkType(aircraftData)
+
+    // Get the lead's STN for SADL calculation
+    const leadSTN =
+      crew.value.length > 0 && crew.value[0] ? parseInt(crew.value[0].stn) || pilot.stn : pilot.stn
+
+    // Calculate STN based on datalink type
+    const stn = getCrewMemberSTN(pilot.stn, leadSTN, index, datalinkType)
+    const stnFormatted = stn != null ? formatSTNForDatalink(stn, datalinkType) : ''
+
     const crewMember: CrewMember = {
       position: getCrewPositionLabel(index),
       pilot: pilot.pilot,
       callsign: pilot.link16Prefix,
       own: (index + 1).toString(),
-      stn: formatSTN(pilot.stn),
+      stn: stnFormatted,
       mode3: calculateMode3ForPosition(index, pilot.mode3),
       aaTcn: `${pilot.aaTacan}Y`, // Store only the pilot's own TACAN
       intraflight: pilot.freq,
@@ -117,10 +131,22 @@ export function useCrewManagement(
 
   function removeCrewMember(index: number) {
     const updatedCrew = crew.value.filter((_, i) => i !== index)
-    // Re-assign positions and own numbers
+    const aircraftData = airframeDatabase[airframe.value]
+    const datalinkType = getDatalinkType(aircraftData)
+
+    // Re-assign positions and STNs
     updatedCrew.forEach((member, i) => {
       member.position = getCrewPositionLabel(i)
       member.own = (i + 1).toString()
+
+      // For SADL, recalculate STNs based on new positions
+      if (datalinkType === 'sadl' && updatedCrew.length > 0 && updatedCrew[0]) {
+        const leadSTN = parseInt(updatedCrew[0].stn) || 1134 // Default if parsing fails
+        const stn = getCrewMemberSTN(null, leadSTN, i, datalinkType)
+        if (stn != null) {
+          member.stn = formatSTNForDatalink(stn, datalinkType)
+        }
+      }
     })
     // Recalculate mode-3 codes based on new positions
     recalculateMode3Codes(updatedCrew)
@@ -132,10 +158,22 @@ export function useCrewManagement(
       targetIndex,
       crew.value,
       (updatedCrew) => {
-        // Re-assign positions and own numbers
+        const aircraftData = airframeDatabase[airframe.value]
+        const datalinkType = getDatalinkType(aircraftData)
+
+        // Re-assign positions, own numbers, and STNs
         updatedCrew.forEach((member, i) => {
           member.position = getCrewPositionLabel(i)
           member.own = (i + 1).toString()
+
+          // For SADL, recalculate STNs based on new positions
+          if (datalinkType === 'sadl' && updatedCrew.length > 0 && updatedCrew[0]) {
+            const leadSTN = parseInt(updatedCrew[0].stn) || 1134
+            const stn = getCrewMemberSTN(null, leadSTN, i, datalinkType)
+            if (stn != null) {
+              member.stn = formatSTNForDatalink(stn, datalinkType)
+            }
+          }
         })
         // Recalculate mode-3 codes based on new positions
         recalculateMode3Codes(updatedCrew)
@@ -153,10 +191,23 @@ export function useCrewManagement(
     if (!current || !prev) return
     updatedCrew[index] = prev
     updatedCrew[index - 1] = current
-    // Re-assign positions and own numbers
+
+    const aircraftData = airframeDatabase[airframe.value]
+    const datalinkType = getDatalinkType(aircraftData)
+
+    // Re-assign positions, own numbers, and STNs
     updatedCrew.forEach((member, i) => {
       member.position = getCrewPositionLabel(i)
       member.own = (i + 1).toString()
+
+      // For SADL, recalculate STNs based on new positions
+      if (datalinkType === 'sadl' && updatedCrew.length > 0 && updatedCrew[0]) {
+        const leadSTN = parseInt(updatedCrew[0].stn) || 1134
+        const stn = getCrewMemberSTN(null, leadSTN, i, datalinkType)
+        if (stn != null) {
+          member.stn = formatSTNForDatalink(stn, datalinkType)
+        }
+      }
     })
     // Recalculate mode-3 codes based on new positions
     recalculateMode3Codes(updatedCrew)
@@ -171,10 +222,23 @@ export function useCrewManagement(
     if (!current || !next) return
     updatedCrew[index] = next
     updatedCrew[index + 1] = current
-    // Re-assign positions and own numbers
+
+    const aircraftData = airframeDatabase[airframe.value]
+    const datalinkType = getDatalinkType(aircraftData)
+
+    // Re-assign positions, own numbers, and STNs
     updatedCrew.forEach((member, i) => {
       member.position = getCrewPositionLabel(i)
       member.own = (i + 1).toString()
+
+      // For SADL, recalculate STNs based on new positions
+      if (datalinkType === 'sadl' && updatedCrew.length > 0 && updatedCrew[0]) {
+        const leadSTN = parseInt(updatedCrew[0].stn) || 1134
+        const stn = getCrewMemberSTN(null, leadSTN, i, datalinkType)
+        if (stn != null) {
+          member.stn = formatSTNForDatalink(stn, datalinkType)
+        }
+      }
     })
     // Recalculate mode-3 codes based on new positions
     recalculateMode3Codes(updatedCrew)
