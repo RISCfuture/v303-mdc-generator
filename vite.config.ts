@@ -1,13 +1,18 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
-  const plugins = [vue(), vueDevTools()]
+export default defineConfig(async ({ mode }) => {
+  const plugins: PluginOption[] = [vue()]
+
+  // Only add Vue DevTools in development
+  if (mode === 'development') {
+    const { default: vueDevTools } = await import('vite-plugin-vue-devtools')
+    plugins.push(vueDevTools())
+  }
 
   // Only add Sentry plugin in production builds
   if (mode === 'production') {

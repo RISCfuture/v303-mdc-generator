@@ -43,6 +43,8 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.6",
     "@pinia/testing": "^1.0.3",
     "@playwright/test": "^1.56.1",
     "@sentry/vite-plugin": "^4.6.0",
