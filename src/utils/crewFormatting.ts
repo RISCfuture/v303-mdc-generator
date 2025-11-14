@@ -35,6 +35,41 @@ export function formatMode3(mode3: number | null): string {
 }
 
 /**
+ * Increment a Mode 3 code by 1 in octal, skipping invalid digits (8, 9)
+ * @param mode3 - Mode 3 value (stored as decimal, represents octal)
+ * @returns Incremented Mode 3 value (decimal)
+ * @example
+ * incrementMode3(0o1301) // Returns 0o1302 (in decimal: 577 -> 578)
+ * incrementMode3(0o1307) // Returns 0o1310 (in decimal: 583 -> 584)
+ * incrementMode3(0o1377) // Returns 0o1400 (in decimal: 767 -> 768)
+ * incrementMode3(0o7777) // Returns 0o0000 (wraps to 0)
+ */
+export function incrementMode3(mode3: number): number {
+  // Convert to octal string to work with individual digits
+  const octalStr = mode3.toString(8).padStart(4, '0')
+  const digits = octalStr.split('').map((d) => parseInt(d, 10))
+
+  // Increment from right to left with carry
+  let carry = 1
+  for (let i = digits.length - 1; i >= 0 && carry > 0; i--) {
+    const current = digits[i]
+    if (current !== undefined) {
+      digits[i] = current + carry
+      if (digits[i]! > 7) {
+        digits[i] = 0
+        carry = 1
+      } else {
+        carry = 0
+      }
+    }
+  }
+
+  // Convert back to decimal
+  const resultOctal = digits.join('')
+  return parseInt(resultOctal, 8)
+}
+
+/**
  * Format Laser code as 4-digit octal with +1 to each digit
  * Laser codes use digits 1-8 instead of 0-7
  * @param laserCode - Laser code value (stored as octal decimal, e.g., 1687)
