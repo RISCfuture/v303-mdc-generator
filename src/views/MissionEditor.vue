@@ -86,30 +86,59 @@ function updateNestedField(
   try {
     updateNestedFieldBase(parent, field, value)
 
-    // If departureAirportId was updated, auto-create steerpoint 1 if it doesn't exist
+    // Handle steerpoint updates based on departure airport changes
+    // - If 0 steerpoints: create new steerpoint from departure airport
+    // - If 1 steerpoint: update it to match departure airport
+    // - If 2+ steerpoints: do nothing (preserve user's custom steerpoints)
     if (field === 'departureAirportId' && parent === 'departureRecovery' && value) {
       const currentMission = mission.value
-      if (currentMission && currentMission.waypoints.length === 0) {
+      if (currentMission && currentMission.waypoints.length <= 1) {
         const airportId = value as string
         const airfields = getAirfieldsForTheater(currentMission.theater)
         const airfield = airfields.find((af) => af.name === airportId)
 
         if (airfield) {
-          const newWaypoint: Waypoint = {
-            sequence: 1,
-            name: airfield.name,
-            latitude: airfield.position.latitude,
-            longitude: airfield.position.longitude,
-            elevation: airfield.position.elevation, // Already in feet MSL
-            altitude: airfield.position.elevation ?? 0, // Pre-fill altitude with elevation, or 0 if undefined
-            type: 'PARK',
-          }
+          if (currentMission.waypoints.length === 0) {
+            // No steerpoints: create a new one
+            const newWaypoint: Waypoint = {
+              sequence: 1,
+              name: airfield.name,
+              latitude: airfield.position.latitude,
+              longitude: airfield.position.longitude,
+              elevation: airfield.position.elevation, // Already in feet MSL
+              altitude: airfield.position.elevation ?? 0, // Pre-fill altitude with elevation, or 0 if undefined
+              type: 'PARK',
+            }
 
-          missionsStore.updateMission(missionId.value, {
-            waypoints: [newWaypoint],
-          })
+            missionsStore.updateMission(missionId.value, {
+              waypoints: [newWaypoint],
+            })
+          } else {
+            // Exactly one steerpoint: update it to match the departure airport
+            const existingWaypoint = currentMission.waypoints[0]
+            if (existingWaypoint) {
+              const updatedWaypoint: Waypoint = {
+                sequence: existingWaypoint.sequence,
+                name: airfield.name,
+                latitude: airfield.position.latitude,
+                longitude: airfield.position.longitude,
+                elevation: airfield.position.elevation,
+                altitude: airfield.position.elevation ?? 0,
+                coordinateFormat: existingWaypoint.coordinateFormat,
+                speed: existingWaypoint.speed,
+                timeOnTarget: existingWaypoint.timeOnTarget,
+                type: existingWaypoint.type,
+                ccip: existingWaypoint.ccip,
+              }
+
+              missionsStore.updateMission(missionId.value, {
+                waypoints: [updatedWaypoint],
+              })
+            }
+          }
         }
       }
+      // If 2+ steerpoints, do nothing (preserve user's custom steerpoints)
     }
 
     // If imageIds were updated, schedule cleanup of unused images (debounced)

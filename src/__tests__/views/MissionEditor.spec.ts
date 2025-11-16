@@ -222,18 +222,112 @@ describe('MissionEditor - Auto-create Steerpoint 1', () => {
       expect(waypointCall![1].waypoints![0].altitude).toBeTypeOf('number')
     })
 
-    it('should NOT auto-create steerpoint 1 when waypoints already exist', async () => {
+    it('should update steerpoint 1 when exactly one waypoint exists', async () => {
       const mockMission = createMockMission({
         theater: 'Afghanistan',
         waypoints: [
           {
             sequence: 1,
-            name: 'Existing Waypoint',
+            name: 'Old Waypoint',
             latitude: 31.5,
             longitude: 65.8,
             elevation: 3000,
             altitude: 3000,
             type: 'STPT',
+            timeOnTarget: '12:00:00',
+          },
+        ],
+      })
+
+      const wrapper = mount(MissionEditor, {
+        global: {
+          plugins: [
+            createTestingPinia({
+              createSpy: vi.fn,
+              initialState: {
+                missions: {
+                  missions: [mockMission],
+                  currentMissionId: 'mission-1',
+                },
+              },
+              stubActions: false,
+            }),
+          ],
+          stubs: {
+            NButton: true,
+            NPageHeader: true,
+            NSpace: true,
+            NTabs: true,
+            NTabPane: true,
+            NDropdown: true,
+            NIcon: true,
+            NPopover: true,
+            MissionBasicInfo: true,
+            MissionSteerpoints: true,
+            MissionFlightMembers: true,
+            MissionLoadout: true,
+            RadioPresetsEditor: true,
+            MissionTOLDFuel: true,
+            MissionTargets: true,
+            MissionBriefing: true,
+            MissionECMCMDS: true,
+            SpeedCalculatorModal: true,
+            BingoCalculatorModal: true,
+            MissionPackage: true,
+            MissionSupportAssets: true,
+          },
+        },
+      })
+
+      missionsStore = useMissionsStore()
+      const updateMissionSpy = vi.spyOn(missionsStore, 'updateMission')
+
+      // Simulate setting departure airfield
+      wrapper.vm.updateNestedField('departureRecovery', 'departureAirportId', 'Kandahar')
+      await flushPromises()
+
+      // Get all calls to updateMission
+      const updateCalls = updateMissionSpy.mock.calls
+
+      // Find the call that includes waypoints
+      const waypointCall = updateCalls.find((call) => call[1].waypoints !== undefined)
+
+      // Verify that the waypoint was updated with new airport data
+      expect(waypointCall).toBeDefined()
+      expect(waypointCall![1].waypoints).toHaveLength(1)
+      expect(waypointCall![1].waypoints![0]).toMatchObject({
+        sequence: 1,
+        name: 'Kandahar',
+        type: 'STPT', // Type should be preserved
+        timeOnTarget: '12:00:00', // Other properties should be preserved
+      })
+      expect(waypointCall![1].waypoints![0].latitude).toBeTypeOf('number')
+      expect(waypointCall![1].waypoints![0].longitude).toBeTypeOf('number')
+      expect(waypointCall![1].waypoints![0].elevation).toBeDefined()
+      expect(waypointCall![1].waypoints![0].altitude).toBeTypeOf('number')
+    })
+
+    it('should NOT modify waypoints when more than one waypoint exists', async () => {
+      const mockMission = createMockMission({
+        theater: 'Afghanistan',
+        waypoints: [
+          {
+            sequence: 1,
+            name: 'Waypoint 1',
+            latitude: 31.5,
+            longitude: 65.8,
+            elevation: 3000,
+            altitude: 3000,
+            type: 'STPT',
+          },
+          {
+            sequence: 2,
+            name: 'Waypoint 2',
+            latitude: 32.0,
+            longitude: 66.0,
+            elevation: 3500,
+            altitude: 3500,
+            type: 'NAV',
           },
         ],
       })
@@ -248,7 +342,7 @@ describe('MissionEditor - Auto-create Steerpoint 1', () => {
       wrapper.vm.updateNestedField('departureRecovery', 'departureAirportId', 'Kandahar')
       await flushPromises()
 
-      // Verify that updateMission was NOT called to add a waypoint
+      // Verify that updateMission was NOT called to modify waypoints
       // (only the departureAirportId field should be updated)
       const updateCalls = vi.mocked(missionsStore.updateMission).mock.calls
       const waypointUpdateCalls = updateCalls.filter((call) => call[1].waypoints !== undefined)
