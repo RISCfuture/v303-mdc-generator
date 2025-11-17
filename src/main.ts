@@ -8,10 +8,11 @@ import router from '@/router'
 const app = createApp(App)
 
 // Only initialize Sentry in production, but not during E2E tests
-if (import.meta.env.PROD && !import.meta.env.VITE_DISABLE_SENTRY) {
+const sentryDSN = import.meta.env.VITE_SENTRY_DSN
+if (import.meta.env.PROD && !import.meta.env.VITE_DISABLE_SENTRY && sentryDSN) {
   Sentry.init({
     app,
-    dsn: 'https://6244094f62e15ae78f56b59aa74fe2f3@o4510156629475328.ingest.us.sentry.io/4510265894371328',
+    dsn: sentryDSN,
     // Setting this option to true will send default PII data to Sentry.
     // For example, automatic IP address collection on events
     sendDefaultPii: true,

@@ -18,17 +18,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     # Only run if both Lint and CI workflows succeeded
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Enable Corepack
         run: corepack enable
@@ -45,17 +45,47 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          GITHUB_SHA: ${{ github.sha }}
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          VITE_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+
+      - name: Extract artifact
+        run: |
+          mkdir -p dist
+          tar -xvf artifact.tar -C dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Create Sentry release
+        uses: getsentry/action-release@v3
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: timcodes
+          SENTRY_PROJECT: v303
+        with:
+          environment: production
+          release: ${{ github.sha }}
+          sourcemaps: './dist'
