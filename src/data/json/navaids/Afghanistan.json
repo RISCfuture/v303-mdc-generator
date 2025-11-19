@@ -666,6 +666,18 @@
     "elevation": 404
   },
   {
+    "name": "BYPASS.NORTH",
+    "latitude": 36.8917,
+    "longitude": 69.10948333333333,
+    "elevation": 1706
+  },
+  {
+    "name": "BYPASS.SOUTH",
+    "latitude": 32.99828333333333,
+    "longitude": 65.54168333333334,
+    "elevation": 4455
+  },
+  {
     "name": "Baba Mardan",
     "latitude": 35.176131,
     "longitude": 69.222218,
@@ -1666,6 +1678,24 @@
     "latitude": 31.6279555,
     "longitude": 66.05430283333334,
     "elevation": 3596
+  },
+  {
+    "name": "DRAGON.CENTRAL",
+    "latitude": 33.65806666666667,
+    "longitude": 69.12048333333334,
+    "elevation": 8786
+  },
+  {
+    "name": "DRAGON.NORTH",
+    "latitude": 34.95798333333333,
+    "longitude": 69.16441666666667,
+    "elevation": 5052
+  },
+  {
+    "name": "DRAGON.SOUTH",
+    "latitude": 32.66191666666667,
+    "longitude": 68.51485,
+    "elevation": 7073
   },
   {
     "name": "DUPUG",
@@ -6690,6 +6720,12 @@
     "elevation": 6407
   },
   {
+    "name": "SKYBRIDGE",
+    "latitude": 32.641688333333335,
+    "longitude": 68.06167666666667,
+    "elevation": 6512
+  },
+  {
     "name": "SODAS",
     "latitude": 30.6605555,
     "longitude": 66.06722216666667,
@@ -6712,6 +6748,18 @@
     "latitude": 34.800011,
     "longitude": 72.350008,
     "elevation": 3028
+  },
+  {
+    "name": "STEELJAW.SE",
+    "latitude": 32.42834166666667,
+    "longitude": 69.19246333333334,
+    "elevation": 6952
+  },
+  {
+    "name": "STEELJAW.SW",
+    "latitude": 33.252335,
+    "longitude": 66.79956833333334,
+    "elevation": 10515
   },
   {
     "name": "STICH",

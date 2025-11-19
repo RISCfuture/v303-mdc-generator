@@ -89,13 +89,13 @@
         },
         {
           "number": 18,
-          "frequency": "257.950",
-          "description": ""
+          "frequency": "230.000",
+          "description": "FOB KHOST (OAKS) TOWER"
         },
         {
           "number": 19,
-          "frequency": "354.300",
-          "description": ""
+          "frequency": "365.225",
+          "description": "FOB KHOST (OAKS) ATIS"
         },
         {
           "number": 20,
@@ -159,7 +159,7 @@
         {
           "number": 11,
           "frequency": "123.325",
-          "description": "CAMP BASTION (OAZI) GROUND"
+          "description": "JTAC (AXEMAN)"
         },
         {
           "number": 12,
