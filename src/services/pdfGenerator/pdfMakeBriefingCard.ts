@@ -110,10 +110,15 @@ const defaultTableLayout = {
  * Convert markdown to pdfMake content using mdpdfmake library
  * Supports full markdown features: headings, lists, links, images, formatting
  * Returns unknown because mdpdfmake doesn't provide strong type definitions
+ *
+ * @param markdown - Markdown text to convert
+ * @param options - Conversion options
+ * @param options.fontSize - Font size for text content
+ * @param options.maxImageWidth - Maximum width for images to prevent overflow
  */
 async function markdownToPdfMake(
   markdown: string,
-  options?: { fontSize?: number },
+  options?: { fontSize?: number; maxImageWidth?: number },
 ): Promise<unknown> {
   if (!markdown || markdown.trim() === '') {
     return { text: '' }
@@ -202,9 +207,11 @@ async function markdownToPdfMake(
         try {
           const storedImage = await imageStorage.getImage(part.imageId)
           if (storedImage && storedImage.data) {
+            // Use provided maxImageWidth or default to 400
+            const imageWidth = options?.maxImageWidth || 400
             contentArray.push({
               image: storedImage.data,
-              width: 400, // Max width, maintains aspect ratio
+              width: imageWidth, // Max width, maintains aspect ratio
               margin: [0, 5, 0, 5],
             })
           } else {
@@ -342,6 +349,7 @@ function generateMissionInfoTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -412,6 +420,7 @@ function generateFlightTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -452,6 +461,7 @@ function generateRadiosTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -479,6 +489,8 @@ function generateWeatherBullseyeTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
+    width: '*',
   }
 }
 
@@ -539,6 +551,7 @@ function generatePresetsTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -624,7 +637,7 @@ function generateLoadoutTable(mission: Mission): unknown {
 
   return {
     table: {
-      widths: ['auto', '*', '*', 'auto'],
+      widths: ['auto', '*', 'auto', 'auto'],
       body: [
         [
           { text: 'LOADOUT', fillColor: '#DCDCDC', bold: true, colSpan: 4, alignment: 'center' },
@@ -637,6 +650,8 @@ function generateLoadoutTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
+    width: '*',
   }
 }
 
@@ -713,6 +728,7 @@ function generateToldTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -769,6 +785,7 @@ function generateDepartureRecoveryTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -795,6 +812,9 @@ function generateFlightPlanTable(mission: Mission): unknown {
         const format = wp.coordinateFormat ?? 'DDM'
         coordsDisplay = formatCoordinate(wp.latitude, wp.longitude, format)
       }
+      // Format TOT to HHMMz format if present
+      const totDisplay = wp.timeOnTarget ? formatZuluTime(wp.timeOnTarget) : ''
+
       return [
         { text: wp.sequence.toString(), fillColor: '#DCDCDC', bold: true },
         { text: wp.name || '', fillColor: '#EBF1FA', italics: true },
@@ -802,21 +822,23 @@ function generateFlightPlanTable(mission: Mission): unknown {
         { text: coordsDisplay, fillColor: '#EBF1FA', italics: true },
         { text: wp.altitude ? formatNumber(wp.altitude) : '', fillColor: '#EBF1FA', italics: true },
         { text: wp.speed ? formatNumber(wp.speed) : '', fillColor: '#EBF1FA', italics: true },
+        { text: totDisplay, fillColor: '#EBF1FA', italics: true },
       ]
     })
 
   return {
     table: {
-      widths: ['auto', '*', 'auto', 'auto', 'auto', 'auto'],
+      widths: ['auto', '*', 'auto', 'auto', 'auto', 'auto', 'auto'],
       body: [
         [
           {
             text: 'Flight Plan',
             fillColor: '#DCDCDC',
             bold: true,
-            colSpan: 6,
+            colSpan: 7,
             alignment: 'center',
           },
+          {},
           {},
           {},
           {},
@@ -830,12 +852,14 @@ function generateFlightPlanTable(mission: Mission): unknown {
           { text: 'Coords', fillColor: '#DCDCDC', bold: true },
           { text: 'Alt', fillColor: '#DCDCDC', bold: true },
           { text: 'IAS', fillColor: '#DCDCDC', bold: true },
+          { text: 'TOT', fillColor: '#DCDCDC', bold: true },
         ],
         ...rows,
       ],
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true, // Keep the entire table together on one page
   }
 }
 
@@ -957,16 +981,27 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
   ]
 
   if (primaryRemarks || secondaryRemarks) {
+    // Target remarks are displayed in a 2-column layout
+    // Page width ~595pt, minus margins ~40pt = 555pt
+    // Divided by 2 columns with label columns ('auto') = ~210pt per content column
+    const maxImageWidthForColumn = 210
+
     const primaryRemarksContent: TableCell = primaryRemarks
       ? {
-          ...((await markdownToPdfMake(primaryRemarks, { fontSize: 10 })) as object),
+          ...((await markdownToPdfMake(primaryRemarks, {
+            fontSize: 10,
+            maxImageWidth: maxImageWidthForColumn,
+          })) as object),
           fillColor: '#EBF1FA',
         }
       : { text: '', fillColor: '#EBF1FA' }
 
     const secondaryRemarksContent: TableCell = secondaryRemarks
       ? {
-          ...((await markdownToPdfMake(secondaryRemarks, { fontSize: 10 })) as object),
+          ...((await markdownToPdfMake(secondaryRemarks, {
+            fontSize: 10,
+            maxImageWidth: maxImageWidthForColumn,
+          })) as object),
           fillColor: '#EBF1FA',
         }
       : { text: '', fillColor: '#EBF1FA' }
@@ -1000,6 +1035,7 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -1127,6 +1163,7 @@ function generateDeliveryTables(mission: Mission): unknown[] {
       },
       layout: defaultTableLayout,
       margin: [0, 0, 0, 2],
+      unbreakable: true,
     })
   }
 
@@ -1175,6 +1212,7 @@ function generatePackageTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -1234,6 +1272,7 @@ function generateSupportAssetsTable(mission: Mission): unknown {
     },
     layout: defaultTableLayout,
     margin: [0, 0, 0, 2],
+    unbreakable: true,
   }
 }
 
@@ -1246,7 +1285,11 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
     return []
   }
 
-  const remarksContent = await markdownToPdfMake(mission.details.remarks, { fontSize: 10 })
+  // Mission remarks use full page width (~555pt after margins)
+  const remarksContent = await markdownToPdfMake(mission.details.remarks, {
+    fontSize: 10,
+    maxImageWidth: 500,
+  })
 
   return [
     { text: '', pageBreak: 'after' },
@@ -1279,15 +1322,15 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
     {
       columns: [
         {
-          width: '48%',
+          width: '*',
           stack: [generateRadiosTable(mission), generatePresetsTable(mission)],
         },
         {
-          width: '48%',
+          width: '*',
           stack: [generateWeatherBullseyeTable(mission), generateLoadoutTable(mission)],
         },
       ],
-      columnGap: 10,
+      columnGap: 2,
     },
 
     // Back to full width sections
