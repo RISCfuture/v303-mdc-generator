@@ -257,6 +257,30 @@ describe('overrides', () => {
       })
     })
 
+    it('should add new entries with dictionary syntax', () => {
+      const base = {
+        'existing-item': { id: 'existing-item', name: 'Existing', weight: 100 },
+      }
+      const overrides = {
+        'new-item': {
+          id: 'new-item',
+          name: 'New Item',
+          weight: 200,
+          category: 'air-to-ground',
+        },
+      }
+      const result = applyOverrides(base, overrides)
+      expect(result).toEqual({
+        'existing-item': { id: 'existing-item', name: 'Existing', weight: 100 },
+        'new-item': {
+          id: 'new-item',
+          name: 'New Item',
+          weight: 200,
+          category: 'air-to-ground',
+        },
+      })
+    })
+
     it('should handle airframe-style nested overrides with bracket notation', () => {
       const base = {
         radios: [

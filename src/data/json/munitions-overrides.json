@@ -143,6 +143,34 @@
   "{BRU57_2*CBU-103}.shortName": "BRU-57 2×CBU-103",
   "{BRU57_2*CBU-105}.shortName": "BRU-57 2×CBU-105",
   "{BRU57_2*GBU-38}.shortName": "BRU-57 2×GBU-38",
+  "{BRU-61/A - 1 x GBU-39/B}": {
+    "id": "{BRU-61/A - 1 x GBU-39/B}",
+    "name": "BRU-61/A: 1 x GBU-39/B - 250lb Small Diameter Bomb",
+    "shortName": "BRU-61/A 1×GBU-39/B",
+    "weight": 610,
+    "category": "air-to-ground"
+  },
+  "{BRU-61/A - 2 x GBU-39/B}": {
+    "id": "{BRU-61/A - 2 x GBU-39/B}",
+    "name": "BRU-61/A: 2 x GBU-39/B - 250lb Small Diameter Bomb",
+    "shortName": "BRU-61/A 2×GBU-39/B",
+    "weight": 895,
+    "category": "air-to-ground"
+  },
+  "{BRU-61/A - 3 x GBU-39/B}": {
+    "id": "{BRU-61/A - 3 x GBU-39/B}",
+    "name": "BRU-61/A: 3 x GBU-39/B - 250lb Small Diameter Bomb",
+    "shortName": "BRU-61/A 3×GBU-39/B",
+    "weight": 1180,
+    "category": "air-to-ground"
+  },
+  "{BRU-61/A - 4 x GBU-39/B}": {
+    "id": "{BRU-61/A - 4 x GBU-39/B}",
+    "name": "BRU-61/A: 4 x GBU-39/B - 250lb Small Diameter Bomb",
+    "shortName": "BRU-61/A 4×GBU-39/B",
+    "weight": 1465,
+    "category": "air-to-ground"
+  },
   "{C8E06185-7CD6-4C90-959F-044679E90751}.shortName": "AIM-120B",
   "{C2593383-3CA8-4b18-B73D-0E750BCA1C85}.shortName": "BRU-42 3×LAU-68 7×M156",
   "{CAE48299-A294-4bad-8EE6-89EFC5DCDF00}.shortName": "SUU-25 8×LUU-2",

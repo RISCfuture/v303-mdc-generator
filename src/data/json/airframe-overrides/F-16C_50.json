@@ -3,10 +3,26 @@
   "stations[0].name": "STA 1",
   "stations[1].name": "STA 2",
   "stations[2].name": "STA 3",
+  "stations[2].munitions": {
+    "add": [
+      "{BRU-61/A - 1 x GBU-39/B}",
+      "{BRU-61/A - 2 x GBU-39/B}",
+      "{BRU-61/A - 3 x GBU-39/B}",
+      "{BRU-61/A - 4 x GBU-39/B}"
+    ]
+  },
   "stations[3].name": "STA 4",
   "stations[4].name": "STA 5",
   "stations[5].name": "STA 6",
   "stations[6].name": "STA 7",
+  "stations[6].munitions": {
+    "add": [
+      "{BRU-61/A - 1 x GBU-39/B}",
+      "{BRU-61/A - 2 x GBU-39/B}",
+      "{BRU-61/A - 3 x GBU-39/B}",
+      "{BRU-61/A - 4 x GBU-39/B}"
+    ]
+  },
   "stations[7].name": "STA 8",
   "stations[8].name": "STA 9"
 }
