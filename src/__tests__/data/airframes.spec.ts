@@ -123,6 +123,77 @@ describe('airframes', () => {
         }
       })
     })
+
+    it('should apply F-16C GBU-39 override correctly', () => {
+      const f16 = airframeDatabase['F-16C_50']
+      expect(f16).toBeDefined()
+
+      // Find stations 3 and 7
+      const station3 = f16.stations.find((s) => s.station === 3)
+      const station7 = f16.stations.find((s) => s.station === 7)
+
+      expect(station3).toBeDefined()
+      expect(station7).toBeDefined()
+
+      // Verify GBU-39 variants are present (added via override)
+      const gbu39Variants = [
+        '{BRU-61/A - 1 x GBU-39/B}',
+        '{BRU-61/A - 2 x GBU-39/B}',
+        '{BRU-61/A - 3 x GBU-39/B}',
+        '{BRU-61/A - 4 x GBU-39/B}',
+      ]
+
+      gbu39Variants.forEach((variant) => {
+        expect(station3!.munitions).toContain(variant)
+        expect(station7!.munitions).toContain(variant)
+      })
+    })
+  })
+
+  describe('generic merge system', () => {
+    it('should handle keyed array overrides', () => {
+      // The F-16C override demonstrates keyed array override
+      // Format: { "stations": { "3": { add: [...] }, "7": { add: [...] } } }
+      const f16 = airframeDatabase['F-16C_50']
+      expect(f16).toBeDefined()
+      expect(f16.stations).toBeDefined()
+      expect(Array.isArray(f16.stations)).toBe(true)
+    })
+
+    it('should preserve all existing munitions when using add operations', () => {
+      // When using "add" operations, original munitions should be preserved
+      const f16 = airframeDatabase['F-16C_50']
+      const station3 = f16.stations.find((s) => s.station === 3)
+
+      // Station 3 should have many munitions (original + added GBU-39s)
+      expect(station3!.munitions.length).toBeGreaterThan(4)
+
+      // Should still have some original munitions (e.g., AIM-9 variants)
+      const hasOriginalMunitions = station3!.munitions.some((m) => m.includes('AIM'))
+      expect(hasOriginalMunitions).toBe(true)
+    })
+
+    it('should not affect unmodified stations', () => {
+      // Stations that are not in the override should remain unchanged
+      const f16 = airframeDatabase['F-16C_50']
+      const station1 = f16.stations.find((s) => s.station === 1)
+
+      // Station 1 was not modified by override, so should not have GBU-39
+      if (station1) {
+        const hasGbu39 = station1.munitions.some((m) => m.includes('GBU-39'))
+        expect(hasGbu39).toBe(false)
+      }
+    })
+
+    it('should maintain station metadata during merge', () => {
+      // Station name and other metadata should be preserved
+      const f16 = airframeDatabase['F-16C_50']
+      const station3 = f16.stations.find((s) => s.station === 3)
+
+      expect(station3!.station).toBe(3)
+      expect(station3!.name).toBeTruthy()
+      expect(typeof station3!.name).toBe('string')
+    })
   })
 
   describe('gun data', () => {

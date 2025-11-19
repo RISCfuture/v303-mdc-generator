@@ -50,7 +50,7 @@ const schemaMappings: SchemaMapping[] = [
   },
   {
     pattern: /^airframe-overrides\/.*\.json$/,
-    schemaPath: join(schemasDir, 'airframe-overrides.schema.json'),
+    schemaPath: join(schemasDir, 'overrides.schema.json'),
     description: 'airframe override files',
   },
   {
@@ -70,7 +70,7 @@ const schemaMappings: SchemaMapping[] = [
   },
   {
     pattern: /^munitions-overrides\.json$/,
-    schemaPath: join(schemasDir, 'munitions-overrides.schema.json'),
+    schemaPath: join(schemasDir, 'overrides.schema.json'),
     description: 'munitions overrides configuration',
   },
   {

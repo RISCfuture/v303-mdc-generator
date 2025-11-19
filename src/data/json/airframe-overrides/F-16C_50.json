@@ -1,31 +1,12 @@
 {
-  "stations": [
-    {
-      "name": "STA 1"
-    },
-    {
-      "name": "STA 2"
-    },
-    {
-      "name": "STA 3"
-    },
-    {
-      "name": "STA 4"
-    },
-    {
-      "name": "STA 5"
-    },
-    {
-      "name": "STA 6"
-    },
-    {
-      "name": "STA 7"
-    },
-    {
-      "name": "STA 8"
-    },
-    {
-      "name": "STA 9"
-    }
-  ]
+  "$schema": "../schemas/overrides.schema.json",
+  "stations[0].name": "STA 1",
+  "stations[1].name": "STA 2",
+  "stations[2].name": "STA 3",
+  "stations[3].name": "STA 4",
+  "stations[4].name": "STA 5",
+  "stations[5].name": "STA 6",
+  "stations[6].name": "STA 7",
+  "stations[7].name": "STA 8",
+  "stations[8].name": "STA 9"
 }

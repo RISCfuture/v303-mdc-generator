@@ -1,50 +1,17 @@
 // Airframe database - dynamically built from JSON files
 // To add a new aircraft: just add a JSON file in ./json/airframes/ - no code changes needed!
 // To override airframe properties: add a JSON file in ./json/airframe-overrides/ - no code changes needed!
+//
+// Override Format (Path-based):
+// Use path notation with bracket indices:
+// {
+//   "stations[3].munitions": { "add": [...], "remove": [...] },  // Add/remove from array
+//   "radios[0].name": "FRONT",  // Update property
+//   "stations[7].munitions": { "add": [...] }
+// }
 
 import type { Radio } from '@/types'
-
-/**
- * Deep merge for airframe data with special array handling
- * Arrays are merged by index instead of replaced entirely
- * This allows partial array item definitions in overrides
- */
-function mergeAirframeData(base: AirframeData, override: Partial<AirframeData>): AirframeData {
-  const result = { ...base }
-
-  for (const key in override) {
-    const overrideValue = override[key as keyof Partial<AirframeData>]
-    const baseValue = base[key as keyof AirframeData]
-
-    if (overrideValue === undefined) continue
-
-    // Special handling for arrays - merge by index
-    if (Array.isArray(overrideValue) && Array.isArray(baseValue)) {
-      ;(result as Record<string, unknown>)[key] = baseValue.map((baseItem, index) => {
-        const overrideItem = overrideValue[index]
-        if (!overrideItem) return baseItem
-
-        // If both are objects, merge them
-        if (
-          typeof baseItem === 'object' &&
-          baseItem !== null &&
-          typeof overrideItem === 'object' &&
-          overrideItem !== null
-        ) {
-          return { ...baseItem, ...overrideItem }
-        }
-
-        // Otherwise, override replaces
-        return overrideItem
-      })
-    } else {
-      // For non-array values, override replaces
-      ;(result as Record<string, unknown>)[key] = overrideValue
-    }
-  }
-
-  return result
-}
+import { applyOverrides } from './overrides'
 
 export interface StationData {
   station: number | string
@@ -100,7 +67,8 @@ const airframeModules = import.meta.glob<AirframeData>('./json/airframes/*.json'
 
 // Dynamically import all airframe override JSON files
 // Overrides allow partial airframe definitions that merge into base airframes
-const airframeOverrideModules = import.meta.glob<Partial<AirframeData>>(
+// Can use declarative add/remove operations for arrays
+const airframeOverrideModules = import.meta.glob<Record<string, unknown>>(
   './json/airframe-overrides/*.json',
   {
     eager: true,
@@ -123,14 +91,14 @@ const overridesByAircraft = Object.entries(airframeOverrideModules).reduce(
     }
     return acc
   },
-  {} as Record<string, Partial<AirframeData>>,
+  {} as Record<string, Record<string, unknown>>,
 )
 
 // Merge overrides into base airframe data
 const mergedAirframeData = airframeDataArray.map((airframe) => {
   const override = overridesByAircraft[airframe.aircraft]
   if (override) {
-    return mergeAirframeData(airframe, override)
+    return applyOverrides(airframe, override)
   }
   return airframe
 })

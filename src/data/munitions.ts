@@ -1,9 +1,18 @@
 // Munitions weights and specifications for TOLD calculations
 // Data source: DCS World data via Quaggles DCS Lua Datamine
 // Aircraft specifications and station configurations from DCS
+//
+// Override Format (Path-based):
+// Use path notation with dot syntax:
+// {
+//   "ALQ_184.shortName": "ALQ-184",
+//   "{BRU-42}.weight": 250
+// }
+
 import munitionsDataJson from '@/data/json/munitions.json'
 import munitionsOverridesJson from '@/data/json/munitions-overrides.json'
 import { airframeDatabase } from '@/data/airframes'
+import { applyOverrides } from './overrides'
 
 export interface MunitionData {
   id: string // DCS weapon ID (e.g., "Mk_82", "AGM_65D")
@@ -14,31 +23,18 @@ export interface MunitionData {
   additionalFuel?: number // pounds of fuel only (for fuel tanks)
 }
 
-export interface MunitionOverride {
-  name?: string
-  shortName?: string
-  weight?: number
-  category?: 'air-to-air' | 'air-to-ground' | 'fuel' | 'pod' | 'gun' | 'rack' | 'empty'
-}
-
 // Load base munitions data
-const munitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
+const baseMunitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
   string,
   MunitionData
 >
 
-// Load overrides
-const munitionsOverrides: Record<string, MunitionOverride> = munitionsOverridesJson as Record<
-  string,
-  MunitionOverride
->
-
-// Merge overrides into base data
-for (const [id, override] of Object.entries(munitionsOverrides)) {
-  if (munitionsDatabase[id]) {
-    munitionsDatabase[id] = { ...munitionsDatabase[id], ...override }
-  }
-}
+// Load and apply overrides using the generic override system
+const munitionsOverrides = munitionsOverridesJson as Record<string, unknown>
+const munitionsDatabase: Record<string, MunitionData> = applyOverrides(
+  baseMunitionsDatabase,
+  munitionsOverrides,
+)
 
 /**
  * Parse a DCS CLSID to extract components and calculate weight
