@@ -191,6 +191,7 @@ export const useMissionsStore = defineStore('missions', () => {
               longitude: airfield.position.longitude,
               elevation: airfield.position.elevation, // Already in feet MSL
               altitude: airfield.position.elevation ?? 0, // Pre-fill altitude with elevation, or 0 if undefined
+              speed: null,
               type: 'PARK',
             }
             return [steerpoint1]

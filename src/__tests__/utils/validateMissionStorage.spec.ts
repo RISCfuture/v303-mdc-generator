@@ -352,7 +352,7 @@ describe('validateMissionStorage', () => {
         expect(result.errors?.some((e) => e.path.includes('/wp'))).toBe(true)
       })
 
-      it('should reject waypoint without name', () => {
+      it('should allow waypoint with empty name', () => {
         const mission = createValidMission()
         mission.waypoints[0]!.name = ''
         const serialized = serializeMission(mission)
@@ -364,7 +364,7 @@ describe('validateMissionStorage', () => {
 
         const result = validateMissionStorage(storageData)
 
-        expect(result.valid).toBe(false)
+        expect(result.valid).toBe(true)
       })
 
       it('should allow waypoint with null altitude (valid for storage, but not complete for export)', () => {
@@ -381,6 +381,62 @@ describe('validateMissionStorage', () => {
 
         // Schema validation should pass (null is allowed for storage)
         // The composable will check for completeness (non-null required for export)
+        expect(result.valid).toBe(true)
+      })
+
+      it('should allow blank waypoint (all fields null)', () => {
+        const mission = createValidMission()
+        mission.waypoints.push({
+          sequence: 2,
+          name: 'BLANK',
+          latitude: null,
+          longitude: null,
+          altitude: null,
+          speed: null,
+        })
+        const serialized = serializeMission(mission)
+
+        const storageData = {
+          version: 2,
+          missions: [serialized],
+        }
+
+        const result = validateMissionStorage(storageData)
+
+        // Blank waypoints (all fields null) should pass schema validation
+        expect(result.valid).toBe(true)
+      })
+
+      it('should allow multiple blank waypoints in sequence', () => {
+        const mission = createValidMission()
+        mission.waypoints.push(
+          {
+            sequence: 2,
+            name: 'BLANK1',
+            latitude: null,
+            longitude: null,
+            altitude: null,
+            speed: null,
+          },
+          {
+            sequence: 3,
+            name: 'BLANK2',
+            latitude: null,
+            longitude: null,
+            altitude: null,
+            speed: null,
+          },
+        )
+        const serialized = serializeMission(mission)
+
+        const storageData = {
+          version: 2,
+          missions: [serialized],
+        }
+
+        const result = validateMissionStorage(storageData)
+
+        // Multiple blank waypoints should be valid
         expect(result.valid).toBe(true)
       })
 

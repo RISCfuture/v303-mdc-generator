@@ -86,6 +86,7 @@ const distanceHomeToTarget = computed(() => {
     latitude: recoveryLocation.value.latitude,
     longitude: recoveryLocation.value.longitude,
     altitude: null,
+    speed: null,
   }
   const toWP: Waypoint = {
     sequence: 0,
@@ -93,6 +94,7 @@ const distanceHomeToTarget = computed(() => {
     latitude: targetLocation.value.latitude,
     longitude: targetLocation.value.longitude,
     altitude: null,
+    speed: null,
   }
   return calculateDistance(fromWP, toWP)
 })
@@ -105,6 +107,7 @@ const distanceHomeToAlternate = computed(() => {
     latitude: recoveryLocation.value.latitude,
     longitude: recoveryLocation.value.longitude,
     altitude: null,
+    speed: null,
   }
   const toWP: Waypoint = {
     sequence: 0,
@@ -112,6 +115,7 @@ const distanceHomeToAlternate = computed(() => {
     latitude: alternateLocation.value.latitude,
     longitude: alternateLocation.value.longitude,
     altitude: null,
+    speed: null,
   }
   return calculateDistance(fromWP, toWP)
 })

@@ -19,6 +19,16 @@ export interface FieldValidationError {
   message: string
 }
 
+/**
+ * Check if a waypoint is "blank" (all key fields are null)
+ * A blank waypoint has latitude, longitude, altitude, and speed all null
+ */
+function isBlankWaypoint(
+  wp: Pick<Mission['waypoints'][number], 'latitude' | 'longitude' | 'altitude' | 'speed'>,
+): boolean {
+  return wp.latitude === null && wp.longitude === null && wp.altitude === null && wp.speed === null
+}
+
 export function useMissionValidation(
   mission: Ref<Mission | null> | ComputedRef<Mission | null | undefined>,
 ) {
@@ -33,6 +43,8 @@ export function useMissionValidation(
    * - TOLD data (rotation/refusal speeds)
    * - Fuel data (takeoff/joker/bingo)
    * - Mission details (remarks)
+   *
+   * Blank steerpoints (all fields null) are allowed and pass validation.
    */
   const isComplete = computed(() => {
     if (!mission.value) {
@@ -55,10 +67,15 @@ export function useMissionValidation(
       // Additional runtime checks for fields that can be null in storage
       // but must be non-null for export
 
-      // Check all waypoints have non-null coordinates and altitude
-      const hasInvalidWaypoints = mission.value.waypoints.some(
-        (wp) => wp.latitude === null || wp.longitude === null || wp.altitude === null,
-      )
+      // Check all waypoints are either blank or have complete coordinate/altitude data
+      const hasInvalidWaypoints = mission.value.waypoints.some((wp) => {
+        // Blank waypoints (all fields null) are valid
+        if (isBlankWaypoint(wp)) {
+          return false
+        }
+        // Non-blank waypoints must have all required fields
+        return wp.latitude === null || wp.longitude === null || wp.altitude === null
+      })
       if (hasInvalidWaypoints) {
         return false
       }
@@ -91,22 +108,30 @@ export function useMissionValidation(
       })
 
       // Add runtime validation errors for null coordinates/altitudes
+      // Skip blank waypoints (all fields null) - they are valid
       const runtimeErrors: Array<{ path: string; message: string }> = []
 
       mission.value.waypoints.forEach((wp, index) => {
-        if (wp.latitude === null || wp.latitude === undefined) {
+        // Skip validation for blank waypoints
+        if (isBlankWaypoint(wp)) {
+          return
+        }
+
+        // For non-blank waypoints, all required fields must be present
+        // Note: latitude, longitude, altitude are required fields (not optional) so can only be null, not undefined
+        if (wp.latitude === null) {
           runtimeErrors.push({
             path: `/missions/0/wp/${index}/lat`,
             message: 'must have valid latitude',
           })
         }
-        if (wp.longitude === null || wp.longitude === undefined) {
+        if (wp.longitude === null) {
           runtimeErrors.push({
             path: `/missions/0/wp/${index}/lon`,
             message: 'must have valid longitude',
           })
         }
-        if (wp.altitude === null || wp.altitude === undefined) {
+        if (wp.altitude === null) {
           runtimeErrors.push({
             path: `/missions/0/wp/${index}/alt`,
             message: 'must have valid altitude',
@@ -237,27 +262,31 @@ export function useMissionValidation(
   /**
    * Check if a specific waypoint field is incomplete (for visual feedback only)
    * Returns true if the field is required for completeness but currently empty/null
+   * Blank waypoints (all fields null) are considered complete and return false
    */
   const isWaypointFieldIncomplete = (
-    waypoint: {
-      name?: string
-      latitude?: number | null
-      longitude?: number | null
-      altitude?: number | null
-    },
+    waypoint: Pick<
+      Mission['waypoints'][number],
+      'name' | 'latitude' | 'longitude' | 'altitude' | 'speed'
+    >,
     field: 'name' | 'latitude' | 'longitude' | 'altitude',
   ): boolean => {
     if (!mission.value) return false
+
+    // If this is a blank waypoint, none of its fields are "incomplete"
+    if (isBlankWaypoint(waypoint)) {
+      return false
+    }
 
     switch (field) {
       case 'name':
         return !waypoint.name || waypoint.name.trim() === ''
       case 'latitude':
-        return waypoint.latitude === null || waypoint.latitude === undefined
+        return waypoint.latitude === null
       case 'longitude':
-        return waypoint.longitude === null || waypoint.longitude === undefined
+        return waypoint.longitude === null
       case 'altitude':
-        return waypoint.altitude === null || waypoint.altitude === undefined
+        return waypoint.altitude === null
       default:
         return false
     }

@@ -249,7 +249,7 @@
         },
         "name": {
           "type": "string",
-          "minLength": 1,
+          "minLength": 0,
           "description": "Waypoint name"
         },
         "lat": {
@@ -278,7 +278,7 @@
           "description": "Planned altitude in feet MSL (required non-null for export)"
         },
         "spd": {
-          "type": "number",
+          "type": ["number", "null"],
           "description": "Indicated airspeed in knots"
         },
         "tot": {

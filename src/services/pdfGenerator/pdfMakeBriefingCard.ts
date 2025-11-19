@@ -775,10 +775,19 @@ function generateDepartureRecoveryTable(mission: Mission): unknown {
 /**
  * Generate flight plan table
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
+ *
+ * Note: Blank steerpoints (where latitude, longitude, altitude, and speed are all null)
+ * are excluded from the PDF output. The steerpoint numbering will skip any numbers
+ * assigned to blank steerpoints.
  */
 function generateFlightPlanTable(mission: Mission): unknown {
   const rows: TableRow[] = mission.waypoints
-    .filter((wp) => wp.name && (wp.latitude !== null || wp.longitude !== null))
+    .filter((wp) => {
+      // Exclude blank steerpoints from PDF export
+      const isBlank =
+        wp.latitude === null && wp.longitude === null && wp.altitude === null && wp.speed === null
+      return !isBlank
+    })
     .map((wp) => {
       let coordsDisplay = ''
       if (wp.type !== 'PARK' && wp.latitude !== null && wp.longitude !== null) {

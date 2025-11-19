@@ -31,12 +31,12 @@ import { getSquadronAirframe } from '@/data/squadrons'
 interface SerializedWaypoint {
   seq: number
   name: string
-  lat: number | null // Can be null during editing, required non-null for export
-  lon: number | null // Can be null during editing, required non-null for export
+  lat: number | null // Can be null during editing or for blank steerpoints
+  lon: number | null // Can be null during editing or for blank steerpoints
   fmt?: 'DMS' | 'DD' | 'DDM' | 'MGRS' // coordinateFormat (defaults to DDM)
-  alt: number | null // Can be null during editing, required non-null for export
+  alt: number | null // Can be null during editing or for blank steerpoints
   elev?: number
-  spd?: number
+  spd: number | null // Can be null for blank steerpoints
   tot?: string
   type?: string
   ccip?: {
@@ -242,12 +242,12 @@ export function serializeMission(mission: Mission): SerializedMission {
         lat: wp.latitude,
         lon: wp.longitude,
         alt: wp.altitude,
+        spd: wp.speed,
       }
 
       // Optional fields
       if (wp.coordinateFormat) waypoint.fmt = wp.coordinateFormat
       if (wp.elevation !== undefined) waypoint.elev = wp.elevation
-      if (wp.speed !== undefined) waypoint.spd = wp.speed
       if (wp.timeOnTarget) waypoint.tot = wp.timeOnTarget
       if (wp.type) waypoint.type = wp.type
 
@@ -549,7 +549,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       coordinateFormat: swp.fmt ?? 'DDM', // Default to DDM for backward compatibility
       elevation: swp.elev,
       altitude: swp.alt ?? null,
-      speed: swp.spd,
+      speed: swp.spd ?? null,
       timeOnTarget: swp.tot,
       type: swp.type,
     }

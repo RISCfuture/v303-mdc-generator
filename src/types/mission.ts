@@ -19,12 +19,12 @@ export type CoordinateFormat = 'DMS' | 'DD' | 'DDM' | 'MGRS'
 export interface Waypoint {
   sequence: number
   name: string
-  latitude: number | null // Decimal degrees (e.g., 36.2057583). Positive = N, Negative = S. Required for valid waypoint.
-  longitude: number | null // Decimal degrees (e.g., 65.8476583). Positive = E, Negative = W. Required for valid waypoint.
+  latitude: number | null // Decimal degrees (e.g., 36.2057583). Positive = N, Negative = S. Null for blank steerpoints.
+  longitude: number | null // Decimal degrees (e.g., 65.8476583). Positive = E, Negative = W. Null for blank steerpoints.
   coordinateFormat?: CoordinateFormat // Display format for this coordinate (defaults to DDM)
   elevation?: number // feet MSL (ground elevation)
-  altitude: number | null // planned altitude in feet MSL. Required for valid waypoint.
-  speed?: number // indicated airspeed in knots
+  altitude: number | null // planned altitude in feet MSL. Null for blank steerpoints.
+  speed: number | null // indicated airspeed in knots. Null for blank steerpoints.
   timeOnTarget?: string // Time on target (HH:MM:SS or HHMMz)
   type?: string // e.g., "PARK", "IAF", "IP", "TGT", "EP", "FAF", "LDG"
   ccip?: CCIPData // CCIP delivery data (only used for TGT type steerpoints)

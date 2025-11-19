@@ -331,6 +331,13 @@ export function exportF16MDC(
 ): DCSF16MDC {
   // Convert waypoints to DCS format
   const waypoints = mission.waypoints.map((wp) => {
+    // For blank steerpoints (all fields null), export as 0°N, 0°E
+    const isBlank =
+      wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
+    const latitude = isBlank ? 0 : wp.latitude!
+    const longitude = isBlank ? 0 : wp.longitude!
+    const elevation = isBlank ? 0 : (wp.elevation ?? 0)
+
     const ccip = wp.ccip
     const refPointType = ccip?.referencePointType ?? 'None'
     const isVIP = refPointType === 'VIP'
@@ -352,9 +359,9 @@ export function exportF16MDC(
     return {
       Sequence: wp.sequence,
       Name: wp.name!,
-      Latitude: formatF16LatLon(wp.latitude!, 'latitude'),
-      Longitude: formatF16LatLon(wp.longitude!, 'longitude'),
-      Elevation: wp.elevation!,
+      Latitude: formatF16LatLon(latitude, 'latitude'),
+      Longitude: formatF16LatLon(longitude, 'longitude'),
+      Elevation: elevation,
       TimeOverSteerpoint: wp.timeOnTarget || null,
       Target: wp.type === 'TGT',
       UseOA: !!(oa1 || oa2),
@@ -701,13 +708,22 @@ export function exportA10MDC(
   const tacanBand = tacanMatch[2] === 'Y' ? '1' : '0'
 
   // Convert waypoints to JAFDTC format
-  const waypoints = mission.waypoints.map((wp) => ({
-    Alt: wp.altitude!.toString(),
-    Number: wp.sequence,
-    Name: wp.name!,
-    Lat: formatA10LatLon(wp.latitude!),
-    Lon: formatA10LatLon(wp.longitude!),
-  }))
+  const waypoints = mission.waypoints.map((wp) => {
+    // For blank steerpoints (all fields null), export as 0°N, 0°E
+    const isBlank =
+      wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
+    const latitude = isBlank ? 0 : wp.latitude!
+    const longitude = isBlank ? 0 : wp.longitude!
+    const altitude = isBlank ? 0 : wp.altitude!
+
+    return {
+      Alt: altitude.toString(),
+      Number: wp.sequence,
+      Name: wp.name!,
+      Lat: formatA10LatLon(latitude),
+      Lon: formatA10LatLon(longitude),
+    }
+  })
 
   // Build radio presets for 3 radios (VHF AM, UHF, VHF FM)
   const radioPresets: Array<

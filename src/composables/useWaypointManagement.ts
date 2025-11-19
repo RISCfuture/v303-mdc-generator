@@ -53,6 +53,7 @@ export function useWaypointManagement(
       latitude: null,
       longitude: null,
       altitude: null,
+      speed: null,
       type: defaultType,
       ...(coordinateFormat && { coordinateFormat }),
     }
@@ -82,6 +83,7 @@ export function useWaypointManagement(
       longitude: navaid.longitude,
       elevation: navaid.elevation ? Math.round(navaid.elevation) : undefined, // Elevation already in feet
       altitude: navaid.elevation ? Math.round(navaid.elevation) : 0, // Pre-fill altitude with elevation, or 0 as default
+      speed: null,
       type: defaultType,
       ...(coordinateFormat && { coordinateFormat }),
     }
