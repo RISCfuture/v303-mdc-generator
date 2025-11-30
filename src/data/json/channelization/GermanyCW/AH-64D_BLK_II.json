@@ -1,0 +1,60 @@
+{
+  "radios": [
+    {
+      "presets": [
+        { "number": 1, "frequency": "121.800", "description": "" },
+        { "number": 2, "frequency": "132.650", "description": "" },
+        { "number": 3, "frequency": "135.100", "description": "" },
+        { "number": 4, "frequency": "124.950", "description": "" },
+        { "number": 5, "frequency": "126.700", "description": "" },
+        { "number": 6, "frequency": "123.325", "description": "" },
+        { "number": 7, "frequency": "123.300", "description": "" },
+        { "number": 8, "frequency": "123.375", "description": "" },
+        { "number": 9, "frequency": "128.000", "description": "" },
+        { "number": 10, "frequency": "128.025", "description": "" }
+      ]
+    },
+    {
+      "presets": [
+        { "number": 1, "frequency": "315.800", "description": "NON 163d ACFT COMMON" },
+        { "number": 2, "frequency": "300.650", "description": "RAMSTEIN GROUND" },
+        { "number": 3, "frequency": "356.850", "description": "RAMSTEIN TOWER" },
+        { "number": 4, "frequency": "374.375", "description": "RAMSTEIN ATIS" },
+        { "number": 5, "frequency": "375.700", "description": "LANGEN CONTROL" },
+        { "number": 6, "frequency": "257.800", "description": "NATO COMMON" },
+        { "number": 7, "frequency": "342.300", "description": "SPADES (BAUMHOLDER CONTROL)" },
+        { "number": 8, "frequency": "361.600", "description": "PANTHER 33B" },
+        { "number": 9, "frequency": "340.300", "description": "ACE (HAMMELBURG CONTROL)" },
+        { "number": 10, "frequency": "362.600", "description": "PANTHER 33H" }
+      ]
+    },
+    {
+      "presets": [
+        { "number": 1, "frequency": "73.50", "description": "HELO CMN" },
+        { "number": 2, "frequency": "47.10", "description": "" },
+        { "number": 3, "frequency": "47.20", "description": "" },
+        { "number": 4, "frequency": "47.30", "description": "" },
+        { "number": 5, "frequency": "64.10", "description": "" },
+        { "number": 6, "frequency": "64.20", "description": "" },
+        { "number": 7, "frequency": "64.30", "description": "" },
+        { "number": 8, "frequency": "58.10", "description": "" },
+        { "number": 9, "frequency": "58.20", "description": "" },
+        { "number": 10, "frequency": "58.30", "description": "" }
+      ]
+    },
+    {
+      "presets": [
+        { "number": 1, "frequency": "73.50", "description": "HELO CMN" },
+        { "number": 2, "frequency": "70.25", "description": "FIRES A (FD-1)" },
+        { "number": 3, "frequency": "71.25", "description": "FIRES B (FD-2)" },
+        { "number": 4, "frequency": "72.25", "description": "FIRES C (FD-3)" },
+        { "number": 5, "frequency": "53.50", "description": "" },
+        { "number": 6, "frequency": "74.10", "description": "" },
+        { "number": 7, "frequency": "56.50", "description": "" },
+        { "number": 8, "frequency": "72.60", "description": "" },
+        { "number": 9, "frequency": "35.70", "description": "" },
+        { "number": 10, "frequency": "49.60", "description": "" }
+      ]
+    }
+  ]
+}
