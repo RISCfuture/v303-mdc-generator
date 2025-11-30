@@ -48,7 +48,9 @@ export function useMissionData(missionId: ComputedRef<string>) {
   const availableCrew = computed(() => {
     if (!mission.value) return crewDatabase
     // Filter crew database based on squadron
-    return crewBySquadron[mission.value.squadron] || []
+    // If squadron has no crew, fall back to combined crew list
+    const squadronCrew = crewBySquadron[mission.value.squadron]
+    return squadronCrew && squadronCrew.length > 0 ? squadronCrew : crewDatabase
   })
 
   const availableCrewForDropdown = computed(() => {
