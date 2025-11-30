@@ -7,9 +7,9 @@
   },
   {
     "name": "ABC",
-    "latitude": 32.152803,
-    "longitude": 37.158429,
-    "elevation": 2172
+    "latitude": 32.159572,
+    "longitude": 37.148259,
+    "elevation": 2215
   },
   {
     "name": "ABD",
@@ -73,9 +73,9 @@
   },
   {
     "name": "AKR",
-    "latitude": 31.825295,
-    "longitude": 34.818033,
-    "elevation": 180
+    "latitude": 34.57942,
+    "longitude": 32.962829,
+    "elevation": 177
   },
   {
     "name": "AKR13",
@@ -3421,9 +3421,9 @@
   },
   {
     "name": "GAP",
-    "latitude": 37.458542,
-    "longitude": 38.904844,
-    "elevation": 2707
+    "latitude": 37.458037,
+    "longitude": 38.904692,
+    "elevation": 2713
   },
   {
     "name": "GAZ",
@@ -3457,8 +3457,8 @@
   },
   {
     "name": "GKE",
-    "latitude": 35.231874,
-    "longitude": 33.743176,
+    "latitude": 35.233502,
+    "longitude": 33.727478,
     "elevation": 138
   },
   {
@@ -3493,9 +3493,9 @@
   },
   {
     "name": "GZP",
-    "latitude": 36.299872,
-    "longitude": 32.300027,
-    "elevation": 95
+    "latitude": 36.298267,
+    "longitude": 32.300249,
+    "elevation": 85
   },
   {
     "name": "Gaziantep",
@@ -3895,8 +3895,8 @@
   },
   {
     "name": "HTY",
-    "latitude": 36.363148,
-    "longitude": 36.290458,
+    "latitude": 36.362972,
+    "longitude": 36.290113,
     "elevation": 259
   },
   {
@@ -3907,9 +3907,9 @@
   },
   {
     "name": "HZR",
-    "latitude": 31.768108,
-    "longitude": 34.737933,
-    "elevation": 135
+    "latitude": 31.761813,
+    "longitude": 34.72366,
+    "elevation": 115
   },
   {
     "name": "Habiller",
@@ -5581,9 +5581,9 @@
   },
   {
     "name": "LCA",
-    "latitude": 34.823731,
-    "longitude": 33.563132,
-    "elevation": 10
+    "latitude": 34.872928,
+    "longitude": 33.625131,
+    "elevation": -3
   },
   {
     "name": "LCANB",
@@ -5725,9 +5725,9 @@
   },
   {
     "name": "LTK",
-    "latitude": 35.480331,
-    "longitude": 35.944991,
-    "elevation": 449
+    "latitude": 35.396758,
+    "longitude": 35.952041,
+    "elevation": 148
   },
   {
     "name": "LTKNB",
@@ -6865,9 +6865,9 @@
   },
   {
     "name": "PHA",
-    "latitude": 34.716628,
-    "longitude": 32.482728,
-    "elevation": 36
+    "latitude": 34.711733,
+    "longitude": 32.505846,
+    "elevation": 33
   },
   {
     "name": "PIDET",
@@ -7339,9 +7339,9 @@
   },
   {
     "name": "RMD",
-    "latitude": 32.659779,
-    "longitude": 35.191273,
-    "elevation": 167
+    "latitude": 32.664872,
+    "longitude": 35.187751,
+    "elevation": 171
   },
   {
     "name": "RMDNB",

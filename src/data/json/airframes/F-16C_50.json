@@ -1,7 +1,6 @@
 {
   "aircraft": "F-16C_50",
   "displayName": "F-16CM bl.50",
-  "datalinkType": "link16",
   "emptyWeight": 19899,
   "maxTakeoffWeight": 42300,
   "internalFuel": 7163,
@@ -434,6 +433,7 @@
     "SAPHEI (Semi-Armor Piercing, HE, Incendiary)",
     "TP (Target Practice-Tracer PGU)"
   ],
+  "datalinkType": "link16",
   "cmdsProfiles": ["PRGM 1", "PRGM 2", "PRGM 3", "PRGM 4"],
   "ecmPrograms": ["XMIT 1", "XMIT 2", "XMIT 3"],
   "htsThreatTables": [

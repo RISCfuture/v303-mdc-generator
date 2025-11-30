@@ -5011,9 +5011,9 @@
   },
   {
     "name": "NAS",
-    "latitude": -53.017351,
-    "longitude": -70.868839,
-    "elevation": 135
+    "latitude": -53.00407,
+    "longitude": -70.855336,
+    "elevation": 128
   },
   {
     "name": "Narrow Creek",
@@ -6970,6 +6970,12 @@
     "latitude": -53.644662,
     "longitude": -70.958192,
     "elevation": 23
+  },
+  {
+    "name": "San Julian",
+    "latitude": -49.309587,
+    "longitude": -67.812946,
+    "elevation": 177
   },
   {
     "name": "San Lorenzo",

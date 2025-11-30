@@ -1,5 +1,27 @@
 [
   {
+    "name": "Adelsheim",
+    "position": {
+      "latitude": 49.363604161852,
+      "longitude": 9.4276257564103,
+      "elevation": 1199
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 63,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 243,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Airracing Frankfurt",
     "position": {
       "latitude": 50.006800963507,
@@ -163,7 +185,7 @@
     "tacan": null,
     "runways": [
       {
-        "name": "27",
+        "name": "30",
         "heading": 308,
         "ils": null
       },
@@ -178,15 +200,15 @@
   {
     "name": "Bindersleben",
     "position": {
-      "latitude": 50.980820379202,
-      "longitude": 10.948639987704,
-      "elevation": 1015
+      "latitude": 50.978123057573,
+      "longitude": 10.976017783215,
+      "elevation": 1012
     },
     "tacan": null,
     "runways": [
       {
-        "name": "10",
-        "heading": 105,
+        "name": "28",
+        "heading": 285,
         "ils": {
           "name": "IRF",
           "frequency": "109.9",
@@ -198,8 +220,8 @@
         }
       },
       {
-        "name": "28",
-        "heading": 285,
+        "name": "10",
+        "heading": 105,
         "ils": null
       }
     ],
@@ -234,6 +256,84 @@
       {
         "name": "7",
         "heading": 66,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Bornholm",
+    "position": {
+      "latitude": 55.06717683667,
+      "longitude": 14.745142891439,
+      "elevation": 49
+    },
+    "tacan": {
+      "channel": 57,
+      "callsign": "ROE",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "11",
+        "heading": 119,
+        "ils": {
+          "name": "IAR",
+          "frequency": "109.35",
+          "channel": null,
+          "position": {
+            "latitude": 55.058193,
+            "longitude": 14.779682
+          }
+        }
+      },
+      {
+        "name": "30",
+        "heading": 299,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Brand",
+    "position": {
+      "latitude": 52.035730508267,
+      "longitude": 13.762987370889,
+      "elevation": 164
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 280,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 100,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Brandis",
+    "position": {
+      "latitude": 51.330328914275,
+      "longitude": 12.670062738971,
+      "elevation": 509
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 262,
+        "ils": null
+      },
+      {
+        "name": "8",
+        "heading": 82,
         "ils": null
       }
     ],
@@ -357,7 +457,7 @@
     "tacan": null,
     "runways": [
       {
-        "name": "26",
+        "name": "8",
         "heading": 87,
         "ils": null
       },
@@ -392,6 +492,28 @@
     "radio": null
   },
   {
+    "name": "Chojna",
+    "position": {
+      "latitude": 52.938967727495,
+      "longitude": 14.438255740109,
+      "elevation": 176
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "27",
+        "heading": 277,
+        "ils": null
+      },
+      {
+        "name": "10",
+        "heading": 97,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Cochstedt",
     "position": {
       "latitude": 51.853775281583,
@@ -408,6 +530,72 @@
       {
         "name": "26",
         "heading": 265,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Cologne",
+    "position": {
+      "latitude": 50.877794405073,
+      "longitude": 7.1338306197414,
+      "elevation": 236
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "14",
+        "heading": 148,
+        "ils": {
+          "name": "DLW",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 50.859067,
+            "longitude": 7.120216
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 328,
+        "ils": null
+      },
+      {
+        "name": "32",
+        "heading": 75,
+        "ils": {
+          "name": "DLW",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 50.859067,
+            "longitude": 7.120216
+          }
+        }
+      },
+      {
+        "name": "26",
+        "heading": 255,
+        "ils": null
+      },
+      {
+        "name": "7",
+        "heading": 148,
+        "ils": {
+          "name": "DLW",
+          "frequency": "109.1",
+          "channel": null,
+          "position": {
+            "latitude": 50.859067,
+            "longitude": 7.120216
+          }
+        }
+      },
+      {
+        "name": "33",
+        "heading": 328,
         "ils": null
       }
     ],
@@ -480,6 +668,58 @@
     "radio": null
   },
   {
+    "name": "Dusseldorf",
+    "position": {
+      "latitude": 51.281637164737,
+      "longitude": 6.7558489196187,
+      "elevation": 121
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 64,
+        "ils": {
+          "name": "IDSW",
+          "frequency": "109.9",
+          "channel": null,
+          "position": {
+            "latitude": 51.277852,
+            "longitude": 6.748636
+          }
+        }
+      },
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Falkenberg",
+    "position": {
+      "latitude": 51.548467440506,
+      "longitude": 13.23644793205,
+      "elevation": 285
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 266,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 86,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Fassberg",
     "position": {
       "latitude": 52.919236892689,
@@ -526,15 +766,15 @@
   {
     "name": "Frankfurt",
     "position": {
-      "latitude": 50.034273336417,
-      "longitude": 8.5404337375954,
+      "latitude": 50.046583465985,
+      "longitude": 8.5942143417852,
       "elevation": 328
     },
     "tacan": null,
     "runways": [
       {
-        "name": "7",
-        "heading": 79,
+        "name": "25",
+        "heading": 259,
         "ils": {
           "name": "IFM",
           "frequency": "110.7",
@@ -546,12 +786,12 @@
         }
       },
       {
-        "name": "26",
-        "heading": 259,
+        "name": "8",
+        "heading": 79,
         "ils": null
       },
       {
-        "name": "25",
+        "name": "7",
         "heading": 259,
         "ils": {
           "name": "IFM",
@@ -1285,11 +1525,7 @@
       "longitude": 8.5659104536627,
       "elevation": 0
     },
-    "tacan": {
-      "channel": 89,
-      "callsign": "FFM",
-      "band": "X"
-    },
+    "tacan": null,
     "runways": [],
     "radio": null
   },
@@ -2066,8 +2302,8 @@
         "name": "21",
         "heading": 223,
         "ils": {
-          "name": "HAN",
-          "frequency": "112.0",
+          "name": "IHAW",
+          "frequency": "111.3",
           "channel": null,
           "position": {
             "latitude": 49.935547,
@@ -2254,6 +2490,28 @@
     "radio": null
   },
   {
+    "name": "Heidelberg",
+    "position": {
+      "latitude": 49.393982220142,
+      "longitude": 8.6589819259618,
+      "elevation": 346
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Herrenteich",
     "position": {
       "latitude": 49.340611646103,
@@ -2364,6 +2622,102 @@
     "radio": null
   },
   {
+    "name": "Kastrup",
+    "position": {
+      "latitude": 55.614387135631,
+      "longitude": 12.664609954209,
+      "elevation": 25
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "30",
+        "heading": 310,
+        "ils": {
+          "name": "CH",
+          "frequency": "110.5",
+          "channel": null,
+          "position": {
+            "latitude": 55.618072,
+            "longitude": 12.643565
+          }
+        }
+      },
+      {
+        "name": "13",
+        "heading": 130,
+        "ils": null
+      },
+      {
+        "name": "12",
+        "heading": 48,
+        "ils": {
+          "name": "CH",
+          "frequency": "110.5",
+          "channel": null,
+          "position": {
+            "latitude": 55.618072,
+            "longitude": 12.643565
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 228,
+        "ils": null
+      },
+      {
+        "name": "4",
+        "heading": 48,
+        "ils": {
+          "name": "CH",
+          "frequency": "110.5",
+          "channel": null,
+          "position": {
+            "latitude": 55.618072,
+            "longitude": 12.643565
+          }
+        }
+      },
+      {
+        "name": "23",
+        "heading": 228,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Kiel",
+    "position": {
+      "latitude": 54.379096855632,
+      "longitude": 10.135982659802,
+      "elevation": 53
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 91,
+        "ils": {
+          "name": "IKHE",
+          "frequency": "109.5",
+          "channel": null,
+          "position": {
+            "latitude": 54.380683,
+            "longitude": 10.159997
+          }
+        }
+      },
+      {
+        "name": "27",
+        "heading": 271,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Kothen",
     "position": {
       "latitude": 51.721398295091,
@@ -2408,6 +2762,32 @@
     "radio": null
   },
   {
+    "name": "Landstuhl",
+    "position": {
+      "latitude": 49.402806915733,
+      "longitude": 7.536286680607,
+      "elevation": 1182
+    },
+    "tacan": {
+      "channel": 81,
+      "callsign": "RMS",
+      "band": "X"
+    },
+    "runways": [
+      {
+        "name": "31",
+        "heading": 295,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 115,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Langenselbold",
     "position": {
       "latitude": 50.176585118535,
@@ -2446,36 +2826,6 @@
       {
         "name": "26",
         "heading": 261,
-        "ils": null
-      }
-    ],
-    "radio": null
-  },
-  {
-    "name": "Leipzig Halle",
-    "position": {
-      "latitude": 51.41182694254,
-      "longitude": 12.24402305039,
-      "elevation": 421
-    },
-    "tacan": null,
-    "runways": [
-      {
-        "name": "29",
-        "heading": 292,
-        "ils": {
-          "name": "IMA",
-          "frequency": "110.3",
-          "channel": null,
-          "position": {
-            "latitude": 51.41898,
-            "longitude": 12.204437
-          }
-        }
-      },
-      {
-        "name": "11",
-        "heading": 112,
         "ils": null
       }
     ],
@@ -2557,13 +2907,57 @@
     "tacan": null,
     "runways": [
       {
-        "name": "28",
+        "name": "27",
         "heading": 278,
         "ils": null
       },
       {
         "name": "10",
         "heading": 98,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Mainz Finthen",
+    "position": {
+      "latitude": 49.968257809909,
+      "longitude": 8.1414447189689,
+      "elevation": 722
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "8",
+        "heading": 84,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 264,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Marxwalde",
+    "position": {
+      "latitude": 52.613639718611,
+      "longitude": 14.259044802835,
+      "elevation": 49
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 270,
+        "ils": null
+      },
+      {
+        "name": "9",
+        "heading": 90,
         "ils": null
       }
     ],
@@ -2601,7 +2995,7 @@
     "tacan": null,
     "runways": [
       {
-        "name": "9",
+        "name": "8",
         "heading": 83,
         "ils": null
       },
@@ -2658,6 +3052,36 @@
     "radio": null
   },
   {
+    "name": "Nordholz",
+    "position": {
+      "latitude": 53.769374512365,
+      "longitude": 8.6757584577014,
+      "elevation": 39
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "26",
+        "heading": 269,
+        "ils": {
+          "name": "",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": 53.764624,
+            "longitude": 8.633729
+          }
+        }
+      },
+      {
+        "name": "9",
+        "heading": 89,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Northeim",
     "position": {
       "latitude": 52.984605972131,
@@ -2674,6 +3098,28 @@
       {
         "name": "9",
         "heading": 90,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Norvenich",
+    "position": {
+      "latitude": 50.827340285678,
+      "longitude": 6.6431043258774,
+      "elevation": 296
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "7",
+        "heading": 78,
+        "ils": null
+      },
+      {
+        "name": "26",
+        "heading": 258,
         "ils": null
       }
     ],
@@ -2704,20 +3150,42 @@
   {
     "name": "Obermehler Schlotheim",
     "position": {
-      "latitude": 51.270072958671,
-      "longitude": 10.625673657584,
+      "latitude": 51.265396939441,
+      "longitude": 10.643938363983,
       "elevation": 889
     },
     "tacan": null,
     "runways": [
       {
-        "name": "12",
-        "heading": 118,
+        "name": "29",
+        "heading": 298,
         "ils": null
       },
       {
-        "name": "30",
-        "heading": 298,
+        "name": "12",
+        "heading": 118,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Oranienburg",
+    "position": {
+      "latitude": 52.71536011816,
+      "longitude": 13.222681603498,
+      "elevation": 108
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "34",
+        "heading": 344,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 164,
         "ils": null
       }
     ],
@@ -2748,8 +3216,8 @@
   {
     "name": "Peenemunde",
     "position": {
-      "latitude": 54.166542452148,
-      "longitude": 13.761408138595,
+      "latitude": 54.16647936596,
+      "longitude": 13.761512783698,
       "elevation": 23
     },
     "tacan": null,
@@ -2762,6 +3230,28 @@
       {
         "name": "32",
         "heading": 322,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Perwenitz",
+    "position": {
+      "latitude": 52.665191504691,
+      "longitude": 13.004816917509,
+      "elevation": 135
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "1",
+        "heading": 12,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 192,
         "ils": null
       }
     ],
@@ -2781,7 +3271,7 @@
     },
     "runways": [
       {
-        "name": "27",
+        "name": "9",
         "heading": 96,
         "ils": null
       },
@@ -2872,6 +3362,28 @@
     "radio": null
   },
   {
+    "name": "Revinge",
+    "position": {
+      "latitude": 55.726092041657,
+      "longitude": 13.442530037196,
+      "elevation": 58
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": null
+      },
+      {
+        "name": "11",
+        "heading": 112,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Rinteln",
     "position": {
       "latitude": 52.175927172397,
@@ -2888,6 +3400,36 @@
       {
         "name": "30",
         "heading": 301,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Schkeuditz",
+    "position": {
+      "latitude": 51.41182694254,
+      "longitude": 12.24402305039,
+      "elevation": 421
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "29",
+        "heading": 292,
+        "ils": {
+          "name": "IMA",
+          "frequency": "110.3",
+          "channel": null,
+          "position": {
+            "latitude": 51.41898,
+            "longitude": 12.204437
+          }
+        }
+      },
+      {
+        "name": "11",
+        "heading": 112,
         "ils": null
       }
     ],
@@ -2990,6 +3532,28 @@
     "radio": null
   },
   {
+    "name": "Sittensen",
+    "position": {
+      "latitude": 53.318274917457,
+      "longitude": 9.575903530934,
+      "elevation": 125
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "6",
+        "heading": 64,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 244,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
     "name": "Spangdahlem",
     "position": {
       "latitude": 49.985889217803,
@@ -3026,20 +3590,42 @@
   {
     "name": "Sperenberg",
     "position": {
-      "latitude": 52.135869814455,
-      "longitude": 13.323818703394,
-      "elevation": 186
+      "latitude": 52.137954776893,
+      "longitude": 13.288085152513,
+      "elevation": 185
     },
     "tacan": null,
     "runways": [
       {
-        "name": "27",
-        "heading": 280,
+        "name": "9",
+        "heading": 100,
         "ils": null
       },
       {
-        "name": "10",
-        "heading": 100,
+        "name": "28",
+        "heading": 280,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sprendlingen",
+    "position": {
+      "latitude": 49.865223221636,
+      "longitude": 7.9648505864054,
+      "elevation": 413
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 339,
+        "ils": null
+      },
+      {
+        "name": "16",
+        "heading": 159,
         "ils": null
       }
     ],
@@ -3062,6 +3648,80 @@
       {
         "name": "27",
         "heading": 269,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Sturup",
+    "position": {
+      "latitude": 55.547906072624,
+      "longitude": 13.374422286998,
+      "elevation": 217
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "17",
+        "heading": 180,
+        "ils": {
+          "name": "SMS",
+          "frequency": "111.9",
+          "channel": null,
+          "position": {
+            "latitude": 55.520645,
+            "longitude": 13.379406
+          }
+        }
+      },
+      {
+        "name": "36",
+        "heading": 0,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Szczecin-Goleniow",
+    "position": {
+      "latitude": 53.57886620148,
+      "longitude": 14.912985892164,
+      "elevation": 98
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "31",
+        "heading": 316,
+        "ils": null
+      },
+      {
+        "name": "14",
+        "heading": 136,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Tagra",
+    "position": {
+      "latitude": 55.594915408255,
+      "longitude": 13.721928607916,
+      "elevation": 115
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "33",
+        "heading": 327,
+        "ils": null
+      },
+      {
+        "name": "15",
+        "heading": 147,
         "ils": null
       }
     ],
@@ -3190,6 +3850,28 @@
       {
         "name": "20",
         "heading": 200,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Thurland",
+    "position": {
+      "latitude": 51.686563802186,
+      "longitude": 12.207918543039,
+      "elevation": 282
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "36",
+        "heading": 14,
+        "ils": null
+      },
+      {
+        "name": "19",
+        "heading": 194,
         "ils": null
       }
     ],
@@ -3429,7 +4111,7 @@
     "tacan": null,
     "runways": [
       {
-        "name": "10",
+        "name": "9",
         "heading": 89,
         "ils": null
       },
@@ -3444,20 +4126,20 @@
   {
     "name": "Wittstock",
     "position": {
-      "latitude": 53.199829920908,
-      "longitude": 12.505681945199,
-      "elevation": 226
+      "latitude": 53.204900489072,
+      "longitude": 12.540269875483,
+      "elevation": 222
     },
     "tacan": null,
     "runways": [
       {
-        "name": "8",
-        "heading": 82,
+        "name": "26",
+        "heading": 262,
         "ils": null
       },
       {
-        "name": "26",
-        "heading": 262,
+        "name": "8",
+        "heading": 82,
         "ils": null
       }
     ],
@@ -3540,20 +4222,42 @@
   {
     "name": "Zerbst",
     "position": {
-      "latitude": 52.004064064661,
-      "longitude": 12.16046633084,
+      "latitude": 51.995191169992,
+      "longitude": 12.12805770436,
       "elevation": 250
     },
     "tacan": null,
     "runways": [
       {
-        "name": "25",
-        "heading": 252,
+        "name": "7",
+        "heading": 72,
         "ils": null
       },
       {
-        "name": "7",
-        "heading": 72,
+        "name": "25",
+        "heading": 252,
+        "ils": null
+      }
+    ],
+    "radio": null
+  },
+  {
+    "name": "Zollschen",
+    "position": {
+      "latitude": 51.261891621343,
+      "longitude": 12.091337009593,
+      "elevation": 398
+    },
+    "tacan": null,
+    "runways": [
+      {
+        "name": "5",
+        "heading": 55,
+        "ils": null
+      },
+      {
+        "name": "24",
+        "heading": 235,
         "ils": null
       }
     ],

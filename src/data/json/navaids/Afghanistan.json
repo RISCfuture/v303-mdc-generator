@@ -1633,9 +1633,9 @@
   },
   {
     "name": "DI",
-    "latitude": 31.912663,
-    "longitude": 70.885678,
-    "elevation": 591
+    "latitude": 31.908665,
+    "longitude": 70.888507,
+    "elevation": 604
   },
   {
     "name": "DIRT",
@@ -2875,9 +2875,9 @@
   },
   {
     "name": "HRT",
-    "latitude": 34.207308,
-    "longitude": 62.225658,
-    "elevation": 3235
+    "latitude": 34.211313,
+    "longitude": 62.231559,
+    "elevation": 3219
   },
   {
     "name": "HRT.NDB",
@@ -4705,9 +4705,9 @@
   },
   {
     "name": "MT",
-    "latitude": 30.193997,
-    "longitude": 71.416173,
-    "elevation": 400
+    "latitude": 30.194,
+    "longitude": 71.412838,
+    "elevation": 390
   },
   {
     "name": "MULRE",
@@ -5839,9 +5839,9 @@
   },
   {
     "name": "PS",
-    "latitude": 33.978165,
-    "longitude": 71.517007,
-    "elevation": 1214
+    "latitude": 33.990832,
+    "longitude": 71.502676,
+    "elevation": 1207
   },
   {
     "name": "Padak",
@@ -6127,9 +6127,9 @@
   },
   {
     "name": "QT",
-    "latitude": 30.257832,
-    "longitude": 66.936007,
-    "elevation": 5213
+    "latitude": 30.234162,
+    "longitude": 66.948841,
+    "elevation": 5282
   },
   {
     "name": "Qadir Khel",
@@ -6523,9 +6523,9 @@
   },
   {
     "name": "RN",
-    "latitude": 33.611225,
-    "longitude": 73.108306,
-    "elevation": 1657
+    "latitude": 33.605998,
+    "longitude": 73.126008,
+    "elevation": 1621
   },
   {
     "name": "ROBEN",
@@ -8437,9 +8437,9 @@
   },
   {
     "name": "ZB",
-    "latitude": 31.355832,
-    "longitude": 69.455001,
-    "elevation": 4652
+    "latitude": 31.355997,
+    "longitude": 69.459835,
+    "elevation": 4669
   },
   {
     "name": "ZD",

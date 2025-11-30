@@ -1,7 +1,6 @@
 {
   "aircraft": "A-10C",
   "displayName": "A-10C",
-  "datalinkType": "sadl",
   "emptyWeight": 25629,
   "maxTakeoffWeight": 46476,
   "internalFuel": 11087,
@@ -642,6 +641,7 @@
     }
   ],
   "ammoTypes": ["CM - Combat Mix", "HEI - High Explosive Incendiary", "TP - Target Practice"],
+  "datalinkType": "sadl",
   "cmdsProfiles": [
     "PRGM A",
     "PRGM B",

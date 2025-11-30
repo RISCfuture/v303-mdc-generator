@@ -31,9 +31,9 @@
   },
   {
     "name": "AKR",
-    "latitude": 31.847319,
-    "longitude": 34.818434,
-    "elevation": 167
+    "latitude": 31.834715,
+    "longitude": 34.816453,
+    "elevation": 174
   },
   {
     "name": "ALI",
@@ -1123,9 +1123,9 @@
   },
   {
     "name": "BRA",
-    "latitude": 31.225217,
-    "longitude": 34.676659,
-    "elevation": 725
+    "latitude": 31.234946,
+    "longitude": 34.67987,
+    "elevation": 751
   },
   {
     "name": "BRN",
@@ -1711,9 +1711,9 @@
   },
   {
     "name": "DRZ",
-    "latitude": 35.291901,
-    "longitude": 40.153801,
-    "elevation": 732
+    "latitude": 35.2892,
+    "longitude": 40.187401,
+    "elevation": 692
   },
   {
     "name": "Da`il",
@@ -2239,9 +2239,9 @@
   },
   {
     "name": "HZR",
-    "latitude": 31.768148,
-    "longitude": 34.737861,
-    "elevation": 135
+    "latitude": 31.761851,
+    "longitude": 34.723613,
+    "elevation": 115
   },
   {
     "name": "Ha'il",
@@ -2791,9 +2791,9 @@
   },
   {
     "name": "KTN",
-    "latitude": 34.213299,
-    "longitude": 37.264198,
-    "elevation": 2451
+    "latitude": 34.227199,
+    "longitude": 37.2337,
+    "elevation": 2490
   },
   {
     "name": "Kafar Karra",
@@ -3073,9 +3073,9 @@
   },
   {
     "name": "LTK",
-    "latitude": 35.480301,
-    "longitude": 35.942299,
-    "elevation": 420
+    "latitude": 35.399399,
+    "longitude": 35.950699,
+    "elevation": 154
   },
   {
     "name": "LXR",
@@ -4508,14 +4508,14 @@
   {
     "name": "TBA",
     "latitude": 29.606701,
-    "longitude": 34.797402,
-    "elevation": 2431
+    "longitude": 34.748299,
+    "elevation": 2418
   },
   {
     "name": "TBK",
-    "latitude": 28.364683,
-    "longitude": 36.610224,
-    "elevation": 2523
+    "latitude": 28.3673,
+    "longitude": 36.606998,
+    "elevation": 2530
   },
   {
     "name": "TRF",

@@ -43,9 +43,9 @@
   },
   {
     "name": "AL",
-    "latitude": 44.674908,
-    "longitude": 34.398325,
-    "elevation": 125
+    "latitude": 42.096021,
+    "longitude": 43.644701,
+    "elevation": 2402
   },
   {
     "name": "ALAGIR",
@@ -1603,8 +1603,8 @@
   },
   {
     "name": "DG",
-    "latitude": 44.697894,
-    "longitude": 40.057712,
+    "latitude": 44.679754,
+    "longitude": 40.035455,
     "elevation": 581
   },
   {
@@ -3234,6 +3234,12 @@
     "elevation": 4085
   },
   {
+    "name": "Hasaut-Grecheskoe",
+    "latitude": 43.714868,
+    "longitude": 41.668144,
+    "elevation": 3658
+  },
+  {
     "name": "Hasaut-Grecheskoe ",
     "latitude": 43.714868,
     "longitude": 41.668144,
@@ -3769,9 +3775,9 @@
   },
   {
     "name": "KC",
-    "latitude": 44.749908,
-    "longitude": 33.566659,
-    "elevation": 138
+    "latitude": 45.366575,
+    "longitude": 36.399988,
+    "elevation": 128
   },
   {
     "name": "KENZHE",
@@ -3847,9 +3853,9 @@
   },
   {
     "name": "KT",
-    "latitude": 45.121577,
-    "longitude": 42.181646,
-    "elevation": 1276
+    "latitude": 42.174389,
+    "longitude": 42.455276,
+    "elevation": 131
   },
   {
     "name": "KTS",
@@ -3865,9 +3871,9 @@
   },
   {
     "name": "KW",
-    "latitude": 43.941577,
-    "longitude": 42.649979,
-    "elevation": 2631
+    "latitude": 44.966653,
+    "longitude": 37.996805,
+    "elevation": 43
   },
   {
     "name": "Kabardinka",
@@ -5131,9 +5137,9 @@
   },
   {
     "name": "LA",
-    "latitude": 46.666575,
-    "longitude": 29.999999,
-    "elevation": 138
+    "latitude": 43.917131,
+    "longitude": 39.337484,
+    "elevation": 194
   },
   {
     "name": "LANCHHUTI",
@@ -5328,6 +5334,12 @@
     "elevation": 778
   },
   {
+    "name": "Leso-Kefar'",
+    "latitude": 43.788871,
+    "longitude": 41.449272,
+    "elevation": 3461
+  },
+  {
     "name": "Leso-Kefar' ",
     "latitude": 43.788871,
     "longitude": 41.449272,
@@ -5413,9 +5425,9 @@
   },
   {
     "name": "MA",
-    "latitude": 47.083242,
-    "longitude": 37.449986,
-    "elevation": 223
+    "latitude": 44.622965,
+    "longitude": 40.146927,
+    "elevation": 801
   },
   {
     "name": "MAISKIY",
@@ -5455,9 +5467,9 @@
   },
   {
     "name": "MB",
-    "latitude": 45.087925,
-    "longitude": 38.873594,
-    "elevation": 82
+    "latitude": 45.083171,
+    "longitude": 38.927839,
+    "elevation": 89
   },
   {
     "name": "MD",
@@ -5485,9 +5497,9 @@
   },
   {
     "name": "MN",
-    "latitude": 47.049909,
-    "longitude": 40.366647,
-    "elevation": 299
+    "latitude": 44.239445,
+    "longitude": 43.054165,
+    "elevation": 1033
   },
   {
     "name": "MOZDOK",
@@ -5503,9 +5515,9 @@
   },
   {
     "name": "MZ",
-    "latitude": 43.791382,
-    "longitude": 44.632072,
-    "elevation": 463
+    "latitude": 43.790367,
+    "longitude": 44.602658,
+    "elevation": 469
   },
   {
     "name": "Machkhvareti",
@@ -6151,9 +6163,9 @@
   },
   {
     "name": "NK",
-    "latitude": 47.087408,
-    "longitude": 31.973051,
-    "elevation": 118
+    "latitude": 46.933241,
+    "longitude": 32.099995,
+    "elevation": 164
   },
   {
     "name": "NL",
@@ -6492,6 +6504,12 @@
     "elevation": 23
   },
   {
+    "name": "Nizh. Mtsara",
+    "latitude": 43.141038,
+    "longitude": 40.76145,
+    "elevation": 522
+  },
+  {
     "name": "Nizh. Mtsara ",
     "latitude": 43.141038,
     "longitude": 40.76145,
@@ -6544,6 +6562,12 @@
     "latitude": 43.474346,
     "longitude": 39.972717,
     "elevation": 364
+  },
+  {
+    "name": "Nizhnebakanskiy",
+    "latitude": 44.868592,
+    "longitude": 37.861945,
+    "elevation": 240
   },
   {
     "name": "Nizhnebakanskiy ",
@@ -6610,6 +6634,12 @@
     "latitude": 43.560079,
     "longitude": 39.801623,
     "elevation": 377
+  },
+  {
+    "name": "Nov.Teberda",
+    "latitude": 43.673906,
+    "longitude": 41.894978,
+    "elevation": 3241
   },
   {
     "name": "Nov.Teberda ",
@@ -6778,6 +6808,12 @@
     "latitude": 43.090391,
     "longitude": 40.809345,
     "elevation": 240
+  },
+  {
+    "name": "Novyy Karachay",
+    "latitude": 43.819752,
+    "longitude": 41.904403,
+    "elevation": 2730
   },
   {
     "name": "Novyy Karachay ",
@@ -7000,6 +7036,12 @@
     "latitude": 43.844148,
     "longitude": 41.892512,
     "elevation": 2986
+  },
+  {
+    "name": "Orel",
+    "latitude": 43.461316,
+    "longitude": 39.920078,
+    "elevation": 128
   },
   {
     "name": "Orel ",
@@ -7879,9 +7921,9 @@
   },
   {
     "name": "SH",
-    "latitude": 47.09991,
-    "longitude": 41.349979,
-    "elevation": 62
+    "latitude": 47.403241,
+    "longitude": 30.279998,
+    "elevation": 525
   },
   {
     "name": "SK",
@@ -9960,6 +10002,12 @@
     "elevation": 463
   },
   {
+    "name": "Verhnebakanskiy",
+    "latitude": 44.843629,
+    "longitude": 37.660287,
+    "elevation": 797
+  },
+  {
     "name": "Verhnebakanskiy ",
     "latitude": 44.843629,
     "longitude": 37.660287,
@@ -10768,6 +10816,12 @@
     "latitude": 45.024109,
     "longitude": 39.21763,
     "elevation": 112
+  },
+  {
+    "name": "im.Kosta Hetagurova",
+    "latitude": 43.806385,
+    "longitude": 41.90259,
+    "elevation": 2766
   },
   {
     "name": "im.Kosta Hetagurova ",

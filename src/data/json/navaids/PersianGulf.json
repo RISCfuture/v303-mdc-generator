@@ -25,9 +25,9 @@
   },
   {
     "name": "ADV",
-    "latitude": 24.441924,
-    "longitude": 54.656381,
-    "elevation": 46
+    "latitude": 24.419118,
+    "longitude": 54.672854,
+    "elevation": 85
   },
   {
     "name": "AJR",
@@ -709,8 +709,8 @@
   },
   {
     "name": "BND",
-    "latitude": 27.216956,
-    "longitude": 56.381018,
+    "latitude": 27.196943,
+    "longitude": 56.366971,
     "elevation": 16
   },
   {
@@ -1531,9 +1531,9 @@
   },
   {
     "name": "JSK",
-    "latitude": 25.646221,
-    "longitude": 57.783857,
-    "elevation": 20
+    "latitude": 25.652921,
+    "longitude": 57.781546,
+    "elevation": 16
   },
   {
     "name": "Jaeinak",
@@ -1585,21 +1585,21 @@
   },
   {
     "name": "KER",
-    "latitude": 30.265587,
-    "longitude": 56.960809,
-    "elevation": 5738
+    "latitude": 30.264595,
+    "longitude": 56.957928,
+    "elevation": 5732
   },
   {
     "name": "KHM",
-    "latitude": 26.762831,
-    "longitude": 55.907816,
-    "elevation": 36
+    "latitude": 25.653478,
+    "longitude": 57.795989,
+    "elevation": 30
   },
   {
     "name": "KIH",
-    "latitude": 26.523074,
-    "longitude": 54.011059,
-    "elevation": 89
+    "latitude": 26.527522,
+    "longitude": 53.952435,
+    "elevation": 49
   },
   {
     "name": "KIS",
@@ -1771,9 +1771,9 @@
   },
   {
     "name": "LEN",
-    "latitude": 26.536353,
-    "longitude": 54.851123,
-    "elevation": 72
+    "latitude": 26.530575,
+    "longitude": 54.831754,
+    "elevation": 66
   },
   {
     "name": "LMA",
@@ -1783,9 +1783,9 @@
   },
   {
     "name": "LVA",
-    "latitude": 26.800016,
-    "longitude": 53.386456,
-    "elevation": 10
+    "latitude": 26.812091,
+    "longitude": 53.355979,
+    "elevation": 72
   },
   {
     "name": "Lahbab",
@@ -2088,6 +2088,12 @@
     "elevation": 92
   },
   {
+    "name": "Palm Jebel Ali",
+    "latitude": 25.009022,
+    "longitude": 54.987897,
+    "elevation": 0
+  },
+  {
     "name": "Palm Jumeirah",
     "latitude": 25.120103,
     "longitude": 55.129655,
@@ -2209,9 +2215,9 @@
   },
   {
     "name": "SIR",
-    "latitude": 25.914373,
-    "longitude": 54.534604,
-    "elevation": 36
+    "latitude": 25.901625,
+    "longitude": 54.546971,
+    "elevation": 20
   },
   {
     "name": "SR",
