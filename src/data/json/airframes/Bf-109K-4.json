@@ -1,0 +1,287 @@
+{
+  "aircraft": "Bf-109K-4",
+  "displayName": "Bf 109 K-4",
+  "isHelicopter": false,
+  "emptyWeight": 6395,
+  "maxTakeoffWeight": 7496,
+  "internalFuel": 653,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "FuG 16 ZY",
+      "max": 156,
+      "min": 38,
+      "name": "COM 1",
+      "presetCount": 5,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API"
+          ]
+        }
+      ],
+      "name": "MG 131",
+      "shells": [
+        {
+          "displayName": "13mm APT",
+          "name": "MG_13x64_APT"
+        },
+        {
+          "displayName": "13mm API",
+          "name": "MG_13x64_API"
+        },
+        {
+          "displayName": "MG_13x64_HEI_T",
+          "name": "MG_13x64_HEI_T"
+        },
+        {
+          "displayName": "MG_13x64_I",
+          "name": "MG_13x64_I"
+        },
+        {
+          "displayName": "MG_13x64_I_T",
+          "name": "MG_13x64_I_T"
+        },
+        {
+          "displayName": "MG_13x64_HE",
+          "name": "MG_13x64_HE"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_API",
+            "MG_13x64_API"
+          ]
+        }
+      ],
+      "name": "MG 131",
+      "shells": [
+        {
+          "displayName": "13mm APT",
+          "name": "MG_13x64_APT"
+        },
+        {
+          "displayName": "13mm API",
+          "name": "MG_13x64_API"
+        },
+        {
+          "displayName": "MG_13x64_HEI_T",
+          "name": "MG_13x64_HEI_T"
+        },
+        {
+          "displayName": "MG_13x64_I",
+          "name": "MG_13x64_I"
+        },
+        {
+          "displayName": "MG_13x64_I_T",
+          "name": "MG_13x64_I_T"
+        },
+        {
+          "displayName": "MG_13x64_HE",
+          "name": "MG_13x64_HE"
+        }
+      ]
+    },
+    {
+      "capacity": 60,
+      "mixes": [
+        {
+          "sequence": [
+            "MK_108_MGsch",
+            "MK_108_HEI",
+            "MK_108_MGsch",
+            "MK_108_HEI",
+            "MK_108_MGsch_T",
+            "MK_108_HEI"
+          ]
+        },
+        {
+          "sequence": ["MK_108_MGsch", "MK_108_HEI"]
+        },
+        {
+          "sequence": ["MK_108_HEI"]
+        },
+        {
+          "sequence": ["MK_108_MGsch", "MK_108_HEI"]
+        },
+        {
+          "sequence": ["MK_108_HEI"]
+        }
+      ],
+      "name": "MK 108",
+      "shells": [
+        {
+          "displayName": "30mm MGsch",
+          "name": "MK_108_MGsch"
+        },
+        {
+          "displayName": "30mm MGsch T",
+          "name": "MK_108_MGsch_T"
+        },
+        {
+          "displayName": "30mm HEI",
+          "name": "MK_108_HEI"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["SC_501_SC500", "SC_501_SC250", "BF109K_4_FUEL_TANK"]
+    }
+  ],
+  "ammoTypes": [
+    "CM - Combat Mix",
+    "HE - Anti-Bomber",
+    "AG - Ground Attack",
+    "CS - No Tracers",
+    "TP - Target Practice"
+  ]
+}

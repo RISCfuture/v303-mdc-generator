@@ -1,6 +1,7 @@
 {
   "aircraft": "J-11A",
   "displayName": "J-11A",
+  "isHelicopter": false,
   "emptyWeight": 38581,
   "maxTakeoffWeight": 72752,
   "internalFuel": 20723,
@@ -14,12 +15,12 @@
   "radios": [],
   "guns": [
     {
-      "name": "GSh-30-1",
       "capacity": 150,
+      "name": "GSh-30-1",
       "shells": [
         {
-          "name": "GSH301_30_HE",
-          "displayName": "30mm HE"
+          "displayName": "30mm HE",
+          "name": "GSH301_30_HE"
         }
       ]
     }

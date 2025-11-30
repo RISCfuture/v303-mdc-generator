@@ -1,0 +1,385 @@
+{
+  "aircraft": "FW-190D9",
+  "displayName": "Fw 190 D-9",
+  "isHelicopter": false,
+  "emptyWeight": 7937,
+  "maxTakeoffWeight": 10670,
+  "internalFuel": 855,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "FuG 16 Z",
+      "max": 156,
+      "min": 38,
+      "name": "COM 1",
+      "presetCount": 5,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 250,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_HEI_T",
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_MGsch"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        }
+      ],
+      "name": "MG 151/20",
+      "shells": [
+        {
+          "displayName": "20mm HEI T",
+          "name": "MG_20x82_HEI_T"
+        },
+        {
+          "displayName": "20mm API",
+          "name": "MG_20x82_API"
+        },
+        {
+          "displayName": "20mm MGsch",
+          "name": "MG_20x82_MGsch"
+        }
+      ]
+    },
+    {
+      "capacity": 450,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API"
+          ]
+        }
+      ],
+      "name": "MG 131",
+      "shells": [
+        {
+          "displayName": "13mm APT",
+          "name": "MG_13x64_APT"
+        },
+        {
+          "displayName": "13mm API",
+          "name": "MG_13x64_API"
+        },
+        {
+          "displayName": "MG_13x64_HEI_T",
+          "name": "MG_13x64_HEI_T"
+        },
+        {
+          "displayName": "MG_13x64_I",
+          "name": "MG_13x64_I"
+        },
+        {
+          "displayName": "MG_13x64_I_T",
+          "name": "MG_13x64_I_T"
+        },
+        {
+          "displayName": "MG_13x64_HE",
+          "name": "MG_13x64_HE"
+        }
+      ]
+    },
+    {
+      "capacity": 450,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HEI_T",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_I",
+            "MG_13x64_I",
+            "MG_13x64_APT",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_I",
+            "MG_13x64_I"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_HE",
+            "MG_13x64_HE",
+            "MG_13x64_HE"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_13x64_API",
+            "MG_13x64_API",
+            "MG_13x64_I_T",
+            "MG_13x64_API",
+            "MG_13x64_API"
+          ]
+        }
+      ],
+      "name": "MG 131",
+      "shells": [
+        {
+          "displayName": "13mm APT",
+          "name": "MG_13x64_APT"
+        },
+        {
+          "displayName": "13mm API",
+          "name": "MG_13x64_API"
+        },
+        {
+          "displayName": "MG_13x64_HEI_T",
+          "name": "MG_13x64_HEI_T"
+        },
+        {
+          "displayName": "MG_13x64_I",
+          "name": "MG_13x64_I"
+        },
+        {
+          "displayName": "MG_13x64_I_T",
+          "name": "MG_13x64_I_T"
+        },
+        {
+          "displayName": "MG_13x64_HE",
+          "name": "MG_13x64_HE"
+        }
+      ]
+    },
+    {
+      "capacity": 250,
+      "mixes": [
+        {
+          "sequence": [
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch",
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch",
+            "MG_20x82_HEI_T",
+            "MG_20x82_MGsch",
+            "MG_20x82_MGsch"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_API",
+            "MG_20x82_MGsch",
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        },
+        {
+          "sequence": [
+            "MG_20x82_API",
+            "MG_20x82_API",
+            "MG_20x82_HEI_T",
+            "MG_20x82_API",
+            "MG_20x82_API"
+          ]
+        }
+      ],
+      "name": "MG 151/20",
+      "shells": [
+        {
+          "displayName": "20mm HEI T",
+          "name": "MG_20x82_HEI_T"
+        },
+        {
+          "displayName": "20mm API",
+          "name": "MG_20x82_API"
+        },
+        {
+          "displayName": "20mm MGsch",
+          "name": "MG_20x82_MGsch"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["FW109_FUEL_TANK", "SC_501_SC500", "ER_4_SC50"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{FW_190_R4M_LEFT_WING}", "{WGr21}"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["{FW_190_R4M_RGHT_WING}", "{WGr21}"]
+    }
+  ],
+  "ammoTypes": [
+    "CM - Combat Mix",
+    "HE - Anti-Bomber",
+    "AG - Ground Attack",
+    "CS - No Tracers",
+    "TP - Target Practice"
+  ]
+}

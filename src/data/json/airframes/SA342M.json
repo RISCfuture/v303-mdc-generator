@@ -1,0 +1,77 @@
+{
+  "aircraft": "SA342M",
+  "displayName": "SA342M",
+  "isHelicopter": true,
+  "emptyWeight": 3397,
+  "maxTakeoffWeight": 4597,
+  "internalFuel": 918,
+  "cmdsCapacity": 32,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 32,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "FM Radio",
+      "max": 87.975,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 8,
+      "step": 0.1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{HOT3_R1_M}", "{HOT3_R2_M}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{HOT3_L1_M}", "{HOT3_L2_M}"]
+    },
+    {
+      "station": 3,
+      "name": "FAS",
+      "munitions": ["{FAS}"]
+    },
+    {
+      "station": 4,
+      "name": "IR",
+      "munitions": ["{IR_Deflector}"]
+    },
+    {
+      "station": 5,
+      "name": "ANT",
+      "munitions": ["{SA342_Dipole}"]
+    },
+    {
+      "station": 6,
+      "name": "R SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "L SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    }
+  ]
+}

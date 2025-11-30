@@ -1,0 +1,122 @@
+{
+  "aircraft": "Ka-50_3",
+  "displayName": "Ka-50 III",
+  "isHelicopter": true,
+  "emptyWeight": 17703,
+  "maxTakeoffWeight": 26235,
+  "internalFuel": 3197,
+  "cmdsCapacity": 128,
+  "chaffIncrement": 1,
+  "flareIncrement": 32,
+  "defaultChaff": 0,
+  "defaultFlare": 128,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "R-828",
+      "max": 59.9,
+      "min": 20,
+      "name": "COM 1",
+      "presetCount": 10,
+      "step": 0.1
+    },
+    {
+      "description": "ARK-22",
+      "max": 1.75,
+      "min": 0.15,
+      "name": "COM 2",
+      "presetCount": 16,
+      "step": 1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "1",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_OFP2",
+        "B_8V20A_OM",
+        "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74884}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74881}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{PTB_450}",
+        "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "2",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_OFP2",
+        "B_8V20A_OM",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74884}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74881}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{PTB_450}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "3",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_OFP2",
+        "B_8V20A_OM",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74884}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74881}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{PTB_450}"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "4",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_OFP2",
+        "B_8V20A_OM",
+        "{6DADF342-D4BA-4D8A-B081-BA928C4AF86D}",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74884}",
+        "{96A7F676-F956-404A-AD04-F33FB2C74881}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "{PTB_450}",
+        "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "AAM L",
+      "munitions": ["{9S846_2xIGLA}"]
+    },
+    {
+      "station": 6,
+      "name": "AAM R",
+      "munitions": ["{9S846_2xIGLA}"]
+    }
+  ]
+}

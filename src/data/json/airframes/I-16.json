@@ -1,0 +1,169 @@
+{
+  "aircraft": "I-16",
+  "displayName": "I-16",
+  "isHelicopter": false,
+  "emptyWeight": 3558,
+  "maxTakeoffWeight": 4731,
+  "internalFuel": 421,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "SCR522",
+      "max": 156,
+      "min": 100,
+      "name": "COM 1",
+      "presetCount": 4,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 900,
+      "mixes": [
+        {
+          "sequence": [
+            "7_62x54",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER"
+          ]
+        }
+      ],
+      "name": "SHKAS_GUN",
+      "shells": [
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54"
+        },
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54_NOTRACER"
+        }
+      ]
+    },
+    {
+      "capacity": 500,
+      "mixes": [
+        {
+          "sequence": [
+            "7_62x54_NOTRACER",
+            "7_62x54",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER"
+          ]
+        }
+      ],
+      "name": "SHKAS_GUN",
+      "shells": [
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54"
+        },
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54_NOTRACER"
+        }
+      ]
+    },
+    {
+      "capacity": 500,
+      "mixes": [
+        {
+          "sequence": [
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER"
+          ]
+        }
+      ],
+      "name": "SHKAS_GUN",
+      "shells": [
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54"
+        },
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54_NOTRACER"
+        }
+      ]
+    },
+    {
+      "capacity": 900,
+      "mixes": [
+        {
+          "sequence": [
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54_NOTRACER",
+            "7_62x54",
+            "7_62x54_NOTRACER"
+          ]
+        }
+      ],
+      "name": "SHKAS_GUN",
+      "shells": [
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54"
+        },
+        {
+          "displayName": "7.62mm",
+          "name": "7_62x54_NOTRACER"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["I16_RS_82"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["I16_RS_82"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["I16_RS_82"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["I16_FAB_100SV", "I16_DROP_FUEL_TANK"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": ["I16_FAB_100SV", "I16_DROP_FUEL_TANK"]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["I16_RS_82"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": ["I16_RS_82"]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": ["I16_RS_82"]
+    }
+  ]
+}

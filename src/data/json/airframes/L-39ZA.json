@@ -1,0 +1,139 @@
+{
+  "aircraft": "L-39ZA",
+  "displayName": "L-39ZA",
+  "isHelicopter": false,
+  "emptyWeight": 7967,
+  "maxTakeoffWeight": 12346,
+  "internalFuel": 2161,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "R-832M",
+      "max": 390,
+      "min": 118,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 150,
+      "name": "GSh-2-23",
+      "shells": [
+        {
+          "displayName": "23mm HE",
+          "name": "GSH23_23_HE_T"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "1",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{OFAB_100_Jupiter}",
+        "{P-50T}",
+        "{FAB-100x2}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{PK-3}",
+        "{R-3S}",
+        "{APU-60-1_R_60M}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B1}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B2}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B3}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B4}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B5}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B6}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "2",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{OFAB_100_Jupiter}",
+        "{P-50T}",
+        "{FAB-100x2}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{PK-3}",
+        "{PTB_150L_L39}",
+        "{PTB_350L_L39}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "3",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{OFAB_100_Jupiter}",
+        "{P-50T}",
+        "{FAB-100x2}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{PK-3}",
+        "{PTB_150L_L39}",
+        "{PTB_350L_L39}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "4",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{OFAB_100_Jupiter}",
+        "{P-50T}",
+        "{FAB-100x2}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{PK-3}",
+        "{R-3S}",
+        "{APU-60-1_R_60M}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B1}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B2}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B3}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B4}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B5}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B6}"
+      ]
+    }
+  ]
+}

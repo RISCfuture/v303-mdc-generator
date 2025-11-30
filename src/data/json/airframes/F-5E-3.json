@@ -1,6 +1,7 @@
 {
   "aircraft": "F-5E-3",
   "displayName": "F-5E-3",
+  "isHelicopter": false,
   "emptyWeight": 10659,
   "maxTakeoffWeight": 24663,
   "internalFuel": 4511,
@@ -13,15 +14,96 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "name": "COM 1",
       "description": "UHF Radio AN/ARC-164",
-      "presetCount": 20,
-      "min": 225,
       "max": 399.999,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 20,
       "step": 0.025
     }
   ],
-  "guns": [],
+  "guns": [
+    {
+      "capacity": 280,
+      "mixes": [
+        {
+          "sequence": ["M39_20_HEI", "M39_20_HEI", "M39_20_HEI", "M39_20_HEI_T"]
+        },
+        {
+          "sequence": ["M39_20_HEI_T", "M39_20_HEI", "M39_20_HEI", "M39_20_API"]
+        },
+        {
+          "sequence": ["M39_20_API"]
+        },
+        {
+          "sequence": ["M39_20_TP", "M39_20_TP_T"]
+        }
+      ],
+      "name": "M-39",
+      "shells": [
+        {
+          "displayName": "20mm HEI",
+          "name": "M39_20_HEI"
+        },
+        {
+          "displayName": "20mm HEI T",
+          "name": "M39_20_HEI_T"
+        },
+        {
+          "displayName": "20mm API",
+          "name": "M39_20_API"
+        },
+        {
+          "displayName": "20mm TP",
+          "name": "M39_20_TP"
+        },
+        {
+          "displayName": "20mm TP T",
+          "name": "M39_20_TP_T"
+        }
+      ]
+    },
+    {
+      "capacity": 280,
+      "mixes": [
+        {
+          "sequence": ["M39_20_HEI", "M39_20_HEI", "M39_20_HEI", "M39_20_HEI_T"]
+        },
+        {
+          "sequence": ["M39_20_HEI_T", "M39_20_HEI", "M39_20_HEI", "M39_20_API"]
+        },
+        {
+          "sequence": ["M39_20_API"]
+        },
+        {
+          "sequence": ["M39_20_TP", "M39_20_TP_T"]
+        }
+      ],
+      "name": "M-39",
+      "shells": [
+        {
+          "displayName": "20mm HEI",
+          "name": "M39_20_HEI"
+        },
+        {
+          "displayName": "20mm HEI T",
+          "name": "M39_20_HEI_T"
+        },
+        {
+          "displayName": "20mm API",
+          "name": "M39_20_API"
+        },
+        {
+          "displayName": "20mm TP",
+          "name": "M39_20_TP"
+        },
+        {
+          "displayName": "20mm TP T",
+          "name": "M39_20_TP_T"
+        }
+      ]
+    }
+  ],
   "stations": [
     {
       "station": 1,

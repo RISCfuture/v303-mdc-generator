@@ -1,6 +1,7 @@
 {
   "aircraft": "AJS37",
   "displayName": "AJS37",
+  "isHelicopter": false,
   "emptyWeight": 23697,
   "maxTakeoffWeight": 44092,
   "internalFuel": 9868,
@@ -13,11 +14,11 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "name": "COM 1",
       "description": "Radio frequencies",
-      "presetCount": 47,
-      "min": 103,
       "max": 400,
+      "min": 103,
+      "name": "COM 1",
+      "presetCount": 47,
       "step": 0.025
     }
   ],

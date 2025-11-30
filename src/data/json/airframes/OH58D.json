@@ -1,0 +1,174 @@
+{
+  "aircraft": "OH58D",
+  "displayName": "OH-58D(R)",
+  "isHelicopter": true,
+  "emptyWeight": 4192,
+  "maxTakeoffWeight": 5200,
+  "internalFuel": 736,
+  "cmdsCapacity": 30,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 30,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "UHF AM",
+      "max": 399.975,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "VHF AM",
+      "max": 151.975,
+      "min": 116,
+      "name": "COM 2",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "VHF FM1",
+      "max": 87.975,
+      "min": 30,
+      "name": "COM 3",
+      "presetCount": 21,
+      "step": 0.1
+    },
+    {
+      "description": "VHF FM2",
+      "max": 87.975,
+      "min": 30,
+      "name": "COM 4",
+      "presetCount": 21,
+      "step": 0.1
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 150,
+      "name": "CPG_M4",
+      "shells": [
+        {
+          "displayName": "5.56mm",
+          "name": "5_56x45"
+        },
+        {
+          "displayName": "5_56x45_NOtr",
+          "name": "5_56x45_NOtr"
+        },
+        {
+          "displayName": "5_56x45_NOtr",
+          "name": "5_56x45_NOtr"
+        }
+      ]
+    },
+    {
+      "capacity": 150,
+      "name": "CPG_M4",
+      "shells": [
+        {
+          "displayName": "5.56mm",
+          "name": "5_56x45"
+        },
+        {
+          "displayName": "5_56x45_NOtr",
+          "name": "5_56x45_NOtr"
+        },
+        {
+          "displayName": "5_56x45_NOtr",
+          "name": "5_56x45_NOtr"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Left",
+      "munitions": [
+        "OH58D_AGM_114_L1",
+        "OH58D_AGM_114_L",
+        "OH58D_FIM_92_L",
+        "OH58D_M3P_L100",
+        "OH58D_M3P_L200",
+        "OH58D_M3P_L300",
+        "OH58D_M3P_L400",
+        "OH58D_M3P_L500",
+        "{M260_M151}",
+        "{M260_M156}",
+        "{M260_M229}",
+        "{M260_M257}",
+        "{M260_M259}",
+        "{M260_M274}",
+        "{M260_A_M151_B_M156}",
+        "{M260_A_M151_B_M257}",
+        "{M260_A_M151_B_M259}",
+        "{M260_A_M229_B_M156}",
+        "{M260_A_M229_B_M257}",
+        "{M260_A_M229_B_M259}",
+        "{M260_APKWS_M151}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Dash L",
+      "munitions": [
+        "OH58D_Red_Smoke_Grenade",
+        "OH58D_Blue_Smoke_Grenade",
+        "OH58D_Green_Smoke_Grenade",
+        "OH58D_Yellow_Smoke_Grenade",
+        "OH58D_Violet_Smoke_Grenade",
+        "OH58D_White_Smoke_Grenade"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Dash C",
+      "munitions": [
+        "OH58D_Red_Smoke_Grenade",
+        "OH58D_Blue_Smoke_Grenade",
+        "OH58D_Green_Smoke_Grenade",
+        "OH58D_Yellow_Smoke_Grenade",
+        "OH58D_Violet_Smoke_Grenade",
+        "OH58D_White_Smoke_Grenade"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Dash R",
+      "munitions": [
+        "OH58D_Red_Smoke_Grenade",
+        "OH58D_Blue_Smoke_Grenade",
+        "OH58D_Green_Smoke_Grenade",
+        "OH58D_Yellow_Smoke_Grenade",
+        "OH58D_Violet_Smoke_Grenade",
+        "OH58D_White_Smoke_Grenade"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Right",
+      "munitions": [
+        "OH58D_AGM_114_R1",
+        "OH58D_AGM_114_R",
+        "OH58D_FIM_92_R",
+        "{M260_M151}",
+        "{M260_M156}",
+        "{M260_M229}",
+        "{M260_M257}",
+        "{M260_M259}",
+        "{M260_M274}",
+        "{M260_A_M151_B_M156}",
+        "{M260_A_M151_B_M257}",
+        "{M260_A_M151_B_M259}",
+        "{M260_A_M229_B_M156}",
+        "{M260_A_M229_B_M257}",
+        "{M260_A_M229_B_M259}",
+        "{M260_APKWS_M151}"
+      ]
+    }
+  ]
+}

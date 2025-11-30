@@ -1,0 +1,247 @@
+{
+  "aircraft": "F-86F Sabre",
+  "displayName": "F-86F",
+  "isHelicopter": false,
+  "emptyWeight": 11808,
+  "maxTakeoffWeight": 20611,
+  "internalFuel": 2826,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "AN/ARC-27",
+      "max": 399.9,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 18,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M20_50_aero_APIT",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M20_50_aero_APIT",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M20_50_aero_APIT"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M20_50_aero_APIT",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M20_50_aero_APIT",
+            "M2_50_aero_AP"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "M2_50_aero_AP",
+            "M20_50_aero_APIT",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP",
+            "M2_50_aero_AP"
+          ]
+        }
+      ],
+      "name": "m3_browning",
+      "shells": [
+        {
+          "displayName": "12.7mm",
+          "name": "M2_50_aero_AP"
+        },
+        {
+          "displayName": "12.7mm",
+          "name": "M20_50_aero_APIT"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{PTB_200_F86F35}", "{PTB_120_F86F35}", "{HVARx2}", "{HVAR_SMOKE_2}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{HVARx2}", "{HVAR_SMOKE_2}"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["{HVARx2}", "{HVAR_SMOKE_2}"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "{PTB_120_F86F35}",
+        "{F86ANM64}",
+        "{00F5DAC4-0466-4122-998F-B1A298E34113}",
+        "{HVARx2}",
+        "{HVAR_SMOKE_2}"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": ["{GAR-8}"]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["{GAR-8}"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "{PTB_120_F86F35}",
+        "{F86ANM64}",
+        "{00F5DAC4-0466-4122-998F-B1A298E34113}",
+        "{HVARx2}",
+        "{HVAR_SMOKE_2}"
+      ]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": ["{HVARx2}", "{HVAR_SMOKE_2}"]
+    },
+    {
+      "station": 9,
+      "name": "Station 9",
+      "munitions": ["{HVARx2}", "{HVAR_SMOKE_2}"]
+    },
+    {
+      "station": 10,
+      "name": "Station 10",
+      "munitions": ["{PTB_200_F86F35}", "{PTB_120_F86F35}", "{HVARx2}", "{HVAR_SMOKE_2}"]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "aircraft": "FA-18C_hornet",
   "displayName": "F/A-18C Lot 20",
+  "isHelicopter": false,
   "emptyWeight": 25093,
   "maxTakeoffWeight": 51899,
   "internalFuel": 10803,
@@ -13,67 +14,74 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "name": "COM 1",
       "description": "COMM 1: ARC-210",
-      "presetCount": 20,
-      "min": 30,
       "max": 399.975,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 20,
       "step": 0.025
     },
     {
-      "name": "COM 2",
       "description": "COMM 2: ARC-210",
-      "presetCount": 20,
-      "min": 30,
       "max": 399.975,
+      "min": 30,
+      "name": "COM 2",
+      "presetCount": 20,
       "step": 0.025
     }
   ],
   "guns": [
     {
-      "name": "M-61",
       "capacity": 578,
-      "shells": [
-        {
-          "name": "M61_20_HE",
-          "displayName": "20mm HE"
-        },
-        {
-          "name": "M61_20_AP",
-          "displayName": "20mm AP"
-        },
-        {
-          "name": "M61_20_TP",
-          "displayName": "M61_20_TP"
-        },
-        {
-          "name": "M61_20_TP_T",
-          "displayName": "M61_20_TP_T"
-        },
-        {
-          "name": "M61_20_PGU28",
-          "displayName": "PGU-28/B SAPHEI"
-        },
-        {
-          "name": "M61_20_PGU27",
-          "displayName": "PGU-27/B TP"
-        },
-        {
-          "name": "M61_20_PGU30",
-          "displayName": "PGU-30/B TP-T"
-        }
-      ],
       "mixes": [
         {
-          "sequence": [
-            "M61_20_HE",
-            "M61_20_AP",
-            "M61_20_TP",
-            "M61_20_TP_T",
-            "M61_20_PGU28",
-            "M61_20_PGU27",
-            "M61_20_PGU30"
-          ]
+          "sequence": ["M61_20_HE"]
+        },
+        {
+          "sequence": ["M61_20_AP"]
+        },
+        {
+          "sequence": ["M61_20_TP"]
+        },
+        {
+          "sequence": ["M61_20_TP_T", "M61_20_PGU28"]
+        },
+        {
+          "sequence": ["M61_20_PGU27"]
+        },
+        {
+          "sequence": ["M61_20_PGU30"]
+        }
+      ],
+      "name": "M-61",
+      "shells": [
+        {
+          "displayName": "20mm HE",
+          "name": "M61_20_HE"
+        },
+        {
+          "displayName": "20mm AP",
+          "name": "M61_20_AP"
+        },
+        {
+          "displayName": "M61_20_TP",
+          "name": "M61_20_TP"
+        },
+        {
+          "displayName": "M61_20_TP_T",
+          "name": "M61_20_TP_T"
+        },
+        {
+          "displayName": "PGU-28/B SAPHEI",
+          "name": "M61_20_PGU28"
+        },
+        {
+          "displayName": "PGU-27/B TP",
+          "name": "M61_20_PGU27"
+        },
+        {
+          "displayName": "PGU-30/B TP-T",
+          "name": "M61_20_PGU30"
         }
       ]
     }

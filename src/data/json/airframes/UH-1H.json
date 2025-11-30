@@ -1,0 +1,76 @@
+{
+  "aircraft": "UH-1H",
+  "displayName": "UH-1H",
+  "isHelicopter": true,
+  "emptyWeight": 6356,
+  "maxTakeoffWeight": 9502,
+  "internalFuel": 1391,
+  "cmdsCapacity": 60,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 60,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "UHF AN/ARC-51",
+      "max": 399.975,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["M134_L"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "XM158_MK1",
+        "XM158_MK5",
+        "XM158_M151",
+        "XM158_M156",
+        "XM158_M274",
+        "XM158_M257",
+        "M261_MK151",
+        "M261_MK156"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["M134_SIDE_L", "M60_SIDE_L"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["M134_SIDE_R", "M60_SIDE_R"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "XM158_MK1",
+        "XM158_MK5",
+        "XM158_M151",
+        "XM158_M156",
+        "XM158_M274",
+        "XM158_M257",
+        "M261_MK151",
+        "M261_MK156"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["M134_R"]
+    }
+  ]
+}

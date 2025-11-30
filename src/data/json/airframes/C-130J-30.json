@@ -1,0 +1,51 @@
+{
+  "aircraft": "C-130J-30",
+  "displayName": "C-130J-30",
+  "isHelicopter": false,
+  "emptyWeight": 86200,
+  "maxTakeoffWeight": 175001,
+  "internalFuel": 43413,
+  "cmdsCapacity": 420,
+  "chaffIncrement": 30,
+  "flareIncrement": 30,
+  "defaultChaff": 220,
+  "defaultFlare": 200,
+  "defaultJoker": 10000,
+  "defaultBingo": 7000,
+  "radios": [
+    {
+      "description": "UHF-1/2",
+      "max": 399.975,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "VHF-1/2",
+      "max": 200.975,
+      "min": 30,
+      "name": "COM 2",
+      "presetCount": 10,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Left Inner",
+      "munitions": ["{C130J_Ext_Tank_L}"]
+    },
+    {
+      "station": 2,
+      "name": "Right Inner",
+      "munitions": ["{C130J_Ext_Tank_R}"]
+    },
+    {
+      "station": 3,
+      "name": "Rear",
+      "munitions": ["{C130-Cargo-Bay-M4}"]
+    }
+  ]
+}

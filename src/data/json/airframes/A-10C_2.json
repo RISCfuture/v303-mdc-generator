@@ -1,6 +1,7 @@
 {
   "aircraft": "A-10C_2",
   "displayName": "A-10C II",
+  "isHelicopter": false,
   "emptyWeight": 25629,
   "maxTakeoffWeight": 46476,
   "internalFuel": 11087,
@@ -13,59 +14,57 @@
   "defaultBingo": 2500,
   "radios": [
     {
-      "name": "COM 1",
       "description": "UHF/VHF: ARC-210",
+      "max": 399.975,
+      "min": 30,
+      "name": "COM 1",
       "presetCount": 25,
-      "min": 30,
-      "max": 399.975,
       "step": 0.025
     },
     {
-      "name": "COM 2",
       "description": "UHF AM: ARC-164",
-      "presetCount": 20,
-      "min": 225,
       "max": 399.975,
+      "min": 225,
+      "name": "COM 2",
+      "presetCount": 20,
       "step": 0.025
     },
     {
-      "name": "COM 3",
       "description": "VHF FM: ARC-186",
-      "presetCount": 20,
-      "min": 30,
       "max": 87.995,
+      "min": 30,
+      "name": "COM 3",
+      "presetCount": 20,
       "step": 0.1
     }
   ],
   "guns": [
     {
-      "name": "GAU-8",
       "capacity": 1150,
-      "shells": [
-        {
-          "name": "GAU8_30_AP",
-          "displayName": "30mm AP"
-        },
-        {
-          "name": "GAU8_30_HE",
-          "displayName": "30mm HE"
-        },
-        {
-          "name": "GAU8_30_TP",
-          "displayName": "30mm TP"
-        }
-      ],
       "mixes": [
         {
-          "sequence": [
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_HE",
-            "GAU8_30_HE",
-            "GAU8_30_TP"
-          ]
+          "sequence": ["GAU8_30_AP", "GAU8_30_AP", "GAU8_30_AP", "GAU8_30_AP", "GAU8_30_HE"]
+        },
+        {
+          "sequence": ["GAU8_30_HE"]
+        },
+        {
+          "sequence": ["GAU8_30_TP"]
+        }
+      ],
+      "name": "GAU-8",
+      "shells": [
+        {
+          "displayName": "30mm AP",
+          "name": "GAU8_30_AP"
+        },
+        {
+          "displayName": "30mm HE",
+          "name": "GAU8_30_HE"
+        },
+        {
+          "displayName": "30mm TP",
+          "name": "GAU8_30_TP"
         }
       ]
     }

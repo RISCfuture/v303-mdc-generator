@@ -1,0 +1,481 @@
+{
+  "aircraft": "F4U-1D_CW",
+  "displayName": "F4U-1D Mk.IV",
+  "isHelicopter": false,
+  "emptyWeight": 9903,
+  "maxTakeoffWeight": 15000,
+  "internalFuel": 1459,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "ARC-5",
+      "max": 390,
+      "min": 100,
+      "name": "COM 1",
+      "presetCount": 4,
+      "step": 0.025
+    },
+    {
+      "description": "ARR-2",
+      "max": 390,
+      "min": 100,
+      "name": "COM 2",
+      "presetCount": 6,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_API_M8_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    },
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_Ball_M2_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    },
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_API_M8_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_API_M8_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    },
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_API_M8_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    },
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    },
+    {
+      "capacity": 400,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_API_M8_Corsair",
+            "50Browning_APIT_M20_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_APIT_M20_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_AP_M2_Corsair",
+            "50Browning_Ball_M2_Corsair",
+            "50Browning_Ball_M2_Corsair"
+          ]
+        }
+      ],
+      "name": "Corsair Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2_Corsair"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8_Corsair"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20_Corsair"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{150_USgal_Corsair_droptank_mk5}",
+        "{150_USgal_Corsair_droptank_mk6}",
+        "{Tiny_Tim_Corsair_L}",
+        "{AN_M30A1}",
+        "{AN_M57}",
+        "{AN-M64}",
+        "{AN_M65}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": ["{175_USgal_Corsair_droptank_aux}", "{AN-M64}", "{AN_M65}", "{ASM_N_2}"]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "{150_USgal_Corsair_droptank_mk5}",
+        "{150_USgal_Corsair_droptank_mk6}",
+        "{Tiny_Tim_Corsair_R}",
+        "{AN_M30A1}",
+        "{AN_M57}",
+        "{AN-M64}",
+        "{AN_M65}"
+      ]
+    },
+    {
+      "station": 8,
+      "name": "Station 8",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 9,
+      "name": "Station 9",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 10,
+      "name": "Station 10",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 11,
+      "name": "Station 11",
+      "munitions": ["{HVAR_USN_Mk28_Mod4_Corsair}"]
+    },
+    {
+      "station": 12,
+      "name": "Station 12",
+      "munitions": [
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-ORANGE}",
+        "{INV-SMOKE-YELLOW}"
+      ]
+    }
+  ],
+  "ammoTypes": ["CM - Combat Mix", "CML Combat Mix Late", "AG - Ground Attack", "CS - No Tracers"]
+}

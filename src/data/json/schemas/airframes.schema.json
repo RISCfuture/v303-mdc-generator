@@ -29,6 +29,10 @@
       "type": "string",
       "description": "Human-readable aircraft name"
     },
+    "isHelicopter": {
+      "type": "boolean",
+      "description": "True for rotary-wing aircraft (helicopters), false for fixed-wing"
+    },
     "emptyWeight": {
       "type": "number",
       "minimum": 0,

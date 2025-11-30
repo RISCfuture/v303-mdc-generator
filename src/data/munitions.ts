@@ -1,5 +1,5 @@
 // Munitions weights and specifications for TOLD calculations
-// Data source: DCS World data via Quaggles DCS Lua Datamine
+// Data source: DCS World via v303 DCS Datamine hook (scripts/dcs-datamine/)
 // Aircraft specifications and station configurations from DCS
 //
 // Override Format (Path-based):
@@ -47,9 +47,9 @@ const munitionsDatabase: Record<string, MunitionData> = applyOverrides(
  *   - Nested racks: "{BRU42LS_2*LAU68_HYDRA_70_MK1}" (BRU-42 with 2x LAU-68 rocket pods)
  *   - Complex nested: "BRU-42_3*Mk-82AIR" (no braces variant)
  *
- * Note: Quaggles database stores composite CLSIDs without the asterisk separator.
+ * Note: DCS database stores composite CLSIDs without the asterisk separator.
  * Airframe files use: {TER_9A_2L*GBU-12}
- * Quaggles database has: {TER_9A_2LGBU-12}
+ * DCS database has: {TER_9A_2LGBU-12}
  *
  * Returns an object with total weight and component breakdown
  */
@@ -73,15 +73,15 @@ function parseLoadoutId(itemId: string): {
   // Remove braces if present: "{GBU-38}" -> "GBU-38"
   const cleanId = itemId.replace(/^{|}$/g, '')
 
-  // For composite CLSIDs with asterisk separator, try converting to Quaggles format
+  // For composite CLSIDs with asterisk separator, try converting to DCS format
   // Example: {TER_9A_2L*GBU-12} -> {TER_9A_2LGBU-12}
   if (cleanId.includes('*')) {
-    const quagglesFormat = `{${cleanId.replace('*', '')}}`
-    const quagglesWeight = getMunitionWeight(quagglesFormat)
-    if (quagglesWeight > 0) {
+    const dcsFormat = `{${cleanId.replace('*', '')}}`
+    const dcsWeight = getMunitionWeight(dcsFormat)
+    if (dcsWeight > 0) {
       return {
-        totalWeight: quagglesWeight,
-        components: [{ id: quagglesFormat, weight: quagglesWeight, quantity: 1 }],
+        totalWeight: dcsWeight,
+        components: [{ id: dcsFormat, weight: dcsWeight, quantity: 1 }],
       }
     }
   }
@@ -182,12 +182,12 @@ export function getMunitionDisplayName(itemId: string): string {
     return munitionsDatabase[itemId].name
   }
 
-  // Try with asterisk removed (airframe format -> Quaggles format)
+  // Try with asterisk removed (airframe format -> DCS format)
   const cleanId = itemId.replace(/^{|}$/g, '')
   if (cleanId.includes('*')) {
-    const quagglesFormat = `{${cleanId.replace('*', '')}}`
-    if (munitionsDatabase[quagglesFormat]?.name) {
-      return munitionsDatabase[quagglesFormat].name
+    const dcsFormat = `{${cleanId.replace('*', '')}}`
+    if (munitionsDatabase[dcsFormat]?.name) {
+      return munitionsDatabase[dcsFormat].name
     }
   }
 
@@ -406,11 +406,11 @@ export function buildStationLoadoutOptions(
       const cleanId = clsid.replace(/^{|}$/g, '')
 
       // Try multiple lookup formats to find the munition data
-      // For CLSIDs with asterisk, also try Quaggles format (asterisk removed)
-      const quagglesFormat = cleanId.includes('*') ? `{${cleanId.replace('*', '')}}` : null
+      // For CLSIDs with asterisk, also try DCS format (asterisk removed)
+      const dcsFormat = cleanId.includes('*') ? `{${cleanId.replace('*', '')}}` : null
       const munitionData =
         munitionsDatabase[clsid] ||
-        (quagglesFormat && munitionsDatabase[quagglesFormat]) ||
+        (dcsFormat && munitionsDatabase[dcsFormat]) ||
         munitionsDatabase[`{${cleanId}}`] ||
         munitionsDatabase[cleanId]
 

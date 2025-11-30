@@ -1,6 +1,7 @@
 {
   "aircraft": "Su-25",
   "displayName": "Su-25",
+  "isHelicopter": false,
   "emptyWeight": 22264,
   "maxTakeoffWeight": 38250,
   "internalFuel": 6250,
@@ -14,29 +15,30 @@
   "radios": [],
   "guns": [
     {
-      "name": "GSh-30-2",
       "capacity": 250,
-      "shells": [
-        {
-          "name": "GSH301_30_AP",
-          "displayName": "30mm AP"
-        },
-        {
-          "name": "GSH301_30_HE",
-          "displayName": "30mm HE"
-        }
-      ],
       "mixes": [
         {
+          "sequence": ["GSH301_30_AP", "GSH301_30_AP"]
+        },
+        {
           "sequence": [
-            "GSH301_30_AP",
-            "GSH301_30_AP",
             "GSH301_30_HE",
             "GSH301_30_HE",
             "GSH301_30_HE",
             "GSH301_30_AP",
             "GSH301_30_AP"
           ]
+        }
+      ],
+      "name": "GSh-30-2",
+      "shells": [
+        {
+          "displayName": "30mm AP",
+          "name": "GSH301_30_AP"
+        },
+        {
+          "displayName": "30mm HE",
+          "name": "GSH301_30_HE"
         }
       ]
     }

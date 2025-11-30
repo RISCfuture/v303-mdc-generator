@@ -1,0 +1,102 @@
+{
+  "aircraft": "MiG-15bis",
+  "displayName": "MiG-15bis",
+  "isHelicopter": false,
+  "emptyWeight": 8274,
+  "maxTakeoffWeight": 13461,
+  "internalFuel": 2584,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [],
+  "guns": [
+    {
+      "capacity": 40,
+      "mixes": [
+        {
+          "sequence": [
+            "N37_37x155_HEI_T",
+            "N37_37x155_HEI_T",
+            "N37_37x155_HEI_T",
+            "N37_37x155_API_T"
+          ]
+        }
+      ],
+      "name": "N-37",
+      "shells": [
+        {
+          "displayName": "37mm HEI T",
+          "name": "N37_37x155_HEI_T"
+        },
+        {
+          "displayName": "37mm API T ",
+          "name": "N37_37x155_API_T"
+        }
+      ]
+    },
+    {
+      "capacity": 80,
+      "mixes": [
+        {
+          "sequence": [
+            "NR23_23x115_API",
+            "NR23_23x115_HEI_T",
+            "NR23_23x115_HEI_T",
+            "NR23_23x115_HEI_T"
+          ]
+        }
+      ],
+      "name": "NR-23",
+      "shells": [
+        {
+          "displayName": "23mm HEI T",
+          "name": "NR23_23x115_HEI_T"
+        },
+        {
+          "displayName": "23mm API",
+          "name": "NR23_23x115_API"
+        }
+      ]
+    },
+    {
+      "capacity": 80,
+      "mixes": [
+        {
+          "sequence": [
+            "NR23_23x115_HEI_T",
+            "NR23_23x115_HEI_T",
+            "NR23_23x115_API",
+            "NR23_23x115_HEI_T"
+          ]
+        }
+      ],
+      "name": "NR-23",
+      "shells": [
+        {
+          "displayName": "23mm HEI T",
+          "name": "NR23_23x115_HEI_T"
+        },
+        {
+          "displayName": "23mm API",
+          "name": "NR23_23x115_API"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["FAB_50", "FAB_100M", "PTB400_MIG15", "PTB600_MIG15", "PTB300_MIG15"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["FAB_50", "FAB_100M", "PTB400_MIG15", "PTB600_MIG15", "PTB300_MIG15"]
+    }
+  ]
+}

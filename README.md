@@ -348,77 +348,63 @@ Provides custom terrain classes for DCS terrains not included in the pydcs libra
 
 ---
 
-### Airframe Data Generation
+### DCS Datamine (Airframe & Munitions Data)
 
-#### airframes/generate-airframes.js
+The DCS datamine system extracts weapon and aircraft data directly from a local DCS World installation, providing self-sufficient data updates without external dependencies.
 
-Fetches aircraft data from the Quaggles DCS Lua Datamine repository and generates complete airframe database files.
+#### dcs-datamine/hooks/v303-datamine-hook.lua
 
-**Purpose**: Automatically updates aircraft configurations from authoritative DCS data source
+DCS hook script that runs at game launch and exports game memory data to JSON files.
 
-**Technology**: Node.js/JavaScript
+**Purpose**: Extracts launcher/munition and aircraft data directly from DCS runtime
 
-**Data source**: [Quaggles DCS Lua Datamine](https://github.com/Quaggles/dcs-lua-datamine)
+**Technology**: Lua (DCS Hook API)
 
-**Usage**:
-```sh
-node scripts/airframes/generate-airframes.js
-```
+**Installation**:
+1. Copy `v303-datamine-hook.lua` to `DCS World\Scripts\Hooks\`
+2. Launch DCS World
+3. Find exports in `Saved Games\DCS\v303-datamine\`
 
-**What it generates**:
-- Airframe weights (empty, max takeoff)
-- Fuel capacity and defaults (joker/bingo)
-- Countermeasure capacity (chaff, flare, CMDS)
-- Radio configurations
-- Station/pylon configurations with CLSID lists
-- Complete weapon compatibility per station
+**What it exports**:
+- `launchers.json` - All weapon/munition definitions (CLSID, weight, display name)
+- `aircraft.json` - All flyable aircraft (weights, fuel, CMDS, radios, stations)
+- `version.txt` - DCS version marker for change detection
 
-**Output**: JSON files in `/src/data/json/airframes/` directory
+**Features**:
+- Automatic version detection (only re-exports when DCS version changes)
+- Accesses `_G.launcher` and `_G.db.Units.Planes.Plane` tables
+- JSON output for easy processing
 
-**Data extracted**:
-- Aircraft weights in lbs (converted from kg)
-- Fuel levels with type-based defaults
-- CMDS program capacity
-- Station numbers and loadout compatibility
+#### dcs-datamine/integrate-dcs-export.js
 
----
+Processes exported JSON files and generates application-ready data files.
 
-### Munitions Data Generation
-
-#### munitions/generate-munitions.js
-
-Fetches weapon and launcher data using DCS CLSIDs from the Quaggles repository and generates a comprehensive munitions database.
-
-**Purpose**: Maintains up-to-date catalog of all DCS weapons and stores
+**Purpose**: Converts DCS exports into project format (munitions.json, airframe files)
 
 **Technology**: Node.js/JavaScript
 
-**Data source**: [Quaggles DCS Lua Datamine](https://github.com/Quaggles/dcs-lua-datamine)
-
 **Usage**:
 ```sh
-node scripts/munitions/generate-munitions.js
+node scripts/dcs-datamine/integrate-dcs-export.js <path-to-export-dir>
+# Example:
+node scripts/dcs-datamine/integrate-dcs-export.js ~/Dropbox/DCS/v303-datamine
 ```
 
 **What it generates**:
-- Complete weapons catalog (missiles, bombs, rockets, guns, tanks)
-- Launcher/pylon configurations
-- Weight data in lbs
-- CLSID mappings (stable identifiers across DCS versions)
-- Category classifications
+- `/src/data/json/munitions.json` - Complete munitions catalog with categories
+- `/src/data/json/airframes/*.json` - Individual airframe configuration files
 
-**Output**: `/src/data/json/munitions.json` (368KB+ comprehensive database)
+**Features**:
+- Weight conversion (kg to lbs)
+- Munition categorization (air-to-air, air-to-ground, fuel, pod, rack)
+- CLSID validation between munitions and aircraft
+- Applies existing override files (`munitions-overrides.json`, `airframe-overrides/*.json`)
 
-**Categories**:
-- Air-to-Air Missiles
-- Air-to-Ground Missiles
-- Bombs (Guided, Unguided, Cluster)
-- Rockets and Rocket Pods
-- Gun Pods
-- Fuel Tanks
-- ECM Pods
-- Targeting Pods
-- Launchers
+**Workflow**:
+1. **Windows**: Launch DCS (hook auto-exports on version change)
+2. **Transfer**: Copy `launchers.json` and `aircraft.json` to Mac
+3. **Mac**: Run integration script
+4. **Review**: Check generated files and commit
 
 ---
 
@@ -563,9 +549,11 @@ python scripts/f16-rotation-calculator/extract_regression.py
 - `a10-rotation-calculator/extract_regression.py` → `numpy`, `matplotlib`, `pillow`
 - `f16-rotation-calculator/extract_regression.py` → `numpy`, `matplotlib`, `pillow`
 
+**Lua Scripts** (require DCS World):
+- `dcs-datamine/hooks/v303-datamine-hook.lua` → DCS Hook API
+
 **Node.js Scripts** (require Node.js 20+):
-- `airframes/generate-airframes.js` → stdlib only (uses fetch API)
-- `munitions/generate-munitions.js` → stdlib only (uses fetch API)
+- `dcs-datamine/integrate-dcs-export.js` → stdlib only
 
 **TypeScript Scripts** (run via jiti):
 - `validate-schemas.ts` → executed via `yarn validate:schemas`

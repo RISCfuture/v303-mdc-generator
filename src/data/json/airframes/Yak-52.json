@@ -1,0 +1,40 @@
+{
+  "aircraft": "Yak-52",
+  "displayName": "Yak-52",
+  "isHelicopter": false,
+  "emptyWeight": 2709,
+  "maxTakeoffWeight": 2899,
+  "internalFuel": 194,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "ARK-15M",
+      "max": 1.795,
+      "min": 0.1,
+      "name": "COM 1",
+      "presetCount": 8,
+      "step": 1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    }
+  ]
+}

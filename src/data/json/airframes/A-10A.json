@@ -1,6 +1,7 @@
 {
   "aircraft": "A-10A",
   "displayName": "A-10A",
+  "isHelicopter": false,
   "emptyWeight": 25629,
   "maxTakeoffWeight": 46476,
   "internalFuel": 11087,
@@ -14,33 +15,31 @@
   "radios": [],
   "guns": [
     {
-      "name": "GAU-8",
       "capacity": 1150,
-      "shells": [
-        {
-          "name": "GAU8_30_AP",
-          "displayName": "30mm AP"
-        },
-        {
-          "name": "GAU8_30_HE",
-          "displayName": "30mm HE"
-        },
-        {
-          "name": "GAU8_30_TP",
-          "displayName": "30mm TP"
-        }
-      ],
       "mixes": [
         {
-          "sequence": [
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_AP",
-            "GAU8_30_HE",
-            "GAU8_30_HE",
-            "GAU8_30_TP"
-          ]
+          "sequence": ["GAU8_30_AP", "GAU8_30_AP", "GAU8_30_AP", "GAU8_30_AP", "GAU8_30_HE"]
+        },
+        {
+          "sequence": ["GAU8_30_HE"]
+        },
+        {
+          "sequence": ["GAU8_30_TP"]
+        }
+      ],
+      "name": "GAU-8",
+      "shells": [
+        {
+          "displayName": "30mm AP",
+          "name": "GAU8_30_AP"
+        },
+        {
+          "displayName": "30mm HE",
+          "name": "GAU8_30_HE"
+        },
+        {
+          "displayName": "30mm TP",
+          "name": "GAU8_30_TP"
         }
       ]
     }

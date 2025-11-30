@@ -1,0 +1,521 @@
+{
+  "aircraft": "SpitfireLFMkIXCW",
+  "displayName": "Spitfire LF Mk. IX CW",
+  "isHelicopter": false,
+  "emptyWeight": 6402,
+  "maxTakeoffWeight": 7496,
+  "internalFuel": 612,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "TR.1143",
+      "max": 156,
+      "min": 38,
+      "name": "COM 1",
+      "presetCount": 5,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 120,
+      "mixes": [
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": [
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_AP/T",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball"
+          ]
+        }
+      ],
+      "name": "Hispano Mk. II",
+      "shells": [
+        {
+          "displayName": "Hispano_Mk_II_Mk_Z_Ball",
+          "name": "Hispano_Mk_II_Mk_Z_Ball"
+        },
+        {
+          "displayName": "Hispano_Mk_II_MKI_HE/I",
+          "name": "Hispano_Mk_II_MKI_HE/I"
+        },
+        {
+          "displayName": "Hispano_Mk_II_MKIIZ_AP",
+          "name": "Hispano_Mk_II_MKIIZ_AP"
+        },
+        {
+          "displayName": "Hispano_Mk_II_SAP/I",
+          "name": "Hispano_Mk_II_SAP/I"
+        },
+        {
+          "displayName": "Hispano_Mk_II_Tracer_G",
+          "name": "Hispano_Mk_II_Tracer_G"
+        },
+        {
+          "displayName": "Hispano_Mk_II_AP/T",
+          "name": "Hispano_Mk_II_AP/T"
+        }
+      ]
+    },
+    {
+      "capacity": 120,
+      "mixes": [
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": ["Hispano_Mk_II_MKI_HE/I", "Hispano_Mk_II_SAP/I"]
+        },
+        {
+          "sequence": [
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_AP/T",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball",
+            "Hispano_Mk_II_Mk_Z_Ball"
+          ]
+        }
+      ],
+      "name": "Hispano Mk. II",
+      "shells": [
+        {
+          "displayName": "Hispano_Mk_II_Mk_Z_Ball",
+          "name": "Hispano_Mk_II_Mk_Z_Ball"
+        },
+        {
+          "displayName": "Hispano_Mk_II_MKI_HE/I",
+          "name": "Hispano_Mk_II_MKI_HE/I"
+        },
+        {
+          "displayName": "Hispano_Mk_II_MKIIZ_AP",
+          "name": "Hispano_Mk_II_MKIIZ_AP"
+        },
+        {
+          "displayName": "Hispano_Mk_II_SAP/I",
+          "name": "Hispano_Mk_II_SAP/I"
+        },
+        {
+          "displayName": "Hispano_Mk_II_Tracer_G",
+          "name": "Hispano_Mk_II_Tracer_G"
+        },
+        {
+          "displayName": "Hispano_Mk_II_AP/T",
+          "name": "Hispano_Mk_II_AP/T"
+        }
+      ]
+    },
+    {
+      "capacity": 350,
+      "mixes": [
+        {
+          "sequence": ["British303_W_Mk1z"]
+        },
+        {
+          "sequence": ["British303_Ball_Mk7"]
+        },
+        {
+          "sequence": ["British303_W_Mk1z"]
+        },
+        {
+          "sequence": ["British303_Ball_Mk7"]
+        },
+        {
+          "sequence": ["British303_O_Mk1", "British303_Ball_Mk1c"]
+        }
+      ],
+      "name": "Browning .303 Mk. II",
+      "shells": [
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk1c"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk6"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk7"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk8"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk1"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk2"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk3"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk4"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk5"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk6z"
+        },
+        {
+          "displayName": "7.7mm AP",
+          "name": "British303_W_Mk1z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk4z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk6z"
+        },
+        {
+          "displayName": "7.7mm O",
+          "name": "British303_O_Mk1"
+        }
+      ]
+    },
+    {
+      "capacity": 350,
+      "mixes": [
+        {
+          "sequence": [
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_G_Mk4",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z"
+          ]
+        },
+        {
+          "sequence": [
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_G_Mk4",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z"
+          ]
+        },
+        {
+          "sequence": ["British303_B_Mk6z"]
+        },
+        {
+          "sequence": ["British303_B_Mk6z"]
+        },
+        {
+          "sequence": ["British303_G_Mk4"]
+        }
+      ],
+      "name": "Browning .303 Mk. II",
+      "shells": [
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk1c"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk6"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk7"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk8"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk1"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk2"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk3"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk4"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk5"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk6z"
+        },
+        {
+          "displayName": "7.7mm AP",
+          "name": "British303_W_Mk1z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk4z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk6z"
+        },
+        {
+          "displayName": "7.7mm O",
+          "name": "British303_O_Mk1"
+        }
+      ]
+    },
+    {
+      "capacity": 350,
+      "mixes": [
+        {
+          "sequence": ["British303_W_Mk1z"]
+        },
+        {
+          "sequence": ["British303_Ball_Mk7"]
+        },
+        {
+          "sequence": ["British303_W_Mk1z"]
+        },
+        {
+          "sequence": ["British303_Ball_Mk7"]
+        },
+        {
+          "sequence": ["British303_Ball_Mk1c", "British303_O_Mk1"]
+        }
+      ],
+      "name": "Browning .303 Mk. II",
+      "shells": [
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk1c"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk6"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk7"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk8"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk1"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk2"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk3"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk4"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk5"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk6z"
+        },
+        {
+          "displayName": "7.7mm AP",
+          "name": "British303_W_Mk1z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk4z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk6z"
+        },
+        {
+          "displayName": "7.7mm O",
+          "name": "British303_O_Mk1"
+        }
+      ]
+    },
+    {
+      "capacity": 350,
+      "mixes": [
+        {
+          "sequence": [
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_G_Mk4",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z"
+          ]
+        },
+        {
+          "sequence": [
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z",
+            "British303_G_Mk4",
+            "British303_B_Mk6z",
+            "British303_B_Mk6z"
+          ]
+        },
+        {
+          "sequence": ["British303_B_Mk6z"]
+        },
+        {
+          "sequence": ["British303_W_Mk1z"]
+        },
+        {
+          "sequence": ["British303_G_Mk4"]
+        }
+      ],
+      "name": "Browning .303 Mk. II",
+      "shells": [
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk1c"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk6"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk7"
+        },
+        {
+          "displayName": "7.7mm",
+          "name": "British303_Ball_Mk8"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk1"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk2"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk3"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk4"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk5"
+        },
+        {
+          "displayName": "7.7mm T",
+          "name": "British303_G_Mk6z"
+        },
+        {
+          "displayName": "7.7mm AP",
+          "name": "British303_W_Mk1z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk4z"
+        },
+        {
+          "displayName": "7.7mm I",
+          "name": "British303_B_Mk6z"
+        },
+        {
+          "displayName": "7.7mm O",
+          "name": "British303_O_Mk1"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "British_GP_250LBS_Bomb_MK4_on_LH_Spitfire_Wing_Carrier",
+        "Beer_Bomb_(L)_on_LH_Spitfire_Wing_Carrier",
+        "Beer_Bomb_(D)_on_LH_Spitfire_Wing_Carrier"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "SPITFIRE_45GAL_SLIPPER_TANK",
+        "SPITFIRE_45GAL_TORPEDO_TANK",
+        "British_GP_500LBS_Bomb_MK4_on_British_UniversalBC_MK3"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "British_GP_250LBS_Bomb_MK4_on_RH_Spitfire_Wing_Carrier",
+        "Beer_Bomb_(L)_on_RH_Spitfire_Wing_Carrier",
+        "Beer_Bomb_(D)_on_RH_Spitfire_Wing_Carrier"
+      ]
+    }
+  ],
+  "ammoTypes": [
+    "APIT - AP/De Wilde (Tracer) + 20mm HEI/SAPI",
+    "BaIT - Ball/De Wilde (Tracer) + 20mm HEI/SAPI",
+    "API - AP/De Wilde  + 20mm HEI/SAP",
+    "BaI - Ball/De Wilde + 20mm HEI/SAPI",
+    "TP - Target Practice"
+  ]
+}

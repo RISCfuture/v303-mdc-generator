@@ -1,6 +1,7 @@
 {
   "aircraft": "JF-17",
   "displayName": "JF-17",
+  "isHelicopter": false,
   "emptyWeight": 14520,
   "maxTakeoffWeight": 27558,
   "internalFuel": 5126,
@@ -13,22 +14,22 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "name": "COM 1",
       "description": "COMM 1/2 Preset",
-      "presetCount": 20,
-      "min": 30,
       "max": 399.995,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 20,
       "step": 0.025
     }
   ],
   "guns": [
     {
-      "name": "GSh-2-23",
       "capacity": 180,
+      "name": "GSh-2-23",
       "shells": [
         {
-          "name": "GSH23_23_HE_T",
-          "displayName": "23mm HE"
+          "displayName": "23mm HE",
+          "name": "GSH23_23_HE_T"
         }
       ]
     }

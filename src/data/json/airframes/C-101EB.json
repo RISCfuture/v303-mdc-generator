@@ -1,0 +1,38 @@
+{
+  "aircraft": "C-101EB",
+  "displayName": "C-101EB",
+  "isHelicopter": false,
+  "emptyWeight": 7798,
+  "maxTakeoffWeight": 11830,
+  "internalFuel": 3959,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "AN/ARC-164",
+      "max": 399.975,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": ["{SMOKE-SYSTEM-AVIOJET}"]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": ["{SMOKE-RED-AVIOJET}", "{SMOKE-YELLOW-AVIOJET}"]
+    }
+  ]
+}

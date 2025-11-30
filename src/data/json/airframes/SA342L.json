@@ -1,0 +1,118 @@
+{
+  "aircraft": "SA342L",
+  "displayName": "SA342L",
+  "isHelicopter": true,
+  "emptyWeight": 2595,
+  "maxTakeoffWeight": 3968,
+  "internalFuel": 918,
+  "cmdsCapacity": 32,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 32,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "FM Radio",
+      "max": 87.975,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 8,
+      "step": 0.1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "1",
+      "munitions": [
+        "{GIAT_M621_APHE}",
+        "{GIAT_M621_HEAP}",
+        "{GIAT_M621_HE}",
+        "{GIAT_M621_AP}",
+        "{GIAT_M621_SAPHEI}",
+        "{TELSON8_SNEBT250}",
+        "{TELSON8_SNEBT251}",
+        "{TELSON8_SNEBT252}",
+        "{TELSON8_SNEBT253}",
+        "{TELSON8_SNEBT254_RED}",
+        "{TELSON8_SNEBT254_YELLOW}",
+        "{TELSON8_SNEBT254_GREEN}",
+        "{TELSON8_SNEBT256}",
+        "{TELSON8_SNEBT257}",
+        "{TELSON8_SNEBT259E}",
+        "{FN_HMP400}",
+        "{FN_HMP400_200}",
+        "{FN_HMP400_100}",
+        "{SA342_Mistral_R1}",
+        "{SA342_Mistral_R2}",
+        "{HOT3_R1}",
+        "{HOT3_R2}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "2",
+      "munitions": [
+        "{TELSON8_SNEBT250}",
+        "{TELSON8_SNEBT251}",
+        "{TELSON8_SNEBT252}",
+        "{TELSON8_SNEBT253}",
+        "{TELSON8_SNEBT254_RED}",
+        "{TELSON8_SNEBT254_YELLOW}",
+        "{TELSON8_SNEBT254_GREEN}",
+        "{TELSON8_SNEBT256}",
+        "{TELSON8_SNEBT257}",
+        "{TELSON8_SNEBT259E}",
+        "{FN_HMP400}",
+        "{FN_HMP400_200}",
+        "{FN_HMP400_100}",
+        "{SA342_Mistral_L2}",
+        "{SA342_Mistral_L1}",
+        "{HOT3_L1}",
+        "{HOT3_L2}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "FAS",
+      "munitions": ["{FAS}"]
+    },
+    {
+      "station": 4,
+      "name": "IR",
+      "munitions": ["{IR_Deflector}"]
+    },
+    {
+      "station": 5,
+      "name": "ANT",
+      "munitions": ["{SA342_Dipole}"]
+    },
+    {
+      "station": 6,
+      "name": "R SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "L SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    }
+  ]
+}

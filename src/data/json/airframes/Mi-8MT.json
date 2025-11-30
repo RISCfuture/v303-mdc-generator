@@ -1,0 +1,178 @@
+{
+  "aircraft": "Mi-8MT",
+  "displayName": "Mi-8MTV2",
+  "isHelicopter": true,
+  "emptyWeight": 19547,
+  "maxTakeoffWeight": 28660,
+  "internalFuel": 4253,
+  "cmdsCapacity": 128,
+  "chaffIncrement": 1,
+  "flareIncrement": 32,
+  "defaultChaff": 0,
+  "defaultFlare": 128,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "R-863",
+      "max": 399.9,
+      "min": 100,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "R-828",
+      "max": 59.9,
+      "min": 20,
+      "name": "COM 2",
+      "presetCount": 10,
+      "step": 0.1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "GUV_VOG"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "GUV_YakB_GSHP",
+        "GUV_VOG",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "<CLEAN-200.5>"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "<CLEAN-200.5>"
+      ]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{05544F1A-C39C-466b-BC37-5BD1D52E57BB}",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "{37DCC01E-9E02-432F-B61D-10C166CA2798}",
+        "GUV_YakB_GSHP",
+        "GUV_VOG",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": [
+        "B_8V20A_CM",
+        "B_8V20A_CM_GN",
+        "B_8V20A_CM_RD",
+        "B_8V20A_CM_WH",
+        "B_8V20A_CM_BU",
+        "B_8V20A_CM_YE",
+        "B_8V20A_CM_VT",
+        "B_8V20A_OM",
+        "B_8V20A_OFP2",
+        "{6A4B9E69-64FE-439a-9163-3A87FB6A4D81}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FAB_250_M62}",
+        "GUV_VOG"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "L MG",
+      "munitions": ["KORD_12_7"]
+    },
+    {
+      "station": 8,
+      "name": "R MG",
+      "munitions": ["PKT_7_62"]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "aircraft": "C-101CC",
+  "displayName": "C-101CC",
+  "isHelicopter": false,
+  "emptyWeight": 8014,
+  "maxTakeoffWeight": 13889,
+  "internalFuel": 3959,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "V/TVU-740",
+      "max": 399.975,
+      "min": 118,
+      "name": "COM 1",
+      "presetCount": 21,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{FC23864E-3B80-48E3-9C03-4DA8B1D7497B}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "{1461CD18-429A-42A9-A21F-4C621ECD4573}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}",
+        "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}",
+        "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}",
+        "{DAD45FE5-CFF0-4a2b-99D4-5D044D3BC22F}",
+        "{0877B74B-5A00-4e61-BA8A-A56450BA9E27}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{BLG66_AC}",
+        "BR_250",
+        "BIN_200"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}",
+        "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}",
+        "{DAD45FE5-CFF0-4a2b-99D4-5D044D3BC22F}",
+        "{0877B74B-5A00-4e61-BA8A-A56450BA9E27}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{BLG66_AC}",
+        "BR_250",
+        "BR_500",
+        "BIN_200",
+        "CBLS-200"
+      ]
+    },
+    {
+      "station": 4,
+      "name": "Station 4",
+      "munitions": ["{C-101-DEFA553}", "{AN-M3}"]
+    },
+    {
+      "station": 5,
+      "name": "Station 5",
+      "munitions": [
+        "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}",
+        "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}",
+        "{DAD45FE5-CFF0-4a2b-99D4-5D044D3BC22F}",
+        "{0877B74B-5A00-4e61-BA8A-A56450BA9E27}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{BLG66_AC}",
+        "BR_250",
+        "BR_500",
+        "BIN_200",
+        "CBLS-200"
+      ]
+    },
+    {
+      "station": 6,
+      "name": "Station 6",
+      "munitions": [
+        "{1461CD18-429A-42A9-A21F-4C621ECD4573}",
+        "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}",
+        "{FD90A1DC-9147-49FA-BF56-CB83EF0BD32B}",
+        "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}",
+        "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}",
+        "{DAD45FE5-CFF0-4a2b-99D4-5D044D3BC22F}",
+        "{0877B74B-5A00-4e61-BA8A-A56450BA9E27}",
+        "{08164777-5E9C-4B08-B48E-5AA7AFB246E2}",
+        "{3C612111-C7AD-476E-8A8E-2485812F4E5C}",
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{BLG66_AC}",
+        "BR_250",
+        "BIN_200"
+      ]
+    },
+    {
+      "station": 7,
+      "name": "Station 7",
+      "munitions": [
+        "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}",
+        "{9BFD8C90-F7AE-4e90-833B-BFD0CED0E536}",
+        "{FC23864E-3B80-48E3-9C03-4DA8B1D7497B}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "aircraft": "L-39C",
+  "displayName": "L-39C",
+  "isHelicopter": false,
+  "emptyWeight": 7668,
+  "maxTakeoffWeight": 10362,
+  "internalFuel": 2161,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "R-832M",
+      "max": 390,
+      "min": 118,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "1",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{P-50T}",
+        "{PTB_150L_L39}",
+        "{R-3S}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B1}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B2}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B3}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B4}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B5}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B6}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "SMK",
+      "munitions": [
+        "{INV-SMOKE-RED}",
+        "{INV-SMOKE-GREEN}",
+        "{INV-SMOKE-BLUE}",
+        "{INV-SMOKE-WHITE}",
+        "{INV-SMOKE-YELLOW}",
+        "{INV-SMOKE-ORANGE}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "2",
+      "munitions": [
+        "{FB3CE165-BF07-4979-887C-92B87F13276B}",
+        "{0511E528-EA28-4caf-A212-00D1408DF10A}",
+        "{UB-16-57UMP}",
+        "{UB16_S5KP}",
+        "{UB16_S5M}",
+        "{P-50T}",
+        "{PTB_150L_L39}",
+        "{R-3S}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B1}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B2}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B3}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B4}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B5}",
+        "{D3F65166-1AB8-490f-AF2F-2FB6E22568B6}"
+      ]
+    }
+  ]
+}

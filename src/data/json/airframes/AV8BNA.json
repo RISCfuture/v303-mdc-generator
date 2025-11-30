@@ -1,6 +1,7 @@
 {
   "aircraft": "AV8BNA",
   "displayName": "AV-8B N/A",
+  "isHelicopter": false,
   "emptyWeight": 15466,
   "maxTakeoffWeight": 31085,
   "internalFuel": 7759,
@@ -13,27 +14,27 @@
   "defaultBingo": 2500,
   "radios": [
     {
-      "name": "COM 1",
       "description": "V/UHF Radio 1",
-      "presetCount": 26,
-      "min": 30,
       "max": 400,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 26,
       "step": 0.025
     },
     {
-      "name": "COM 2",
       "description": "V/UHF Radio 2",
-      "presetCount": 26,
-      "min": 30,
       "max": 400,
+      "min": 30,
+      "name": "COM 2",
+      "presetCount": 26,
       "step": 0.025
     },
     {
-      "name": "COM 3",
       "description": "V/UHF RCS Presets",
-      "presetCount": 30,
-      "min": 30,
       "max": 400,
+      "min": 30,
+      "name": "COM 3",
+      "presetCount": 30,
       "step": 0.025
     }
   ],

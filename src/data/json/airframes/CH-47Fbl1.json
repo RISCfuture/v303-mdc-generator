@@ -1,0 +1,59 @@
+{
+  "aircraft": "CH-47Fbl1",
+  "displayName": "CH-47F",
+  "isHelicopter": true,
+  "emptyWeight": 25133,
+  "maxTakeoffWeight": 50001,
+  "internalFuel": 6734,
+  "cmdsCapacity": 240,
+  "chaffIncrement": 30,
+  "flareIncrement": 30,
+  "defaultChaff": 120,
+  "defaultFlare": 120,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "VHF FM: ARC-186",
+      "max": 151.975,
+      "min": 30,
+      "name": "COM 1",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "UHF AM: ARC-164",
+      "max": 399.975,
+      "min": 225,
+      "name": "COM 2",
+      "presetCount": 20,
+      "step": 0.025
+    },
+    {
+      "description": "VHF FM: ARC-201D",
+      "max": 87.975,
+      "min": 30,
+      "name": "COM 3",
+      "presetCount": 10,
+      "step": 0.1
+    }
+  ],
+  "guns": [],
+  "stations": [
+    {
+      "station": 1,
+      "name": "L MG",
+      "munitions": ["{CH47_PORT_M60D}", "{CH47_PORT_M240H}"]
+    },
+    {
+      "station": 2,
+      "name": "R MG",
+      "munitions": ["{CH47_STBD_M60D}", "{CH47_STBD_M240H}"]
+    },
+    {
+      "station": 3,
+      "name": "Aft MG",
+      "munitions": ["{CH47_AFT_M60D}", "{CH47_AFT_M240H}"]
+    }
+  ]
+}

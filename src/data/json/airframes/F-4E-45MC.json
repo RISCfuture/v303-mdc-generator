@@ -1,6 +1,7 @@
 {
   "aircraft": "F-4E-45MC",
   "displayName": "F-4E-45MC",
+  "isHelicopter": false,
   "emptyWeight": 32501,
   "maxTakeoffWeight": 61998,
   "internalFuel": 12149,
@@ -13,44 +14,25 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "name": "COM 1",
       "description": "UHF AN/ARC-164 COMM channels",
-      "presetCount": 18,
-      "min": 225,
       "max": 399.95,
+      "min": 225,
+      "name": "COM 1",
+      "presetCount": 18,
       "step": 0.025
     },
     {
-      "name": "COM 2",
       "description": "UHF AN/ARC-164 AUX channels",
-      "presetCount": 20,
-      "min": 265,
       "max": 284.9,
+      "min": 265,
+      "name": "COM 2",
+      "presetCount": 20,
       "step": 0.025
     }
   ],
   "guns": [
     {
-      "name": "M-61A1",
       "capacity": 639,
-      "shells": [
-        {
-          "name": "M56A3_HE_RED",
-          "displayName": "M56A3 20mm HEI"
-        },
-        {
-          "name": "M53_AP_RED",
-          "displayName": "M53 20mm API"
-        },
-        {
-          "name": "M55A2_TP_RED",
-          "displayName": "M55A2 20mm TP"
-        },
-        {
-          "name": "M53_APT_RED",
-          "displayName": "20mm tracer"
-        }
-      ],
       "mixes": [
         {
           "sequence": [
@@ -58,23 +40,42 @@
             "M56A3_HE_RED",
             "M56A3_HE_RED",
             "M56A3_HE_RED",
-            "M53_APT_RED",
-            "M53_AP_RED",
-            "M53_AP_RED",
-            "M53_AP_RED",
-            "M53_AP_RED",
-            "M53_APT_RED",
-            "M56A3_HE_RED",
-            "M53_AP_RED",
-            "M56A3_HE_RED",
-            "M53_AP_RED",
-            "M53_APT_RED",
+            "M53_APT_RED"
+          ]
+        },
+        {
+          "sequence": ["M53_AP_RED", "M53_AP_RED", "M53_AP_RED", "M53_AP_RED", "M53_APT_RED"]
+        },
+        {
+          "sequence": ["M56A3_HE_RED", "M53_AP_RED", "M56A3_HE_RED", "M53_AP_RED", "M53_APT_RED"]
+        },
+        {
+          "sequence": [
             "M55A2_TP_RED",
             "M55A2_TP_RED",
             "M55A2_TP_RED",
             "M55A2_TP_RED",
             "M53_APT_RED"
           ]
+        }
+      ],
+      "name": "M-61A1",
+      "shells": [
+        {
+          "displayName": "M56A3 20mm HEI",
+          "name": "M56A3_HE_RED"
+        },
+        {
+          "displayName": "M53 20mm API",
+          "name": "M53_AP_RED"
+        },
+        {
+          "displayName": "M55A2 20mm TP",
+          "name": "M55A2_TP_RED"
+        },
+        {
+          "displayName": "20mm tracer",
+          "name": "M53_APT_RED"
         }
       ]
     }

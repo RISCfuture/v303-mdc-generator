@@ -1,0 +1,605 @@
+{
+  "aircraft": "P-47D-30",
+  "displayName": "P-47D-30",
+  "isHelicopter": false,
+  "emptyWeight": 11036,
+  "maxTakeoffWeight": 15679,
+  "internalFuel": 2220,
+  "cmdsCapacity": 0,
+  "chaffIncrement": 1,
+  "flareIncrement": 1,
+  "defaultChaff": 0,
+  "defaultFlare": 0,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
+  "radios": [
+    {
+      "description": "SCR-522",
+      "max": 156,
+      "min": 38,
+      "name": "COM 1",
+      "presetCount": 4,
+      "step": 0.025
+    },
+    {
+      "description": "BC-1206",
+      "max": 200,
+      "min": 100,
+      "name": "COM 2",
+      "presetCount": 1,
+      "step": 0.025
+    }
+  ],
+  "guns": [
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_API_M8",
+            "50Browning_T_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_APIT_M20"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_T_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_T_M1",
+            "50Browning_API_M8",
+            "50Browning_I_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_APIT_M20",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_T_M1",
+            "50Browning_I_M1",
+            "50Browning_I_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_API_M8",
+            "50Browning_T_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_APIT_M20"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_T_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_T_M1",
+            "50Browning_API_M8",
+            "50Browning_I_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_APIT_M20",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_T_M1",
+            "50Browning_I_M1",
+            "50Browning_I_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_T_M1",
+            "50Browning_API_M8",
+            "50Browning_I_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_APIT_M20",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_T_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_API_M8",
+            "50Browning_T_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_APIT_M20",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_T_M1",
+            "50Browning_I_M1",
+            "50Browning_I_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_T_M1",
+            "50Browning_API_M8",
+            "50Browning_I_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_APIT_M20",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_I_M1",
+            "50Browning_I_M1",
+            "50Browning_T_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    },
+    {
+      "capacity": 300,
+      "mixes": [
+        {
+          "sequence": [
+            "50Browning_API_M8",
+            "50Browning_I_M1",
+            "50Browning_API_M8",
+            "50Browning_T_M1"
+          ]
+        },
+        {
+          "sequence": [
+            "50Browning_APIT_M20",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8",
+            "50Browning_API_M8"
+          ]
+        },
+        {
+          "sequence": ["50Browning_API_M8", "50Browning_I_M1"]
+        },
+        {
+          "sequence": ["50Browning_AP_M2", "50Browning_AP_M2", "50Browning_I_M1", "50Browning_I_M1"]
+        },
+        {
+          "sequence": [
+            "50Browning_AP_M2",
+            "50Browning_AP_M2",
+            "50Browning_T_M1",
+            "50Browning_I_M1",
+            "50Browning_I_M1"
+          ]
+        }
+      ],
+      "name": "Browning .50 M2",
+      "shells": [
+        {
+          "displayName": "50Browning_Ball_M2",
+          "name": "50Browning_Ball_M2"
+        },
+        {
+          "displayName": "50Browning_AP_M2",
+          "name": "50Browning_AP_M2"
+        },
+        {
+          "displayName": "50Browning_API_M8",
+          "name": "50Browning_API_M8"
+        },
+        {
+          "displayName": "50Browning_APIT_M20",
+          "name": "50Browning_APIT_M20"
+        },
+        {
+          "displayName": "50Browning_I_M1",
+          "name": "50Browning_I_M1"
+        },
+        {
+          "displayName": "50Browning_T_M1",
+          "name": "50Browning_T_M1"
+        }
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "station": 1,
+      "name": "Station 1",
+      "munitions": [
+        "{AN_M30A1}",
+        "{AN_M57}",
+        "{AN-M64}",
+        "{US_108GAL_PAPER_FUEL_TANK}",
+        "{US_110GAL_FUEL_TANK}"
+      ]
+    },
+    {
+      "station": 2,
+      "name": "Station 2",
+      "munitions": [
+        "{AN_M30A1}",
+        "{AN_M57}",
+        "{AN-M64}",
+        "{AN_M65}",
+        "{US_108GAL_PAPER_FUEL_TANK}",
+        "{US_110GAL_FUEL_TANK}",
+        "{US_150GAL_FUEL_TANK}",
+        "{US_M10_SMOKE_TANK_RED}",
+        "{US_M10_SMOKE_TANK_YELLOW}",
+        "{US_M10_SMOKE_TANK_ORANGE}",
+        "{US_M10_SMOKE_TANK_GREEN}",
+        "{US_M10_SMOKE_TANK_BLUE}",
+        "{US_M10_SMOKE_TANK_WHITE}"
+      ]
+    },
+    {
+      "station": 3,
+      "name": "Station 3",
+      "munitions": [
+        "{AN_M30A1}",
+        "{AN_M57}",
+        "{AN-M64}",
+        "{AN_M65}",
+        "{US_108GAL_PAPER_FUEL_TANK}",
+        "{US_110GAL_FUEL_TANK}",
+        "{US_150GAL_FUEL_TANK}",
+        "{US_M10_SMOKE_TANK_RED}",
+        "{US_M10_SMOKE_TANK_YELLOW}",
+        "{US_M10_SMOKE_TANK_ORANGE}",
+        "{US_M10_SMOKE_TANK_GREEN}",
+        "{US_M10_SMOKE_TANK_BLUE}",
+        "{US_M10_SMOKE_TANK_WHITE}"
+      ]
+    }
+  ],
+  "ammoTypes": [
+    "API-T '44 - M8 API, M1 I, M8 API, M1 T",
+    "API-T '44 Strafing - M8 API x 4, M20 API-T",
+    "API '44 - M8 API, M1 I",
+    "AP '43 - M2 AP x 2, M1 I x 2",
+    "AP-T '43 - M2 AP x 2, M1 I x 2, M1 T"
+  ]
+}
