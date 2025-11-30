@@ -15,6 +15,16 @@ export function getAirframeData(airframe: Airframe): AirframeData | undefined {
 }
 
 /**
+ * Check if an airframe is a helicopter (rotary-wing aircraft)
+ * @param airframe - The aircraft identifier
+ * @returns True if the airframe is a helicopter
+ */
+export function isHelicopter(airframe: Airframe | string): boolean {
+  const data = getAirframeData(airframe as Airframe)
+  return data?.isHelicopter ?? false
+}
+
+/**
  * Get the number of radios for an aircraft
  * @param airframe - The aircraft identifier
  * @returns The number of radios

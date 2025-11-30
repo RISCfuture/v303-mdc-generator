@@ -11,7 +11,7 @@ import type { Mission } from '@/types'
 import { formatNumber } from '@/utils/formatting'
 import { getMunitionShortName } from '@/data/munitions'
 import { getLoadoutOnlyWeight, getFuelCapacity } from '@/data/munitions'
-import { getAirframeData } from '@/utils/airframeHelpers'
+import { getAirframeData, isHelicopter } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
 import { getAirframeDisplayName } from '@/data/airframes'
 import { formatSTN } from '@/utils/crewFormatting'
@@ -661,6 +661,73 @@ function generateLoadoutTable(mission: Mission): unknown {
  */
 function generateToldTable(mission: Mission): unknown {
   const grossWeight = mission.told.grossWeight || calculateGrossWeight(mission)
+  const airframe = getSquadronAirframe(mission.squadron)
+  const showRotationRefusal = !isHelicopter(airframe)
+
+  // Helicopters: 4-column layout (no rotation/refusal)
+  // Fixed-wing: 6-column layout (with rotation/refusal)
+  if (!showRotationRefusal) {
+    return {
+      table: {
+        widths: ['auto', '*', 'auto', '*'],
+        body: [
+          [
+            { text: 'TOLD', fillColor: '#DCDCDC', bold: true, colSpan: 2, alignment: 'center' },
+            {},
+            { text: 'Fuel', fillColor: '#DCDCDC', bold: true, colSpan: 2, alignment: 'center' },
+            {},
+          ],
+          [
+            { text: 'Gross Wt', fillColor: '#DCDCDC', bold: true },
+            { text: formatNumber(grossWeight) + ' lbs', fillColor: '#EBF1FA', italics: true },
+            { text: 'TO', fillColor: '#DCDCDC', bold: true },
+            {
+              text: formatNumber(mission.fuel.takeoff) + ' lbs',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+          ],
+          [
+            { text: 'Min AGL', fillColor: '#DCDCDC', bold: true },
+            {
+              text:
+                mission.told.minAgl !== undefined && mission.told.minAgl !== null
+                  ? formatNumber(mission.told.minAgl) + ' ft'
+                  : '',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+            { text: 'Joker', fillColor: '#DCDCDC', bold: true },
+            {
+              text: formatNumber(mission.fuel.joker) + ' lbs',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+          ],
+          [
+            { text: 'Min MSL', fillColor: '#DCDCDC', bold: true },
+            {
+              text:
+                mission.told.minMsl !== undefined && mission.told.minMsl !== null
+                  ? formatNumber(mission.told.minMsl) + ' ft'
+                  : '',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+            { text: 'Bingo', fillColor: '#DCDCDC', bold: true },
+            {
+              text: formatNumber(mission.fuel.bingo) + ' lbs',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+          ],
+        ],
+      },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 2],
+      unbreakable: true,
+    }
+  }
 
   return {
     table: {
