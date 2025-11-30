@@ -1,11 +1,12 @@
 import { computed, type ComputedRef } from 'vue'
 import { useMissionsStore } from '@/stores/missions'
 import { getNavaidsForTheater } from '@/data/navaids'
+import { getAirfieldsForTheater } from '@/data/airfields'
 import { theaterDatabase } from '@/data/theaters'
 import { getLoadoutsForAirframe } from '@/data/loadouts'
 import { crewDatabase, crewBySquadron } from '@/data/crew'
 import { getMissionAirframe } from '@/utils/missionHelpers'
-import type { Mission } from '@/types'
+import type { Mission, Navaid } from '@/types'
 
 /**
  * Composable for accessing mission data and related lookups
@@ -22,7 +23,20 @@ export function useMissionData(missionId: ComputedRef<string>) {
 
   const availableNavaids = computed(() => {
     if (!mission.value) return []
-    return getNavaidsForTheater(mission.value.theater)
+
+    const navaids = getNavaidsForTheater(mission.value.theater)
+
+    // Convert airfields to Navaid format and merge with navaids
+    const airfields = getAirfieldsForTheater(mission.value.theater)
+    const airfieldsAsNavaids: Navaid[] = airfields.map((airfield) => ({
+      name: airfield.name,
+      latitude: airfield.position.latitude,
+      longitude: airfield.position.longitude,
+      elevation: airfield.position.elevation,
+    }))
+
+    // Combine and sort alphabetically by name
+    return [...navaids, ...airfieldsAsNavaids].sort((a, b) => a.name.localeCompare(b.name))
   })
 
   const availableLoadouts = computed(() => {
