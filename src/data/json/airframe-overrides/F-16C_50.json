@@ -1,5 +1,22 @@
 {
   "$schema": "../schemas/overrides.schema.json",
+  "datalinkType": "link16",
+  "cmdsProfiles": ["PRGM 1", "PRGM 2", "PRGM 3", "PRGM 4"],
+  "ecmPrograms": ["XMIT 1", "XMIT 2", "XMIT 3"],
+  "htsThreatTables": [
+    "CLASS 1",
+    "CLASS 2",
+    "CLASS 3",
+    "CLASS 4",
+    "CLASS 5",
+    "CLASS 6",
+    "CLASS 7",
+    "CLASS 8",
+    "CLASS 9",
+    "CLASS 10",
+    "CLASS 11",
+    "MAN"
+  ],
   "stations[0].name": "STA 1",
   "stations[1].name": "STA 2",
   "stations[2].name": "STA 3",

@@ -676,35 +676,5 @@
       ]
     }
   ],
-  "ammoTypes": ["CM - Combat Mix", "HEI - High Explosive Incendiary", "TP - Target Practice"],
-  "datalinkType": "sadl",
-  "cmdsProfiles": [
-    "PRGM A",
-    "PRGM B",
-    "PRGM C",
-    "PRGM D",
-    "PRGM E",
-    "PRGM F",
-    "PRGM G",
-    "PRGM H",
-    "PRGM I",
-    "PRGM J",
-    "PRGM K",
-    "PRGM L",
-    "PRGM M",
-    "PRGM N",
-    "PRGM O",
-    "PRGM P",
-    "PRGM Q",
-    "PRGM R",
-    "PRGM S",
-    "PRGM T",
-    "PRGM U",
-    "PRGM V",
-    "PRGM W",
-    "PRGM X",
-    "PRGM Y",
-    "PRGM Z"
-  ],
-  "ecmPrograms": ["AIR", "SAM1", "SAM2", "AAA"]
+  "ammoTypes": ["CM - Combat Mix", "HEI - High Explosive Incendiary", "TP - Target Practice"]
 }

@@ -975,24 +975,6 @@ function loadMunitionsDatabase() {
 }
 
 /**
- * Load custom airframe data from data.json
- */
-function loadCustomData() {
-  const dataPath = join(__dirname, 'data.json');
-  if (!existsSync(dataPath)) {
-    return {};
-  }
-
-  try {
-    const content = readFileSync(dataPath, 'utf8');
-    return JSON.parse(content);
-  } catch (error) {
-    console.error(`⚠️  Failed to load custom data: ${error.message}`);
-    return {};
-  }
-}
-
-/**
  * Filter invalid CLSIDs from station munitions
  */
 function filterValidMunitions(stations, munitionsDb) {
@@ -1034,12 +1016,6 @@ async function main() {
   }
   console.log(`\n✓ Loaded munitions database with ${Object.keys(munitionsDb).length} entries`);
 
-  // Load custom data
-  const customData = loadCustomData();
-  if (Object.keys(customData).length > 0) {
-    console.log(`📝 Loaded custom data for ${Object.keys(customData).length} aircraft`);
-  }
-
   // Fetch all aircraft files
   console.log('\n📂 Discovering aircraft files from GitHub API...');
   const aircraftFiles = await fetchDirectoryListing('/_G/db/Units/Planes/Plane');
@@ -1068,11 +1044,6 @@ async function main() {
       }
 
       data.stations = filteredStations;
-
-      // Merge custom data if it exists for this aircraft
-      if (customData[aircraftId]) {
-        data = { ...data, ...customData[aircraftId] };
-      }
 
       airframes[aircraftId] = data;
 
