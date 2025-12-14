@@ -28,14 +28,14 @@
       {
         "callsign": "SHELL",
         "role": "AAR",
-        "location": "Skybridge",
+        "location": "Victory",
         "altitude": 15000,
         "frequency": "272.100",
         "preset": null,
         "aaTacan": "31Y"
       },
       {
-        "callsign": "GHOST/WINDBLADE",
+        "callsign": "GHOST/WHISPER",
         "role": "ISR/AFAC",
         "location": "Windblade",
         "altitude": 35000,
