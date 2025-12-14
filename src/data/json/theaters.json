@@ -5,6 +5,10 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/afghanistan_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/operation-prevailing-liberty-phase-2-opl-p2-ifg.352/download",
     "defaultAirfield": "Kandahar",
+    "defaultBullseye": {
+      "latitude": 32.86796667,
+      "longitude": 67.84396667
+    },
     "isTraining": false,
     "defaultSupportAssets": [
       {
@@ -69,6 +73,10 @@
     "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/germany_navaids/",
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-germany-in-flight-guide.348/download",
     "defaultAirfield": "Ramstein",
+    "defaultBullseye": {
+      "latitude": 51.04083167,
+      "longitude": 8.99590667
+    },
     "isTraining": true,
     "defaultSupportAssets": [
       {

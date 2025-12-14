@@ -1,4 +1,4 @@
-import type { Theater, SupportAsset } from '@/types'
+import type { Theater, SupportAsset, Bullseye } from '@/types'
 import theaterDataJson from '@/data/json/theaters.json'
 
 export interface TheaterData {
@@ -8,6 +8,7 @@ export interface TheaterData {
   ifgUrl?: string
   defaultAirfield?: string | null
   defaultSupportAssets?: SupportAsset[]
+  defaultBullseye?: Bullseye
   isTraining: boolean // Whether this theater is used for training missions
 }
 

@@ -133,7 +133,7 @@ export const useMissionsStore = defineStore('missions', () => {
       crew: [],
       packageMembers: [],
       supportAssets: theaterDatabase[theater]?.defaultSupportAssets || [],
-      bullseye: undefined,
+      bullseye: theaterDatabase[theater]?.defaultBullseye,
       loadout: Array.from({ length: STATION_COUNTS[airframe] || 11 }, (_, i) => ({
         station: i + 1,
         item: 'EMPTY',
