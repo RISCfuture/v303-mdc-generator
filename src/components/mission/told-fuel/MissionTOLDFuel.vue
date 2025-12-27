@@ -33,7 +33,11 @@ const showBingoCalculator = computed(
 )
 
 const emit = defineEmits<{
-  'update:nested-field': [parent: string, field: string, value: string | number | undefined]
+  'update:nested-field': [
+    parent: 'details' | 'ecmCmds' | 'told' | 'fuel' | 'departureRecovery',
+    field: string,
+    value: string | number | string[] | undefined,
+  ]
   'open-speed-calculator': []
   'open-bingo-calculator': []
 }>()

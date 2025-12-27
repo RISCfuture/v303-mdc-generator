@@ -17,8 +17,12 @@ interface Props {
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  'update:field': [field: string, value: string | number | object]
-  'update:nestedField': [parent: string, field: string, value: string | number | undefined]
+  'update:field': [field: keyof Mission, value: Mission[keyof Mission]]
+  'update:nestedField': [
+    parent: 'details' | 'ecmCmds' | 'told' | 'fuel' | 'departureRecovery',
+    field: string,
+    value: string | number | string[] | undefined,
+  ]
 }>()
 
 const missionTypeOptions = MISSION_TYPES.map((type) => ({ label: type, value: type }))
@@ -182,7 +186,7 @@ if (localeDateStr.startsWith('01')) {
       :is-field-incomplete="isFieldIncomplete"
       @update:nestedField="
         (parent: string, field: string, value: string | number | undefined) =>
-          emit('update:nestedField', parent, field, value)
+          emit('update:nestedField', parent as 'departureRecovery', field, value)
       "
     />
   </NSpace>

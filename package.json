@@ -23,7 +23,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@sentry/vue": "^10.30.0",
+    "@sentry/vue": "^10.32.1",
     "@vicons/ionicons5": "^0.13.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
@@ -37,29 +37,29 @@
     "mdpdfmake": "^1.0.8",
     "mgrs": "^2.1.0",
     "naive-ui": "^2.43.2",
-    "pdfmake": "^0.2.20",
+    "pdfmake": "^0.2.21",
     "pinia": "^3.0.4",
     "vfonts": "^0.0.3",
-    "vue": "^3.5.25",
+    "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@codemirror/state": "^6.5.2",
-    "@codemirror/view": "^6.39.4",
+    "@codemirror/state": "^6.5.3",
+    "@codemirror/view": "^6.39.7",
     "@pinia/testing": "^1.0.3",
     "@playwright/test": "^1.57.0",
     "@tsconfig/node22": "^22.0.5",
     "@types/dompurify": "^3.2.0",
     "@types/jsdom": "^27.0.0",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^25.0.2",
+    "@types/node": "^25.0.3",
     "@types/pdfmake": "^0.2.12",
     "@vitejs/plugin-vue": "^6.0.3",
-    "@vitest/eslint-plugin": "^1.5.2",
-    "@vue/compiler-dom": "^3.5.25",
+    "@vitest/eslint-plugin": "^1.6.4",
+    "@vue/compiler-dom": "^3.5.26",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/server-renderer": "^3.5.25",
+    "@vue/server-renderer": "^3.5.26",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.2",
@@ -68,7 +68,7 @@
     "fake-indexeddb": "^6.2.5",
     "husky": "^9.1.7",
     "jiti": "^2.6.1",
-    "jsdom": "^27.3.0",
+    "jsdom": "^27.4.0",
     "lint-staged": "^16.2.7",
     "npm-run-all2": "^8.0.4",
     "playwright": "^1.57.0",
@@ -79,11 +79,10 @@
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-plugin-vue-devtools": "^8.0.5",
-    "vitest": "^4.0.15",
+    "vitest": "^4.0.16",
     "vue-eslint-parser": "^10.2.0",
-    "vue-tsc": "^3.1.8"
+    "vue-tsc": "^3.2.1"
   },
-  "packageManager": "yarn@4.12.0",
   "resolutions": {
     "vite": "^7.2.2"
   },
@@ -91,5 +90,6 @@
     "*.{js,ts,vue}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }

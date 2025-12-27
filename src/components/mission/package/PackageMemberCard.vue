@@ -20,7 +20,7 @@ interface Props {
 defineProps<Props>()
 
 const emit = defineEmits<{
-  'update-field': [field: keyof PackageMember, value: unknown]
+  'update-field': [field: keyof PackageMember, value: PackageMember[keyof PackageMember]]
   remove: []
   'move-up': []
   'move-down': []
@@ -58,7 +58,8 @@ const emit = defineEmits<{
         <PackageMemberFields
           :member="member"
           @update-field="
-            (field: keyof PackageMember, value: unknown) => emit('update-field', field, value)
+            (field: keyof PackageMember, value: PackageMember[keyof PackageMember]) =>
+              emit('update-field', field, value)
           "
         />
         <NButton size="small" @click="emit('remove')" type="error">

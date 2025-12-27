@@ -20,7 +20,7 @@ interface Props {
 defineProps<Props>()
 
 const emit = defineEmits<{
-  'update-field': [field: keyof SupportAsset, value: unknown]
+  'update-field': [field: keyof SupportAsset, value: SupportAsset[keyof SupportAsset]]
   remove: []
   'move-up': []
   'move-down': []
@@ -58,7 +58,8 @@ const emit = defineEmits<{
         <SupportAssetFields
           :asset="asset"
           @update-field="
-            (field: keyof SupportAsset, value: unknown) => emit('update-field', field, value)
+            (field: keyof SupportAsset, value: SupportAsset[keyof SupportAsset]) =>
+              emit('update-field', field, value)
           "
         />
         <NButton size="small" @click="emit('remove')" type="error">

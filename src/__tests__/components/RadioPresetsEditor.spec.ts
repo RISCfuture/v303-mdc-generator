@@ -256,10 +256,10 @@ describe('RadioPresetsEditor', () => {
       expect(wrapper.vm.validateCommLadderInput(0, '5')).toEqual({ label: 'Preset 5', value: 5 })
 
       // Invalid preset number (too high)
-      expect(wrapper.vm.validateCommLadderInput(0, '25')).toBe(false)
+      expect(wrapper.vm.validateCommLadderInput(0, '25')).toBe(undefined)
 
       // Invalid preset number (too low)
-      expect(wrapper.vm.validateCommLadderInput(0, '0')).toBe(false)
+      expect(wrapper.vm.validateCommLadderInput(0, '0')).toBe(undefined)
     })
 
     it('should validate frequencies within radio frequency range', () => {
@@ -280,10 +280,10 @@ describe('RadioPresetsEditor', () => {
       expect(wrapper.vm.validateCommLadderInput(1, '45.5')).toEqual({ label: '45.5', value: 45.5 })
 
       // Invalid frequency (out of range for UHF)
-      expect(wrapper.vm.validateCommLadderInput(0, '150.0')).toBe(false)
+      expect(wrapper.vm.validateCommLadderInput(0, '150.0')).toBe(undefined)
 
       // Invalid frequency (out of range for VHF)
-      expect(wrapper.vm.validateCommLadderInput(1, '300.0')).toBe(false)
+      expect(wrapper.vm.validateCommLadderInput(1, '300.0')).toBe(undefined)
     })
 
     it('should reject non-numeric input', () => {
@@ -294,8 +294,8 @@ describe('RadioPresetsEditor', () => {
         },
       })
 
-      expect(wrapper.vm.validateCommLadderInput(0, 'abc')).toBe(false)
-      expect(wrapper.vm.validateCommLadderInput(0, '')).toBe(false)
+      expect(wrapper.vm.validateCommLadderInput(0, 'abc')).toBe(undefined)
+      expect(wrapper.vm.validateCommLadderInput(0, '')).toBe(undefined)
     })
 
     it('should support mixed preset numbers and frequencies in comm ladder', () => {

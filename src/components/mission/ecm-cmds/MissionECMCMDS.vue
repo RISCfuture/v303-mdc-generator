@@ -164,7 +164,7 @@ function updateFlareTotal(value: number | null) {
             :value="mission.ecmProgram"
             @update:value="updateEcmProgram"
             :options="[
-              { label: '(None)', value: null },
+              { label: '(None)', value: null as unknown as string },
               ...ecmProgramOptions.map((prog: string) => ({ label: prog, value: prog })),
             ]"
             placeholder="Select ECM program"

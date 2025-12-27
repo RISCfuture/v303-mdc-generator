@@ -68,7 +68,7 @@ export function useMissionData(missionId: ComputedRef<string>) {
     return airframe === 'F-16C_50' || airframe === 'A-10C_2'
   })
 
-  function updateField(field: keyof Mission, value: string | number | string[][] | boolean) {
+  function updateField(field: keyof Mission, value: Mission[keyof Mission]) {
     if (!mission.value) return
     missionsStore.updateMission(missionId.value, { [field]: value })
   }

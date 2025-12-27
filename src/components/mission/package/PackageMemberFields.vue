@@ -12,7 +12,7 @@ interface Props {
 defineProps<Props>()
 
 const emit = defineEmits<{
-  'update-field': [field: keyof PackageMember, value: unknown]
+  'update-field': [field: keyof PackageMember, value: PackageMember[keyof PackageMember]]
 }>()
 
 // Build aircraft options from airframe database

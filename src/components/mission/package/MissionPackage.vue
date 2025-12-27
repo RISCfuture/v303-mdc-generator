@@ -16,7 +16,11 @@ defineProps<Props>()
 const emit = defineEmits<{
   'add-package-member': []
   'remove-package-member': [index: number]
-  'update-package-member': [index: number, field: keyof PackageMember, value: unknown]
+  'update-package-member': [
+    index: number,
+    field: keyof PackageMember,
+    value: PackageMember[keyof PackageMember],
+  ]
   'package-drop': [index: number]
   'move-package-up': [index: number]
   'move-package-down': [index: number]
@@ -45,7 +49,7 @@ const emit = defineEmits<{
         :is-first="index === 0"
         :is-last="index === packageMembers.length - 1"
         @update-field="
-          (field: keyof PackageMember, value: unknown) =>
+          (field: keyof PackageMember, value: PackageMember[keyof PackageMember]) =>
             emit('update-package-member', index, field, value)
         "
         @remove="emit('remove-package-member', index)"

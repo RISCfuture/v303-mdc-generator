@@ -575,9 +575,11 @@ function handleSelectMDCExport(key: string) {
               @load-prefab-loadout="loadPrefabLoadout"
               @clear-all-loadout="clearAllLoadout"
               @update-loadout-station="updateLoadoutStation"
-              @update:gun-ammo-type="(v: string | null) => updateField('gunAmmoType', v)"
+              @update:gun-ammo-type="
+                (v: string | null) => updateField('gunAmmoType', v ?? undefined)
+              "
               @update:fuel-load-percentage="
-                (v: number) => updateField('fuel', { ...mission.fuel, fuelLoadPercentage: v })
+                (v: number) => updateField('fuel', { ...mission!.fuel, fuelLoadPercentage: v })
               "
             />
           </NTabPane>

@@ -106,10 +106,14 @@ const updateCCIPReferencePoint = (
             v-if="(waypoint.ccip?.referencePointType ?? 'None') === 'VIP'"
             :point="waypoint.ccip?.vip"
             :target-steerpoint-altitude="waypoint.altitude"
-            @update:bearing="(v: number | null) => updateCCIPReferencePoint('vip', 'bearing', v)"
-            @update:distance="(v: number | null) => updateCCIPReferencePoint('vip', 'distance', v)"
+            @update:bearing="
+              (v: number | null) => updateCCIPReferencePoint('vip', 'bearing', v ?? undefined)
+            "
+            @update:distance="
+              (v: number | null) => updateCCIPReferencePoint('vip', 'distance', v ?? undefined)
+            "
             @update:elevation="
-              (v: number | null) => updateCCIPReferencePoint('vip', 'elevation', v)
+              (v: number | null) => updateCCIPReferencePoint('vip', 'elevation', v ?? undefined)
             "
           />
 
@@ -118,10 +122,14 @@ const updateCCIPReferencePoint = (
             v-if="(waypoint.ccip?.referencePointType ?? 'None') === 'VRP'"
             :point="waypoint.ccip?.vrp"
             :target-steerpoint-altitude="waypoint.altitude"
-            @update:bearing="(v: number | null) => updateCCIPReferencePoint('vrp', 'bearing', v)"
-            @update:distance="(v: number | null) => updateCCIPReferencePoint('vrp', 'distance', v)"
+            @update:bearing="
+              (v: number | null) => updateCCIPReferencePoint('vrp', 'bearing', v ?? undefined)
+            "
+            @update:distance="
+              (v: number | null) => updateCCIPReferencePoint('vrp', 'distance', v ?? undefined)
+            "
             @update:elevation="
-              (v: number | null) => updateCCIPReferencePoint('vrp', 'elevation', v)
+              (v: number | null) => updateCCIPReferencePoint('vrp', 'elevation', v ?? undefined)
             "
           />
         </NFormItem>
@@ -131,10 +139,14 @@ const updateCCIPReferencePoint = (
           <CCIPReferencePoint
             :point="waypoint.ccip?.oa1"
             :target-steerpoint-altitude="waypoint.altitude"
-            @update:bearing="(v: number | null) => updateCCIPReferencePoint('oa1', 'bearing', v)"
-            @update:distance="(v: number | null) => updateCCIPReferencePoint('oa1', 'distance', v)"
+            @update:bearing="
+              (v: number | null) => updateCCIPReferencePoint('oa1', 'bearing', v ?? undefined)
+            "
+            @update:distance="
+              (v: number | null) => updateCCIPReferencePoint('oa1', 'distance', v ?? undefined)
+            "
             @update:elevation="
-              (v: number | null) => updateCCIPReferencePoint('oa1', 'elevation', v)
+              (v: number | null) => updateCCIPReferencePoint('oa1', 'elevation', v ?? undefined)
             "
           />
         </NFormItem>
@@ -144,10 +156,14 @@ const updateCCIPReferencePoint = (
           <CCIPReferencePoint
             :point="waypoint.ccip?.oa2"
             :target-steerpoint-altitude="waypoint.altitude"
-            @update:bearing="(v: number | null) => updateCCIPReferencePoint('oa2', 'bearing', v)"
-            @update:distance="(v: number | null) => updateCCIPReferencePoint('oa2', 'distance', v)"
+            @update:bearing="
+              (v: number | null) => updateCCIPReferencePoint('oa2', 'bearing', v ?? undefined)
+            "
+            @update:distance="
+              (v: number | null) => updateCCIPReferencePoint('oa2', 'distance', v ?? undefined)
+            "
             @update:elevation="
-              (v: number | null) => updateCCIPReferencePoint('oa2', 'elevation', v)
+              (v: number | null) => updateCCIPReferencePoint('oa2', 'elevation', v ?? undefined)
             "
           />
         </NFormItem>
@@ -160,10 +176,14 @@ const updateCCIPReferencePoint = (
           <CCIPReferencePoint
             :point="waypoint.ccip?.pup"
             :target-steerpoint-altitude="waypoint.altitude"
-            @update:bearing="(v: number | null) => updateCCIPReferencePoint('pup', 'bearing', v)"
-            @update:distance="(v: number | null) => updateCCIPReferencePoint('pup', 'distance', v)"
+            @update:bearing="
+              (v: number | null) => updateCCIPReferencePoint('pup', 'bearing', v ?? undefined)
+            "
+            @update:distance="
+              (v: number | null) => updateCCIPReferencePoint('pup', 'distance', v ?? undefined)
+            "
             @update:elevation="
-              (v: number | null) => updateCCIPReferencePoint('pup', 'elevation', v)
+              (v: number | null) => updateCCIPReferencePoint('pup', 'elevation', v ?? undefined)
             "
           />
         </NFormItem>

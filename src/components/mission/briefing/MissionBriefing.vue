@@ -11,7 +11,11 @@ interface Props {
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  'update:nested-field': [parent: string, field: string, value: string | string[]]
+  'update:nested-field': [
+    parent: 'details' | 'ecmCmds' | 'told' | 'fuel' | 'departureRecovery',
+    field: string,
+    value: string | number | string[] | undefined,
+  ]
 }>()
 </script>
 

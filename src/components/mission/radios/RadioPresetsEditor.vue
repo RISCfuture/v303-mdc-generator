@@ -125,23 +125,23 @@ const getCommLadderOptions = (radioIndex: number) => {
 }
 
 // Validate comm ladder input (presets or frequencies)
-// Returns a select option object if valid, or false to reject the input
+// Returns a select option object if valid, or undefined to reject the input
 function validateCommLadderInput(
   radioIndex: number,
   inputValue: string,
-): { label: string; value: number } | false {
+): { label: string; value: number } | undefined {
   const radio = radios.value[radioIndex]
-  if (!radio) return false
+  if (!radio) return undefined
 
   const numValue = parseFloat(inputValue)
-  if (isNaN(numValue)) return false
+  if (isNaN(numValue)) return undefined
 
   // Check if it's an integer (preset number)
   if (Number.isInteger(numValue)) {
     if (numValue >= 1 && numValue <= radio.presetCount) {
       return { label: `Preset ${numValue}`, value: numValue }
     }
-    return false
+    return undefined
   }
 
   // It's a decimal (frequency)
@@ -153,7 +153,7 @@ function validateCommLadderInput(
     return { label: numValue.toString(), value: numValue }
   }
 
-  return false
+  return undefined
 }
 
 function updateCommLadder(radioIndex: number, value: number[] | null) {
@@ -178,7 +178,11 @@ function updateCommLadder(radioIndex: number, value: number[] | null) {
             placeholder="Select presets or enter frequencies (30-400 MHz)"
             :max-tag-count="10"
             filterable
-            :on-create="(label: string) => validateCommLadderInput(radio.index, label)"
+            :on-create="
+              ((label: string) => validateCommLadderInput(radio.index, label)) as unknown as (
+                label: string,
+              ) => { label: string; value: number }
+            "
           />
         </NFormItem>
         <div class="presets-grid">

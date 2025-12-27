@@ -16,7 +16,11 @@ defineProps<Props>()
 const emit = defineEmits<{
   'add-support-asset': []
   'remove-support-asset': [index: number]
-  'update-support-asset': [index: number, field: keyof SupportAsset, value: unknown]
+  'update-support-asset': [
+    index: number,
+    field: keyof SupportAsset,
+    value: SupportAsset[keyof SupportAsset],
+  ]
   'support-asset-drop': [index: number]
   'move-support-asset-up': [index: number]
   'move-support-asset-down': [index: number]
@@ -45,7 +49,7 @@ const emit = defineEmits<{
         :is-first="index === 0"
         :is-last="index === supportAssets.length - 1"
         @update-field="
-          (field: keyof SupportAsset, value: unknown) =>
+          (field: keyof SupportAsset, value: SupportAsset[keyof SupportAsset]) =>
             emit('update-support-asset', index, field, value)
         "
         @remove="emit('remove-support-asset', index)"

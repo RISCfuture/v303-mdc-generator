@@ -17,12 +17,7 @@ interface Props {
   availableNavaids: Navaid[]
   waypointDragDrop: DragAndDropReturn<Waypoint>
   isWaypointFieldIncomplete?: (
-    waypoint: {
-      name?: string
-      latitude?: number | null
-      longitude?: number | null
-      altitude?: number | null
-    },
+    waypoint: Pick<Waypoint, 'name' | 'latitude' | 'longitude' | 'altitude' | 'speed'>,
     field: 'name' | 'latitude' | 'longitude' | 'altitude',
   ) => boolean
 }
@@ -86,7 +81,7 @@ const formatTime = (minutes: number) => {
           :is-first="index === 0"
           :is-last="index === waypoints.length - 1"
           :is-first-tgt="index === firstTgtIndex"
-          :tot-placeholder="totPlaceholders[index]"
+          :tot-placeholder="totPlaceholders[index] ?? ''"
           :is-waypoint-field-incomplete="isWaypointFieldIncomplete"
           @update-field="
             (field: keyof Waypoint, value: unknown) => {
@@ -109,9 +104,9 @@ const formatTime = (minutes: number) => {
         >
           <NText depth="3" :style="{ fontSize: FONT_SIZE.xs, userSelect: 'none' }">
             <template v-if="waypointPairs[index]?.distance !== null">
-              {{ formatDistance(waypointPairs[index].distance!) }}
-              <template v-if="waypointPairs[index].time !== null">
-                • {{ formatTime(waypointPairs[index].time!) }}
+              {{ formatDistance(waypointPairs[index]!.distance!) }}
+              <template v-if="waypointPairs[index]!.time !== null">
+                • {{ formatTime(waypointPairs[index]!.time!) }}
               </template>
             </template>
             <template v-else>&nbsp;</template>

@@ -20,12 +20,7 @@ interface Props {
   isFirstTgt: boolean
   totPlaceholder: string
   isWaypointFieldIncomplete?: (
-    waypoint: {
-      name?: string
-      latitude?: number | null
-      longitude?: number | null
-      altitude?: number | null
-    },
+    waypoint: Pick<Waypoint, 'name' | 'latitude' | 'longitude' | 'altitude' | 'speed'>,
     field: 'name' | 'latitude' | 'longitude' | 'altitude',
   ) => boolean
 }

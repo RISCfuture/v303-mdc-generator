@@ -97,15 +97,17 @@ const gunAmmoOptions = computed(() => {
     <div class="loadout-grid">
       <div v-for="station in airframeStations" :key="station.station" class="loadout-station-row">
         <div class="station-label">
-          <strong>{{ getShortStationLabel(airframe, station.station) }}</strong>
+          <strong>{{ getShortStationLabel(airframe, station.station as number) }}</strong>
         </div>
         <NSelect
           :value="
             loadout.find((s: LoadoutStation) => s.station === station.station)?.item || 'EMPTY'
           "
-          @update:value="(v: string) => emit('update-loadout-station', station.station, v)"
+          @update:value="
+            (v: string) => emit('update-loadout-station', station.station as number, v)
+          "
           :options="getMunitionOptionsForStation(station.station)"
-          :aria-label="`Station ${getShortStationLabel(airframe, station.station)} Munition`"
+          :aria-label="`Station ${getShortStationLabel(airframe, station.station as number)} Munition`"
           filterable
           style="flex: 1"
         />

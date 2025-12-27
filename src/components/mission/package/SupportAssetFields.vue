@@ -21,7 +21,7 @@ interface Props {
 defineProps<Props>()
 
 const emit = defineEmits<{
-  'update-field': [field: keyof SupportAsset, value: unknown]
+  'update-field': [field: keyof SupportAsset, value: SupportAsset[keyof SupportAsset]]
 }>()
 
 // Role options - common presets that users can select or override

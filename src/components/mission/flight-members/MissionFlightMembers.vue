@@ -15,8 +15,8 @@ interface Props {
   crewDragDrop: DragAndDropReturn<CrewMember>
   effectiveFlightCallsign: string
   effectiveLink16Prefix: string
-  flightCallsignOverride: string
-  link16PrefixOverride: string
+  flightCallsignOverride?: string
+  link16PrefixOverride?: string
   availableCallsignOptions: { label: string; value: string }[]
   airframe: string
 }
