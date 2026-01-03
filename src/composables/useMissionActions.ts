@@ -1,5 +1,6 @@
 import { useRouter } from 'vue-router'
 import { useDialog, useMessage } from 'naive-ui'
+import * as Sentry from '@sentry/vue'
 import { useMissionsStore } from '@/stores/missions'
 import type { Mission, Squadron, Theater } from '@/types'
 
@@ -15,6 +16,9 @@ export function useMissionActions() {
   function handleCreate(squadron: Squadron, theater: Theater) {
     const mission = missionsStore.createMission(squadron, theater)
     message.success('Mission created')
+    Sentry.metrics.count('mission.created', 1, {
+      attributes: { squadron },
+    })
     router.push(`/mission/${mission.id}`)
     return mission
   }

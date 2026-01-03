@@ -1,4 +1,5 @@
 import { useMessage, useLoadingBar } from 'naive-ui'
+import * as Sentry from '@sentry/vue'
 import { generatePdfMakeBriefingCard } from '@/services/pdfGenerator/pdfMakeBriefingCard'
 import { downloadMDC } from '@/services/mdcExporter'
 import type { Mission } from '@/types'
@@ -17,6 +18,9 @@ export function useMissionExport() {
       await generatePdfMakeBriefingCard(mission)
       loadingBar.finish()
       message.success('PDF briefing card generated')
+      Sentry.metrics.count('mission.exported', 1, {
+        attributes: { type: 'pdf', squadron: mission.squadron },
+      })
     } catch (error) {
       loadingBar.error()
       message.error(`Failed to generate PDF: ${error}`)
@@ -28,6 +32,9 @@ export function useMissionExport() {
     try {
       downloadMDC(mission, crewMemberIndex)
       message.success('JSON MDC exported')
+      Sentry.metrics.count('mission.exported', 1, {
+        attributes: { type: 'mdc', squadron: mission.squadron },
+      })
     } catch (error) {
       message.error(`Failed to export MDC: ${error}`)
       console.error(error)

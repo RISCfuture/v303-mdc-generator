@@ -1,4 +1,5 @@
 import { useMessage, useLoadingBar } from 'naive-ui'
+import * as Sentry from '@sentry/vue'
 import { exportAllImages, importAllImages, validateImagesData } from '@/utils/imageExport'
 import { useMissionsStore } from '@/stores/missions'
 import { serializeMission } from '@/utils/missionStorage'
@@ -114,6 +115,9 @@ export function useMissionListExport() {
       message.success(
         `Exported ${parsed.missions.length} mission${parsed.missions.length !== 1 ? 's' : ''} and ${images.length} image${images.length !== 1 ? 's' : ''}`,
       )
+      Sentry.metrics.count('mission.exported', 1, {
+        attributes: { type: 'backup' },
+      })
     } catch (error) {
       loadingBar.error()
       message.error(`Failed to export missions: ${error}`)
@@ -163,6 +167,9 @@ export function useMissionListExport() {
 
       loadingBar.finish()
       message.success(`Exported mission "${mission.name || 'Untitled Mission'}"`)
+      Sentry.metrics.count('mission.exported', 1, {
+        attributes: { type: 'single_backup', squadron: mission.squadron },
+      })
     } catch (error) {
       loadingBar.error()
       message.error(`Failed to export mission: ${error}`)
