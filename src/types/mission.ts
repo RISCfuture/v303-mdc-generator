@@ -102,6 +102,8 @@ export interface A10CalculatorParams {
   runwayCondition: 'dry' | 'wet' | 'icy'
   flapSetting: 0 | 7 // degrees
   speedBrake: 'open' | 'closed' // open = extended, closed = retracted
+  thrustSetting?: 'MAX' | '3_BELOW_PTFS' // thrust setting for takeoff distance calc
+  runwaySlope?: number // percent (positive = uphill)
 }
 
 export interface F16BingoCalculatorParams {

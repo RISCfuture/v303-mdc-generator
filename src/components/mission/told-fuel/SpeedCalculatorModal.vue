@@ -28,7 +28,17 @@ import {
   type FlapSetting,
   type SpeedBrakeSetting,
 } from '@/utils/a10RotationCalculator'
-import { calculateTakeoffDistance, celsiusToFahrenheit } from '@/utils/f16TakeoffDistanceCalculator'
+import {
+  calculateTakeoffDistance as calculateF16TakeoffDistance,
+  celsiusToFahrenheit,
+} from '@/utils/f16TakeoffDistanceCalculator'
+import {
+  calculateTakeoffDistance as calculateA10TakeoffDistance,
+  calculateCriticalFieldLength as calculateA10CriticalFieldLength,
+  calculateHeadwindComponent as calculateA10TakeoffHeadwind,
+  type ThrustSetting,
+  type RCR,
+} from '@/utils/a10TakeoffDistanceCalculator'
 
 interface Props {
   show: boolean
@@ -77,8 +87,10 @@ const pitchAttitude = ref<number>(10)
 const runwaySlope = ref<number>(0)
 
 // A-10 specific parameters
-const flapSetting = ref<FlapSetting>(0)
+const flapSetting = ref<FlapSetting>(7)
 const speedBrake = ref<SpeedBrakeSetting>('open')
+const thrustSetting = ref<ThrustSetting>('MAX')
+const runwaySlopeA10 = ref<number>(0)
 
 // Computed wind components
 const runwayHeading = computed(() => selectedRunwayHeading.value ?? 0)
@@ -127,12 +139,12 @@ const calculatedSpeeds = computed(() => {
   return null
 })
 
-// Takeoff distance calculations (F-16 only)
+// Takeoff distance calculations (F-16)
 const abTakeoffDistance = computed(() => {
   if (props.airframe !== 'F-16C_50') return null
   if (!props.grossWeight || props.grossWeight === 0) return null
 
-  const result = calculateTakeoffDistance({
+  const result = calculateF16TakeoffDistance({
     grossWeight: props.grossWeight,
     temperatureF: celsiusToFahrenheit(temperature.value),
     pressureAltitude: fieldElevation.value ?? 0,
@@ -151,7 +163,7 @@ const milTakeoffDistance = computed(() => {
   if (props.airframe !== 'F-16C_50') return null
   if (!props.grossWeight || props.grossWeight === 0) return null
 
-  const result = calculateTakeoffDistance({
+  const result = calculateF16TakeoffDistance({
     grossWeight: props.grossWeight,
     temperatureF: celsiusToFahrenheit(temperature.value),
     pressureAltitude: fieldElevation.value ?? 0,
@@ -164,6 +176,85 @@ const milTakeoffDistance = computed(() => {
   })
 
   return Math.round(result.takeoffDistance)
+})
+
+// Takeoff distance calculations (A-10)
+const a10TakeoffHeadwind = computed(() => {
+  if (props.airframe !== 'A-10C_2') return 0
+  if (windSpeed.value === 0) return 0
+  return calculateA10TakeoffHeadwind(windSpeed.value, windDirection.value, runwayHeading.value)
+})
+
+const flaps0TakeoffDistance = computed(() => {
+  if (props.airframe !== 'A-10C_2') return null
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  const result = calculateA10TakeoffDistance({
+    grossWeight: props.grossWeight,
+    temperatureC: temperature.value,
+    pressureAltitude: fieldElevation.value ?? 0,
+    flapSetting: 0,
+    thrustSetting: thrustSetting.value,
+    runwaySlope: runwaySlopeA10.value,
+    headwindComponent: a10TakeoffHeadwind.value,
+  })
+
+  return Math.round(result.takeoffDistance)
+})
+
+const flaps7TakeoffDistance = computed(() => {
+  if (props.airframe !== 'A-10C_2') return null
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  const result = calculateA10TakeoffDistance({
+    grossWeight: props.grossWeight,
+    temperatureC: temperature.value,
+    pressureAltitude: fieldElevation.value ?? 0,
+    flapSetting: 7,
+    thrustSetting: thrustSetting.value,
+    runwaySlope: runwaySlopeA10.value,
+    headwindComponent: a10TakeoffHeadwind.value,
+  })
+
+  return Math.round(result.takeoffDistance)
+})
+
+const selectedFlapExceedsRunway = computed(() => {
+  const distance =
+    flapSetting.value === 0 ? flaps0TakeoffDistance.value : flaps7TakeoffDistance.value
+  if (distance === null || !props.runwayLength) return false
+  return distance > props.runwayLength
+})
+
+// Critical field length calculation (A-10)
+const criticalFieldLength = computed(() => {
+  if (props.airframe !== 'A-10C_2') return null
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  // Map runway condition to RCR
+  const rcrMap: Record<'dry' | 'wet' | 'icy', RCR> = {
+    dry: 23,
+    wet: 12,
+    icy: 5,
+  }
+
+  const result = calculateA10CriticalFieldLength({
+    grossWeight: props.grossWeight,
+    temperatureC: temperature.value,
+    pressureAltitude: fieldElevation.value ?? 0,
+    thrustSetting: thrustSetting.value,
+    runwaySlope: runwaySlopeA10.value,
+    headwindComponent: a10TakeoffHeadwind.value,
+    rcr: rcrMap[runwayConditionA10.value],
+  })
+
+  return Math.round(result.criticalFieldLength)
+})
+
+// Warning: runway shorter than critical field length
+const runwayShorterThanCFL = computed(() => {
+  if (criticalFieldLength.value === null || !props.runwayLength) return false
+  return props.runwayLength < criticalFieldLength.value
 })
 
 const abExceedsRunway = computed(() => {
@@ -204,6 +295,8 @@ watch(
           runwayConditionA10.value = params.runwayCondition
           flapSetting.value = params.flapSetting
           speedBrake.value = params.speedBrake
+          thrustSetting.value = params.thrustSetting ?? 'MAX'
+          runwaySlopeA10.value = params.runwaySlope ?? 0
         }
       }
     }
@@ -235,6 +328,8 @@ function handleCalculate() {
       runwayCondition: runwayConditionA10.value,
       flapSetting: flapSetting.value,
       speedBrake: speedBrake.value,
+      thrustSetting: thrustSetting.value,
+      runwaySlope: runwaySlopeA10.value,
     }
   }
 
@@ -325,18 +420,15 @@ function handleCancel() {
           <!-- F-16 Runway Slope -->
           <NGridItem v-if="airframe === 'F-16C_50'">
             <label>Slope (%)</label>
-            <NInputNumber
-              v-model:value="runwaySlope"
-              :min="-5"
-              :max="5"
-              :step="0.1"
-              style="width: 100%"
-            />
-            <NSpace vertical :size="4">
-              <NText depth="3" style="font-size: 12px">
-                Positive = upslope, Negative = downslope
-              </NText>
-            </NSpace>
+            <NInputNumber v-model:value="runwaySlope" :min="-5" :max="5" :step="0.1" />
+            <NText depth="3" class="help-text">Positive = upslope, Negative = downslope</NText>
+          </NGridItem>
+
+          <!-- A-10 Runway Slope -->
+          <NGridItem v-if="airframe === 'A-10C_2'">
+            <label>Slope (%)</label>
+            <NInputNumber v-model:value="runwaySlopeA10" :min="-5" :max="5" :step="0.1" />
+            <NText depth="3" class="help-text">Positive = upslope, Negative = downslope</NText>
           </NGridItem>
         </NGrid>
       </NCard>
@@ -354,7 +446,7 @@ function handleCancel() {
                 </NGridItem>
                 <NGridItem>
                   <label>CG Position (% MAC)</label>
-                  <NInputNumber v-model:value="cgPercent" :min="20" :max="35" style="width: 100%" />
+                  <NInputNumber v-model:value="cgPercent" :min="20" :max="35" />
                 </NGridItem>
               </NGrid>
             </NGridItem>
@@ -410,19 +502,29 @@ function handleCancel() {
                 ]"
               />
             </NGridItem>
+
+            <NGridItem>
+              <label>Thrust Setting</label>
+              <NSelect
+                v-model:value="thrustSetting"
+                :options="[
+                  { label: 'MAX', value: 'MAX' as const },
+                  { label: '3% Below PTFS', value: '3_BELOW_PTFS' as const },
+                ]"
+              />
+            </NGridItem>
           </template>
         </NGrid>
       </NCard>
 
       <!-- F-16 Takeoff Distance Section -->
       <NCard v-if="airframe === 'F-16C_50'" title="Takeoff Distance" size="small">
-        <div>
+        <NSpace align="center" :size="8">
           <NText strong>{{ powerSetting }}:</NText>
           <NText
             :class="{
               'exceeds-runway': powerSetting === 'AB' ? abExceedsRunway : milExceedsRunway,
             }"
-            style="margin-left: 8px"
           >
             {{
               (powerSetting === 'AB' ? abTakeoffDistance : milTakeoffDistance)?.toLocaleString() ??
@@ -430,7 +532,7 @@ function handleCancel() {
             }}
             ft
           </NText>
-          <NText depth="3" style="margin-left: 8px">
+          <NText depth="3">
             ({{ powerSetting === 'AB' ? 'MIL' : 'AB' }}:
             <span
               :class="{
@@ -446,14 +548,47 @@ function handleCancel() {
               ft</span
             >)
           </NText>
-        </div>
-        <NText depth="3" style="font-size: 12px; display: block; margin-top: 8px">
-          <span v-if="runwayLength"
-            >Runway {{ selectedRunwayName }}: {{ runwayLength.toLocaleString() }} &times;
-            {{ runwayWidth?.toLocaleString() ?? '—' }} ft</span
-          >
-          <span v-if="runwayLength && dragIndex !== undefined"> • </span>
-          <span v-if="dragIndex !== undefined">Drag Index: {{ dragIndex }}</span>
+        </NSpace>
+        <NText v-if="runwayLength" depth="3" class="detail-text">
+          Runway {{ selectedRunwayName }}: {{ runwayLength.toLocaleString() }} &times;
+          {{ runwayWidth?.toLocaleString() ?? '—' }} ft
+          <template v-if="dragIndex !== undefined"> • Drag Index: {{ dragIndex }}</template>
+        </NText>
+        <NText
+          v-if="powerSetting === 'AB' ? abExceedsRunway : milExceedsRunway"
+          class="exceeds-runway detail-text"
+        >
+          ⚠ Takeoff distance exceeds runway length
+        </NText>
+      </NCard>
+
+      <!-- A-10 Takeoff Distance Section -->
+      <NCard v-if="airframe === 'A-10C_2'" title="Takeoff Distance" size="small">
+        <NText
+          :class="{
+            'exceeds-runway': selectedFlapExceedsRunway,
+            'below-cfl': runwayShorterThanCFL && !selectedFlapExceedsRunway,
+          }"
+        >
+          {{
+            (flapSetting === 0 ? flaps0TakeoffDistance : flaps7TakeoffDistance)?.toLocaleString() ??
+            '—'
+          }}
+          ft
+        </NText>
+        <NText depth="3" class="detail-text">
+          <template v-if="runwayLength">
+            Runway {{ selectedRunwayName }}: {{ runwayLength.toLocaleString() }} &times;
+            {{ runwayWidth?.toLocaleString() ?? '—' }} ft •
+          </template>
+          Thrust: {{ thrustSetting === 'MAX' ? 'MAX' : '3% Below PTFS' }}
+        </NText>
+        <NText v-if="selectedFlapExceedsRunway" class="exceeds-runway detail-text">
+          ⚠ Takeoff distance exceeds runway length
+        </NText>
+        <NText v-else-if="runwayShorterThanCFL" class="below-cfl detail-text">
+          ⚠ Runway shorter than critical field length ({{ criticalFieldLength?.toLocaleString() }}
+          ft)
         </NText>
       </NCard>
     </NSpace>
@@ -479,5 +614,20 @@ label {
 .exceeds-runway {
   color: var(--error-color, #e88080);
   font-weight: 600;
+}
+
+.below-cfl {
+  color: var(--warning-color, #f0a020);
+  font-weight: 600;
+}
+
+.detail-text {
+  font-size: 12px;
+  display: block;
+  margin-top: 8px;
+}
+
+.help-text {
+  font-size: 12px;
 }
 </style>
