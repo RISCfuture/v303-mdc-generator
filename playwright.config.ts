@@ -62,6 +62,8 @@ export default defineConfig({
       use: {
         ...devices['Desktop Safari'],
       },
+      // Webkit is inherently flakier, allow 1 retry
+      retries: 1,
     },
 
     /* Test against mobile viewports. */

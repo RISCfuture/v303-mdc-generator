@@ -1,10 +1,32 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, Page } from '@playwright/test'
 import * as fs from 'fs'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
+/**
+ * Helper to create a mission with optional name, handles webkit timing issues
+ */
+async function createMission(page: Page, name?: string) {
+  await page.getByRole('button', { name: /New Mission/ }).first().click()
+  await page.getByRole('button', { name: 'Create Mission' }).click()
+  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 30000 })
+
+  if (name) {
+    const nameInput = page.locator('[aria-label="Mission Name"] input')
+    await nameInput.fill(name)
+  }
+}
+
+/**
+ * Helper to navigate back to mission list
+ */
+async function goBackToMissionList(page: Page) {
+  await page.locator('.n-page-header__back').click()
+  await page.getByRole('table').waitFor({ state: 'visible', timeout: 10000 })
+}
 
 test.describe('Mission List Export/Import', () => {
   test.beforeEach(async ({ page }) => {
@@ -18,18 +40,14 @@ test.describe('Mission List Export/Import', () => {
   })
 
   test('should export missions and download JSON file', async ({ page }) => {
-    test.setTimeout(90000) // Increase timeout for this test that creates multiple missions
+    test.setTimeout(90000)
 
     await page.goto('/')
 
     // Create two missions
     for (let i = 0; i < 2; i++) {
-      await page.getByRole('button', { name: /New Mission/ }).first().click()
-      await page.getByRole('button', { name: 'Create Mission' }).click()
-      await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-      await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-      await page.locator('.n-page-header__back').click()
-      await page.waitForTimeout(500)
+      await createMission(page)
+      await goBackToMissionList(page)
     }
 
     // Setup download listener
@@ -50,17 +68,8 @@ test.describe('Mission List Export/Import', () => {
     await page.goto('/')
 
     // Create a test mission first to export
-    await page.getByRole('button', { name: /New Mission/ }).first().click()
-    await page.getByRole('button', { name: 'Create Mission' }).click()
-    await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-
-    // Update mission name
-    const nameInput = page.locator('[aria-label="Mission Name"] input')
-    await nameInput.waitFor({ state: 'visible', timeout: 5000 })
-    await nameInput.fill('Test Mission for Export')
-
-    await page.locator('.n-page-header__back').click()
+    await createMission(page, 'Test Mission for Export')
+    await goBackToMissionList(page)
 
     // Export the mission
     const downloadPromise = page.waitForEvent('download')
@@ -91,27 +100,17 @@ test.describe('Mission List Export/Import', () => {
   })
 
   test('should successfully import missions and replace existing ones', async ({ page }) => {
-    test.setTimeout(90000) // Increase timeout for this test that creates multiple missions
+    test.setTimeout(90000)
 
     await page.goto('/')
 
     // Create two original missions
     for (let i = 0; i < 2; i++) {
-      await page.getByRole('button', { name: /New Mission/ }).first().click()
-      await page.getByRole('button', { name: 'Create Mission' }).click()
-
-      // Wait for both URL change and page to be fully loaded
-      await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-      await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-
-      const nameInput = page.locator('[aria-label="Mission Name"] input')
-      await nameInput.waitFor({ state: 'visible', timeout: 5000 })
-      await nameInput.fill(`Original Mission ${i + 1}`)
-      await page.locator('.n-page-header__back').click()
-      await page.waitForTimeout(500)
+      await createMission(page, `Original Mission ${i + 1}`)
+      await goBackToMissionList(page)
     }
 
-    // Verify original missions exist (use table selector to avoid strict mode violation)
+    // Verify original missions exist
     await expect(page.getByRole('table').getByText('Original Mission 1')).toBeVisible()
     await expect(page.getByRole('table').getByText('Original Mission 2')).toBeVisible()
 
@@ -122,15 +121,8 @@ test.describe('Mission List Export/Import', () => {
     const downloadPath = await download.path()
 
     // Create a different mission
-    await page.getByRole('button', { name: /New Mission/ }).first().click()
-    await page.getByRole('button', { name: 'Create Mission' }).click()
-    await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-
-    const nameInput = page.locator('[aria-label="Mission Name"] input')
-    await nameInput.waitFor({ state: 'visible', timeout: 5000 })
-    await nameInput.fill('New Mission to be Replaced')
-    await page.locator('.n-page-header__back').click()
+    await createMission(page, 'New Mission to be Replaced')
+    await goBackToMissionList(page)
 
     // Verify we now have 3 missions (use table selector to avoid strict mode violation)
     await expect(page.getByRole('table').getByText('New Mission to be Replaced')).toBeVisible()
@@ -158,11 +150,8 @@ test.describe('Mission List Export/Import', () => {
     await page.goto('/')
 
     // Create a mission and export it
-    await page.getByRole('button', { name: /New Mission/ }).first().click()
-    await page.getByRole('button', { name: 'Create Mission' }).click()
-    await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-    await page.locator('.n-page-header__back').click()
+    await createMission(page)
+    await goBackToMissionList(page)
 
     const downloadPromise = page.waitForEvent('download')
     await page.getByRole('button', { name: /Export Missions/ }).click()
@@ -208,26 +197,15 @@ test.describe('Mission List Export/Import', () => {
   })
 
   test('should handle multiple missions and images in export', async ({ page }) => {
-    test.setTimeout(90000) // Increase timeout for this test that creates multiple missions
+    test.setTimeout(90000)
 
     await page.goto('/')
 
     // Create 3 missions with different names
     const missionNames = ['SEAD Mission', 'CAS Mission', 'CAP Mission']
     for (const name of missionNames) {
-      await page.getByRole('button', { name: /New Mission/ }).first().click()
-      await page.getByRole('button', { name: 'Create Mission' }).click()
-
-      // Wait for both URL change and page to be fully loaded
-      await page.waitForURL(/\/mission\/.+/, { timeout: 60000 })
-      await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
-
-      const nameInput = page.locator('[aria-label="Mission Name"] input')
-      await nameInput.waitFor({ state: 'visible', timeout: 5000 })
-      await nameInput.fill(name)
-
-      await page.locator('.n-page-header__back').click()
-      await page.waitForTimeout(500)
+      await createMission(page, name)
+      await goBackToMissionList(page)
     }
 
     // Export
