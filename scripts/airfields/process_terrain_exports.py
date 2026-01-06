@@ -176,6 +176,8 @@ class TerrainDataProcessor:
             for dcs_runway in dcs_airfield.get('runways', []):
                 rwy_name = dcs_runway.get('name', '')
                 rwy_heading = dcs_runway.get('heading', 0)
+                rwy_length = dcs_runway.get('length')  # Already in feet from Lua export
+                rwy_width = dcs_runway.get('width')  # Already in feet from Lua export
                 rwy_pos = dcs_runway.get('position', {})
 
                 # Normalize heading to 0-359
@@ -233,6 +235,11 @@ class TerrainDataProcessor:
                     'heading': primary_hdg,
                     'ils': ils_primary
                 }
+                # Add length and width if available (round to nearest foot)
+                if rwy_length is not None:
+                    runway['length'] = int(round(rwy_length))
+                if rwy_width is not None:
+                    runway['width'] = int(round(rwy_width))
                 runways.append(runway)
 
                 # Create the reciprocal runway end
@@ -242,6 +249,11 @@ class TerrainDataProcessor:
                     'heading': recip_hdg,
                     'ils': ils_reciprocal
                 }
+                # Both ends share the same length and width
+                if rwy_length is not None:
+                    reciprocal_runway['length'] = int(round(rwy_length))
+                if rwy_width is not None:
+                    reciprocal_runway['width'] = int(round(rwy_width))
                 runways.append(reciprocal_runway)
 
             airfield['runways'] = runways

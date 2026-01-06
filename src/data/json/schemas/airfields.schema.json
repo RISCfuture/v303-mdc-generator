@@ -80,6 +80,14 @@
               "maximum": 359,
               "description": "Magnetic heading in degrees"
             },
+            "length": {
+              "type": "number",
+              "description": "Runway length in feet"
+            },
+            "width": {
+              "type": "number",
+              "description": "Runway width in feet"
+            },
             "ils": {
               "oneOf": [
                 {

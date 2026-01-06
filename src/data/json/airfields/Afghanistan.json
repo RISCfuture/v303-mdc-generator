@@ -11,22 +11,30 @@
       {
         "name": "21",
         "heading": 206,
-        "ils": null
+        "ils": null,
+        "length": 11117,
+        "width": 197
       },
       {
         "name": "3",
         "heading": 26,
-        "ils": null
+        "ils": null,
+        "length": 11117,
+        "width": 197
       },
       {
         "name": "3",
         "heading": 206,
-        "ils": null
+        "ils": null,
+        "length": 11117,
+        "width": 197
       },
       {
         "name": "3",
         "heading": 26,
-        "ils": null
+        "ils": null,
+        "length": 11117,
+        "width": 197
       }
     ],
     "radio": null
@@ -43,12 +51,16 @@
       {
         "name": "7",
         "heading": 67,
-        "ils": null
+        "ils": null,
+        "length": 6246,
+        "width": 148
       },
       {
         "name": "25",
         "heading": 247,
-        "ils": null
+        "ils": null,
+        "length": 6246,
+        "width": 148
       }
     ],
     "radio": null
@@ -65,12 +77,16 @@
       {
         "name": "1",
         "heading": 7,
-        "ils": null
+        "ils": null,
+        "length": 5758,
+        "width": 148
       },
       {
         "name": "19",
         "heading": 187,
-        "ils": null
+        "ils": null,
+        "length": 5758,
+        "width": 148
       }
     ],
     "radio": null
@@ -91,12 +107,16 @@
       {
         "name": "1",
         "heading": 10,
-        "ils": null
+        "ils": null,
+        "length": 10647,
+        "width": 213
       },
       {
         "name": "19",
         "heading": 190,
-        "ils": null
+        "ils": null,
+        "length": 10647,
+        "width": 213
       }
     ],
     "radio": null
@@ -117,12 +137,16 @@
       {
         "name": "1",
         "heading": 10,
-        "ils": null
+        "ils": null,
+        "length": 1271,
+        "width": 148
       },
       {
         "name": "19",
         "heading": 190,
-        "ils": null
+        "ils": null,
+        "length": 1271,
+        "width": 148
       }
     ],
     "radio": null
@@ -139,12 +163,16 @@
       {
         "name": "25",
         "heading": 245,
-        "ils": null
+        "ils": null,
+        "length": 5710,
+        "width": 66
       },
       {
         "name": "7",
         "heading": 65,
-        "ils": null
+        "ils": null,
+        "length": 5710,
+        "width": 66
       }
     ],
     "radio": null
@@ -165,12 +193,16 @@
       {
         "name": "5",
         "heading": 50,
-        "ils": null
+        "ils": null,
+        "length": 7459,
+        "width": 197
       },
       {
         "name": "23",
         "heading": 230,
-        "ils": null
+        "ils": null,
+        "length": 7459,
+        "width": 197
       }
     ],
     "radio": null
@@ -209,12 +241,16 @@
       {
         "name": "26",
         "heading": 265,
-        "ils": null
+        "ils": null,
+        "length": 2149,
+        "width": 148
       },
       {
         "name": "8",
         "heading": 85,
-        "ils": null
+        "ils": null,
+        "length": 2149,
+        "width": 148
       }
     ],
     "radio": null
@@ -242,12 +278,16 @@
       {
         "name": "33",
         "heading": 330,
-        "ils": null
+        "ils": null,
+        "length": 6990,
+        "width": 148
       },
       {
         "name": "15",
         "heading": 150,
-        "ils": null
+        "ils": null,
+        "length": 6990,
+        "width": 148
       }
     ],
     "radio": null
@@ -264,12 +304,16 @@
       {
         "name": "3",
         "heading": 24,
-        "ils": null
+        "ils": null,
+        "length": 5429,
+        "width": 148
       },
       {
         "name": "20",
         "heading": 204,
-        "ils": null
+        "ils": null,
+        "length": 5429,
+        "width": 148
       }
     ],
     "radio": null
@@ -286,12 +330,16 @@
       {
         "name": "35",
         "heading": 354,
-        "ils": null
+        "ils": null,
+        "length": 2066,
+        "width": 66
       },
       {
         "name": "17",
         "heading": 174,
-        "ils": null
+        "ils": null,
+        "length": 2066,
+        "width": 66
       }
     ],
     "radio": null
@@ -312,12 +360,16 @@
       {
         "name": "18",
         "heading": 188,
-        "ils": null
+        "ils": null,
+        "length": 8920,
+        "width": 197
       },
       {
         "name": "1",
         "heading": 8,
-        "ils": null
+        "ils": null,
+        "length": 8920,
+        "width": 197
       }
     ],
     "radio": null
@@ -334,12 +386,16 @@
       {
         "name": "13",
         "heading": 127,
-        "ils": null
+        "ils": null,
+        "length": 6221,
+        "width": 98
       },
       {
         "name": "31",
         "heading": 307,
-        "ils": null
+        "ils": null,
+        "length": 6221,
+        "width": 98
       }
     ],
     "radio": null
@@ -360,12 +416,16 @@
       {
         "name": "11",
         "heading": 104,
-        "ils": null
+        "ils": null,
+        "length": 10393,
+        "width": 213
       },
       {
         "name": "28",
         "heading": 284,
-        "ils": null
+        "ils": null,
+        "length": 10393,
+        "width": 213
       }
     ],
     "radio": null
@@ -394,12 +454,16 @@
             "latitude": 31.4975,
             "longitude": 65.834167
           }
-        }
+        },
+        "length": 9780,
+        "width": 197
       },
       {
         "name": "5",
         "heading": 54,
-        "ils": null
+        "ils": null,
+        "length": 9780,
+        "width": 197
       }
     ],
     "radio": null
@@ -428,12 +492,16 @@
             "latitude": 31.4975,
             "longitude": 65.834167
           }
-        }
+        },
+        "length": 718,
+        "width": 148
       },
       {
         "name": "5",
         "heading": 54,
-        "ils": null
+        "ils": null,
+        "length": 718,
+        "width": 148
       }
     ],
     "radio": null
@@ -450,12 +518,16 @@
       {
         "name": "23",
         "heading": 238,
-        "ils": null
+        "ils": null,
+        "length": 5619,
+        "width": 148
       },
       {
         "name": "6",
         "heading": 58,
-        "ils": null
+        "ils": null,
+        "length": 5619,
+        "width": 148
       }
     ],
     "radio": null
@@ -472,12 +544,16 @@
       {
         "name": "32",
         "heading": 322,
-        "ils": null
+        "ils": null,
+        "length": 5542,
+        "width": 66
       },
       {
         "name": "14",
         "heading": 142,
-        "ils": null
+        "ils": null,
+        "length": 5542,
+        "width": 66
       }
     ],
     "radio": null
@@ -494,12 +570,16 @@
       {
         "name": "14",
         "heading": 140,
-        "ils": null
+        "ils": null,
+        "length": 6944,
+        "width": 148
       },
       {
         "name": "32",
         "heading": 320,
-        "ils": null
+        "ils": null,
+        "length": 6944,
+        "width": 148
       }
     ],
     "radio": null
@@ -516,12 +596,16 @@
       {
         "name": "22",
         "heading": 220,
-        "ils": null
+        "ils": null,
+        "length": 6115,
+        "width": 66
       },
       {
         "name": "4",
         "heading": 40,
-        "ils": null
+        "ils": null,
+        "length": 6115,
+        "width": 66
       }
     ],
     "radio": null
@@ -538,12 +622,16 @@
       {
         "name": "32",
         "heading": 322,
-        "ils": null
+        "ils": null,
+        "length": 4046,
+        "width": 148
       },
       {
         "name": "14",
         "heading": 142,
-        "ils": null
+        "ils": null,
+        "length": 4046,
+        "width": 148
       }
     ],
     "radio": null
@@ -564,12 +652,16 @@
       {
         "name": "36",
         "heading": 2,
-        "ils": null
+        "ils": null,
+        "length": 7033,
+        "width": 164
       },
       {
         "name": "18",
         "heading": 182,
-        "ils": null
+        "ils": null,
+        "length": 7033,
+        "width": 164
       }
     ],
     "radio": null
@@ -590,12 +682,16 @@
       {
         "name": "36",
         "heading": 2,
-        "ils": null
+        "ils": null,
+        "length": 688,
+        "width": 148
       },
       {
         "name": "18",
         "heading": 182,
-        "ils": null
+        "ils": null,
+        "length": 688,
+        "width": 148
       }
     ],
     "radio": null
@@ -612,12 +708,16 @@
       {
         "name": "12",
         "heading": 123,
-        "ils": null
+        "ils": null,
+        "length": 5904,
+        "width": 197
       },
       {
         "name": "30",
         "heading": 303,
-        "ils": null
+        "ils": null,
+        "length": 5904,
+        "width": 197
       }
     ],
     "radio": null
@@ -634,12 +734,16 @@
       {
         "name": "9",
         "heading": 92,
-        "ils": null
+        "ils": null,
+        "length": 1097,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 272,
-        "ils": null
+        "ils": null,
+        "length": 1097,
+        "width": 148
       }
     ],
     "radio": null

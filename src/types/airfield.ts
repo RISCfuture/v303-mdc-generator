@@ -22,6 +22,8 @@ export interface Runway {
   heading: number // Magnetic heading in degrees
   oppositeHeading: number // Opposite runway magnetic heading
   ils: ILS // ILS information for this runway
+  length?: number // Runway length in feet
+  width?: number // Runway width in feet
 }
 
 export interface Frequency {

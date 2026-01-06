@@ -11,22 +11,30 @@
       {
         "name": "20",
         "heading": 203,
-        "ils": null
+        "ils": null,
+        "length": 4877,
+        "width": 164
       },
       {
         "name": "2",
         "heading": 23,
-        "ils": null
+        "ils": null,
+        "length": 4877,
+        "width": 164
       },
       {
         "name": "2",
         "heading": 270,
-        "ils": null
+        "ils": null,
+        "length": 4877,
+        "width": 164
       },
       {
         "name": "9",
         "heading": 90,
-        "ils": null
+        "ils": null,
+        "length": 4877,
+        "width": 164
       }
     ],
     "radio": null
@@ -43,32 +51,44 @@
       {
         "name": "23",
         "heading": 228,
-        "ils": null
+        "ils": null,
+        "length": 1973,
+        "width": 148
       },
       {
         "name": "5",
         "heading": 48,
-        "ils": null
+        "ils": null,
+        "length": 1973,
+        "width": 148
       },
       {
         "name": "5",
         "heading": 288,
-        "ils": null
+        "ils": null,
+        "length": 1973,
+        "width": 148
       },
       {
         "name": "11",
         "heading": 108,
-        "ils": null
+        "ils": null,
+        "length": 1973,
+        "width": 148
       },
       {
         "name": "30",
         "heading": 208,
-        "ils": null
+        "ils": null,
+        "length": 2244,
+        "width": 148
       },
       {
         "name": "3",
         "heading": 28,
-        "ils": null
+        "ils": null,
+        "length": 2244,
+        "width": 148
       }
     ],
     "radio": null
@@ -85,12 +105,16 @@
       {
         "name": "23",
         "heading": 227,
-        "ils": null
+        "ils": null,
+        "length": 3482,
+        "width": 197
       },
       {
         "name": "5",
         "heading": 47,
-        "ils": null
+        "ils": null,
+        "length": 3482,
+        "width": 197
       }
     ],
     "radio": null
@@ -107,12 +131,16 @@
       {
         "name": "8",
         "heading": 81,
-        "ils": null
+        "ils": null,
+        "length": 1840,
+        "width": 148
       },
       {
         "name": "26",
         "heading": 261,
-        "ils": null
+        "ils": null,
+        "length": 1840,
+        "width": 148
       }
     ],
     "radio": null
@@ -129,22 +157,30 @@
       {
         "name": "28",
         "heading": 97,
-        "ils": null
+        "ils": null,
+        "length": 2984,
+        "width": 197
       },
       {
         "name": "28",
         "heading": 277,
-        "ils": null
+        "ils": null,
+        "length": 2984,
+        "width": 197
       },
       {
         "name": "10",
         "heading": 203,
-        "ils": null
+        "ils": null,
+        "length": 2984,
+        "width": 197
       },
       {
         "name": "2",
         "heading": 23,
-        "ils": null
+        "ils": null,
+        "length": 2984,
+        "width": 197
       }
     ],
     "radio": null
@@ -161,22 +197,30 @@
       {
         "name": "19",
         "heading": 180,
-        "ils": null
+        "ils": null,
+        "length": 2337,
+        "width": 197
       },
       {
         "name": "36",
         "heading": 0,
-        "ils": null
+        "ils": null,
+        "length": 2337,
+        "width": 197
       },
       {
         "name": "1",
         "heading": 219,
-        "ils": null
+        "ils": null,
+        "length": 2337,
+        "width": 197
       },
       {
         "name": "4",
         "heading": 39,
-        "ils": null
+        "ils": null,
+        "length": 2337,
+        "width": 197
       }
     ],
     "radio": null
@@ -193,22 +237,30 @@
       {
         "name": "10",
         "heading": 93,
-        "ils": null
+        "ils": null,
+        "length": 3680,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 273,
-        "ils": null
+        "ils": null,
+        "length": 3680,
+        "width": 148
       },
       {
         "name": "29",
         "heading": 12,
-        "ils": null
+        "ils": null,
+        "length": 3680,
+        "width": 148
       },
       {
         "name": "19",
         "heading": 192,
-        "ils": null
+        "ils": null,
+        "length": 3680,
+        "width": 148
       }
     ],
     "radio": null
@@ -225,22 +277,30 @@
       {
         "name": "11",
         "heading": 102,
-        "ils": null
+        "ils": null,
+        "length": 3028,
+        "width": 148
       },
       {
         "name": "28",
         "heading": 282,
-        "ils": null
+        "ils": null,
+        "length": 3028,
+        "width": 148
       },
       {
         "name": "29",
         "heading": 211,
-        "ils": null
+        "ils": null,
+        "length": 3028,
+        "width": 148
       },
       {
         "name": "3",
         "heading": 31,
-        "ils": null
+        "ils": null,
+        "length": 3028,
+        "width": 148
       }
     ],
     "radio": null
@@ -257,12 +317,16 @@
       {
         "name": "13",
         "heading": 134,
-        "ils": null
+        "ils": null,
+        "length": 3054,
+        "width": 197
       },
       {
         "name": "31",
         "heading": 314,
-        "ils": null
+        "ils": null,
+        "length": 3054,
+        "width": 197
       }
     ],
     "radio": null
@@ -279,32 +343,44 @@
       {
         "name": "10",
         "heading": 102,
-        "ils": null
+        "ils": null,
+        "length": 8486,
+        "width": 148
       },
       {
         "name": "28",
         "heading": 282,
-        "ils": null
+        "ils": null,
+        "length": 8486,
+        "width": 148
       },
       {
         "name": "28",
         "heading": 57,
-        "ils": null
+        "ils": null,
+        "length": 8486,
+        "width": 148
       },
       {
         "name": "24",
         "heading": 237,
-        "ils": null
+        "ils": null,
+        "length": 8486,
+        "width": 148
       },
       {
         "name": "4",
         "heading": 102,
-        "ils": null
+        "ils": null,
+        "length": 5289,
+        "width": 148
       },
       {
         "name": "28",
         "heading": 282,
-        "ils": null
+        "ils": null,
+        "length": 5289,
+        "width": 148
       }
     ],
     "radio": null
@@ -321,22 +397,30 @@
       {
         "name": "32",
         "heading": 319,
-        "ils": null
+        "ils": null,
+        "length": 3900,
+        "width": 164
       },
       {
         "name": "14",
         "heading": 139,
-        "ils": null
+        "ils": null,
+        "length": 3900,
+        "width": 164
       },
       {
         "name": "14",
         "heading": 258,
-        "ils": null
+        "ils": null,
+        "length": 3900,
+        "width": 164
       },
       {
         "name": "8",
         "heading": 78,
-        "ils": null
+        "ils": null,
+        "length": 3900,
+        "width": 164
       }
     ],
     "radio": null
@@ -353,12 +437,16 @@
       {
         "name": "8",
         "heading": 87,
-        "ils": null
+        "ils": null,
+        "length": 2002,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 267,
-        "ils": null
+        "ils": null,
+        "length": 2002,
+        "width": 148
       }
     ],
     "radio": null

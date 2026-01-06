@@ -11,12 +11,16 @@
       {
         "name": "7",
         "heading": 69,
-        "ils": null
+        "ils": null,
+        "length": 4435,
+        "width": 148
       },
       {
         "name": "25",
         "heading": 249,
-        "ils": null
+        "ils": null,
+        "length": 4435,
+        "width": 148
       }
     ],
     "radio": null
@@ -33,12 +37,16 @@
       {
         "name": "10",
         "heading": 97,
-        "ils": null
+        "ils": null,
+        "length": 2485,
+        "width": 148
       },
       {
         "name": "28",
         "heading": 277,
-        "ils": null
+        "ils": null,
+        "length": 2485,
+        "width": 148
       }
     ],
     "radio": null
@@ -46,8 +54,8 @@
   {
     "name": "Charon Kanoa",
     "position": {
-      "latitude": 15.157222744004,
-      "longitude": 145.70336992978,
+      "latitude": 15.156407879723,
+      "longitude": 145.70281643762,
       "elevation": 11
     },
     "tacan": null,
@@ -55,12 +63,16 @@
       {
         "name": "3",
         "heading": 34,
-        "ils": null
+        "ils": null,
+        "length": 3663,
+        "width": 148
       },
       {
         "name": "21",
         "heading": 214,
-        "ils": null
+        "ils": null,
+        "length": 3663,
+        "width": 148
       }
     ],
     "radio": null
@@ -70,19 +82,23 @@
     "position": {
       "latitude": 15.002242729021,
       "longitude": 145.59428185507,
-      "elevation": 266
+      "elevation": 280
     },
     "tacan": null,
     "runways": [
       {
         "name": "9",
         "heading": 91,
-        "ils": null
+        "ils": null,
+        "length": 3191,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 271,
-        "ils": null
+        "ils": null,
+        "length": 3191,
+        "width": 148
       }
     ],
     "radio": null
@@ -99,12 +115,16 @@
       {
         "name": "9",
         "heading": 92,
-        "ils": null
+        "ils": null,
+        "length": 2663,
+        "width": 197
       },
       {
         "name": "27",
         "heading": 272,
-        "ils": null
+        "ils": null,
+        "length": 2663,
+        "width": 197
       }
     ],
     "radio": null
@@ -121,12 +141,16 @@
       {
         "name": "9",
         "heading": 91,
-        "ils": null
+        "ils": null,
+        "length": 3319,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 271,
-        "ils": null
+        "ils": null,
+        "length": 3319,
+        "width": 148
       }
     ],
     "radio": null
@@ -143,12 +167,16 @@
       {
         "name": "11",
         "heading": 113,
-        "ils": null
+        "ils": null,
+        "length": 2571,
+        "width": 148
       },
       {
         "name": "29",
         "heading": 293,
-        "ils": null
+        "ils": null,
+        "length": 2571,
+        "width": 148
       }
     ],
     "radio": null
@@ -165,12 +193,16 @@
       {
         "name": "11",
         "heading": 112,
-        "ils": null
+        "ils": null,
+        "length": 4417,
+        "width": 148
       },
       {
         "name": "29",
         "heading": 292,
-        "ils": null
+        "ils": null,
+        "length": 4417,
+        "width": 148
       }
     ],
     "radio": null
@@ -178,21 +210,25 @@
   {
     "name": "Pagan",
     "position": {
-      "latitude": 18.124273146159,
-      "longitude": 145.76083357182,
+      "latitude": 18.124433224428,
+      "longitude": 145.76196864034,
       "elevation": 49
     },
     "tacan": null,
     "runways": [
       {
         "name": "11",
-        "heading": 111,
-        "ils": null
+        "heading": 102,
+        "ils": null,
+        "length": 2124,
+        "width": 66
       },
       {
-        "name": "29",
-        "heading": 291,
-        "ils": null
+        "name": "28",
+        "heading": 282,
+        "ils": null,
+        "length": 2124,
+        "width": 66
       }
     ],
     "radio": null
@@ -209,12 +245,16 @@
       {
         "name": "9",
         "heading": 92,
-        "ils": null
+        "ils": null,
+        "length": 3374,
+        "width": 148
       },
       {
         "name": "27",
         "heading": 272,
-        "ils": null
+        "ils": null,
+        "length": 3374,
+        "width": 148
       }
     ],
     "radio": null
@@ -222,21 +262,25 @@
   {
     "name": "Ushi",
     "position": {
-      "latitude": 15.078659931179,
-      "longitude": 145.63407699137,
-      "elevation": 87
+      "latitude": 15.078849654478,
+      "longitude": 145.63214123527,
+      "elevation": 83
     },
     "tacan": null,
     "runways": [
       {
         "name": "9",
         "heading": 95,
-        "ils": null
+        "ils": null,
+        "length": 3232,
+        "width": 148
       },
       {
-        "name": "27",
+        "name": "28",
         "heading": 275,
-        "ils": null
+        "ils": null,
+        "length": 3232,
+        "width": 148
       }
     ],
     "radio": null

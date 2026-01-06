@@ -23,12 +23,16 @@
             "latitude": 13.589357,
             "longitude": 144.948539
           }
-        }
+        },
+        "length": 10490,
+        "width": 197
       },
       {
         "name": "25",
         "heading": 246,
-        "ils": null
+        "ils": null,
+        "length": 10490,
+        "width": 197
       },
       {
         "name": "24",
@@ -41,12 +45,16 @@
             "latitude": 13.589357,
             "longitude": 144.948539
           }
-        }
+        },
+        "length": 10490,
+        "width": 197
       },
       {
         "name": "25",
         "heading": 246,
-        "ils": null
+        "ils": null,
+        "length": 10490,
+        "width": 197
       }
     ],
     "radio": null
@@ -71,12 +79,16 @@
             "latitude": 13.493032,
             "longitude": 144.814772
           }
-        }
+        },
+        "length": 9359,
+        "width": 197
       },
       {
         "name": "25",
         "heading": 245,
-        "ils": null
+        "ils": null,
+        "length": 9359,
+        "width": 197
       },
       {
         "name": "24",
@@ -89,12 +101,16 @@
             "latitude": 13.493032,
             "longitude": 144.814772
           }
-        }
+        },
+        "length": 9359,
+        "width": 197
       },
       {
         "name": "25",
         "heading": 245,
-        "ils": null
+        "ils": null,
+        "length": 9359,
+        "width": 197
       }
     ],
     "radio": null
@@ -122,12 +138,16 @@
       {
         "name": "25",
         "heading": 247,
-        "ils": null
+        "ils": null,
+        "length": 3452,
+        "width": 148
       },
       {
         "name": "7",
         "heading": 67,
-        "ils": null
+        "ils": null,
+        "length": 3452,
+        "width": 148
       }
     ],
     "radio": null
@@ -144,12 +164,16 @@
       {
         "name": "11",
         "heading": 111,
-        "ils": null
+        "ils": null,
+        "length": 1625,
+        "width": 164
       },
       {
         "name": "29",
         "heading": 291,
-        "ils": null
+        "ils": null,
+        "length": 1625,
+        "width": 164
       }
     ],
     "radio": null
@@ -166,12 +190,16 @@
       {
         "name": "9",
         "heading": 92,
-        "ils": null
+        "ils": null,
+        "length": 6106,
+        "width": 197
       },
       {
         "name": "27",
         "heading": 272,
-        "ils": null
+        "ils": null,
+        "length": 6106,
+        "width": 197
       }
     ],
     "radio": null
@@ -196,12 +224,16 @@
             "latitude": 15.124498,
             "longitude": 145.743327
           }
-        }
+        },
+        "length": 7790,
+        "width": 197
       },
       {
         "name": "25",
         "heading": 248,
-        "ils": null
+        "ils": null,
+        "length": 7790,
+        "width": 197
       }
     ],
     "radio": null
@@ -218,12 +250,16 @@
       {
         "name": "8",
         "heading": 79,
-        "ils": null
+        "ils": null,
+        "length": 7778,
+        "width": 197
       },
       {
         "name": "26",
         "heading": 259,
-        "ils": null
+        "ils": null,
+        "length": 7778,
+        "width": 197
       }
     ],
     "radio": null
