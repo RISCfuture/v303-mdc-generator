@@ -168,12 +168,6 @@
     "elevation": 2182
   },
   {
-    "name": "AZC",
-    "latitude": 36.959895,
-    "longitude": -113.008973,
-    "elevation": 4865
-  },
-  {
     "name": "Alamo",
     "latitude": 37.364961,
     "longitude": -115.164461,
@@ -253,9 +247,9 @@
   },
   {
     "name": "BCE",
-    "latitude": 37.689167,
-    "longitude": -112.303833,
-    "elevation": 9042
+    "latitude": 37.689166,
+    "longitude": -112.30383216666667,
+    "elevation": 9049
   },
   {
     "name": "BEATTY",
@@ -283,8 +277,8 @@
   },
   {
     "name": "BIH",
-    "latitude": 37.377,
-    "longitude": -118.3665,
+    "latitude": 37.37700483333333,
+    "longitude": -118.36650083333333,
     "elevation": 4117
   },
   {
@@ -325,9 +319,9 @@
   },
   {
     "name": "BLD",
-    "latitude": 35.995752,
-    "longitude": -114.863607,
-    "elevation": 3632
+    "latitude": 35.99597633333333,
+    "longitude": -114.86401433333333,
+    "elevation": 3573
   },
   {
     "name": "BLUE",
@@ -535,8 +529,8 @@
   },
   {
     "name": "BTY",
-    "latitude": 36.800583,
-    "longitude": -116.747647,
+    "latitude": 36.80058783333333,
+    "longitude": -116.74764583333334,
     "elevation": 2940
   },
   {
@@ -721,8 +715,8 @@
   },
   {
     "name": "CDC",
-    "latitude": 37.787333,
-    "longitude": -113.068167,
+    "latitude": 37.787332666666664,
+    "longitude": -113.0681715,
     "elevation": 5466
   },
   {
@@ -1003,8 +997,8 @@
   },
   {
     "name": "DAG",
-    "latitude": 34.962384,
-    "longitude": -116.578128,
+    "latitude": 34.96238533333333,
+    "longitude": -116.57813066666667,
     "elevation": 1781
   },
   {
@@ -1116,15 +1110,9 @@
     "elevation": 3478
   },
   {
-    "name": "EC",
-    "latitude": 37.791252,
-    "longitude": -113.020879,
-    "elevation": 5509
-  },
-  {
     "name": "EED",
     "latitude": 34.765927,
-    "longitude": -114.473902,
+    "longitude": -114.47390766666666,
     "elevation": 659
   },
   {
@@ -1345,15 +1333,9 @@
   },
   {
     "name": "GFS",
-    "latitude": 35.131167,
-    "longitude": -115.1765,
+    "latitude": 35.1311685,
+    "longitude": -115.17649966666667,
     "elevation": 4019
-  },
-  {
-    "name": "GLRI",
-    "latitude": 37.22,
-    "longitude": -115.787349,
-    "elevation": 4498
   },
   {
     "name": "GOTHAM",
@@ -1363,8 +1345,8 @@
   },
   {
     "name": "GRL",
-    "latitude": 37.231778,
-    "longitude": -115.802638,
+    "latitude": 37.23177533333333,
+    "longitude": -115.80264266666667,
     "elevation": 4475
   },
   {
@@ -1663,8 +1645,8 @@
   },
   {
     "name": "HEC",
-    "latitude": 34.797214,
-    "longitude": -116.462929,
+    "latitude": 34.79721716666667,
+    "longitude": -116.46293416666667,
     "elevation": 1864
   },
   {
@@ -1788,54 +1770,6 @@
     "elevation": 3885
   },
   {
-    "name": "I-HWG",
-    "latitude": 36.211096,
-    "longitude": -115.193207,
-    "elevation": 2185
-  },
-  {
-    "name": "I-LAS",
-    "latitude": 36.076361,
-    "longitude": -115.171993,
-    "elevation": 2198
-  },
-  {
-    "name": "I-RLE",
-    "latitude": 36.073641,
-    "longitude": -115.164803,
-    "elevation": 2175
-  },
-  {
-    "name": "I-RVP",
-    "latitude": 37.811765,
-    "longitude": -116.789423,
-    "elevation": 5489
-  },
-  {
-    "name": "I-UVV",
-    "latitude": 37.784512,
-    "longitude": -116.775037,
-    "elevation": 5558
-  },
-  {
-    "name": "ICRR",
-    "latitude": 36.583327,
-    "longitude": -115.661273,
-    "elevation": 3100
-  },
-  {
-    "name": "ICRS",
-    "latitude": 36.593576,
-    "longitude": -115.676693,
-    "elevation": 3094
-  },
-  {
-    "name": "IDIQ",
-    "latitude": 36.222242,
-    "longitude": -115.047062,
-    "elevation": 1824
-  },
-  {
     "name": "IGM",
     "latitude": 35.260535,
     "longitude": -113.93413,
@@ -1843,14 +1777,14 @@
   },
   {
     "name": "ILC",
-    "latitude": 38.250167,
-    "longitude": -114.394167,
+    "latitude": 38.2501705,
+    "longitude": -114.3941705,
     "elevation": 9324
   },
   {
     "name": "INS",
-    "latitude": 36.585001,
-    "longitude": -115.670334,
+    "latitude": 36.584996333333336,
+    "longitude": -115.67033883333333,
     "elevation": 3107
   },
   {
@@ -2467,8 +2401,8 @@
   },
   {
     "name": "LSV",
-    "latitude": 36.244644,
-    "longitude": -115.025113,
+    "latitude": 36.244642666666664,
+    "longitude": -115.02511483333333,
     "elevation": 1886
   },
   {
@@ -2568,12 +2502,6 @@
     "elevation": 4452
   },
   {
-    "name": "MCY",
-    "latitude": 36.627456,
-    "longitude": -116.027531,
-    "elevation": 3304
-  },
-  {
     "name": "MCYNB",
     "latitude": 36.62745233333333,
     "longitude": -116.02753083333333,
@@ -2611,14 +2539,14 @@
   },
   {
     "name": "MLF",
-    "latitude": 38.360356,
-    "longitude": -113.013233,
+    "latitude": 38.36035783333333,
+    "longitude": -113.01323933333333,
     "elevation": 4987
   },
   {
     "name": "MMM",
-    "latitude": 36.769333,
-    "longitude": -114.2775,
+    "latitude": 36.76933783333333,
+    "longitude": -114.27750266666666,
     "elevation": 2116
   },
   {
@@ -2671,8 +2599,8 @@
   },
   {
     "name": "MVA",
-    "latitude": 38.565333,
-    "longitude": -118.032833,
+    "latitude": 38.565337166666666,
+    "longitude": -118.0328385,
     "elevation": 7825
   },
   {
@@ -2881,8 +2809,8 @@
   },
   {
     "name": "OAL",
-    "latitude": 38.003333,
-    "longitude": -117.7705,
+    "latitude": 38.00334316666667,
+    "longitude": -117.770497,
     "elevation": 4806
   },
   {
@@ -2995,8 +2923,8 @@
   },
   {
     "name": "PGS",
-    "latitude": 35.624667,
-    "longitude": -113.5445,
+    "latitude": 35.6246725,
+    "longitude": -113.54449983333333,
     "elevation": 4774
   },
   {
@@ -4675,14 +4603,14 @@
   },
   {
     "name": "TPH",
-    "latitude": 38.030667,
-    "longitude": -117.0335,
+    "latitude": 38.030674833333336,
+    "longitude": -117.03350016666667,
     "elevation": 5358
   },
   {
     "name": "TQQ",
-    "latitude": 37.790475,
-    "longitude": -116.779233,
+    "latitude": 37.790473666666664,
+    "longitude": -116.77924183333333,
     "elevation": 5551
   },
   {

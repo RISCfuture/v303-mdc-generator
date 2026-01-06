@@ -1044,12 +1044,6 @@
     "elevation": 896
   },
   {
-    "name": "BA",
-    "latitude": 30.412551,
-    "longitude": 31.604162,
-    "elevation": 82
-  },
-  {
     "name": "BAB",
     "latitude": 33.849188,
     "longitude": 35.483327,
@@ -1062,40 +1056,16 @@
     "elevation": 49
   },
   {
-    "name": "BC",
-    "latitude": 32.019069,
-    "longitude": 34.901598,
-    "elevation": 135
-  },
-  {
-    "name": "BD",
-    "latitude": 32.002405,
-    "longitude": 34.892034,
-    "elevation": 138
-  },
-  {
     "name": "BEAI",
     "latitude": 30.907446,
     "longitude": 29.703454,
     "elevation": 135
   },
   {
-    "name": "BG",
-    "latitude": 32.01128,
-    "longitude": 34.870879,
-    "elevation": 121
-  },
-  {
     "name": "BGN",
     "latitude": 32.0131,
     "longitude": 34.875198,
     "elevation": 112
-  },
-  {
-    "name": "BIL",
-    "latitude": 30.932508,
-    "longitude": 29.683208,
-    "elevation": 167
   },
   {
     "name": "BLA",
@@ -1108,12 +1078,6 @@
     "latitude": 31.5289,
     "longitude": 31.122499,
     "elevation": 13
-  },
-  {
-    "name": "BN",
-    "latitude": 31.993839,
-    "longitude": 34.884603,
-    "elevation": 141
   },
   {
     "name": "BOD",
@@ -1692,12 +1656,6 @@
     "elevation": 2031
   },
   {
-    "name": "DAML",
-    "latitude": 33.387764,
-    "longitude": 36.498306,
-    "elevation": 2011
-  },
-  {
     "name": "DBA",
     "latitude": 31.0114,
     "longitude": 28.4669,
@@ -2022,18 +1980,6 @@
     "elevation": 177
   },
   {
-    "name": "FAD",
-    "latitude": 30.330112,
-    "longitude": 32.280301,
-    "elevation": 43
-  },
-  {
-    "name": "FAID",
-    "latitude": 30.329176,
-    "longitude": 32.2481,
-    "elevation": 115
-  },
-  {
     "name": "FYM",
     "latitude": 29.397499,
     "longitude": 30.393101,
@@ -2218,12 +2164,6 @@
     "latitude": 27.177734,
     "longitude": 33.796411,
     "elevation": 72
-  },
-  {
-    "name": "HIL",
-    "latitude": 27.163565,
-    "longitude": 33.804147,
-    "elevation": 56
   },
   {
     "name": "HLF",
@@ -2436,124 +2376,10 @@
     "elevation": 2129
   },
   {
-    "name": "IBB",
-    "latitude": 33.83611,
-    "longitude": 35.481161,
-    "elevation": 3
-  },
-  {
-    "name": "ICTM",
-    "latitude": 30.090937,
-    "longitude": 31.839049,
-    "elevation": 738
-  },
-  {
-    "name": "IDA",
-    "latitude": 33.433818,
-    "longitude": 36.530741,
-    "elevation": 1995
-  },
-  {
-    "name": "IKK",
-    "latitude": 33.804929,
-    "longitude": 35.484448,
-    "elevation": 39
-  },
-  {
-    "name": "IKTM",
-    "latitude": 30.059498,
-    "longitude": 31.83037,
-    "elevation": 804
-  },
-  {
-    "name": "IPKA",
-    "latitude": 28.382216,
-    "longitude": 36.592238,
-    "elevation": 2513
-  },
-  {
-    "name": "IPKS",
-    "latitude": 28.363183,
-    "longitude": 36.614095,
-    "elevation": 2533
-  },
-  {
-    "name": "IPSX",
-    "latitude": 30.127101,
-    "longitude": 30.890187,
-    "elevation": 472
-  },
-  {
     "name": "IRM",
     "latitude": 31.8634,
     "longitude": 35.2164,
     "elevation": 2470
-  },
-  {
-    "name": "ISA",
-    "latitude": 30.5913,
-    "longitude": 32.243668,
-    "elevation": 52
-  },
-  {
-    "name": "ISH",
-    "latitude": 30.325728,
-    "longitude": 31.436106,
-    "elevation": 125
-  },
-  {
-    "name": "ITBA",
-    "latitude": 29.577141,
-    "longitude": 34.765771,
-    "elevation": 2467
-  },
-  {
-    "name": "ITBK",
-    "latitude": 28.379311,
-    "longitude": 36.648548,
-    "elevation": 2546
-  },
-  {
-    "name": "ITTC",
-    "latitude": 30.120485,
-    "longitude": 31.424126,
-    "elevation": 344
-  },
-  {
-    "name": "ITTL",
-    "latitude": 30.096685,
-    "longitude": 31.418422,
-    "elevation": 479
-  },
-  {
-    "name": "ITTR",
-    "latitude": 30.118999,
-    "longitude": 31.379337,
-    "elevation": 177
-  },
-  {
-    "name": "IZFC",
-    "latitude": 30.123817,
-    "longitude": 31.430368,
-    "elevation": 367
-  },
-  {
-    "name": "IZFCs",
-    "latitude": 30.106783,
-    "longitude": 31.405811,
-    "elevation": 351
-  },
-  {
-    "name": "IZFL",
-    "latitude": 30.120739,
-    "longitude": 31.383241,
-    "elevation": 177
-  },
-  {
-    "name": "IZFR",
-    "latitude": 30.10044,
-    "longitude": 31.421943,
-    "elevation": 482
   },
   {
     "name": "Ibta`",
@@ -2782,12 +2608,6 @@
     "latitude": 25.4484,
     "longitude": 30.590799,
     "elevation": 115
-  },
-  {
-    "name": "KIL",
-    "latitude": 27.969754,
-    "longitude": 34.385624,
-    "elevation": 161
   },
   {
     "name": "KTN",
@@ -3456,18 +3276,6 @@
     "elevation": 82
   },
   {
-    "name": "NEV",
-    "latitude": 31.213191,
-    "longitude": 35.015657,
-    "elevation": 1273
-  },
-  {
-    "name": "NGV",
-    "latitude": 31.194761,
-    "longitude": 35.037498,
-    "elevation": 1378
-  },
-  {
     "name": "NOZ",
     "latitude": 31.18767,
     "longitude": 29.95071,
@@ -3906,18 +3714,6 @@
     "elevation": 259
   },
   {
-    "name": "RB",
-    "latitude": 28.991734,
-    "longitude": 31.702206,
-    "elevation": 1099
-  },
-  {
-    "name": "RC",
-    "latitude": 29.713845,
-    "longitude": 35.009483,
-    "elevation": 269
-  },
-  {
     "name": "RFH",
     "latitude": 31.292116,
     "longitude": 34.284206,
@@ -4066,18 +3862,6 @@
     "latitude": 32.965372,
     "longitude": 35.542669,
     "elevation": 1263
-  },
-  {
-    "name": "RС",
-    "latitude": 29.745667,
-    "longitude": 35.019235,
-    "elevation": 259
-  },
-  {
-    "name": "SAI",
-    "latitude": 30.785267,
-    "longitude": 32.038401,
-    "elevation": 26
   },
   {
     "name": "SHG",
@@ -4744,18 +4528,6 @@
     "latitude": 29.888869,
     "longitude": 32.6369,
     "elevation": 26
-  },
-  {
-    "name": "VA",
-    "latitude": 29.92737,
-    "longitude": 34.927931,
-    "elevation": 1493
-  },
-  {
-    "name": "WAYR",
-    "latitude": 30.570628,
-    "longitude": 32.105968,
-    "elevation": 59
   },
   {
     "name": "WEJ",

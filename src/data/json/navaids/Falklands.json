@@ -258,12 +258,6 @@
     "elevation": 236
   },
   {
-    "name": "BIO",
-    "latitude": -51.608282,
-    "longitude": -72.221032,
-    "elevation": 902
-  },
-  {
     "name": "Bagwell Point",
     "latitude": -52.199496,
     "longitude": -59.037158,
@@ -1848,12 +1842,6 @@
     "elevation": 157
   },
   {
-    "name": "EC",
-    "latitude": -50.280529,
-    "longitude": -72.03895,
-    "elevation": 640
-  },
-  {
     "name": "ECA",
     "latitude": -50.278446,
     "longitude": -72.04517,
@@ -3360,18 +3348,6 @@
     "elevation": 7
   },
   {
-    "name": "IMP",
-    "latitude": -51.824339,
-    "longitude": -58.443285,
-    "elevation": 220
-  },
-  {
-    "name": "INAS",
-    "latitude": -53.001231,
-    "longitude": -70.880082,
-    "elevation": 161
-  },
-  {
     "name": "Iglesia Cerro Sombrero",
     "latitude": -52.776627,
     "longitude": -69.288748,
@@ -4638,12 +4614,6 @@
     "elevation": 955
   },
   {
-    "name": "MP",
-    "latitude": -51.829528,
-    "longitude": -58.47865,
-    "elevation": 223
-  },
-  {
     "name": "MPA",
     "latitude": -51.824087,
     "longitude": -58.456949,
@@ -5242,12 +5212,6 @@
     "latitude": -50.818402,
     "longitude": -69.51547,
     "elevation": 591
-  },
-  {
-    "name": "P",
-    "latitude": -53.786588,
-    "longitude": -67.727422,
-    "elevation": 39
   },
   {
     "name": "PNT",
@@ -6900,12 +6864,6 @@
     "elevation": 735
   },
   {
-    "name": "SA",
-    "latitude": -51.684736,
-    "longitude": -57.773001,
-    "elevation": 89
-  },
-  {
     "name": "Sal Point",
     "latitude": -52.05821,
     "longitude": -58.528891,
@@ -8046,45 +8004,9 @@
     "elevation": 0
   },
   {
-    "name": "ec",
-    "latitude": -50.281576,
-    "longitude": -72.075212,
-    "elevation": 627
-  },
-  {
-    "name": "gl",
-    "latitude": -51.609196,
-    "longitude": -69.291827,
-    "elevation": 46
-  },
-  {
-    "name": "gr",
-    "latitude": -53.778446,
-    "longitude": -67.738896,
-    "elevation": 46
-  },
-  {
     "name": "gra",
     "latitude": -53.779056,
     "longitude": -67.747975,
     "elevation": 56
-  },
-  {
-    "name": "imp",
-    "latitude": -51.817299,
-    "longitude": -58.477728,
-    "elevation": 243
-  },
-  {
-    "name": "inas",
-    "latitude": -52.9996,
-    "longitude": -70.837778,
-    "elevation": 118
-  },
-  {
-    "name": "us",
-    "latitude": -54.841782,
-    "longitude": -68.280912,
-    "elevation": 85
   }
 ]

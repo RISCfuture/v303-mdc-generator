@@ -1,11 +1,5 @@
 [
   {
-    "name": " Palm Jebel Ali",
-    "latitude": 25.009022,
-    "longitude": 54.987897,
-    "elevation": 0
-  },
-  {
     "name": "A Treef",
     "latitude": 24.37,
     "longitude": 56.71,
@@ -1404,90 +1398,6 @@
     "elevation": 26
   },
   {
-    "name": "IBHD",
-    "latitude": 27.157037,
-    "longitude": 56.163095,
-    "elevation": 20
-  },
-  {
-    "name": "IBKS",
-    "latitude": 26.177903,
-    "longitude": 56.242914,
-    "elevation": 20
-  },
-  {
-    "name": "IBND",
-    "latitude": 27.228633,
-    "longitude": 56.386212,
-    "elevation": 26
-  },
-  {
-    "name": "IDBE",
-    "latitude": 25.238494,
-    "longitude": 55.392357,
-    "elevation": 0
-  },
-  {
-    "name": "IDBL",
-    "latitude": 25.249872,
-    "longitude": 55.378842,
-    "elevation": 0
-  },
-  {
-    "name": "IDBR",
-    "latitude": 25.264181,
-    "longitude": 55.353679,
-    "elevation": 0
-  },
-  {
-    "name": "IDBW",
-    "latitude": 25.252555,
-    "longitude": 55.367372,
-    "elevation": 0
-  },
-  {
-    "name": "IFJR",
-    "latitude": 25.11971,
-    "longitude": 56.303773,
-    "elevation": 144
-  },
-  {
-    "name": "IJEA",
-    "latitude": 24.906703,
-    "longitude": 55.145846,
-    "elevation": 92
-  },
-  {
-    "name": "IJWA",
-    "latitude": 24.908491,
-    "longitude": 55.13947,
-    "elevation": 125
-  },
-  {
-    "name": "IMA",
-    "latitude": 24.236524,
-    "longitude": 54.564789,
-    "elevation": 49
-  },
-  {
-    "name": "IMNR",
-    "latitude": 25.028136,
-    "longitude": 55.38255,
-    "elevation": 154
-  },
-  {
-    "name": "IMNW",
-    "latitude": 25.027792,
-    "longitude": 55.349815,
-    "elevation": 118
-  },
-  {
-    "name": "ISHW",
-    "latitude": 25.325,
-    "longitude": 55.531791,
-    "elevation": 95
-  },
-  {
     "name": "ISN",
     "latitude": 32.7432,
     "longitude": 51.829935,
@@ -1500,18 +1410,6 @@
     "elevation": 2011
   },
   {
-    "name": "ISRE",
-    "latitude": 25.339053,
-    "longitude": 55.507725,
-    "elevation": 33
-  },
-  {
-    "name": "ISYZ",
-    "latitude": 29.546777,
-    "longitude": 52.564998,
-    "elevation": 4918
-  },
-  {
     "name": "Ij",
     "latitude": 29.020374,
     "longitude": 54.247745,
@@ -1522,12 +1420,6 @@
     "latitude": 27.697861,
     "longitude": 55.847496,
     "elevation": 1217
-  },
-  {
-    "name": "JIR",
-    "latitude": 28.732118,
-    "longitude": 57.67214,
-    "elevation": 2628
   },
   {
     "name": "JSK",
@@ -1776,12 +1668,6 @@
     "elevation": 66
   },
   {
-    "name": "LMA",
-    "latitude": 24.219277,
-    "longitude": 54.56807,
-    "elevation": 56
-  },
-  {
     "name": "LVA",
     "latitude": 26.812091,
     "longitude": 53.355979,
@@ -1846,12 +1732,6 @@
     "latitude": 25.02722,
     "longitude": 55.395556,
     "elevation": 167
-  },
-  {
-    "name": "MMA",
-    "latitude": 24.26012,
-    "longitude": 54.530469,
-    "elevation": 59
   },
   {
     "name": "Magan",
@@ -2146,12 +2026,6 @@
     "latitude": 30.301377,
     "longitude": 56.053985,
     "elevation": 5253
-  },
-  {
-    "name": "RMA",
-    "latitude": 24.24266,
-    "longitude": 54.534107,
-    "elevation": 36
   },
   {
     "name": "Rajaei Port",

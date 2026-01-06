@@ -6,6 +6,12 @@
     "elevation": 13
   },
   {
+    "name": "Akashi",
+    "latitude": 13.476011,
+    "longitude": 144.752809,
+    "elevation": 16
+  },
+  {
     "name": "Asan",
     "latitude": 13.472483,
     "longitude": 144.714066,
@@ -22,12 +28,6 @@
     "latitude": 15.207571,
     "longitude": 145.719597,
     "elevation": 23
-  },
-  {
-    "name": "Hagatna",
-    "latitude": 13.476011,
-    "longitude": 144.752809,
-    "elevation": 16
   },
   {
     "name": "Inarajan",

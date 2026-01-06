@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Navaid Data Merger
+Navaid Data Loader
 
-Merges extracted DCS beacon/town data with scraped navaid data, adds elevations,
-and writes final JSON files.
+Loads extracted DCS beacon/town data, adds elevations, and writes to navaid files.
+This replaces any existing navaid data.
 
 Usage:
-    python merge_beacons_towns.py --input-dir ~/Dropbox
-    python merge_beacons_towns.py --input-dir ./extracted_data --output-dir ./output
+    python load_beacons_towns.py --input-dir ~/Dropbox/extracted_navaids
+    python load_beacons_towns.py --input-dir ./extracted_data --output-dir ./output
 
 Author: Generated for v303 MDC Generator
 """
@@ -42,8 +42,8 @@ TERRAIN_NAME_MAPPING = {
 }
 
 
-class NavaidMerger:
-    """Merges extracted beacon/town data with scraped navaid data."""
+class NavaidLoader:
+    """Loads extracted beacon/town data and writes to navaid files."""
 
     def __init__(self, input_dir: Path, output_dir: Path):
         self.input_dir = input_dir
@@ -96,9 +96,9 @@ class NavaidMerger:
             print(f"    WARNING: Failed to get elevation for {latitude}, {longitude}: {e}")
             return 0
 
-    def merge_theatre(self, input_file: Path, theatre_name: str) -> Optional[Path]:
+    def load_theatre(self, input_file: Path, theatre_name: str) -> Optional[Path]:
         """
-        Merge extracted beacon/town data with existing navaid data for one theatre.
+        Load navaid data for one theatre from extracted beacon/town data.
 
         Args:
             input_file: Path to extracted JSON file
@@ -118,49 +118,21 @@ class NavaidMerger:
             print(f"  ERROR: Failed to read {input_file}: {e}")
             return None
 
-        # Load existing navaid data if it exists
         output_file = self.output_dir / f'{theatre_name}.json'
-        existing_data = []
 
-        if output_file.exists():
-            try:
-                with open(output_file, 'r', encoding='utf-8') as f:
-                    existing_data = json.load(f)
-                print(f"  Loaded {len(existing_data)} existing navaids from {output_file.name}")
-            except Exception as e:
-                print(f"  WARNING: Failed to read existing file {output_file}: {e}")
-                existing_data = []
-
-        # Create lookup dict for existing data by name
-        existing_by_name = {entry['name']: entry for entry in existing_data}
-
-        # Merge logic:
-        # - If name exists in existing data: overwrite with extracted data
-        # - If name doesn't exist: add from extracted data
-        # - Keep all existing entries that don't have matching names in extracted data
-
-        merged_by_name = existing_by_name.copy()
-
-        # Update/add entries from extracted data
-        added_count = 0
-        updated_count = 0
-
+        # Deduplicate by name
+        extracted_by_name = {}
+        duplicate_count = 0
         for entry in extracted_data:
             name = entry['name']
-            if name in merged_by_name:
-                # Update existing entry
-                merged_by_name[name] = entry
-                updated_count += 1
+            if name in extracted_by_name:
+                duplicate_count += 1
             else:
-                # Add new entry
-                merged_by_name[name] = entry
-                added_count += 1
-
-        # Convert back to list
-        merged_data = list(merged_by_name.values())
-
-        print(f"  Merged: {added_count} added, {updated_count} updated, "
-              f"{len(existing_data) - updated_count} kept")
+                extracted_by_name[name] = entry
+        merged_data = list(extracted_by_name.values())
+        if duplicate_count > 0:
+            print(f"  Removed {duplicate_count} duplicates")
+        print(f"  Processing {len(merged_data)} unique entries")
 
         # Fetch elevations for entries with null elevation
         print(f"  Fetching elevations...")
@@ -192,9 +164,9 @@ class NavaidMerger:
             print(f"  ERROR: Failed to write {output_file}: {e}")
             return None
 
-    def merge_all(self) -> Dict[str, Optional[Path]]:
+    def load_all(self) -> Dict[str, Optional[Path]]:
         """
-        Merge all extracted JSON files found in input directory.
+        Load all extracted JSON files found in input directory.
 
         Returns:
             Dict mapping theatre name to output file path
@@ -218,7 +190,7 @@ class NavaidMerger:
             theatre_name = self.map_terrain_name(directory_name)
 
             # Process this theatre
-            output_file = self.merge_theatre(json_file, theatre_name)
+            output_file = self.load_theatre(json_file, theatre_name)
             results[theatre_name] = output_file
 
         return results
@@ -226,17 +198,17 @@ class NavaidMerger:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Merge extracted beacon/town data with scraped navaid data',
+        description='Load extracted DCS beacon/town data into navaid files',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python merge_beacons_towns.py --input-dir ~/Dropbox
-  python merge_beacons_towns.py --input-dir ./extracted --output-dir ./output
+  python load_beacons_towns.py --input-dir ~/Dropbox/extracted_navaids
+  python load_beacons_towns.py --input-dir ./extracted --output-dir ./output
 
 Notes:
+  - Replaces any existing navaid data
   - Fetches elevations using SRTM/DEM data for entries with null elevation
-  - Overwrites beacon/town data if name matches existing entry
-  - Keeps all existing navaid data that doesn't have matching names
+  - Deduplicates entries by name
   - Automatically maps terrain directory names to internal DCS names
         """
     )
@@ -252,7 +224,7 @@ Notes:
         '--output-dir',
         type=Path,
         default=Path(__file__).parent.parent.parent / 'src' / 'data' / 'json' / 'navaids',
-        help='Output directory for merged JSON files (default: src/data/json/navaids)'
+        help='Output directory for navaid JSON files (default: src/data/json/navaids)'
     )
 
     args = parser.parse_args()
@@ -266,15 +238,15 @@ Notes:
         print(f"ERROR: Input path is not a directory: {args.input_dir}")
         sys.exit(1)
 
-    print("Navaid Data Merger")
+    print("Navaid Data Loader")
     print("=" * 60)
     print(f"Input directory:  {args.input_dir}")
     print(f"Output directory: {args.output_dir}")
     print()
 
     try:
-        merger = NavaidMerger(args.input_dir, args.output_dir)
-        results = merger.merge_all()
+        loader = NavaidLoader(args.input_dir, args.output_dir)
+        results = loader.load_all()
 
         # Print summary
         print("\n" + "=" * 60)

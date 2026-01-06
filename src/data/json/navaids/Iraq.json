@@ -768,72 +768,6 @@
     "elevation": 3107
   },
   {
-    "name": "IANC",
-    "latitude": 33.953711,
-    "longitude": 44.356001,
-    "elevation": 157
-  },
-  {
-    "name": "IBLD",
-    "latitude": 33.932637,
-    "longitude": 44.373772,
-    "elevation": 161
-  },
-  {
-    "name": "INHA",
-    "latitude": 33.270747,
-    "longitude": 44.215377,
-    "elevation": 115
-  },
-  {
-    "name": "IRAA",
-    "latitude": 33.790471,
-    "longitude": 42.479599,
-    "elevation": 541
-  },
-  {
-    "name": "IREA",
-    "latitude": 36.21397,
-    "longitude": 43.946476,
-    "elevation": 1276
-  },
-  {
-    "name": "IREB",
-    "latitude": 36.262445,
-    "longitude": 43.946856,
-    "elevation": 1234
-  },
-  {
-    "name": "IRER",
-    "latitude": 36.245549,
-    "longitude": 43.955649,
-    "elevation": 1286
-  },
-  {
-    "name": "ISAD",
-    "latitude": 35.480386,
-    "longitude": 44.33257,
-    "elevation": 1033
-  },
-  {
-    "name": "ITAK",
-    "latitude": 33.240487,
-    "longitude": 44.236088,
-    "elevation": 112
-  },
-  {
-    "name": "IYCA",
-    "latitude": 33.287012,
-    "longitude": 44.228985,
-    "elevation": 115
-  },
-  {
-    "name": "IYDB",
-    "latitude": 33.249408,
-    "longitude": 44.254808,
-    "elevation": 92
-  },
-  {
     "name": "Ibrahim Khalil",
     "latitude": 37.138585,
     "longitude": 42.566002,
@@ -1110,12 +1044,6 @@
     "elevation": 791
   },
   {
-    "name": "NGA",
-    "latitude": 35.568367,
-    "longitude": 45.30317,
-    "elevation": 2425
-  },
-  {
     "name": "Naft Shahr",
     "latitude": 33.993356,
     "longitude": 45.497316,
@@ -1174,12 +1102,6 @@
     "latitude": 36.531391,
     "longitude": 44.344691,
     "elevation": 2060
-  },
-  {
-    "name": "ORBI",
-    "latitude": 33.271384,
-    "longitude": 44.22265,
-    "elevation": 112
   },
   {
     "name": "Oshnaviyeh",

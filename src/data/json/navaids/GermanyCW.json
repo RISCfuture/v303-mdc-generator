@@ -1,11 +1,5 @@
 [
   {
-    "name": "A",
-    "latitude": 53.417008,
-    "longitude": 11.748008,
-    "elevation": 144
-  },
-  {
     "name": "AL",
     "latitude": 51.379075,
     "longitude": 11.445329,
@@ -24,12 +18,6 @@
     "elevation": 312
   },
   {
-    "name": "AS",
-    "latitude": 53.407054,
-    "longitude": 11.712166,
-    "elevation": 200
-  },
-  {
     "name": "AT",
     "latitude": 52.937698,
     "longitude": 14.415923,
@@ -46,12 +34,6 @@
     "latitude": 51.755955,
     "longitude": 11.462133,
     "elevation": 374
-  },
-  {
-    "name": "B",
-    "latitude": 53.311799,
-    "longitude": 12.785883,
-    "elevation": 240
   },
   {
     "name": "B NCIRCLE",
@@ -90,12 +72,6 @@
     "elevation": 1883
   },
   {
-    "name": "BA",
-    "latitude": 53.318903,
-    "longitude": 12.829615,
-    "elevation": 240
-  },
-  {
     "name": "BIT",
     "latitude": 49.938601,
     "longitude": 6.555683,
@@ -114,22 +90,10 @@
     "elevation": 279
   },
   {
-    "name": "BM",
-    "latitude": 51.990469,
-    "longitude": 13.058889,
-    "elevation": 236
-  },
-  {
     "name": "BMN",
     "latitude": 53.044199,
     "longitude": 8.782206,
     "elevation": 7
-  },
-  {
-    "name": "BRU",
-    "latitude": 52.322155,
-    "longitude": 10.606068,
-    "elevation": 246
   },
   {
     "name": "BU",
@@ -142,30 +106,6 @@
     "latitude": 50.178211,
     "longitude": 7.070576,
     "elevation": 1562
-  },
-  {
-    "name": "BW",
-    "latitude": 53.04457,
-    "longitude": 8.670859,
-    "elevation": 23
-  },
-  {
-    "name": "BWG",
-    "latitude": 52.318368,
-    "longitude": 10.54111,
-    "elevation": 243
-  },
-  {
-    "name": "BYC",
-    "latitude": 52.291743,
-    "longitude": 9.091797,
-    "elevation": 203
-  },
-  {
-    "name": "BZ",
-    "latitude": 51.366004,
-    "longitude": 11.374373,
-    "elevation": 423
   },
   {
     "name": "Bad Belzig",
@@ -294,22 +234,10 @@
     "elevation": 16
   },
   {
-    "name": "CEL",
-    "latitude": 52.600161,
-    "longitude": 10.116684,
-    "elevation": 128
-  },
-  {
     "name": "CH",
     "latitude": 55.593106,
     "longitude": 12.609307,
     "elevation": 3
-  },
-  {
-    "name": "CLH",
-    "latitude": 51.379743,
-    "longitude": 11.446762,
-    "elevation": 919
   },
   {
     "name": "COL",
@@ -321,12 +249,6 @@
     "name": "Celle",
     "latitude": 52.624056,
     "longitude": 10.081051,
-    "elevation": 151
-  },
-  {
-    "name": "Ch",
-    "latitude": 52.135488,
-    "longitude": 13.338653,
     "elevation": 151
   },
   {
@@ -342,30 +264,6 @@
     "elevation": 23
   },
   {
-    "name": "D",
-    "latitude": 53.602861,
-    "longitude": 13.338332,
-    "elevation": 210
-  },
-  {
-    "name": "DBR",
-    "latitude": 52.468499,
-    "longitude": 13.294584,
-    "elevation": 180
-  },
-  {
-    "name": "DG",
-    "latitude": 51.363087,
-    "longitude": 11.939056,
-    "elevation": 335
-  },
-  {
-    "name": "DIP",
-    "latitude": 52.472586,
-    "longitude": 13.471176,
-    "elevation": 108
-  },
-  {
     "name": "DK",
     "latitude": 51.363072,
     "longitude": 11.963342,
@@ -376,24 +274,6 @@
     "latitude": 52.250863,
     "longitude": 9.884677,
     "elevation": 351
-  },
-  {
-    "name": "DLF",
-    "latitude": 50.040944,
-    "longitude": 8.590415,
-    "elevation": 364
-  },
-  {
-    "name": "DLS",
-    "latitude": 52.613929,
-    "longitude": 13.363683,
-    "elevation": 194
-  },
-  {
-    "name": "DT",
-    "latitude": 53.6039,
-    "longitude": 13.391705,
-    "elevation": 217
   },
   {
     "name": "DUS",
@@ -426,18 +306,6 @@
     "elevation": 138
   },
   {
-    "name": "E",
-    "latitude": 54.173296,
-    "longitude": 13.749771,
-    "elevation": 0
-  },
-  {
-    "name": "EN",
-    "latitude": 54.194042,
-    "longitude": 13.715692,
-    "elevation": 0
-  },
-  {
     "name": "Eberswalde",
     "latitude": 52.835081,
     "longitude": 13.799654,
@@ -468,28 +336,10 @@
     "elevation": 115
   },
   {
-    "name": "F",
-    "latitude": 50.982045,
-    "longitude": 10.933471,
-    "elevation": 968
-  },
-  {
-    "name": "FDA",
-    "latitude": 50.541545,
-    "longitude": 9.635033,
-    "elevation": 974
-  },
-  {
     "name": "FFM",
     "latitude": 50.053775,
     "longitude": 8.637223,
     "elevation": 390
-  },
-  {
-    "name": "FR",
-    "latitude": 50.065653,
-    "longitude": 8.684068,
-    "elevation": 423
   },
   {
     "name": "FSB",
@@ -498,34 +348,10 @@
     "elevation": 236
   },
   {
-    "name": "FTZ",
-    "latitude": 51.112502,
-    "longitude": 9.282108,
-    "elevation": 558
-  },
-  {
-    "name": "FU",
-    "latitude": 53.575024,
-    "longitude": 9.875992,
-    "elevation": 138
-  },
-  {
     "name": "FUL",
     "latitude": 50.592461,
     "longitude": 9.572224,
     "elevation": 1096
-  },
-  {
-    "name": "FW",
-    "latitude": 50.009882,
-    "longitude": 8.439541,
-    "elevation": 302
-  },
-  {
-    "name": "FWE",
-    "latitude": 51.995227,
-    "longitude": 12.132402,
-    "elevation": 246
   },
   {
     "name": "Frankfurt",
@@ -546,12 +372,6 @@
     "elevation": 157
   },
   {
-    "name": "G",
-    "latitude": 53.207768,
-    "longitude": 12.556267,
-    "elevation": 223
-  },
-  {
     "name": "GBL",
     "latitude": 49.643663,
     "longitude": 9.950428,
@@ -564,70 +384,16 @@
     "elevation": 220
   },
   {
-    "name": "GK",
-    "latitude": 52.94779,
-    "longitude": 12.710109,
-    "elevation": 141
-  },
-  {
-    "name": "GL",
-    "latitude": 52.566982,
-    "longitude": 13.379742,
-    "elevation": 144
-  },
-  {
     "name": "GN",
     "latitude": 52.53274,
     "longitude": 11.353838,
     "elevation": 240
   },
   {
-    "name": "GO",
-    "latitude": 53.201216,
-    "longitude": 12.510701,
-    "elevation": 230
-  },
-  {
-    "name": "GS",
-    "latitude": 51.931701,
-    "longitude": 8.308174,
-    "elevation": 226
-  },
-  {
     "name": "GSO",
     "latitude": 51.924309,
     "longitude": 8.286726,
     "elevation": 203
-  },
-  {
-    "name": "GT",
-    "latitude": 53.71417,
-    "longitude": 9.924254,
-    "elevation": 85
-  },
-  {
-    "name": "GW",
-    "latitude": 52.46502,
-    "longitude": 13.155508,
-    "elevation": 164
-  },
-  {
-    "name": "GWW",
-    "latitude": 52.47367,
-    "longitude": 13.123815,
-    "elevation": 131
-  },
-  {
-    "name": "GX",
-    "latitude": 51.720105,
-    "longitude": 11.884382,
-    "elevation": 259
-  },
-  {
-    "name": "GZ",
-    "latitude": 53.875407,
-    "longitude": 14.172328,
-    "elevation": 75
   },
   {
     "name": "Gardelegen",
@@ -678,12 +444,6 @@
     "elevation": 56
   },
   {
-    "name": "H",
-    "latitude": 51.766733,
-    "longitude": 13.198752,
-    "elevation": 256
-  },
-  {
     "name": "H CCIRCLE",
     "latitude": 50.070985,
     "longitude": 9.846221833333333,
@@ -732,22 +492,10 @@
     "elevation": 892
   },
   {
-    "name": "HA",
-    "latitude": 52.464041,
-    "longitude": 9.805069,
-    "elevation": 177
-  },
-  {
     "name": "HAD",
     "latitude": 52.46188,
     "longitude": 9.688376,
     "elevation": 161
-  },
-  {
-    "name": "HAE",
-    "latitude": 52.457983,
-    "longitude": 9.567773,
-    "elevation": 167
   },
   {
     "name": "HAH",
@@ -762,39 +510,15 @@
     "elevation": 131
   },
   {
-    "name": "HAN",
-    "latitude": 49.956334,
-    "longitude": 7.269749,
-    "elevation": 1578
-  },
-  {
-    "name": "HLI",
-    "latitude": 52.381795,
-    "longitude": 10.850063,
-    "elevation": 371
-  },
-  {
     "name": "HLZ",
     "latitude": 52.363646,
     "longitude": 10.795417,
     "elevation": 371
   },
   {
-    "name": "HO",
-    "latitude": 51.766396,
-    "longitude": 13.184532,
-    "elevation": 259
-  },
-  {
     "name": "HVL",
     "latitude": 52.456774,
     "longitude": 13.132528,
-    "elevation": 144
-  },
-  {
-    "name": "HW",
-    "latitude": 52.468492,
-    "longitude": 9.546607,
     "elevation": 144
   },
   {
@@ -858,190 +582,10 @@
     "elevation": 302
   },
   {
-    "name": "I",
-    "latitude": 53.032416,
-    "longitude": 13.583692,
-    "elevation": 203
-  },
-  {
     "name": "IAR",
     "latitude": 55.064491,
     "longitude": 14.749231,
     "elevation": 46
-  },
-  {
-    "name": "IBIT",
-    "latitude": 49.948725,
-    "longitude": 6.574932,
-    "elevation": 1224
-  },
-  {
-    "name": "IBRE",
-    "latitude": 53.045136,
-    "longitude": 8.779481,
-    "elevation": 0
-  },
-  {
-    "name": "IBRW",
-    "latitude": 53.046556,
-    "longitude": 8.770125,
-    "elevation": 7
-  },
-  {
-    "name": "IDBR",
-    "latitude": 52.472259,
-    "longitude": 13.397245,
-    "elevation": 121
-  },
-  {
-    "name": "IDLB",
-    "latitude": 52.470713,
-    "longitude": 13.388612,
-    "elevation": 148
-  },
-  {
-    "name": "IFM",
-    "latitude": 50.046376,
-    "longitude": 8.588953,
-    "elevation": 335
-  },
-  {
-    "name": "IHEW",
-    "latitude": 53.882283,
-    "longitude": 14.130466,
-    "elevation": 59
-  },
-  {
-    "name": "IHFE",
-    "latitude": 53.528088,
-    "longitude": 9.820044,
-    "elevation": 7
-  },
-  {
-    "name": "IHFW",
-    "latitude": 53.537518,
-    "longitude": 9.83874,
-    "elevation": 20
-  },
-  {
-    "name": "IHHE",
-    "latitude": 53.621059,
-    "longitude": 9.972278,
-    "elevation": 20
-  },
-  {
-    "name": "IHHN",
-    "latitude": 53.656928,
-    "longitude": 9.972986,
-    "elevation": 36
-  },
-  {
-    "name": "IHHS",
-    "latitude": 53.652211,
-    "longitude": 9.978871,
-    "elevation": 43
-  },
-  {
-    "name": "IHHW",
-    "latitude": 53.615765,
-    "longitude": 9.95912,
-    "elevation": 30
-  },
-  {
-    "name": "IHNE",
-    "latitude": 52.468062,
-    "longitude": 9.65623,
-    "elevation": 164
-  },
-  {
-    "name": "IHNW",
-    "latitude": 52.466823,
-    "longitude": 9.703153,
-    "elevation": 167
-  },
-  {
-    "name": "IHSE",
-    "latitude": 52.45503,
-    "longitude": 9.672881,
-    "elevation": 174
-  },
-  {
-    "name": "IHSW",
-    "latitude": 52.453909,
-    "longitude": 9.715167,
-    "elevation": 171
-  },
-  {
-    "name": "IK",
-    "latitude": 53.032937,
-    "longitude": 13.629732,
-    "elevation": 246
-  },
-  {
-    "name": "IMA",
-    "latitude": 51.41898,
-    "longitude": 12.204437,
-    "elevation": 400
-  },
-  {
-    "name": "IREL",
-    "latitude": 49.437874,
-    "longitude": 7.623375,
-    "elevation": 768
-  },
-  {
-    "name": "IRF",
-    "latitude": 50.028721,
-    "longitude": 8.542056,
-    "elevation": 315
-  },
-  {
-    "name": "IRWR",
-    "latitude": 49.435961,
-    "longitude": 7.5777,
-    "elevation": 751
-  },
-  {
-    "name": "ISPA",
-    "latitude": 49.982906,
-    "longitude": 6.710131,
-    "elevation": 1194
-  },
-  {
-    "name": "ISPE",
-    "latitude": 49.969482,
-    "longitude": 6.6863,
-    "elevation": 1125
-  },
-  {
-    "name": "ITGE",
-    "latitude": 52.560578,
-    "longitude": 13.314592,
-    "elevation": 95
-  },
-  {
-    "name": "ITGW",
-    "latitude": 52.556133,
-    "longitude": 13.269712,
-    "elevation": 92
-  },
-  {
-    "name": "ITLE",
-    "latitude": 52.562597,
-    "longitude": 13.316048,
-    "elevation": 98
-  },
-  {
-    "name": "ITLW",
-    "latitude": 52.562605,
-    "longitude": 13.305049,
-    "elevation": 125
-  },
-  {
-    "name": "IZBU",
-    "latitude": 49.202004,
-    "longitude": 7.39602,
-    "elevation": 1115
   },
   {
     "name": "Jena",
@@ -1054,12 +598,6 @@
     "latitude": 51.991649,
     "longitude": 13.080113,
     "elevation": 253
-  },
-  {
-    "name": "K",
-    "latitude": 52.009396,
-    "longitude": 12.17762,
-    "elevation": 266
   },
   {
     "name": "KA",
@@ -1078,12 +616,6 @@
     "latitude": 50.861696,
     "longitude": 7.145696,
     "elevation": 266
-  },
-  {
-    "name": "KD",
-    "latitude": 51.3525,
-    "longitude": 11.877481,
-    "elevation": 427
   },
   {
     "name": "KHD",
@@ -1146,12 +678,6 @@
     "elevation": 279
   },
   {
-    "name": "L",
-    "latitude": 51.400886,
-    "longitude": 12.429753,
-    "elevation": 420
-  },
-  {
     "name": "LBE",
     "latitude": 53.654074,
     "longitude": 9.595031,
@@ -1170,52 +696,16 @@
     "elevation": 449
   },
   {
-    "name": "LG",
-    "latitude": 51.405097,
-    "longitude": 12.44275,
-    "elevation": 443
-  },
-  {
-    "name": "LN",
-    "latitude": 53.032802,
-    "longitude": 13.521753,
-    "elevation": 184
-  },
-  {
     "name": "LR",
     "latitude": 53.914347,
     "longitude": 12.271285,
     "elevation": 121
   },
   {
-    "name": "LU",
-    "latitude": 51.395502,
-    "longitude": 11.517906,
-    "elevation": 787
-  },
-  {
     "name": "LUB",
     "latitude": 53.941661,
     "longitude": 10.66841,
     "elevation": 203
-  },
-  {
-    "name": "LWB",
-    "latitude": 52.003648,
-    "longitude": 12.155359,
-    "elevation": 262
-  },
-  {
-    "name": "LX",
-    "latitude": 53.30529,
-    "longitude": 12.740502,
-    "elevation": 210
-  },
-  {
-    "name": "LYE",
-    "latitude": 53.800833,
-    "longitude": 10.695843,
-    "elevation": 39
   },
   {
     "name": "LZ",
@@ -1272,12 +762,6 @@
     "elevation": 249
   },
   {
-    "name": "M",
-    "latitude": 52.364489,
-    "longitude": 13.471727,
-    "elevation": 125
-  },
-  {
     "name": "MA",
     "latitude": 54.265801,
     "longitude": 12.432423,
@@ -1288,30 +772,6 @@
     "latitude": 52.386733,
     "longitude": 11.821375,
     "elevation": 125
-  },
-  {
-    "name": "ML",
-    "latitude": 52.389135,
-    "longitude": 11.815601,
-    "elevation": 121
-  },
-  {
-    "name": "MO",
-    "latitude": 54.265475,
-    "longitude": 12.457648,
-    "elevation": 20
-  },
-  {
-    "name": "MV",
-    "latitude": 52.354716,
-    "longitude": 13.43082,
-    "elevation": 135
-  },
-  {
-    "name": "MVR",
-    "latitude": 52.379162,
-    "longitude": 13.533278,
-    "elevation": 141
   },
   {
     "name": "Magdeburg",
@@ -1350,12 +810,6 @@
     "elevation": 16
   },
   {
-    "name": "N",
-    "latitude": 54.143593,
-    "longitude": 13.798498,
-    "elevation": 7
-  },
-  {
     "name": "NE",
     "latitude": 55.602404,
     "longitude": 12.634663,
@@ -1368,12 +822,6 @@
     "elevation": 157
   },
   {
-    "name": "NMN",
-    "latitude": 50.367624,
-    "longitude": 7.314332,
-    "elevation": 584
-  },
-  {
     "name": "NOR",
     "latitude": 50.831069,
     "longitude": 6.662962,
@@ -1384,24 +832,6 @@
     "latitude": 50.016666,
     "longitude": 6.531656,
     "elevation": 1329
-  },
-  {
-    "name": "NU",
-    "latitude": 52.388479,
-    "longitude": 11.749555,
-    "elevation": 131
-  },
-  {
-    "name": "NW",
-    "latitude": 54.249177,
-    "longitude": 12.368501,
-    "elevation": 0
-  },
-  {
-    "name": "NZ",
-    "latitude": 52.140199,
-    "longitude": 13.229676,
-    "elevation": 157
   },
   {
     "name": "Naumburg (Saale)",
@@ -1446,24 +876,6 @@
     "elevation": 604
   },
   {
-    "name": "O",
-    "latitude": 53.196967,
-    "longitude": 12.489491,
-    "elevation": 240
-  },
-  {
-    "name": "OM",
-    "latitude": 52.819858,
-    "longitude": 13.761464,
-    "elevation": 135
-  },
-  {
-    "name": "OR",
-    "latitude": 53.189798,
-    "longitude": 12.445479,
-    "elevation": 207
-  },
-  {
     "name": "OSN",
     "latitude": 52.200022,
     "longitude": 8.285068,
@@ -1506,28 +918,10 @@
     "elevation": 715
   },
   {
-    "name": "P",
-    "latitude": 53.031471,
-    "longitude": 13.503237,
-    "elevation": 177
-  },
-  {
     "name": "PFF",
     "latitude": 49.858278,
     "longitude": 7.600243,
     "elevation": 1306
-  },
-  {
-    "name": "PG",
-    "latitude": 53.03098,
-    "longitude": 13.456362,
-    "elevation": 217
-  },
-  {
-    "name": "PLG",
-    "latitude": 52.468662,
-    "longitude": 9.695199,
-    "elevation": 167
   },
   {
     "name": "PM",
@@ -1566,18 +960,6 @@
     "elevation": 92
   },
   {
-    "name": "Q",
-    "latitude": 51.263386,
-    "longitude": 10.65408,
-    "elevation": 899
-  },
-  {
-    "name": "QI",
-    "latitude": 51.252276,
-    "longitude": 10.703495,
-    "elevation": 994
-  },
-  {
     "name": "Quedlinburg",
     "latitude": 51.785543,
     "longitude": 11.151993,
@@ -1588,42 +970,6 @@
     "latitude": 51.378527,
     "longitude": 11.597443,
     "elevation": 571
-  },
-  {
-    "name": "R",
-    "latitude": 53.920561,
-    "longitude": 12.247772,
-    "elevation": 131
-  },
-  {
-    "name": "RC",
-    "latitude": 51.722664,
-    "longitude": 12.038744,
-    "elevation": 262
-  },
-  {
-    "name": "RF",
-    "latitude": 50.969816,
-    "longitude": 11.080926,
-    "elevation": 764
-  },
-  {
-    "name": "RG",
-    "latitude": 52.835046,
-    "longitude": 13.620472,
-    "elevation": 141
-  },
-  {
-    "name": "RHM",
-    "latitude": 50.032752,
-    "longitude": 8.535441,
-    "elevation": 318
-  },
-  {
-    "name": "RL",
-    "latitude": 53.924359,
-    "longitude": 12.199907,
-    "elevation": 95
   },
   {
     "name": "RMS",
@@ -1644,12 +990,6 @@
     "elevation": 43
   },
   {
-    "name": "RW",
-    "latitude": 52.545529,
-    "longitude": 13.151291,
-    "elevation": 92
-  },
-  {
     "name": "Rathenow",
     "latitude": 52.60637,
     "longitude": 12.338225,
@@ -1668,58 +1008,10 @@
     "elevation": 75
   },
   {
-    "name": "S",
-    "latitude": 52.380757,
-    "longitude": 13.539984,
-    "elevation": 141
-  },
-  {
-    "name": "SCF",
-    "latitude": 50.051586,
-    "longitude": 10.177669,
-    "elevation": 764
-  },
-  {
     "name": "SEM",
     "latitude": 49.506848,
     "longitude": 7.869962,
     "elevation": 1024
-  },
-  {
-    "name": "SEX",
-    "latitude": 49.567041,
-    "longitude": 8.042851,
-    "elevation": 807
-  },
-  {
-    "name": "SK",
-    "latitude": 51.43388,
-    "longitude": 12.118235,
-    "elevation": 344
-  },
-  {
-    "name": "SL",
-    "latitude": 52.390494,
-    "longitude": 13.580942,
-    "elevation": 128
-  },
-  {
-    "name": "SLL",
-    "latitude": 52.366108,
-    "longitude": 13.478514,
-    "elevation": 135
-  },
-  {
-    "name": "SLR",
-    "latitude": 52.388352,
-    "longitude": 13.548505,
-    "elevation": 131
-  },
-  {
-    "name": "SOG",
-    "latitude": 51.687377,
-    "longitude": 9.512164,
-    "elevation": 928
   },
   {
     "name": "SPA",
@@ -1824,12 +1116,6 @@
     "elevation": 82
   },
   {
-    "name": "T",
-    "latitude": 53.601599,
-    "longitude": 13.273738,
-    "elevation": 62
-  },
-  {
     "name": "TGL",
     "latitude": 52.561496,
     "longitude": 13.287589,
@@ -1854,28 +1140,10 @@
     "elevation": 197
   },
   {
-    "name": "U",
-    "latitude": 52.631769,
-    "longitude": 11.848996,
-    "elevation": 135
-  },
-  {
-    "name": "UK",
-    "latitude": 52.6351,
-    "longitude": 11.886728,
-    "elevation": 92
-  },
-  {
     "name": "UT",
     "latitude": 52.436038,
     "longitude": 12.458448,
     "elevation": 95
-  },
-  {
-    "name": "UU",
-    "latitude": 53.446975,
-    "longitude": 11.854903,
-    "elevation": 184
   },
   {
     "name": "Uelzen",
@@ -1890,12 +1158,6 @@
     "elevation": 59
   },
   {
-    "name": "W",
-    "latitude": 52.938199,
-    "longitude": 12.819477,
-    "elevation": 144
-  },
-  {
     "name": "WBD",
     "latitude": 50.04609,
     "longitude": 8.310909,
@@ -1908,24 +1170,6 @@
     "elevation": 249
   },
   {
-    "name": "WIB",
-    "latitude": 50.049006,
-    "longitude": 8.328758,
-    "elevation": 456
-  },
-  {
-    "name": "WN",
-    "latitude": 51.831356,
-    "longitude": 12.222748,
-    "elevation": 197
-  },
-  {
-    "name": "WO",
-    "latitude": 52.93429,
-    "longitude": 12.864472,
-    "elevation": 164
-  },
-  {
     "name": "WRB",
     "latitude": 51.505745,
     "longitude": 9.110843,
@@ -1936,12 +1180,6 @@
     "latitude": 53.347636,
     "longitude": 8.875362,
     "elevation": 23
-  },
-  {
-    "name": "WUH",
-    "latitude": 52.459383,
-    "longitude": 9.434693,
-    "elevation": 164
   },
   {
     "name": "WUN",
@@ -2016,36 +1254,6 @@
     "elevation": 732
   },
   {
-    "name": "X",
-    "latitude": 51.769042,
-    "longitude": 13.135593,
-    "elevation": 279
-  },
-  {
-    "name": "XH",
-    "latitude": 51.770603,
-    "longitude": 13.092777,
-    "elevation": 246
-  },
-  {
-    "name": "Y",
-    "latitude": 53.879475,
-    "longitude": 13.232258,
-    "elevation": 52
-  },
-  {
-    "name": "YC",
-    "latitude": 53.90325,
-    "longitude": 13.224794,
-    "elevation": 10
-  },
-  {
-    "name": "Z",
-    "latitude": 51.991183,
-    "longitude": 12.115481,
-    "elevation": 240
-  },
-  {
     "name": "ZB",
     "latitude": 52.038279,
     "longitude": 13.747754,
@@ -2056,18 +1264,6 @@
     "latitude": 49.215874,
     "longitude": 7.408222,
     "elevation": 1109
-  },
-  {
-    "name": "ZG",
-    "latitude": 53.891628,
-    "longitude": 14.073345,
-    "elevation": 23
-  },
-  {
-    "name": "ZW",
-    "latitude": 52.388006,
-    "longitude": 11.904782,
-    "elevation": 164
   },
   {
     "name": "Zeitz",

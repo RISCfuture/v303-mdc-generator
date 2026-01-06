@@ -358,7 +358,7 @@ class NavaidScraper:
 
     def process_theatre(self, theatre_name: str, url_slug: str) -> Optional[Path]:
         """
-        Process a single theatre: scrape, fetch elevations, write JSON.
+        Process a single theatre: scrape, fetch elevations, merge with existing, write JSON.
 
         Args:
             theatre_name: Output filename (e.g., 'Nevada')
@@ -372,31 +372,60 @@ class NavaidScraper:
         url = f"{BASE_URL}{url_slug}/"
 
         # Scrape the table
-        navaids = self.scrape_theatre_table(url)
-        if not navaids:
+        scraped_navaids = self.scrape_theatre_table(url)
+        if not scraped_navaids:
             print(f"  ERROR: No navaids found")
             return None
 
-        # Fetch elevations
-        print(f"  Fetching elevations...")
-        for i, navaid in enumerate(navaids):
+        # Fetch elevations for scraped navaids
+        print(f"  Fetching elevations for scraped navaids...")
+        for i, navaid in enumerate(scraped_navaids):
             if (i + 1) % 50 == 0:
-                print(f"    {i + 1}/{len(navaids)}...")
+                print(f"    {i + 1}/{len(scraped_navaids)}...")
 
             elevation = self.fetch_elevation(navaid['latitude'], navaid['longitude'])
             navaid['elevation'] = elevation
 
+        # Load existing data and merge
+        output_file = self.output_dir / f'{theatre_name}.json'
+        existing_by_name = {}
+
+        if output_file.exists():
+            try:
+                with open(output_file, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+                existing_by_name = {entry['name']: entry for entry in existing_data}
+                print(f"  Loaded {len(existing_data)} existing entries")
+            except Exception as e:
+                print(f"  WARNING: Failed to read existing file: {e}")
+
+        # Merge: scraped data overwrites existing entries with same name
+        merged_by_name = existing_by_name.copy()
+        added_count = 0
+        updated_count = 0
+
+        for navaid in scraped_navaids:
+            name = navaid['name']
+            if name in merged_by_name:
+                merged_by_name[name] = navaid
+                updated_count += 1
+            else:
+                merged_by_name[name] = navaid
+                added_count += 1
+
+        print(f"  Merged: {added_count} added, {updated_count} updated, "
+              f"{len(existing_by_name) - updated_count} kept from existing")
+
         # Sort by name
-        navaids.sort(key=lambda n: n['name'])
+        merged_data = sorted(merged_by_name.values(), key=lambda n: n['name'])
 
         # Write output file
-        output_file = self.output_dir / f'{theatre_name}.json'
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(navaids, f, indent=2, ensure_ascii=False)
+            json.dump(merged_data, f, indent=2, ensure_ascii=False)
 
-        print(f"  ✓ Wrote {len(navaids)} navaids to {output_file}")
+        print(f"  ✓ Wrote {len(merged_data)} navaids to {output_file}")
         return output_file
 
     def process_all_theatres(self) -> Dict[str, Optional[Path]]:

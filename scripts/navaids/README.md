@@ -1,22 +1,22 @@
 # Navaid Database Pipeline
 
 Complete pipeline for building comprehensive navaid databases for DCS World theatres, combining data from three sources:
-1. **v303 FG Website** (manually curated tactical navaids)
-2. **DCS World Beacons** (navigation beacons from game files)
-3. **DCS World Towns** (populated areas from game files)
+1. **DCS World Beacons** (navigation beacons from game files)
+2. **DCS World Towns** (populated areas from game files)
+3. **v303 FG Website** (manually curated tactical navaids)
 
 ## Overview
 
 The pipeline consists of three scripts that must be run in order:
 
-1. **`scrape_navaids.py`** - Scrapes tactical navaid data from v303rdfightergroup.com
-2. **`extract_beacons_towns.py`** - Extracts beacons and towns from DCS World installation (run on gaming PC)
-3. **`merge_beacons_towns.py`** - Merges all data sources and adds elevation data
+1. **`extract_beacons_towns.py`** - Extracts beacons and towns from DCS World installation (run on gaming PC)
+2. **`load_beacons_towns.py`** - Loads extracted DCS data, replacing existing navaid files
+3. **`scrape_navaids.py`** - Scrapes tactical navaid data from v303rdfightergroup.com and merges with existing data
 
 ## Requirements
 
 ```bash
-# For scraping and merging (local Mac/Linux)
+# For loading and scraping (local Mac/Linux)
 pip install requests beautifulsoup4 srtm.py
 
 # For extraction on Windows gaming PC
@@ -27,53 +27,7 @@ pip install lupa
 
 ---
 
-## Step 1: Scrape v303 FG Website Data
-
-**Location**: Run locally on your development machine
-
-**Purpose**: Downloads manually curated tactical navaids from the v303 FG website
-
-### Usage
-
-```bash
-# Scrape all theatres
-python scrape_navaids.py
-
-# Scrape specific theatre
-python scrape_navaids.py --theatre Nevada
-
-# Custom output directory
-python scrape_navaids.py --output-dir /path/to/output
-```
-
-### Available Theatres
-
-`Nevada`, `MarianaIslands`, `Syria`, `Afghanistan`, `GermanyCW`
-
-### Output
-
-Writes JSON files to `src/data/json/navaids/` with format:
-
-```json
-[
-  {
-    "name": "ACOSU",
-    "latitude": 36.568928,
-    "longitude": -114.821733,
-    "elevation": 2431
-  }
-]
-```
-
-### Features
-
-- **Multi-format parser**: Handles Google Sheets embedded, JavaScript JSON objects, and HTML tables
-- **Local DEM elevations**: Uses SRTM/NASA data (cached in `~/.cache/srtm`)
-- **Coordinate conversion**: Converts degrees/decimal minutes to decimal degrees
-
----
-
-## Step 2: Extract Beacons & Towns from DCS World
+## Step 1: Extract Beacons & Towns from DCS World
 
 **Location**: Run on Windows gaming PC with DCS World installed
 
@@ -122,7 +76,7 @@ Creates one JSON file per terrain combining beacons and towns:
 ]
 ```
 
-**Note**: Elevation is set to `null` - this will be populated in Step 3.
+**Note**: Elevation is set to `null` - this will be populated in Step 2.
 
 ### Features
 
@@ -138,41 +92,37 @@ After running on gaming PC, transfer the output JSON files to your development m
 
 ---
 
-## Step 3: Merge Data & Add Elevations
+## Step 2: Load Extracted DCS Data
 
 **Location**: Run locally on your development machine
 
-**Purpose**: Merges extracted DCS data with scraped website data and populates elevation information
+**Purpose**: Loads extracted DCS beacon/town data, adds elevations, and writes to navaid files. This **replaces** any existing navaid data.
 
 ### Usage
 
 ```bash
-# Merge files from directory
-python merge_beacons_towns.py --input-dir ~/Dropbox
+# Load files from directory
+python load_beacons_towns.py --input-dir ~/Dropbox/extracted_navaids
 
 # Custom output location
-python merge_beacons_towns.py --input-dir ./extracted --output-dir ./output
+python load_beacons_towns.py --input-dir ./extracted --output-dir ./output
 ```
 
 ### Required Arguments
 
-- `--input-dir`: Directory containing extracted JSON files from Step 2
+- `--input-dir`: Directory containing extracted JSON files from Step 1
 
 ### Optional Arguments
 
 - `--output-dir`: Output directory (default: `src/data/json/navaids`)
 
-### Merge Logic
+### Behavior
 
 For each theatre:
 1. Load extracted beacons/towns from input directory
-2. Load existing scraped navaids from output directory (if exists)
-3. **Merge strategy**:
-   - If name exists in destination: **overwrite** with new beacon/town data
-   - If name doesn't exist: **add** new entry
-   - Keep all scraped navaids that don't have matching names
-4. Fetch elevations using SRTM for entries with `elevation: null`
-5. Sort by name and write final JSON
+2. Deduplicate entries by name
+3. Fetch elevations using SRTM for entries with `elevation: null`
+4. Sort by name and write JSON (replaces any existing file)
 
 ### Terrain Name Mapping
 
@@ -185,9 +135,70 @@ The script automatically maps DCS directory names to internal names:
 | `MarianasWWII` | `MarianaIslandsWWII` |
 | All others | Same name |
 
-### Output
+---
 
-Final merged JSON files in `src/data/json/navaids/`:
+## Step 3: Scrape & Merge v303 FG Website Data
+
+**Location**: Run locally on your development machine
+
+**Purpose**: Scrapes manually curated tactical navaids from the v303 FG website and **merges** them with existing navaid data from Step 2.
+
+### Usage
+
+```bash
+# Scrape all theatres
+python scrape_navaids.py
+
+# Scrape specific theatre
+python scrape_navaids.py --theatre Nevada
+
+# Custom output directory
+python scrape_navaids.py --output-dir /path/to/output
+```
+
+### Available Theatres
+
+`Nevada`, `MarianaIslands`, `Syria`, `Afghanistan`, `GermanyCW`
+
+### Merge Behavior
+
+For each theatre:
+1. Scrape tactical navaids from website
+2. Load existing navaid data (from Step 2)
+3. **Merge strategy**:
+   - Scraped navaids overwrite existing entries with the same name
+   - New scraped navaids are added
+   - Existing entries not in scraped data are kept
+4. Sort by name and write final JSON
+
+### Features
+
+- **Multi-format parser**: Handles Google Sheets embedded, JavaScript JSON objects, and HTML tables
+- **Local DEM elevations**: Uses SRTM/NASA data (cached in `~/.cache/srtm`)
+- **Coordinate conversion**: Converts degrees/decimal minutes to decimal degrees
+
+---
+
+## Complete Example Workflow
+
+```bash
+# On gaming PC: Step 1
+python extract_beacons_towns.py
+# Copy output files to ~/Dropbox/extracted_navaids (or transfer method of choice)
+
+# On development machine: Step 2
+cd scripts/navaids
+python load_beacons_towns.py --input-dir ~/Dropbox/extracted_navaids
+
+# On development machine: Step 3
+python scrape_navaids.py
+```
+
+---
+
+## Output
+
+Final JSON files in `src/data/json/navaids/`:
 
 ```json
 [
@@ -205,42 +216,6 @@ Final merged JSON files in `src/data/json/navaids/`:
   }
 ]
 ```
-
----
-
-## Complete Example Workflow
-
-```bash
-# On development machine: Step 1
-cd scripts/navaids
-python scrape_navaids.py
-
-# On gaming PC: Step 2
-python extract_beacons_towns.py
-# Copy output files to ~/Dropbox (or transfer method of choice)
-
-# On development machine: Step 3
-python merge_beacons_towns.py --input-dir ~/Dropbox
-```
-
----
-
-## Current Data
-
-After running the complete pipeline (as of last run):
-
-| Theatre | Total Entries | Sources |
-|---------|--------------|---------|
-| Afghanistan | 1,238 | Scraped + DCS |
-| Caucasus | 1,807 | Scraped + DCS |
-| Falklands | 1,347 | DCS only |
-| Iraq | 310 | Scraped + DCS |
-| MarianaIslands | 90 | Scraped + DCS |
-| MarianaIslandsWWII | 22 | DCS only |
-| Nevada | 255 | Scraped + DCS |
-| Normandy | 1,282 | DCS only |
-| Syria | 1,134 | Scraped + DCS |
-| TheChannel | 1,311 | DCS only |
 
 ---
 
@@ -268,9 +243,9 @@ All output conforms to `src/data/json/schemas/navaids.schema.json`:
 
 ## Data Sources
 
-1. **v303rd Fighter Group Website**: https://www.v303rdfightergroup.com/index.php?pages/navaids/
-2. **DCS World Beacons**: `{DCS}\mods\terrains\*\beacons.lua`
-3. **DCS World Towns**: `{DCS}\mods\terrains\*\map\towns.lua`
+1. **DCS World Beacons**: `{DCS}\mods\terrains\*\beacons.lua`
+2. **DCS World Towns**: `{DCS}\mods\terrains\*\map\towns.lua`
+3. **v303rd Fighter Group Website**: https://www.v303rdfightergroup.com/index.php?pages/navaids/
 4. **Elevations**: SRTM/NASA Digital Elevation Model
 
 ---
@@ -279,21 +254,21 @@ All output conforms to `src/data/json/schemas/navaids.schema.json`:
 
 ### Step 1 Issues
 
-- **No DEM library found**: Install `srtm.py` with `pip install srtm.py`
-- **Network errors**: Check internet connection and v303fg.com availability
-- **Parse failures**: Website format may have changed - file an issue
-
-### Step 2 Issues
-
 - **lupa not installed**: Run `pip install lupa` on gaming PC
 - **No theatres found**: Check `--dcs-dir` points to correct DCS World installation
 - **Lua parse errors**: Beacon type constants may need updating
 
+### Step 2 Issues
+
+- **No JSON files found**: Verify `--input-dir` contains .json files from Step 1
+- **Elevation warnings**: Some coordinates may be outside SRTM coverage (oceans, polar regions)
+- **No DEM library found**: Install `srtm.py` with `pip install srtm.py`
+
 ### Step 3 Issues
 
-- **No JSON files found**: Verify `--input-dir` contains .json files from Step 2
-- **Elevation warnings**: Some coordinates may be outside SRTM coverage (oceans, polar regions)
-- **Merge conflicts**: Script prefers extracted data over scraped data for matching names
+- **No DEM library found**: Install `srtm.py` with `pip install srtm.py`
+- **Network errors**: Check internet connection and v303fg.com availability
+- **Parse failures**: Website format may have changed - file an issue
 
 ---
 

@@ -1,11 +1,5 @@
 [
   {
-    "name": " Astumbo",
-    "latitude": 13.554951,
-    "longitude": 144.842729,
-    "elevation": 364
-  },
-  {
     "name": "AJA",
     "latitude": 13.453405,
     "longitude": 144.736872,
@@ -294,48 +288,6 @@
     "elevation": 148
   },
   {
-    "name": "IAND",
-    "latitude": 13.593463,
-    "longitude": 144.945598,
-    "elevation": 627
-  },
-  {
-    "name": "IAWD",
-    "latitude": 13.490097,
-    "longitude": 144.813055,
-    "elevation": 318
-  },
-  {
-    "name": "IGSN",
-    "latitude": 15.124498,
-    "longitude": 145.743327,
-    "elevation": 203
-  },
-  {
-    "name": "IGUM",
-    "latitude": 13.493032,
-    "longitude": 144.814772,
-    "elevation": 338
-  },
-  {
-    "name": "IPMY",
-    "latitude": 13.573797,
-    "longitude": 144.912991,
-    "elevation": 551
-  },
-  {
-    "name": "IUAM",
-    "latitude": 13.589357,
-    "longitude": 144.948539,
-    "elevation": 594
-  },
-  {
-    "name": "IYIG",
-    "latitude": 13.578646,
-    "longitude": 144.911752,
-    "elevation": 531
-  },
-  {
     "name": "Inarajan",
     "latitude": 13.274048,
     "longitude": 144.746742,
@@ -480,12 +432,6 @@
     "elevation": 0
   },
   {
-    "name": "PGSN",
-    "latitude": 15.116286,
-    "longitude": 145.7203,
-    "elevation": 217
-  },
-  {
     "name": "PGUA.06L",
     "latitude": 13.580194,
     "longitude": 144.91588783333333,
@@ -508,12 +454,6 @@
     "latitude": 13.59181,
     "longitude": 144.94240250000001,
     "elevation": 610
-  },
-  {
-    "name": "PGUM",
-    "latitude": 13.479205,
-    "longitude": 144.786982,
-    "elevation": 236
   },
   {
     "name": "Pagan",
