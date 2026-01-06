@@ -72,5 +72,7 @@ export type { AircraftComponentType } from './registry'
 // F-16C_50
 import './F-16C_50'
 
-// A-10C_2
+// A-10 variants (A-10A is the base implementation, A-10C and A-10C_2 delegate to it)
+import './A-10A'
+import './A-10C'
 import './A-10C_2'

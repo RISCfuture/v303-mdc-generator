@@ -177,7 +177,7 @@ export async function mockA10Calculator(customReturnValues?: {
   headwind?: number
   crosswind?: number
 }) {
-  const a10Calculator = await import('@/aircraft/A-10C_2')
+  const a10Calculator = await import('@/aircraft/A-10A')
 
   const calculateSpeedsMock = vi.spyOn(a10Calculator, 'calculateSpeeds').mockReturnValue(
     customReturnValues?.speeds || {

@@ -1,11 +1,14 @@
 /**
- * A-10C Performance Calculator
+ * A-10A Performance Calculator
  *
- * Implements the AircraftCalculator interface for the A-10C Thunderbolt II
+ * Implements the AircraftCalculator interface for the A-10A Thunderbolt II
  * with TF34-GE-100A engines. Wraps the existing calculation functions
  * to provide a unified interface.
  *
- * @module aircraft/a10c/calculator
+ * Note: This calculator's performance data is sourced from A-10A documentation.
+ * A-10C and A-10C_2 variants delegate to this calculator.
+ *
+ * @module aircraft/a10a/calculator
  */
 
 import type {
@@ -33,12 +36,12 @@ import {
 } from './takeoffDistanceCalculator'
 
 /**
- * A-10C crosswind limit (constant)
+ * A-10A crosswind limit (constant)
  */
 const A10_CROSSWIND_LIMIT = 35
 
 /**
- * A-10C capabilities
+ * A-10A capabilities
  */
 const A10_CAPABILITIES: readonly CalculatorCapability[] = [
   'speeds',
@@ -47,7 +50,7 @@ const A10_CAPABILITIES: readonly CalculatorCapability[] = [
 ] as const
 
 /**
- * A-10C Performance Calculator
+ * A-10A Performance Calculator
  *
  * Supports:
  * - Rotation and refusal speed calculations
@@ -60,8 +63,8 @@ export class A10Calculator
     AircraftCalculator<A10SpeedParams, A10SpeedConfig, A10TakeoffParams, A10TakeoffConfig>,
     CriticalFieldCapableCalculator<A10TakeoffParams, A10CriticalFieldConfig>
 {
-  readonly airframe = 'A-10C_2' as const
-  readonly displayName = 'A-10C'
+  readonly airframe = 'A-10A' as const
+  readonly displayName = 'A-10A'
   readonly capabilities = A10_CAPABILITIES
 
   /**
@@ -166,7 +169,7 @@ export class A10Calculator
 
   /**
    * Get crosswind limit
-   * A-10C has a constant 35 knot crosswind limit regardless of conditions
+   * A-10A has a constant 35 knot crosswind limit regardless of conditions
    */
   getCrosswindLimit(_config: A10TakeoffConfig): number {
     return A10_CROSSWIND_LIMIT

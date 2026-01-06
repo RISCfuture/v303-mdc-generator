@@ -1,101 +1,36 @@
 /**
- * A-10C Performance Calculator Module
+ * A-10C II Performance Calculator Delegation Module
  *
- * This module exports the A-10C calculator and registers it with the
- * aircraft calculator registry.
+ * This module registers the A-10C_2 (A-10C II Tank Killer) airframe with
+ * the calculator registry, delegating to the A-10A calculator implementation.
  *
- * @module aircraft/a10c
+ * Note: A-10C_2 uses A-10A performance data until A-10C-specific data is available.
+ *
+ * @module aircraft/a10c2
  */
 
 import { calculatorRegistry } from '../registry'
-import { createA10Calculator, A10Calculator } from './calculator'
+import { createA10Calculator } from '../A-10A/calculator'
 
 /**
  * DCS clsid for A-10C II Tank Killer
- * This is the canonical identifier used throughout the system
  */
-export const A10C_CLSID = 'A-10C_2' as const
+export const A10C2_CLSID = 'A-10C_2' as const
 
-// Register A-10C calculator with the registry
-calculatorRegistry.register(A10C_CLSID, createA10Calculator)
+// Register A-10C_2 calculator with the registry (delegates to A-10A)
+calculatorRegistry.register(A10C2_CLSID, createA10Calculator)
 
-// Register A-10C UI components with the registry
+// Register A-10C_2 UI components (uses A-10A components)
 calculatorRegistry.registerComponent(
-  A10C_CLSID,
+  A10C2_CLSID,
   'speedCalculatorForm',
-  () => import('./components/A10SpeedCalculatorForm.vue'),
+  () => import('../A-10A/components/A10SpeedCalculatorForm.vue'),
 )
 calculatorRegistry.registerComponent(
-  A10C_CLSID,
+  A10C2_CLSID,
   'takeoffDistanceDisplay',
-  () => import('./components/A10TakeoffDistanceDisplay.vue'),
+  () => import('../A-10A/components/A10TakeoffDistanceDisplay.vue'),
 )
 
-// Export calculator class and factory
-export { A10Calculator, createA10Calculator }
-
-// Export types from local types module
-export type {
-  A10CriticalFieldConfig,
-  A10FlapSetting,
-  A10RCR,
-  A10RunwayCondition as A10CalculatorRunwayCondition,
-  A10SpeedBrakeSetting,
-  A10SpeedConfig,
-  A10SpeedParams,
-  A10TakeoffConfig,
-  A10TakeoffParams,
-  A10ThrustSetting,
-} from './types'
-
-// Export utility functions from types
-export { a10RunwayConditionToRCR } from './types'
-
-// Re-export calculation functions for backward compatibility and direct use
-export {
-  calculateHeadwindComponent,
-  calculateCrosswindComponent,
-  calculateRotationSpeed,
-  calculateRefusalSpeed,
-  calculateSpeeds,
-  calculateStandardSpeeds,
-} from './rotationCalculator'
-
-export type {
-  FlapSetting,
-  SpeedBrakeSetting,
-  A10RunwayCondition,
-  A10SpeedCalculationParams,
-  A10SpeedCalculationResult,
-} from './rotationCalculator'
-
-export {
-  calculateTakeoffIndex,
-  calculateBaseDistance,
-  calculateBaseCriticalFieldLength,
-  calculateWindCorrection,
-  calculateSlopeCorrection,
-  calculateRCRCorrection,
-  calculateTakeoffDistance,
-  calculateCriticalFieldLength,
-  calculateStandardTakeoffDistance,
-  celsiusToFahrenheit,
-  fahrenheitToCelsius,
-  calculateHeadwindComponent as calculateTakeoffHeadwindComponent,
-  getRecommendedFlapSetting,
-  exceedsCrosswindLimitations,
-} from './takeoffDistanceCalculator'
-
-export type {
-  RCR,
-  ThrustSetting,
-  FlapSetting as TakeoffFlapSetting,
-  A10TakeoffDistanceParams,
-  A10CriticalFieldLengthParams,
-  A10TakeoffDistanceResult,
-  A10CriticalFieldLengthResult,
-} from './takeoffDistanceCalculator'
-
-// Export Vue components for aircraft-specific UI
-export { default as A10SpeedCalculatorForm } from './components/A10SpeedCalculatorForm.vue'
-export { default as A10TakeoffDistanceDisplay } from './components/A10TakeoffDistanceDisplay.vue'
+// Re-export everything from A-10A for backward compatibility
+export * from '../A-10A'

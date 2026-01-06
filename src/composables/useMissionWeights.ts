@@ -12,7 +12,7 @@ import {
 import {
   calculateStandardSpeeds as calculateA10Speeds,
   calculateSpeeds as calculateA10SpeedsAdvanced,
-} from '@/aircraft/A-10C_2'
+} from '@/aircraft/A-10A'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission } from '@/types'
 

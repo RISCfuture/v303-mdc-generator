@@ -56,7 +56,7 @@ vi.mock('@/aircraft/F-16C_50/components/F16SpeedCalculatorForm.vue', async () =>
   }
 })
 
-vi.mock('@/aircraft/A-10C_2/components/A10SpeedCalculatorForm.vue', async () => {
+vi.mock('@/aircraft/A-10A/components/A10SpeedCalculatorForm.vue', async () => {
   const vue = await vi.importActual<typeof import('vue')>('vue')
   return {
     default: vue.defineComponent({
