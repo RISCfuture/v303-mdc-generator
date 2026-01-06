@@ -34,18 +34,27 @@ watch(
   { immediate: true },
 )
 
+// Emit runway heading when selected runway changes (including on initialization)
+watch(
+  () => airport.selectedRunway.value,
+  (runway) => {
+    emit('update:runwayHeading', runway?.heading)
+  },
+  { immediate: true },
+)
+
 function handleAirportChange(value: string | null) {
   airport.setAirport(value)
   emit('update:airportId', value)
   emit('update:runwayName', null)
-  emit('update:runwayHeading', undefined)
+  // Note: update:runwayHeading is emitted by the watch on selectedRunway (setAirport clears runway)
   emit('update:fieldElevation', airport.fieldElevation.value)
 }
 
 function handleRunwayChange(value: string | null) {
   airport.setRunway(value)
   emit('update:runwayName', value)
-  emit('update:runwayHeading', airport.selectedRunway.value?.heading)
+  // Note: update:runwayHeading is emitted by the watch on selectedRunway
 }
 </script>
 

@@ -28,12 +28,16 @@ import {
   type FlapSetting,
   type SpeedBrakeSetting,
 } from '@/utils/a10RotationCalculator'
+import { calculateTakeoffDistance, celsiusToFahrenheit } from '@/utils/f16TakeoffDistanceCalculator'
 
 interface Props {
   show: boolean
   mission: Mission
   airframe: Airframe
   grossWeight: number
+  dragIndex?: number
+  runwayLength?: number | null
+  runwayWidth?: number | null
 }
 
 const props = defineProps<Props>()
@@ -121,6 +125,55 @@ const calculatedSpeeds = computed(() => {
   }
 
   return null
+})
+
+// Takeoff distance calculations (F-16 only)
+const abTakeoffDistance = computed(() => {
+  if (props.airframe !== 'F-16C_50') return null
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  const result = calculateTakeoffDistance({
+    grossWeight: props.grossWeight,
+    temperatureF: celsiusToFahrenheit(temperature.value),
+    pressureAltitude: fieldElevation.value ?? 0,
+    powerSetting: 'AB',
+    cgPercent: cgPercent.value,
+    dragIndex: props.dragIndex ?? 7,
+    runwaySlope: runwaySlope.value,
+    headwindComponent: headwindComponent.value,
+    pitchAttitude: pitchAttitude.value,
+  })
+
+  return Math.round(result.takeoffDistance)
+})
+
+const milTakeoffDistance = computed(() => {
+  if (props.airframe !== 'F-16C_50') return null
+  if (!props.grossWeight || props.grossWeight === 0) return null
+
+  const result = calculateTakeoffDistance({
+    grossWeight: props.grossWeight,
+    temperatureF: celsiusToFahrenheit(temperature.value),
+    pressureAltitude: fieldElevation.value ?? 0,
+    powerSetting: 'MIL',
+    cgPercent: cgPercent.value,
+    dragIndex: props.dragIndex ?? 7,
+    runwaySlope: runwaySlope.value,
+    headwindComponent: headwindComponent.value,
+    pitchAttitude: pitchAttitude.value,
+  })
+
+  return Math.round(result.takeoffDistance)
+})
+
+const abExceedsRunway = computed(() => {
+  if (abTakeoffDistance.value === null || !props.runwayLength) return false
+  return abTakeoffDistance.value > props.runwayLength
+})
+
+const milExceedsRunway = computed(() => {
+  if (milTakeoffDistance.value === null || !props.runwayLength) return false
+  return milTakeoffDistance.value > props.runwayLength
 })
 
 // Initialize form with existing calculator params and departure airport
@@ -360,6 +413,49 @@ function handleCancel() {
           </template>
         </NGrid>
       </NCard>
+
+      <!-- F-16 Takeoff Distance Section -->
+      <NCard v-if="airframe === 'F-16C_50'" title="Takeoff Distance" size="small">
+        <div>
+          <NText strong>{{ powerSetting }}:</NText>
+          <NText
+            :class="{
+              'exceeds-runway': powerSetting === 'AB' ? abExceedsRunway : milExceedsRunway,
+            }"
+            style="margin-left: 8px"
+          >
+            {{
+              (powerSetting === 'AB' ? abTakeoffDistance : milTakeoffDistance)?.toLocaleString() ??
+              '—'
+            }}
+            ft
+          </NText>
+          <NText depth="3" style="margin-left: 8px">
+            ({{ powerSetting === 'AB' ? 'MIL' : 'AB' }}:
+            <span
+              :class="{
+                'exceeds-runway': powerSetting === 'AB' ? milExceedsRunway : abExceedsRunway,
+              }"
+            >
+              {{
+                (powerSetting === 'AB'
+                  ? milTakeoffDistance
+                  : abTakeoffDistance
+                )?.toLocaleString() ?? '—'
+              }}
+              ft</span
+            >)
+          </NText>
+        </div>
+        <NText depth="3" style="font-size: 12px; display: block; margin-top: 8px">
+          <span v-if="runwayLength"
+            >Runway {{ selectedRunwayName }}: {{ runwayLength.toLocaleString() }} &times;
+            {{ runwayWidth?.toLocaleString() ?? '—' }} ft</span
+          >
+          <span v-if="runwayLength && dragIndex !== undefined"> • </span>
+          <span v-if="dragIndex !== undefined">Drag Index: {{ dragIndex }}</span>
+        </NText>
+      </NCard>
     </NSpace>
 
     <template #footer>
@@ -378,5 +474,10 @@ label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
+}
+
+.exceeds-runway {
+  color: var(--error-color, #e88080);
+  font-weight: 600;
 }
 </style>

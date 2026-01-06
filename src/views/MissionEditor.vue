@@ -171,7 +171,42 @@ const {
   grossWeight,
   calculatedSpeeds,
   calculatedBingo,
+  calculatedDragIndex,
 } = useMissionWeights(mission)
+
+// Get departure runway length from airfield data
+const departureRunwayLength = computed(() => {
+  if (!mission.value) return null
+
+  const airportId = mission.value.departureRecovery.departureAirportId
+  const runwayName = mission.value.departureRecovery.departureRunwayName
+
+  if (!airportId || !runwayName) return null
+
+  const airfields = getAirfieldsForTheater(mission.value.theater)
+  const airfield = airfields.find((af) => af.name === airportId)
+  if (!airfield) return null
+
+  const runway = airfield.runways.find((rw) => rw.name === runwayName)
+  return runway?.length ?? null
+})
+
+// Get departure runway width from airfield data
+const departureRunwayWidth = computed(() => {
+  if (!mission.value) return null
+
+  const airportId = mission.value.departureRecovery.departureAirportId
+  const runwayName = mission.value.departureRecovery.departureRunwayName
+
+  if (!airportId || !runwayName) return null
+
+  const airfields = getAirfieldsForTheater(mission.value.theater)
+  const airfield = airfields.find((af) => af.name === airportId)
+  if (!airfield) return null
+
+  const runway = airfield.runways.find((rw) => rw.name === runwayName)
+  return runway?.width ?? null
+})
 
 const {
   effectiveFlightCallsign,
@@ -592,6 +627,9 @@ function handleSelectMDCExport(key: string) {
               :fuel-weight="fuelWeight"
               :calculated-speeds="calculatedSpeeds"
               :calculated-bingo="calculatedBingo"
+              :calculated-drag-index="calculatedDragIndex"
+              :runway-length="departureRunwayLength"
+              :runway-width="departureRunwayWidth"
               :is-field-incomplete="isFieldIncomplete"
               @update:nested-field="updateNestedField"
               @open-speed-calculator="handleOpenSpeedCalculator"
@@ -637,6 +675,9 @@ function handleSelectMDCExport(key: string) {
         :mission="mission"
         :airframe="airframe"
         :gross-weight="grossWeight"
+        :drag-index="calculatedDragIndex"
+        :runway-length="departureRunwayLength"
+        :runway-width="departureRunwayWidth"
         @update:show="(v: boolean) => (showSpeedCalculator = v)"
         @speeds-calculated="handleSpeedsCalculated"
       />

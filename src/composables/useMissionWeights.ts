@@ -11,6 +11,7 @@ import {
   calculateSpeeds as calculateA10SpeedsAdvanced,
 } from '@/utils/a10RotationCalculator'
 import { calculateBingoFuel, calculateDefaultBingo } from '@/utils/f16BingoCalculator'
+import { calculateTotalDragIndex } from '@/utils/f16TakeoffDistanceCalculator'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission } from '@/types'
 
@@ -198,6 +199,20 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     }
   })
 
+  // Calculate total drag index from loadout (F-16C only)
+  const calculatedDragIndex = computed(() => {
+    if (!mission.value) return 0
+    const airframe = getMissionAirframe(mission.value)
+    if (airframe !== 'F-16C_50') return 0
+
+    // Map loadout stations to the format expected by calculateTotalDragIndex
+    const stores = mission.value.loadout.map((station) => ({
+      clsid: station.item || 'EMPTY',
+    }))
+
+    return calculateTotalDragIndex(stores)
+  })
+
   // Calculate max fuel capacity (for fuel load slider)
   const maxFuelCapacity = computed(() => {
     if (!mission.value) return 0
@@ -226,5 +241,6 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     grossWeight,
     calculatedSpeeds,
     calculatedBingo,
+    calculatedDragIndex,
   }
 }

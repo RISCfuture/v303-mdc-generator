@@ -126,8 +126,13 @@ describe('AirportSelector', () => {
       })
 
       await selectNSelectValue(wrapper, 'handleRunwayChange', '08')
+      await wrapper.vm.$nextTick() // Extra tick for watch to process computed change
 
-      expectEmittedWith(wrapper, 'update:runwayHeading', [80])
+      const emissions = wrapper.emitted('update:runwayHeading')
+      expect(emissions).toBeTruthy()
+      // Check that the last emission has the heading (watch fires after computed updates)
+      const lastEmission = emissions![emissions!.length - 1]
+      expect(lastEmission).toEqual([80])
     })
   })
 
@@ -287,9 +292,14 @@ describe('AirportSelector', () => {
       })
 
       await selectNSelectValue(wrapper, 'handleRunwayChange', null)
+      await wrapper.vm.$nextTick() // Extra tick for watch to process computed change
 
       expect(wrapper.emitted('update:runwayName')?.[0]).toEqual([null])
-      expect(wrapper.emitted('update:runwayHeading')?.[0]).toEqual([undefined])
+      // Check that the last emission has undefined (watch fires after computed updates)
+      const emissions = wrapper.emitted('update:runwayHeading')
+      expect(emissions).toBeTruthy()
+      const lastEmission = emissions![emissions!.length - 1]
+      expect(lastEmission).toEqual([undefined])
     })
 
     it('should handle theater with no airfields', () => {
