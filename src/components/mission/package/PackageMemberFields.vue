@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { NSelect, NInput, NInputNumber } from 'naive-ui'
+import { NSelect, NInput, NInputNumber, NFlex } from 'naive-ui'
 import { airframeDatabase } from '@/data/airframes'
-import { FONT_SIZE, SPACING } from '@/styles/design-tokens'
+import { FONT_SIZE } from '@/styles/design-tokens'
 import { formatSTN, parseSTN } from '@/utils/crewFormatting'
 import type { PackageMember } from '@/types'
 
@@ -23,7 +23,7 @@ const aircraftOptions = Object.values(airframeDatabase).map((airframe) => ({
 </script>
 
 <template>
-  <div class="package-fields">
+  <NFlex wrap :size="8" align="end" class="package-fields">
     <div class="field">
       <label>Callsign</label>
       <NInput
@@ -92,16 +92,12 @@ const aircraftOptions = Object.values(airframeDatabase).map((airframe) => ({
         size="small"
       />
     </div>
-  </div>
+  </NFlex>
 </template>
 
 <style scoped>
 .package-fields {
-  display: flex;
-  flex-wrap: wrap;
-  gap: v-bind('SPACING.sm');
   width: 100%;
-  align-items: end;
 }
 
 .field {

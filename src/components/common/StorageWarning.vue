@@ -7,7 +7,7 @@
     @close="handleDismiss"
     class="storage-warning"
   >
-    <div class="storage-warning-content">
+    <n-flex vertical :size="12" class="storage-warning-content">
       <p>{{ warningMessage }}</p>
       <div class="storage-stats">
         <n-space vertical :size="4">
@@ -74,7 +74,7 @@
           </n-space>
         </n-space>
       </n-collapse-transition>
-    </div>
+    </n-flex>
   </n-alert>
 </template>
 
@@ -148,12 +148,6 @@ function handleDismiss() {
 <style scoped>
 .storage-warning {
   margin-bottom: 16px;
-}
-
-.storage-warning-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .storage-warning-content > p {

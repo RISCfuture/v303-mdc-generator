@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NCard, NSpace, NText, NIcon } from 'naive-ui'
+import { NCard, NSpace, NText, NIcon, NFlex } from 'naive-ui'
 import { LogoGithub, ChevronBackOutline } from '@vicons/ionicons5'
 import { useRouter } from 'vue-router'
 
@@ -101,12 +101,12 @@ function goBack() {
   <div class="squadron-data-edit">
     <NCard>
       <template #header>
-        <div class="card-header">
+        <NFlex align="center" :size="8">
           <NIcon :size="24" class="back-chevron" @click="goBack">
             <ChevronBackOutline />
           </NIcon>
           <span class="card-title">Edit Squadron Data</span>
-        </div>
+        </NFlex>
       </template>
 
       <NSpace vertical :size="24">
@@ -171,12 +171,6 @@ function goBack() {
 .squadron-data-edit {
   max-width: 1000px;
   margin: 0 auto;
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .back-chevron {

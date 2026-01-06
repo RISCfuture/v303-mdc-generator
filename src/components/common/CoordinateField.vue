@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue'
-import { NInput, NSelect } from 'naive-ui'
+import { NInput, NSelect, NFlex } from 'naive-ui'
 import type { CoordinateFormat } from '@/types'
 import { formatCoordinate, parseCoordinate } from '@/utils/coordinateFormatter'
 import { detectMGRSPrecision } from '@/utils/mgrs'
@@ -548,9 +548,9 @@ function handleBlur() {
 </script>
 
 <template>
-  <div class="coordinate-field">
+  <NFlex vertical :size="4" class="coordinate-field">
     <label v-if="label" class="field-label">{{ label }}</label>
-    <div class="input-group">
+    <NFlex :size="8" class="input-group">
       <NSelect
         :value="format"
         :options="formatOptions"
@@ -568,18 +568,15 @@ function handleBlur() {
         @blur="handleBlur"
         autocorrect="off"
       />
-    </div>
+    </NFlex>
     <div v-if="!isValid && displayValue.length > 0" class="error-message">
       Invalid {{ format }} coordinate format
     </div>
-  </div>
+  </NFlex>
 </template>
 
 <style scoped>
 .coordinate-field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   width: 100%;
 }
 
@@ -590,8 +587,6 @@ function handleBlur() {
 }
 
 .input-group {
-  display: flex;
-  gap: 8px;
   width: 100%;
 }
 

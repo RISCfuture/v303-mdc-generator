@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { NAutoComplete, NInput, NInputNumber } from 'naive-ui'
-import { FONT_SIZE, SPACING } from '@/styles/design-tokens'
+import { NAutoComplete, NInput, NInputNumber, NFlex } from 'naive-ui'
+import { FONT_SIZE } from '@/styles/design-tokens'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
 import type { SupportAsset } from '@/types'
 
@@ -29,7 +29,7 @@ const roleOptions = ['AAR', 'JSTARS', 'AWACS']
 </script>
 
 <template>
-  <div class="asset-fields">
+  <NFlex wrap :size="8" align="end" class="asset-fields">
     <div class="field">
       <label>Callsign</label>
       <NInput
@@ -104,16 +104,12 @@ const roleOptions = ['AAR', 'JSTARS', 'AWACS']
         <template #suffix>ft</template>
       </NInputNumber>
     </div>
-  </div>
+  </NFlex>
 </template>
 
 <style scoped>
 .asset-fields {
-  display: flex;
-  flex-wrap: wrap;
-  gap: v-bind('SPACING.sm');
   width: 100%;
-  align-items: end;
 }
 
 .field {

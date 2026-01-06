@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NButton, NCard, NTag, NIcon, NText, NDivider, NSpace } from 'naive-ui'
+import { NButton, NCard, NTag, NIcon, NText, NDivider, NSpace, NFlex } from 'naive-ui'
 import { CreateOutline, CopyOutline, TrashOutline, ShareOutline } from '@vicons/ionicons5'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
@@ -25,36 +25,36 @@ const emit = defineEmits<{
     <NSpace vertical :size="16">
       <NSpace vertical :size="8">
         <h3>{{ mission.name || 'Untitled Mission' }}</h3>
-        <div class="mission-meta">
+        <NFlex :size="8" wrap>
           <NTag v-if="mission.callsign" type="default" size="small">{{ mission.callsign }}</NTag>
           <NTag v-if="mission.type" type="info" size="small">{{ mission.type }}</NTag>
-        </div>
+        </NFlex>
       </NSpace>
 
-      <div class="mission-details">
-        <div class="detail-row">
+      <NFlex vertical :size="8">
+        <NFlex align="center" :size="8">
           <span class="label">Squadron:</span>
           <NTag :type="mission.squadron === 'v93' ? 'success' : 'warning'" size="small">
             {{ getSquadronDisplayName(mission.squadron) }}
           </NTag>
-        </div>
-        <div class="detail-row">
+        </NFlex>
+        <NFlex align="center" :size="8">
           <span class="label">Theater:</span>
           <span>{{ theaterDatabase[mission.theater]?.displayName || mission.theater }}</span>
-        </div>
-        <div class="detail-row">
+        </NFlex>
+        <NFlex align="center" :size="8">
           <span class="label">Date:</span>
           <span>{{ formatDate(mission.date) }}</span>
-        </div>
-        <div class="detail-row">
+        </NFlex>
+        <NFlex align="center" :size="8">
           <span class="label">Updated:</span>
           <NText depth="3" style="font-size: 12px">{{ formatDateTime(mission.updatedAt) }}</NText>
-        </div>
-      </div>
+        </NFlex>
+      </NFlex>
 
       <NDivider />
 
-      <div class="mission-actions">
+      <NFlex :size="8" wrap class="mission-actions">
         <NButton size="small" @click="emit('edit')">
           <template #icon
             ><NIcon><CreateOutline /></NIcon
@@ -79,7 +79,7 @@ const emit = defineEmits<{
           ></template>
           Delete
         </NButton>
-      </div>
+      </NFlex>
     </NSpace>
   </NCard>
 </template>
@@ -95,34 +95,10 @@ const emit = defineEmits<{
   font-weight: 600;
 }
 
-.mission-meta {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.mission-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.detail-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-
-.detail-row .label {
+.label {
   font-weight: 500;
   min-width: 70px;
-}
-
-.mission-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  font-size: 14px;
 }
 
 /* Mobile responsive styles */
