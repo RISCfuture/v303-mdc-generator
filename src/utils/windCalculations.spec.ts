@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calculateHeadwindComponent, calculateCrosswindComponent } from './f16RotationCalculator'
+import { calculateHeadwindComponent, calculateCrosswindComponent } from '@/aircraft/F-16C_50'
 
 describe('Wind Component Calculations', () => {
   describe('calculateHeadwindComponent', () => {

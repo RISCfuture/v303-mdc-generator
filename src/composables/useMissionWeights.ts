@@ -5,13 +5,14 @@ import {
   calculateStandardSpeeds,
   calculateSpeeds as calculateF16Speeds,
   calculateHeadwindComponent,
-} from '@/utils/f16RotationCalculator'
+  calculateTotalDragIndex,
+  calculateBingoFuel,
+  calculateDefaultBingo,
+} from '@/aircraft/F-16C_50'
 import {
   calculateStandardSpeeds as calculateA10Speeds,
   calculateSpeeds as calculateA10SpeedsAdvanced,
-} from '@/utils/a10RotationCalculator'
-import { calculateBingoFuel, calculateDefaultBingo } from '@/utils/f16BingoCalculator'
-import { calculateTotalDragIndex } from '@/utils/f16TakeoffDistanceCalculator'
+} from '@/aircraft/A-10C_2'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission } from '@/types'
 

@@ -1,33 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import {
-  NCard,
-  NForm,
-  NFormItem,
-  NInput,
-  NInputNumber,
-  NDivider,
-  NButton,
-  NText,
-  NFlex,
-  NSpace,
-} from 'naive-ui'
+import { computed, defineAsyncComponent, type Component } from 'vue'
+import { NCard, NForm, NFormItem, NInput, NInputNumber, NDivider, NButton, NFlex } from 'naive-ui'
 import { formatNumber } from '@/utils/formatting'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { isHelicopter } from '@/utils/airframeHelpers'
 import { FORM } from '@/styles/design-tokens'
 import {
-  calculateTakeoffDistance as calculateF16TakeoffDistance,
-  celsiusToFahrenheit,
-} from '@/utils/f16TakeoffDistanceCalculator'
-import { calculateHeadwindComponent as calculateF16Headwind } from '@/utils/f16RotationCalculator'
-import {
-  calculateTakeoffDistance as calculateA10TakeoffDistance,
-  calculateCriticalFieldLength as calculateA10CriticalFieldLength,
-  calculateHeadwindComponent as calculateA10Headwind,
-  type RCR,
-} from '@/utils/a10TakeoffDistanceCalculator'
+  isCalculatorSupported,
+  hasCalculatorCapability,
+  getAircraftComponentLoader,
+} from '@/aircraft'
 import type { Mission } from '@/types'
 
 interface Props {
@@ -46,253 +29,24 @@ const props = defineProps<Props>()
 
 const airframe = computed(() => getMissionAirframe(props.mission))
 
-// Show calculator button only for A-10 and F-16
-const showCalculator = computed(() => airframe.value === 'F-16C_50' || airframe.value === 'A-10C_2')
+// Show calculator button for any airframe that has a registered calculator
+const showCalculator = computed(() => isCalculatorSupported(airframe.value))
 
 // Hide rotation/refusal speeds for helicopters (they don't have these)
 const showRotationRefusal = computed(() => !isHelicopter(airframe.value))
 
-// Show bingo calculator button only when bingo can be calculated (F-16C with target waypoint)
+// Show bingo calculator button only for airframes with bingo capability and valid bingo data
 const showBingoCalculator = computed(
-  () => airframe.value === 'F-16C_50' && props.calculatedBingo !== null,
+  () => hasCalculatorCapability(airframe.value, 'bingo') && props.calculatedBingo !== null,
 )
 
-// Takeoff distance calculations (F-16 only)
-const takeoffParams = computed(() => {
-  const params = props.mission.told.calculatorParams
-  const depRec = props.mission.departureRecovery
-
-  // Extract F-16 specific params
-  const temperature = params && 'temperature' in params ? (params.temperature ?? 15) : 15
-  const cgPercent = params && 'cgPercent' in params ? (params.cgPercent ?? 35) : 35
-  const pitchAttitude = params && 'pitchAttitude' in params ? (params.pitchAttitude ?? 10) : 10
-  const runwaySlope = params && 'runwaySlope' in params ? (params.runwaySlope ?? 0) : 0
-  const windDirection = params && 'windDirection' in params ? (params.windDirection ?? 0) : 0
-  const windSpeed = params && 'windSpeed' in params ? (params.windSpeed ?? 0) : 0
-
-  const fieldElevation = depRec.departureFieldElevation ?? 0
-  const runwayHeading = depRec.departureRunwayHeading ?? 0
-
-  // Calculate headwind component
-  const headwindComponent =
-    windSpeed > 0 ? calculateF16Headwind(windDirection, windSpeed, runwayHeading) : 0
-
-  return {
-    temperature,
-    cgPercent,
-    pitchAttitude,
-    runwaySlope,
-    fieldElevation,
-    headwindComponent,
+// Get the active takeoff distance display component from registry
+const takeoffDistanceComponent = computed<Component | null>(() => {
+  const loader = getAircraftComponentLoader(airframe.value, 'takeoffDistanceDisplay')
+  if (loader) {
+    return defineAsyncComponent(loader)
   }
-})
-
-const abTakeoffDistance = computed(() => {
-  if (airframe.value !== 'F-16C_50') return null
-  if (!props.grossWeight || props.grossWeight === 0) return null
-
-  const p = takeoffParams.value
-  const result = calculateF16TakeoffDistance({
-    grossWeight: props.grossWeight,
-    temperatureF: celsiusToFahrenheit(p.temperature),
-    pressureAltitude: p.fieldElevation,
-    powerSetting: 'AB',
-    cgPercent: p.cgPercent,
-    dragIndex: props.calculatedDragIndex ?? 7,
-    runwaySlope: p.runwaySlope,
-    headwindComponent: p.headwindComponent,
-    pitchAttitude: p.pitchAttitude,
-  })
-
-  return Math.round(result.takeoffDistance)
-})
-
-const milTakeoffDistance = computed(() => {
-  if (airframe.value !== 'F-16C_50') return null
-  if (!props.grossWeight || props.grossWeight === 0) return null
-
-  const p = takeoffParams.value
-  const result = calculateF16TakeoffDistance({
-    grossWeight: props.grossWeight,
-    temperatureF: celsiusToFahrenheit(p.temperature),
-    pressureAltitude: p.fieldElevation,
-    powerSetting: 'MIL',
-    cgPercent: p.cgPercent,
-    dragIndex: props.calculatedDragIndex ?? 7,
-    runwaySlope: p.runwaySlope,
-    headwindComponent: p.headwindComponent,
-    pitchAttitude: p.pitchAttitude,
-  })
-
-  return Math.round(result.takeoffDistance)
-})
-
-const abExceedsRunway = computed(() => {
-  if (abTakeoffDistance.value === null || !props.runwayLength) return false
-  return abTakeoffDistance.value > props.runwayLength
-})
-
-const milExceedsRunway = computed(() => {
-  if (milTakeoffDistance.value === null || !props.runwayLength) return false
-  return milTakeoffDistance.value > props.runwayLength
-})
-
-// Get the selected power setting from calculator params (default to AB)
-const selectedPowerSetting = computed(() => {
-  const params = props.mission.told.calculatorParams
-  if (params && 'powerSetting' in params) {
-    return params.powerSetting
-  }
-  return 'AB'
-})
-
-// Primary and secondary takeoff distances based on selected power setting
-const primaryTakeoffDistance = computed(() => {
-  return selectedPowerSetting.value === 'AB' ? abTakeoffDistance.value : milTakeoffDistance.value
-})
-
-const secondaryTakeoffDistance = computed(() => {
-  return selectedPowerSetting.value === 'AB' ? milTakeoffDistance.value : abTakeoffDistance.value
-})
-
-const primaryExceedsRunway = computed(() => {
-  return selectedPowerSetting.value === 'AB' ? abExceedsRunway.value : milExceedsRunway.value
-})
-
-const secondaryExceedsRunway = computed(() => {
-  return selectedPowerSetting.value === 'AB' ? milExceedsRunway.value : abExceedsRunway.value
-})
-
-const secondaryPowerSetting = computed(() => {
-  return selectedPowerSetting.value === 'AB' ? 'MIL' : 'AB'
-})
-
-// A-10 Takeoff distance calculations
-const a10TakeoffParams = computed(() => {
-  const params = props.mission.told.calculatorParams
-  const depRec = props.mission.departureRecovery
-
-  // Extract A-10 specific params
-  const temperature = params && 'temperature' in params ? (params.temperature ?? 15) : 15
-  const thrustSetting =
-    params && 'thrustSetting' in params ? (params.thrustSetting ?? 'MAX') : 'MAX'
-  const runwaySlope = params && 'runwaySlope' in params ? (params.runwaySlope ?? 0) : 0
-  const windDirection = params && 'windDirection' in params ? (params.windDirection ?? 0) : 0
-  const windSpeed = params && 'windSpeed' in params ? (params.windSpeed ?? 0) : 0
-
-  const fieldElevation = depRec.departureFieldElevation ?? 0
-  const runwayHeading = depRec.departureRunwayHeading ?? 0
-
-  // Calculate headwind component (A-10 uses different calculation)
-  const headwindComponent =
-    windSpeed > 0 ? calculateA10Headwind(windSpeed, windDirection, runwayHeading) : 0
-
-  return {
-    temperature,
-    thrustSetting: thrustSetting as 'MAX' | '3_BELOW_PTFS',
-    runwaySlope,
-    fieldElevation,
-    headwindComponent,
-  }
-})
-
-const flaps0TakeoffDistance = computed(() => {
-  if (airframe.value !== 'A-10C_2') return null
-  if (!props.grossWeight || props.grossWeight === 0) return null
-
-  const p = a10TakeoffParams.value
-  const result = calculateA10TakeoffDistance({
-    grossWeight: props.grossWeight,
-    temperatureC: p.temperature,
-    pressureAltitude: p.fieldElevation,
-    flapSetting: 0,
-    thrustSetting: p.thrustSetting,
-    runwaySlope: p.runwaySlope,
-    headwindComponent: p.headwindComponent,
-  })
-
-  return Math.round(result.takeoffDistance)
-})
-
-const flaps7TakeoffDistance = computed(() => {
-  if (airframe.value !== 'A-10C_2') return null
-  if (!props.grossWeight || props.grossWeight === 0) return null
-
-  const p = a10TakeoffParams.value
-  const result = calculateA10TakeoffDistance({
-    grossWeight: props.grossWeight,
-    temperatureC: p.temperature,
-    pressureAltitude: p.fieldElevation,
-    flapSetting: 7,
-    thrustSetting: p.thrustSetting,
-    runwaySlope: p.runwaySlope,
-    headwindComponent: p.headwindComponent,
-  })
-
-  return Math.round(result.takeoffDistance)
-})
-
-const flaps0ExceedsRunway = computed(() => {
-  if (flaps0TakeoffDistance.value === null || !props.runwayLength) return false
-  return flaps0TakeoffDistance.value > props.runwayLength
-})
-
-const flaps7ExceedsRunway = computed(() => {
-  if (flaps7TakeoffDistance.value === null || !props.runwayLength) return false
-  return flaps7TakeoffDistance.value > props.runwayLength
-})
-
-// Get the selected flap setting from calculator params (default to 7)
-const selectedFlapSetting = computed(() => {
-  const params = props.mission.told.calculatorParams
-  if (params && 'flapSetting' in params) {
-    return params.flapSetting
-  }
-  return 7
-})
-
-// Primary takeoff distance based on selected flap setting
-const primaryA10TakeoffDistance = computed(() => {
-  return selectedFlapSetting.value === 0 ? flaps0TakeoffDistance.value : flaps7TakeoffDistance.value
-})
-
-const primaryA10ExceedsRunway = computed(() => {
-  return selectedFlapSetting.value === 0 ? flaps0ExceedsRunway.value : flaps7ExceedsRunway.value
-})
-
-// Critical field length calculation (A-10)
-const criticalFieldLength = computed(() => {
-  if (airframe.value !== 'A-10C_2') return null
-  if (!props.grossWeight || props.grossWeight === 0) return null
-
-  const params = props.mission.told.calculatorParams
-  const runwayCondition = params && 'runwayCondition' in params ? params.runwayCondition : 'dry'
-
-  // Map runway condition to RCR
-  const rcrMap: Record<'dry' | 'wet' | 'icy', RCR> = {
-    dry: 23,
-    wet: 12,
-    icy: 5,
-  }
-
-  const p = a10TakeoffParams.value
-  const result = calculateA10CriticalFieldLength({
-    grossWeight: props.grossWeight,
-    temperatureC: p.temperature,
-    pressureAltitude: p.fieldElevation,
-    thrustSetting: p.thrustSetting,
-    runwaySlope: p.runwaySlope,
-    headwindComponent: p.headwindComponent,
-    rcr: rcrMap[runwayCondition as 'dry' | 'wet' | 'icy'],
-  })
-
-  return Math.round(result.criticalFieldLength)
-})
-
-// Warning: runway shorter than critical field length
-const runwayShorterThanCFL = computed(() => {
-  if (criticalFieldLength.value === null || !props.runwayLength) return false
-  return props.runwayLength < criticalFieldLength.value
+  return null
 })
 
 const emit = defineEmits<{
@@ -413,64 +167,20 @@ function handleOpenBingoCalculator() {
           </NInputNumber>
         </NFormItem>
 
-        <!-- F-16 Takeoff Distance Display -->
+        <!-- Aircraft-Specific Takeoff Distance Display -->
         <NFormItem
-          v-if="airframe === 'F-16C_50'"
+          v-if="takeoffDistanceComponent"
           label="Takeoff Distance"
           class="top-aligned-label"
         >
-          <div>
-            <NSpace align="center" :size="8">
-              <NText>
-                <strong>{{ selectedPowerSetting }}:</strong>
-                <span :class="{ 'exceeds-runway': primaryExceedsRunway }">
-                  {{ primaryTakeoffDistance?.toLocaleString() ?? '—' }} ft
-                </span>
-              </NText>
-              <NText depth="3">
-                ({{ secondaryPowerSetting }}:
-                <span :class="{ 'exceeds-runway': secondaryExceedsRunway }">
-                  {{ secondaryTakeoffDistance?.toLocaleString() ?? '—' }} ft</span
-                >)
-              </NText>
-            </NSpace>
-            <NText v-if="runwayLength" depth="3" class="detail-text">
-              Runway {{ mission.departureRecovery.departureRunwayName }}:
-              {{ runwayLength.toLocaleString() }} &times;
-              {{ runwayWidth?.toLocaleString() ?? '—' }} ft
-            </NText>
-            <NText v-if="primaryExceedsRunway" class="exceeds-runway detail-text">
-              ⚠ Takeoff distance exceeds runway length
-            </NText>
-          </div>
-        </NFormItem>
-
-        <!-- A-10 Takeoff Distance Display -->
-        <NFormItem v-if="airframe === 'A-10C_2'" label="Takeoff Distance" class="top-aligned-label">
-          <div>
-            <NText
-              :class="{
-                'exceeds-runway': primaryA10ExceedsRunway,
-                'below-cfl': runwayShorterThanCFL && !primaryA10ExceedsRunway,
-              }"
-            >
-              {{ primaryA10TakeoffDistance?.toLocaleString() ?? '—' }} ft
-            </NText>
-            <NText v-if="runwayLength" depth="3" class="detail-text">
-              Runway {{ mission.departureRecovery.departureRunwayName }}:
-              {{ runwayLength.toLocaleString() }} &times;
-              {{ runwayWidth?.toLocaleString() ?? '—' }} ft
-            </NText>
-            <NText v-if="primaryA10ExceedsRunway" class="exceeds-runway detail-text">
-              ⚠ Takeoff distance exceeds runway length
-            </NText>
-            <NText v-else-if="runwayShorterThanCFL" class="below-cfl detail-text">
-              ⚠ Runway shorter than critical field length ({{
-                criticalFieldLength?.toLocaleString()
-              }}
-              ft)
-            </NText>
-          </div>
+          <component
+            :is="takeoffDistanceComponent"
+            :mission="mission"
+            :gross-weight="grossWeight"
+            :drag-index="calculatedDragIndex"
+            :runway-length="runwayLength"
+            :runway-width="runwayWidth"
+          />
         </NFormItem>
       </template>
       <NDivider />
@@ -524,22 +234,6 @@ function handleOpenBingoCalculator() {
 <style scoped>
 .flex-input {
   flex: 1;
-}
-
-.exceeds-runway {
-  color: var(--error-color, #e88080);
-  font-weight: 600;
-}
-
-.below-cfl {
-  color: var(--warning-color, #f0a020);
-  font-weight: 600;
-}
-
-.detail-text {
-  font-size: 12px;
-  display: block;
-  margin-top: 4px;
 }
 
 .top-aligned-label :deep(.n-form-item-label) {

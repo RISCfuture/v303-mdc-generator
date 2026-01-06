@@ -9,7 +9,7 @@ import {
   calculateSpeeds,
   calculateStandardSpeeds,
   type A10SpeedCalculationParams,
-} from '@/utils/a10RotationCalculator'
+} from '../rotationCalculator'
 
 describe('a10RotationCalculator', () => {
   describe('calculateRotationSpeed', () => {

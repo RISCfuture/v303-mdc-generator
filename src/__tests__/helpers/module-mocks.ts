@@ -137,7 +137,7 @@ export async function mockF16Calculator(customReturnValues?: {
   headwind?: number
   crosswind?: number
 }) {
-  const f16Calculator = await import('@/utils/f16RotationCalculator')
+  const f16Calculator = await import('@/aircraft/F-16C_50')
 
   const calculateSpeedsMock = vi.spyOn(f16Calculator, 'calculateSpeeds').mockReturnValue(
     customReturnValues?.speeds || {
@@ -177,7 +177,7 @@ export async function mockA10Calculator(customReturnValues?: {
   headwind?: number
   crosswind?: number
 }) {
-  const a10Calculator = await import('@/utils/a10RotationCalculator')
+  const a10Calculator = await import('@/aircraft/A-10C_2')
 
   const calculateSpeedsMock = vi.spyOn(a10Calculator, 'calculateSpeeds').mockReturnValue(
     customReturnValues?.speeds || {

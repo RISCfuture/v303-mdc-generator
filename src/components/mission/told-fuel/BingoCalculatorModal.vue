@@ -13,7 +13,7 @@ import {
   NGridItem,
 } from 'naive-ui'
 import type { Mission, F16BingoCalculatorParams } from '@/types'
-import { calculateBingoFuel } from '@/utils/f16BingoCalculator'
+import { calculateBingoFuel } from '@/aircraft/F-16C_50'
 import { calculateDistance } from '@/composables/useWaypointCalculations'
 import type { Waypoint } from '@/types'
 

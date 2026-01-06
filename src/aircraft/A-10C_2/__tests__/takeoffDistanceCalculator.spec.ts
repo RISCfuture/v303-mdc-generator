@@ -13,7 +13,7 @@ import {
   celsiusToFahrenheit,
   fahrenheitToCelsius,
   exceedsCrosswindLimitations,
-} from './a10TakeoffDistanceCalculator'
+} from '../takeoffDistanceCalculator'
 
 describe('A-10C Takeoff Distance Calculator', () => {
   describe('Chart Verification', () => {

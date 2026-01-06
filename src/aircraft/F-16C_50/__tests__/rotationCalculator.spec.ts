@@ -9,7 +9,7 @@ import {
   calculateSpeeds,
   calculateStandardSpeeds,
   type SpeedCalculationParams,
-} from '@/utils/f16RotationCalculator'
+} from '../rotationCalculator'
 
 describe('f16RotationCalculator', () => {
   describe('calculateRotationSpeed', () => {

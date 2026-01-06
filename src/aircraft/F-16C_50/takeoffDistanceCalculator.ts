@@ -13,7 +13,7 @@
  * @module f16TakeoffDistanceCalculator
  */
 
-import { calculateHeadwindComponent as calcHeadwind } from './f16RotationCalculator'
+import { calculateHeadwindComponent as calcHeadwind } from './rotationCalculator'
 
 // Re-export for convenience
 export { calcHeadwind as calculateHeadwindComponent }

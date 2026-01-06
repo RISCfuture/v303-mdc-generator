@@ -3,12 +3,108 @@ import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import SpeedCalculatorModal from '@/components/mission/told-fuel/SpeedCalculatorModal.vue'
 import type { Mission } from '@/types'
-import * as f16Calculator from '@/utils/f16RotationCalculator'
-import * as a10Calculator from '@/utils/a10RotationCalculator'
 
-// Mock the calculator utilities
-vi.mock('@/utils/f16RotationCalculator')
-vi.mock('@/utils/a10RotationCalculator')
+// Mock the async aircraft-specific form components - must be inline to avoid hoisting issues
+vi.mock('@/aircraft/F-16C_50/components/F16SpeedCalculatorForm.vue', async () => {
+  const vue = await vi.importActual<typeof import('vue')>('vue')
+  return {
+    default: vue.defineComponent({
+      name: 'F16SpeedCalculatorForm',
+      props: [
+        'grossWeight',
+        'dragIndex',
+        'runwayLength',
+        'runwayWidth',
+        'fieldElevation',
+        'runwayHeading',
+        'temperature',
+        'windDirection',
+        'windSpeed',
+        'runwayName',
+      ],
+      emits: ['update:config', 'update:speeds'],
+      setup(
+        _props: Record<string, unknown>,
+        {
+          emit,
+          expose,
+        }: {
+          emit: (event: string, ...args: unknown[]) => void
+          expose: (exposed: Record<string, unknown>) => void
+        },
+      ) {
+        const headwindComponent = 10
+        const crosswindComponent = 5
+        const exceedsCrosswindLimit = false
+
+        setTimeout(() => {
+          emit('update:speeds', { rotationSpeed: 165, refusalSpeed: 145 })
+          emit('update:config', {
+            powerSetting: 'AB',
+            cgPercent: 35,
+            pitchAttitude: 10,
+            runwaySlope: 0,
+            runwayCondition: 'dry',
+          })
+        }, 0)
+
+        expose({ headwindComponent, crosswindComponent, exceedsCrosswindLimit })
+        return () => vue.h('div', { class: 'f16-speed-calculator-form-mock' }, 'F-16 Form')
+      },
+    }),
+    __esModule: true,
+  }
+})
+
+vi.mock('@/aircraft/A-10C_2/components/A10SpeedCalculatorForm.vue', async () => {
+  const vue = await vi.importActual<typeof import('vue')>('vue')
+  return {
+    default: vue.defineComponent({
+      name: 'A10SpeedCalculatorForm',
+      props: [
+        'grossWeight',
+        'runwayLength',
+        'runwayWidth',
+        'fieldElevation',
+        'runwayHeading',
+        'temperature',
+        'windDirection',
+        'windSpeed',
+        'runwayName',
+      ],
+      emits: ['update:config', 'update:speeds'],
+      setup(
+        _props: Record<string, unknown>,
+        {
+          emit,
+          expose,
+        }: {
+          emit: (event: string, ...args: unknown[]) => void
+          expose: (exposed: Record<string, unknown>) => void
+        },
+      ) {
+        const headwindComponent = 10
+        const crosswindComponent = 5
+        const exceedsCrosswindLimit = false
+
+        setTimeout(() => {
+          emit('update:speeds', { rotationSpeed: 125, refusalSpeed: 105 })
+          emit('update:config', {
+            flapSetting: 7,
+            speedBrake: 'open',
+            thrustSetting: 'MAX',
+            runwaySlope: 0,
+            runwayCondition: 'dry',
+          })
+        }, 0)
+
+        expose({ headwindComponent, crosswindComponent, exceedsCrosswindLimit })
+        return () => vue.h('div', { class: 'a10-speed-calculator-form-mock' }, 'A-10 Form')
+      },
+    }),
+    __esModule: true,
+  }
+})
 
 const createMockMission = (overrides = {}): Mission => ({
   id: 'test-mission',
@@ -53,22 +149,6 @@ const createMockMission = (overrides = {}): Mission => ({
 describe('SpeedCalculatorModal', () => {
   beforeEach(() => {
     vi.clearAllMocks()
-
-    // Mock F-16 calculator functions
-    vi.spyOn(f16Calculator, 'calculateSpeeds').mockReturnValue({
-      rotationSpeed: 165,
-      refusalSpeed: 145,
-    })
-    vi.spyOn(f16Calculator, 'calculateHeadwindComponent').mockReturnValue(10)
-    vi.spyOn(f16Calculator, 'calculateCrosswindComponent').mockReturnValue(5)
-
-    // Mock A-10 calculator functions
-    vi.spyOn(a10Calculator, 'calculateSpeeds').mockReturnValue({
-      rotationSpeed: 125,
-      refusalSpeed: 105,
-    })
-    vi.spyOn(a10Calculator, 'calculateHeadwindComponent').mockReturnValue(10)
-    vi.spyOn(a10Calculator, 'calculateCrosswindComponent').mockReturnValue(5)
   })
 
   describe('Component initialization', () => {
@@ -230,281 +310,6 @@ describe('SpeedCalculatorModal', () => {
     })
   })
 
-  describe('Wind component calculations', () => {
-    it('should calculate F-16 headwind component', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.windDirection = 90
-      wrapper.vm.windSpeed = 15
-      wrapper.vm.selectedRunwayHeading = 80
-
-      const headwind = wrapper.vm.headwindComponent
-
-      expect(f16Calculator.calculateHeadwindComponent).toHaveBeenCalledWith(90, 15, 80)
-      expect(headwind).toBe(10)
-    })
-
-    it('should calculate F-16 crosswind component', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.windDirection = 90
-      wrapper.vm.windSpeed = 15
-      wrapper.vm.selectedRunwayHeading = 80
-
-      const crosswind = wrapper.vm.crosswindComponent
-
-      expect(f16Calculator.calculateCrosswindComponent).toHaveBeenCalledWith(90, 15, 80)
-      expect(crosswind).toBe(5)
-    })
-
-    it('should calculate A-10 headwind component', () => {
-      const mission = createMockMission({ airframe: 'A-10C_2' })
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'A-10C_2',
-          grossWeight: 38000,
-        },
-      })
-
-      wrapper.vm.windDirection = 180
-      wrapper.vm.windSpeed = 20
-      wrapper.vm.selectedRunwayHeading = 170
-
-      const headwind = wrapper.vm.headwindComponent
-
-      expect(a10Calculator.calculateHeadwindComponent).toHaveBeenCalledWith(180, 20, 170)
-      expect(headwind).toBe(10)
-    })
-
-    it('should return 0 headwind when wind speed is 0', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.windSpeed = 0
-
-      expect(wrapper.vm.headwindComponent).toBe(0)
-      expect(f16Calculator.calculateHeadwindComponent).not.toHaveBeenCalled()
-    })
-  })
-
-  describe('Speed calculations', () => {
-    it('should calculate F-16 speeds with all parameters', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.powerSetting = 'AB'
-      wrapper.vm.cgPercent = 35
-      wrapper.vm.pitchAttitude = 10
-      wrapper.vm.runwayConditionF16 = 'dry'
-      wrapper.vm.runwaySlope = 0
-      wrapper.vm.windDirection = 90
-      wrapper.vm.windSpeed = 10
-      wrapper.vm.selectedRunwayHeading = 90
-
-      const speeds = wrapper.vm.calculatedSpeeds
-
-      expect(f16Calculator.calculateSpeeds).toHaveBeenCalledWith({
-        grossWeight: 32000,
-        powerSetting: 'AB',
-        cgPercent: 35,
-        pitchAttitude: 10,
-        runwayCondition: 'dry',
-        headwindComponent: 10,
-        runwaySlope: 0,
-      })
-      expect(speeds?.rotationSpeed).toBe(165)
-      expect(speeds?.refusalSpeed).toBe(145)
-    })
-
-    it('should calculate A-10 speeds with all parameters', () => {
-      const mission = createMockMission({ airframe: 'A-10C_2' })
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'A-10C_2',
-          grossWeight: 38000,
-        },
-      })
-
-      wrapper.vm.flapSetting = 7
-      wrapper.vm.speedBrake = 'open'
-      wrapper.vm.runwayConditionA10 = 'dry'
-
-      const speeds = wrapper.vm.calculatedSpeeds
-
-      expect(a10Calculator.calculateSpeeds).toHaveBeenCalledWith({
-        grossWeight: 38000,
-        flapSetting: 7,
-        speedBrakes: 'open',
-        runwayCondition: 'dry',
-      })
-      expect(speeds?.rotationSpeed).toBe(125)
-      expect(speeds?.refusalSpeed).toBe(105)
-    })
-
-    it('should return null when grossWeight is 0', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 0,
-        },
-      })
-
-      expect(wrapper.vm.calculatedSpeeds).toBeNull()
-      expect(f16Calculator.calculateSpeeds).not.toHaveBeenCalled()
-    })
-  })
-
-  describe('Calculate button behavior', () => {
-    it('should emit speeds-calculated with correct F-16 data', async () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.powerSetting = 'MIL'
-      wrapper.vm.cgPercent = 30
-      wrapper.vm.selectedAirfieldName = 'Batumi'
-      wrapper.vm.selectedRunwayName = '13'
-      wrapper.vm.selectedRunwayHeading = 130
-      wrapper.vm.fieldElevation = 33
-
-      wrapper.vm.handleCalculate()
-
-      expect(wrapper.emitted('speeds-calculated')).toBeTruthy()
-      const emitted = wrapper.emitted('speeds-calculated')?.[0]
-      expect(emitted?.[0]).toBe(165) // rotation speed
-      expect(emitted?.[1]).toBe(145) // refusal speed
-      expect(emitted?.[2]).toMatchObject({
-        powerSetting: 'MIL',
-        cgPercent: 30,
-      })
-      expect(emitted?.[3]).toMatchObject({
-        departureAirportId: 'Batumi',
-        departureRunwayName: '13',
-        departureRunwayHeading: 130,
-        departureFieldElevation: 33,
-      })
-    })
-
-    it('should emit speeds-calculated with correct A-10 data', async () => {
-      const mission = createMockMission({ airframe: 'A-10C_2' })
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'A-10C_2',
-          grossWeight: 38000,
-        },
-      })
-
-      wrapper.vm.flapSetting = 0
-      wrapper.vm.speedBrake = 'closed'
-
-      wrapper.vm.handleCalculate()
-
-      const emitted = wrapper.emitted('speeds-calculated')?.[0]
-      expect(emitted?.[2]).toMatchObject({
-        flapSetting: 0,
-        speedBrake: 'closed',
-      })
-    })
-
-    it('should close modal after calculate', async () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      wrapper.vm.handleCalculate()
-
-      expect(wrapper.emitted('update:show')).toBeTruthy()
-      expect(wrapper.emitted('update:show')?.[0]).toEqual([false])
-    })
-
-    it('should handle zero gross weight', () => {
-      const mission = createMockMission()
-
-      // Mock calculateSpeeds to return null
-      vi.spyOn(f16Calculator, 'calculateSpeeds').mockReturnValue(
-        null as unknown as { rotationSpeed: number; refusalSpeed: number },
-      )
-
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 0,
-        },
-      })
-
-      expect(wrapper.props('grossWeight')).toBe(0)
-    })
-
-    it('should not emit when calculatedSpeeds is null', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 0,
-        },
-      })
-
-      wrapper.vm.handleCalculate()
-
-      expect(wrapper.emitted('speeds-calculated')).toBeFalsy()
-    })
-  })
-
   describe('Cancel button behavior', () => {
     it('should close modal when cancel is clicked', async () => {
       const mission = createMockMission()
@@ -595,36 +400,6 @@ describe('SpeedCalculatorModal', () => {
       })
 
       expect(wrapper.props('grossWeight')).toBe(38000)
-    })
-  })
-
-  describe('Calculator mocking', () => {
-    it('should use F-16 calculator for F-16', () => {
-      const mission = createMockMission()
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'F-16C_50',
-          grossWeight: 32000,
-        },
-      })
-
-      expect(wrapper.props('airframe')).toContain('F-16')
-    })
-
-    it('should use A-10 calculator for A-10', () => {
-      const mission = createMockMission({ airframe: 'A-10C_2' })
-      const wrapper = mount(SpeedCalculatorModal, {
-        props: {
-          show: true,
-          mission,
-          airframe: 'A-10C_2',
-          grossWeight: 38000,
-        },
-      })
-
-      expect(wrapper.props('airframe')).toContain('A-10')
     })
   })
 

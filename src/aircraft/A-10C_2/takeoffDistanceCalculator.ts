@@ -14,10 +14,11 @@
  * @module a10TakeoffDistanceCalculator
  */
 
-import { type RCR } from './runwayConditions'
-
-// Re-export RCR type for backwards compatibility
-export type { RCR }
+/**
+ * Runway Condition Reading (RCR) values for A-10C
+ * 23 = dry, 12 = wet, 5 = icy
+ */
+export type RCR = 23 | 12 | 5
 
 /**
  * Flap setting for takeoff

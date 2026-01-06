@@ -7,7 +7,7 @@ import {
   calculateBingoFuel,
   calculateDefaultBingo,
   type BingoCalculationParams,
-} from '@/utils/f16BingoCalculator'
+} from '../bingoCalculator'
 
 describe('f16BingoCalculator', () => {
   // Test locations (using realistic coordinates)

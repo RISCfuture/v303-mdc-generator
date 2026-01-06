@@ -9,7 +9,7 @@ import {
   celsiusToFahrenheit,
   getCrosswindLimit,
   exceedsCrosswindLimitations,
-} from './f16TakeoffDistanceCalculator'
+} from '../takeoffDistanceCalculator'
 
 describe('F-16 Takeoff Distance Calculator', () => {
   describe('Manual Sample Problem Verification', () => {
