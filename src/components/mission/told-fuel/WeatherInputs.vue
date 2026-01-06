@@ -8,6 +8,7 @@ interface Props {
   headwindComponent: number
   crosswindComponent: number
   showWindComponents: boolean
+  exceedsCrosswindLimit?: boolean
 }
 
 defineProps<Props>()
@@ -86,6 +87,7 @@ const formatDecimal = (value: number, decimals: number = 1) => {
             <NInput
               :value="`${formatDecimal(Math.abs(crosswindComponent))} kt ${crosswindComponent >= 0 ? '(right)' : '(left)'}`"
               disabled
+              :style="exceedsCrosswindLimit ? { '--n-text-color-disabled': '#e88080' } : {}"
             />
           </NGridItem>
         </NGrid>

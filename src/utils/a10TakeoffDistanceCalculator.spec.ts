@@ -12,6 +12,7 @@ import {
   getRecommendedFlapSetting,
   celsiusToFahrenheit,
   fahrenheitToCelsius,
+  exceedsCrosswindLimitations,
 } from './a10TakeoffDistanceCalculator'
 
 describe('A-10C Takeoff Distance Calculator', () => {
@@ -406,6 +407,31 @@ describe('A-10C Takeoff Distance Calculator', () => {
       expect(result.takeoffDistance).toBeGreaterThan(0)
       // Should be a very long takeoff run
       expect(result.takeoffDistance).toBeGreaterThan(10000)
+    })
+  })
+
+  describe('exceedsCrosswindLimitations', () => {
+    it('should return false when crosswind is below 35 kt limit', () => {
+      expect(exceedsCrosswindLimitations(30)).toBe(false)
+      expect(exceedsCrosswindLimitations(20)).toBe(false)
+      expect(exceedsCrosswindLimitations(0)).toBe(false)
+    })
+
+    it('should return false when crosswind equals 35 kt limit', () => {
+      expect(exceedsCrosswindLimitations(35)).toBe(false)
+    })
+
+    it('should return true when crosswind exceeds 35 kt limit', () => {
+      expect(exceedsCrosswindLimitations(36)).toBe(true)
+      expect(exceedsCrosswindLimitations(40)).toBe(true)
+      expect(exceedsCrosswindLimitations(50)).toBe(true)
+    })
+
+    it('should use absolute value for negative crosswind', () => {
+      expect(exceedsCrosswindLimitations(-30)).toBe(false)
+      expect(exceedsCrosswindLimitations(-35)).toBe(false)
+      expect(exceedsCrosswindLimitations(-36)).toBe(true)
+      expect(exceedsCrosswindLimitations(-40)).toBe(true)
     })
   })
 })

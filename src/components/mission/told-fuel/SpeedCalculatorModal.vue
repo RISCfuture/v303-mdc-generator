@@ -31,11 +31,13 @@ import {
 import {
   calculateTakeoffDistance as calculateF16TakeoffDistance,
   celsiusToFahrenheit,
+  exceedsCrosswindLimitations as exceedsF16CrosswindLimitations,
 } from '@/utils/f16TakeoffDistanceCalculator'
 import {
   calculateTakeoffDistance as calculateA10TakeoffDistance,
   calculateCriticalFieldLength as calculateA10CriticalFieldLength,
   calculateHeadwindComponent as calculateA10TakeoffHeadwind,
+  exceedsCrosswindLimitations as exceedsA10CrosswindLimitations,
   type ThrustSetting,
   type RCR,
 } from '@/utils/a10TakeoffDistanceCalculator'
@@ -267,6 +269,27 @@ const milExceedsRunway = computed(() => {
   return milTakeoffDistance.value > props.runwayLength
 })
 
+// Crosswind limitation check
+const exceedsCrosswindLimit = computed(() => {
+  if (crosswindComponent.value === 0) return false
+
+  if (props.airframe === 'F-16C_50') {
+    // Map F-16 runway condition to RCR for crosswind limit calculation
+    const rcrMap: Record<string, number> = {
+      dry: 23,
+      wet: 12,
+      snow: 8,
+      ice: 4,
+    }
+    const rcr = rcrMap[runwayConditionF16.value] ?? 23
+    return exceedsF16CrosswindLimitations(crosswindComponent.value, rcr)
+  } else if (props.airframe === 'A-10C_2') {
+    return exceedsA10CrosswindLimitations(crosswindComponent.value)
+  }
+
+  return false
+})
+
 // Initialize form with existing calculator params and departure airport
 watch(
   () => props.show,
@@ -386,6 +409,7 @@ function handleCancel() {
         :headwind-component="headwindComponent"
         :crosswind-component="crosswindComponent"
         :show-wind-components="windSpeed > 0 && selectedRunwayHeading !== undefined"
+        :exceeds-crosswind-limit="exceedsCrosswindLimit"
         @update:temperature="(v: number) => (temperature = v)"
         @update:wind-direction="(v: number) => (windDirection = v)"
         @update:wind-speed="(v: number) => (windSpeed = v)"

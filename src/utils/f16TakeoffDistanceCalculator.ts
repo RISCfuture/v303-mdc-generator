@@ -554,3 +554,48 @@ export function celsiusToFahrenheit(celsius: number): number {
 export function fahrenheitToCelsius(fahrenheit: number): number {
   return ((fahrenheit - 32) * 5) / 9
 }
+
+// ============================================================================
+// Crosswind Limitations
+// ============================================================================
+
+/**
+ * F-16C crosswind limit at RCR 23 (dry runway) in knots
+ */
+const F16_CROSSWIND_LIMIT_RCR_23 = 25
+
+/**
+ * F-16C crosswind limit at RCR 4 (worst conditions) in knots
+ */
+const F16_CROSSWIND_LIMIT_RCR_4 = 20
+
+/**
+ * Get the F-16C crosswind limit for a given RCR value
+ *
+ * Crosswind limit varies linearly from 25 knots at RCR 23 to 20 knots at RCR 4
+ *
+ * @param rcr - Runway Condition Reading (4-23)
+ * @returns Maximum crosswind limit in knots
+ */
+export function getCrosswindLimit(rcr: number): number {
+  // Clamp RCR to valid range
+  const clampedRCR = Math.max(4, Math.min(23, rcr))
+
+  // Linear interpolation: 20 kt at RCR 4, 25 kt at RCR 23
+  return (
+    F16_CROSSWIND_LIMIT_RCR_4 +
+    ((clampedRCR - 4) * (F16_CROSSWIND_LIMIT_RCR_23 - F16_CROSSWIND_LIMIT_RCR_4)) / (23 - 4)
+  )
+}
+
+/**
+ * Check if crosswind exceeds F-16C limitations
+ *
+ * @param crosswindComponent - Crosswind component in knots (absolute value used)
+ * @param rcr - Runway Condition Reading (4-23)
+ * @returns true if crosswind exceeds the limit for the given RCR
+ */
+export function exceedsCrosswindLimitations(crosswindComponent: number, rcr: number): boolean {
+  const limit = getCrosswindLimit(rcr)
+  return Math.abs(crosswindComponent) > limit
+}

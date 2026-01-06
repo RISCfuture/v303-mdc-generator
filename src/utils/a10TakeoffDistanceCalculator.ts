@@ -14,6 +14,11 @@
  * @module a10TakeoffDistanceCalculator
  */
 
+import { type RCR } from './runwayConditions'
+
+// Re-export RCR type for backwards compatibility
+export type { RCR }
+
 /**
  * Flap setting for takeoff
  */
@@ -23,11 +28,6 @@ export type FlapSetting = 0 | 7
  * Thrust setting for takeoff
  */
 export type ThrustSetting = 'MAX' | '3_BELOW_PTFS'
-
-/**
- * Runway Condition Reading values
- */
-export type RCR = 23 | 12 | 5
 
 /**
  * Input parameters for takeoff distance calculation
@@ -597,4 +597,24 @@ export function getRecommendedFlapSetting(
     flapSetting: 0,
     reason: 'Flaps 0° suitable for current conditions',
   }
+}
+
+// ============================================================================
+// Crosswind Limitations
+// ============================================================================
+
+/**
+ * A-10C maximum crosswind limit in knots
+ * This is a constant value regardless of runway condition
+ */
+const A10_CROSSWIND_LIMIT = 35
+
+/**
+ * Check if crosswind exceeds A-10C limitations
+ *
+ * @param crosswindComponent - Crosswind component in knots (absolute value used)
+ * @returns true if crosswind exceeds the 35 knot limit
+ */
+export function exceedsCrosswindLimitations(crosswindComponent: number): boolean {
+  return Math.abs(crosswindComponent) > A10_CROSSWIND_LIMIT
 }

@@ -7,6 +7,8 @@ import {
   getDragIndex,
   calculateTotalDragIndex,
   celsiusToFahrenheit,
+  getCrosswindLimit,
+  exceedsCrosswindLimitations,
 } from './f16TakeoffDistanceCalculator'
 
 describe('F-16 Takeoff Distance Calculator', () => {
@@ -253,6 +255,71 @@ describe('F-16 Takeoff Distance Calculator', () => {
       // Should be roughly 2,000-3,500 ft
       expect(result.takeoffDistance).toBeGreaterThan(1500)
       expect(result.takeoffDistance).toBeLessThan(4000)
+    })
+  })
+
+  describe('getCrosswindLimit', () => {
+    it('should return 25 kt at RCR 23 (dry runway)', () => {
+      expect(getCrosswindLimit(23)).toBe(25)
+    })
+
+    it('should return 20 kt at RCR 4 (worst conditions)', () => {
+      expect(getCrosswindLimit(4)).toBe(20)
+    })
+
+    it('should interpolate linearly between RCR 4 and 23', () => {
+      // Midpoint RCR = (4 + 23) / 2 = 13.5
+      // Expected limit = (20 + 25) / 2 = 22.5
+      expect(getCrosswindLimit(13.5)).toBeCloseTo(22.5, 1)
+    })
+
+    it('should calculate correct limit at RCR 12 (wet runway)', () => {
+      // RCR 12: 20 + (12 - 4) * 5 / 19 = 20 + 8 * 5/19 = 20 + 2.1 = 22.1
+      expect(getCrosswindLimit(12)).toBeCloseTo(22.1, 1)
+    })
+
+    it('should clamp RCR below 4 to minimum limit of 20 kt', () => {
+      expect(getCrosswindLimit(2)).toBe(20)
+      expect(getCrosswindLimit(0)).toBe(20)
+    })
+
+    it('should clamp RCR above 23 to maximum limit of 25 kt', () => {
+      expect(getCrosswindLimit(25)).toBe(25)
+      expect(getCrosswindLimit(30)).toBe(25)
+    })
+  })
+
+  describe('exceedsCrosswindLimitations', () => {
+    it('should return false when crosswind is within limit at RCR 23', () => {
+      expect(exceedsCrosswindLimitations(20, 23)).toBe(false)
+      expect(exceedsCrosswindLimitations(25, 23)).toBe(false)
+    })
+
+    it('should return true when crosswind exceeds limit at RCR 23', () => {
+      expect(exceedsCrosswindLimitations(26, 23)).toBe(true)
+      expect(exceedsCrosswindLimitations(30, 23)).toBe(true)
+    })
+
+    it('should return false when crosswind is within limit at RCR 4', () => {
+      expect(exceedsCrosswindLimitations(15, 4)).toBe(false)
+      expect(exceedsCrosswindLimitations(20, 4)).toBe(false)
+    })
+
+    it('should return true when crosswind exceeds limit at RCR 4', () => {
+      expect(exceedsCrosswindLimitations(21, 4)).toBe(true)
+      expect(exceedsCrosswindLimitations(25, 4)).toBe(true)
+    })
+
+    it('should use reduced limit at intermediate RCR values', () => {
+      // At RCR 12, limit is ~22.1 kt
+      expect(exceedsCrosswindLimitations(22, 12)).toBe(false)
+      expect(exceedsCrosswindLimitations(23, 12)).toBe(true)
+    })
+
+    it('should use absolute value for negative crosswind', () => {
+      expect(exceedsCrosswindLimitations(-20, 23)).toBe(false)
+      expect(exceedsCrosswindLimitations(-25, 23)).toBe(false)
+      expect(exceedsCrosswindLimitations(-26, 23)).toBe(true)
     })
   })
 })
