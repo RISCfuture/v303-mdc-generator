@@ -237,7 +237,8 @@ test.describe('Mission Export Operations', () => {
     const download = await downloadPromise;
 
     // Verify download filename contains expected pattern
-    expect(download.suggestedFilename()).toMatch(/\.jafdtc$/);  // Matches pattern like "MDC Export Test_Wing.jafdtc"
+    // v93 squadron (F-16) uses DCS-DTC format which exports as .json
+    expect(download.suggestedFilename()).toMatch(/\.json$/);  // Matches pattern like "MDC Export Test_Wing.json"
   });
 
   test('should export PDF with embedded images in remarks', async ({ page }) => {

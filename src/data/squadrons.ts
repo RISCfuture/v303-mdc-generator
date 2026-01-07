@@ -5,6 +5,8 @@
 
 import squadronsData from '@/data/json/squadrons.json'
 
+export type ExportFormat = 'DCS-DTC' | 'JAFDTC'
+
 export interface Squadron {
   id: string
   name: string
@@ -14,13 +16,15 @@ export interface Squadron {
     training: string
     combat: string
   } // Default gun ammo types for training and combat missions (must match airframe's ammoTypes)
+  exportFormat?: ExportFormat // MDC export format; squadrons without this do not support MDC export
 }
 
 // Derive Squadron ID type dynamically from squadrons.json
 export type SquadronId = keyof typeof squadronsData
 
 // Type-safe squadron database
-export const squadronDatabase: Record<SquadronId, Squadron> = squadronsData
+// Cast required because JSON import types exportFormat as string, not ExportFormat
+export const squadronDatabase = squadronsData as Record<SquadronId, Squadron>
 
 /**
  * Get airframe for a squadron

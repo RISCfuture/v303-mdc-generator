@@ -42,6 +42,11 @@
           "required": ["training", "combat"],
           "additionalProperties": false,
           "description": "Default gun ammo types for training and combat missions"
+        },
+        "exportFormat": {
+          "type": "string",
+          "enum": ["DCS-DTC", "JAFDTC"],
+          "description": "MDC export format for this squadron. Squadrons without this property do not support MDC export."
         }
       },
       "required": ["id", "name", "displayName", "aircraft"]

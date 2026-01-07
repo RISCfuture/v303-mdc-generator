@@ -2,11 +2,11 @@
 // Generates MDC files compatible with the DCS MDC loader
 import type { Mission, CCIPReferencePoint } from '@/types'
 import { formatF16LatLon, formatA10LatLon } from '@/utils/coordinates'
-import { getMissionAirframe } from '@/utils/missionHelpers'
 import { getCrewMemberLink16Callsign } from '@/utils/callsignHelpers'
 import { deepMerge } from '@/utils/deepMerge'
 import { loadTemplateForSquadron } from './mdcTemplateService'
 import { getAirfieldsForTheater } from '@/data/airfields'
+import { squadronDatabase, type SquadronId } from '@/data/squadrons'
 
 /**
  * DTC Reference Point structure (VIP, VRP, OA, PUP)
@@ -836,7 +836,12 @@ export function downloadMDC(mission: Mission, crewMemberIndex: number = 0) {
   let json: string
   let filename: string
 
-  const airframe = getMissionAirframe(mission)
+  const squadron = squadronDatabase[mission.squadron as SquadronId]
+  const exportFormat = squadron?.exportFormat
+
+  if (!exportFormat) {
+    throw new Error(`MDC export not supported for squadron: ${mission.squadron}`)
+  }
 
   // Get crew member pilot name for filename
   const crewMember = mission.crew[crewMemberIndex]!
@@ -855,21 +860,21 @@ export function downloadMDC(mission: Mission, crewMemberIndex: number = 0) {
     template = undefined
   }
 
-  switch (airframe) {
-    case 'F-16C_50': {
+  switch (exportFormat) {
+    case 'DCS-DTC': {
       const mdc = exportF16MDC(mission, crewMemberIndex, template as DeepPartial<DCSF16MDC>)
       json = JSON.stringify(mdc, null, 2)
-      filename = `${mission.name}${pilotSuffix}.jafdtc`
+      filename = `${mission.name}${pilotSuffix}.json`
       break
     }
-    case 'A-10C_2': {
+    case 'JAFDTC': {
       const mdc = exportA10MDC(mission, crewMemberIndex, template as DeepPartial<JAFDTCA10MDC>)
       json = JSON.stringify(mdc, null, 2)
       filename = `${mission.name}${pilotSuffix}.jafdtc`
       break
     }
     default:
-      throw new Error(`MDC export not supported for airframe: ${airframe}`)
+      throw new Error(`Unknown export format: ${exportFormat}`)
   }
 
   const blob = new Blob([json], { type: 'application/json' })

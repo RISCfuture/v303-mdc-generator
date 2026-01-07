@@ -5,6 +5,7 @@ import { getAirfieldsForTheater } from '@/data/airfields'
 import { theaterDatabase } from '@/data/theaters'
 import { getLoadoutsForAirframe } from '@/data/loadouts'
 import { crewDatabase, crewBySquadron } from '@/data/crew'
+import { squadronDatabase, type SquadronId } from '@/data/squadrons'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission, Navaid } from '@/types'
 
@@ -64,8 +65,8 @@ export function useMissionData(missionId: ComputedRef<string>) {
 
   const mdcExportSupported = computed(() => {
     if (!mission.value) return false
-    const airframe = getMissionAirframe(mission.value)
-    return airframe === 'F-16C_50' || airframe === 'A-10C_2'
+    const squadron = squadronDatabase[mission.value.squadron as SquadronId]
+    return !!squadron?.exportFormat
   })
 
   function updateField(field: keyof Mission, value: Mission[keyof Mission]) {
