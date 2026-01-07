@@ -12,7 +12,10 @@ const __dirname = path.dirname(__filename)
 async function createMission(page: Page, name?: string) {
   await page.getByRole('button', { name: /New Mission/ }).first().click()
   await page.getByRole('button', { name: 'Create Mission' }).click()
-  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 30000 })
+  // Wait for URL navigation to mission editor (more reliable than waiting for text)
+  await page.waitForURL(/\/mission\/.+/, { timeout: 30000 })
+  // Wait for mission editor to render
+  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
 
   if (name) {
     const nameInput = page.locator('[aria-label="Mission Name"] input')

@@ -208,12 +208,16 @@
         "cl": {
           "type": "array",
           "items": {
-            "type": "array",
-            "items": {
-              "type": "number"
-            }
+            "type": "string"
           },
-          "description": "Comm ladders"
+          "description": "Comm ladders (freeform text per radio)"
+        },
+        "rd": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RadioDefault"
+          },
+          "description": "Radio defaults (initial mode per radio)"
         },
         "pm": {
           "type": "array",
@@ -442,6 +446,26 @@
         "description": {
           "type": "string",
           "description": "Preset description/label"
+        }
+      }
+    },
+    "RadioDefault": {
+      "type": "object",
+      "required": ["m"],
+      "properties": {
+        "m": {
+          "type": "string",
+          "enum": ["p", "m"],
+          "description": "Mode: 'p' for preset, 'm' for manual"
+        },
+        "p": {
+          "type": "number",
+          "minimum": 1,
+          "description": "Preset number (when mode is preset)"
+        },
+        "f": {
+          "type": "string",
+          "description": "Frequency (when mode is manual)"
         }
       }
     },

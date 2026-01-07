@@ -974,10 +974,10 @@ describe('MDC Exporter', () => {
 
         const result = exportA10MDC(mockMissionA10, 0, template)
 
-        // Mission data should be based on comm ladder state (no comm ladder = frequency mode)
-        expect(result.Radio.IsPresetMode).toEqual([false, false, false])
-        // Default frequencies when no comm ladder exists
-        expect(result.Radio.DefaultSetting).toEqual(['225.00', '108.00', '30.00'])
+        // Mission data should be based on radioDefaults (no radioDefaults = preset mode with preset 1)
+        expect(result.Radio.IsPresetMode).toEqual([true, true, true])
+        // Default preset numbers when no radioDefaults exists (preset 1 for all radios)
+        expect(result.Radio.DefaultSetting).toEqual(['1', '1', '1'])
       })
     })
   })

@@ -21,6 +21,7 @@ import { getAirfieldsForTheater } from '@/data/airfields'
 import type {
   TargetData,
   RadioPreset,
+  RadioDefault,
   F16CalculatorParams,
   A10CalculatorParams,
   F16BingoCalculatorParams,
@@ -587,8 +588,10 @@ function handleSelectMDCExport(key: string) {
               :airframe="airframe"
               :radio-presets="mission.radioPresets"
               :comm-ladders="mission.commLadders"
+              :radio-defaults="mission.radioDefaults"
               @update:radio-presets="(v: RadioPreset[][]) => updateField('radioPresets', v)"
-              @update:comm-ladders="(v: number[][]) => updateField('commLadders', v)"
+              @update:comm-ladders="(v: string[]) => updateField('commLadders', v)"
+              @update:radio-defaults="(v: RadioDefault[]) => updateField('radioDefaults', v)"
             />
           </NTabPane>
 

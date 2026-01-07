@@ -436,8 +436,8 @@ function generateRadiosTable(mission: Mission): unknown {
     const radioLabel = airframeData?.radios[radioIndex]?.name || `Radio ${radioIndex + 1}`
     let presetDesc = ''
     const radioCommLadder = mission.commLadders?.[radioIndex]
-    if (radioCommLadder && radioCommLadder.length > 0) {
-      presetDesc = radioCommLadder.join(' - ')
+    if (radioCommLadder && radioCommLadder.trim() !== '') {
+      presetDesc = radioCommLadder
     } else {
       presetDesc = radioPresets
         .slice(0, 12)

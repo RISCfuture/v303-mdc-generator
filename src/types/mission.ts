@@ -75,6 +75,12 @@ export interface RadioPreset {
   description: string
 }
 
+export interface RadioDefault {
+  mode: 'preset' | 'manual'
+  preset?: number // When mode='preset', which preset number (1-N)
+  frequency?: string // When mode='manual', the frequency value
+}
+
 export interface Radio {
   name: string
   description: string
@@ -258,7 +264,8 @@ export interface Mission {
   // Index corresponds to radio number (0 = COM1, 1 = COM2, 2 = COM3, etc.)
   // Number of radios is determined by airframe configuration
   radioPresets: RadioPreset[][]
-  commLadders?: number[][] // Per-radio comm ladder sequences (e.g., [[1, 2, 3, 4, 12], [1, 2, 3]])
+  commLadders?: string[] // Per-radio comm ladder text (freeform, one string per radio)
+  radioDefaults?: RadioDefault[] // Per-radio default settings for MDC export (mode + preset/frequency)
 
   // Departure and Recovery
   departureRecovery: DepartureRecoveryData

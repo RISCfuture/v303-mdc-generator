@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NCard, NTabs, NTabPane, NSelect, NFormItem } from 'naive-ui'
+import { NCard, NTabs, NTabPane, NSelect, NFormItem, NInput, NInputNumber, NSpace } from 'naive-ui'
 import RadioPresetRow from './RadioPresetRow.vue'
-import type { RadioPreset, Airframe } from '@/types'
+import type { RadioPreset, Airframe, RadioDefault } from '@/types'
 import { getAirframeData } from '@/utils/airframeHelpers'
 
 const props = defineProps<{
   airframe: Airframe
   radioPresets: RadioPreset[][]
-  commLadders?: number[][]
+  commLadders?: string[]
+  radioDefaults?: RadioDefault[]
 }>()
 
 const emit = defineEmits<{
   'update:radioPresets': [presets: RadioPreset[][]]
-  'update:commLadders': [ladders: number[][]]
+  'update:commLadders': [ladders: string[]]
+  'update:radioDefaults': [defaults: RadioDefault[]]
 }>()
 
 // Get airframe data based on airframe type
@@ -112,54 +114,52 @@ function updatePresetDescription(radioIndex: number, slotNumber: number, value: 
   emit('update:radioPresets', newRadioPresets)
 }
 
-// Comm ladder options - dynamic based on radio preset count
-const getCommLadderOptions = (radioIndex: number) => {
+// Comm ladder functions
+function updateCommLadder(radioIndex: number, value: string) {
+  const updatedLadders = [...(props.commLadders || [])]
+  updatedLadders[radioIndex] = value
+  emit('update:commLadders', updatedLadders)
+}
+
+// Radio default functions
+const modeOptions = [
+  { label: 'Preset', value: 'preset' },
+  { label: 'Manual', value: 'manual' },
+]
+
+function getPresetOptions(radioIndex: number) {
   const radio = radios.value[radioIndex]
   if (!radio) return []
 
   const options: { label: string; value: number }[] = []
   for (let i = 1; i <= radio.presetCount; i++) {
-    options.push({ label: `Preset ${i}`, value: i })
+    options.push({ label: `${i}`, value: i })
   }
   return options
 }
 
-// Validate comm ladder input (presets or frequencies)
-// Returns a select option object if valid, or undefined to reject the input
-function validateCommLadderInput(
-  radioIndex: number,
-  inputValue: string,
-): { label: string; value: number } | undefined {
-  const radio = radios.value[radioIndex]
-  if (!radio) return undefined
-
-  const numValue = parseFloat(inputValue)
-  if (isNaN(numValue)) return undefined
-
-  // Check if it's an integer (preset number)
-  if (Number.isInteger(numValue)) {
-    if (numValue >= 1 && numValue <= radio.presetCount) {
-      return { label: `Preset ${numValue}`, value: numValue }
-    }
-    return undefined
-  }
-
-  // It's a decimal (frequency)
-  // Validate against radio's frequency range
-  const minFreq = radio.radioConfig.min
-  const maxFreq = radio.radioConfig.max
-
-  if (minFreq !== null && maxFreq !== null && numValue >= minFreq && numValue <= maxFreq) {
-    return { label: numValue.toString(), value: numValue }
-  }
-
-  return undefined
+function getRadioDefault(radioIndex: number): RadioDefault {
+  return props.radioDefaults?.[radioIndex] || { mode: 'preset', preset: 1 }
 }
 
-function updateCommLadder(radioIndex: number, value: number[] | null) {
-  const updatedLadders = [...(props.commLadders || [])]
-  updatedLadders[radioIndex] = value || []
-  emit('update:commLadders', updatedLadders)
+function updateRadioDefault(radioIndex: number, updates: Partial<RadioDefault>) {
+  const updatedDefaults = [...(props.radioDefaults || [])]
+  const current = updatedDefaults[radioIndex] || { mode: 'preset', preset: 1 }
+  updatedDefaults[radioIndex] = { ...current, ...updates }
+  emit('update:radioDefaults', updatedDefaults)
+}
+
+function updateDefaultMode(radioIndex: number, mode: 'preset' | 'manual') {
+  const updates: Partial<RadioDefault> = { mode }
+  // Set sensible defaults when switching modes
+  if (mode === 'preset') {
+    updates.preset = 1
+    updates.frequency = undefined
+  } else {
+    updates.frequency = ''
+    updates.preset = undefined
+  }
+  updateRadioDefault(radioIndex, updates)
 }
 </script>
 
@@ -168,45 +168,80 @@ function updateCommLadder(radioIndex: number, value: number[] | null) {
     <NTabs type="line">
       <!-- Dynamic radio tabs based on airframe -->
       <NTabPane v-for="radio in radios" :key="radio.index" :name="radio.label" :tab="radio.label">
-        <NFormItem label="Comm Ladder" label-placement="left" style="margin-bottom: 16px">
-          <NSelect
-            :value="commLadders?.[radio.index] || []"
-            @update:value="(v: number[] | null) => updateCommLadder(radio.index, v)"
-            :options="getCommLadderOptions(radio.index)"
-            multiple
-            tag
-            placeholder="Select presets or enter frequencies (30-400 MHz)"
-            :max-tag-count="10"
-            filterable
-            :on-create="
-              ((label: string) => validateCommLadderInput(radio.index, label)) as unknown as (
-                label: string,
-              ) => { label: string; value: number }
-            "
-          />
-        </NFormItem>
-        <div class="presets-grid">
-          <RadioPresetRow
-            v-for="preset in radio.slots"
-            :key="preset.number"
-            :preset-number="preset.number"
-            :frequency="preset.frequency"
-            :description="preset.description"
-            :radio-config="radio.radioConfig"
-            @update:frequency="
-              (v: number | null) => updatePresetFrequency(radio.index, preset.number, v)
-            "
-            @update:description="
-              (v: string) => updatePresetDescription(radio.index, preset.number, v)
-            "
-          />
-        </div>
+        <NSpace vertical :size="24" class="tab-content">
+          <NFormItem label="Comm Ladder" label-placement="left">
+            <NInput
+              :value="commLadders?.[radio.index] || ''"
+              @update:value="(v: string) => updateCommLadder(radio.index, v)"
+              placeholder="e.g., 1-2-3-4-12"
+            />
+          </NFormItem>
+
+          <NSpace vertical :size="8">
+            <NFormItem label="Default" label-placement="left">
+              <NSpace>
+                <NSelect
+                  :value="getRadioDefault(radio.index).mode"
+                  @update:value="(v: 'preset' | 'manual') => updateDefaultMode(radio.index, v)"
+                  :options="modeOptions"
+                  style="width: 100px"
+                />
+                <NSelect
+                  v-if="getRadioDefault(radio.index).mode === 'preset'"
+                  :value="getRadioDefault(radio.index).preset || 1"
+                  @update:value="(v: number) => updateRadioDefault(radio.index, { preset: v })"
+                  :options="getPresetOptions(radio.index)"
+                  style="width: 80px"
+                />
+                <NInputNumber
+                  v-else
+                  :value="
+                    getRadioDefault(radio.index).frequency
+                      ? parseFloat(getRadioDefault(radio.index).frequency!)
+                      : null
+                  "
+                  @update:value="
+                    (v: number | null) =>
+                      updateRadioDefault(radio.index, { frequency: v?.toString() || '' })
+                  "
+                  :min="radio.radioConfig.min || undefined"
+                  :max="radio.radioConfig.max || undefined"
+                  :step="radio.radioConfig.step"
+                  :precision="3"
+                  placeholder="Frequency"
+                  style="width: 120px"
+                />
+              </NSpace>
+            </NFormItem>
+
+            <div class="presets-grid">
+              <RadioPresetRow
+                v-for="preset in radio.slots"
+                :key="preset.number"
+                :preset-number="preset.number"
+                :frequency="preset.frequency"
+                :description="preset.description"
+                :radio-config="radio.radioConfig"
+                @update:frequency="
+                  (v: number | null) => updatePresetFrequency(radio.index, preset.number, v)
+                "
+                @update:description="
+                  (v: string) => updatePresetDescription(radio.index, preset.number, v)
+                "
+              />
+            </div>
+          </NSpace>
+        </NSpace>
       </NTabPane>
     </NTabs>
   </NCard>
 </template>
 
 <style scoped>
+.tab-content {
+  padding-top: 16px;
+}
+
 .presets-grid {
   display: grid;
   gap: 8px;

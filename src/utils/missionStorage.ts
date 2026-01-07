@@ -139,7 +139,10 @@ export interface SerializedMission {
   htsp: string[] // htsThreatTables - required, defaults to empty array
 
   // Comm ladder - required, defaults to empty array
-  cl: number[][] // commLadders
+  cl: string[] // commLadders (freeform text per radio)
+
+  // Radio defaults - optional
+  rd?: Array<{ m: 'p' | 'm'; p?: number; f?: string }> // radioDefaults
 
   // Package and Support - required, defaults to empty arrays
   pm: Array<{
@@ -434,6 +437,15 @@ export function serializeMission(mission: Mission): SerializedMission {
   // Comm ladder - required field, defaults to empty array
   serialized.cl = mission.commLadders && mission.commLadders.length > 0 ? mission.commLadders : []
 
+  // Radio defaults - optional field
+  if (mission.radioDefaults && mission.radioDefaults.length > 0) {
+    serialized.rd = mission.radioDefaults.map((rd) => ({
+      m: rd.mode === 'preset' ? 'p' : 'm',
+      p: rd.preset,
+      f: rd.frequency,
+    }))
+  }
+
   // Package members - required field, defaults to empty array
   serialized.pm =
     mission.packageMembers && mission.packageMembers.length > 0
@@ -659,6 +671,11 @@ export function deserializeMission(serialized: SerializedMission): Mission {
     htsThreatTables: serialized.htsp,
     ecmCmds,
     commLadders: serialized.cl,
+    radioDefaults: serialized.rd?.map((rd) => ({
+      mode: rd.m === 'p' ? 'preset' : 'manual',
+      preset: rd.p,
+      frequency: rd.f,
+    })) as import('@/types').RadioDefault[] | undefined,
     packageMembers: serialized.pm || [],
     supportAssets: serialized.sa || [],
     radioPresets: (() => {

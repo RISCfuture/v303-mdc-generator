@@ -169,7 +169,7 @@ describe('RadioPresetsEditor', () => {
   })
 
   describe('Comm ladder', () => {
-    it('should display comm ladder selector for each radio', () => {
+    it('should display comm ladder input for each radio', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
           airframe: 'F-16C_50' as Airframe,
@@ -179,24 +179,118 @@ describe('RadioPresetsEditor', () => {
 
       // Each radio should be configured with comm ladder support
       expect(wrapper.vm.radios.length).toBeGreaterThan(0)
-      // Verify HTML contains comm ladder selector text
+      // Verify HTML contains comm ladder text
       expect(wrapper.html()).toContain('Comm Ladder')
     })
 
-    it('should emit update:commLadders when ladder is changed', async () => {
+    it('should emit update:commLadders when ladder text is changed', async () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
           airframe: 'F-16C_50' as Airframe,
           radioPresets: [[], []],
-          commLadders: [[], []],
+          commLadders: ['', ''],
         },
       })
 
-      wrapper.vm.updateCommLadder(0, [1, 2, 3])
+      wrapper.vm.updateCommLadder(0, '1-2-3-4')
 
       expect(wrapper.emitted('update:commLadders')).toBeTruthy()
-      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as number[][]
-      expect(emittedLadders[0]).toEqual([1, 2, 3])
+      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as string[]
+      expect(emittedLadders[0]).toEqual('1-2-3-4')
+    })
+
+    it('should handle empty comm ladder value', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+          commLadders: ['test', ''],
+        },
+      })
+
+      wrapper.vm.updateCommLadder(0, '')
+
+      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as string[]
+      expect(emittedLadders[0]).toEqual('')
+    })
+
+    it('should support freeform text in comm ladder', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+          commLadders: ['', ''],
+        },
+      })
+
+      // Freeform text
+      wrapper.vm.updateCommLadder(0, '1-2-3-ATC-MAGIC')
+
+      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as string[]
+      expect(emittedLadders[0]).toEqual('1-2-3-ATC-MAGIC')
+    })
+  })
+
+  describe('Radio defaults', () => {
+    it('should display default selector for each radio', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+        },
+      })
+
+      // Verify HTML contains Default label
+      expect(wrapper.html()).toContain('Default')
+    })
+
+    it('should return default radio config when radioDefaults is undefined', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+        },
+      })
+
+      const radioDefault = wrapper.vm.getRadioDefault(0)
+      expect(radioDefault.mode).toBe('preset')
+      expect(radioDefault.preset).toBe(1)
+    })
+
+    it('should emit update:radioDefaults when mode is changed', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+          radioDefaults: [{ mode: 'preset', preset: 1 }],
+        },
+      })
+
+      wrapper.vm.updateDefaultMode(0, 'manual')
+
+      expect(wrapper.emitted('update:radioDefaults')).toBeTruthy()
+      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as Array<{
+        mode: string
+      }>
+      expect(emittedDefaults[0].mode).toBe('manual')
+    })
+
+    it('should emit update:radioDefaults when preset is changed', () => {
+      const wrapper = mount(RadioPresetsEditor, {
+        props: {
+          airframe: 'F-16C_50' as Airframe,
+          radioPresets: [[], []],
+          radioDefaults: [{ mode: 'preset', preset: 1 }],
+        },
+      })
+
+      wrapper.vm.updateRadioDefault(0, { preset: 5 })
+
+      expect(wrapper.emitted('update:radioDefaults')).toBeTruthy()
+      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as Array<{
+        preset: number
+      }>
+      expect(emittedDefaults[0].preset).toBe(5)
     })
 
     it('should have dynamic preset options based on radio preset count', () => {
@@ -208,110 +302,10 @@ describe('RadioPresetsEditor', () => {
       })
 
       // F-16C has 20 presets per radio
-      const radio0Options = wrapper.vm.getCommLadderOptions(0)
+      const radio0Options = wrapper.vm.getPresetOptions(0)
       expect(radio0Options.length).toBe(20)
       expect(radio0Options[0].value).toBe(1)
       expect(radio0Options[19].value).toBe(20)
-    })
-
-    it('should handle null comm ladder value', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-          commLadders: [[], []],
-        },
-      })
-
-      wrapper.vm.updateCommLadder(0, null)
-
-      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as number[][]
-      expect(emittedLadders[0]).toEqual([])
-    })
-
-    it('should allow duplicate values in comm ladder', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-          commLadders: [[], []],
-        },
-      })
-
-      wrapper.vm.updateCommLadder(0, [1, 2, 2, 3, 1])
-
-      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as number[][]
-      expect(emittedLadders[0]).toEqual([1, 2, 2, 3, 1])
-    })
-
-    it('should validate preset numbers within radio preset count', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-        },
-      })
-
-      // Valid preset number
-      expect(wrapper.vm.validateCommLadderInput(0, '5')).toEqual({ label: 'Preset 5', value: 5 })
-
-      // Invalid preset number (too high)
-      expect(wrapper.vm.validateCommLadderInput(0, '25')).toBe(undefined)
-
-      // Invalid preset number (too low)
-      expect(wrapper.vm.validateCommLadderInput(0, '0')).toBe(undefined)
-    })
-
-    it('should validate frequencies within radio frequency range', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-        },
-      })
-
-      // Valid UHF frequency for radio 0 (225-399.975 MHz)
-      expect(wrapper.vm.validateCommLadderInput(0, '251.5')).toEqual({
-        label: '251.5',
-        value: 251.5,
-      })
-
-      // Valid VHF frequency for radio 1 (30-87.975 MHz)
-      expect(wrapper.vm.validateCommLadderInput(1, '45.5')).toEqual({ label: '45.5', value: 45.5 })
-
-      // Invalid frequency (out of range for UHF)
-      expect(wrapper.vm.validateCommLadderInput(0, '150.0')).toBe(undefined)
-
-      // Invalid frequency (out of range for VHF)
-      expect(wrapper.vm.validateCommLadderInput(1, '300.0')).toBe(undefined)
-    })
-
-    it('should reject non-numeric input', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-        },
-      })
-
-      expect(wrapper.vm.validateCommLadderInput(0, 'abc')).toBe(undefined)
-      expect(wrapper.vm.validateCommLadderInput(0, '')).toBe(undefined)
-    })
-
-    it('should support mixed preset numbers and frequencies in comm ladder', () => {
-      const wrapper = mount(RadioPresetsEditor, {
-        props: {
-          airframe: 'F-16C_50' as Airframe,
-          radioPresets: [[], []],
-          commLadders: [[], []],
-        },
-      })
-
-      // Mix of preset numbers and frequencies
-      wrapper.vm.updateCommLadder(0, [1, 251.5, 2, 305.0, 3])
-
-      const emittedLadders = wrapper.emitted('update:commLadders')?.[0]?.[0] as number[][]
-      expect(emittedLadders[0]).toEqual([1, 251.5, 2, 305.0, 3])
     })
   })
 

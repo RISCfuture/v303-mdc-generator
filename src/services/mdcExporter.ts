@@ -264,8 +264,8 @@ function convertCCIPToDTC(
 }
 
 /**
- * Build radio configuration from mission comm ladder
- * @param mission - The mission object containing comm ladders
+ * Build radio configuration from mission radio defaults
+ * @param mission - The mission object containing radio defaults
  * @param radioIndex - Radio index (0 for Radio1, 1 for Radio2, 2 for Radio3 if A-10C)
  * @returns Radio mode (1=Preset, 2=Manual), selected frequency, and selected preset
  */
@@ -289,32 +289,30 @@ function getRadioConfig(
     defaultFrequency = '30.00' // A-10 Radio3 (VHF FM)
   }
 
-  const commLadder = mission.commLadders?.[radioIndex]
+  const radioDefault = mission.radioDefaults?.[radioIndex]
 
-  if (!commLadder || commLadder.length === 0) {
-    // No comm ladder - default to manual mode with default frequency
+  if (!radioDefault) {
+    // No radio default - default to preset mode with preset 1
     return {
-      mode: 2, // Manual/Frequency mode
+      mode: 1, // Preset mode
       selectedFrequency: defaultFrequency,
-      selectedPreset: '',
+      selectedPreset: '1',
     }
   }
 
-  // Determine mode from first entry
-  const firstEntry = commLadder[0]!
-  const isPresetMode = Number.isInteger(firstEntry)
-
-  // Find first frequency in comm ladder (decimal value)
-  const firstFrequency = commLadder.find((entry) => !Number.isInteger(entry))
-
-  // Find first preset in comm ladder (integer value)
-  const firstPreset = commLadder.find((entry) => Number.isInteger(entry))
-
-  return {
-    mode: isPresetMode ? 1 : 2, // 1 = Preset mode, 2 = Manual/Frequency mode
-    selectedFrequency:
-      firstFrequency !== undefined ? truncateFrequency(firstFrequency) : defaultFrequency,
-    selectedPreset: firstPreset !== undefined ? firstPreset.toString() : '1',
+  if (radioDefault.mode === 'preset') {
+    return {
+      mode: 1, // Preset mode
+      selectedFrequency: defaultFrequency,
+      selectedPreset: radioDefault.preset?.toString() || '1',
+    }
+  } else {
+    // Manual mode
+    return {
+      mode: 2, // Manual/Frequency mode
+      selectedFrequency: radioDefault.frequency || defaultFrequency,
+      selectedPreset: '1',
+    }
   }
 }
 
