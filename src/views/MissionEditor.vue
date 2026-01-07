@@ -26,6 +26,7 @@ import type {
   A10CalculatorParams,
   F16BingoCalculatorParams,
   Waypoint,
+  Navaid,
 } from '@/types'
 
 // Composables
@@ -347,11 +348,8 @@ function goBack() {
   router.push('/')
 }
 
-function handleAddWaypointFromNavaid(navaidName: string) {
-  const navaid = availableNavaids.value.find((n) => n.name === navaidName)
-  if (navaid) {
-    addWaypointFromNavaid(navaid)
-  }
+function handleAddWaypointFromNavaid(navaid: Navaid) {
+  addWaypointFromNavaid(navaid)
 }
 
 function updateTargetField(

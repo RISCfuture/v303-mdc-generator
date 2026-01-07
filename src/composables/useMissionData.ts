@@ -31,6 +31,7 @@ export function useMissionData(missionId: ComputedRef<string>) {
     const airfields = getAirfieldsForTheater(mission.value.theater)
     const airfieldsAsNavaids: Navaid[] = airfields.map((airfield) => ({
       name: airfield.name,
+      type: 'AIRFIELD',
       latitude: airfield.position.latitude,
       longitude: airfield.position.longitude,
       elevation: airfield.position.elevation,

@@ -26,7 +26,7 @@ const props = defineProps<Props>()
 
 const emit = defineEmits<{
   'add-waypoint': []
-  'add-waypoint-from-navaid': [navaidName: string]
+  'add-waypoint-from-navaid': [navaid: Navaid]
   'remove-waypoint': [index: number]
   'waypoint-drop': [index: number]
   'move-waypoint-up': [index: number]
@@ -35,13 +35,60 @@ const emit = defineEmits<{
 
 const missionsStore = useMissionsStore()
 
-// Track selected navaid value for dropdown
-const selectedNavaid = ref<string | null>(null)
+// Track selected navaid value for dropdown (index into availableNavaids)
+const selectedNavaid = ref<number | null>(null)
+
+// Format navaid type for display
+function formatNavaidType(type: string | undefined): string {
+  switch (type) {
+    case 'AIRFIELD':
+      return 'Airfield'
+    case 'VOR':
+      return 'VOR'
+    case 'DME':
+      return 'DME'
+    case 'VOR_DME':
+      return 'VOR/DME'
+    case 'TACAN':
+      return 'TACAN'
+    case 'VORTAC':
+      return 'VORTAC'
+    case 'NDB':
+      return 'NDB'
+    case 'RSBN':
+      return 'RSBN'
+    case 'TOWN':
+      return 'Town'
+    case 'WAYPOINT':
+      return 'Waypoint'
+    default:
+      return type ?? 'Other'
+  }
+}
+
+// Compute dropdown options with type shown for duplicate names
+const navaidDropdownOptions = computed(() => {
+  // Count occurrences of each name
+  const nameCounts = new Map<string, number>()
+  for (const navaid of props.availableNavaids) {
+    nameCounts.set(navaid.name, (nameCounts.get(navaid.name) || 0) + 1)
+  }
+
+  // Generate options with type suffix for duplicates
+  return props.availableNavaids.map((navaid, index) => {
+    const isDuplicate = (nameCounts.get(navaid.name) || 0) > 1
+    const label = isDuplicate ? `${navaid.name} (${formatNavaidType(navaid.type)})` : navaid.name
+    return { label, value: index }
+  })
+})
 
 // Handle navaid selection and clear dropdown
-function handleNavaidSelect(navaidName: string | null) {
-  if (navaidName) {
-    emit('add-waypoint-from-navaid', navaidName)
+function handleNavaidSelect(navaidIndex: number | null) {
+  if (navaidIndex !== null && navaidIndex >= 0) {
+    const navaid = props.availableNavaids[navaidIndex]
+    if (navaid) {
+      emit('add-waypoint-from-navaid', navaid)
+    }
     selectedNavaid.value = null // Clear the dropdown after selection
   }
 }
@@ -119,7 +166,7 @@ const formatTime = (minutes: number) => {
       <NSpace>
         <NSelect
           v-model:value="selectedNavaid"
-          :options="availableNavaids.map((n: Navaid) => ({ label: n.name, value: n.name }))"
+          :options="navaidDropdownOptions"
           placeholder="Add from database"
           @update:value="handleNavaidSelect"
           :style="{ width: GRID.waypointAutocomplete }"
