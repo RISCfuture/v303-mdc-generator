@@ -12,13 +12,14 @@ async function createNewMission(page: Page): Promise<void> {
 // Helper function to navigate to steerpoints tab
 async function navigateToSteerpoints(page: Page): Promise<void> {
   await page.getByText('Steerpoints', { exact: true }).click();
-  await page.waitForTimeout(500);
+  await page.locator('.waypoint-item').first().waitFor({ state: 'visible' }).catch(() => {
+    // If no waypoints, wait for the empty state message instead
+  });
 }
 
 // Helper function to navigate to basic info tab
 async function navigateToBasicInfo(page: Page): Promise<void> {
   await page.getByText('Basic Info', { exact: true }).click();
-  await page.waitForTimeout(500);
 }
 
 // Helper function to select a departure airport
@@ -28,16 +29,12 @@ async function selectDepartureAirport(page: Page, airportName: string): Promise<
   await depAirportSelect.click();
 
   // Type to filter airports
-  await page.waitForTimeout(300);
   const depAirportInput = depCard.locator('input').first();
   await depAirportInput.fill(airportName.slice(0, 2)); // Type first 2 chars
-  await page.waitForTimeout(500);
 
   // Use keyboard to select the matching airport
   await depAirportInput.press('ArrowDown');
-  await page.waitForTimeout(200);
   await depAirportInput.press('Enter');
-  await page.waitForTimeout(1000); // Wait longer for airport selection to process and trigger steerpoint creation
 }
 
 // Helper function to add a custom steerpoint
@@ -47,7 +44,6 @@ async function addCustomSteerpoint(page: Page, name: string): Promise<void> {
   // Click the "+ Custom Steerpoint" button
   const addButton = page.getByRole('button', { name: '+ Custom Steerpoint' });
   await addButton.click();
-  await page.waitForTimeout(500);
 
   // After clicking the button, a new waypoint card should appear
   // We need to wait for it and then fill in the fields
@@ -70,8 +66,6 @@ async function addCustomSteerpoint(page: Page, name: string): Promise<void> {
 
   const lonInput = lastCard.locator('input').nth(3); // Fourth input
   await lonInput.fill('66.000000');
-
-  await page.waitForTimeout(500);
 }
 
 // Helper function to verify steerpoint properties
@@ -81,7 +75,7 @@ async function verifySteerpointName(page: Page, index: number, expectedName: str
   // Wait for waypoint cards to be visible
   // Waypoint cards are wrapped in .waypoint-item divs
   const waypointCards = page.locator('.waypoint-item');
-  await waypointCards.first().waitFor({ state: 'visible', timeout: 5000 });
+  await waypointCards.first().waitFor({ state: 'visible' });
 
   const card = waypointCards.nth(index);
   const nameInput = card.locator('input').first(); // First input in the card is the name
@@ -137,15 +131,11 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
 
     // Clear and re-select
     await depAirportSelect.click();
-    await page.waitForTimeout(300);
     const depAirportInput = depCard.locator('input').first();
     await depAirportInput.clear();
     await depAirportInput.fill('Ba'); // Type first 2 chars - matches Bamyan first alphabetically
-    await page.waitForTimeout(500);
     await depAirportInput.press('ArrowDown');
-    await page.waitForTimeout(200);
     await depAirportInput.press('Enter');
-    await page.waitForTimeout(1000);
 
     // Verify steerpoint count is still 1 (updated, not added)
     const newCount = await getSteerpointCount(page);
@@ -166,7 +156,6 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
     await waypointCard.waitFor({ state: 'visible' });
     const removeButton = waypointCard.locator('button').filter({ hasText: '' }).last(); // Delete button is the last button
     await removeButton.click();
-    await page.waitForTimeout(500);
 
     // Verify no steerpoints now
     const emptyStateError = page.locator('text="At least one steerpoint is required"');
@@ -207,15 +196,11 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
 
     // Clear and re-select
     await depAirportSelect.click();
-    await page.waitForTimeout(300);
     const depAirportInput = depCard.locator('input').first();
     await depAirportInput.clear();
     await depAirportInput.fill('Ba'); // Type first 2 chars of Bagram
-    await page.waitForTimeout(500);
     await depAirportInput.press('ArrowDown');
-    await page.waitForTimeout(200);
     await depAirportInput.press('Enter');
-    await page.waitForTimeout(1000);
 
     // Verify we still have 2 steerpoints (no changes)
     const finalCount = await getSteerpointCount(page);
@@ -243,7 +228,6 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
     const isClearVisible = await clearButton.isVisible();
     if (isClearVisible) {
       await clearButton.click();
-      await page.waitForTimeout(500);
     }
 
     // The steerpoint should still exist (clearing airport doesn't remove steerpoints)
@@ -256,14 +240,10 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
     const depAirportSelectAgain = depCardAgain.locator('.n-base-selection').first();
     await depAirportSelectAgain.click();
 
-    await page.waitForTimeout(300);
     const depAirportInput = depCardAgain.locator('input').first();
     await depAirportInput.fill('Sh'); // Type first 2 chars of Shindand
-    await page.waitForTimeout(500);
     await depAirportInput.press('ArrowDown');
-    await page.waitForTimeout(200);
     await depAirportInput.press('Enter');
-    await page.waitForTimeout(1000);
 
     // Verify steerpoint was updated, not added
     const finalCount = await getSteerpointCount(page);
@@ -296,8 +276,6 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
       await totInput.fill('12:30:00');
     }
 
-    await page.waitForTimeout(500);
-
     // Change departure airport
     await navigateToBasicInfo(page);
 
@@ -306,15 +284,11 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
 
     // Clear and re-select
     await depAirportSelect.click();
-    await page.waitForTimeout(300);
     const depAirportInput = depCard.locator('input').first();
     await depAirportInput.clear();
     await depAirportInput.fill('Ba'); // Type first 2 chars of Bagram
-    await page.waitForTimeout(500);
     await depAirportInput.press('ArrowDown');
-    await page.waitForTimeout(200);
     await depAirportInput.press('Enter');
-    await page.waitForTimeout(1000);
 
     // Verify the steerpoint was updated but some properties preserved
     await navigateToSteerpoints(page);

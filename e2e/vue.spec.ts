@@ -18,7 +18,6 @@ test.describe('Flight Member Integration', () => {
 
     // Navigate to Flight Members tab
     await page.getByText('Flight Members', { exact: true }).click();
-    await page.waitForTimeout(1000); // Wait for tab content to load
 
     // Initially should have no crew - check for the empty state message
     await expect(page.getByText(/At least one flight member is required/)).toBeVisible();
@@ -30,9 +29,8 @@ test.describe('Flight Member Integration', () => {
     const flightCard = page.locator('.n-card', { hasText: 'Flight Composition' });
     const crewDropdown = flightCard.locator('.n-base-selection').first();
     await crewDropdown.click();
-    // Wait for the dropdown menu to appear, then wait for options
-    await page.waitForSelector('.n-base-select-menu', { state: 'visible', timeout: 10000 });
-    await page.waitForTimeout(500); // Give options time to render
+    // Wait for the dropdown menu to appear
+    await page.locator('.n-base-select-menu').waitFor({ state: 'visible' });
 
     // Select first option
     await page.locator('.n-base-select-option').first().click();
@@ -52,7 +50,6 @@ test.describe('Flight Member Integration', () => {
 
     // Navigate to Flight Members tab
     await page.getByText('Flight Members', { exact: true }).click();
-    await page.waitForTimeout(1000); // Wait for tab content to load
 
     // Add first crew member
     // Wait for the Flight Composition card to be visible
@@ -61,9 +58,8 @@ test.describe('Flight Member Integration', () => {
     const flightCard = page.locator('.n-card', { hasText: 'Flight Composition' });
     const crewDropdown = flightCard.locator('.n-base-selection').first();
     await crewDropdown.click();
-    // Wait for the dropdown menu to appear, then wait for options
-    await page.waitForSelector('.n-base-select-menu', { state: 'visible', timeout: 10000 });
-    await page.waitForTimeout(500); // Give options time to render
+    // Wait for the dropdown menu to appear
+    await page.locator('.n-base-select-menu').waitFor({ state: 'visible' });
 
     // Get the text of the first option to verify later
     const firstOption = page.locator('.n-base-select-option').first();

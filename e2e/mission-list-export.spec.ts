@@ -7,15 +7,24 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 /**
- * Helper to create a mission with optional name, handles webkit timing issues
+ * Helper to create a mission with optional name
  */
 async function createMission(page: Page, name?: string) {
   await page.getByRole('button', { name: /New Mission/ }).first().click()
-  await page.getByRole('button', { name: 'Create Mission' }).click()
-  // Wait for URL navigation to mission editor (more reliable than waiting for text)
-  await page.waitForURL(/\/mission\/.+/, { timeout: 30000 })
-  // Wait for mission editor to render
-  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible', timeout: 10000 })
+  // Wait for dialog to be visible before clicking Create Mission
+  const dialog = page.locator('dialog, [role="dialog"]')
+  await dialog.waitFor({ state: 'visible' })
+
+  // Use JavaScript click to avoid WebKit click interception issues with overlay elements
+  await page.evaluate(() => {
+    const btn = Array.from(document.querySelectorAll('button')).find(
+      (b) => b.textContent?.includes('Create Mission')
+    ) as HTMLButtonElement
+    btn?.click()
+  })
+
+  // Wait for mission editor to load - more reliable than URL check for SPA navigation
+  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' })
 
   if (name) {
     const nameInput = page.locator('[aria-label="Mission Name"] input')
@@ -28,7 +37,7 @@ async function createMission(page: Page, name?: string) {
  */
 async function goBackToMissionList(page: Page) {
   await page.locator('.n-page-header__back').click()
-  await page.getByRole('table').waitFor({ state: 'visible', timeout: 10000 })
+  await page.getByRole('table').waitFor({ state: 'visible' })
 }
 
 test.describe('Mission List Export/Import', () => {
@@ -40,11 +49,19 @@ test.describe('Mission List Export/Import', () => {
       indexedDB.deleteDatabase('v303-mdc-images')
     })
     await page.reload()
+    // Disable smooth scrolling and animations - fixes WebKit flaky click issues
+    await page.addStyleTag({
+      content: `
+        *, *::before, *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      `,
+    })
   })
 
   test('should export missions and download JSON file', async ({ page }) => {
-    test.setTimeout(90000)
-
     await page.goto('/')
 
     // Create two missions
@@ -103,8 +120,6 @@ test.describe('Mission List Export/Import', () => {
   })
 
   test('should successfully import missions and replace existing ones', async ({ page }) => {
-    test.setTimeout(90000)
-
     await page.goto('/')
 
     // Create two original missions
@@ -200,8 +215,6 @@ test.describe('Mission List Export/Import', () => {
   })
 
   test('should handle multiple missions and images in export', async ({ page }) => {
-    test.setTimeout(90000)
-
     await page.goto('/')
 
     // Create 3 missions with different names
@@ -233,8 +246,8 @@ test.describe('Mission List Export/Import', () => {
 
     await page.getByRole('button', { name: /Replace All Missions/i }).click()
 
-    // Wait for import to complete
-    await page.waitForTimeout(500)
+    // Wait for modal to close
+    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).not.toBeVisible()
 
     // Verify all missions are restored (use table selector to avoid strict mode violation)
     for (const name of missionNames) {

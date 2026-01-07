@@ -4,7 +4,6 @@ import { test, expect, type Page } from '@playwright/test';
 async function setMissionType(page: Page, type: string = 'CAS') {
   // Navigate to Basic Info tab if not already there
   await page.getByText('Basic Info', { exact: true }).click();
-  await page.waitForTimeout(200);
 
   // Fill in the Mission Type field (it's an autocomplete)
   const missionTypeInput = page.locator('[aria-label="Mission Type"] input');
@@ -12,48 +11,40 @@ async function setMissionType(page: Page, type: string = 'CAS') {
   await missionTypeInput.fill(type);
   // Press Tab to commit the value and move to next field
   await missionTypeInput.press('Tab');
-  await page.waitForTimeout(200);
 }
 
 // Helper function to fill in all required fields for a complete/exportable mission
 async function fillRequiredFields(page: Page) {
   // Navigate to Basic Info tab
   await page.getByText('Basic Info', { exact: true }).click();
-  await page.waitForTimeout(200);
 
   // Set mission type (required)
   await setMissionType(page, 'CAS');
 
   // Navigate to Flight Members tab
   await page.getByText('Flight Members', { exact: true }).click();
-  await page.waitForTimeout(500);
 
   // Add at least one crew member FIRST (this may auto-populate callsign/link16)
   await expect(page.getByText('Flight Composition')).toBeVisible();
   const flightCard = page.locator('.n-card', { hasText: 'Flight Composition' });
   const crewDropdown = flightCard.locator('.n-base-selection').first();
   await crewDropdown.click();
-  await page.waitForSelector('.n-base-select-menu', { state: 'visible', timeout: 10000 });
-  await page.waitForTimeout(500);
+  await page.locator('.n-base-select-menu').waitFor({ state: 'visible' });
   await page.locator('.n-base-select-option').first().click();
-  await page.waitForTimeout(500);
 
   // Now set Flight Callsign and Link16 Prefix (overriding crew defaults)
   const callsignInput = page.locator('input[placeholder="Select or enter callsign"]');
-  await callsignInput.waitFor({ state: 'visible', timeout: 5000 });
+  await callsignInput.waitFor({ state: 'visible' });
   await callsignInput.clear();
   await callsignInput.pressSequentially('VIPER', { delay: 50 });
-  await page.waitForTimeout(200);
 
   const link16Input = page.locator('input[placeholder="Enter 2-letter prefix"]');
-  await link16Input.waitFor({ state: 'visible', timeout: 5000 });
+  await link16Input.waitFor({ state: 'visible' });
   await link16Input.clear();
   await link16Input.pressSequentially('VR', { delay: 50 });
-  await page.waitForTimeout(200);
 
   // Stay on Basic Info tab to fill in departure/recovery fields
   await page.getByText('Basic Info', { exact: true }).click();
-  await page.waitForTimeout(500);
 
   // Fill in departure airport (required) - find within the "Departure" card
   const depCard = page.locator('.n-card', { hasText: 'Departure' });
@@ -61,27 +52,20 @@ async function fillRequiredFields(page: Page) {
   await depAirportSelect.click();
 
   // Type to filter airports - the input appears after clicking
-  await page.waitForTimeout(300);
   const depAirportInput = depCard.locator('input').first();
   await depAirportInput.fill('KA');
-  await page.waitForTimeout(500);
 
   // Click first option - use keyboard to select to avoid timing issues
   await depAirportInput.press('ArrowDown');
-  await page.waitForTimeout(200);
   await depAirportInput.press('Enter');
-  await page.waitForTimeout(800); // Wait for airport selection to process
 
   // Fill in departure runway (required)
   const depRunwaySelect = depCard.locator('.n-base-selection').nth(1);
   await depRunwaySelect.click();
-  await page.waitForTimeout(500);
 
   // Use keyboard to select first runway option
   await page.keyboard.press('ArrowDown');
-  await page.waitForTimeout(200);
   await page.keyboard.press('Enter');
-  await page.waitForTimeout(500);
 
   // Fill in recovery airport (required) - find within the "Recovery" card
   const recCard = page.locator('.n-card', { hasText: 'Recovery' });
@@ -89,58 +73,43 @@ async function fillRequiredFields(page: Page) {
   await recAirportSelect.click();
 
   // Type to filter airports - the input appears after clicking
-  await page.waitForTimeout(300);
   const recAirportInput = recCard.locator('input').first();
   await recAirportInput.fill('KA');
-  await page.waitForTimeout(500);
 
   // Click first option - use keyboard to select to avoid timing issues
   await recAirportInput.press('ArrowDown');
-  await page.waitForTimeout(200);
   await recAirportInput.press('Enter');
-  await page.waitForTimeout(800); // Wait for airport selection to process
 
   // Fill in recovery runway (required)
   const recRunwaySelect = recCard.locator('.n-base-selection').nth(1);
   await recRunwaySelect.click();
-  await page.waitForTimeout(500);
 
   // Use keyboard to select first runway option
   await page.keyboard.press('ArrowDown');
-  await page.waitForTimeout(200);
   await page.keyboard.press('Enter');
-  await page.waitForTimeout(500);
 
   // Navigate to Briefing tab
   await page.getByText('Briefing', { exact: true }).click();
-  await page.waitForTimeout(500);
 
   // Fill in remarks (required) - find the markdown editor
   const remarksEditor = page.locator('.cm-content').first();
   await remarksEditor.click();
   await remarksEditor.fill('Test mission remarks');
-  await page.waitForTimeout(200);
-
-  // Note: A steerpoint is auto-created from the departure airport selection above,
-  // so we don't need to manually add one anymore. This auto-created waypoint has
-  // valid coordinates from the airfield database and satisfies the waypoint requirement.
 
   // Navigate to TOLD & Fuel tab to fill in required rotation/refusal speeds
   await page.getByText('TOLD & Fuel', { exact: true }).click();
-  await page.waitForTimeout(500);
 
   // Fill in rotation speed (required) - find within the "Takeoff & Landing Data" card
   const toldCard = page.locator('.n-card', { hasText: 'Takeoff & Landing Data' });
-  await toldCard.waitFor({ state: 'visible', timeout: 5000 });
+  await toldCard.waitFor({ state: 'visible' });
 
   // Rotation speed is after "Gross Weight" label
   const rotationFormItem = toldCard.locator('.n-form-item', { hasText: 'Rotation Speed' });
   const rotationInput = rotationFormItem.locator('input').first();
-  await rotationInput.waitFor({ state: 'visible', timeout: 5000 });
+  await rotationInput.waitFor({ state: 'visible' });
   await rotationInput.click();
   await rotationInput.fill('120');
   await rotationInput.blur();
-  await page.waitForTimeout(200);
 
   // Fill in refusal speed (required)
   const refusalFormItem = toldCard.locator('.n-form-item', { hasText: 'Refusal Speed' });
@@ -148,14 +117,6 @@ async function fillRequiredFields(page: Page) {
   await refusalInput.click();
   await refusalInput.fill('100');
   await refusalInput.blur();
-  await page.waitForTimeout(200);
-
-  // Note: Takeoff fuel, Joker, and Bingo should already have defaults from mission creation
-  // No need to fill them unless they're 0
-
-  // Wait for all changes to be saved and validation to complete (debounce delay + reactivity)
-  // Increase wait time to ensure all async updates complete
-  await page.waitForTimeout(3000);
 }
 
 test.describe('Mission Export Operations', () => {
@@ -183,7 +144,7 @@ test.describe('Mission Export Operations', () => {
     await fillRequiredFields(page);
 
     // Wait for the Export PDF button to become enabled
-    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled({ timeout: 10000 });
+    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled();
 
     // Set up download listener
     const downloadPromise = page.waitForEvent('download');
@@ -214,12 +175,9 @@ test.describe('Mission Export Operations', () => {
     // Fill in all required fields to make mission exportable
     await fillRequiredFields(page);
 
-    // First wait for Export PDF button to be enabled (this works)
-    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled({ timeout: 15000 });
-
-    // Then wait for the Export MDC button to become enabled
-    // Give extra time since validation must complete
-    await expect(page.getByRole('button', { name: /Export MDC/ })).toBeEnabled({ timeout: 15000 });
+    // Wait for Export PDF and Export MDC buttons to be enabled
+    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled();
+    await expect(page.getByRole('button', { name: /Export MDC/ })).toBeEnabled();
 
     // Set up download listener
     const downloadPromise = page.waitForEvent('download');
@@ -228,7 +186,7 @@ test.describe('Mission Export Operations', () => {
     await page.getByRole('button', { name: /Export MDC/ }).click();
 
     // Wait for dropdown menu to appear
-    await page.waitForTimeout(500);
+    await page.locator('.n-dropdown-option').first().waitFor({ state: 'visible' });
 
     // Click the first crew member option in the dropdown (VIPER-1)
     await page.locator('.n-dropdown-option').first().click();
@@ -256,7 +214,6 @@ test.describe('Mission Export Operations', () => {
 
     // Navigate to Briefing tab to add image (test-specific setup)
     await page.getByText('Briefing', { exact: true }).click();
-    await page.waitForTimeout(500);
 
     // Create a simple test image (1x1 red pixel PNG)
     const testImageBase64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==';
@@ -285,11 +242,8 @@ test.describe('Mission Export Operations', () => {
       buffer: testImageBuffer,
     });
 
-    // Wait for image to be processed and added to editor
-    await page.waitForTimeout(2000);
-
     // Wait for the Export PDF button to become enabled
-    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled({ timeout: 10000 });
+    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled();
 
     // Set up download listener
     const downloadPromise = page.waitForEvent('download');
