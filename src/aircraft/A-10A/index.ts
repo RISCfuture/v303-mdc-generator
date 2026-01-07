@@ -26,12 +26,12 @@ calculatorRegistry.register(A10A_CLSID, createA10Calculator)
 calculatorRegistry.registerComponent(
   A10A_CLSID,
   'speedCalculatorForm',
-  () => import('./components/A10SpeedCalculatorForm.vue'),
+  () => import('./components/SpeedCalculatorForm.vue'),
 )
 calculatorRegistry.registerComponent(
   A10A_CLSID,
   'takeoffDistanceDisplay',
-  () => import('./components/A10TakeoffDistanceDisplay.vue'),
+  () => import('./components/TakeoffDistanceDisplay.vue'),
 )
 
 // Export calculator class and factory
@@ -100,5 +100,5 @@ export type {
 } from './takeoffDistanceCalculator'
 
 // Export Vue components for aircraft-specific UI
-export { default as A10SpeedCalculatorForm } from './components/A10SpeedCalculatorForm.vue'
-export { default as A10TakeoffDistanceDisplay } from './components/A10TakeoffDistanceDisplay.vue'
+export { default as A10SpeedCalculatorForm } from './components/SpeedCalculatorForm.vue'
+export { default as A10TakeoffDistanceDisplay } from './components/TakeoffDistanceDisplay.vue'

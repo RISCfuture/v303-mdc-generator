@@ -23,12 +23,22 @@ calculatorRegistry.register(F16C_CLSID, createF16Calculator)
 calculatorRegistry.registerComponent(
   F16C_CLSID,
   'speedCalculatorForm',
-  () => import('./components/F16SpeedCalculatorForm.vue'),
+  () => import('./components/SpeedCalculatorForm.vue'),
 )
 calculatorRegistry.registerComponent(
   F16C_CLSID,
   'takeoffDistanceDisplay',
-  () => import('./components/F16TakeoffDistanceDisplay.vue'),
+  () => import('./components/TakeoffDistanceDisplay.vue'),
+)
+calculatorRegistry.registerComponent(
+  F16C_CLSID,
+  'ecmCmds',
+  () => import('./components/EcmCmds.vue'),
+)
+calculatorRegistry.registerComponent(
+  F16C_CLSID,
+  'waypointCcipFields',
+  () => import('./components/WaypointCcipFields.vue'),
 )
 
 // Export calculator class and factory
@@ -93,5 +103,5 @@ export { calculateBingoFuel, calculateDefaultBingo } from './bingoCalculator'
 export type { ApproachType, AltitudeProfile, BingoCalculationParams } from './bingoCalculator'
 
 // Export Vue components for aircraft-specific UI
-export { default as F16SpeedCalculatorForm } from './components/F16SpeedCalculatorForm.vue'
-export { default as F16TakeoffDistanceDisplay } from './components/F16TakeoffDistanceDisplay.vue'
+export { default as F16SpeedCalculatorForm } from './components/SpeedCalculatorForm.vue'
+export { default as F16TakeoffDistanceDisplay } from './components/TakeoffDistanceDisplay.vue'

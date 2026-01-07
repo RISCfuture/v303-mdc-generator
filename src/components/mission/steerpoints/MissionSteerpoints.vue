@@ -5,7 +5,7 @@ import { useMissionsStore } from '@/stores/missions'
 import { formatDistance } from '@/utils/formatting'
 import { SPACING, FONT_SIZE, GRID } from '@/styles/design-tokens'
 import WaypointCard from '@/components/mission/steerpoints/WaypointCard.vue'
-import type { Waypoint, Navaid } from '@/types'
+import type { Waypoint, Navaid, Airframe } from '@/types'
 import type { DragAndDropReturn } from '@/utils/useDragAndDrop'
 import {
   calculateWaypointPairs,
@@ -16,6 +16,7 @@ interface Props {
   waypoints: Waypoint[]
   availableNavaids: Navaid[]
   waypointDragDrop: DragAndDropReturn<Waypoint>
+  airframe: Airframe
   isWaypointFieldIncomplete?: (
     waypoint: Pick<Waypoint, 'name' | 'latitude' | 'longitude' | 'altitude' | 'speed'>,
     field: 'name' | 'latitude' | 'longitude' | 'altitude',
@@ -129,6 +130,7 @@ const formatTime = (minutes: number) => {
           :is-last="index === waypoints.length - 1"
           :is-first-tgt="index === firstTgtIndex"
           :tot-placeholder="totPlaceholders[index] ?? ''"
+          :airframe="airframe"
           :is-waypoint-field-incomplete="isWaypointFieldIncomplete"
           @update-field="
             (field: keyof Waypoint, value: unknown) => {

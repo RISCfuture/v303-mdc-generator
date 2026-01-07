@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed, defineAsyncComponent, type Component } from 'vue'
 import { NButton, NCard, NIcon, NText } from 'naive-ui'
 import {
   TrashOutline,
@@ -8,9 +9,9 @@ import {
 } from '@vicons/ionicons5'
 import { GRID, SPACING, FONT_SIZE } from '@/styles/design-tokens'
 import { formatInteger } from '@/utils/numberFormatting'
+import { getAircraftComponentLoader } from '@/aircraft'
 import WaypointFields from './WaypointFields.vue'
-import WaypointCCIPFields from './WaypointCCIPFields.vue'
-import type { Waypoint } from '@/types'
+import type { Waypoint, Airframe } from '@/types'
 
 interface Props {
   waypoint: Waypoint
@@ -19,6 +20,7 @@ interface Props {
   isLast: boolean
   isFirstTgt: boolean
   totPlaceholder: string
+  airframe: Airframe
   isWaypointFieldIncomplete?: (
     waypoint: Pick<Waypoint, 'name' | 'latitude' | 'longitude' | 'altitude' | 'speed'>,
     field: 'name' | 'latitude' | 'longitude' | 'altitude',
@@ -37,6 +39,12 @@ const emit = defineEmits<{
   drop: []
   blur: []
 }>()
+
+// Dynamic component for airframe-specific CCIP fields (F-16 only)
+const ccipFieldsComponent = computed<Component | null>(() => {
+  const loader = getAircraftComponentLoader(props.airframe, 'waypointCcipFields')
+  return loader ? defineAsyncComponent(loader) : null
+})
 </script>
 
 <template>
@@ -78,9 +86,10 @@ const emit = defineEmits<{
             />
           </div>
 
-          <!-- CCIP Fields for TGT type waypoints -->
-          <WaypointCCIPFields
-            v-if="waypoint.type === 'TGT'"
+          <!-- CCIP Fields for TGT type waypoints (F-16 only via registry) -->
+          <component
+            v-if="waypoint.type === 'TGT' && ccipFieldsComponent"
+            :is="ccipFieldsComponent"
             :waypoint="waypoint"
             :is-first-tgt="props.isFirstTgt"
             @update-field="

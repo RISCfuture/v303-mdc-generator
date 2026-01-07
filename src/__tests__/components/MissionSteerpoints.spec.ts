@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import MissionSteerpoints from '@/components/mission/steerpoints/MissionSteerpoints.vue'
-import type { Waypoint, Navaid } from '@/types'
+import type { Waypoint, Navaid, Airframe } from '@/types'
 import { clickNButton } from '@/__tests__/helpers/naive-ui-helpers'
 
 const createMockWaypoint = (overrides = {}): Waypoint => ({
@@ -49,6 +49,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -67,6 +68,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -84,6 +86,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -101,6 +104,7 @@ describe('MissionSteerpoints', () => {
           waypoints: [],
           availableNavaids: navaids,
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -118,6 +122,7 @@ describe('MissionSteerpoints', () => {
           waypoints: [],
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -132,6 +137,7 @@ describe('MissionSteerpoints', () => {
           waypoints: [],
           availableNavaids: [createMockNavaid({ name: 'TACAN' })],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -150,6 +156,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -168,6 +175,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -186,6 +194,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -206,6 +215,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -223,6 +233,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -241,6 +252,7 @@ describe('MissionSteerpoints', () => {
           waypoints: [],
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -257,6 +269,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -277,6 +290,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -297,6 +311,7 @@ describe('MissionSteerpoints', () => {
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
           isWaypointFieldIncomplete: mockCallback,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 
@@ -312,6 +327,7 @@ describe('MissionSteerpoints', () => {
           waypoints,
           availableNavaids: [],
           waypointDragDrop: mockDragDrop,
+          airframe: 'F-16C_50' as Airframe,
         },
       })
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watch, ref } from 'vue'
+import { computed, watch, ref, defineAsyncComponent, type Component } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
   NButton,
@@ -14,6 +14,7 @@ import {
 } from 'naive-ui'
 import { ChevronDownOutline, AlertCircleOutline } from '@vicons/ionicons5'
 import { useMissionsStore } from '@/stores/missions'
+import { getAircraftComponentLoader } from '@/aircraft'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { getCrewPositionShort } from '@/data/constants'
@@ -50,7 +51,6 @@ import RadioPresetsEditor from '@/components/mission/radios/RadioPresetsEditor.v
 import MissionTOLDFuel from '@/components/mission/told-fuel/MissionTOLDFuel.vue'
 import MissionTargets from '@/components/mission/targets/MissionTargets.vue'
 import MissionBriefing from '@/components/mission/briefing/MissionBriefing.vue'
-import MissionECMCMDS from '@/components/mission/ecm-cmds/MissionECMCMDS.vue'
 import SpeedCalculatorModal from '@/components/mission/told-fuel/SpeedCalculatorModal.vue'
 import BingoCalculatorModal from '@/components/mission/told-fuel/BingoCalculatorModal.vue'
 import MissionPackage from '@/components/mission/package/MissionPackage.vue'
@@ -237,6 +237,12 @@ const {
 
 // Get airframe first since it's needed by multiple composables
 const airframe = computed(() => (mission.value ? getMissionAirframe(mission.value) : ''))
+
+// Dynamic component for airframe-specific ECM/CMDS
+const ecmCmdsComponent = computed<Component | null>(() => {
+  const loader = getAircraftComponentLoader(airframe.value, 'ecmCmds')
+  return loader ? defineAsyncComponent(loader) : null
+})
 
 // Crew management
 const crew = computed(() => mission.value?.crew || [])
@@ -570,6 +576,7 @@ function handleSelectMDCExport(key: string) {
               :waypoints="waypoints"
               :available-navaids="availableNavaids"
               :waypoint-drag-drop="waypointDragDrop"
+              :airframe="airframe"
               :is-waypoint-field-incomplete="isWaypointFieldIncomplete"
               @add-waypoint="addWaypoint"
               @add-waypoint-from-navaid="handleAddWaypointFromNavaid"
@@ -639,8 +646,9 @@ function handleSelectMDCExport(key: string) {
           </NTabPane>
 
           <!-- ECM/CMDS Tab -->
-          <NTabPane name="ecm" tab="ECM/CMDS">
-            <MissionECMCMDS
+          <NTabPane v-if="ecmCmdsComponent" name="ecm" tab="ECM/CMDS">
+            <component
+              :is="ecmCmdsComponent"
               :mission="mission"
               :airframe="airframe"
               @update:cmds-profile="

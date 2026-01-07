@@ -20,7 +20,11 @@ type CalculatorFactory = () => AircraftCalculator
 /**
  * UI component types that can be registered per aircraft
  */
-export type AircraftComponentType = 'speedCalculatorForm' | 'takeoffDistanceDisplay'
+export type AircraftComponentType =
+  | 'speedCalculatorForm'
+  | 'takeoffDistanceDisplay'
+  | 'ecmCmds'
+  | 'waypointCcipFields'
 
 /**
  * Component loader type (for async components)

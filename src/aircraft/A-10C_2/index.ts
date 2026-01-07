@@ -24,12 +24,17 @@ calculatorRegistry.register(A10C2_CLSID, createA10Calculator)
 calculatorRegistry.registerComponent(
   A10C2_CLSID,
   'speedCalculatorForm',
-  () => import('../A-10A/components/A10SpeedCalculatorForm.vue'),
+  () => import('../A-10A/components/SpeedCalculatorForm.vue'),
 )
 calculatorRegistry.registerComponent(
   A10C2_CLSID,
   'takeoffDistanceDisplay',
-  () => import('../A-10A/components/A10TakeoffDistanceDisplay.vue'),
+  () => import('../A-10A/components/TakeoffDistanceDisplay.vue'),
+)
+calculatorRegistry.registerComponent(
+  A10C2_CLSID,
+  'ecmCmds',
+  () => import('../A-10C/components/EcmCmds.vue'),
 )
 
 // Re-export everything from A-10A for backward compatibility

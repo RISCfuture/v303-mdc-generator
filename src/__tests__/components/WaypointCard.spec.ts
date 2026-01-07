@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import WaypointCard from '@/components/mission/steerpoints/WaypointCard.vue'
 import { createMockWaypoint, expectEmitted, expectEmittedWith } from '@/__tests__/helpers'
+import type { Airframe } from '@/types'
 
 describe('WaypointCard', () => {
   describe('Delete functionality', () => {
@@ -14,6 +15,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -36,6 +39,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -54,6 +59,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -72,6 +79,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -90,6 +99,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -108,6 +119,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -126,6 +139,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 
@@ -148,6 +163,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1430Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
           isWaypointFieldIncomplete: mockCallback,
         },
       })
@@ -165,6 +182,8 @@ describe('WaypointCard', () => {
           isFirst: false,
           isLast: false,
           totPlaceholder: '1500Z',
+          airframe: 'F-16C_50' as Airframe,
+          isFirstTgt: false,
         },
       })
 

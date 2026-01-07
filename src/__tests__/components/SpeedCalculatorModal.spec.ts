@@ -5,7 +5,7 @@ import SpeedCalculatorModal from '@/components/mission/told-fuel/SpeedCalculator
 import type { Mission } from '@/types'
 
 // Mock the async aircraft-specific form components - must be inline to avoid hoisting issues
-vi.mock('@/aircraft/F-16C_50/components/F16SpeedCalculatorForm.vue', async () => {
+vi.mock('@/aircraft/F-16C_50/components/SpeedCalculatorForm.vue', async () => {
   const vue = await vi.importActual<typeof import('vue')>('vue')
   return {
     default: vue.defineComponent({
@@ -56,7 +56,7 @@ vi.mock('@/aircraft/F-16C_50/components/F16SpeedCalculatorForm.vue', async () =>
   }
 })
 
-vi.mock('@/aircraft/A-10A/components/A10SpeedCalculatorForm.vue', async () => {
+vi.mock('@/aircraft/A-10A/components/SpeedCalculatorForm.vue', async () => {
   const vue = await vi.importActual<typeof import('vue')>('vue')
   return {
     default: vue.defineComponent({
