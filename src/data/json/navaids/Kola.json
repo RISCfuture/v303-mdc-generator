@@ -1,4770 +1,5565 @@
 [
   {
     "name": "ATA",
+    "type": "VOR_DME",
     "latitude": 69.977414,
     "longitude": 23.371993,
     "elevation": 0
   },
   {
     "name": "Aapua",
+    "type": "TOWN",
     "latitude": 66.859856,
     "longitude": 23.520965,
     "elevation": 0
   },
   {
     "name": "Aarborte",
+    "type": "TOWN",
     "latitude": 65.596262,
     "longitude": 13.990966,
     "elevation": 0
   },
   {
     "name": "Aavasaksa",
+    "type": "TOWN",
     "latitude": 66.378123,
     "longitude": 23.697575,
     "elevation": 0
   },
   {
     "name": "Abborrtrask",
+    "type": "TOWN",
     "latitude": 65.449762,
     "longitude": 19.386899,
     "elevation": 0
   },
   {
     "name": "Abisko",
+    "type": "TOWN",
     "latitude": 68.35017,
     "longitude": 18.830006,
     "elevation": 0
   },
   {
     "name": "Adak",
+    "type": "TOWN",
     "latitude": 65.352164,
     "longitude": 18.597745,
     "elevation": 0
   },
   {
     "name": "Afrikanda",
+    "type": "TOWN",
     "latitude": 67.441689,
     "longitude": 32.776907,
     "elevation": 0
   },
   {
     "name": "Ahola",
+    "type": "TOWN",
     "latitude": 66.110272,
     "longitude": 28.16577,
     "elevation": 0
   },
   {
     "name": "Airivaara",
+    "type": "TOWN",
     "latitude": 67.394335,
     "longitude": 23.709376,
     "elevation": 0
   },
   {
     "name": "Aittojarvi",
+    "type": "TOWN",
     "latitude": 65.417329,
     "longitude": 26.730406,
     "elevation": 0
   },
   {
     "name": "Ajluokta",
+    "type": "TOWN",
     "latitude": 68.044711,
     "longitude": 16.080025,
     "elevation": 0
   },
   {
     "name": "Akaslompolo",
+    "type": "TOWN",
     "latitude": 67.606571,
     "longitude": 24.146278,
     "elevation": 0
   },
   {
     "name": "Aker",
+    "type": "TOWN",
     "latitude": 66.17127,
     "longitude": 12.568573,
     "elevation": 0
   },
   {
     "name": "Ala-Raumo",
+    "type": "TOWN",
     "latitude": 65.849852,
     "longitude": 24.264813,
     "elevation": 0
   },
   {
     "name": "Alakurtti",
+    "type": "TOWN",
     "latitude": 66.964005,
     "longitude": 30.342423,
     "elevation": 0
   },
   {
     "name": "Alakyla",
+    "type": "TOWN",
     "latitude": 67.35632,
     "longitude": 24.892615,
     "elevation": 0
   },
   {
     "name": "Alsvag",
+    "type": "TOWN",
     "latitude": 68.901802,
     "longitude": 15.28002,
     "elevation": 0
   },
   {
     "name": "Alta",
+    "type": "TOWN",
     "latitude": 69.966605,
     "longitude": 23.273328,
     "elevation": 0
   },
   {
     "name": "Alternes",
+    "type": "TOWN",
     "latitude": 66.308329,
     "longitude": 14.021878,
     "elevation": 0
   },
   {
     "name": "Altevika",
+    "type": "TOWN",
     "latitude": 68.943289,
     "longitude": 16.67448,
     "elevation": 0
   },
   {
     "name": "Alvik",
+    "type": "TOWN",
     "latitude": 65.563098,
     "longitude": 21.780972,
     "elevation": 0
   },
   {
     "name": "Alvsbyn",
+    "type": "TOWN",
     "latitude": 65.675141,
     "longitude": 20.996923,
     "elevation": 0
   },
   {
     "name": "Ambarnyi",
+    "type": "TOWN",
     "latitude": 65.897865,
     "longitude": 33.710458,
     "elevation": 0
   },
   {
     "name": "Ammarnas",
+    "type": "TOWN",
     "latitude": 65.960573,
     "longitude": 16.205739,
     "elevation": 0
   },
   {
     "name": "Andenes",
+    "type": "TOWN",
     "latitude": 69.32182,
     "longitude": 16.124722,
     "elevation": 0
   },
   {
     "name": "Andervag",
+    "type": "TOWN",
     "latitude": 68.916249,
     "longitude": 17.171979,
     "elevation": 0
   },
   {
     "name": "Angesan",
+    "type": "TOWN",
     "latitude": 66.752709,
     "longitude": 22.297303,
     "elevation": 0
   },
   {
     "name": "Ankarsund",
+    "type": "TOWN",
     "latitude": 65.354932,
     "longitude": 16.501515,
     "elevation": 0
   },
   {
     "name": "Anstad",
+    "type": "TOWN",
     "latitude": 68.829723,
     "longitude": 17.184762,
     "elevation": 0
   },
   {
     "name": "Antinrova",
+    "type": "TOWN",
     "latitude": 67.255855,
     "longitude": 22.76114,
     "elevation": 0
   },
   {
     "name": "Antis",
+    "type": "TOWN",
     "latitude": 67.266007,
     "longitude": 22.764015,
     "elevation": 0
   },
   {
     "name": "Antnas",
+    "type": "TOWN",
     "latitude": 65.552553,
     "longitude": 21.842873,
     "elevation": 0
   },
   {
     "name": "Apatity",
+    "type": "TOWN",
     "latitude": 67.568626,
     "longitude": 33.404389,
     "elevation": 0
   },
   {
     "name": "Arjeplog",
+    "type": "TOWN",
     "latitude": 66.051769,
     "longitude": 17.89168,
     "elevation": 0
   },
   {
     "name": "Arnoyhamn",
+    "type": "TOWN",
     "latitude": 70.052676,
     "longitude": 20.631698,
     "elevation": 0
   },
   {
     "name": "Arstein",
+    "type": "TOWN",
     "latitude": 68.692199,
     "longitude": 17.532278,
     "elevation": 0
   },
   {
     "name": "Arvidsjaur",
+    "type": "TOWN",
     "latitude": 65.594767,
     "longitude": 19.169502,
     "elevation": 0
   },
   {
     "name": "Arviksand",
+    "type": "TOWN",
     "latitude": 70.195149,
     "longitude": 20.522036,
     "elevation": 0
   },
   {
     "name": "Ase",
+    "type": "TOWN",
     "latitude": 69.016061,
     "longitude": 15.809436,
     "elevation": 0
   },
   {
     "name": "Aska",
+    "type": "TOWN",
     "latitude": 67.290852,
     "longitude": 26.694835,
     "elevation": 0
   },
   {
     "name": "Austbo",
+    "type": "TOWN",
     "latitude": 65.933881,
     "longitude": 12.359247,
     "elevation": 0
   },
   {
     "name": "Avan",
+    "type": "TOWN",
     "latitude": 65.68034,
     "longitude": 21.804493,
     "elevation": 0
   },
   {
     "name": "Avneporog",
+    "type": "TOWN",
     "latitude": 65.007767,
     "longitude": 33.754709,
     "elevation": 0
   },
   {
     "name": "Avzi",
+    "type": "TOWN",
     "latitude": 69.022855,
     "longitude": 23.229443,
     "elevation": 0
   },
   {
     "name": "BDF",
+    "type": "VOR_DME",
     "latitude": 69.064825,
     "longitude": 18.466246,
     "elevation": 0
   },
   {
     "name": "BDO",
+    "type": "VOR_DME",
     "latitude": 67.26656,
     "longitude": 14.364874,
     "elevation": 0
   },
   {
     "name": "BNA",
+    "type": "VOR_DME",
     "latitude": 70.176266,
     "longitude": 24.948432,
     "elevation": 0
   },
   {
     "name": "BNK",
+    "type": "TACAN",
     "latitude": 70.065619,
     "longitude": 24.969704,
     "elevation": 0
   },
   {
     "name": "BOO",
+    "type": "TACAN",
     "latitude": 67.266299,
     "longitude": 14.361435,
     "elevation": 0
   },
   {
     "name": "Badderen",
+    "type": "TOWN",
     "latitude": 69.844761,
     "longitude": 22.025795,
     "elevation": 0
   },
   {
     "name": "Balinge",
+    "type": "TOWN",
     "latitude": 65.632213,
     "longitude": 21.926266,
     "elevation": 0
   },
   {
     "name": "Ballangen",
+    "type": "TOWN",
     "latitude": 68.342872,
     "longitude": 16.831338,
     "elevation": 0
   },
   {
     "name": "Ballstad",
+    "type": "TOWN",
     "latitude": 68.074298,
     "longitude": 13.545046,
     "elevation": 0
   },
   {
     "name": "Bardal",
+    "type": "TOWN",
     "latitude": 66.214951,
     "longitude": 13.376487,
     "elevation": 0
   },
   {
     "name": "Bardufoss",
+    "type": "TOWN",
     "latitude": 69.065637,
     "longitude": 18.515924,
     "elevation": 0
   },
   {
     "name": "Batsfjord",
+    "type": "TOWN",
     "latitude": 70.635287,
     "longitude": 29.72135,
     "elevation": 0
   },
   {
     "name": "Batskarsnas",
+    "type": "TOWN",
     "latitude": 65.780929,
     "longitude": 23.422139,
     "elevation": 0
   },
   {
     "name": "Beisfjord",
+    "type": "TOWN",
     "latitude": 68.376171,
     "longitude": 17.596287,
     "elevation": 0
   },
   {
     "name": "Beloye More",
+    "type": "TOWN",
     "latitude": 67.080414,
     "longitude": 32.272826,
     "elevation": 0
   },
   {
     "name": "Bensbyn",
+    "type": "TOWN",
     "latitude": 65.639826,
     "longitude": 22.239666,
     "elevation": 0
   },
   {
     "name": "Berg",
+    "type": "TOWN",
     "latitude": 65.367566,
     "longitude": 12.198035,
     "elevation": 0
   },
   {
     "name": "Bergsfjord",
+    "type": "TOWN",
     "latitude": 70.249336,
     "longitude": 21.792242,
     "elevation": 0
   },
   {
     "name": "Berlevag",
+    "type": "TOWN",
     "latitude": 70.857815,
     "longitude": 29.086036,
     "elevation": 0
   },
   {
     "name": "Biertavarri",
+    "type": "TOWN",
     "latitude": 69.494955,
     "longitude": 20.831901,
     "elevation": 0
   },
   {
     "name": "Billavuotna",
+    "type": "TOWN",
     "latitude": 70.31531,
     "longitude": 25.046216,
     "elevation": 0
   },
   {
     "name": "Bindalseidet",
+    "type": "TOWN",
     "latitude": 65.126685,
     "longitude": 12.230452,
     "elevation": 0
   },
   {
     "name": "Bissojohka",
+    "type": "TOWN",
     "latitude": 70.31791,
     "longitude": 25.565881,
     "elevation": 0
   },
   {
     "name": "Bjerka",
+    "type": "TOWN",
     "latitude": 66.149043,
     "longitude": 13.836276,
     "elevation": 0
   },
   {
     "name": "Bjerkvik",
+    "type": "TOWN",
     "latitude": 68.549166,
     "longitude": 17.557148,
     "elevation": 0
   },
   {
     "name": "Bjorkfors",
+    "type": "TOWN",
     "latitude": 65.918698,
     "longitude": 23.457986,
     "elevation": 0
   },
   {
     "name": "Bjorn",
+    "type": "TOWN",
     "latitude": 66.081122,
     "longitude": 12.582781,
     "elevation": 0
   },
   {
     "name": "Bjornevatn",
+    "type": "TOWN",
     "latitude": 69.667366,
     "longitude": 29.987224,
     "elevation": 0
   },
   {
     "name": "Bjorsbyn",
+    "type": "TOWN",
     "latitude": 65.639258,
     "longitude": 22.12963,
     "elevation": 0
   },
   {
     "name": "Blattnicksele",
+    "type": "TOWN",
     "latitude": 65.34286,
     "longitude": 17.585861,
     "elevation": 0
   },
   {
     "name": "Bleik",
+    "type": "TOWN",
     "latitude": 69.271954,
     "longitude": 15.956005,
     "elevation": 0
   },
   {
     "name": "Bleikvasslia",
+    "type": "TOWN",
     "latitude": 65.908645,
     "longitude": 13.807608,
     "elevation": 0
   },
   {
     "name": "Blokken",
+    "type": "TOWN",
     "latitude": 68.599846,
     "longitude": 15.388129,
     "elevation": 0
   },
   {
     "name": "Bo",
+    "type": "TOWN",
     "latitude": 68.620277,
     "longitude": 14.447525,
     "elevation": 0
   },
   {
     "name": "Boden",
+    "type": "TOWN",
     "latitude": 65.8275,
     "longitude": 21.69641,
     "elevation": 0
   },
   {
     "name": "Bodo",
+    "type": "TOWN",
     "latitude": 67.284431,
     "longitude": 14.38175,
     "elevation": 0
   },
   {
     "name": "Bodtraskfors",
+    "type": "TOWN",
     "latitude": 66.088845,
     "longitude": 20.903053,
     "elevation": 0
   },
   {
     "name": "Bogen",
+    "type": "TOWN",
     "latitude": 68.526476,
     "longitude": 16.995525,
     "elevation": 0
   },
   {
     "name": "Bol'shoe Ramozero",
+    "type": "TOWN",
     "latitude": 68.226013,
     "longitude": 33.86277,
     "elevation": 0
   },
   {
     "name": "Bole",
+    "type": "TOWN",
     "latitude": 65.386152,
     "longitude": 21.322539,
     "elevation": 0
   },
   {
     "name": "Bolga",
+    "type": "TOWN",
     "latitude": 66.80499,
     "longitude": 13.234235,
     "elevation": 0
   },
   {
     "name": "Bonna",
+    "type": "TOWN",
     "latitude": 67.604921,
     "longitude": 15.728283,
     "elevation": 0
   },
   {
     "name": "Borjelsbyn",
+    "type": "TOWN",
     "latitude": 65.900185,
     "longitude": 22.937626,
     "elevation": 0
   },
   {
     "name": "Borkenes",
+    "type": "TOWN",
     "latitude": 68.772631,
     "longitude": 16.171555,
     "elevation": 0
   },
   {
     "name": "Botnhamn",
+    "type": "TOWN",
     "latitude": 69.508219,
     "longitude": 17.902828,
     "elevation": 0
   },
   {
     "name": "Brandon",
+    "type": "TOWN",
     "latitude": 65.695381,
     "longitude": 22.336566,
     "elevation": 0
   },
   {
     "name": "Brannberg",
+    "type": "TOWN",
     "latitude": 65.785834,
     "longitude": 21.230359,
     "elevation": 0
   },
   {
     "name": "Breivikbotn",
+    "type": "TOWN",
     "latitude": 70.588673,
     "longitude": 22.287152,
     "elevation": 0
   },
   {
     "name": "Breivoll",
+    "type": "TOWN",
     "latitude": 68.759458,
     "longitude": 17.147881,
     "elevation": 0
   },
   {
     "name": "Bronnoysund",
+    "type": "TOWN",
     "latitude": 65.474876,
     "longitude": 12.21164,
     "elevation": 0
   },
   {
     "name": "Brostadbotn",
+    "type": "TOWN",
     "latitude": 69.088527,
     "longitude": 17.693431,
     "elevation": 0
   },
   {
     "name": "Bugoyfjord",
+    "type": "TOWN",
     "latitude": 69.868257,
     "longitude": 29.345878,
     "elevation": 0
   },
   {
     "name": "Bugoynes",
+    "type": "TOWN",
     "latitude": 69.972965,
     "longitude": 29.642054,
     "elevation": 0
   },
   {
     "name": "Buolbmat",
+    "type": "TOWN",
     "latitude": 70.069941,
     "longitude": 28.010523,
     "elevation": 0
   },
   {
     "name": "Burfjord",
+    "type": "TOWN",
     "latitude": 69.93787,
     "longitude": 22.051867,
     "elevation": 0
   },
   {
     "name": "Chavan'ga",
+    "type": "TOWN",
     "latitude": 66.111063,
     "longitude": 37.759033,
     "elevation": 0
   },
   {
     "name": "Chupa",
+    "type": "TOWN",
     "latitude": 66.267567,
     "longitude": 32.966171,
     "elevation": 0
   },
   {
     "name": "Cietnjalluokta",
+    "type": "TOWN",
     "latitude": 69.748664,
     "longitude": 20.490164,
     "elevation": 0
   },
   {
     "name": "Dafjord",
+    "type": "TOWN",
     "latitude": 69.992526,
     "longitude": 19.404793,
     "elevation": 0
   },
   {
     "name": "Dalsgrenda",
+    "type": "TOWN",
     "latitude": 66.250624,
     "longitude": 13.984848,
     "elevation": 0
   },
   {
     "name": "Dalusvaggi",
+    "type": "TOWN",
     "latitude": 69.603093,
     "longitude": 20.537129,
     "elevation": 0
   },
   {
     "name": "Dartsel",
+    "type": "TOWN",
     "latitude": 65.554129,
     "longitude": 20.041604,
     "elevation": 0
   },
   {
     "name": "Deanusaldi",
+    "type": "TOWN",
     "latitude": 70.198633,
     "longitude": 28.188111,
     "elevation": 0
   },
   {
     "name": "Demmahagen",
+    "type": "TOWN",
     "latitude": 66.399122,
     "longitude": 12.861011,
     "elevation": 0
   },
   {
     "name": "Djupvag",
+    "type": "TOWN",
     "latitude": 69.170436,
     "longitude": 18.114831,
     "elevation": 0
   },
   {
     "name": "Dokkas",
+    "type": "TOWN",
     "latitude": 67.064808,
     "longitude": 21.33299,
     "elevation": 0
   },
   {
     "name": "Dragnes",
+    "type": "TOWN",
     "latitude": 68.954897,
     "longitude": 15.649372,
     "elevation": 0
   },
   {
     "name": "Drevvassbygda",
+    "type": "TOWN",
     "latitude": 66.071456,
     "longitude": 13.452728,
     "elevation": 0
   },
   {
     "name": "EVD",
+    "type": "VOR_DME",
     "latitude": 68.457275,
     "longitude": 16.681906,
     "elevation": 0
   },
   {
     "name": "Ekkeroya",
+    "type": "TOWN",
     "latitude": 70.076263,
     "longitude": 30.102238,
     "elevation": 0
   },
   {
     "name": "Elsfjord",
+    "type": "TOWN",
     "latitude": 66.10326,
     "longitude": 13.548003,
     "elevation": 0
   },
   {
     "name": "Elvegarden",
+    "type": "TOWN",
     "latitude": 68.256342,
     "longitude": 17.402571,
     "elevation": 0
   },
   {
     "name": "Elvenes",
+    "type": "TOWN",
     "latitude": 69.679172,
     "longitude": 30.105165,
     "elevation": 0
   },
   {
     "name": "Engavagen",
+    "type": "TOWN",
     "latitude": 66.779487,
     "longitude": 13.534125,
     "elevation": 0
   },
   {
     "name": "Engozero",
+    "type": "TOWN",
     "latitude": 65.784998,
     "longitude": 33.942169,
     "elevation": 0
   },
   {
     "name": "Ersfjordbotn",
+    "type": "TOWN",
     "latitude": 69.694412,
     "longitude": 18.620835,
     "elevation": 0
   },
   {
     "name": "Ersnas",
+    "type": "TOWN",
     "latitude": 65.529053,
     "longitude": 21.794633,
     "elevation": 0
   },
   {
     "name": "Evenes",
+    "type": "TACAN",
     "latitude": 68.491937,
     "longitude": 16.673235,
     "elevation": 0
   },
   {
     "name": "Eyna",
+    "type": "TOWN",
     "latitude": 67.604164,
     "longitude": 31.158881,
     "elevation": 0
   },
   {
     "name": "Eynskiy",
+    "type": "TOWN",
     "latitude": 67.580553,
     "longitude": 31.156658,
     "elevation": 0
   },
   {
     "name": "Fagernes",
+    "type": "TOWN",
     "latitude": 69.561227,
     "longitude": 19.182262,
     "elevation": 0
   },
   {
     "name": "Fauske",
+    "type": "TOWN",
     "latitude": 67.258859,
     "longitude": 15.394595,
     "elevation": 0
   },
   {
     "name": "Finneidfjord",
+    "type": "TOWN",
     "latitude": 66.187798,
     "longitude": 13.791952,
     "elevation": 0
   },
   {
     "name": "Finnfjordbotn",
+    "type": "TOWN",
     "latitude": 69.235356,
     "longitude": 18.09266,
     "elevation": 0
   },
   {
     "name": "Finnsnes",
+    "type": "TOWN",
     "latitude": 69.229602,
     "longitude": 17.981296,
     "elevation": 0
   },
   {
     "name": "Fjelldal",
+    "type": "TOWN",
     "latitude": 68.556025,
     "longitude": 16.52606,
     "elevation": 0
   },
   {
     "name": "Fjordgard",
+    "type": "TOWN",
     "latitude": 69.509146,
     "longitude": 17.628333,
     "elevation": 0
   },
   {
     "name": "Flakaberg",
+    "type": "TOWN",
     "latitude": 66.519044,
     "longitude": 21.907234,
     "elevation": 0
   },
   {
     "name": "Foldvika",
+    "type": "TOWN",
     "latitude": 68.692938,
     "longitude": 17.424615,
     "elevation": 0
   },
   {
     "name": "Forsmark",
+    "type": "TOWN",
     "latitude": 65.481121,
     "longitude": 15.891359,
     "elevation": 0
   },
   {
     "name": "Forsol",
+    "type": "TOWN",
     "latitude": 70.721363,
     "longitude": 23.801544,
     "elevation": 0
   },
   {
     "name": "Fossbakken",
+    "type": "TOWN",
     "latitude": 68.688754,
     "longitude": 17.980906,
     "elevation": 0
   },
   {
     "name": "Fredvang",
+    "type": "TOWN",
     "latitude": 68.084056,
     "longitude": 13.166687,
     "elevation": 0
   },
   {
     "name": "Furuflaten",
+    "type": "TOWN",
     "latitude": 69.441302,
     "longitude": 20.154007,
     "elevation": 0
   },
   {
     "name": "Gadzhiyevo",
+    "type": "TOWN",
     "latitude": 69.250359,
     "longitude": 33.315279,
     "elevation": 0
   },
   {
     "name": "Gallivare",
+    "type": "TOWN",
     "latitude": 67.135243,
     "longitude": 20.660484,
     "elevation": 0
   },
   {
     "name": "Gammelgarden",
+    "type": "TOWN",
     "latitude": 65.881965,
     "longitude": 23.041194,
     "elevation": 0
   },
   {
     "name": "Gamvik",
+    "type": "TOWN",
     "latitude": 71.062155,
     "longitude": 28.245793,
     "elevation": 0
   },
   {
     "name": "Gargnas",
+    "type": "TOWN",
     "latitude": 65.311977,
     "longitude": 17.969662,
     "elevation": 0
   },
   {
     "name": "Gasluokta",
+    "type": "TOWN",
     "latitude": 68.097301,
     "longitude": 16.378637,
     "elevation": 0
   },
   {
     "name": "Gausvika",
+    "type": "TOWN",
     "latitude": 68.613162,
     "longitude": 16.513026,
     "elevation": 0
   },
   {
     "name": "Gibostad",
+    "type": "TOWN",
     "latitude": 69.353805,
     "longitude": 18.076092,
     "elevation": 0
   },
   {
     "name": "Gisloya",
+    "type": "TOWN",
     "latitude": 68.935014,
     "longitude": 15.272364,
     "elevation": 0
   },
   {
     "name": "Gjesvaer",
+    "type": "TOWN",
     "latitude": 71.098399,
     "longitude": 25.376291,
     "elevation": 0
   },
   {
     "name": "Gladstad",
+    "type": "TOWN",
     "latitude": 65.676929,
     "longitude": 11.961864,
     "elevation": 0
   },
   {
     "name": "Glein",
+    "type": "TOWN",
     "latitude": 66.157342,
     "longitude": 12.610958,
     "elevation": 0
   },
   {
     "name": "Glomfjord",
+    "type": "TOWN",
     "latitude": 66.816569,
     "longitude": 13.94365,
     "elevation": 0
   },
   {
     "name": "Golnes",
+    "type": "TOWN",
     "latitude": 70.073378,
     "longitude": 30.032428,
     "elevation": 0
   },
   {
     "name": "Golubie Ruch'i",
+    "type": "TOWN",
     "latitude": 68.757267,
     "longitude": 33.020042,
     "elevation": 0
   },
   {
     "name": "Gorzi",
+    "type": "TOWN",
     "latitude": 69.525473,
     "longitude": 20.524201,
     "elevation": 0
   },
   {
     "name": "Grane",
+    "type": "TOWN",
     "latitude": 65.584826,
     "longitude": 13.393431,
     "elevation": 0
   },
   {
     "name": "Granhult",
+    "type": "TOWN",
     "latitude": 67.128767,
     "longitude": 21.801081,
     "elevation": 0
   },
   {
     "name": "Granmoen",
+    "type": "TOWN",
     "latitude": 65.975825,
     "longitude": 13.212481,
     "elevation": 0
   },
   {
     "name": "Grannas",
+    "type": "TOWN",
     "latitude": 65.307987,
     "longitude": 16.369346,
     "elevation": 0
   },
   {
     "name": "Gratangsbotn",
+    "type": "TOWN",
     "latitude": 68.668493,
     "longitude": 17.668062,
     "elevation": 0
   },
   {
     "name": "Gravdal",
+    "type": "TOWN",
     "latitude": 68.118191,
     "longitude": 13.553298,
     "elevation": 0
   },
   {
     "name": "Grotavaer",
+    "type": "TOWN",
     "latitude": 68.964402,
     "longitude": 16.261908,
     "elevation": 0
   },
   {
     "name": "Gryllefjorden",
+    "type": "TOWN",
     "latitude": 69.362696,
     "longitude": 17.055042,
     "elevation": 0
   },
   {
     "name": "Gunnarnes",
+    "type": "TOWN",
     "latitude": 70.998404,
     "longitude": 24.116365,
     "elevation": 0
   },
   {
     "name": "Guovdageaidnu",
+    "type": "TOWN",
     "latitude": 69.012421,
     "longitude": 23.041319,
     "elevation": 0
   },
   {
     "name": "Hagnen",
+    "type": "TOWN",
     "latitude": 65.881254,
     "longitude": 23.034767,
     "elevation": 0
   },
   {
     "name": "Hakkas",
+    "type": "TOWN",
     "latitude": 66.916459,
     "longitude": 21.566148,
     "elevation": 0
   },
   {
     "name": "Hakvik",
+    "type": "TOWN",
     "latitude": 68.404819,
     "longitude": 17.308252,
     "elevation": 0
   },
   {
     "name": "Halsa",
+    "type": "TOWN",
     "latitude": 66.743711,
     "longitude": 13.575924,
     "elevation": 0
   },
   {
     "name": "Hammerfest",
+    "type": "TOWN",
     "latitude": 70.662836,
     "longitude": 23.683107,
     "elevation": 0
   },
   {
     "name": "Hamningberg",
+    "type": "TOWN",
     "latitude": 70.540202,
     "longitude": 30.616257,
     "elevation": 0
   },
   {
     "name": "Hamnoya",
+    "type": "TOWN",
     "latitude": 67.946083,
     "longitude": 13.132594,
     "elevation": 0
   },
   {
     "name": "Hamnvik",
+    "type": "TOWN",
     "latitude": 68.77931,
     "longitude": 17.171467,
     "elevation": 0
   },
   {
     "name": "Hansnes",
+    "type": "TOWN",
     "latitude": 69.967044,
     "longitude": 19.627087,
     "elevation": 0
   },
   {
     "name": "Haparanda",
+    "type": "TOWN",
     "latitude": 65.835667,
     "longitude": 24.135721,
     "elevation": 0
   },
   {
     "name": "Harads",
+    "type": "TOWN",
     "latitude": 66.087707,
     "longitude": 20.952542,
     "elevation": 0
   },
   {
     "name": "Harstad",
+    "type": "TOWN",
     "latitude": 68.799943,
     "longitude": 16.544032,
     "elevation": 0
   },
   {
     "name": "Hasvik",
+    "type": "TOWN",
     "latitude": 70.48652,
     "longitude": 22.161097,
     "elevation": 0
   },
   {
     "name": "Hatteng",
+    "type": "TOWN",
     "latitude": 69.270738,
     "longitude": 19.959865,
     "elevation": 0
   },
   {
     "name": "Havoysund",
+    "type": "TOWN",
     "latitude": 70.996311,
     "longitude": 24.660958,
     "elevation": 0
   },
   {
     "name": "Hedenaset",
+    "type": "TOWN",
     "latitude": 66.235517,
     "longitude": 23.677934,
     "elevation": 0
   },
   {
     "name": "Helppi",
+    "type": "TOWN",
     "latitude": 67.21202,
     "longitude": 24.835497,
     "elevation": 0
   },
   {
     "name": "Hemavan",
+    "type": "TOWN",
     "latitude": 65.815278,
     "longitude": 15.08528,
     "elevation": 0
   },
   {
     "name": "Hemnesberget",
+    "type": "TOWN",
     "latitude": 66.224837,
     "longitude": 13.606675,
     "elevation": 0
   },
   {
     "name": "Henningsvaer",
+    "type": "TOWN",
     "latitude": 68.152888,
     "longitude": 14.200724,
     "elevation": 0
   },
   {
     "name": "Hesseng",
+    "type": "TOWN",
     "latitude": 69.68682,
     "longitude": 29.99733,
     "elevation": 0
   },
   {
     "name": "Hetta",
+    "type": "TOWN",
     "latitude": 68.38549,
     "longitude": 23.643798,
     "elevation": 0
   },
   {
     "name": "Hibiny",
+    "type": "TOWN",
     "latitude": 67.673599,
     "longitude": 33.212994,
     "elevation": 0
   },
   {
     "name": "Hierenjargga",
+    "type": "TOWN",
     "latitude": 68.252058,
     "longitude": 16.056574,
     "elevation": 0
   },
   {
     "name": "Hilleshamn",
+    "type": "TOWN",
     "latitude": 68.732653,
     "longitude": 17.273351,
     "elevation": 0
   },
   {
     "name": "Hirvas",
+    "type": "TOWN",
     "latitude": 66.432423,
     "longitude": 25.479246,
     "elevation": 0
   },
   {
     "name": "Holand",
+    "type": "TOWN",
     "latitude": 65.70724,
     "longitude": 11.915403,
     "elevation": 0
   },
   {
     "name": "Holm",
+    "type": "TOWN",
     "latitude": 65.183353,
     "longitude": 12.124369,
     "elevation": 0
   },
   {
     "name": "Holt",
+    "type": "TOWN",
     "latitude": 69.016876,
     "longitude": 19.413002,
     "elevation": 0
   },
   {
     "name": "Hommelsto",
+    "type": "TOWN",
     "latitude": 65.407327,
     "longitude": 12.551631,
     "elevation": 0
   },
   {
     "name": "Honningsvag",
+    "type": "TOWN",
     "latitude": 70.980264,
     "longitude": 25.977841,
     "elevation": 0
   },
   {
     "name": "Hovden",
+    "type": "TOWN",
     "latitude": 68.812652,
     "longitude": 14.552509,
     "elevation": 0
   },
   {
     "name": "Husby",
+    "type": "TOWN",
     "latitude": 66.225671,
     "longitude": 12.769801,
     "elevation": 0
   },
   {
     "name": "Husoy",
+    "type": "TOWN",
     "latitude": 69.544198,
     "longitude": 17.663699,
     "elevation": 0
   },
   {
     "name": "Husvaer",
+    "type": "TOWN",
     "latitude": 65.910314,
     "longitude": 12.119883,
     "elevation": 0
   },
   {
     "name": "IL",
+    "type": "NDB",
     "latitude": 67.273887,
     "longitude": 14.724322,
     "elevation": 0
   },
   {
     "name": "Idivuoma",
+    "type": "TOWN",
     "latitude": 68.315239,
     "longitude": 22.13502,
     "elevation": 0
   },
   {
     "name": "Ii",
+    "type": "TOWN",
     "latitude": 65.321876,
     "longitude": 25.371622,
     "elevation": 0
   },
   {
     "name": "Inari",
+    "type": "TOWN",
     "latitude": 68.906246,
     "longitude": 27.026077,
     "elevation": 0
   },
   {
     "name": "Inbyn",
+    "type": "TOWN",
     "latitude": 65.898431,
     "longitude": 21.860296,
     "elevation": 0
   },
   {
     "name": "Ingoy",
+    "type": "TOWN",
     "latitude": 71.083538,
     "longitude": 24.05731,
     "elevation": 0
   },
   {
     "name": "Inndyr",
+    "type": "TOWN",
     "latitude": 67.03524,
     "longitude": 14.026502,
     "elevation": 0
   },
   {
     "name": "Isokyla",
+    "type": "TOWN",
     "latitude": 66.695766,
     "longitude": 27.562635,
     "elevation": 0
   },
   {
     "name": "Ivalo",
+    "type": "TOWN",
     "latitude": 68.658818,
     "longitude": 27.534811,
     "elevation": 0
   },
   {
     "name": "Jakkvik",
+    "type": "TOWN",
     "latitude": 66.383415,
     "longitude": 16.965475,
     "elevation": 0
   },
   {
     "name": "Jakobsnes",
+    "type": "TOWN",
     "latitude": 69.728732,
     "longitude": 30.124722,
     "elevation": 0
   },
   {
     "name": "Jamton",
+    "type": "TOWN",
     "latitude": 65.853761,
     "longitude": 22.498202,
     "elevation": 0
   },
   {
     "name": "Jarhoinen",
+    "type": "TOWN",
     "latitude": 66.964177,
     "longitude": 23.844077,
     "elevation": 0
   },
   {
     "name": "Jeesio",
+    "type": "TOWN",
     "latitude": 67.509877,
     "longitude": 26.032229,
     "elevation": 0
   },
   {
     "name": "Jektvika",
+    "type": "TOWN",
     "latitude": 66.625835,
     "longitude": 13.291854,
     "elevation": 0
   },
   {
     "name": "Jokkmokk",
+    "type": "TOWN",
     "latitude": 66.605854,
     "longitude": 19.837932,
     "elevation": 0
   },
   {
     "name": "Juhonpieti och Erkheikki",
+    "type": "TOWN",
     "latitude": 67.246325,
     "longitude": 23.185237,
     "elevation": 0
   },
   {
     "name": "Jukkasjarvi",
+    "type": "TOWN",
     "latitude": 67.850378,
     "longitude": 20.605305,
     "elevation": 0
   },
   {
     "name": "Junosuando",
+    "type": "TOWN",
     "latitude": 67.428291,
     "longitude": 22.511418,
     "elevation": 0
   },
   {
     "name": "Juntusranta",
+    "type": "TOWN",
     "latitude": 65.221458,
     "longitude": 29.46924,
     "elevation": 0
   },
   {
     "name": "Juoksengi",
+    "type": "TOWN",
     "latitude": 66.55764,
     "longitude": 23.832344,
     "elevation": 0
   },
   {
     "name": "Juoksenki",
+    "type": "TOWN",
     "latitude": 66.564667,
     "longitude": 23.870622,
     "elevation": 0
   },
   {
     "name": "Jurmu",
+    "type": "TOWN",
     "latitude": 65.510423,
     "longitude": 27.947384,
     "elevation": 0
   },
   {
     "name": "Juujarvi",
+    "type": "TOWN",
     "latitude": 66.381912,
     "longitude": 27.302132,
     "elevation": 0
   },
   {
     "name": "KIK",
+    "type": "VOR_DME",
     "latitude": 69.723517,
     "longitude": 29.867316,
     "elevation": 0
   },
   {
     "name": "KMV",
+    "type": "NDB",
     "latitude": 64.947098,
     "longitude": 34.494417,
     "elevation": 0
   },
   {
     "name": "KRA",
+    "type": "VOR_DME",
     "latitude": 67.819159,
     "longitude": 20.337697,
     "elevation": 0
   },
   {
     "name": "Kaakamo",
+    "type": "TOWN",
     "latitude": 65.799373,
     "longitude": 24.451677,
     "elevation": 0
   },
   {
     "name": "Kaaresuvanto",
+    "type": "TOWN",
     "latitude": 68.450137,
     "longitude": 22.485735,
     "elevation": 0
   },
   {
     "name": "Kabdalis",
+    "type": "TOWN",
     "latitude": 66.149498,
     "longitude": 19.986874,
     "elevation": 0
   },
   {
     "name": "Kabelvag",
+    "type": "TOWN",
     "latitude": 68.21012,
     "longitude": 14.477379,
     "elevation": 0
   },
   {
     "name": "Kafjord",
+    "type": "TOWN",
     "latitude": 69.937562,
     "longitude": 23.028172,
     "elevation": 0
   },
   {
     "name": "Kainuunkyla",
+    "type": "TOWN",
     "latitude": 66.225575,
     "longitude": 23.765632,
     "elevation": 0
   },
   {
     "name": "Kairala",
+    "type": "TOWN",
     "latitude": 67.190106,
     "longitude": 27.445209,
     "elevation": 0
   },
   {
     "name": "Kajava",
+    "type": "TOWN",
     "latitude": 65.968997,
     "longitude": 29.606411,
     "elevation": 0
   },
   {
     "name": "Kaldfjord",
+    "type": "TOWN",
     "latitude": 69.685181,
     "longitude": 18.740765,
     "elevation": 0
   },
   {
     "name": "Kalevala",
+    "type": "TOWN",
     "latitude": 65.200096,
     "longitude": 31.180171,
     "elevation": 0
   },
   {
     "name": "Kalix",
+    "type": "TOWN",
     "latitude": 65.858917,
     "longitude": 23.14033,
     "elevation": 0
   },
   {
     "name": "Kallax",
+    "type": "TOWN",
     "latitude": 65.524574,
     "longitude": 22.059254,
     "elevation": 0
   },
   {
     "name": "Kallo",
+    "type": "TOWN",
     "latitude": 67.421837,
     "longitude": 24.516544,
     "elevation": 0
   },
   {
     "name": "Kalsjarv",
+    "type": "TOWN",
     "latitude": 65.92455,
     "longitude": 23.167423,
     "elevation": 0
   },
   {
     "name": "Kamoyvaer",
+    "type": "TOWN",
     "latitude": 71.048818,
     "longitude": 25.905278,
     "elevation": 0
   },
   {
     "name": "Kandalaksha",
+    "type": "TOWN",
     "latitude": 67.151442,
     "longitude": 32.413054,
     "elevation": 0
   },
   {
     "name": "Kangos",
+    "type": "TOWN",
     "latitude": 67.484526,
     "longitude": 22.655664,
     "elevation": 0
   },
   {
     "name": "Kantomaanpaa",
+    "type": "TOWN",
     "latitude": 66.427896,
     "longitude": 24.06182,
     "elevation": 0
   },
   {
     "name": "Karasjok",
+    "type": "TOWN",
     "latitude": 69.471874,
     "longitude": 25.511138,
     "elevation": 0
   },
   {
     "name": "Karesuando",
+    "type": "TOWN",
     "latitude": 68.440505,
     "longitude": 22.474315,
     "elevation": 0
   },
   {
     "name": "Kariel",
+    "type": "TOWN",
     "latitude": 70.100798,
     "longitude": 29.38076,
     "elevation": 0
   },
   {
     "name": "Karigasniemi",
+    "type": "TOWN",
     "latitude": 69.399117,
     "longitude": 25.849382,
     "elevation": 0
   },
   {
     "name": "Karlsborg",
+    "type": "TOWN",
     "latitude": 65.799611,
     "longitude": 23.289268,
     "elevation": 0
   },
   {
     "name": "Karlstad",
+    "type": "TOWN",
     "latitude": 69.213609,
     "longitude": 18.470398,
     "elevation": 0
   },
   {
     "name": "Karlsvik",
+    "type": "TOWN",
     "latitude": 65.597284,
     "longitude": 22.079107,
     "elevation": 0
   },
   {
     "name": "Karpankyla",
+    "type": "TOWN",
     "latitude": 65.919944,
     "longitude": 29.870536,
     "elevation": 0
   },
   {
     "name": "Karungi",
+    "type": "TOWN",
     "latitude": 66.044554,
     "longitude": 23.953028,
     "elevation": 0
   },
   {
     "name": "Karunki",
+    "type": "TOWN",
     "latitude": 66.0403,
     "longitude": 24.018313,
     "elevation": 0
   },
   {
     "name": "Karvikhamn",
+    "type": "TOWN",
     "latitude": 69.392845,
     "longitude": 18.181825,
     "elevation": 0
   },
   {
     "name": "Kasfjord",
+    "type": "TOWN",
     "latitude": 68.835702,
     "longitude": 16.345107,
     "elevation": 0
   },
   {
     "name": "Kattilasaari",
+    "type": "TOWN",
     "latitude": 65.947978,
     "longitude": 23.798576,
     "elevation": 0
   },
   {
     "name": "Kaukonen",
+    "type": "TOWN",
     "latitude": 67.484337,
     "longitude": 24.899699,
     "elevation": 0
   },
   {
     "name": "Kauliranta",
+    "type": "TOWN",
     "latitude": 66.456757,
     "longitude": 23.6771,
     "elevation": 0
   },
   {
     "name": "Kaunisvaara",
+    "type": "TOWN",
     "latitude": 67.382544,
     "longitude": 23.3382,
     "elevation": 0
   },
   {
     "name": "Kaymajarvi",
+    "type": "TOWN",
     "latitude": 67.394539,
     "longitude": 22.968809,
     "elevation": 0
   },
   {
     "name": "Kelloselka",
+    "type": "TOWN",
     "latitude": 66.933634,
     "longitude": 28.890305,
     "elevation": 0
   },
   {
     "name": "Kem",
+    "type": "TOWN",
     "latitude": 64.95509,
     "longitude": 34.569741,
     "elevation": 0
   },
   {
     "name": "Kemi",
+    "type": "TOWN",
     "latitude": 65.73334,
     "longitude": 24.566649,
     "elevation": 0
   },
   {
     "name": "Kemijarvi",
+    "type": "TOWN",
     "latitude": 66.716118,
     "longitude": 27.433353,
     "elevation": 0
   },
   {
     "name": "Keminmaa",
+    "type": "TOWN",
     "latitude": 65.803014,
     "longitude": 24.520878,
     "elevation": 0
   },
   {
     "name": "Kentta",
+    "type": "TOWN",
     "latitude": 67.353708,
     "longitude": 23.424032,
     "elevation": 0
   },
   {
     "name": "Kepa",
+    "type": "TOWN",
     "latitude": 65.152998,
     "longitude": 32.165183,
     "elevation": 0
   },
   {
     "name": "Kestenga",
+    "type": "TOWN",
     "latitude": 65.885864,
     "longitude": 31.827918,
     "elevation": 0
   },
   {
     "name": "Kevajarvi",
+    "type": "TOWN",
     "latitude": 68.709648,
     "longitude": 27.776885,
     "elevation": 0
   },
   {
     "name": "Kiberg",
+    "type": "TOWN",
     "latitude": 70.284866,
     "longitude": 30.999159,
     "elevation": 0
   },
   {
     "name": "Kiby",
+    "type": "TOWN",
     "latitude": 70.062573,
     "longitude": 29.85661,
     "elevation": 0
   },
   {
     "name": "Kieksiaisvaara",
+    "type": "TOWN",
     "latitude": 67.223686,
     "longitude": 23.5047,
     "elevation": 0
   },
   {
     "name": "Kilboghamn",
+    "type": "TOWN",
     "latitude": 66.487806,
     "longitude": 13.225465,
     "elevation": 0
   },
   {
     "name": "Kilbotn",
+    "type": "TOWN",
     "latitude": 68.718103,
     "longitude": 16.535653,
     "elevation": 0
   },
   {
     "name": "Kildinstroy",
+    "type": "TOWN",
     "latitude": 68.804916,
     "longitude": 33.099985,
     "elevation": 0
   },
   {
     "name": "Kilp'yavr",
+    "type": "TOWN",
     "latitude": 69.090462,
     "longitude": 32.427264,
     "elevation": 0
   },
   {
     "name": "Kilpisjarvi",
+    "type": "TOWN",
     "latitude": 69.045464,
     "longitude": 20.8004,
     "elevation": 0
   },
   {
     "name": "Kirkenes",
+    "type": "TOWN",
     "latitude": 69.727148,
     "longitude": 30.044897,
     "elevation": 0
   },
   {
     "name": "Kirnujarvi",
+    "type": "TOWN",
     "latitude": 67.020007,
     "longitude": 23.127915,
     "elevation": 0
   },
   {
     "name": "Kirovsk",
+    "type": "TOWN",
     "latitude": 67.615133,
     "longitude": 33.66375,
     "elevation": 0
   },
   {
     "name": "Kiruna",
+    "type": "TOWN",
     "latitude": 67.848889,
     "longitude": 20.302778,
     "elevation": 0
   },
   {
     "name": "Kittelfjall",
+    "type": "TOWN",
     "latitude": 65.255048,
     "longitude": 15.517935,
     "elevation": 0
   },
   {
     "name": "Kittila",
+    "type": "TOWN",
     "latitude": 67.651985,
     "longitude": 24.909509,
     "elevation": 0
   },
   {
     "name": "Kjeldebotn",
+    "type": "TOWN",
     "latitude": 68.405727,
     "longitude": 16.660487,
     "elevation": 0
   },
   {
     "name": "Kjerringoy",
+    "type": "TOWN",
     "latitude": 67.52078,
     "longitude": 14.764554,
     "elevation": 0
   },
   {
     "name": "Kjollefjord",
+    "type": "TOWN",
     "latitude": 70.945666,
     "longitude": 27.351054,
     "elevation": 0
   },
   {
     "name": "Klippen",
+    "type": "TOWN",
     "latitude": 65.871767,
     "longitude": 15.006278,
     "elevation": 0
   },
   {
     "name": "Klo",
+    "type": "TOWN",
     "latitude": 68.982451,
     "longitude": 15.1743,
     "elevation": 0
   },
   {
     "name": "Klovertrask",
+    "type": "TOWN",
     "latitude": 65.638013,
     "longitude": 21.392009,
     "elevation": 0
   },
   {
     "name": "Knyazhaya Guba",
+    "type": "TOWN",
     "latitude": 66.873489,
     "longitude": 32.393619,
     "elevation": 0
   },
   {
     "name": "Koashva",
+    "type": "TOWN",
     "latitude": 67.609612,
     "longitude": 34.180076,
     "elevation": 0
   },
   {
     "name": "Kokelv",
+    "type": "TOWN",
     "latitude": 70.612221,
     "longitude": 24.645804,
     "elevation": 0
   },
   {
     "name": "Kola",
+    "type": "TOWN",
     "latitude": 68.880638,
     "longitude": 33.019724,
     "elevation": 0
   },
   {
     "name": "Kolari",
+    "type": "TOWN",
     "latitude": 67.330335,
     "longitude": 23.781474,
     "elevation": 0
   },
   {
     "name": "Kollajanniemi",
+    "type": "TOWN",
     "latitude": 65.346611,
     "longitude": 26.603035,
     "elevation": 0
   },
   {
     "name": "Komagvaer",
+    "type": "TOWN",
     "latitude": 70.245605,
     "longitude": 30.532884,
     "elevation": 0
   },
   {
     "name": "Kompelusvaara",
+    "type": "TOWN",
     "latitude": 67.064396,
     "longitude": 22.251447,
     "elevation": 0
   },
   {
     "name": "Kongsfjord",
+    "type": "TOWN",
     "latitude": 70.720239,
     "longitude": 29.319159,
     "elevation": 0
   },
   {
     "name": "Kongsvika",
+    "type": "TOWN",
     "latitude": 68.566231,
     "longitude": 16.25356,
     "elevation": 0
   },
   {
     "name": "Konsvikosen",
+    "type": "TOWN",
     "latitude": 66.49909,
     "longitude": 13.101829,
     "elevation": 0
   },
   {
     "name": "Konttajarvi",
+    "type": "TOWN",
     "latitude": 66.839001,
     "longitude": 24.372621,
     "elevation": 0
   },
   {
     "name": "Korgen",
+    "type": "TOWN",
     "latitude": 66.076592,
     "longitude": 13.821882,
     "elevation": 0
   },
   {
     "name": "Korpilombolo",
+    "type": "TOWN",
     "latitude": 66.850432,
     "longitude": 23.056268,
     "elevation": 0
   },
   {
     "name": "Korstrask",
+    "type": "TOWN",
     "latitude": 65.66819,
     "longitude": 20.867355,
     "elevation": 0
   },
   {
     "name": "Korvua",
+    "type": "TOWN",
     "latitude": 65.349207,
     "longitude": 28.674046,
     "elevation": 0
   },
   {
     "name": "Korzunovo",
+    "type": "TOWN",
     "latitude": 69.402342,
     "longitude": 31.014669,
     "elevation": 0
   },
   {
     "name": "Koskenkyla",
+    "type": "TOWN",
     "latitude": 65.897472,
     "longitude": 29.784073,
     "elevation": 0
   },
   {
     "name": "Koskullskulle",
+    "type": "TOWN",
     "latitude": 67.185964,
     "longitude": 20.738666,
     "elevation": 0
   },
   {
     "name": "Kostamo",
+    "type": "TOWN",
     "latitude": 66.789431,
     "longitude": 27.461716,
     "elevation": 0
   },
   {
     "name": "Kovdor",
+    "type": "TOWN",
     "latitude": 67.563049,
     "longitude": 30.474108,
     "elevation": 0
   },
   {
     "name": "Kovdozero",
+    "type": "TOWN",
     "latitude": 66.760956,
     "longitude": 31.560824,
     "elevation": 0
   },
   {
     "name": "Krampenes",
+    "type": "TOWN",
     "latitude": 70.105028,
     "longitude": 30.193759,
     "elevation": 0
   },
   {
     "name": "Krasnoshchel'ye",
+    "type": "TOWN",
     "latitude": 67.350373,
     "longitude": 37.040585,
     "elevation": 0
   },
   {
     "name": "Krivoi Porog",
+    "type": "TOWN",
     "latitude": 65.039479,
     "longitude": 33.673164,
     "elevation": 0
   },
   {
     "name": "Kuivaniemi",
+    "type": "TOWN",
     "latitude": 65.576683,
     "longitude": 25.195038,
     "elevation": 0
   },
   {
     "name": "Kukkola",
+    "type": "TOWN",
     "latitude": 65.974073,
     "longitude": 24.067838,
     "elevation": 0
   },
   {
     "name": "Kumpu",
+    "type": "TOWN",
     "latitude": 67.469175,
     "longitude": 24.943108,
     "elevation": 0
   },
   {
     "name": "Kurenalus",
+    "type": "TOWN",
     "latitude": 65.359541,
     "longitude": 26.997597,
     "elevation": 0
   },
   {
     "name": "Kurki",
+    "type": "TOWN",
     "latitude": 65.324911,
     "longitude": 27.548733,
     "elevation": 0
   },
   {
     "name": "Kurkkio",
+    "type": "TOWN",
     "latitude": 67.53193,
     "longitude": 22.228691,
     "elevation": 0
   },
   {
     "name": "Kurravaara",
+    "type": "TOWN",
     "latitude": 67.944021,
     "longitude": 20.357162,
     "elevation": 0
   },
   {
     "name": "Kursu",
+    "type": "TOWN",
     "latitude": 66.764941,
     "longitude": 28.139467,
     "elevation": 0
   },
   {
     "name": "Kurtakko",
+    "type": "TOWN",
     "latitude": 67.396908,
     "longitude": 24.195001,
     "elevation": 0
   },
   {
     "name": "Kuttainen",
+    "type": "TOWN",
     "latitude": 68.38168,
     "longitude": 22.82608,
     "elevation": 0
   },
   {
     "name": "Kuusamo",
+    "type": "TOWN",
     "latitude": 65.964564,
     "longitude": 29.188328,
     "elevation": 0
   },
   {
     "name": "Kuusiniemi",
+    "type": "TOWN",
     "latitude": 65.174042,
     "longitude": 31.462056,
     "elevation": 0
   },
   {
     "name": "Kuvshinskaya Salma",
+    "type": "TOWN",
     "latitude": 69.305809,
     "longitude": 33.418073,
     "elevation": 0
   },
   {
     "name": "Kuzema",
+    "type": "TOWN",
     "latitude": 65.354805,
     "longitude": 34.254966,
     "elevation": 0
   },
   {
     "name": "Kuzomen'",
+    "type": "TOWN",
     "latitude": 66.287447,
     "longitude": 36.865389,
     "elevation": 0
   },
   {
     "name": "Kvaloysletta",
+    "type": "TOWN",
     "latitude": 69.690173,
     "longitude": 18.861991,
     "elevation": 0
   },
   {
     "name": "Kvalsund",
+    "type": "TOWN",
     "latitude": 70.502821,
     "longitude": 23.979384,
     "elevation": 0
   },
   {
     "name": "Kvenvik",
+    "type": "TOWN",
     "latitude": 69.926931,
     "longitude": 23.101794,
     "elevation": 0
   },
   {
     "name": "Kvikkjokk",
+    "type": "TOWN",
     "latitude": 66.952031,
     "longitude": 17.720642,
     "elevation": 0
   },
   {
     "name": "Kvina",
+    "type": "TOWN",
     "latitude": 66.467023,
     "longitude": 13.168794,
     "elevation": 0
   },
   {
     "name": "Kylajoki",
+    "type": "TOWN",
     "latitude": 65.829087,
     "longitude": 24.299988,
     "elevation": 0
   },
   {
     "name": "Kylaniemi",
+    "type": "TOWN",
     "latitude": 66.659313,
     "longitude": 24.719816,
     "elevation": 0
   },
   {
     "name": "Kyngas",
+    "type": "TOWN",
     "latitude": 65.404653,
     "longitude": 26.791843,
     "elevation": 0
   },
   {
     "name": "Kypasjarv",
+    "type": "TOWN",
     "latitude": 66.179673,
     "longitude": 23.211174,
     "elevation": 0
   },
   {
     "name": "Laberget",
+    "type": "TOWN",
     "latitude": 68.861416,
     "longitude": 17.820087,
     "elevation": 0
   },
   {
     "name": "Lahpoluoppal",
+    "type": "TOWN",
     "latitude": 69.208804,
     "longitude": 23.760856,
     "elevation": 0
   },
   {
     "name": "Laisvall",
+    "type": "TOWN",
     "latitude": 66.13055,
     "longitude": 17.169948,
     "elevation": 0
   },
   {
     "name": "Laivajarvi",
+    "type": "TOWN",
     "latitude": 65.844085,
     "longitude": 24.388446,
     "elevation": 0
   },
   {
     "name": "Lakatrask",
+    "type": "TOWN",
     "latitude": 66.275642,
     "longitude": 21.122881,
     "elevation": 0
   },
   {
     "name": "Lakselv",
+    "type": "TOWN",
     "latitude": 70.052498,
     "longitude": 24.960657,
     "elevation": 0
   },
   {
     "name": "Lakselvbukt",
+    "type": "TOWN",
     "latitude": 69.433311,
     "longitude": 19.646989,
     "elevation": 0
   },
   {
     "name": "Laksvatn",
+    "type": "TOWN",
     "latitude": 69.376223,
     "longitude": 19.362932,
     "elevation": 0
   },
   {
     "name": "Lampsijarvi",
+    "type": "TOWN",
     "latitude": 66.700926,
     "longitude": 24.516431,
     "elevation": 0
   },
   {
     "name": "Langsel",
+    "type": "TOWN",
     "latitude": 65.541125,
     "longitude": 20.081799,
     "elevation": 0
   },
   {
     "name": "Langtrask",
+    "type": "TOWN",
     "latitude": 65.382961,
     "longitude": 20.332862,
     "elevation": 0
   },
   {
     "name": "Lankojarvi",
+    "type": "TOWN",
     "latitude": 66.730412,
     "longitude": 24.366383,
     "elevation": 0
   },
   {
     "name": "Lannavaara",
+    "type": "TOWN",
     "latitude": 68.046936,
     "longitude": 21.970345,
     "elevation": 0
   },
   {
     "name": "Lappea",
+    "type": "TOWN",
     "latitude": 67.155779,
     "longitude": 23.585194,
     "elevation": 0
   },
   {
     "name": "Lauker",
+    "type": "TOWN",
     "latitude": 65.651329,
     "longitude": 19.805874,
     "elevation": 0
   },
   {
     "name": "Laukvika",
+    "type": "TOWN",
     "latitude": 68.388072,
     "longitude": 14.417906,
     "elevation": 0
   },
   {
     "name": "Lavkgieddi",
+    "type": "TOWN",
     "latitude": 69.541671,
     "longitude": 20.546057,
     "elevation": 0
   },
   {
     "name": "Leaibevuotna",
+    "type": "TOWN",
     "latitude": 70.473948,
     "longitude": 25.070577,
     "elevation": 0
   },
   {
     "name": "Lebesby",
+    "type": "TOWN",
     "latitude": 70.57279,
     "longitude": 27.002444,
     "elevation": 0
   },
   {
     "name": "Leines",
+    "type": "TOWN",
     "latitude": 67.737139,
     "longitude": 14.810105,
     "elevation": 0
   },
   {
     "name": "Leipojarvi",
+    "type": "TOWN",
     "latitude": 67.049676,
     "longitude": 21.21837,
     "elevation": 0
   },
   {
     "name": "Leirbotn",
+    "type": "TOWN",
     "latitude": 70.119043,
     "longitude": 23.394142,
     "elevation": 0
   },
   {
     "name": "Leirpollskogen",
+    "type": "TOWN",
     "latitude": 70.439569,
     "longitude": 28.508368,
     "elevation": 0
   },
   {
     "name": "Leirvikbogen",
+    "type": "TOWN",
     "latitude": 67.89867,
     "longitude": 15.191182,
     "elevation": 0
   },
   {
     "name": "Leka",
+    "type": "TOWN",
     "latitude": 65.087861,
     "longitude": 11.713566,
     "elevation": 0
   },
   {
     "name": "Leknes",
+    "type": "TOWN",
     "latitude": 65.098177,
     "longitude": 11.703223,
     "elevation": 0
   },
   {
     "name": "Leland",
+    "type": "TOWN",
     "latitude": 66.063987,
     "longitude": 12.943317,
     "elevation": 0
   },
   {
     "name": "Lempea",
+    "type": "TOWN",
     "latitude": 66.84197,
     "longitude": 23.982863,
     "elevation": 0
   },
   {
     "name": "Leypi",
+    "type": "TOWN",
     "latitude": 67.500099,
     "longitude": 30.709552,
     "elevation": 0
   },
   {
     "name": "Liikasenvaara",
+    "type": "TOWN",
     "latitude": 66.369828,
     "longitude": 29.537638,
     "elevation": 0
   },
   {
     "name": "Liinahamari",
+    "type": "TOWN",
     "latitude": 69.638176,
     "longitude": 31.335189,
     "elevation": 0
   },
   {
     "name": "Liland",
+    "type": "TOWN",
     "latitude": 68.480896,
     "longitude": 16.8891,
     "elevation": 0
   },
   {
     "name": "Lillpite",
+    "type": "TOWN",
     "latitude": 65.373997,
     "longitude": 21.151355,
     "elevation": 0
   },
   {
     "name": "Livo",
+    "type": "TOWN",
     "latitude": 65.54289,
     "longitude": 26.950864,
     "elevation": 0
   },
   {
     "name": "Loding",
+    "type": "TOWN",
     "latitude": 67.297101,
     "longitude": 14.744898,
     "elevation": 0
   },
   {
     "name": "Lodingen",
+    "type": "TOWN",
     "latitude": 68.410465,
     "longitude": 15.990197,
     "elevation": 0
   },
   {
     "name": "Lohijarvi",
+    "type": "TOWN",
     "latitude": 66.428373,
     "longitude": 24.406853,
     "elevation": 0
   },
   {
     "name": "Lohiniva",
+    "type": "TOWN",
     "latitude": 67.167333,
     "longitude": 24.951833,
     "elevation": 0
   },
   {
     "name": "Lokka",
+    "type": "TOWN",
     "latitude": 67.81818,
     "longitude": 27.742603,
     "elevation": 0
   },
   {
     "name": "Loukhi",
+    "type": "TOWN",
     "latitude": 66.076141,
     "longitude": 33.041902,
     "elevation": 0
   },
   {
     "name": "Loukusa",
+    "type": "TOWN",
     "latitude": 65.730132,
     "longitude": 27.953959,
     "elevation": 0
   },
   {
     "name": "Lovikka",
+    "type": "TOWN",
     "latitude": 67.340318,
     "longitude": 22.610503,
     "elevation": 0
   },
   {
     "name": "Lovozero",
+    "type": "TOWN",
     "latitude": 68.005883,
     "longitude": 35.017209,
     "elevation": 0
   },
   {
     "name": "Lovund",
+    "type": "TOWN",
     "latitude": 66.368994,
     "longitude": 12.36435,
     "elevation": 0
   },
   {
     "name": "Luiro",
+    "type": "TOWN",
     "latitude": 67.223893,
     "longitude": 27.537503,
     "elevation": 0
   },
   {
     "name": "Lulea",
+    "type": "TOWN",
     "latitude": 65.583119,
     "longitude": 22.145954,
     "elevation": 0
   },
   {
     "name": "Lundenes",
+    "type": "TOWN",
     "latitude": 68.876888,
     "longitude": 16.566705,
     "elevation": 0
   },
   {
     "name": "Lunkkaus",
+    "type": "TOWN",
     "latitude": 67.245885,
     "longitude": 27.902125,
     "elevation": 0
   },
   {
     "name": "Luostari",
+    "type": "TOWN",
     "latitude": 69.420891,
     "longitude": 31.104106,
     "elevation": 0
   },
   {
     "name": "Luosto",
+    "type": "TOWN",
     "latitude": 67.158263,
     "longitude": 26.918337,
     "elevation": 0
   },
   {
     "name": "Luroy",
+    "type": "TOWN",
     "latitude": 66.419578,
     "longitude": 12.84327,
     "elevation": 0
   },
   {
     "name": "Luspa",
+    "type": "TOWN",
     "latitude": 68.489904,
     "longitude": 22.033488,
     "elevation": 0
   },
   {
     "name": "Luusalmi",
+    "type": "TOWN",
     "latitude": 65.055893,
     "longitude": 31.569407,
     "elevation": 0
   },
   {
     "name": "Lyngseidet",
+    "type": "TOWN",
     "latitude": 69.576257,
     "longitude": 20.21907,
     "elevation": 0
   },
   {
     "name": "Maaninkavaara",
+    "type": "TOWN",
     "latitude": 66.443391,
     "longitude": 28.490196,
     "elevation": 0
   },
   {
     "name": "Majavatn",
+    "type": "TOWN",
     "latitude": 65.168465,
     "longitude": 13.369451,
     "elevation": 0
   },
   {
     "name": "Malinovaya Varakka",
+    "type": "TOWN",
     "latitude": 66.302894,
     "longitude": 33.213435,
     "elevation": 0
   },
   {
     "name": "Malmberget",
+    "type": "TOWN",
     "latitude": 67.176118,
     "longitude": 20.658936,
     "elevation": 0
   },
   {
     "name": "Markitta",
+    "type": "TOWN",
     "latitude": 67.177933,
     "longitude": 21.558301,
     "elevation": 0
   },
   {
     "name": "Marnes",
+    "type": "TOWN",
     "latitude": 67.146701,
     "longitude": 14.094589,
     "elevation": 0
   },
   {
     "name": "Marrasjarvi",
+    "type": "TOWN",
     "latitude": 66.900637,
     "longitude": 25.124301,
     "elevation": 0
   },
   {
     "name": "Marraskoski",
+    "type": "TOWN",
     "latitude": 66.779408,
     "longitude": 25.423401,
     "elevation": 0
   },
   {
     "name": "Martti",
+    "type": "TOWN",
     "latitude": 67.474019,
     "longitude": 28.36174,
     "elevation": 0
   },
   {
     "name": "Masoy",
+    "type": "TOWN",
     "latitude": 71.007796,
     "longitude": 25.003738,
     "elevation": 0
   },
   {
     "name": "Mattsund",
+    "type": "TOWN",
     "latitude": 65.544163,
     "longitude": 21.902536,
     "elevation": 0
   },
   {
     "name": "Maze",
+    "type": "TOWN",
     "latitude": 69.443755,
     "longitude": 23.66707,
     "elevation": 0
   },
   {
     "name": "Mefjordvaer",
+    "type": "TOWN",
     "latitude": 69.518643,
     "longitude": 17.438209,
     "elevation": 0
   },
   {
     "name": "Mehamn",
+    "type": "TOWN",
     "latitude": 71.038992,
     "longitude": 27.851759,
     "elevation": 0
   },
   {
     "name": "Melbu",
+    "type": "TOWN",
     "latitude": 68.501262,
     "longitude": 14.800938,
     "elevation": 0
   },
   {
     "name": "Melfjordbotn",
+    "type": "TOWN",
     "latitude": 66.515365,
     "longitude": 13.676248,
     "elevation": 0
   },
   {
     "name": "Mellakoski",
+    "type": "TOWN",
     "latitude": 66.317883,
     "longitude": 24.463844,
     "elevation": 0
   },
   {
     "name": "Meloysjoen",
+    "type": "TOWN",
     "latitude": 66.823156,
     "longitude": 13.407853,
     "elevation": 0
   },
   {
     "name": "Meloyvaer",
+    "type": "TOWN",
     "latitude": 69.073518,
     "longitude": 16.506463,
     "elevation": 0
   },
   {
     "name": "Meltaus",
+    "type": "TOWN",
     "latitude": 66.913636,
     "longitude": 25.358717,
     "elevation": 0
   },
   {
     "name": "Meltosjarvi",
+    "type": "TOWN",
     "latitude": 66.535233,
     "longitude": 24.618527,
     "elevation": 0
   },
   {
     "name": "Merasjarvi",
+    "type": "TOWN",
     "latitude": 67.550573,
     "longitude": 21.931711,
     "elevation": 0
   },
   {
     "name": "Mertajarvi Nearva",
+    "type": "TOWN",
     "latitude": 68.352098,
     "longitude": 22.185688,
     "elevation": 0
   },
   {
     "name": "Metsakyla",
+    "type": "TOWN",
     "latitude": 65.346018,
     "longitude": 28.375671,
     "elevation": 0
   },
   {
     "name": "Metta Dokkas",
+    "type": "TOWN",
     "latitude": 67.065142,
     "longitude": 21.287164,
     "elevation": 0
   },
   {
     "name": "Mezhdurech'ye",
+    "type": "TOWN",
     "latitude": 69.032639,
     "longitude": 32.939447,
     "elevation": 0
   },
   {
     "name": "Misi",
+    "type": "TOWN",
     "latitude": 66.619319,
     "longitude": 26.686659,
     "elevation": 0
   },
   {
     "name": "Misvaer",
+    "type": "TOWN",
     "latitude": 67.118831,
     "longitude": 14.999309,
     "elevation": 0
   },
   {
     "name": "Mo i Rana",
+    "type": "TOWN",
     "latitude": 66.311097,
     "longitude": 14.138699,
     "elevation": 0
   },
   {
     "name": "Moen",
+    "type": "TOWN",
     "latitude": 69.122691,
     "longitude": 18.617077,
     "elevation": 0
   },
   {
     "name": "Moldjord",
+    "type": "TOWN",
     "latitude": 67.006797,
     "longitude": 14.576452,
     "elevation": 0
   },
   {
     "name": "Molochny",
+    "type": "TOWN",
     "latitude": 68.853966,
     "longitude": 33.015657,
     "elevation": 0
   },
   {
     "name": "Monchegorsk",
+    "type": "TOWN",
     "latitude": 67.939903,
     "longitude": 32.931677,
     "elevation": 0
   },
   {
     "name": "Morjarv",
+    "type": "TOWN",
     "latitude": 66.068057,
     "longitude": 22.703472,
     "elevation": 0
   },
   {
     "name": "Mosjoen",
+    "type": "TOWN",
     "latitude": 65.837534,
     "longitude": 13.18921,
     "elevation": 0
   },
   {
     "name": "Moskenes",
+    "type": "TOWN",
     "latitude": 67.90234,
     "longitude": 13.04187,
     "elevation": 0
   },
   {
     "name": "Moskosel",
+    "type": "TOWN",
     "latitude": 65.875186,
     "longitude": 19.451282,
     "elevation": 0
   },
   {
     "name": "Muodoslompolo",
+    "type": "TOWN",
     "latitude": 67.94375,
     "longitude": 23.425547,
     "elevation": 0
   },
   {
     "name": "Muonio",
+    "type": "TOWN",
     "latitude": 67.95934,
     "longitude": 23.677404,
     "elevation": 0
   },
   {
     "name": "Muoniovaara",
+    "type": "TOWN",
     "latitude": 67.945421,
     "longitude": 23.626356,
     "elevation": 0
   },
   {
     "name": "Murjek",
+    "type": "TOWN",
     "latitude": 66.483676,
     "longitude": 20.876923,
     "elevation": 0
   },
   {
     "name": "Murmansk",
+    "type": "TOWN",
     "latitude": 68.970665,
     "longitude": 33.074968,
     "elevation": 0
   },
   {
     "name": "Murmashi",
+    "type": "TOWN",
     "latitude": 68.816956,
     "longitude": 32.816503,
     "elevation": 0
   },
   {
     "name": "Muurola",
+    "type": "TOWN",
     "latitude": 66.376447,
     "longitude": 25.376396,
     "elevation": 0
   },
   {
     "name": "Myken",
+    "type": "TOWN",
     "latitude": 66.76092,
     "longitude": 12.478571,
     "elevation": 0
   },
   {
     "name": "Myklebostad",
+    "type": "TOWN",
     "latitude": 67.77556,
     "longitude": 15.017395,
     "elevation": 0
   },
   {
     "name": "Myre",
+    "type": "TOWN",
     "latitude": 69.105974,
     "longitude": 15.963081,
     "elevation": 0
   },
   {
     "name": "NAT",
+    "type": "VOR_DME",
     "latitude": 66.746476,
     "longitude": 21.322729,
     "elevation": 0
   },
   {
     "name": "Napp",
+    "type": "TOWN",
     "latitude": 68.133169,
     "longitude": 13.431933,
     "elevation": 0
   },
   {
     "name": "Narvik",
+    "type": "TOWN",
     "latitude": 68.43838,
     "longitude": 17.427198,
     "elevation": 0
   },
   {
     "name": "Nattavaara by",
+    "type": "TOWN",
     "latitude": 66.760382,
     "longitude": 21.030585,
     "elevation": 0
   },
   {
     "name": "Nedre Parakka",
+    "type": "TOWN",
     "latitude": 67.49299,
     "longitude": 21.67894,
     "elevation": 0
   },
   {
     "name": "Neiden",
+    "type": "TOWN",
     "latitude": 69.695282,
     "longitude": 29.379154,
     "elevation": 0
   },
   {
     "name": "Nellim",
+    "type": "TOWN",
     "latitude": 68.847965,
     "longitude": 28.323526,
     "elevation": 0
   },
   {
     "name": "Nergardshamn",
+    "type": "TOWN",
     "latitude": 68.999738,
     "longitude": 16.565048,
     "elevation": 0
   },
   {
     "name": "Nesna",
+    "type": "TOWN",
     "latitude": 66.199892,
     "longitude": 13.019146,
     "elevation": 0
   },
   {
     "name": "Neverdal",
+    "type": "TOWN",
     "latitude": 66.834341,
     "longitude": 13.773033,
     "elevation": 0
   },
   {
     "name": "Neverfjord",
+    "type": "TOWN",
     "latitude": 70.44018,
     "longitude": 23.784997,
     "elevation": 0
   },
   {
     "name": "Niemisel",
+    "type": "TOWN",
     "latitude": 66.019201,
     "longitude": 21.988393,
     "elevation": 0
   },
   {
     "name": "Nikel",
+    "type": "TOWN",
     "latitude": 69.406222,
     "longitude": 30.211421,
     "elevation": 0
   },
   {
     "name": "Nikkala",
+    "type": "TOWN",
     "latitude": 65.804058,
     "longitude": 23.914271,
     "elevation": 0
   },
   {
     "name": "Nikkaluokta",
+    "type": "TOWN",
     "latitude": 67.851359,
     "longitude": 19.015423,
     "elevation": 0
   },
   {
     "name": "Nilivaara",
+    "type": "TOWN",
     "latitude": 67.225298,
     "longitude": 21.6062,
     "elevation": 0
   },
   {
     "name": "Niskanpera",
+    "type": "TOWN",
     "latitude": 66.452426,
     "longitude": 25.610307,
     "elevation": 0
   },
   {
     "name": "Nivskiy",
+    "type": "TOWN",
     "latitude": 67.297455,
     "longitude": 32.480823,
     "elevation": 0
   },
   {
     "name": "Nordfold",
+    "type": "TOWN",
     "latitude": 67.762175,
     "longitude": 15.226923,
     "elevation": 0
   },
   {
     "name": "Nordhus",
+    "type": "TOWN",
     "latitude": 65.464599,
     "longitude": 12.154888,
     "elevation": 0
   },
   {
     "name": "Nordkjosbotn",
+    "type": "TOWN",
     "latitude": 69.217319,
     "longitude": 19.558313,
     "elevation": 0
   },
   {
     "name": "Nordmela",
+    "type": "TOWN",
     "latitude": 69.13647,
     "longitude": 15.677084,
     "elevation": 0
   },
   {
     "name": "Nordskot",
+    "type": "TOWN",
     "latitude": 67.832786,
     "longitude": 14.79061,
     "elevation": 0
   },
   {
     "name": "Nordvagen",
+    "type": "TOWN",
     "latitude": 70.984694,
     "longitude": 26.030493,
     "elevation": 0
   },
   {
     "name": "Norra Ammarnas",
+    "type": "TOWN",
     "latitude": 65.973456,
     "longitude": 16.220734,
     "elevation": 0
   },
   {
     "name": "Norra Bredaker",
+    "type": "TOWN",
     "latitude": 65.90365,
     "longitude": 21.351985,
     "elevation": 0
   },
   {
     "name": "Norrfjarden",
+    "type": "TOWN",
     "latitude": 65.41962,
     "longitude": 21.500646,
     "elevation": 0
   },
   {
     "name": "Nousu",
+    "type": "TOWN",
     "latitude": 67.160876,
     "longitude": 28.637981,
     "elevation": 0
   },
   {
     "name": "Nuksujarvi",
+    "type": "TOWN",
     "latitude": 66.963263,
     "longitude": 22.947708,
     "elevation": 0
   },
   {
     "name": "Nuorgam",
+    "type": "TOWN",
     "latitude": 70.081299,
     "longitude": 27.872383,
     "elevation": 0
   },
   {
     "name": "Nusfjord",
+    "type": "TOWN",
     "latitude": 68.03541,
     "longitude": 13.347705,
     "elevation": 0
   },
   {
     "name": "Nuvsvag",
+    "type": "TOWN",
     "latitude": 70.269383,
     "longitude": 22.116068,
     "elevation": 0
   },
   {
     "name": "Nyborg",
+    "type": "TOWN",
     "latitude": 65.789642,
     "longitude": 23.186449,
     "elevation": 0
   },
   {
     "name": "Nyksund",
+    "type": "TOWN",
     "latitude": 68.995763,
     "longitude": 15.013437,
     "elevation": 0
   },
   {
     "name": "Nykvag",
+    "type": "TOWN",
     "latitude": 68.776812,
     "longitude": 14.472802,
     "elevation": 0
   },
   {
     "name": "OP",
+    "type": "NDB",
     "latitude": 67.887545,
     "longitude": 20.452711,
     "elevation": 0
   },
   {
     "name": "OYA",
+    "type": "TACAN",
     "latitude": 69.286251,
     "longitude": 16.144315,
     "elevation": 0
   },
   {
     "name": "Ohtanajarvi",
+    "type": "TOWN",
     "latitude": 66.916122,
     "longitude": 23.168587,
     "elevation": 0
   },
   {
     "name": "Ojebyn",
+    "type": "TOWN",
     "latitude": 65.3435,
     "longitude": 21.402291,
     "elevation": 0
   },
   {
     "name": "Oksfjord",
+    "type": "TOWN",
     "latitude": 70.239495,
     "longitude": 22.350527,
     "elevation": 0
   },
   {
     "name": "Oksfjordhamn",
+    "type": "TOWN",
     "latitude": 69.907477,
     "longitude": 21.328841,
     "elevation": 0
   },
   {
     "name": "Olenegorsk",
+    "type": "TOWN",
     "latitude": 68.140732,
     "longitude": 33.282594,
     "elevation": 0
   },
   {
     "name": "Olenegorsk-1",
+    "type": "TOWN",
     "latitude": 68.107788,
     "longitude": 33.927434,
     "elevation": 0
   },
   {
     "name": "Olenitsa",
+    "type": "TOWN",
     "latitude": 66.4684,
     "longitude": 35.331316,
     "elevation": 0
   },
   {
     "name": "Olenya Guba",
+    "type": "TOWN",
     "latitude": 69.21387,
     "longitude": 33.373449,
     "elevation": 0
   },
   {
     "name": "Olhava",
+    "type": "TOWN",
     "latitude": 65.463387,
     "longitude": 25.383488,
     "elevation": 0
   },
   {
     "name": "Olsborg",
+    "type": "TOWN",
     "latitude": 69.144466,
     "longitude": 18.594539,
     "elevation": 0
   },
   {
     "name": "Onkamo",
+    "type": "TOWN",
     "latitude": 66.742654,
     "longitude": 29.076223,
     "elevation": 0
   },
   {
     "name": "Oppeid",
+    "type": "TOWN",
     "latitude": 68.084992,
     "longitude": 15.61307,
     "elevation": 0
   },
   {
     "name": "Orajarvi",
+    "type": "TOWN",
     "latitude": 67.341748,
     "longitude": 26.837901,
     "elevation": 0
   },
   {
     "name": "Oresvika",
+    "type": "TOWN",
     "latitude": 66.462206,
     "longitude": 13.226395,
     "elevation": 0
   },
   {
     "name": "Ornes",
+    "type": "TOWN",
     "latitude": 66.873078,
     "longitude": 13.706087,
     "elevation": 0
   },
   {
     "name": "Ose",
+    "type": "TOWN",
     "latitude": 68.621248,
     "longitude": 17.650824,
     "elevation": 0
   },
   {
     "name": "Ostrovnoy",
+    "type": "TOWN",
     "latitude": 68.054449,
     "longitude": 39.512897,
     "elevation": 0
   },
   {
     "name": "Oteren",
+    "type": "TOWN",
     "latitude": 69.255459,
     "longitude": 19.883416,
     "elevation": 0
   },
   {
     "name": "Overkalix",
+    "type": "TOWN",
     "latitude": 66.327055,
     "longitude": 22.843688,
     "elevation": 0
   },
   {
     "name": "Overtornea",
+    "type": "TOWN",
     "latitude": 66.390045,
     "longitude": 23.655002,
     "elevation": 0
   },
   {
     "name": "Ovre Alta",
+    "type": "TOWN",
     "latitude": 69.925572,
     "longitude": 23.264439,
     "elevation": 0
   },
   {
     "name": "Ovre Soppero",
+    "type": "TOWN",
     "latitude": 68.090233,
     "longitude": 21.69165,
     "elevation": 0
   },
   {
     "name": "Ovre Svartla",
+    "type": "TOWN",
     "latitude": 66.014623,
     "longitude": 21.172578,
     "elevation": 0
   },
   {
     "name": "Paharova",
+    "type": "TOWN",
     "latitude": 66.808373,
     "longitude": 22.336708,
     "elevation": 0
   },
   {
     "name": "Pajala",
+    "type": "TOWN",
     "latitude": 67.209036,
     "longitude": 23.36473,
     "elevation": 0
   },
   {
     "name": "Palang",
+    "type": "TOWN",
     "latitude": 65.813773,
     "longitude": 22.891509,
     "elevation": 0
   },
   {
     "name": "Palkem",
+    "type": "TOWN",
     "latitude": 66.386417,
     "longitude": 21.61061,
     "elevation": 0
   },
   {
     "name": "Palojoensuu",
+    "type": "TOWN",
     "latitude": 68.282634,
     "longitude": 23.086366,
     "elevation": 0
   },
   {
     "name": "Panozero",
+    "type": "TOWN",
     "latitude": 64.974012,
     "longitude": 32.861653,
     "elevation": 0
   },
   {
     "name": "Panuma",
+    "type": "TOWN",
     "latitude": 65.25355,
     "longitude": 26.414657,
     "elevation": 0
   },
   {
     "name": "Pasmajarvi",
+    "type": "TOWN",
     "latitude": 67.102146,
     "longitude": 24.384115,
     "elevation": 0
   },
   {
     "name": "Pelkosenniemi",
+    "type": "TOWN",
     "latitude": 67.109597,
     "longitude": 27.511812,
     "elevation": 0
   },
   {
     "name": "Pello",
+    "type": "TOWN",
     "latitude": 66.804083,
     "longitude": 23.977188,
     "elevation": 0
   },
   {
     "name": "Person",
+    "type": "TOWN",
     "latitude": 65.739829,
     "longitude": 22.168236,
     "elevation": 0
   },
   {
     "name": "Pessalompolo",
+    "type": "TOWN",
     "latitude": 66.499479,
     "longitude": 24.399458,
     "elevation": 0
   },
   {
     "name": "Petchenga",
+    "type": "TOWN",
     "latitude": 69.547714,
     "longitude": 31.212253,
     "elevation": 0
   },
   {
     "name": "Peurasuvanto",
+    "type": "TOWN",
     "latitude": 67.840486,
     "longitude": 26.722524,
     "elevation": 0
   },
   {
     "name": "Pintamo",
+    "type": "TOWN",
     "latitude": 65.454482,
     "longitude": 27.657687,
     "elevation": 0
   },
   {
     "name": "Pitea",
+    "type": "TOWN",
     "latitude": 65.313465,
     "longitude": 21.490025,
     "elevation": 0
   },
   {
     "name": "Pjesker",
+    "type": "TOWN",
     "latitude": 65.520354,
     "longitude": 19.666469,
     "elevation": 0
   },
   {
     "name": "Plotina",
+    "type": "TOWN",
     "latitude": 66.197067,
     "longitude": 33.361563,
     "elevation": 0
   },
   {
     "name": "Polarnie Zori",
+    "type": "TOWN",
     "latitude": 67.374084,
     "longitude": 32.495791,
     "elevation": 0
   },
   {
     "name": "Polyarny",
+    "type": "TOWN",
     "latitude": 69.199524,
     "longitude": 33.445836,
     "elevation": 0
   },
   {
     "name": "Porjus",
+    "type": "TOWN",
     "latitude": 66.960081,
     "longitude": 19.822232,
     "elevation": 0
   },
   {
     "name": "Porsangmoen",
+    "type": "TOWN",
     "latitude": 69.903672,
     "longitude": 24.999663,
     "elevation": 0
   },
   {
     "name": "Posio",
+    "type": "TOWN",
     "latitude": 66.109259,
     "longitude": 28.165078,
     "elevation": 0
   },
   {
     "name": "Prestoya",
+    "type": "TOWN",
     "latitude": 65.908284,
     "longitude": 12.162809,
     "elevation": 0
   },
   {
     "name": "Pudasjarvi",
+    "type": "TOWN",
     "latitude": 65.360401,
     "longitude": 26.99849,
     "elevation": 0
   },
   {
     "name": "Puoltikasvaara",
+    "type": "TOWN",
     "latitude": 67.440519,
     "longitude": 21.105806,
     "elevation": 0
   },
   {
     "name": "Pushnoy",
+    "type": "TOWN",
     "latitude": 68.479355,
     "longitude": 33.31984,
     "elevation": 0
   },
   {
     "name": "Pyaozersky",
+    "type": "TOWN",
     "latitude": 65.765129,
     "longitude": 31.081166,
     "elevation": 0
   },
   {
     "name": "Pyhajarvi",
+    "type": "TOWN",
     "latitude": 67.069237,
     "longitude": 27.22217,
     "elevation": 0
   },
   {
     "name": "Pyhatunturi",
+    "type": "TOWN",
     "latitude": 67.021324,
     "longitude": 27.243633,
     "elevation": 0
   },
   {
     "name": "Raanujarvi",
+    "type": "TOWN",
     "latitude": 66.647042,
     "longitude": 24.731557,
     "elevation": 0
   },
   {
     "name": "Raattama",
+    "type": "TOWN",
     "latitude": 68.139532,
     "longitude": 24.220043,
     "elevation": 0
   },
   {
     "name": "Rabocheostrovsk",
+    "type": "TOWN",
     "latitude": 64.985896,
     "longitude": 34.78072,
     "elevation": 0
   },
   {
     "name": "Rafsbotn",
+    "type": "TOWN",
     "latitude": 70.01955,
     "longitude": 23.532775,
     "elevation": 0
   },
   {
     "name": "Ramberg",
+    "type": "TOWN",
     "latitude": 68.089906,
     "longitude": 13.229892,
     "elevation": 0
   },
   {
     "name": "Ramsund",
+    "type": "TOWN",
     "latitude": 68.49194,
     "longitude": 16.518204,
     "elevation": 0
   },
   {
     "name": "Ranea",
+    "type": "TOWN",
     "latitude": 65.856088,
     "longitude": 22.289997,
     "elevation": 0
   },
   {
     "name": "Ranua",
+    "type": "TOWN",
     "latitude": 65.927682,
     "longitude": 26.513104,
     "elevation": 0
   },
   {
     "name": "Ratasjarvi",
+    "type": "TOWN",
     "latitude": 66.515963,
     "longitude": 23.901719,
     "elevation": 0
   },
   {
     "name": "Rattosjarvi",
+    "type": "TOWN",
     "latitude": 66.843604,
     "longitude": 24.868153,
     "elevation": 0
   },
   {
     "name": "Rautiosaari",
+    "type": "TOWN",
     "latitude": 66.420072,
     "longitude": 25.500634,
     "elevation": 0
   },
   {
     "name": "Reine",
+    "type": "TOWN",
     "latitude": 67.932468,
     "longitude": 13.088769,
     "elevation": 0
   },
   {
     "name": "Reipa",
+    "type": "TOWN",
     "latitude": 66.910111,
     "longitude": 13.63707,
     "elevation": 0
   },
   {
     "name": "Revda",
+    "type": "TOWN",
     "latitude": 67.941543,
     "longitude": 34.548966,
     "elevation": 0
   },
   {
     "name": "Rison",
+    "type": "TOWN",
     "latitude": 65.813714,
     "longitude": 23.241376,
     "elevation": 0
   },
   {
     "name": "Risoyhamn",
+    "type": "TOWN",
     "latitude": 68.971911,
     "longitude": 15.638351,
     "elevation": 0
   },
   {
     "name": "Ritavalkea",
+    "type": "TOWN",
     "latitude": 66.807158,
     "longitude": 24.122712,
     "elevation": 0
   },
   {
     "name": "Ritsem",
+    "type": "TOWN",
     "latitude": 67.719844,
     "longitude": 17.475847,
     "elevation": 0
   },
   {
     "name": "Roabadallu",
+    "type": "TOWN",
     "latitude": 68.676388,
     "longitude": 17.120942,
     "elevation": 0
   },
   {
     "name": "Rodoy",
+    "type": "TOWN",
     "latitude": 66.659433,
     "longitude": 13.07625,
     "elevation": 0
   },
   {
     "name": "Rognan",
+    "type": "TOWN",
     "latitude": 67.101439,
     "longitude": 15.393563,
     "elevation": 0
   },
   {
     "name": "Rokland",
+    "type": "TOWN",
     "latitude": 66.986239,
     "longitude": 15.318251,
     "elevation": 0
   },
   {
     "name": "Roknas",
+    "type": "TOWN",
     "latitude": 65.349933,
     "longitude": 21.178993,
     "elevation": 0
   },
   {
     "name": "Rolfs",
+    "type": "TOWN",
     "latitude": 65.846277,
     "longitude": 23.124371,
     "elevation": 0
   },
   {
     "name": "Rollnes",
+    "type": "TOWN",
     "latitude": 68.86168,
     "longitude": 17.041205,
     "elevation": 0
   },
   {
     "name": "Ronkaisenniemi",
+    "type": "TOWN",
     "latitude": 65.917066,
     "longitude": 29.242288,
     "elevation": 0
   },
   {
     "name": "Rossfjordstraumen",
+    "type": "TOWN",
     "latitude": 69.362958,
     "longitude": 18.314509,
     "elevation": 0
   },
   {
     "name": "Rossvoll",
+    "type": "TOWN",
     "latitude": 66.358542,
     "longitude": 14.324782,
     "elevation": 0
   },
   {
     "name": "Rost",
+    "type": "TOWN",
     "latitude": 67.517197,
     "longitude": 12.116895,
     "elevation": 0
   },
   {
     "name": "Rosvik",
+    "type": "TOWN",
     "latitude": 65.426626,
     "longitude": 21.692732,
     "elevation": 0
   },
   {
     "name": "Rosvika",
+    "type": "TOWN",
     "latitude": 67.478084,
     "longitude": 15.462085,
     "elevation": 0
   },
   {
     "name": "Rotsund",
+    "type": "TOWN",
     "latitude": 69.777459,
     "longitude": 20.590153,
     "elevation": 0
   },
   {
     "name": "Rotsundelv",
+    "type": "TOWN",
     "latitude": 69.788217,
     "longitude": 20.71059,
     "elevation": 0
   },
   {
     "name": "Rovaniemi",
+    "type": "TOWN",
     "latitude": 66.502566,
     "longitude": 25.73122,
     "elevation": 0
   },
   {
     "name": "Ruka",
+    "type": "TOWN",
     "latitude": 66.170266,
     "longitude": 29.131129,
     "elevation": 0
   },
   {
     "name": "Rundhaug",
+    "type": "TOWN",
     "latitude": 69.020188,
     "longitude": 18.898328,
     "elevation": 0
   },
   {
     "name": "Ruollaluokta",
+    "type": "TOWN",
     "latitude": 69.524827,
     "longitude": 20.761405,
     "elevation": 0
   },
   {
     "name": "Ruostafielbma",
+    "type": "TOWN",
     "latitude": 70.398842,
     "longitude": 28.193357,
     "elevation": 0
   },
   {
     "name": "Rutvik",
+    "type": "TOWN",
     "latitude": 65.670178,
     "longitude": 22.089851,
     "elevation": 0
   },
   {
     "name": "Ruuhijarvi",
+    "type": "TOWN",
     "latitude": 66.855453,
     "longitude": 24.649036,
     "elevation": 0
   },
   {
     "name": "Rypefjord",
+    "type": "TOWN",
     "latitude": 70.641294,
     "longitude": 23.671824,
     "elevation": 0
   },
   {
     "name": "Ryssbalt",
+    "type": "TOWN",
     "latitude": 65.770934,
     "longitude": 23.01464,
     "elevation": 0
   },
   {
     "name": "SPO",
+    "type": "DME",
     "latitude": 68.090876,
     "longitude": 21.691239,
     "elevation": 0
   },
   {
     "name": "Saarenkyla",
+    "type": "TOWN",
     "latitude": 66.520103,
     "longitude": 25.77293,
     "elevation": 0
   },
   {
     "name": "Saariselka",
+    "type": "TOWN",
     "latitude": 68.421398,
     "longitude": 27.417764,
     "elevation": 0
   },
   {
     "name": "Safonovo",
+    "type": "TOWN",
     "latitude": 69.059029,
     "longitude": 33.292047,
     "elevation": 0
   },
   {
     "name": "Sahavaara",
+    "type": "TOWN",
     "latitude": 67.362567,
     "longitude": 23.308407,
     "elevation": 0
   },
   {
     "name": "Sahtik",
+    "type": "TOWN",
     "latitude": 68.678247,
     "longitude": 16.787657,
     "elevation": 0
   },
   {
     "name": "Salla",
+    "type": "TOWN",
     "latitude": 66.831877,
     "longitude": 28.666863,
     "elevation": 0
   },
   {
     "name": "Saltsraumen",
+    "type": "TOWN",
     "latitude": 67.233902,
     "longitude": 14.625731,
     "elevation": 0
   },
   {
     "name": "Sand",
+    "type": "TOWN",
     "latitude": 69.391476,
     "longitude": 18.608645,
     "elevation": 0
   },
   {
     "name": "Sandland",
+    "type": "TOWN",
     "latitude": 70.267191,
     "longitude": 21.602966,
     "elevation": 0
   },
   {
     "name": "Sandnes",
+    "type": "TOWN",
     "latitude": 69.671945,
     "longitude": 29.955992,
     "elevation": 0
   },
   {
     "name": "Sandnessjoen",
+    "type": "TOWN",
     "latitude": 66.021545,
     "longitude": 12.631723,
     "elevation": 0
   },
   {
     "name": "Sangis",
+    "type": "TOWN",
     "latitude": 65.855789,
     "longitude": 23.49575,
     "elevation": 0
   },
   {
     "name": "Sanna",
+    "type": "TOWN",
     "latitude": 66.507203,
     "longitude": 12.053858,
     "elevation": 0
   },
   {
     "name": "Sarkela",
+    "type": "TOWN",
     "latitude": 65.624132,
     "longitude": 28.787929,
     "elevation": 0
   },
   {
     "name": "Sattajarvi",
+    "type": "TOWN",
     "latitude": 67.077356,
     "longitude": 23.347971,
     "elevation": 0
   },
   {
     "name": "Saukkoriipi",
+    "type": "TOWN",
     "latitude": 66.810446,
     "longitude": 24.244209,
     "elevation": 0
   },
   {
     "name": "Savast",
+    "type": "TOWN",
     "latitude": 65.761657,
     "longitude": 21.751024,
     "elevation": 0
   },
   {
     "name": "Savukoski",
+    "type": "TOWN",
     "latitude": 67.292311,
     "longitude": 28.163877,
     "elevation": 0
   },
   {
     "name": "Schongui",
+    "type": "TOWN",
     "latitude": 68.743279,
     "longitude": 33.153822,
     "elevation": 0
   },
   {
     "name": "Schukozero",
+    "type": "TOWN",
     "latitude": 69.036284,
     "longitude": 33.630836,
     "elevation": 0
   },
   {
     "name": "Seipajarvi",
+    "type": "TOWN",
     "latitude": 67.160663,
     "longitude": 26.225636,
     "elevation": 0
   },
   {
     "name": "Selsoyvika",
+    "type": "TOWN",
     "latitude": 66.574492,
     "longitude": 12.981243,
     "elevation": 0
   },
   {
     "name": "Selvaer",
+    "type": "TOWN",
     "latitude": 66.587648,
     "longitude": 12.240656,
     "elevation": 0
   },
   {
     "name": "Senjahopen",
+    "type": "TOWN",
     "latitude": 69.495881,
     "longitude": 17.485991,
     "elevation": 0
   },
   {
     "name": "Seskaro",
+    "type": "TOWN",
     "latitude": 65.738484,
     "longitude": 23.738859,
     "elevation": 0
   },
   {
     "name": "Setermoen",
+    "type": "TOWN",
     "latitude": 68.860941,
     "longitude": 18.348243,
     "elevation": 0
   },
   {
     "name": "Severomorsk",
+    "type": "TOWN",
     "latitude": 69.069168,
     "longitude": 33.416654,
     "elevation": 0
   },
   {
     "name": "Severomorsk-3",
+    "type": "TOWN",
     "latitude": 68.88739,
     "longitude": 33.734586,
     "elevation": 0
   },
   {
     "name": "Shomba",
+    "type": "TOWN",
     "latitude": 65.099775,
     "longitude": 33.023124,
     "elevation": 0
   },
   {
     "name": "Shueretskoe",
+    "type": "TOWN",
     "latitude": 64.743675,
     "longitude": 34.707202,
     "elevation": 0
   },
   {
     "name": "Sieidda",
+    "type": "TOWN",
     "latitude": 70.231229,
     "longitude": 28.179043,
     "elevation": 0
   },
   {
     "name": "Sieppijarvi",
+    "type": "TOWN",
     "latitude": 67.148962,
     "longitude": 23.986468,
     "elevation": 0
   },
   {
     "name": "Sifjorden",
+    "type": "TOWN",
     "latitude": 69.285308,
     "longitude": 17.147588,
     "elevation": 0
   },
   {
     "name": "Sigerfjord",
+    "type": "TOWN",
     "latitude": 68.646953,
     "longitude": 15.505438,
     "elevation": 0
   },
   {
     "name": "Sihtuuna",
+    "type": "TOWN",
     "latitude": 66.175446,
     "longitude": 24.655388,
     "elevation": 0
   },
   {
     "name": "Sikfors",
+    "type": "TOWN",
     "latitude": 65.531908,
     "longitude": 21.195429,
     "elevation": 0
   },
   {
     "name": "Siknas",
+    "type": "TOWN",
     "latitude": 65.844013,
     "longitude": 22.681672,
     "elevation": 0
   },
   {
     "name": "Silsand",
+    "type": "TOWN",
     "latitude": 69.244812,
     "longitude": 17.949738,
     "elevation": 0
   },
   {
     "name": "Silvalen",
+    "type": "TOWN",
     "latitude": 65.983325,
     "longitude": 12.288505,
     "elevation": 0
   },
   {
     "name": "Simo",
+    "type": "TOWN",
     "latitude": 65.662285,
     "longitude": 25.063816,
     "elevation": 0
   },
   {
     "name": "Sinetta",
+    "type": "TOWN",
     "latitude": 66.643762,
     "longitude": 25.468186,
     "elevation": 0
   },
   {
     "name": "Sirbma",
+    "type": "TOWN",
     "latitude": 70.014538,
     "longitude": 27.399009,
     "elevation": 0
   },
   {
     "name": "Sirkka",
+    "type": "TOWN",
     "latitude": 67.80756,
     "longitude": 24.805573,
     "elevation": 0
   },
   {
     "name": "Sirkkakoski",
+    "type": "TOWN",
     "latitude": 66.683321,
     "longitude": 24.416668,
     "elevation": 0
   },
   {
     "name": "Sirnio",
+    "type": "TOWN",
     "latitude": 65.852939,
     "longitude": 28.159749,
     "elevation": 0
   },
   {
     "name": "Sjovegan",
+    "type": "TOWN",
     "latitude": 68.872641,
     "longitude": 17.852183,
     "elevation": 0
   },
   {
     "name": "Sjulsmark",
+    "type": "TOWN",
     "latitude": 65.51986,
     "longitude": 21.491571,
     "elevation": 0
   },
   {
     "name": "Skaidi",
+    "type": "TOWN",
     "latitude": 70.432402,
     "longitude": 24.502352,
     "elevation": 0
   },
   {
     "name": "Skaland",
+    "type": "TOWN",
     "latitude": 69.444696,
     "longitude": 17.298383,
     "elevation": 0
   },
   {
     "name": "Skallelv",
+    "type": "TOWN",
     "latitude": 70.189131,
     "longitude": 30.334256,
     "elevation": 0
   },
   {
     "name": "Skanik",
+    "type": "TOWN",
     "latitude": 68.585455,
     "longitude": 16.580007,
     "elevation": 0
   },
   {
     "name": "Skarfvaggi",
+    "type": "TOWN",
     "latitude": 69.518173,
     "longitude": 20.630227,
     "elevation": 0
   },
   {
     "name": "Skarsvag",
+    "type": "TOWN",
     "latitude": 71.112765,
     "longitude": 25.825204,
     "elevation": 0
   },
   {
     "name": "Skarvika",
+    "type": "TOWN",
     "latitude": 68.892106,
     "longitude": 17.803808,
     "elevation": 0
   },
   {
     "name": "Skaulo",
+    "type": "TOWN",
     "latitude": 67.414729,
     "longitude": 21.111482,
     "elevation": 0
   },
   {
     "name": "Skibotn",
+    "type": "TOWN",
     "latitude": 69.390798,
     "longitude": 20.267845,
     "elevation": 0
   },
   {
     "name": "Skiippagurra",
+    "type": "TOWN",
     "latitude": 70.166383,
     "longitude": 28.224952,
     "elevation": 0
   },
   {
     "name": "Skjerstad",
+    "type": "TOWN",
     "latitude": 67.23284,
     "longitude": 15.024954,
     "elevation": 0
   },
   {
     "name": "Skjervoy",
+    "type": "TOWN",
     "latitude": 70.033617,
     "longitude": 20.974752,
     "elevation": 0
   },
   {
     "name": "Skjold",
+    "type": "TOWN",
     "latitude": 69.024474,
     "longitude": 19.296857,
     "elevation": 0
   },
   {
     "name": "Sklorbacken",
+    "type": "TOWN",
     "latitude": 65.894613,
     "longitude": 23.097909,
     "elevation": 0
   },
   {
     "name": "Skoelva",
+    "type": "TOWN",
     "latitude": 69.131738,
     "longitude": 18.050821,
     "elevation": 0
   },
   {
     "name": "Skonseng",
+    "type": "TOWN",
     "latitude": 66.356072,
     "longitude": 14.339857,
     "elevation": 0
   },
   {
     "name": "Skrollsvika",
+    "type": "TOWN",
     "latitude": 69.064039,
     "longitude": 16.815055,
     "elevation": 0
   },
   {
     "name": "Skutvik",
+    "type": "TOWN",
     "latitude": 68.015412,
     "longitude": 15.332327,
     "elevation": 0
   },
   {
     "name": "Skuvvanvarri",
+    "type": "TOWN",
     "latitude": 69.839613,
     "longitude": 25.07839,
     "elevation": 0
   },
   {
     "name": "Slagnas",
+    "type": "TOWN",
     "latitude": 65.587047,
     "longitude": 18.16711,
     "elevation": 0
   },
   {
     "name": "Sleneset",
+    "type": "TOWN",
     "latitude": 66.36366,
     "longitude": 12.608631,
     "elevation": 0
   },
   {
     "name": "Slussfors",
+    "type": "TOWN",
     "latitude": 65.43107,
     "longitude": 16.23967,
     "elevation": 0
   },
   {
     "name": "Snezhnogorsk",
+    "type": "TOWN",
     "latitude": 69.19191,
     "longitude": 33.232355,
     "elevation": 0
   },
   {
     "name": "Sodankyla",
+    "type": "TOWN",
     "latitude": 67.418972,
     "longitude": 26.590218,
     "elevation": 0
   },
   {
     "name": "Sodra Bredaker",
+    "type": "TOWN",
     "latitude": 65.90102,
     "longitude": 21.321748,
     "elevation": 0
   },
   {
     "name": "Sodra Grannas",
+    "type": "TOWN",
     "latitude": 65.296738,
     "longitude": 16.367616,
     "elevation": 0
   },
   {
     "name": "Sodra Sunderbyn",
+    "type": "TOWN",
     "latitude": 65.654163,
     "longitude": 21.953414,
     "elevation": 0
   },
   {
     "name": "Sodra Svartbyn",
+    "type": "TOWN",
     "latitude": 65.799784,
     "longitude": 21.744386,
     "elevation": 0
   },
   {
     "name": "Solfjellsjoen",
+    "type": "TOWN",
     "latitude": 66.108958,
     "longitude": 12.49079,
     "elevation": 0
   },
   {
     "name": "Sommaroy",
+    "type": "TOWN",
     "latitude": 69.633771,
     "longitude": 18.005368,
     "elevation": 0
   },
   {
     "name": "Sor-Arnoy",
+    "type": "TOWN",
     "latitude": 67.136308,
     "longitude": 13.967313,
     "elevation": 0
   },
   {
     "name": "Sor-Gutvika",
+    "type": "TOWN",
     "latitude": 65.083552,
     "longitude": 11.835185,
     "elevation": 0
   },
   {
     "name": "Sor-Tverrfjord",
+    "type": "TOWN",
     "latitude": 70.219397,
     "longitude": 21.714169,
     "elevation": 0
   },
   {
     "name": "Sorbotn",
+    "type": "TOWN",
     "latitude": 69.513641,
     "longitude": 19.247379,
     "elevation": 0
   },
   {
     "name": "Sorfjorden",
+    "type": "TOWN",
     "latitude": 66.49164,
     "longitude": 13.292609,
     "elevation": 0
   },
   {
     "name": "Sorfugloy",
+    "type": "TOWN",
     "latitude": 67.056038,
     "longitude": 13.778663,
     "elevation": 0
   },
   {
     "name": "Sorkjosen",
+    "type": "TOWN",
     "latitude": 69.786023,
     "longitude": 20.950299,
     "elevation": 0
   },
   {
     "name": "Sorland",
+    "type": "TOWN",
     "latitude": 67.665559,
     "longitude": 12.697657,
     "elevation": 0
   },
   {
     "name": "Sorreisa",
+    "type": "TOWN",
     "latitude": 69.14544,
     "longitude": 18.152962,
     "elevation": 0
   },
   {
     "name": "Sorrollnes",
+    "type": "TOWN",
     "latitude": 68.727272,
     "longitude": 16.842791,
     "elevation": 0
   },
   {
     "name": "Sorsele",
+    "type": "TOWN",
     "latitude": 65.533066,
     "longitude": 17.536874,
     "elevation": 0
   },
   {
     "name": "Sortland",
+    "type": "TOWN",
     "latitude": 68.69513,
     "longitude": 15.414826,
     "elevation": 0
   },
   {
     "name": "Sorvaer",
+    "type": "TOWN",
     "latitude": 70.632223,
     "longitude": 21.985443,
     "elevation": 0
   },
   {
     "name": "Sorvagen",
+    "type": "TOWN",
     "latitude": 67.889634,
     "longitude": 13.01637,
     "elevation": 0
   },
   {
     "name": "Sorvika",
+    "type": "TOWN",
     "latitude": 68.68401,
     "longitude": 16.535728,
     "elevation": 0
   },
   {
     "name": "Sosnovy",
+    "type": "TOWN",
     "latitude": 66.001045,
     "longitude": 32.319341,
     "elevation": 0
   },
   {
     "name": "Stakkvik",
+    "type": "TOWN",
     "latitude": 69.954298,
     "longitude": 19.670942,
     "elevation": 0
   },
   {
     "name": "Stamsund",
+    "type": "TOWN",
     "latitude": 68.130074,
     "longitude": 13.849228,
     "elevation": 0
   },
   {
     "name": "Stavseng",
+    "type": "TOWN",
     "latitude": 66.173984,
     "longitude": 12.544979,
     "elevation": 0
   },
   {
     "name": "Sto",
+    "type": "TOWN",
     "latitude": 69.018831,
     "longitude": 15.123973,
     "elevation": 0
   },
   {
     "name": "Stokmarknes",
+    "type": "TOWN",
     "latitude": 68.567,
     "longitude": 14.913349,
     "elevation": 0
   },
   {
     "name": "Stonglandseidet",
+    "type": "TOWN",
     "latitude": 69.083797,
     "longitude": 17.174201,
     "elevation": 0
   },
   {
     "name": "Storbukt",
+    "type": "TOWN",
     "latitude": 70.996158,
     "longitude": 25.969921,
     "elevation": 0
   },
   {
     "name": "Storekorsnes",
+    "type": "TOWN",
     "latitude": 70.214272,
     "longitude": 23.20182,
     "elevation": 0
   },
   {
     "name": "Storforshei",
+    "type": "TOWN",
     "latitude": 66.404479,
     "longitude": 14.527752,
     "elevation": 0
   },
   {
     "name": "Storjord",
+    "type": "TOWN",
     "latitude": 66.98931,
     "longitude": 14.761389,
     "elevation": 0
   },
   {
     "name": "Storon",
+    "type": "TOWN",
     "latitude": 65.735785,
     "longitude": 23.097102,
     "elevation": 0
   },
   {
     "name": "Storslett",
+    "type": "TOWN",
     "latitude": 69.767852,
     "longitude": 21.024457,
     "elevation": 0
   },
   {
     "name": "Storsteinnes",
+    "type": "TOWN",
     "latitude": 69.332291,
     "longitude": 18.890881,
     "elevation": 0
   },
   {
     "name": "Storsund",
+    "type": "TOWN",
     "latitude": 65.576594,
     "longitude": 20.625469,
     "elevation": 0
   },
   {
     "name": "Storvik",
+    "type": "TOWN",
     "latitude": 66.963539,
     "longitude": 13.806078,
     "elevation": 0
   },
   {
     "name": "Straume",
+    "type": "TOWN",
     "latitude": 68.688956,
     "longitude": 14.471644,
     "elevation": 0
   },
   {
     "name": "Straumen",
+    "type": "TOWN",
     "latitude": 67.348426,
     "longitude": 15.596808,
     "elevation": 0
   },
   {
     "name": "Straumfjordnes",
+    "type": "TOWN",
     "latitude": 69.868633,
     "longitude": 21.21437,
     "elevation": 0
   },
   {
     "name": "Stravnjunnje",
+    "type": "TOWN",
     "latitude": 67.963367,
     "longitude": 15.930791,
     "elevation": 0
   },
   {
     "name": "Strengelvag",
+    "type": "TOWN",
     "latitude": 68.959608,
     "longitude": 15.182345,
     "elevation": 0
   },
   {
     "name": "Stuorravuonna",
+    "type": "TOWN",
     "latitude": 70.122619,
     "longitude": 28.574727,
     "elevation": 0
   },
   {
     "name": "Sulitjelma",
+    "type": "TOWN",
     "latitude": 67.132905,
     "longitude": 16.077378,
     "elevation": 0
   },
   {
     "name": "Sund",
+    "type": "TOWN",
     "latitude": 68.005183,
     "longitude": 13.207895,
     "elevation": 0
   },
   {
     "name": "Suvanto",
+    "type": "TOWN",
     "latitude": 67.152453,
     "longitude": 27.279963,
     "elevation": 0
   },
   {
     "name": "Svanvik",
+    "type": "TOWN",
     "latitude": 69.453778,
     "longitude": 30.049774,
     "elevation": 0
   },
   {
     "name": "Svappavaara",
+    "type": "TOWN",
     "latitude": 67.646924,
     "longitude": 21.055485,
     "elevation": 0
   },
   {
     "name": "Svartbacken",
+    "type": "TOWN",
     "latitude": 65.902912,
     "longitude": 21.803575,
     "elevation": 0
   },
   {
     "name": "Svartbyn",
+    "type": "TOWN",
     "latitude": 66.25963,
     "longitude": 22.820359,
     "elevation": 0
   },
   {
     "name": "Svolvaer",
+    "type": "TOWN",
     "latitude": 68.232171,
     "longitude": 14.564602,
     "elevation": 0
   },
   {
     "name": "Syotekyla",
+    "type": "TOWN",
     "latitude": 65.641809,
     "longitude": 27.715944,
     "elevation": 0
   },
   {
     "name": "TG",
+    "type": "NDB",
     "latitude": 67.146417,
     "longitude": 20.74422,
     "elevation": 0
   },
   {
     "name": "Taipaleenharju",
+    "type": "TOWN",
     "latitude": 65.278085,
     "longitude": 26.824916,
     "elevation": 0
   },
   {
     "name": "Taivalkoski",
+    "type": "TOWN",
     "latitude": 65.575294,
     "longitude": 28.242586,
     "elevation": 0
   },
   {
     "name": "Talmulahti",
+    "type": "TOWN",
     "latitude": 70.042467,
     "longitude": 22.950196,
     "elevation": 0
   },
   {
     "name": "Tankavaara",
+    "type": "TOWN",
     "latitude": 68.181041,
     "longitude": 27.09846,
     "elevation": 0
   },
   {
     "name": "Tapionkyla",
+    "type": "TOWN",
     "latitude": 66.704512,
     "longitude": 25.448032,
     "elevation": 0
   },
   {
     "name": "Tapojarvi",
+    "type": "TOWN",
     "latitude": 67.53801,
     "longitude": 23.626017,
     "elevation": 0
   },
   {
     "name": "Tarendo",
+    "type": "TOWN",
     "latitude": 67.167297,
     "longitude": 22.627009,
     "elevation": 0
   },
   {
     "name": "Tarnaby",
+    "type": "TOWN",
     "latitude": 65.711447,
     "longitude": 15.276544,
     "elevation": 0
   },
   {
     "name": "Tedino",
+    "type": "TOWN",
     "latitude": 66.468575,
     "longitude": 32.749548,
     "elevation": 0
   },
   {
     "name": "Tennevoll",
+    "type": "TOWN",
     "latitude": 68.747026,
     "longitude": 17.806291,
     "elevation": 0
   },
   {
     "name": "Teponmaki",
+    "type": "TOWN",
     "latitude": 68.616205,
     "longitude": 27.527682,
     "elevation": 0
   },
   {
     "name": "Tepsa",
+    "type": "TOWN",
     "latitude": 67.562358,
     "longitude": 25.681286,
     "elevation": 0
   },
   {
     "name": "Teriberka",
+    "type": "TOWN",
     "latitude": 69.164133,
     "longitude": 35.145823,
     "elevation": 0
   },
   {
     "name": "Ternu",
+    "type": "TOWN",
     "latitude": 66.394302,
     "longitude": 25.381853,
     "elevation": 0
   },
   {
     "name": "Terrak",
+    "type": "TOWN",
     "latitude": 65.088648,
     "longitude": 12.373777,
     "elevation": 0
   },
   {
     "name": "Tervola",
+    "type": "TOWN",
     "latitude": 66.082291,
     "longitude": 24.805884,
     "elevation": 0
   },
   {
     "name": "Tjautjas",
+    "type": "TOWN",
     "latitude": 67.326607,
     "longitude": 20.736699,
     "elevation": 0
   },
   {
     "name": "Tjong",
+    "type": "TOWN",
     "latitude": 66.685744,
     "longitude": 13.450264,
     "elevation": 0
   },
   {
     "name": "Tjongsfjord",
+    "type": "TOWN",
     "latitude": 66.69519,
     "longitude": 13.421124,
     "elevation": 0
   },
   {
     "name": "Tjotta",
+    "type": "TOWN",
     "latitude": 65.823064,
     "longitude": 12.426116,
     "elevation": 0
   },
   {
     "name": "Toft",
+    "type": "TOWN",
     "latitude": 65.46901,
     "longitude": 12.134797,
     "elevation": 0
   },
   {
     "name": "Tonnes",
+    "type": "TOWN",
     "latitude": 66.513764,
     "longitude": 13.014319,
     "elevation": 0
   },
   {
     "name": "Tore",
+    "type": "TOWN",
     "latitude": 65.913129,
     "longitude": 22.647828,
     "elevation": 0
   },
   {
     "name": "Tormanen",
+    "type": "TOWN",
     "latitude": 68.608003,
     "longitude": 27.488233,
     "elevation": 0
   },
   {
     "name": "Tormasenvaara",
+    "type": "TOWN",
     "latitude": 65.905276,
     "longitude": 29.470804,
     "elevation": 0
   },
   {
     "name": "Tornio",
+    "type": "TOWN",
     "latitude": 65.845759,
     "longitude": 24.1464,
     "elevation": 0
   },
   {
     "name": "Torsken",
+    "type": "TOWN",
     "latitude": 69.339035,
     "longitude": 17.105746,
     "elevation": 0
   },
   {
     "name": "Torvinen",
+    "type": "TOWN",
     "latitude": 67.196645,
     "longitude": 26.646543,
     "elevation": 0
   },
   {
     "name": "Tovika",
+    "type": "TOWN",
     "latitude": 68.680132,
     "longitude": 16.868971,
     "elevation": 0
   },
   {
     "name": "Traena",
+    "type": "TOWN",
     "latitude": 66.502473,
     "longitude": 12.099108,
     "elevation": 0
   },
   {
     "name": "Tranoya",
+    "type": "TOWN",
     "latitude": 68.183447,
     "longitude": 15.662539,
     "elevation": 0
   },
   {
     "name": "Trofors",
+    "type": "TOWN",
     "latitude": 65.538708,
     "longitude": 13.386431,
     "elevation": 0
   },
   {
     "name": "Tromso",
+    "type": "TOWN",
     "latitude": 69.651634,
     "longitude": 18.955859,
     "elevation": 0
   },
   {
     "name": "Trones",
+    "type": "TOWN",
     "latitude": 66.920338,
     "longitude": 14.768508,
     "elevation": 0
   },
   {
     "name": "Tufjord",
+    "type": "TOWN",
     "latitude": 71.005063,
     "longitude": 23.908989,
     "elevation": 0
   },
   {
     "name": "Tuloma",
+    "type": "TOWN",
     "latitude": 68.819267,
     "longitude": 32.690599,
     "elevation": 0
   },
   {
     "name": "Tumanny",
+    "type": "TOWN",
     "latitude": 68.883561,
     "longitude": 35.692896,
     "elevation": 0
   },
   {
     "name": "Tungozero",
+    "type": "TOWN",
     "latitude": 65.752823,
     "longitude": 31.301261,
     "elevation": 0
   },
   {
     "name": "Turtola",
+    "type": "TOWN",
     "latitude": 66.641334,
     "longitude": 23.880791,
     "elevation": 0
   },
   {
     "name": "Tvaran",
+    "type": "TOWN",
     "latitude": 65.562771,
     "longitude": 21.110291,
     "elevation": 0
   },
   {
     "name": "Tverrelvdalen",
+    "type": "TOWN",
     "latitude": 69.922684,
     "longitude": 23.49698,
     "elevation": 0
   },
   {
     "name": "Ullatti",
+    "type": "TOWN",
     "latitude": 67.020912,
     "longitude": 21.813056,
     "elevation": 0
   },
   {
     "name": "Ulsvahke",
+    "type": "TOWN",
     "latitude": 68.115538,
     "longitude": 15.865612,
     "elevation": 0
   },
   {
     "name": "Umba",
+    "type": "TOWN",
     "latitude": 66.678034,
     "longitude": 34.337598,
     "elevation": 0
   },
   {
     "name": "Umfors",
+    "type": "TOWN",
     "latitude": 65.945761,
     "longitude": 15.037348,
     "elevation": 0
   },
   {
     "name": "Unjarga",
+    "type": "TOWN",
     "latitude": 70.152165,
     "longitude": 28.864571,
     "elevation": 0
   },
   {
     "name": "Ura-Guba",
+    "type": "TOWN",
     "latitude": 69.291389,
     "longitude": 32.79352,
     "elevation": 0
   },
   {
     "name": "Utsjoki",
+    "type": "TOWN",
     "latitude": 69.907601,
     "longitude": 27.025246,
     "elevation": 0
   },
   {
     "name": "Utskarpen",
+    "type": "TOWN",
     "latitude": 66.2903,
     "longitude": 13.581314,
     "elevation": 0
   },
   {
     "name": "Vaaranpera",
+    "type": "TOWN",
     "latitude": 67.053336,
     "longitude": 23.346688,
     "elevation": 0
   },
   {
     "name": "Vadso",
+    "type": "TOWN",
     "latitude": 70.074127,
     "longitude": 29.749777,
     "elevation": 0
   },
   {
     "name": "Valikyla",
+    "type": "TOWN",
     "latitude": 66.77781,
     "longitude": 24.010426,
     "elevation": 0
   },
   {
     "name": "Valivaara",
+    "type": "TOWN",
     "latitude": 67.081815,
     "longitude": 23.391848,
     "elevation": 0
   },
   {
     "name": "Valnesfjord",
+    "type": "TOWN",
     "latitude": 67.300207,
     "longitude": 15.185026,
     "elevation": 0
   },
   {
     "name": "Vangsvika",
+    "type": "TOWN",
     "latitude": 69.169659,
     "longitude": 17.741317,
     "elevation": 0
   },
   {
     "name": "Vannafjarden",
+    "type": "TOWN",
     "latitude": 65.820936,
     "longitude": 23.320731,
     "elevation": 0
   },
   {
     "name": "Vannareid",
+    "type": "TOWN",
     "latitude": 70.199238,
     "longitude": 19.608388,
     "elevation": 0
   },
   {
     "name": "Vannvag",
+    "type": "TOWN",
     "latitude": 70.072541,
     "longitude": 19.981975,
     "elevation": 0
   },
   {
     "name": "Varajarvi",
+    "type": "TOWN",
     "latitude": 66.258554,
     "longitude": 24.55835,
     "elevation": 0
   },
   {
     "name": "Vardo",
+    "type": "TOWN",
     "latitude": 70.370186,
     "longitude": 31.107719,
     "elevation": 0
   },
   {
     "name": "Varzuga",
+    "type": "TOWN",
     "latitude": 66.395158,
     "longitude": 36.58678,
     "elevation": 0
   },
   {
     "name": "Vassdalen",
+    "type": "TOWN",
     "latitude": 70.23064,
     "longitude": 22.364169,
     "elevation": 0
   },
   {
     "name": "Venejarvi",
+    "type": "TOWN",
     "latitude": 67.283737,
     "longitude": 24.217409,
     "elevation": 0
   },
   {
     "name": "Vengsoy",
+    "type": "TOWN",
     "latitude": 69.837309,
     "longitude": 18.579958,
     "elevation": 0
   },
   {
     "name": "Verkhnetulomskiy",
+    "type": "TOWN",
     "latitude": 68.606667,
     "longitude": 31.797496,
     "elevation": 0
   },
   {
     "name": "Vestre Jakobselv",
+    "type": "TOWN",
     "latitude": 70.111613,
     "longitude": 29.333019,
     "elevation": 0
   },
   {
     "name": "Vevelstad",
+    "type": "TOWN",
     "latitude": 65.700998,
     "longitude": 12.441513,
     "elevation": 0
   },
   {
     "name": "Vidsel",
+    "type": "TOWN",
     "latitude": 65.833606,
     "longitude": 20.520088,
     "elevation": 0
   },
   {
     "name": "Vidyayevo",
+    "type": "TOWN",
     "latitude": 69.318003,
     "longitude": 32.806728,
     "elevation": 0
   },
   {
     "name": "Vik",
+    "type": "TOWN",
     "latitude": 65.311784,
     "longitude": 12.167725,
     "elevation": 0
   },
   {
     "name": "Vikajarvi",
+    "type": "TOWN",
     "latitude": 66.624013,
     "longitude": 26.199638,
     "elevation": 0
   },
   {
     "name": "Visokij",
+    "type": "TOWN",
     "latitude": 68.138176,
     "longitude": 33.409852,
     "elevation": 0
   },
   {
     "name": "Visthus",
+    "type": "TOWN",
     "latitude": 65.725342,
     "longitude": 12.598182,
     "elevation": 0
   },
   {
     "name": "Visttrask",
+    "type": "TOWN",
     "latitude": 65.692846,
     "longitude": 20.648637,
     "elevation": 0
   },
   {
     "name": "Vita",
+    "type": "TOWN",
     "latitude": 65.926812,
     "longitude": 22.426637,
     "elevation": 0
   },
   {
     "name": "Vittangi",
+    "type": "TOWN",
     "latitude": 67.678286,
     "longitude": 21.650188,
     "elevation": 0
   },
   {
     "name": "Vittjarv",
+    "type": "TOWN",
     "latitude": 65.850235,
     "longitude": 21.590292,
     "elevation": 0
   },
   {
     "name": "Voynitsa",
+    "type": "TOWN",
     "latitude": 65.18483,
     "longitude": 30.292444,
     "elevation": 0
   },
   {
     "name": "Vuollerim",
+    "type": "TOWN",
     "latitude": 66.429561,
     "longitude": 20.602417,
     "elevation": 0
   },
   {
     "name": "Vuonnabahta",
+    "type": "TOWN",
     "latitude": 70.172789,
     "longitude": 28.555691,
     "elevation": 0
   },
   {
     "name": "Vuono",
+    "type": "TOWN",
     "latitude": 65.825476,
     "longitude": 24.056266,
     "elevation": 0
   },
   {
     "name": "Vuostimo",
+    "type": "TOWN",
     "latitude": 66.970724,
     "longitude": 27.517289,
     "elevation": 0
   },
   {
     "name": "Yli-Ii",
+    "type": "TOWN",
     "latitude": 65.370059,
     "longitude": 25.839553,
     "elevation": 0
   },
   {
     "name": "Yli-Karppa",
+    "type": "TOWN",
     "latitude": 65.809911,
     "longitude": 25.662701,
     "elevation": 0
   },
   {
     "name": "Yli-Kurki",
+    "type": "TOWN",
     "latitude": 65.366157,
     "longitude": 27.697735,
     "elevation": 0
   },
   {
     "name": "Yli-Raumo",
+    "type": "TOWN",
     "latitude": 65.848118,
     "longitude": 24.228194,
     "elevation": 0
   },
   {
     "name": "Ylitornio",
+    "type": "TOWN",
     "latitude": 66.316426,
     "longitude": 23.6713,
     "elevation": 0
   },
   {
     "name": "Yllasjarvi",
+    "type": "TOWN",
     "latitude": 67.525138,
     "longitude": 24.306757,
     "elevation": 0
   },
   {
     "name": "Ypykkajarvi",
+    "type": "TOWN",
     "latitude": 65.390704,
     "longitude": 26.722987,
     "elevation": 0
   },
   {
     "name": "Zaozersk",
+    "type": "TOWN",
     "latitude": 69.400925,
     "longitude": 32.441333,
     "elevation": 0
   },
   {
     "name": "Zapolyarnyy",
+    "type": "TOWN",
     "latitude": 69.426239,
     "longitude": 30.819939,
     "elevation": 0
   },
   {
     "name": "Zarechensk",
+    "type": "TOWN",
     "latitude": 66.681801,
     "longitude": 31.43287,
     "elevation": 0
   },
   {
     "name": "Zasheyek",
+    "type": "TOWN",
     "latitude": 67.406597,
     "longitude": 32.549905,
     "elevation": 0
   },
   {
     "name": "Zelenoborskij",
+    "type": "TOWN",
     "latitude": 66.857452,
     "longitude": 32.387099,
     "elevation": 0
   },
   {
     "name": "Zverosovkhoz",
+    "type": "TOWN",
     "latitude": 68.844899,
     "longitude": 33.092199,
     "elevation": 0
   },
   {
     "name": "and",
+    "type": "VOR_DME",
     "latitude": 69.287831,
     "longitude": 16.141413,
     "elevation": 0
   },
   {
     "name": "roi",
+    "type": "VOR_DME",
     "latitude": 66.562533,
     "longitude": 25.820399,
     "elevation": 0

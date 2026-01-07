@@ -163,6 +163,7 @@ class NavaidScraper:
 
                 navaids.append({
                     'name': name,
+                    'type': 'WAYPOINT',
                     'latitude': latitude,
                     'longitude': longitude,
                 })
@@ -197,6 +198,7 @@ class NavaidScraper:
 
                     navaids.append({
                         'name': name,
+                        'type': 'WAYPOINT',
                         'latitude': latitude,
                         'longitude': longitude,
                     })
@@ -291,6 +293,7 @@ class NavaidScraper:
 
                     navaids.append({
                         'name': name,
+                        'type': 'WAYPOINT',
                         'latitude': latitude,
                         'longitude': longitude,
                     })
@@ -311,6 +314,7 @@ class NavaidScraper:
 
                         navaids.append({
                             'name': name,
+                            'type': 'WAYPOINT',
                             'latitude': latitude,
                             'longitude': longitude,
                         })

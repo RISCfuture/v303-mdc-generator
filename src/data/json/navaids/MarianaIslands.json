@@ -1,750 +1,875 @@
 [
   {
     "name": "AJA",
+    "type": "NDB",
     "latitude": 13.453405,
     "longitude": 144.736872,
     "elevation": 650
   },
   {
     "name": "ALFA",
+    "type": "WAYPOINT",
     "latitude": 12.8330525,
     "longitude": 145.16663,
     "elevation": 0
   },
   {
     "name": "ARKEE",
+    "type": "WAYPOINT",
     "latitude": 13.815119666666666,
     "longitude": 144.767263,
     "elevation": 0
   },
   {
     "name": "Adacao",
+    "type": "TOWN",
     "latitude": 13.49089,
     "longitude": 144.852597,
     "elevation": 456
   },
   {
     "name": "Afami",
+    "type": "TOWN",
     "latitude": 13.456341,
     "longitude": 144.762765,
     "elevation": 157
   },
   {
     "name": "Agat",
+    "type": "TOWN",
     "latitude": 13.382019,
     "longitude": 144.659212,
     "elevation": 46
   },
   {
     "name": "Agrihan",
+    "type": "TOWN",
     "latitude": 18.777497,
     "longitude": 145.668549,
     "elevation": 1745
   },
   {
     "name": "Aguijan",
+    "type": "TOWN",
     "latitude": 14.852365,
     "longitude": 145.558622,
     "elevation": 518
   },
   {
     "name": "Alamagan",
+    "type": "TOWN",
     "latitude": 17.599291,
     "longitude": 145.832708,
     "elevation": 1722
   },
   {
     "name": "Anatahan",
+    "type": "TOWN",
     "latitude": 16.354454,
     "longitude": 145.680686,
     "elevation": 797
   },
   {
     "name": "Anigua",
+    "type": "TOWN",
     "latitude": 13.477348,
     "longitude": 144.737995,
     "elevation": 16
   },
   {
     "name": "Apra Heights",
+    "type": "TOWN",
     "latitude": 13.402864,
     "longitude": 144.684931,
     "elevation": 226
   },
   {
     "name": "Apurguan",
+    "type": "TOWN",
     "latitude": 13.484178,
     "longitude": 144.775571,
     "elevation": 10
   },
   {
     "name": "Asan",
+    "type": "TOWN",
     "latitude": 13.472373,
     "longitude": 144.71832,
     "elevation": 20
   },
   {
     "name": "Asbeco",
+    "type": "TOWN",
     "latitude": 13.46634,
     "longitude": 144.837012,
     "elevation": 381
   },
   {
     "name": "Asmisen",
+    "type": "TOWN",
     "latitude": 13.40003,
     "longitude": 144.773871,
     "elevation": 266
   },
   {
     "name": "Aspengo",
+    "type": "TOWN",
     "latitude": 13.464835,
     "longitude": 144.798828,
     "elevation": 213
   },
   {
     "name": "Astumbo",
+    "type": "TOWN",
     "latitude": 13.554951,
     "longitude": 144.842729,
     "elevation": 364
   },
   {
     "name": "Asuncion",
+    "type": "TOWN",
     "latitude": 19.691475,
     "longitude": 145.406452,
     "elevation": 2717
   },
   {
     "name": "BRAVO",
+    "type": "WAYPOINT",
     "latitude": 13.815119666666666,
     "longitude": 144.767263,
     "elevation": 0
   },
   {
     "name": "BRTNE",
+    "type": "WAYPOINT",
     "latitude": 13.6152455,
     "longitude": 144.58396583333334,
     "elevation": 0
   },
   {
     "name": "Barrigada",
+    "type": "TOWN",
     "latitude": 13.465346,
     "longitude": 144.797922,
     "elevation": 220
   },
   {
     "name": "CHARLIE",
+    "type": "WAYPOINT",
     "latitude": 12.8330585,
     "longitude": 144.4999595,
     "elevation": 0
   },
   {
     "name": "Camp Dealy",
+    "type": "TOWN",
     "latitude": 13.353269,
     "longitude": 144.7662,
     "elevation": 98
   },
   {
     "name": "Cerain",
+    "type": "TOWN",
     "latitude": 13.387143,
     "longitude": 144.673645,
     "elevation": 243
   },
   {
     "name": "Chalan Kiya",
+    "type": "TOWN",
     "latitude": 15.165205,
     "longitude": 145.720938,
     "elevation": 82
   },
   {
     "name": "Chalan Pago",
+    "type": "TOWN",
     "latitude": 13.442564,
     "longitude": 144.768438,
     "elevation": 151
   },
   {
     "name": "Corten Torres",
+    "type": "TOWN",
     "latitude": 13.44124,
     "longitude": 144.805211,
     "elevation": 279
   },
   {
     "name": "DELTA",
+    "type": "WAYPOINT",
     "latitude": 12.833054666666667,
     "longitude": 144.33329533333333,
     "elevation": 0
   },
   {
     "name": "DWAFF",
+    "type": "WAYPOINT",
     "latitude": 13.723717833333334,
     "longitude": 145.16650533333333,
     "elevation": 0
   },
   {
     "name": "Dandan",
+    "type": "TOWN",
     "latitude": 15.133948,
     "longitude": 145.735471,
     "elevation": 246
   },
   {
     "name": "Diidedo",
+    "type": "TOWN",
     "latitude": 13.526543,
     "longitude": 144.845629,
     "elevation": 371
   },
   {
     "name": "ECHO",
+    "type": "WAYPOINT",
     "latitude": 13.849719333333333,
     "longitude": 145.56663183333333,
     "elevation": 0
   },
   {
     "name": "EDIAZ",
+    "type": "WAYPOINT",
     "latitude": 13.849719333333333,
     "longitude": 145.56663183333333,
     "elevation": 0
   },
   {
     "name": "FABHA",
+    "type": "WAYPOINT",
     "latitude": 14.043503333333334,
     "longitude": 145.56273116666668,
     "elevation": 0
   },
   {
     "name": "FOKAI",
+    "type": "WAYPOINT",
     "latitude": 13.5527595,
     "longitude": 145.27795616666666,
     "elevation": 0
   },
   {
     "name": "FOXTROT",
+    "type": "WAYPOINT",
     "latitude": 14.083056,
     "longitude": 145.56663283333333,
     "elevation": 0
   },
   {
     "name": "Farallon de Pajaros",
+    "type": "TOWN",
     "latitude": 20.543983,
     "longitude": 144.893275,
     "elevation": 971
   },
   {
     "name": "Faralon de Medinilla",
+    "type": "TOWN",
     "latitude": 16.019837,
     "longitude": 146.059475,
     "elevation": 95
   },
   {
     "name": "GOLF",
+    "type": "WAYPOINT",
     "latitude": 13.583058333333334,
     "longitude": 143.999965,
     "elevation": 0
   },
   {
     "name": "GRO",
+    "type": "NDB",
     "latitude": 14.171648,
     "longitude": 145.239866,
     "elevation": 600
   },
   {
     "name": "Garapan",
+    "type": "TOWN",
     "latitude": 15.206861,
     "longitude": 145.721351,
     "elevation": 26
   },
   {
     "name": "Gayinero",
+    "type": "TOWN",
     "latitude": 13.528355,
     "longitude": 144.900124,
     "elevation": 591
   },
   {
     "name": "Guam",
+    "type": "TOWN",
     "latitude": 13.506871,
     "longitude": 144.824237,
     "elevation": 236
   },
   {
     "name": "Guguan",
+    "type": "TOWN",
     "latitude": 17.310877,
     "longitude": 145.840848,
     "elevation": 571
   },
   {
     "name": "HOTEL",
+    "type": "WAYPOINT",
     "latitude": 13.333054666666667,
     "longitude": 143.99996833333333,
     "elevation": 0
   },
   {
     "name": "Hagatna",
+    "type": "TOWN",
     "latitude": 13.475871,
     "longitude": 144.750834,
     "elevation": 20
   },
   {
     "name": "Hagatna Heights",
+    "type": "TOWN",
     "latitude": 13.464819,
     "longitude": 144.750032,
     "elevation": 148
   },
   {
     "name": "Inarajan",
+    "type": "TOWN",
     "latitude": 13.274048,
     "longitude": 144.746742,
     "elevation": 79
   },
   {
     "name": "Ipapao",
+    "type": "TOWN",
     "latitude": 13.524362,
     "longitude": 144.858491,
     "elevation": 423
   },
   {
     "name": "Kagman I",
+    "type": "TOWN",
     "latitude": 15.181232,
     "longitude": 145.773957,
     "elevation": 207
   },
   {
     "name": "Kagman II",
+    "type": "TOWN",
     "latitude": 15.176568,
     "longitude": 145.778018,
     "elevation": 184
   },
   {
     "name": "Kagman III",
+    "type": "TOWN",
     "latitude": 15.169898,
     "longitude": 145.779899,
     "elevation": 210
   },
   {
     "name": "Koblerville",
+    "type": "TOWN",
     "latitude": 15.122667,
     "longitude": 145.703809,
     "elevation": 128
   },
   {
     "name": "LUAAP",
+    "type": "WAYPOINT",
     "latitude": 13.6914245,
     "longitude": 145.1824055,
     "elevation": 0
   },
   {
     "name": "LUXOR.CP",
+    "type": "WAYPOINT",
     "latitude": 10.999721,
     "longitude": 143.24996466666667,
     "elevation": 0
   },
   {
     "name": "LUXOR.IP",
+    "type": "WAYPOINT",
     "latitude": 11.999718833333333,
     "longitude": 143.24996216666668,
     "elevation": 0
   },
   {
     "name": "Ladai",
+    "type": "TOWN",
     "latitude": 13.365377,
     "longitude": 144.657204,
     "elevation": 98
   },
   {
     "name": "Lockwood Terrace",
+    "type": "TOWN",
     "latitude": 13.432602,
     "longitude": 144.649979,
     "elevation": 75
   },
   {
     "name": "Lupog",
+    "type": "TOWN",
     "latitude": 13.54804,
     "longitude": 144.91359,
     "elevation": 597
   },
   {
     "name": "MDBUG",
+    "type": "WAYPOINT",
     "latitude": 13.732909166666667,
     "longitude": 145.16037833333334,
     "elevation": 0
   },
   {
     "name": "MIRAGE.CP",
+    "type": "WAYPOINT",
     "latitude": 16.749717,
     "longitude": 146.16663116666666,
     "elevation": 0
   },
   {
     "name": "MIRAGE.IP",
+    "type": "WAYPOINT",
     "latitude": 15.999718333333334,
     "longitude": 146.24996033333332,
     "elevation": 0
   },
   {
     "name": "Macheche",
+    "type": "TOWN",
     "latitude": 13.503018,
     "longitude": 144.833579,
     "elevation": 276
   },
   {
     "name": "Malojloj",
+    "type": "TOWN",
     "latitude": 13.308378,
     "longitude": 144.761342,
     "elevation": 341
   },
   {
     "name": "Mapas",
+    "type": "TOWN",
     "latitude": 13.473612,
     "longitude": 144.774622,
     "elevation": 180
   },
   {
     "name": "Matansa",
+    "type": "TOWN",
     "latitude": 15.251512,
     "longitude": 145.783177,
     "elevation": 151
   },
   {
     "name": "Maug",
+    "type": "TOWN",
     "latitude": 20.022282,
     "longitude": 145.221651,
     "elevation": 0
   },
   {
     "name": "North Tipalo",
+    "type": "TOWN",
     "latitude": 13.420384,
     "longitude": 144.644657,
     "elevation": 79
   },
   {
     "name": "OSKKR",
+    "type": "WAYPOINT",
     "latitude": 13.691376333333332,
     "longitude": 145.18199916666666,
     "elevation": 0
   },
   {
     "name": "OWEND",
+    "type": "WAYPOINT",
     "latitude": 13.6230885,
     "longitude": 145.02614283333332,
     "elevation": 0
   },
   {
     "name": "PANNS",
+    "type": "WAYPOINT",
     "latitude": 13.704817666666667,
     "longitude": 145.21321533333332,
     "elevation": 0
   },
   {
     "name": "PGUA.06L",
+    "type": "WAYPOINT",
     "latitude": 13.580194,
     "longitude": 144.91588783333333,
     "elevation": 541
   },
   {
     "name": "PGUA.06R",
+    "type": "WAYPOINT",
     "latitude": 13.5751675,
     "longitude": 144.91673533333332,
     "elevation": 564
   },
   {
     "name": "PGUA.24L",
+    "type": "WAYPOINT",
     "latitude": 13.587520333333334,
     "longitude": 144.94494316666666,
     "elevation": 607
   },
   {
     "name": "PGUA.24R",
+    "type": "WAYPOINT",
     "latitude": 13.59181,
     "longitude": 144.94240250000001,
     "elevation": 610
   },
   {
     "name": "Pagan",
+    "type": "TOWN",
     "latitude": 18.104093,
     "longitude": 145.762216,
     "elevation": 482
   },
   {
     "name": "Papago",
+    "type": "TOWN",
     "latitude": 15.179258,
     "longitude": 145.752613,
     "elevation": 653
   },
   {
     "name": "Peca",
+    "type": "TOWN",
     "latitude": 13.280913,
     "longitude": 144.752703,
     "elevation": 85
   },
   {
     "name": "Pigua",
+    "type": "TOWN",
     "latitude": 13.270406,
     "longitude": 144.671605,
     "elevation": 226
   },
   {
     "name": "Piti",
+    "type": "TOWN",
     "latitude": 13.463047,
     "longitude": 144.692784,
     "elevation": 26
   },
   {
     "name": "Puerto Rico",
+    "type": "TOWN",
     "latitude": 15.223099,
     "longitude": 145.735812,
     "elevation": 26
   },
   {
     "name": "Puetto",
+    "type": "TOWN",
     "latitude": 14.968777,
     "longitude": 145.631754,
     "elevation": 92
   },
   {
     "name": "R7201.ALFA",
+    "type": "WAYPOINT",
     "latitude": 16.021938833333333,
     "longitude": 146.06171916666668,
     "elevation": 194
   },
   {
     "name": "R7201.BRAVO",
+    "type": "WAYPOINT",
     "latitude": 16.020533666666665,
     "longitude": 146.0607725,
     "elevation": 154
   },
   {
     "name": "R7201.CHARLIE",
+    "type": "WAYPOINT",
     "latitude": 16.01727066666667,
     "longitude": 146.05878766666666,
     "elevation": 210
   },
   {
     "name": "R7201.DELTA",
+    "type": "WAYPOINT",
     "latitude": 16.01619833333333,
     "longitude": 146.0574935,
     "elevation": 200
   },
   {
     "name": "R7201.STRAFE",
+    "type": "WAYPOINT",
     "latitude": 16.008260166666666,
     "longitude": 146.05298866666666,
     "elevation": 56
   },
   {
     "name": "RIO.CP",
+    "type": "WAYPOINT",
     "latitude": 10.999721,
     "longitude": 145.49995783333333,
     "elevation": 0
   },
   {
     "name": "RIP.IP",
+    "type": "WAYPOINT",
     "latitude": 11.999730833333333,
     "longitude": 145.2499435,
     "elevation": 0
   },
   {
     "name": "ROUDY",
+    "type": "WAYPOINT",
     "latitude": 13.693004833333333,
     "longitude": 145.173621,
     "elevation": 0
   },
   {
     "name": "Rota",
+    "type": "TOWN",
     "latitude": 14.161794,
     "longitude": 145.217911,
     "elevation": 643
   },
   {
     "name": "SN",
+    "type": "NDB",
     "latitude": 15.111283,
     "longitude": 145.710437,
     "elevation": 95
   },
   {
     "name": "SNOYL",
+    "type": "WAYPOINT",
     "latitude": 13.3144755,
     "longitude": 144.72199266666667,
     "elevation": 335
   },
   {
     "name": "Saipan",
+    "type": "TOWN",
     "latitude": 15.197839,
     "longitude": 145.748413,
     "elevation": 1102
   },
   {
     "name": "San Antonio",
+    "type": "TOWN",
     "latitude": 15.133342,
     "longitude": 145.696097,
     "elevation": 30
   },
   {
     "name": "San Jose",
+    "type": "TOWN",
     "latitude": 15.167064,
     "longitude": 145.710962,
     "elevation": 30
   },
   {
     "name": "San Roque",
+    "type": "TOWN",
     "latitude": 15.248449,
     "longitude": 145.776229,
     "elevation": 49
   },
   {
     "name": "San Vicente",
+    "type": "TOWN",
     "latitude": 15.154882,
     "longitude": 145.739831,
     "elevation": 292
   },
   {
     "name": "Santa Rita",
+    "type": "TOWN",
     "latitude": 13.393936,
     "longitude": 144.662313,
     "elevation": 7
   },
   {
     "name": "Sarigan",
+    "type": "TOWN",
     "latitude": 16.703615,
     "longitude": 145.778235,
     "elevation": 1089
   },
   {
     "name": "Sinapalo",
+    "type": "TOWN",
     "latitude": 14.166285,
     "longitude": 145.23398,
     "elevation": 594
   },
   {
     "name": "Songsong",
+    "type": "TOWN",
     "latitude": 14.139157,
     "longitude": 145.139697,
     "elevation": 26
   },
   {
     "name": "Susupe",
+    "type": "TOWN",
     "latitude": 15.152792,
     "longitude": 145.706059,
     "elevation": 23
   },
   {
     "name": "Talofofo",
+    "type": "TOWN",
     "latitude": 13.354023,
     "longitude": 144.756934,
     "elevation": 315
   },
   {
     "name": "Tanapag",
+    "type": "TOWN",
     "latitude": 15.234217,
     "longitude": 145.747291,
     "elevation": 16
   },
   {
     "name": "Tepungan",
+    "type": "TOWN",
     "latitude": 13.467035,
     "longitude": 144.699033,
     "elevation": 10
   },
   {
     "name": "Tinian",
+    "type": "TOWN",
     "latitude": 15.025455,
     "longitude": 145.625337,
     "elevation": 341
   },
   {
     "name": "Toto",
+    "type": "TOWN",
     "latitude": 13.466524,
     "longitude": 144.784103,
     "elevation": 151
   },
   {
     "name": "Tres Reyes",
+    "type": "TOWN",
     "latitude": 13.404876,
     "longitude": 144.775087,
     "elevation": 262
   },
   {
     "name": "Tuchok",
+    "type": "TOWN",
     "latitude": 14.136584,
     "longitude": 145.154358,
     "elevation": 52
   },
   {
     "name": "Tumon",
+    "type": "TOWN",
     "latitude": 13.505412,
     "longitude": 144.812314,
     "elevation": 197
   },
   {
     "name": "UAM",
+    "type": "TACAN",
     "latitude": 13.591233,
     "longitude": 144.9466,
     "elevation": 620
   },
   {
     "name": "UNZ",
+    "type": "VORTAC",
     "latitude": 13.454531,
     "longitude": 144.733321,
     "elevation": 610
   },
   {
     "name": "Umatac",
+    "type": "TOWN",
     "latitude": 13.298629,
     "longitude": 144.66559,
     "elevation": 72
   },
   {
     "name": "WUVEN",
+    "type": "WAYPOINT",
     "latitude": 16.01619833333333,
     "longitude": 146.0574935,
     "elevation": 200
   },
   {
     "name": "YAMMA",
+    "type": "WAYPOINT",
     "latitude": 16.008260166666666,
     "longitude": 146.05298866666666,
     "elevation": 56
   },
   {
     "name": "Yigo",
+    "type": "TOWN",
     "latitude": 13.539023,
     "longitude": 144.884101,
     "elevation": 509
   },
   {
     "name": "Yona",
+    "type": "TOWN",
     "latitude": 13.410619,
     "longitude": 144.775485,
     "elevation": 302
   },
   {
     "name": "ZADEK",
+    "type": "WAYPOINT",
     "latitude": 10.999721,
     "longitude": 145.49995783333333,
     "elevation": 0
   },
   {
     "name": "ZAXUS",
+    "type": "WAYPOINT",
     "latitude": 11.999730833333333,
     "longitude": 145.2499435,
     "elevation": 0
   },
   {
     "name": "ZEEKE",
+    "type": "WAYPOINT",
     "latitude": 13.693004833333333,
     "longitude": 145.173621,
     "elevation": 0
   },
   {
     "name": "ZEKUR",
+    "type": "WAYPOINT",
     "latitude": 13.3144755,
     "longitude": 144.72199266666667,
     "elevation": 335
   },
   {
     "name": "ZILUK",
+    "type": "WAYPOINT",
     "latitude": 15.1349,
     "longitude": 145.7695,
     "elevation": 0
   },
   {
     "name": "ZUKIE",
+    "type": "WAYPOINT",
     "latitude": 13.6958,
     "longitude": 145.1034,
     "elevation": 0

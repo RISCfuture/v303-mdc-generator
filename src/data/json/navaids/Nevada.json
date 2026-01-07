@@ -1,4884 +1,5698 @@
 [
   {
     "name": "ACOSU",
+    "type": "WAYPOINT",
     "latitude": 36.568928,
     "longitude": -114.82173283333333,
     "elevation": 2431
   },
   {
     "name": "ACTON",
+    "type": "WAYPOINT",
     "latitude": 36.7419455,
     "longitude": -114.607503,
     "elevation": 1640
   },
   {
     "name": "ADDER",
+    "type": "WAYPOINT",
     "latitude": 36.8394845,
     "longitude": -115.4233555,
     "elevation": 3491
   },
   {
     "name": "ALAMO",
+    "type": "WAYPOINT",
     "latitude": 37.29275766666667,
     "longitude": -115.12881633333333,
     "elevation": 3376
   },
   {
     "name": "ALAMO LZ",
+    "type": "WAYPOINT",
     "latitude": 37.35833433333333,
     "longitude": -115.19083433333333,
     "elevation": 3707
   },
   {
     "name": "ALAMO N PT",
+    "type": "WAYPOINT",
     "latitude": 37.213337,
     "longitude": -115.34167,
     "elevation": 5627
   },
   {
     "name": "ALAMO S PT",
+    "type": "WAYPOINT",
     "latitude": 36.83333666666667,
     "longitude": -115.33667966666667,
     "elevation": 6522
   },
   {
     "name": "ALASKA",
+    "type": "WAYPOINT",
     "latitude": 37.966666833333335,
     "longitude": -114.916664,
     "elevation": 5659
   },
   {
     "name": "ALBATROSS.",
+    "type": "WAYPOINT",
     "latitude": 37.64999183333333,
     "longitude": -113.90000483333333,
     "elevation": 6273
   },
   {
     "name": "ANTELOPE",
+    "type": "WAYPOINT",
     "latitude": 37.80316166666667,
     "longitude": -116.42216366666666,
     "elevation": 6348
   },
   {
     "name": "ANTELOPE PK",
+    "type": "WAYPOINT",
     "latitude": 37.627844,
     "longitude": -116.759676,
     "elevation": 7513
   },
   {
     "name": "APEX",
+    "type": "WAYPOINT",
     "latitude": 36.359553166666664,
     "longitude": -114.903062,
     "elevation": 2326
   },
   {
     "name": "APHID",
+    "type": "WAYPOINT",
     "latitude": 36.3849825,
     "longitude": -114.89497716666666,
     "elevation": 2192
   },
   {
     "name": "AR230V.",
+    "type": "WAYPOINT",
     "latitude": 37.321630666666664,
     "longitude": -113.8302375,
     "elevation": 4593
   },
   {
     "name": "AR230V.IP",
+    "type": "WAYPOINT",
     "latitude": 36.78169533333333,
     "longitude": -114.22846516666667,
     "elevation": 1883
   },
   {
     "name": "AR231V.",
+    "type": "WAYPOINT",
     "latitude": 36.80274633333333,
     "longitude": -116.837891,
     "elevation": 3241
   },
   {
     "name": "AR231V.IP",
+    "type": "WAYPOINT",
     "latitude": 36.331923333333336,
     "longitude": -116.187448,
     "elevation": 3448
   },
   {
     "name": "AR624.",
+    "type": "WAYPOINT",
     "latitude": 35.93333533333333,
     "longitude": -112.6166675,
     "elevation": 5679
   },
   {
     "name": "AR625.",
+    "type": "WAYPOINT",
     "latitude": 37.4833305,
     "longitude": -117.599999,
     "elevation": 7835
   },
   {
     "name": "AR625.2",
+    "type": "WAYPOINT",
     "latitude": 38.316666,
     "longitude": -117.59999666666667,
     "elevation": 5407
   },
   {
     "name": "AR635.",
+    "type": "WAYPOINT",
     "latitude": 38.50000266666667,
     "longitude": -115.29999233333334,
     "elevation": 6522
   },
   {
     "name": "AR635.2",
+    "type": "WAYPOINT",
     "latitude": 38.44999383333333,
     "longitude": -114.2333405,
     "elevation": 6581
   },
   {
     "name": "AR635.IP",
+    "type": "WAYPOINT",
     "latitude": 38.5016285,
     "longitude": -115.34619016666667,
     "elevation": 6683
   },
   {
     "name": "AR641A.",
+    "type": "WAYPOINT",
     "latitude": 37.60000466666666,
     "longitude": -114.04999133333334,
     "elevation": 6194
   },
   {
     "name": "AR641A.1",
+    "type": "WAYPOINT",
     "latitude": 37.6123685,
     "longitude": -114.64541183333333,
     "elevation": 5883
   },
   {
     "name": "AR641A.IP",
+    "type": "WAYPOINT",
     "latitude": 37.598199,
     "longitude": -114.74250333333333,
     "elevation": 5791
   },
   {
     "name": "ARCOE",
+    "type": "WAYPOINT",
     "latitude": 36.73775366666667,
     "longitude": -114.916938,
     "elevation": 2313
   },
   {
     "name": "ATALF",
+    "type": "WAYPOINT",
     "latitude": 36.3919505,
     "longitude": -114.87212433333333,
     "elevation": 2182
   },
   {
     "name": "Alamo",
+    "type": "TOWN",
     "latitude": 37.364961,
     "longitude": -115.164461,
     "elevation": 3471
   },
   {
     "name": "Alkali",
+    "type": "TOWN",
     "latitude": 37.823922,
     "longitude": -117.3339,
     "elevation": 5030
   },
   {
     "name": "Amargosa Valley",
+    "type": "TOWN",
     "latitude": 36.494326,
     "longitude": -116.424946,
     "elevation": 2287
   },
   {
     "name": "Amber",
+    "type": "TOWN",
     "latitude": 36.608029,
     "longitude": -114.494149,
     "elevation": 1430
   },
   {
     "name": "Angel Peak",
+    "type": "TOWN",
     "latitude": 36.318288,
     "longitude": -115.584883,
     "elevation": 8396
   },
   {
     "name": "Anthem",
+    "type": "TOWN",
     "latitude": 35.949582,
     "longitude": -115.102098,
     "elevation": 2808
   },
   {
     "name": "Apex",
+    "type": "TOWN",
     "latitude": 36.329138,
     "longitude": -114.927777,
     "elevation": 2467
   },
   {
     "name": "Arden",
+    "type": "TOWN",
     "latitude": 36.018028,
     "longitude": -115.23083,
     "elevation": 2503
   },
   {
     "name": "Area 51",
+    "type": "TOWN",
     "latitude": 37.243011,
     "longitude": -115.808955,
     "elevation": 4459
   },
   {
     "name": "ArizonaVillage",
+    "type": "TOWN",
     "latitude": 34.84961,
     "longitude": -114.588015,
     "elevation": 476
   },
   {
     "name": "Arrolime",
+    "type": "TOWN",
     "latitude": 36.35136,
     "longitude": -114.909166,
     "elevation": 2382
   },
   {
     "name": "Ash Springs",
+    "type": "TOWN",
     "latitude": 37.463051,
     "longitude": -115.194211,
     "elevation": 3615
   },
   {
     "name": "BALBE",
+    "type": "WAYPOINT",
     "latitude": 36.3964255,
     "longitude": -114.85775366666667,
     "elevation": 2208
   },
   {
     "name": "BCE",
+    "type": "WAYPOINT",
     "latitude": 37.689166,
     "longitude": -112.30383216666667,
     "elevation": 9049
   },
   {
     "name": "BEATTY",
+    "type": "WAYPOINT",
     "latitude": 36.799997833333336,
     "longitude": -116.74999066666666,
     "elevation": 2933
   },
   {
     "name": "BELTED PK",
+    "type": "WAYPOINT",
     "latitude": 37.56666116666667,
     "longitude": -116.075,
     "elevation": 7779
   },
   {
     "name": "BETTS",
+    "type": "WAYPOINT",
     "latitude": 37.954576333333335,
     "longitude": -116.86330333333333,
     "elevation": 5719
   },
   {
     "name": "BIGHORN",
+    "type": "WAYPOINT",
     "latitude": 37.8666725,
     "longitude": -115.033341,
     "elevation": 5217
   },
   {
     "name": "BIH",
+    "type": "WAYPOINT",
     "latitude": 37.37700483333333,
     "longitude": -118.36650083333333,
     "elevation": 4117
   },
   {
     "name": "BLACK",
+    "type": "WAYPOINT",
     "latitude": 37.95080333333333,
     "longitude": -116.416684,
     "elevation": 7379
   },
   {
     "name": "BLACK 1",
+    "type": "WAYPOINT",
     "latitude": 36.23583716666667,
     "longitude": -115.0344825,
     "elevation": 1857
   },
   {
     "name": "BLACK 2",
+    "type": "WAYPOINT",
     "latitude": 36.352993833333336,
     "longitude": -115.005844,
     "elevation": 3140
   },
   {
     "name": "BLACK 20",
+    "type": "WAYPOINT",
     "latitude": 37.45216833333333,
     "longitude": -116.29965966666667,
     "elevation": 5810
   },
   {
     "name": "BLACK MT",
+    "type": "WAYPOINT",
     "latitude": 37.30617633333333,
     "longitude": -116.60367066666667,
     "elevation": 5906
   },
   {
     "name": "BLACK MTN",
+    "type": "WAYPOINT",
     "latitude": 37.283339,
     "longitude": -116.64167183333333,
     "elevation": 7067
   },
   {
     "name": "BLD",
+    "type": "WAYPOINT",
     "latitude": 35.99597633333333,
     "longitude": -114.86401433333333,
     "elevation": 3573
   },
   {
     "name": "BLUE",
+    "type": "WAYPOINT",
     "latitude": 37.63584083333333,
     "longitude": -116.76063633333334,
     "elevation": 6667
   },
   {
     "name": "BLUE 1",
+    "type": "WAYPOINT",
     "latitude": 36.525433666666665,
     "longitude": -115.987516,
     "elevation": 4833
   },
   {
     "name": "BLUE 10",
+    "type": "WAYPOINT",
     "latitude": 36.1917395,
     "longitude": -116.34709933333333,
     "elevation": 2031
   },
   {
     "name": "BLUE 18",
+    "type": "WAYPOINT",
     "latitude": 36.759335666666665,
     "longitude": -116.62437216666666,
     "elevation": 2949
   },
   {
     "name": "BLUE 19",
+    "type": "WAYPOINT",
     "latitude": 36.81455733333333,
     "longitude": -116.56546516666667,
     "elevation": 3576
   },
   {
     "name": "BLUE 2",
+    "type": "WAYPOINT",
     "latitude": 36.2927895,
     "longitude": -115.88748816666667,
     "elevation": 4642
   },
   {
     "name": "BLUE 20",
+    "type": "WAYPOINT",
     "latitude": 36.897596166666666,
     "longitude": -116.6551225,
     "elevation": 4984
   },
   {
     "name": "BLUE 26",
+    "type": "WAYPOINT",
     "latitude": 36.771159,
     "longitude": -116.85938233333333,
     "elevation": 3563
   },
   {
     "name": "BLUE 28",
+    "type": "WAYPOINT",
     "latitude": 37.1158715,
     "longitude": -117.0866155,
     "elevation": 4816
   },
   {
     "name": "BLUE 29",
+    "type": "WAYPOINT",
     "latitude": 37.29091116666667,
     "longitude": -116.8605645,
     "elevation": 4849
   },
   {
     "name": "BLUE 30",
+    "type": "WAYPOINT",
     "latitude": 37.3313595,
     "longitude": -116.53399266666666,
     "elevation": 5558
   },
   {
     "name": "BLUE 31",
+    "type": "WAYPOINT",
     "latitude": 37.3158625,
     "longitude": -116.41204483333334,
     "elevation": 5938
   },
   {
     "name": "BLUE 32",
+    "type": "WAYPOINT",
     "latitude": 37.275642166666664,
     "longitude": -116.30852866666666,
     "elevation": 7014
   },
   {
     "name": "BLUE 5",
+    "type": "WAYPOINT",
     "latitude": 36.35929383333333,
     "longitude": -116.07471383333333,
     "elevation": 3560
   },
   {
     "name": "BLUE 6",
+    "type": "WAYPOINT",
     "latitude": 36.188202,
     "longitude": -116.14857533333333,
     "elevation": 2467
   },
   {
     "name": "BLUE 7",
+    "type": "WAYPOINT",
     "latitude": 36.265399,
     "longitude": -116.18069016666666,
     "elevation": 2477
   },
   {
     "name": "BLUE 8",
+    "type": "WAYPOINT",
     "latitude": 36.48423966666667,
     "longitude": -116.14459933333333,
     "elevation": 2707
   },
   {
     "name": "BLUE 9",
+    "type": "WAYPOINT",
     "latitude": 36.4279715,
     "longitude": -116.29243816666667,
     "elevation": 2697
   },
   {
     "name": "BLUE A",
+    "type": "WAYPOINT",
     "latitude": 37.34647566666667,
     "longitude": -116.625317,
     "elevation": 6027
   },
   {
     "name": "BLUE B",
+    "type": "WAYPOINT",
     "latitude": 37.28169466666667,
     "longitude": -116.61192116666666,
     "elevation": 6549
   },
   {
     "name": "BLUE C",
+    "type": "WAYPOINT",
     "latitude": 37.32217883333333,
     "longitude": -116.8591185,
     "elevation": 5604
   },
   {
     "name": "BLUE D",
+    "type": "WAYPOINT",
     "latitude": 37.307350166666666,
     "longitude": -116.78147466666667,
     "elevation": 5705
   },
   {
     "name": "BLUE E",
+    "type": "WAYPOINT",
     "latitude": 37.2412095,
     "longitude": -116.93583566666666,
     "elevation": 5013
   },
   {
     "name": "BLUE F",
+    "type": "WAYPOINT",
     "latitude": 37.1562,
     "longitude": -116.73595,
     "elevation": 5112
   },
   {
     "name": "BLUE G",
+    "type": "WAYPOINT",
     "latitude": 37.17278316666667,
     "longitude": -116.63621316666666,
     "elevation": 4888
   },
   {
     "name": "BLUE M",
+    "type": "WAYPOINT",
     "latitude": 37.60602216666667,
     "longitude": -116.72642616666667,
     "elevation": 6358
   },
   {
     "name": "BLUE N",
+    "type": "WAYPOINT",
     "latitude": 37.608687,
     "longitude": -116.50641316666666,
     "elevation": 5584
   },
   {
     "name": "BLUE O",
+    "type": "WAYPOINT",
     "latitude": 37.6160285,
     "longitude": -116.36587283333333,
     "elevation": 5978
   },
   {
     "name": "BLUE X",
+    "type": "WAYPOINT",
     "latitude": 37.537433666666665,
     "longitude": -116.96259016666667,
     "elevation": 5617
   },
   {
     "name": "BLUE Y",
+    "type": "WAYPOINT",
     "latitude": 37.41666383333333,
     "longitude": -117.016149,
     "elevation": 5354
   },
   {
     "name": "BLUE Z",
+    "type": "WAYPOINT",
     "latitude": 37.50707516666667,
     "longitude": -116.74844366666666,
     "elevation": 6234
   },
   {
     "name": "BLUE27",
+    "type": "WAYPOINT",
     "latitude": 37.02552983333333,
     "longitude": -116.92659616666667,
     "elevation": 4242
   },
   {
     "name": "BOSTON",
+    "type": "WAYPOINT",
     "latitude": 37.966672,
     "longitude": -114.5499985,
     "elevation": 6424
   },
   {
     "name": "BOXCAR",
+    "type": "WAYPOINT",
     "latitude": 37.747165,
     "longitude": -116.09682116666667,
     "elevation": 5584
   },
   {
     "name": "BTY",
+    "type": "WAYPOINT",
     "latitude": 36.80058783333333,
     "longitude": -116.74764583333334,
     "elevation": 2940
   },
   {
     "name": "Babbitt",
+    "type": "TOWN",
     "latitude": 38.539313,
     "longitude": -118.637656,
     "elevation": 4236
   },
   {
     "name": "Barclay",
+    "type": "TOWN",
     "latitude": 37.5133,
     "longitude": -114.251647,
     "elevation": 5344
   },
   {
     "name": "Bard",
+    "type": "TOWN",
     "latitude": 35.987751,
     "longitude": -115.237496,
     "elevation": 2585
   },
   {
     "name": "Battleship Rock",
+    "type": "TOWN",
     "latitude": 36.118034,
     "longitude": -114.73304,
     "elevation": 1220
   },
   {
     "name": "Beatty",
+    "type": "TOWN",
     "latitude": 36.908422,
     "longitude": -116.759275,
     "elevation": 3317
   },
   {
     "name": "BeaverDam",
+    "type": "TOWN",
     "latitude": 36.913517,
     "longitude": -113.936678,
     "elevation": 1926
   },
   {
     "name": "Beryl Junction",
+    "type": "TOWN",
     "latitude": 37.709417,
     "longitude": -113.656077,
     "elevation": 5190
   },
   {
     "name": "BigSmoky",
+    "type": "TOWN",
     "latitude": 38.305164,
     "longitude": -117.51907,
     "elevation": 5394
   },
   {
     "name": "Black Island",
+    "type": "TOWN",
     "latitude": 36.103312,
     "longitude": -114.778042,
     "elevation": 1266
   },
   {
     "name": "Bloomington",
+    "type": "TOWN",
     "latitude": 37.046649,
     "longitude": -113.606073,
     "elevation": 2530
   },
   {
     "name": "Bloomington Hills",
+    "type": "TOWN",
     "latitude": 37.06026,
     "longitude": -113.556068,
     "elevation": 2612
   },
   {
     "name": "Blue Diamond",
+    "type": "TOWN",
     "latitude": 36.046365,
     "longitude": -115.403898,
     "elevation": 3396
   },
   {
     "name": "Bonnie Springs",
+    "type": "TOWN",
     "latitude": 36.059137,
     "longitude": -115.453339,
     "elevation": 3704
   },
   {
     "name": "Boulder City",
+    "type": "TOWN",
     "latitude": 35.978591,
     "longitude": -114.832485,
     "elevation": 2523
   },
   {
     "name": "Boulder Islands",
+    "type": "TOWN",
     "latitude": 36.039702,
     "longitude": -114.767762,
     "elevation": 1220
   },
   {
     "name": "Boulder Junction",
+    "type": "TOWN",
     "latitude": 36.081083,
     "longitude": -115.198054,
     "elevation": 2283
   },
   {
     "name": "Bracken",
+    "type": "TOWN",
     "latitude": 36.108915,
     "longitude": -115.189151,
     "elevation": 2175
   },
   {
     "name": "BullheadCity",
+    "type": "TOWN",
     "latitude": 35.139316,
     "longitude": -114.533905,
     "elevation": 1096
   },
   {
     "name": "Bunkerville",
+    "type": "TOWN",
     "latitude": 36.771772,
     "longitude": -114.126766,
     "elevation": 1545
   },
   {
     "name": "CAHAR.",
+    "type": "WAYPOINT",
     "latitude": 37.399992166666664,
     "longitude": -115.49999716666666,
     "elevation": 4334
   },
   {
     "name": "CAHAR.2",
+    "type": "WAYPOINT",
     "latitude": 37.4999995,
     "longitude": -115.4999895,
     "elevation": 4793
   },
   {
     "name": "CAITI",
+    "type": "WAYPOINT",
     "latitude": 37.660006333333335,
     "longitude": -116.74373366666667,
     "elevation": 6316
   },
   {
     "name": "CALIENTE",
+    "type": "WAYPOINT",
     "latitude": 37.61666666666667,
     "longitude": -114.51666333333333,
     "elevation": 4406
   },
   {
     "name": "CALIENTE A",
+    "type": "WAYPOINT",
     "latitude": 37.650014666666664,
     "longitude": -115.00000066666666,
     "elevation": 5643
   },
   {
     "name": "CALIENTE B",
+    "type": "WAYPOINT",
     "latitude": 37.66665866666666,
     "longitude": -114.71666916666666,
     "elevation": 5236
   },
   {
     "name": "CALIENTE N",
+    "type": "WAYPOINT",
     "latitude": 37.90000933333334,
     "longitude": -114.716651,
     "elevation": 4777
   },
   {
     "name": "CALIENTE S",
+    "type": "WAYPOINT",
     "latitude": 37.46666966666667,
     "longitude": -114.78331316666667,
     "elevation": 5823
   },
   {
     "name": "CALIFORNIA",
+    "type": "WAYPOINT",
     "latitude": 37.44999766666667,
     "longitude": -116.78333283333333,
     "elevation": 5686
   },
   {
     "name": "CARPP",
+    "type": "WAYPOINT",
     "latitude": 37.28332966666667,
     "longitude": -114.84534666666667,
     "elevation": 5036
   },
   {
     "name": "CARUB",
+    "type": "WAYPOINT",
     "latitude": 36.3137825,
     "longitude": -114.94773633333334,
     "elevation": 2392
   },
   {
     "name": "CDC",
+    "type": "WAYPOINT",
     "latitude": 37.787332666666664,
     "longitude": -113.0681715,
     "elevation": 5466
   },
   {
     "name": "CEDAR PEAK",
+    "type": "WAYPOINT",
     "latitude": 37.700006,
     "longitude": -116.33333933333333,
     "elevation": 8182
   },
   {
     "name": "CEDRU",
+    "type": "WAYPOINT",
     "latitude": 36.21944933333333,
     "longitude": -115.05209083333334,
     "elevation": 1834
   },
   {
     "name": "CESAR",
+    "type": "WAYPOINT",
     "latitude": 37.008048,
     "longitude": -116.5086155,
     "elevation": 4948
   },
   {
     "name": "CHADS",
+    "type": "WAYPOINT",
     "latitude": 35.25000383333333,
     "longitude": -118.58334283333333,
     "elevation": 2365
   },
   {
     "name": "CHEVRON.1",
+    "type": "WAYPOINT",
     "latitude": 38.186162,
     "longitude": -114.53132416666666,
     "elevation": 5902
   },
   {
     "name": "CHEVRON.2",
+    "type": "WAYPOINT",
     "latitude": 38.033339833333336,
     "longitude": -113.9291695,
     "elevation": 6512
   },
   {
     "name": "CHICAGO",
+    "type": "WAYPOINT",
     "latitude": 37.96666033333333,
     "longitude": -115.06666933333334,
     "elevation": 7201
   },
   {
     "name": "CHONGER",
+    "type": "WAYPOINT",
     "latitude": 37.74999316666667,
     "longitude": -114.99999033333333,
     "elevation": 5344
   },
   {
     "name": "CIBMU",
+    "type": "WAYPOINT",
     "latitude": 38.090021666666665,
     "longitude": -116.80577016666666,
     "elevation": 5833
   },
   {
     "name": "COIN",
+    "type": "WAYPOINT",
     "latitude": 37.793167833333335,
     "longitude": -116.28750333333333,
     "elevation": 6594
   },
   {
     "name": "COLORADO.E",
+    "type": "WAYPOINT",
     "latitude": 37.00000716666667,
     "longitude": -115.6666635,
     "elevation": 4721
   },
   {
     "name": "COLORADO.W",
+    "type": "WAYPOINT",
     "latitude": 37.00000566666667,
     "longitude": -116.13333783333333,
     "elevation": 5056
   },
   {
     "name": "COPAR",
+    "type": "WAYPOINT",
     "latitude": 38.011245,
     "longitude": -116.87538716666667,
     "elevation": 5495
   },
   {
     "name": "COYOTE PK",
+    "type": "WAYPOINT",
     "latitude": 37.62499533333333,
     "longitude": -115.63332266666667,
     "elevation": 7874
   },
   {
     "name": "CP",
+    "type": "WAYPOINT",
     "latitude": 37.5686655,
     "longitude": -116.07083083333333,
     "elevation": 7336
   },
   {
     "name": "CP1",
+    "type": "WAYPOINT",
     "latitude": 37.788651,
     "longitude": -115.4263185,
     "elevation": 5860
   },
   {
     "name": "CP19",
+    "type": "WAYPOINT",
     "latitude": 37.15517066666666,
     "longitude": -116.73516533333333,
     "elevation": 5020
   },
   {
     "name": "CP2",
+    "type": "WAYPOINT",
     "latitude": 37.673837166666665,
     "longitude": -115.49998866666667,
     "elevation": 7005
   },
   {
     "name": "CP20",
+    "type": "WAYPOINT",
     "latitude": 37.270998,
     "longitude": -116.7256805,
     "elevation": 6946
   },
   {
     "name": "CP3",
+    "type": "WAYPOINT",
     "latitude": 37.709837,
     "longitude": -115.81801,
     "elevation": 4767
   },
   {
     "name": "CP4",
+    "type": "WAYPOINT",
     "latitude": 37.85166733333333,
     "longitude": -115.77016983333333,
     "elevation": 5046
   },
   {
     "name": "CRAIG",
+    "type": "WAYPOINT",
     "latitude": 36.25415733333333,
     "longitude": -115.13778216666667,
     "elevation": 2034
   },
   {
     "name": "CRYSTAL SPRING",
+    "type": "WAYPOINT",
     "latitude": 37.53333516666667,
     "longitude": -115.233331,
     "elevation": 3822
   },
   {
     "name": "CUVAX",
+    "type": "WAYPOINT",
     "latitude": 36.430145,
     "longitude": -114.83231066666667,
     "elevation": 2395
   },
   {
     "name": "Cactus Springs",
+    "type": "TOWN",
     "latitude": 36.577737,
     "longitude": -115.727522,
     "elevation": 3241
   },
   {
     "name": "Cal-Nev-Ari",
+    "type": "TOWN",
     "latitude": 35.30044,
     "longitude": -114.879304,
     "elevation": 2556
   },
   {
     "name": "Calico Basin",
+    "type": "TOWN",
     "latitude": 36.150689,
     "longitude": -115.419029,
     "elevation": 3625
   },
   {
     "name": "Calico Ridge",
+    "type": "TOWN",
     "latitude": 36.081107,
     "longitude": -114.950406,
     "elevation": 1693
   },
   {
     "name": "Caliente",
+    "type": "TOWN",
     "latitude": 37.614965,
     "longitude": -114.511938,
     "elevation": 4409
   },
   {
     "name": "Canyon Gate",
+    "type": "TOWN",
     "latitude": 36.148785,
     "longitude": -115.284743,
     "elevation": 2730
   },
   {
     "name": "Carvers",
+    "type": "TOWN",
     "latitude": 38.786598,
     "longitude": -117.179254,
     "elevation": 5656
   },
   {
     "name": "Caselton",
+    "type": "TOWN",
     "latitude": 37.91913,
     "longitude": -114.485271,
     "elevation": 6214
   },
   {
     "name": "Caselton Heights",
+    "type": "TOWN",
     "latitude": 37.913852,
     "longitude": -114.479159,
     "elevation": 6073
   },
   {
     "name": "Centennial Hills",
+    "type": "TOWN",
     "latitude": 36.270423,
     "longitude": -115.264929,
     "elevation": 2411
   },
   {
     "name": "Charleston Heights",
+    "type": "TOWN",
     "latitude": 36.166664,
     "longitude": -115.232729,
     "elevation": 2343
   },
   {
     "name": "Chinatown",
+    "type": "TOWN",
     "latitude": 36.125976,
     "longitude": -115.195989,
     "elevation": 2185
   },
   {
     "name": "Cold Creek",
+    "type": "TOWN",
     "latitude": 36.413062,
     "longitude": -115.742231,
     "elevation": 6296
   },
   {
     "name": "Cold Spring",
+    "type": "TOWN",
     "latitude": 37.751354,
     "longitude": -114.424713,
     "elevation": 4675
   },
   {
     "name": "Coral Canyon",
+    "type": "TOWN",
     "latitude": 37.156942,
     "longitude": -113.454613,
     "elevation": 3022
   },
   {
     "name": "Corn Creek",
+    "type": "TOWN",
     "latitude": 36.422854,
     "longitude": -115.386428,
     "elevation": 2867
   },
   {
     "name": "Cottonwood Island",
+    "type": "TOWN",
     "latitude": 35.491453,
     "longitude": -114.68439,
     "elevation": 653
   },
   {
     "name": "Creech AFB",
+    "type": "TOWN",
     "latitude": 36.580612,
     "longitude": -115.674929,
     "elevation": 3120
   },
   {
     "name": "Crescent Island",
+    "type": "TOWN",
     "latitude": 36.113033,
     "longitude": -114.831655,
     "elevation": 1220
   },
   {
     "name": "Crystal",
+    "type": "TOWN",
     "latitude": 36.491623,
     "longitude": -116.167536,
     "elevation": 2398
   },
   {
     "name": "Crystal Springs",
+    "type": "TOWN",
     "latitude": 37.531627,
     "longitude": -115.23391,
     "elevation": 3835
   },
   {
     "name": "Currant",
+    "type": "TOWN",
     "latitude": 38.742268,
     "longitude": -115.473796,
     "elevation": 5194
   },
   {
     "name": "DAG",
+    "type": "WAYPOINT",
     "latitude": 34.96238533333333,
     "longitude": -116.57813066666667,
     "elevation": 1781
   },
   {
     "name": "DAGGS",
+    "type": "WAYPOINT",
     "latitude": 34.983324833333334,
     "longitude": -116.9500055,
     "elevation": 2598
   },
   {
     "name": "DEVILS GAP",
+    "type": "WAYPOINT",
     "latitude": 37.724992666666665,
     "longitude": -114.023336,
     "elevation": 5699
   },
   {
     "name": "DOVER",
+    "type": "WAYPOINT",
     "latitude": 37.74999183333333,
     "longitude": -114.54999183333334,
     "elevation": 5699
   },
   {
     "name": "DRAKO",
+    "type": "WAYPOINT",
     "latitude": 37.67938866666667,
     "longitude": -116.7176515,
     "elevation": 5653
   },
   {
     "name": "DREAM",
+    "type": "WAYPOINT",
     "latitude": 37.17222833333334,
     "longitude": -114.99221516666667,
     "elevation": 3402
   },
   {
     "name": "DRY LAKE",
+    "type": "WAYPOINT",
     "latitude": 36.46139333333333,
     "longitude": -114.87028333333333,
     "elevation": 1969
   },
   {
     "name": "DUCK",
+    "type": "WAYPOINT",
     "latitude": 36.297216,
     "longitude": -114.88471166666666,
     "elevation": 2431
   },
   {
     "name": "DUDBE",
+    "type": "WAYPOINT",
     "latitude": 36.364141333333336,
     "longitude": -115.34301233333333,
     "elevation": 2884
   },
   {
     "name": "Desert Rock",
+    "type": "TOWN",
     "latitude": 36.627177,
     "longitude": -116.020031,
     "elevation": 3327
   },
   {
     "name": "Desert Shores",
+    "type": "TOWN",
     "latitude": 36.207674,
     "longitude": -115.267662,
     "elevation": 2464
   },
   {
     "name": "Dike",
+    "type": "TOWN",
     "latitude": 36.301359,
     "longitude": -115.013336,
     "elevation": 2215
   },
   {
     "name": "Dixie Downs",
+    "type": "TOWN",
     "latitude": 37.131873,
     "longitude": -113.624103,
     "elevation": 2838
   },
   {
     "name": "Dome Mountain",
+    "type": "TOWN",
     "latitude": 37.007357,
     "longitude": -116.312331,
     "elevation": 4977
   },
   {
     "name": "Downtown Henderson",
+    "type": "TOWN",
     "latitude": 36.031272,
     "longitude": -114.981263,
     "elevation": 1978
   },
   {
     "name": "Dry Lake",
+    "type": "TOWN",
     "latitude": 36.455425,
     "longitude": -114.847762,
     "elevation": 2077
   },
   {
     "name": "Dyer",
+    "type": "TOWN",
     "latitude": 37.678229,
     "longitude": -118.084527,
     "elevation": 4911
   },
   {
     "name": "Dyer Postoffice",
+    "type": "TOWN",
     "latitude": 37.613027,
     "longitude": -118.022021,
     "elevation": 4905
   },
   {
     "name": "EAGLE MT",
+    "type": "WAYPOINT",
     "latitude": 36.21109333333333,
     "longitude": -116.354993,
     "elevation": 3478
   },
   {
     "name": "EED",
+    "type": "WAYPOINT",
     "latitude": 34.765927,
     "longitude": -114.47390766666666,
     "elevation": 659
   },
   {
     "name": "ELGIN.E",
+    "type": "WAYPOINT",
     "latitude": 37.45033333333333,
     "longitude": -114.007828,
     "elevation": 5223
   },
   {
     "name": "ELGIN.N",
+    "type": "WAYPOINT",
     "latitude": 37.46500016666667,
     "longitude": -114.57850183333333,
     "elevation": 4472
   },
   {
     "name": "ELGIN.SE",
+    "type": "WAYPOINT",
     "latitude": 36.716666000000004,
     "longitude": -114.600832,
     "elevation": 1598
   },
   {
     "name": "ELGIN.SW",
+    "type": "WAYPOINT",
     "latitude": 36.71683,
     "longitude": -114.84533783333333,
     "elevation": 2661
   },
   {
     "name": "ELGIN.W",
+    "type": "WAYPOINT",
     "latitude": 37.2833295,
     "longitude": -114.84533533333334,
     "elevation": 5036
   },
   {
     "name": "ELKXX",
+    "type": "WAYPOINT",
     "latitude": 37.866671,
     "longitude": -114.50001683333333,
     "elevation": 5623
   },
   {
     "name": "ELVIS",
+    "type": "WAYPOINT",
     "latitude": 37.24999733333333,
     "longitude": -115.75000316666667,
     "elevation": 4501
   },
   {
     "name": "ENGLA",
+    "type": "WAYPOINT",
     "latitude": 36.14383133333333,
     "longitude": -115.13307016666667,
     "elevation": 2005
   },
   {
     "name": "ENIYO",
+    "type": "WAYPOINT",
     "latitude": 36.25116716666667,
     "longitude": -115.01575833333334,
     "elevation": 1890
   },
   {
     "name": "EWALD",
+    "type": "WAYPOINT",
     "latitude": 37.20000616666667,
     "longitude": -118.13000266666667,
     "elevation": 7690
   },
   {
     "name": "East Las Vegas",
+    "type": "TOWN",
     "latitude": 36.094419,
     "longitude": -115.04194,
     "elevation": 1673
   },
   {
     "name": "Eastland Heights",
+    "type": "TOWN",
     "latitude": 36.192191,
     "longitude": -115.188058,
     "elevation": 2129
   },
   {
     "name": "Echo Bay",
+    "type": "TOWN",
     "latitude": 36.309146,
     "longitude": -114.427477,
     "elevation": 1257
   },
   {
     "name": "Enterprise",
+    "type": "TOWN",
     "latitude": 37.573587,
     "longitude": -113.719133,
     "elevation": 5331
   },
   {
     "name": "Etna",
+    "type": "TOWN",
     "latitude": 37.555242,
     "longitude": -114.571385,
     "elevation": 4229
   },
   {
     "name": "FAANG",
+    "type": "WAYPOINT",
     "latitude": 37.00000416666666,
     "longitude": -118.5850105,
     "elevation": 6841
   },
   {
     "name": "FALAK",
+    "type": "WAYPOINT",
     "latitude": 37.75289766666667,
     "longitude": -116.7564455,
     "elevation": 5604
   },
   {
     "name": "FILTR",
+    "type": "WAYPOINT",
     "latitude": 37.52499733333333,
     "longitude": -114.09999116666667,
     "elevation": 5531
   },
   {
     "name": "FLEX",
+    "type": "WAYPOINT",
     "latitude": 36.310265666666666,
     "longitude": -115.03945366666666,
     "elevation": 2300
   },
   {
     "name": "FLORIDA E",
+    "type": "WAYPOINT",
     "latitude": 36.849988333333336,
     "longitude": -114.91666566666666,
     "elevation": 2310
   },
   {
     "name": "FLORIDA W",
+    "type": "WAYPOINT",
     "latitude": 36.849994833333334,
     "longitude": -115.36665716666667,
     "elevation": 5528
   },
   {
     "name": "FLUSH",
+    "type": "WAYPOINT",
     "latitude": 36.846671666666666,
     "longitude": -116.337771,
     "elevation": 4039
   },
   {
     "name": "FYTTR",
+    "type": "WAYPOINT",
     "latitude": 36.35733033333333,
     "longitude": -115.69116266666667,
     "elevation": 9272
   },
   {
     "name": "Farrier",
+    "type": "TOWN",
     "latitude": 36.812748,
     "longitude": -114.653881,
     "elevation": 1772
   },
   {
     "name": "Fish Island",
+    "type": "TOWN",
     "latitude": 36.457755,
     "longitude": -114.346086,
     "elevation": 1220
   },
   {
     "name": "Five Points",
+    "type": "TOWN",
     "latitude": 36.159098,
     "longitude": -115.118228,
     "elevation": 1877
   },
   {
     "name": "Flat Nose",
+    "type": "TOWN",
     "latitude": 37.893296,
     "longitude": -114.300542,
     "elevation": 5184
   },
   {
     "name": "Florence Hill",
+    "type": "TOWN",
     "latitude": 37.707577,
     "longitude": -117.220863,
     "elevation": 5755
   },
   {
     "name": "Foothills",
+    "type": "TOWN",
     "latitude": 36.050286,
     "longitude": -114.949043,
     "elevation": 1932
   },
   {
     "name": "Forks Station",
+    "type": "TOWN",
     "latitude": 37.495766,
     "longitude": -117.166185,
     "elevation": 4675
   },
   {
     "name": "FortMohave",
+    "type": "TOWN",
     "latitude": 35.036838,
     "longitude": -114.58345,
     "elevation": 666
   },
   {
     "name": "GARTH",
+    "type": "WAYPOINT",
     "latitude": 37.2994455,
     "longitude": -116.35444766666667,
     "elevation": 6722
   },
   {
     "name": "GASS PEAK",
+    "type": "WAYPOINT",
     "latitude": 36.400777,
     "longitude": -115.1803065,
     "elevation": 6883
   },
   {
     "name": "GCN",
+    "type": "VOR_DME",
     "latitude": 35.960444,
     "longitude": -112.145901,
     "elevation": 6670
   },
   {
     "name": "GEORGIA E",
+    "type": "WAYPOINT",
     "latitude": 36.99999833333333,
     "longitude": -114.91665733333333,
     "elevation": 2740
   },
   {
     "name": "GEORGIA W",
+    "type": "WAYPOINT",
     "latitude": 37.00001616666667,
     "longitude": -115.36667816666667,
     "elevation": 3724
   },
   {
     "name": "GFS",
+    "type": "WAYPOINT",
     "latitude": 35.1311685,
     "longitude": -115.17649966666667,
     "elevation": 4019
   },
   {
     "name": "GOTHAM",
+    "type": "WAYPOINT",
     "latitude": 36.779228333333336,
     "longitude": -115.44395383333334,
     "elevation": 3517
   },
   {
     "name": "GRL",
+    "type": "WAYPOINT",
     "latitude": 37.23177533333333,
     "longitude": -115.80264266666667,
     "elevation": 4475
   },
   {
     "name": "GRN",
+    "type": "WAYPOINT",
     "latitude": 37.549630666666665,
     "longitude": -115.6087205,
     "elevation": 5098
   },
   {
     "name": "GRN 10",
+    "type": "WAYPOINT",
     "latitude": 37.035155833333334,
     "longitude": -114.976978,
     "elevation": 2700
   },
   {
     "name": "GRN 11",
+    "type": "WAYPOINT",
     "latitude": 37.135606333333335,
     "longitude": -115.006422,
     "elevation": 2887
   },
   {
     "name": "GRN 13",
+    "type": "WAYPOINT",
     "latitude": 37.2404405,
     "longitude": -115.0224775,
     "elevation": 5125
   },
   {
     "name": "GRN 16",
+    "type": "WAYPOINT",
     "latitude": 37.32941133333333,
     "longitude": -115.0599645,
     "elevation": 4042
   },
   {
     "name": "GRN 18",
+    "type": "WAYPOINT",
     "latitude": 37.452441666666665,
     "longitude": -115.07601933333333,
     "elevation": 5397
   },
   {
     "name": "GRN 19",
+    "type": "WAYPOINT",
     "latitude": 37.61962883333333,
     "longitude": -115.0001695,
     "elevation": 4961
   },
   {
     "name": "GRN 20",
+    "type": "WAYPOINT",
     "latitude": 37.442992833333335,
     "longitude": -115.28034416666667,
     "elevation": 5449
   },
   {
     "name": "GRN 22",
+    "type": "WAYPOINT",
     "latitude": 37.62570183333333,
     "longitude": -115.1822075,
     "elevation": 5003
   },
   {
     "name": "GRN 23",
+    "type": "WAYPOINT",
     "latitude": 37.676602333333335,
     "longitude": -115.27143866666667,
     "elevation": 5030
   },
   {
     "name": "GRN 34",
+    "type": "WAYPOINT",
     "latitude": 37.51845183333333,
     "longitude": -115.76055383333333,
     "elevation": 7589
   },
   {
     "name": "GRN 36",
+    "type": "WAYPOINT",
     "latitude": 37.8262615,
     "longitude": -115.60067883333333,
     "elevation": 8451
   },
   {
     "name": "GRN 38",
+    "type": "WAYPOINT",
     "latitude": 37.79750933333333,
     "longitude": -115.668926,
     "elevation": 4846
   },
   {
     "name": "GRN 39",
+    "type": "WAYPOINT",
     "latitude": 37.85287733333333,
     "longitude": -115.775583,
     "elevation": 5039
   },
   {
     "name": "GRN 40",
+    "type": "WAYPOINT",
     "latitude": 37.73247766666667,
     "longitude": -116.0949795,
     "elevation": 5830
   },
   {
     "name": "GRN 41",
+    "type": "WAYPOINT",
     "latitude": 37.63292833333333,
     "longitude": -116.09973566666666,
     "elevation": 6283
   },
   {
     "name": "GRN 42",
+    "type": "WAYPOINT",
     "latitude": 37.552251,
     "longitude": -116.10926566666667,
     "elevation": 6614
   },
   {
     "name": "GRN 43",
+    "type": "WAYPOINT",
     "latitude": 37.46820916666667,
     "longitude": -116.0878395,
     "elevation": 7087
   },
   {
     "name": "GRN 44",
+    "type": "WAYPOINT",
     "latitude": 37.31361366666667,
     "longitude": -116.08842433333334,
     "elevation": 5673
   },
   {
     "name": "GRN 45",
+    "type": "WAYPOINT",
     "latitude": 37.3425965,
     "longitude": -116.26807416666666,
     "elevation": 5846
   },
   {
     "name": "GRN 47",
+    "type": "WAYPOINT",
     "latitude": 37.961675666666665,
     "longitude": -116.16457366666667,
     "elevation": 7749
   },
   {
     "name": "GRN 48",
+    "type": "WAYPOINT",
     "latitude": 37.95650633333333,
     "longitude": -116.4001335,
     "elevation": 6860
   },
   {
     "name": "GRN 49",
+    "type": "WAYPOINT",
     "latitude": 37.74258066666667,
     "longitude": -116.33589733333334,
     "elevation": 7001
   },
   {
     "name": "GRN 6",
+    "type": "WAYPOINT",
     "latitude": 36.7655045,
     "longitude": -115.01980066666667,
     "elevation": 3967
   },
   {
     "name": "GRN 8",
+    "type": "WAYPOINT",
     "latitude": 36.874715333333334,
     "longitude": -114.96002683333333,
     "elevation": 2602
   },
   {
     "name": "GRN 9",
+    "type": "WAYPOINT",
     "latitude": 36.97785583333334,
     "longitude": -114.93325816666666,
     "elevation": 2703
   },
   {
     "name": "GRN A",
+    "type": "WAYPOINT",
     "latitude": 37.3156945,
     "longitude": -116.1677585,
     "elevation": 6883
   },
   {
     "name": "GRN B",
+    "type": "WAYPOINT",
     "latitude": 37.438893666666665,
     "longitude": -116.08967633333333,
     "elevation": 7346
   },
   {
     "name": "GRN C",
+    "type": "WAYPOINT",
     "latitude": 37.547269166666666,
     "longitude": -116.03613966666667,
     "elevation": 6512
   },
   {
     "name": "GRN D",
+    "type": "WAYPOINT",
     "latitude": 37.592089333333334,
     "longitude": -115.99686883333334,
     "elevation": 5558
   },
   {
     "name": "GRN E",
+    "type": "WAYPOINT",
     "latitude": 37.67720583333333,
     "longitude": -115.95092,
     "elevation": 5958
   },
   {
     "name": "GRN F",
+    "type": "WAYPOINT",
     "latitude": 37.8095105,
     "longitude": -115.93931516666666,
     "elevation": 5968
   },
   {
     "name": "GRN G",
+    "type": "WAYPOINT",
     "latitude": 37.552994166666664,
     "longitude": -115.91478383333333,
     "elevation": 5476
   },
   {
     "name": "GRN7",
+    "type": "WAYPOINT",
     "latitude": 36.79920883333333,
     "longitude": -114.94305766666666,
     "elevation": 2500
   },
   {
     "name": "Garnet",
+    "type": "TOWN",
     "latitude": 36.388582,
     "longitude": -114.87111,
     "elevation": 2231
   },
   {
     "name": "Gemfield",
+    "type": "TOWN",
     "latitude": 37.739655,
     "longitude": -117.295081,
     "elevation": 6119
   },
   {
     "name": "Glassand",
+    "type": "TOWN",
     "latitude": 36.556919,
     "longitude": -114.464703,
     "elevation": 1319
   },
   {
     "name": "Glendale",
+    "type": "TOWN",
     "latitude": 36.66525,
     "longitude": -114.569154,
     "elevation": 1542
   },
   {
     "name": "Gold Center",
+    "type": "TOWN",
     "latitude": 36.868326,
     "longitude": -116.766614,
     "elevation": 3153
   },
   {
     "name": "Gold Point",
+    "type": "TOWN",
     "latitude": 37.354653,
     "longitude": -117.365077,
     "elevation": 5400
   },
   {
     "name": "GoldenShores",
+    "type": "TOWN",
     "latitude": 34.786187,
     "longitude": -114.474,
     "elevation": 725
   },
   {
     "name": "Goldfield",
+    "type": "TOWN",
     "latitude": 37.708694,
     "longitude": -117.236631,
     "elevation": 5689
   },
   {
     "name": "Goodsprings",
+    "type": "TOWN",
     "latitude": 35.832609,
     "longitude": -115.433981,
     "elevation": 3711
   },
   {
     "name": "Green Springs",
+    "type": "TOWN",
     "latitude": 37.139958,
     "longitude": -113.527589,
     "elevation": 2920
   },
   {
     "name": "Green Valley",
+    "type": "TOWN",
     "latitude": 37.105265,
     "longitude": -113.621155,
     "elevation": 2651
   },
   {
     "name": "Gunlock",
+    "type": "TOWN",
     "latitude": 37.286089,
     "longitude": -113.763299,
     "elevation": 3671
   },
   {
     "name": "HAMBO",
+    "type": "WAYPOINT",
     "latitude": 37.20000733333333,
     "longitude": -117.64167333333333,
     "elevation": 5121
   },
   {
     "name": "HARNE",
+    "type": "WAYPOINT",
     "latitude": 36.925,
     "longitude": -117.18833766666667,
     "elevation": 6923
   },
   {
     "name": "HAYFORD PK",
+    "type": "WAYPOINT",
     "latitude": 36.664636333333334,
     "longitude": -115.16025,
     "elevation": 8589
   },
   {
     "name": "HEC",
+    "type": "WAYPOINT",
     "latitude": 34.79721716666667,
     "longitude": -116.46293416666667,
     "elevation": 1864
   },
   {
     "name": "HEINY",
+    "type": "WAYPOINT",
     "latitude": 35.85832716666667,
     "longitude": -116.541671,
     "elevation": 843
   },
   {
     "name": "HEREM",
+    "type": "WAYPOINT",
     "latitude": 36.375341,
     "longitude": -114.87175216666667,
     "elevation": 2684
   },
   {
     "name": "HOCKUM",
+    "type": "WAYPOINT",
     "latitude": 37.060487,
     "longitude": -115.0526545,
     "elevation": 3307
   },
   {
     "name": "HOKUM",
+    "type": "WAYPOINT",
     "latitude": 36.4595195,
     "longitude": -114.98768666666666,
     "elevation": 3133
   },
   {
     "name": "HOSER",
+    "type": "WAYPOINT",
     "latitude": 37.74906283333333,
     "longitude": -116.7544035,
     "elevation": 5614
   },
   {
     "name": "HUBON",
+    "type": "WAYPOINT",
     "latitude": 37.53014133333333,
     "longitude": -116.590684,
     "elevation": 5604
   },
   {
     "name": "HUGER",
+    "type": "WAYPOINT",
     "latitude": 37.82196366666667,
     "longitude": -116.79296483333333,
     "elevation": 5453
   },
   {
     "name": "HULPU",
+    "type": "WAYPOINT",
     "latitude": 36.405759,
     "longitude": -114.84548833333334,
     "elevation": 2323
   },
   {
     "name": "HUSTS",
+    "type": "WAYPOINT",
     "latitude": 36.04796416666667,
     "longitude": -115.23541816666666,
     "elevation": 2500
   },
   {
     "name": "HVAA1.1",
+    "type": "WAYPOINT",
     "latitude": 36.893324666666665,
     "longitude": -114.5333295,
     "elevation": 3537
   },
   {
     "name": "HVAA1.2",
+    "type": "WAYPOINT",
     "latitude": 37.7116665,
     "longitude": -113.88834466666667,
     "elevation": 5423
   },
   {
     "name": "HVAA2.1",
+    "type": "WAYPOINT",
     "latitude": 36.9516645,
     "longitude": -114.51665983333334,
     "elevation": 4829
   },
   {
     "name": "HVAA2.2",
+    "type": "WAYPOINT",
     "latitude": 37.85999533333333,
     "longitude": -114.51667716666667,
     "elevation": 5823
   },
   {
     "name": "Hadley",
+    "type": "TOWN",
     "latitude": 38.694376,
     "longitude": -117.160364,
     "elevation": 5771
   },
   {
     "name": "Harrisburg",
+    "type": "TOWN",
     "latitude": 37.20576,
     "longitude": -113.39405,
     "elevation": 3015
   },
   {
     "name": "Harrisburg Junction",
+    "type": "TOWN",
     "latitude": 37.161927,
     "longitude": -113.431618,
     "elevation": 3146
   },
   {
     "name": "Hawthorne",
+    "type": "TOWN",
     "latitude": 38.524618,
     "longitude": -118.624563,
     "elevation": 4341
   },
   {
     "name": "Heist",
+    "type": "TOWN",
     "latitude": 37.853447,
     "longitude": -113.846074,
     "elevation": 5299
   },
   {
     "name": "Henderson",
+    "type": "TOWN",
     "latitude": 36.039146,
     "longitude": -114.981924,
     "elevation": 1893
   },
   {
     "name": "Hiko",
+    "type": "TOWN",
     "latitude": 37.596904,
     "longitude": -115.224189,
     "elevation": 3885
   },
   {
     "name": "IGM",
+    "type": "VOR_DME",
     "latitude": 35.260535,
     "longitude": -113.93413,
     "elevation": 3409
   },
   {
     "name": "ILC",
+    "type": "WAYPOINT",
     "latitude": 38.2501705,
     "longitude": -114.3941705,
     "elevation": 9324
   },
   {
     "name": "INS",
+    "type": "WAYPOINT",
     "latitude": 36.584996333333336,
     "longitude": -115.67033883333333,
     "elevation": 3107
   },
   {
     "name": "IRAVE",
+    "type": "WAYPOINT",
     "latitude": 37.609699666666664,
     "longitude": -116.64817883333333,
     "elevation": 5446
   },
   {
     "name": "ITAVE",
+    "type": "WAYPOINT",
     "latitude": 37.696471,
     "longitude": -116.71100766666666,
     "elevation": 5479
   },
   {
     "name": "ITOGE",
+    "type": "WAYPOINT",
     "latitude": 37.775978333333335,
     "longitude": -116.7687585,
     "elevation": 5568
   },
   {
     "name": "IdlewildCreek",
+    "type": "TOWN",
     "latitude": 38.38722,
     "longitude": -117.446783,
     "elevation": 5075
   },
   {
     "name": "Indian Cove",
+    "type": "TOWN",
     "latitude": 37.655243,
     "longitude": -114.495271,
     "elevation": 4491
   },
   {
     "name": "Indian Springs",
+    "type": "TOWN",
     "latitude": 36.569677,
     "longitude": -115.670571,
     "elevation": 3173
   },
   {
     "name": "Inner Northwest",
+    "type": "TOWN",
     "latitude": 36.189735,
     "longitude": -115.247664,
     "elevation": 2398
   },
   {
     "name": "Islen",
+    "type": "TOWN",
     "latitude": 37.529688,
     "longitude": -114.321651,
     "elevation": 5230
   },
   {
     "name": "Ivins",
+    "type": "TOWN",
     "latitude": 37.168591,
     "longitude": -113.679406,
     "elevation": 3094
   },
   {
     "name": "JACKSON",
+    "type": "WAYPOINT",
     "latitude": 37.416672,
     "longitude": -115.066664,
     "elevation": 4869
   },
   {
     "name": "JADPU",
+    "type": "WAYPOINT",
     "latitude": 38.068301,
     "longitude": -116.92311533333333,
     "elevation": 6083
   },
   {
     "name": "JANAV",
+    "type": "WAYPOINT",
     "latitude": 37.90130033333333,
     "longitude": -116.83503366666666,
     "elevation": 5325
   },
   {
     "name": "JAYSN",
+    "type": "WAYPOINT",
     "latitude": 36.57374183333334,
     "longitude": -116.04072233333333,
     "elevation": 3402
   },
   {
     "name": "JELIR",
+    "type": "WAYPOINT",
     "latitude": 36.29511016666667,
     "longitude": -114.9680235,
     "elevation": 2231
   },
   {
     "name": "JENAR",
+    "type": "WAYPOINT",
     "latitude": 36.33144133333333,
     "longitude": -114.92846883333333,
     "elevation": 2464
   },
   {
     "name": "JENID",
+    "type": "WAYPOINT",
     "latitude": 36.35499433333333,
     "longitude": -116.858329,
     "elevation": -220
   },
   {
     "name": "JEPAR",
+    "type": "WAYPOINT",
     "latitude": 38.00655583333333,
     "longitude": -116.89105766666667,
     "elevation": 5459
   },
   {
     "name": "JESVO",
+    "type": "WAYPOINT",
     "latitude": 37.51446166666667,
     "longitude": -116.63012533333334,
     "elevation": 5469
   },
   {
     "name": "JETTISON HIL",
+    "type": "WAYPOINT",
     "latitude": 36.331388833333335,
     "longitude": -115.01945116666667,
     "elevation": 2635
   },
   {
     "name": "JIREM",
+    "type": "WAYPOINT",
     "latitude": 37.5757985,
     "longitude": -116.66315133333333,
     "elevation": 5564
   },
   {
     "name": "JOGEV",
+    "type": "WAYPOINT",
     "latitude": 36.288065833333334,
     "longitude": -114.9767905,
     "elevation": 2152
   },
   {
     "name": "JOLLY PAD",
+    "type": "WAYPOINT",
     "latitude": 36.251335,
     "longitude": -115.03300366666667,
     "elevation": 1919
   },
   {
     "name": "JORDN",
+    "type": "WAYPOINT",
     "latitude": 36.39783333333333,
     "longitude": -115.243161,
     "elevation": 4098
   },
   {
     "name": "JUNNO",
+    "type": "WAYPOINT",
     "latitude": 36.73000716666667,
     "longitude": -114.87945716666667,
     "elevation": 3885
   },
   {
     "name": "Jackman",
+    "type": "TOWN",
     "latitude": 36.642195,
     "longitude": -114.540263,
     "elevation": 1529
   },
   {
     "name": "Jean",
+    "type": "TOWN",
     "latitude": 35.779008,
     "longitude": -115.324314,
     "elevation": 2858
   },
   {
     "name": "Johnnie",
+    "type": "TOWN",
     "latitude": 36.419974,
     "longitude": -116.072087,
     "elevation": 3320
   },
   {
     "name": "Joseco",
+    "type": "TOWN",
     "latitude": 37.501912,
     "longitude": -114.229147,
     "elevation": 5449
   },
   {
     "name": "KENO",
+    "type": "WAYPOINT",
     "latitude": 37.75583316666667,
     "longitude": -116.24650583333333,
     "elevation": 6237
   },
   {
     "name": "KENO ASTP",
+    "type": "WAYPOINT",
     "latitude": 37.78166433333333,
     "longitude": -116.25498783333333,
     "elevation": 6273
   },
   {
     "name": "KINS",
+    "type": "WAYPOINT",
     "latitude": 36.585331333333336,
     "longitude": -115.67372,
     "elevation": 3097
   },
   {
     "name": "KINS.08",
+    "type": "WAYPOINT",
     "latitude": 36.584431333333335,
     "longitude": -115.69507333333334,
     "elevation": 3136
   },
   {
     "name": "KINS.26",
+    "type": "WAYPOINT",
     "latitude": 36.583453666666664,
     "longitude": -115.6654025,
     "elevation": 3114
   },
   {
     "name": "KIOTE",
+    "type": "WAYPOINT",
     "latitude": 36.5716755,
     "longitude": -118.5900015,
     "elevation": 0
   },
   {
     "name": "KITCH",
+    "type": "WAYPOINT",
     "latitude": 36.25333416666667,
     "longitude": -115.01543633333333,
     "elevation": 1886
   },
   {
     "name": "KLSV",
+    "type": "WAYPOINT",
     "latitude": 36.23711133333333,
     "longitude": -115.03302633333334,
     "elevation": 1857
   },
   {
     "name": "KLSV.03L",
+    "type": "WAYPOINT",
     "latitude": 36.22698316666666,
     "longitude": -115.04645266666667,
     "elevation": 1873
   },
   {
     "name": "KLSV.03R",
+    "type": "WAYPOINT",
     "latitude": 36.225148,
     "longitude": -115.04391716666666,
     "elevation": 1841
   },
   {
     "name": "KLSV.21L",
+    "type": "WAYPOINT",
     "latitude": 36.245322333333334,
     "longitude": -115.02205983333333,
     "elevation": 1860
   },
   {
     "name": "KLSV.21R",
+    "type": "WAYPOINT",
     "latitude": 36.247272833333334,
     "longitude": -115.02444783333333,
     "elevation": 1827
   },
   {
     "name": "KRYSS",
+    "type": "WAYPOINT",
     "latitude": 36.506159,
     "longitude": -114.73650933333333,
     "elevation": 1975
   },
   {
     "name": "KTNX",
+    "type": "WAYPOINT",
     "latitude": 37.7930625,
     "longitude": -116.77555416666667,
     "elevation": 5515
   },
   {
     "name": "KTNX.14",
+    "type": "WAYPOINT",
     "latitude": 37.81370883333334,
     "longitude": -116.788648,
     "elevation": 5492
   },
   {
     "name": "KTNX.32",
+    "type": "WAYPOINT",
     "latitude": 37.7840985,
     "longitude": -116.77298066666667,
     "elevation": 5545
   },
   {
     "name": "KUTME",
+    "type": "WAYPOINT",
     "latitude": 36.50476166666667,
     "longitude": -114.73459616666666,
     "elevation": 1985
   },
   {
     "name": "LAMOUR",
+    "type": "WAYPOINT",
     "latitude": 37.811839,
     "longitude": -116.40898583333333,
     "elevation": 6578
   },
   {
     "name": "LAS",
+    "type": "VORTAC",
     "latitude": 36.079576,
     "longitude": -115.159816,
     "elevation": 2152
   },
   {
     "name": "LATNC1",
+    "type": "WAYPOINT",
     "latitude": 36.43333666666667,
     "longitude": -115.39999666666667,
     "elevation": 2907
   },
   {
     "name": "LATNC10",
+    "type": "WAYPOINT",
     "latitude": 36.133335,
     "longitude": -115.550011,
     "elevation": 6660
   },
   {
     "name": "LATNC11",
+    "type": "WAYPOINT",
     "latitude": 36.266668333333335,
     "longitude": -115.78332666666667,
     "elevation": 6526
   },
   {
     "name": "LATNC12",
+    "type": "WAYPOINT",
     "latitude": 36.416675,
     "longitude": -115.783333,
     "elevation": 6594
   },
   {
     "name": "LATNC13",
+    "type": "WAYPOINT",
     "latitude": 36.349998666666664,
     "longitude": -115.4999905,
     "elevation": 5217
   },
   {
     "name": "LATNC14",
+    "type": "WAYPOINT",
     "latitude": 36.49999833333333,
     "longitude": -115.50000483333334,
     "elevation": 3199
   },
   {
     "name": "LATNC2",
+    "type": "WAYPOINT",
     "latitude": 36.43332933333333,
     "longitude": -115.28333416666666,
     "elevation": 3658
   },
   {
     "name": "LATNC3",
+    "type": "WAYPOINT",
     "latitude": 36.73334066666666,
     "longitude": -115.0638855,
     "elevation": 4613
   },
   {
     "name": "LATNC4",
+    "type": "WAYPOINT",
     "latitude": 36.73332766666667,
     "longitude": -114.5833385,
     "elevation": 1824
   },
   {
     "name": "LATNC5",
+    "type": "WAYPOINT",
     "latitude": 36.7499945,
     "longitude": -114.566677,
     "elevation": 2165
   },
   {
     "name": "LATNC6",
+    "type": "WAYPOINT",
     "latitude": 36.33333316666667,
     "longitude": -114.0000045,
     "elevation": 1703
   },
   {
     "name": "LATNC7",
+    "type": "WAYPOINT",
     "latitude": 36.250003166666666,
     "longitude": -113.75001016666667,
     "elevation": 4905
   },
   {
     "name": "LATNC8",
+    "type": "WAYPOINT",
     "latitude": 36.000003666666665,
     "longitude": -113.75000433333334,
     "elevation": 0
   },
   {
     "name": "LATNC9",
+    "type": "WAYPOINT",
     "latitude": 36.000003666666665,
     "longitude": -115.55000433333333,
     "elevation": 5174
   },
   {
     "name": "LATNE1",
+    "type": "WAYPOINT",
     "latitude": 37.750007,
     "longitude": -113.75555516666667,
     "elevation": 5210
   },
   {
     "name": "LATNE10",
+    "type": "WAYPOINT",
     "latitude": 36.7499945,
     "longitude": -114.566677,
     "elevation": 2165
   },
   {
     "name": "LATNE2",
+    "type": "WAYPOINT",
     "latitude": 37.350008,
     "longitude": -113.16666183333334,
     "elevation": 5574
   },
   {
     "name": "LATNE3",
+    "type": "WAYPOINT",
     "latitude": 37.1666645,
     "longitude": -113.4166485,
     "elevation": 2982
   },
   {
     "name": "LATNE4",
+    "type": "WAYPOINT",
     "latitude": 37.166674,
     "longitude": -113.79999883333333,
     "elevation": 3717
   },
   {
     "name": "LATNE5",
+    "type": "WAYPOINT",
     "latitude": 36.999991,
     "longitude": -113.8000045,
     "elevation": 3953
   },
   {
     "name": "LATNE6",
+    "type": "WAYPOINT",
     "latitude": 37.014745166666664,
     "longitude": -113.08374533333334,
     "elevation": 4721
   },
   {
     "name": "LATNE7",
+    "type": "WAYPOINT",
     "latitude": 36.38332583333333,
     "longitude": -113.08333,
     "elevation": 5407
   },
   {
     "name": "LATNE8",
+    "type": "WAYPOINT",
     "latitude": 36.199996,
     "longitude": -113.583329,
     "elevation": 6165
   },
   {
     "name": "LATNE9",
+    "type": "WAYPOINT",
     "latitude": 36.33333316666667,
     "longitude": -114.0000045,
     "elevation": 1703
   },
   {
     "name": "LATNW",
+    "type": "WAYPOINT",
     "latitude": 36.533318666666666,
     "longitude": -116.0000025,
     "elevation": 4698
   },
   {
     "name": "LATNW1",
+    "type": "WAYPOINT",
     "latitude": 37.4416635,
     "longitude": -117.07499533333333,
     "elevation": 4869
   },
   {
     "name": "LATNW10",
+    "type": "WAYPOINT",
     "latitude": 36.34999883333333,
     "longitude": -115.50000166666666,
     "elevation": 5226
   },
   {
     "name": "LATNW11",
+    "type": "WAYPOINT",
     "latitude": 36.416675,
     "longitude": -115.783333,
     "elevation": 6594
   },
   {
     "name": "LATNW12",
+    "type": "WAYPOINT",
     "latitude": 36.266668333333335,
     "longitude": -115.78332666666667,
     "elevation": 6526
   },
   {
     "name": "LATNW13",
+    "type": "WAYPOINT",
     "latitude": 36.133335,
     "longitude": -115.550011,
     "elevation": 6660
   },
   {
     "name": "LATNW14",
+    "type": "WAYPOINT",
     "latitude": 35.940278666666664,
     "longitude": -115.54999883333333,
     "elevation": 5056
   },
   {
     "name": "LATNW15",
+    "type": "WAYPOINT",
     "latitude": 35.722228333333334,
     "longitude": -115.94723,
     "elevation": 5423
   },
   {
     "name": "LATNW17",
+    "type": "WAYPOINT",
     "latitude": 36.41666583333333,
     "longitude": -116.66667516666666,
     "elevation": 2982
   },
   {
     "name": "LATNW18",
+    "type": "WAYPOINT",
     "latitude": 36.547225833333336,
     "longitude": -116.5999935,
     "elevation": 2349
   },
   {
     "name": "LATNW19",
+    "type": "WAYPOINT",
     "latitude": 36.750000666666665,
     "longitude": -116.87499233333334,
     "elevation": 3776
   },
   {
     "name": "LATNW2",
+    "type": "WAYPOINT",
     "latitude": 36.8500035,
     "longitude": -116.55834383333334,
     "elevation": 3576
   },
   {
     "name": "LATNW20",
+    "type": "WAYPOINT",
     "latitude": 37.02499983333333,
     "longitude": -116.87500416666667,
     "elevation": 4114
   },
   {
     "name": "LATNW21",
+    "type": "WAYPOINT",
     "latitude": 37.024991,
     "longitude": -117.20832633333333,
     "elevation": 5863
   },
   {
     "name": "LATNW22",
+    "type": "WAYPOINT",
     "latitude": 37.19861933333333,
     "longitude": -117.338884,
     "elevation": 6673
   },
   {
     "name": "LATNW3",
+    "type": "WAYPOINT",
     "latitude": 36.85000866666667,
     "longitude": -116.44167716666666,
     "elevation": 3944
   },
   {
     "name": "LATNW4",
+    "type": "WAYPOINT",
     "latitude": 36.6833365,
     "longitude": -116.4416755,
     "elevation": 2746
   },
   {
     "name": "LATNW5",
+    "type": "WAYPOINT",
     "latitude": 36.683339,
     "longitude": -116.24582866666667,
     "elevation": 3278
   },
   {
     "name": "LATNW7",
+    "type": "WAYPOINT",
     "latitude": 36.533325833333336,
     "longitude": -115.6638965,
     "elevation": 3812
   },
   {
     "name": "LATNW8",
+    "type": "WAYPOINT",
     "latitude": 36.566666833333336,
     "longitude": -115.59999383333333,
     "elevation": 3159
   },
   {
     "name": "LATNW9",
+    "type": "WAYPOINT",
     "latitude": 36.49999833333333,
     "longitude": -115.50000483333334,
     "elevation": 3199
   },
   {
     "name": "LATPE",
+    "type": "WAYPOINT",
     "latitude": 36.28686166666667,
     "longitude": -114.97701083333334,
     "elevation": 2146
   },
   {
     "name": "LEACH LAKE",
+    "type": "WAYPOINT",
     "latitude": 35.6252835,
     "longitude": -116.677777,
     "elevation": 2159
   },
   {
     "name": "LEEEE",
+    "type": "WAYPOINT",
     "latitude": 36.3161055,
     "longitude": -115.532776,
     "elevation": 7251
   },
   {
     "name": "LENIN.1",
+    "type": "WAYPOINT",
     "latitude": 37.75000333333333,
     "longitude": -117.29166366666666,
     "elevation": 5988
   },
   {
     "name": "LENIN.2",
+    "type": "WAYPOINT",
     "latitude": 37.749996,
     "longitude": -117.8333245,
     "elevation": 7654
   },
   {
     "name": "LIDAT",
+    "type": "WAYPOINT",
     "latitude": 37.43017433333333,
     "longitude": -117.27799633333333,
     "elevation": 4793
   },
   {
     "name": "LINUS.1",
+    "type": "WAYPOINT",
     "latitude": 36.035839833333334,
     "longitude": -116.85765966666666,
     "elevation": 75
   },
   {
     "name": "LINUS.2",
+    "type": "WAYPOINT",
     "latitude": 36.331335833333334,
     "longitude": -117.05750466666667,
     "elevation": 4341
   },
   {
     "name": "LOTUS",
+    "type": "WAYPOINT",
     "latitude": 37.26665883333333,
     "longitude": -114.99999416666667,
     "elevation": 4770
   },
   {
     "name": "LOZMO",
+    "type": "WAYPOINT",
     "latitude": 37.892956,
     "longitude": -116.82382683333333,
     "elevation": 5335
   },
   {
     "name": "LSV",
+    "type": "WAYPOINT",
     "latitude": 36.244642666666664,
     "longitude": -115.02511483333333,
     "elevation": 1886
   },
   {
     "name": "LUCIL",
+    "type": "WAYPOINT",
     "latitude": 35.979804666666666,
     "longitude": -115.307986,
     "elevation": 3281
   },
   {
     "name": "Labbe Camp",
+    "type": "TOWN",
     "latitude": 36.45079,
     "longitude": -116.05642,
     "elevation": 3678
   },
   {
     "name": "Lake Las Vegas",
+    "type": "TOWN",
     "latitude": 36.107874,
     "longitude": -114.924442,
     "elevation": 1414
   },
   {
     "name": "Laplace",
+    "type": "TOWN",
     "latitude": 37.086776,
     "longitude": -116.025913,
     "elevation": 4196
   },
   {
     "name": "Las Vegas",
+    "type": "TOWN",
     "latitude": 36.166286,
     "longitude": -115.149225,
     "elevation": 2034
   },
   {
     "name": "Lathrop Wells",
+    "type": "TOWN",
     "latitude": 36.643842,
     "longitude": -116.400325,
     "elevation": 2667
   },
   {
     "name": "Laughlin",
+    "type": "TOWN",
     "latitude": 35.167777,
     "longitude": -114.573021,
     "elevation": 554
   },
   {
     "name": "Lida",
+    "type": "TOWN",
     "latitude": 37.458265,
     "longitude": -117.498138,
     "elevation": 6191
   },
   {
     "name": "Lida Junction",
+    "type": "TOWN",
     "latitude": 37.502322,
     "longitude": -117.184597,
     "elevation": 4698
   },
   {
     "name": "Little Valley",
+    "type": "TOWN",
     "latitude": 37.063157,
     "longitude": -113.537139,
     "elevation": 2638
   },
   {
     "name": "LittleField",
+    "type": "TOWN",
     "latitude": 36.884514,
     "longitude": -113.932807,
     "elevation": 1890
   },
   {
     "name": "Logandale",
+    "type": "TOWN",
     "latitude": 36.596637,
     "longitude": -114.484155,
     "elevation": 1391
   },
   {
     "name": "Lovell",
+    "type": "TOWN",
     "latitude": 36.291359,
     "longitude": -115.043058,
     "elevation": 2116
   },
   {
     "name": "Luning",
+    "type": "TOWN",
     "latitude": 38.506315,
     "longitude": -118.181452,
     "elevation": 4485
   },
   {
     "name": "MAINE N",
+    "type": "WAYPOINT",
     "latitude": 37.79999733333333,
     "longitude": -114.9166655,
     "elevation": 5919
   },
   {
     "name": "MAKZI",
+    "type": "WAYPOINT",
     "latitude": 37.0083215,
     "longitude": -116.34499233333334,
     "elevation": 4452
   },
   {
     "name": "MCYNB",
+    "type": "WAYPOINT",
     "latitude": 36.62745233333333,
     "longitude": -116.02753083333333,
     "elevation": 3304
   },
   {
     "name": "MELLAN LZ",
+    "type": "WAYPOINT",
     "latitude": 37.684327,
     "longitude": -116.62365816666667,
     "elevation": 5400
   },
   {
     "name": "MESAE",
+    "type": "WAYPOINT",
     "latitude": 36.43416233333333,
     "longitude": -115.57167683333333,
     "elevation": 5282
   },
   {
     "name": "MIAMI",
+    "type": "WAYPOINT",
     "latitude": 37.2833385,
     "longitude": -114.84583133333334,
     "elevation": 5036
   },
   {
     "name": "MINTT",
+    "type": "WAYPOINT",
     "latitude": 36.71222183333333,
     "longitude": -115.10471816666667,
     "elevation": 5814
   },
   {
     "name": "MITEL",
+    "type": "WAYPOINT",
     "latitude": 36.685002833333336,
     "longitude": -118.58500116666667,
     "elevation": 8773
   },
   {
     "name": "MLF",
+    "type": "WAYPOINT",
     "latitude": 38.36035783333333,
     "longitude": -113.01323933333333,
     "elevation": 4987
   },
   {
     "name": "MMM",
+    "type": "WAYPOINT",
     "latitude": 36.76933783333333,
     "longitude": -114.27750266666666,
     "elevation": 2116
   },
   {
     "name": "MODME",
+    "type": "WAYPOINT",
     "latitude": 37.690872166666665,
     "longitude": -116.72544566666667,
     "elevation": 5646
   },
   {
     "name": "MOOSE",
+    "type": "WAYPOINT",
     "latitude": 37.61277483333333,
     "longitude": -114.07358983333333,
     "elevation": 6243
   },
   {
     "name": "MOPAR",
+    "type": "WAYPOINT",
     "latitude": 37.283328833333336,
     "longitude": -116.75000266666666,
     "elevation": 6424
   },
   {
     "name": "MORMON PEAK",
+    "type": "WAYPOINT",
     "latitude": 36.97397866666667,
     "longitude": -114.50164716666667,
     "elevation": 7356
   },
   {
     "name": "MT HELEN",
+    "type": "WAYPOINT",
     "latitude": 37.495994333333336,
     "longitude": -116.7428245,
     "elevation": 7093
   },
   {
     "name": "MT IRISH",
+    "type": "WAYPOINT",
     "latitude": 37.641663666666666,
     "longitude": -115.39997983333333,
     "elevation": 8415
   },
   {
     "name": "MUD LAKE",
+    "type": "WAYPOINT",
     "latitude": 37.883316,
     "longitude": -117.04999083333334,
     "elevation": 5174
   },
   {
     "name": "MULE",
+    "type": "WAYPOINT",
     "latitude": 38.19084183333333,
     "longitude": -114.84381783333333,
     "elevation": 5492
   },
   {
     "name": "MVA",
+    "type": "WAYPOINT",
     "latitude": 38.565337166666666,
     "longitude": -118.0328385,
     "elevation": 7825
   },
   {
     "name": "Mack",
+    "type": "TOWN",
     "latitude": 35.977835,
     "longitude": -115.172707,
     "elevation": 2405
   },
   {
     "name": "Manse",
+    "type": "TOWN",
     "latitude": 36.155165,
     "longitude": -115.902679,
     "elevation": 2776
   },
   {
     "name": "McCarran Airport",
+    "type": "TOWN",
     "latitude": 36.082081,
     "longitude": -115.150024,
     "elevation": 2123
   },
   {
     "name": "MeadowValleyWash",
+    "type": "TOWN",
     "latitude": 36.658967,
     "longitude": -114.623654,
     "elevation": 1634
   },
   {
     "name": "Mellan",
+    "type": "TOWN",
     "latitude": 37.71244,
     "longitude": -116.59478,
     "elevation": 5482
   },
   {
     "name": "Mercury",
+    "type": "TOWN",
     "latitude": 36.66051,
     "longitude": -115.994475,
     "elevation": 3809
   },
   {
     "name": "Mesquite",
+    "type": "TOWN",
     "latitude": 36.804009,
     "longitude": -114.068059,
     "elevation": 1608
   },
   {
     "name": "MesquiteCreek",
+    "type": "TOWN",
     "latitude": 34.966401,
     "longitude": -114.567241,
     "elevation": 577
   },
   {
     "name": "Middleton",
+    "type": "TOWN",
     "latitude": 37.114426,
     "longitude": -113.536624,
     "elevation": 2776
   },
   {
     "name": "Midway City",
+    "type": "TOWN",
     "latitude": 36.065587,
     "longitude": -115.004889,
     "elevation": 1660
   },
   {
     "name": "Millers",
+    "type": "TOWN",
     "latitude": 38.130504,
     "longitude": -117.458401,
     "elevation": 4862
   },
   {
     "name": "Mina",
+    "type": "TOWN",
     "latitude": 38.390411,
     "longitude": -118.10874,
     "elevation": 4567
   },
   {
     "name": "Mission Hills",
+    "type": "TOWN",
     "latitude": 35.994793,
     "longitude": -114.968469,
     "elevation": 2333
   },
   {
     "name": "Moapa",
+    "type": "TOWN",
     "latitude": 36.682189,
     "longitude": -114.594147,
     "elevation": 1614
   },
   {
     "name": "Moapa Valley",
+    "type": "TOWN",
     "latitude": 36.580531,
     "longitude": -114.470268,
     "elevation": 1348
   },
   {
     "name": "MohaveValley",
+    "type": "TOWN",
     "latitude": 34.914863,
     "longitude": -114.571586,
     "elevation": 482
   },
   {
     "name": "Montezuma",
+    "type": "TOWN",
     "latitude": 37.703821,
     "longitude": -117.368972,
     "elevation": 7090
   },
   {
     "name": "MormonPeak",
+    "type": "TOWN",
     "latitude": 36.717075,
     "longitude": -114.722555,
     "elevation": 1900
   },
   {
     "name": "Mount Charleston",
+    "type": "TOWN",
     "latitude": 36.257191,
     "longitude": -115.642799,
     "elevation": 7582
   },
   {
     "name": "Mountain Springs",
+    "type": "TOWN",
     "latitude": 36.018304,
     "longitude": -115.50699,
     "elevation": 5449
   },
   {
     "name": "Mountain's Edge",
+    "type": "TOWN",
     "latitude": 36.017276,
     "longitude": -115.272118,
     "elevation": 2707
   },
   {
     "name": "NEW MEXICO E",
+    "type": "WAYPOINT",
     "latitude": 36.81665566666667,
     "longitude": -115.66666716666667,
     "elevation": 3842
   },
   {
     "name": "NEW MEXICO W",
+    "type": "WAYPOINT",
     "latitude": 36.81667316666667,
     "longitude": -116.133324,
     "elevation": 4196
   },
   {
     "name": "NEW YORK",
+    "type": "WAYPOINT",
     "latitude": 37.633332333333335,
     "longitude": -114.91664916666667,
     "elevation": 5144
   },
   {
     "name": "NIXON",
+    "type": "WAYPOINT",
     "latitude": 36.5336185,
     "longitude": -115.53750116666667,
     "elevation": 3094
   },
   {
     "name": "NIXON PK",
+    "type": "WAYPOINT",
     "latitude": 37.878327166666665,
     "longitude": -116.47134783333334,
     "elevation": 7562
   },
   {
     "name": "NORTH GAP",
+    "type": "WAYPOINT",
     "latitude": 37.92283233333333,
     "longitude": -114.91448883333334,
     "elevation": 5318
   },
   {
     "name": "NUGGE",
+    "type": "WAYPOINT",
     "latitude": 37.13056366666667,
     "longitude": -114.8880595,
     "elevation": 5226
   },
   {
     "name": "Needles",
+    "type": "TOWN",
     "latitude": 34.846168,
     "longitude": -114.611751,
     "elevation": 489
   },
   {
     "name": "Nellis AFB",
+    "type": "TOWN",
     "latitude": 36.240329,
     "longitude": -115.045146,
     "elevation": 1877
   },
   {
     "name": "Nelson",
+    "type": "TOWN",
     "latitude": 35.708042,
     "longitude": -114.824701,
     "elevation": 2986
   },
   {
     "name": "North Las Vegas",
+    "type": "TOWN",
     "latitude": 36.200837,
     "longitude": -115.112096,
     "elevation": 1847
   },
   {
     "name": "Nyala",
+    "type": "TOWN",
     "latitude": 38.248825,
     "longitude": -115.728646,
     "elevation": 4833
   },
   {
     "name": "Nye",
+    "type": "TOWN",
     "latitude": 38.354484,
     "longitude": -116.406962,
     "elevation": 7566
   },
   {
     "name": "OAL",
+    "type": "WAYPOINT",
     "latitude": 38.00334316666667,
     "longitude": -117.770497,
     "elevation": 4806
   },
   {
     "name": "OLNIE",
+    "type": "WAYPOINT",
     "latitude": 36.583155166666664,
     "longitude": -114.91260716666666,
     "elevation": 2795
   },
   {
     "name": "ORANGE 1",
+    "type": "WAYPOINT",
     "latitude": 37.897203,
     "longitude": -114.30272983333333,
     "elevation": 5223
   },
   {
     "name": "ORANGE 2",
+    "type": "WAYPOINT",
     "latitude": 37.787632,
     "longitude": -114.31646216666667,
     "elevation": 5344
   },
   {
     "name": "ORANGE 3",
+    "type": "WAYPOINT",
     "latitude": 37.889301333333336,
     "longitude": -114.71836916666666,
     "elevation": 4777
   },
   {
     "name": "ORANGE 4",
+    "type": "WAYPOINT",
     "latitude": 37.31654183333333,
     "longitude": -114.95720383333334,
     "elevation": 4560
   },
   {
     "name": "ORANGE 5",
+    "type": "WAYPOINT",
     "latitude": 37.307561166666666,
     "longitude": -114.472753,
     "elevation": 3169
   },
   {
     "name": "ORANGE A",
+    "type": "WAYPOINT",
     "latitude": 37.79230533333333,
     "longitude": -114.419509,
     "elevation": 4846
   },
   {
     "name": "ORANGE B",
+    "type": "WAYPOINT",
     "latitude": 37.805411166666666,
     "longitude": -114.53663333333333,
     "elevation": 5515
   },
   {
     "name": "ORANGE C",
+    "type": "WAYPOINT",
     "latitude": 37.6080865,
     "longitude": -114.8506555,
     "elevation": 4843
   },
   {
     "name": "ORANGE D",
+    "type": "WAYPOINT",
     "latitude": 37.157159666666665,
     "longitude": -114.46956333333333,
     "elevation": 2664
   },
   {
     "name": "ORANGE E",
+    "type": "WAYPOINT",
     "latitude": 37.513504833333336,
     "longitude": -114.25157533333334,
     "elevation": 5344
   },
   {
     "name": "ORANGE F",
+    "type": "WAYPOINT",
     "latitude": 37.466599333333335,
     "longitude": -114.57475316666667,
     "elevation": 3888
   },
   {
     "name": "ORANGE G",
+    "type": "WAYPOINT",
     "latitude": 36.9916905,
     "longitude": -114.62465183333333,
     "elevation": 2172
   },
   {
     "name": "OREGON",
+    "type": "WAYPOINT",
     "latitude": 37.699997,
     "longitude": -116.78333333333333,
     "elevation": 6014
   },
   {
     "name": "OSRIE",
+    "type": "WAYPOINT",
     "latitude": 37.82181033333333,
     "longitude": -116.79289716666666,
     "elevation": 5456
   },
   {
     "name": "Overton",
+    "type": "TOWN",
     "latitude": 36.540734,
     "longitude": -114.442989,
     "elevation": 1276
   },
   {
     "name": "PALAE",
+    "type": "WAYPOINT",
     "latitude": 37.729743666666664,
     "longitude": -116.74421983333333,
     "elevation": 5623
   },
   {
     "name": "PEMVE",
+    "type": "WAYPOINT",
     "latitude": 37.901733166666666,
     "longitude": -116.83524883333334,
     "elevation": 5325
   },
   {
     "name": "PGS",
+    "type": "WAYPOINT",
     "latitude": 35.6246725,
     "longitude": -113.54449983333333,
     "elevation": 4774
   },
   {
     "name": "PHINN",
+    "type": "WAYPOINT",
     "latitude": 36.30719533333333,
     "longitude": -114.956785,
     "elevation": 2359
   },
   {
     "name": "PINE",
+    "type": "WAYPOINT",
     "latitude": 37.955159,
     "longitude": -113.9486585,
     "elevation": 6683
   },
   {
     "name": "PINNACLE",
+    "type": "WAYPOINT",
     "latitude": 37.83900783333333,
     "longitude": -116.45066016666667,
     "elevation": 6348
   },
   {
     "name": "PIPELINE",
+    "type": "WAYPOINT",
     "latitude": 37.7373295,
     "longitude": -116.14982783333333,
     "elevation": 5673
   },
   {
     "name": "PIUTE",
+    "type": "WAYPOINT",
     "latitude": 36.51139416666667,
     "longitude": -116.09472783333334,
     "elevation": 2818
   },
   {
     "name": "PLAZA",
+    "type": "WAYPOINT",
     "latitude": 36.723334333333334,
     "longitude": -114.8833355,
     "elevation": 3944
   },
   {
     "name": "POKER",
+    "type": "WAYPOINT",
     "latitude": 37.718501333333336,
     "longitude": -116.293166,
     "elevation": 6827
   },
   {
     "name": "PROSPECT",
+    "type": "WAYPOINT",
     "latitude": 37.85833733333333,
     "longitude": -116.4796755,
     "elevation": 6355
   },
   {
     "name": "Pahrump",
+    "type": "TOWN",
     "latitude": 36.208301,
     "longitude": -115.983913,
     "elevation": 2697
   },
   {
     "name": "Palm Gardens",
+    "type": "TOWN",
     "latitude": 35.198359,
     "longitude": -114.856716,
     "elevation": 2507
   },
   {
     "name": "Panaca",
+    "type": "TOWN",
     "latitude": 37.79052,
     "longitude": -114.389434,
     "elevation": 4754
   },
   {
     "name": "Paradise",
+    "type": "TOWN",
     "latitude": 36.115086,
     "longitude": -115.173414,
     "elevation": 2129
   },
   {
     "name": "Pioche",
+    "type": "TOWN",
     "latitude": 37.929685,
     "longitude": -114.452214,
     "elevation": 6096
   },
   {
     "name": "Plutonium Valley",
+    "type": "TOWN",
     "latitude": 37.005821,
     "longitude": -116.025618,
     "elevation": 3967
   },
   {
     "name": "Pony Springs",
+    "type": "TOWN",
     "latitude": 38.318845,
     "longitude": -114.606665,
     "elevation": 6158
   },
   {
     "name": "Primm",
+    "type": "TOWN",
     "latitude": 35.611588,
     "longitude": -115.385862,
     "elevation": 2625
   },
   {
     "name": "Pyramid Island",
+    "type": "TOWN",
     "latitude": 36.051646,
     "longitude": -114.802208,
     "elevation": 1220
   },
   {
     "name": "QUARTZITE MT",
+    "type": "WAYPOINT",
     "latitude": 37.516672166666666,
     "longitude": -116.32498183333334,
     "elevation": 7224
   },
   {
     "name": "QUEEN",
+    "type": "WAYPOINT",
     "latitude": 37.0786595,
     "longitude": -115.07267383333334,
     "elevation": 3612
   },
   {
     "name": "Queensridge",
+    "type": "TOWN",
     "latitude": 36.161121,
     "longitude": -115.302681,
     "elevation": 2841
   },
   {
     "name": "R63 TOWER",
+    "type": "WAYPOINT",
     "latitude": 36.61665683333333,
     "longitude": -115.50333866666666,
     "elevation": 3041
   },
   {
     "name": "R63.B-A",
+    "type": "WAYPOINT",
     "latitude": 36.6297945,
     "longitude": -115.49436116666666,
     "elevation": 3054
   },
   {
     "name": "R64 W CIRCLE",
+    "type": "WAYPOINT",
     "latitude": 36.6809125,
     "longitude": -115.67396083333334,
     "elevation": 3022
   },
   {
     "name": "RALEIGH",
+    "type": "WAYPOINT",
     "latitude": 37.44999383333333,
     "longitude": -114.55000433333333,
     "elevation": 5072
   },
   {
     "name": "RAMMM",
+    "type": "WAYPOINT",
     "latitude": 36.74999183333333,
     "longitude": -114.555556,
     "elevation": 2070
   },
   {
     "name": "REBEL",
+    "type": "WAYPOINT",
     "latitude": 37.8074895,
     "longitude": -116.28749066666667,
     "elevation": 6470
   },
   {
     "name": "RED 1",
+    "type": "WAYPOINT",
     "latitude": 36.74740516666667,
     "longitude": -115.88047816666666,
     "elevation": 4600
   },
   {
     "name": "RED 10",
+    "type": "WAYPOINT",
     "latitude": 36.42257816666667,
     "longitude": -115.73207566666666,
     "elevation": 6020
   },
   {
     "name": "RED 11",
+    "type": "WAYPOINT",
     "latitude": 37.12502683333334,
     "longitude": -115.13781716666666,
     "elevation": 4698
   },
   {
     "name": "RED 12",
+    "type": "WAYPOINT",
     "latitude": 36.922151,
     "longitude": -115.273794,
     "elevation": 3839
   },
   {
     "name": "RED 13",
+    "type": "WAYPOINT",
     "latitude": 36.87319466666667,
     "longitude": -115.208952,
     "elevation": 3793
   },
   {
     "name": "RED 14",
+    "type": "WAYPOINT",
     "latitude": 36.50609216666667,
     "longitude": -115.63749866666667,
     "elevation": 4915
   },
   {
     "name": "RED 15",
+    "type": "WAYPOINT",
     "latitude": 36.44682566666667,
     "longitude": -115.79631883333333,
     "elevation": 7008
   },
   {
     "name": "RED 16",
+    "type": "WAYPOINT",
     "latitude": 36.51148,
     "longitude": -115.73207866666667,
     "elevation": 5187
   },
   {
     "name": "RED 17",
+    "type": "WAYPOINT",
     "latitude": 37.0981235,
     "longitude": -115.272993,
     "elevation": 5115
   },
   {
     "name": "RED 2",
+    "type": "WAYPOINT",
     "latitude": 36.933085,
     "longitude": -115.80880266666667,
     "elevation": 4843
   },
   {
     "name": "RED 3",
+    "type": "WAYPOINT",
     "latitude": 36.702756,
     "longitude": -115.05213866666666,
     "elevation": 5131
   },
   {
     "name": "RED 4",
+    "type": "WAYPOINT",
     "latitude": 37.007019666666665,
     "longitude": -115.08628483333334,
     "elevation": 4465
   },
   {
     "name": "RED 5",
+    "type": "WAYPOINT",
     "latitude": 36.4643425,
     "longitude": -115.44475816666667,
     "elevation": 3163
   },
   {
     "name": "RED 6",
+    "type": "WAYPOINT",
     "latitude": 36.316676,
     "longitude": -115.52565866666667,
     "elevation": 6427
   },
   {
     "name": "RED 7",
+    "type": "WAYPOINT",
     "latitude": 36.1666625,
     "longitude": -115.57324483333333,
     "elevation": 6178
   },
   {
     "name": "RED 8",
+    "type": "WAYPOINT",
     "latitude": 36.1680055,
     "longitude": -115.60536266666666,
     "elevation": 6854
   },
   {
     "name": "RED 9",
+    "type": "WAYPOINT",
     "latitude": 36.9851975,
     "longitude": -115.74434933333333,
     "elevation": 5059
   },
   {
     "name": "RED A",
+    "type": "WAYPOINT",
     "latitude": 36.895876666666666,
     "longitude": -115.7113375,
     "elevation": 4882
   },
   {
     "name": "RED B",
+    "type": "WAYPOINT",
     "latitude": 36.771949,
     "longitude": -115.54538966666667,
     "elevation": 4636
   },
   {
     "name": "RED C",
+    "type": "WAYPOINT",
     "latitude": 36.675429,
     "longitude": -115.559653,
     "elevation": 4675
   },
   {
     "name": "RED D",
+    "type": "WAYPOINT",
     "latitude": 36.6042505,
     "longitude": -115.76755816666666,
     "elevation": 3842
   },
   {
     "name": "RED E",
+    "type": "WAYPOINT",
     "latitude": 36.96830383333333,
     "longitude": -115.5757095,
     "elevation": 4685
   },
   {
     "name": "RED F",
+    "type": "WAYPOINT",
     "latitude": 36.607288,
     "longitude": -115.3365725,
     "elevation": 5463
   },
   {
     "name": "RED G",
+    "type": "WAYPOINT",
     "latitude": 36.744948666666666,
     "longitude": -115.35353083333334,
     "elevation": 5095
   },
   {
     "name": "RED H",
+    "type": "WAYPOINT",
     "latitude": 36.7894835,
     "longitude": -115.31605533333334,
     "elevation": 4918
   },
   {
     "name": "RED I",
+    "type": "WAYPOINT",
     "latitude": 36.96425633333333,
     "longitude": -115.37495716666666,
     "elevation": 5092
   },
   {
     "name": "RED J",
+    "type": "WAYPOINT",
     "latitude": 36.8920505,
     "longitude": -115.32318566666666,
     "elevation": 4987
   },
   {
     "name": "RED18",
+    "type": "WAYPOINT",
     "latitude": 36.959547,
     "longitude": -115.334331,
     "elevation": 3402
   },
   {
     "name": "REVEILLE GAP",
+    "type": "WAYPOINT",
     "latitude": 38.10000616666667,
     "longitude": -114.9999945,
     "elevation": 5000
   },
   {
     "name": "REVEILLE PK",
+    "type": "WAYPOINT",
     "latitude": 37.8583345,
     "longitude": -116.133332,
     "elevation": 7959
   },
   {
     "name": "RGN.ALAMO",
+    "type": "WAYPOINT",
     "latitude": 37.5000085,
     "longitude": -115.43334783333333,
     "elevation": 6309
   },
   {
     "name": "RGN.CIVA",
+    "type": "WAYPOINT",
     "latitude": 38.03333133333334,
     "longitude": -115.45000316666666,
     "elevation": 5197
   },
   {
     "name": "RGN.CREECH",
+    "type": "WAYPOINT",
     "latitude": 36.633335333333335,
     "longitude": -115.8333425,
     "elevation": 4160
   },
   {
     "name": "RGN.HIWAY",
+    "type": "WAYPOINT",
     "latitude": 38.083345333333334,
     "longitude": -116.13333933333334,
     "elevation": 6093
   },
   {
     "name": "RGN.KTNX",
+    "type": "WAYPOINT",
     "latitude": 37.816679666666666,
     "longitude": -116.75003266666667,
     "elevation": 5404
   },
   {
     "name": "RGN.RANCH1",
+    "type": "WAYPOINT",
     "latitude": 37.049998,
     "longitude": -116.58333516666667,
     "elevation": 5016
   },
   {
     "name": "RGN.RANCH2",
+    "type": "WAYPOINT",
     "latitude": 36.94999716666667,
     "longitude": -116.549995,
     "elevation": 4783
   },
   {
     "name": "RICARDO CABA",
+    "type": "WAYPOINT",
     "latitude": 37.353823,
     "longitude": -116.72400183333333,
     "elevation": 5394
   },
   {
     "name": "ROCEN",
+    "type": "WAYPOINT",
     "latitude": 38.07432466666667,
     "longitude": -116.90296283333333,
     "elevation": 6306
   },
   {
     "name": "ROCK",
+    "type": "WAYPOINT",
     "latitude": 37.732505833333335,
     "longitude": -116.06850333333334,
     "elevation": 5630
   },
   {
     "name": "ROCKX",
+    "type": "WAYPOINT",
     "latitude": 36.21363916666667,
     "longitude": -115.05954316666667,
     "elevation": 1837
   },
   {
     "name": "ROMOF",
+    "type": "WAYPOINT",
     "latitude": 35.816661333333336,
     "longitude": -118.585,
     "elevation": 6526
   },
   {
     "name": "RONKY",
+    "type": "WAYPOINT",
     "latitude": 36.655519166666664,
     "longitude": -114.93515316666667,
     "elevation": 3136
   },
   {
     "name": "ROSIE",
+    "type": "WAYPOINT",
     "latitude": 34.851671,
     "longitude": -118.206672,
     "elevation": 2356
   },
   {
     "name": "ROTSE",
+    "type": "WAYPOINT",
     "latitude": 36.33375133333333,
     "longitude": -114.92601233333333,
     "elevation": 2457
   },
   {
     "name": "RUDII",
+    "type": "WAYPOINT",
     "latitude": 37.722136666666664,
     "longitude": -116.74020633333333,
     "elevation": 5623
   },
   {
     "name": "RYAAN",
+    "type": "WAYPOINT",
     "latitude": 36.33926266666667,
     "longitude": -115.09061233333334,
     "elevation": 2815
   },
   {
     "name": "Rachel",
+    "type": "TOWN",
     "latitude": 37.644333,
     "longitude": -115.744743,
     "elevation": 4836
   },
   {
     "name": "RainierMountain",
+    "type": "TOWN",
     "latitude": 38.489207,
     "longitude": -117.424881,
     "elevation": 5958
   },
   {
     "name": "Ralston",
+    "type": "TOWN",
     "latitude": 37.556044,
     "longitude": -117.152852,
     "elevation": 4760
   },
   {
     "name": "Rhyolite",
+    "type": "TOWN",
     "latitude": 36.903824,
     "longitude": -116.828884,
     "elevation": 3819
   },
   {
     "name": "Ridgebrook",
+    "type": "TOWN",
     "latitude": 36.124761,
     "longitude": -115.333778,
     "elevation": 2907
   },
   {
     "name": "Ripley",
+    "type": "TOWN",
     "latitude": 35.798031,
     "longitude": -115.601671,
     "elevation": 2635
   },
   {
     "name": "Riverside",
+    "type": "TOWN",
     "latitude": 36.736085,
     "longitude": -114.220527,
     "elevation": 1444
   },
   {
     "name": "Rose Valley",
+    "type": "TOWN",
     "latitude": 37.938018,
     "longitude": -114.252484,
     "elevation": 5407
   },
   {
     "name": "Round Mountain",
+    "type": "TOWN",
     "latitude": 38.711574,
     "longitude": -117.066021,
     "elevation": 6430
   },
   {
     "name": "Rox",
+    "type": "TOWN",
     "latitude": 36.880803,
     "longitude": -114.667216,
     "elevation": 1906
   },
   {
     "name": "Ruppes Place",
+    "type": "TOWN",
     "latitude": 38.754111,
     "longitude": -115.060571,
     "elevation": 5433
   },
   {
     "name": "SALEM",
+    "type": "WAYPOINT",
     "latitude": 37.749992,
     "longitude": -116.6666655,
     "elevation": 5410
   },
   {
     "name": "SAN DIEGO",
+    "type": "WAYPOINT",
     "latitude": 37.49999533333333,
     "longitude": -116.66665983333333,
     "elevation": 5650
   },
   {
     "name": "SAND",
+    "type": "WAYPOINT",
     "latitude": 37.802331833333334,
     "longitude": -116.053008,
     "elevation": 5354
   },
   {
     "name": "SARAH",
+    "type": "WAYPOINT",
     "latitude": 36.60747383333333,
     "longitude": -115.30056783333333,
     "elevation": 5748
   },
   {
     "name": "SEAMAN WSH A",
+    "type": "WAYPOINT",
     "latitude": 37.85278016666667,
     "longitude": -115.22944983333333,
     "elevation": 5003
   },
   {
     "name": "SEAMAN WSH B",
+    "type": "WAYPOINT",
     "latitude": 37.828613833333335,
     "longitude": -115.20945083333334,
     "elevation": 5075
   },
   {
     "name": "SEATTLE",
+    "type": "WAYPOINT",
     "latitude": 37.8833415,
     "longitude": -116.66665666666667,
     "elevation": 5558
   },
   {
     "name": "SECRT",
+    "type": "WAYPOINT",
     "latitude": 36.3361085,
     "longitude": -115.2681235,
     "elevation": 2497
   },
   {
     "name": "SESDE",
+    "type": "WAYPOINT",
     "latitude": 36.251193666666666,
     "longitude": -115.01572416666667,
     "elevation": 1890
   },
   {
     "name": "SHAR.1",
+    "type": "WAYPOINT",
     "latitude": 36.80000483333333,
     "longitude": -114.93334166666666,
     "elevation": 2395
   },
   {
     "name": "SHAR.2",
+    "type": "WAYPOINT",
     "latitude": 37.036661,
     "longitude": -114.983335,
     "elevation": 2631
   },
   {
     "name": "SHEET",
+    "type": "WAYPOINT",
     "latitude": 36.40887216666667,
     "longitude": -114.84418683333334,
     "elevation": 2365
   },
   {
     "name": "SHOWW",
+    "type": "WAYPOINT",
     "latitude": 36.5708425,
     "longitude": -116.0377855,
     "elevation": 3389
   },
   {
     "name": "SIMNS",
+    "type": "WAYPOINT",
     "latitude": 36.288877,
     "longitude": -115.17915666666667,
     "elevation": 2257
   },
   {
     "name": "ST LOUIS",
+    "type": "WAYPOINT",
     "latitude": 37.7500065,
     "longitude": -115.0666585,
     "elevation": 4715
   },
   {
     "name": "STOFF",
+    "type": "WAYPOINT",
     "latitude": 37.418490166666665,
     "longitude": -116.54181616666666,
     "elevation": 5180
   },
   {
     "name": "STONEWALL",
+    "type": "WAYPOINT",
     "latitude": 37.49999533333333,
     "longitude": -117.04999433333333,
     "elevation": 7182
   },
   {
     "name": "STRIP",
+    "type": "WAYPOINT",
     "latitude": 36.34334316666666,
     "longitude": -115.2747155,
     "elevation": 2530
   },
   {
     "name": "STRYK",
+    "type": "WAYPOINT",
     "latitude": 36.42694783333334,
     "longitude": -115.51166266666667,
     "elevation": 4633
   },
   {
     "name": "STUCKEYS PEAKK",
+    "type": "WAYPOINT",
     "latitude": 37.066664,
     "longitude": -114.7333265,
     "elevation": 3885
   },
   {
     "name": "STUDENT GAP",
+    "type": "WAYPOINT",
     "latitude": 37.612223,
     "longitude": -114.9649885,
     "elevation": 4974
   },
   {
     "name": "SUMNER SPR",
+    "type": "WAYPOINT",
     "latitude": 37.773998166666665,
     "longitude": -116.29066233333333,
     "elevation": 6699
   },
   {
     "name": "SW.A",
+    "type": "WAYPOINT",
     "latitude": 35.64583183333333,
     "longitude": -118.48233516666667,
     "elevation": 2602
   },
   {
     "name": "SW.B",
+    "type": "WAYPOINT",
     "latitude": 36.055918166666665,
     "longitude": -118.48432716666667,
     "elevation": 5072
   },
   {
     "name": "SW.C",
+    "type": "WAYPOINT",
     "latitude": 36.412341,
     "longitude": -118.00949733333333,
     "elevation": 3599
   },
   {
     "name": "SW.D",
+    "type": "WAYPOINT",
     "latitude": 36.5934965,
     "longitude": -117.9755085,
     "elevation": 3671
   },
   {
     "name": "SW.E",
+    "type": "WAYPOINT",
     "latitude": 37.048005833333335,
     "longitude": -118.2131765,
     "elevation": 3885
   },
   {
     "name": "SW.F",
+    "type": "WAYPOINT",
     "latitude": 37.15300233333333,
     "longitude": -117.7698355,
     "elevation": 2963
   },
   {
     "name": "SW.G",
+    "type": "WAYPOINT",
     "latitude": 37.03616566666667,
     "longitude": -117.61817483333333,
     "elevation": 4774
   },
   {
     "name": "SW.H",
+    "type": "WAYPOINT",
     "latitude": 36.799175,
     "longitude": -117.761493,
     "elevation": 1404
   },
   {
     "name": "SW.I",
+    "type": "WAYPOINT",
     "latitude": 36.514002166666664,
     "longitude": -117.56749216666667,
     "elevation": 6099
   },
   {
     "name": "SW.J",
+    "type": "WAYPOINT",
     "latitude": 36.344825166666666,
     "longitude": -117.351328,
     "elevation": 2116
   },
   {
     "name": "SW.K",
+    "type": "WAYPOINT",
     "latitude": 35.65566,
     "longitude": -117.36033716666667,
     "elevation": 1650
   },
   {
     "name": "SW.L",
+    "type": "WAYPOINT",
     "latitude": 35.61015783333333,
     "longitude": -117.52600483333333,
     "elevation": 2520
   },
   {
     "name": "SW.M",
+    "type": "WAYPOINT",
     "latitude": 35.42333216666667,
     "longitude": -117.67199916666667,
     "elevation": 2795
   },
   {
     "name": "SWOOP",
+    "type": "WAYPOINT",
     "latitude": 36.316675,
     "longitude": -118.584995,
     "elevation": 8553
   },
   {
     "name": "Saddle Island",
+    "type": "TOWN",
     "latitude": 36.069145,
     "longitude": -114.801097,
     "elevation": 1424
   },
   {
     "name": "Sand Island",
+    "type": "TOWN",
     "latitude": 36.110255,
     "longitude": -114.818322,
     "elevation": 1220
   },
   {
     "name": "Sandy Mill",
+    "type": "TOWN",
     "latitude": 35.804142,
     "longitude": -115.605005,
     "elevation": 2638
   },
   {
     "name": "Sandy Valley",
+    "type": "TOWN",
     "latitude": 35.816923,
     "longitude": -115.632233,
     "elevation": 2644
   },
   {
     "name": "Santa Clara",
+    "type": "TOWN",
     "latitude": 37.133036,
     "longitude": -113.654127,
     "elevation": 2785
   },
   {
     "name": "Searchlight",
+    "type": "TOWN",
     "latitude": 35.465186,
     "longitude": -114.919112,
     "elevation": 3556
   },
   {
     "name": "Sentinel Island",
+    "type": "TOWN",
     "latitude": 36.056647,
     "longitude": -114.744984,
     "elevation": 1329
   },
   {
     "name": "Seven Hills",
+    "type": "TOWN",
     "latitude": 35.980531,
     "longitude": -115.117204,
     "elevation": 2503
   },
   {
     "name": "Shem",
+    "type": "TOWN",
     "latitude": 37.191645,
     "longitude": -113.768854,
     "elevation": 3258
   },
   {
     "name": "Shivwits",
+    "type": "TOWN",
     "latitude": 37.18109,
     "longitude": -113.757465,
     "elevation": 3222
   },
   {
     "name": "Shoshone Mountain",
+    "type": "TOWN",
     "latitude": 36.995315,
     "longitude": -116.21376,
     "elevation": 5971
   },
   {
     "name": "Siena",
+    "type": "TOWN",
     "latitude": 36.107982,
     "longitude": -115.321934,
     "elevation": 2792
   },
   {
     "name": "Sierra Vista City",
+    "type": "TOWN",
     "latitude": 36.060574,
     "longitude": -115.006541,
     "elevation": 1686
   },
   {
     "name": "Silver Peak",
+    "type": "TOWN",
     "latitude": 37.755278,
     "longitude": -117.634177,
     "elevation": 4327
   },
   {
     "name": "Sinik",
+    "type": "TOWN",
     "latitude": 36.779553,
     "longitude": -114.004749,
     "elevation": 1903
   },
   {
     "name": "Sloan",
+    "type": "TOWN",
     "latitude": 35.941234,
     "longitude": -115.2165,
     "elevation": 2805
   },
   {
     "name": "Sodaville",
+    "type": "TOWN",
     "latitude": 38.341018,
     "longitude": -118.10285,
     "elevation": 4649
   },
   {
     "name": "Spring Valley",
+    "type": "TOWN",
     "latitude": 36.111142,
     "longitude": -115.242869,
     "elevation": 2359
   },
   {
     "name": "St. George",
+    "type": "TOWN",
     "latitude": 37.104153,
     "longitude": -113.584131,
     "elevation": 2707
   },
   {
     "name": "Stewart Mill",
+    "type": "TOWN",
     "latitude": 37.4236,
     "longitude": -117.468525,
     "elevation": 5732
   },
   {
     "name": "Stewarts Point",
+    "type": "TOWN",
     "latitude": 36.380534,
     "longitude": -114.407754,
     "elevation": 1286
   },
   {
     "name": "Strawberry Hill",
+    "type": "TOWN",
     "latitude": 37.619965,
     "longitude": -114.513327,
     "elevation": 4409
   },
   {
     "name": "Summerlin",
+    "type": "TOWN",
     "latitude": 36.191317,
     "longitude": -115.301861,
     "elevation": 2753
   },
   {
     "name": "Summerlin South",
+    "type": "TOWN",
     "latitude": 36.141031,
     "longitude": -115.329198,
     "elevation": 2959
   },
   {
     "name": "Sun City Summerlin",
+    "type": "TOWN",
     "latitude": 36.213422,
     "longitude": -115.317787,
     "elevation": 2815
   },
   {
     "name": "Sundown",
+    "type": "TOWN",
     "latitude": 37.635081,
     "longitude": -115.806882,
     "elevation": 4849
   },
   {
     "name": "Sunnyside",
+    "type": "TOWN",
     "latitude": 38.423284,
     "longitude": -115.021124,
     "elevation": 5308
   },
   {
     "name": "Sunrise",
+    "type": "TOWN",
     "latitude": 36.188514,
     "longitude": -115.062977,
     "elevation": 1785
   },
   {
     "name": "T61.01",
+    "type": "WAYPOINT",
     "latitude": 37.1595645,
     "longitude": -115.426247,
     "elevation": 3819
   },
   {
     "name": "T61.03",
+    "type": "WAYPOINT",
     "latitude": 37.15144166666666,
     "longitude": -115.39186916666667,
     "elevation": 3780
   },
   {
     "name": "T62.01",
+    "type": "WAYPOINT",
     "latitude": 36.9308845,
     "longitude": -115.45711116666666,
     "elevation": 3425
   },
   {
     "name": "T62.02",
+    "type": "WAYPOINT",
     "latitude": 36.9180855,
     "longitude": -115.43099966666666,
     "elevation": 3458
   },
   {
     "name": "T62.04",
+    "type": "WAYPOINT",
     "latitude": 36.89666233333333,
     "longitude": -115.451078,
     "elevation": 3432
   },
   {
     "name": "T62.08",
+    "type": "WAYPOINT",
     "latitude": 36.845327,
     "longitude": -115.45158733333334,
     "elevation": 3422
   },
   {
     "name": "T62.09",
+    "type": "WAYPOINT",
     "latitude": 36.81936616666667,
     "longitude": -115.459824,
     "elevation": 3458
   },
   {
     "name": "T62.11",
+    "type": "WAYPOINT",
     "latitude": 36.788047666666664,
     "longitude": -115.444235,
     "elevation": 3481
   },
   {
     "name": "T62.12",
+    "type": "WAYPOINT",
     "latitude": 36.788217,
     "longitude": -115.4385945,
     "elevation": 3514
   },
   {
     "name": "T62.13",
+    "type": "WAYPOINT",
     "latitude": 36.78787233333333,
     "longitude": -115.44048416666666,
     "elevation": 3510
   },
   {
     "name": "T62.14",
+    "type": "WAYPOINT",
     "latitude": 36.78900566666667,
     "longitude": -115.44926983333333,
     "elevation": 3468
   },
   {
     "name": "T62.21",
+    "type": "WAYPOINT",
     "latitude": 36.787011,
     "longitude": -115.44699033333333,
     "elevation": 3481
   },
   {
     "name": "T62.22",
+    "type": "WAYPOINT",
     "latitude": 36.7846385,
     "longitude": -115.44684766666667,
     "elevation": 3494
   },
   {
     "name": "T62.31",
+    "type": "WAYPOINT",
     "latitude": 36.785844166666664,
     "longitude": -115.4529085,
     "elevation": 3474
   },
   {
     "name": "T62.32",
+    "type": "WAYPOINT",
     "latitude": 36.77427266666667,
     "longitude": -115.451001,
     "elevation": 3491
   },
   {
     "name": "T62.41",
+    "type": "WAYPOINT",
     "latitude": 36.778450166666666,
     "longitude": -115.443723,
     "elevation": 3504
   },
   {
     "name": "T62.42",
+    "type": "WAYPOINT",
     "latitude": 36.77678,
     "longitude": -115.44489966666667,
     "elevation": 3501
   },
   {
     "name": "T62.43",
+    "type": "WAYPOINT",
     "latitude": 36.77595566666667,
     "longitude": -115.44942083333333,
     "elevation": 3491
   },
   {
     "name": "T62.44",
+    "type": "WAYPOINT",
     "latitude": 36.7785865,
     "longitude": -115.44587166666666,
     "elevation": 3507
   },
   {
     "name": "T62.45",
+    "type": "WAYPOINT",
     "latitude": 36.779831,
     "longitude": -115.4466085,
     "elevation": 3497
   },
   {
     "name": "T62.51",
+    "type": "WAYPOINT",
     "latitude": 36.783776333333336,
     "longitude": -115.4443325,
     "elevation": 3501
   },
   {
     "name": "T62.52",
+    "type": "WAYPOINT",
     "latitude": 36.782840666666665,
     "longitude": -115.44515816666667,
     "elevation": 3501
   },
   {
     "name": "T62.53",
+    "type": "WAYPOINT",
     "latitude": 36.78057666666667,
     "longitude": -115.44504716666667,
     "elevation": 3491
   },
   {
     "name": "T62.54",
+    "type": "WAYPOINT",
     "latitude": 36.781289,
     "longitude": -115.4443715,
     "elevation": 3501
   },
   {
     "name": "T62.55",
+    "type": "WAYPOINT",
     "latitude": 36.782098166666664,
     "longitude": -115.443526,
     "elevation": 3507
   },
   {
     "name": "T62.56",
+    "type": "WAYPOINT",
     "latitude": 36.78103983333333,
     "longitude": -115.4460015,
     "elevation": 3497
   },
   {
     "name": "T62.61",
+    "type": "WAYPOINT",
     "latitude": 36.78251566666667,
     "longitude": -115.44167983333334,
     "elevation": 3507
   },
   {
     "name": "T62.62",
+    "type": "WAYPOINT",
     "latitude": 36.781102833333335,
     "longitude": -115.44253766666667,
     "elevation": 3507
   },
   {
     "name": "T62.63",
+    "type": "WAYPOINT",
     "latitude": 36.78126983333333,
     "longitude": -115.44084216666667,
     "elevation": 3510
   },
   {
     "name": "T62.71",
+    "type": "WAYPOINT",
     "latitude": 36.780567166666664,
     "longitude": -115.44087883333333,
     "elevation": 3517
   },
   {
     "name": "T62.72",
+    "type": "WAYPOINT",
     "latitude": 36.780457166666665,
     "longitude": -115.44211366666667,
     "elevation": 3510
   },
   {
     "name": "T62.73",
+    "type": "WAYPOINT",
     "latitude": 36.7805385,
     "longitude": -115.4435015,
     "elevation": 3507
   },
   {
     "name": "T62.74",
+    "type": "WAYPOINT",
     "latitude": 36.780066,
     "longitude": -115.442525,
     "elevation": 3504
   },
   {
     "name": "T62.75",
+    "type": "WAYPOINT",
     "latitude": 36.779826166666666,
     "longitude": -115.44348233333334,
     "elevation": 3510
   },
   {
     "name": "T62.76",
+    "type": "WAYPOINT",
     "latitude": 36.779798666666665,
     "longitude": -115.442071,
     "elevation": 3514
   },
   {
     "name": "T62.77",
+    "type": "WAYPOINT",
     "latitude": 36.779509166666664,
     "longitude": -115.44060883333333,
     "elevation": 3520
   },
   {
     "name": "T62.78",
+    "type": "WAYPOINT",
     "latitude": 36.77892516666667,
     "longitude": -115.442817,
     "elevation": 3514
   },
   {
     "name": "T62.79",
+    "type": "WAYPOINT",
     "latitude": 36.777640166666664,
     "longitude": -115.44174483333333,
     "elevation": 3517
   },
   {
     "name": "T62.81",
+    "type": "WAYPOINT",
     "latitude": 36.7738575,
     "longitude": -115.44336766666666,
     "elevation": 3504
   },
   {
     "name": "T62.83",
+    "type": "WAYPOINT",
     "latitude": 36.776818,
     "longitude": -115.44298283333333,
     "elevation": 3514
   },
   {
     "name": "T62.91",
+    "type": "WAYPOINT",
     "latitude": 36.771559333333336,
     "longitude": -115.43584,
     "elevation": 3527
   },
   {
     "name": "T62.92",
+    "type": "WAYPOINT",
     "latitude": 36.77251866666667,
     "longitude": -115.43818466666667,
     "elevation": 3507
   },
   {
     "name": "T62.93",
+    "type": "WAYPOINT",
     "latitude": 36.776008,
     "longitude": -115.4416995,
     "elevation": 3504
   },
   {
     "name": "T63.02",
+    "type": "WAYPOINT",
     "latitude": 36.598872166666666,
     "longitude": -115.5199595,
     "elevation": 3038
   },
   {
     "name": "T63.03",
+    "type": "WAYPOINT",
     "latitude": 36.60345233333334,
     "longitude": -115.5012795,
     "elevation": 3035
   },
   {
     "name": "T63.05",
+    "type": "WAYPOINT",
     "latitude": 36.59194433333333,
     "longitude": -115.5015245,
     "elevation": 3025
   },
   {
     "name": "T63.10",
+    "type": "WAYPOINT",
     "latitude": 36.66283816666667,
     "longitude": -115.48640033333334,
     "elevation": 3120
   },
   {
     "name": "T63.12",
+    "type": "WAYPOINT",
     "latitude": 36.6140475,
     "longitude": -115.52322516666666,
     "elevation": 3048
   },
   {
     "name": "T64.",
+    "type": "WAYPOINT",
     "latitude": 36.917969166666666,
     "longitude": -115.637783,
     "elevation": 3488
   },
   {
     "name": "T64.05",
+    "type": "WAYPOINT",
     "latitude": 36.688060666666665,
     "longitude": -115.63644383333333,
     "elevation": 3018
   },
   {
     "name": "T64.13",
+    "type": "WAYPOINT",
     "latitude": 36.825059,
     "longitude": -115.62959883333333,
     "elevation": 3054
   },
   {
     "name": "T64.14",
+    "type": "WAYPOINT",
     "latitude": 36.8207145,
     "longitude": -115.62104316666667,
     "elevation": 3048
   },
   {
     "name": "T64.17",
+    "type": "WAYPOINT",
     "latitude": 36.80952333333333,
     "longitude": -115.6206385,
     "elevation": 3045
   },
   {
     "name": "T65.01",
+    "type": "WAYPOINT",
     "latitude": 36.688795,
     "longitude": -115.79475166666667,
     "elevation": 3963
   },
   {
     "name": "T65.02",
+    "type": "WAYPOINT",
     "latitude": 36.687762166666666,
     "longitude": -115.78095616666667,
     "elevation": 3934
   },
   {
     "name": "T65.04",
+    "type": "WAYPOINT",
     "latitude": 36.73325833333333,
     "longitude": -115.75149983333333,
     "elevation": 4560
   },
   {
     "name": "T65.05",
+    "type": "WAYPOINT",
     "latitude": 36.74018316666667,
     "longitude": -115.746538,
     "elevation": 4649
   },
   {
     "name": "T65.06",
+    "type": "WAYPOINT",
     "latitude": 36.727764,
     "longitude": -115.80279933333334,
     "elevation": 4295
   },
   {
     "name": "T65.08",
+    "type": "WAYPOINT",
     "latitude": 36.788499333333334,
     "longitude": -115.746547,
     "elevation": 4478
   },
   {
     "name": "T65.10",
+    "type": "WAYPOINT",
     "latitude": 36.6975765,
     "longitude": -115.9089405,
     "elevation": 4249
   },
   {
     "name": "T65.11",
+    "type": "WAYPOINT",
     "latitude": 36.69654583333333,
     "longitude": -115.80712316666667,
     "elevation": 4058
   },
   {
     "name": "T66.01",
+    "type": "WAYPOINT",
     "latitude": 35.58134733333333,
     "longitude": -116.70652866666667,
     "elevation": 1959
   },
   {
     "name": "T66.02",
+    "type": "WAYPOINT",
     "latitude": 35.580459833333336,
     "longitude": -116.7239265,
     "elevation": 2051
   },
   {
     "name": "T66.03",
+    "type": "WAYPOINT",
     "latitude": 35.5711775,
     "longitude": -116.7553775,
     "elevation": 2418
   },
   {
     "name": "T66.04",
+    "type": "WAYPOINT",
     "latitude": 35.5705875,
     "longitude": -116.776535,
     "elevation": 2661
   },
   {
     "name": "T66.05",
+    "type": "WAYPOINT",
     "latitude": 35.569266999999996,
     "longitude": -116.789296,
     "elevation": 2815
   },
   {
     "name": "T66.06",
+    "type": "WAYPOINT",
     "latitude": 35.5852315,
     "longitude": -116.82036983333333,
     "elevation": 3107
   },
   {
     "name": "T66.07",
+    "type": "WAYPOINT",
     "latitude": 35.5798415,
     "longitude": -116.82782083333333,
     "elevation": 2982
   },
   {
     "name": "T66.08",
+    "type": "WAYPOINT",
     "latitude": 35.57762966666667,
     "longitude": -116.8529895,
     "elevation": 3081
   },
   {
     "name": "T66.09",
+    "type": "WAYPOINT",
     "latitude": 35.5668685,
     "longitude": -116.8568715,
     "elevation": 3212
   },
   {
     "name": "T71.03",
+    "type": "WAYPOINT",
     "latitude": 37.61682183333333,
     "longitude": -117.00438516666667,
     "elevation": 4639
   },
   {
     "name": "T71.07",
+    "type": "WAYPOINT",
     "latitude": 37.63247233333333,
     "longitude": -116.911791,
     "elevation": 4741
   },
   {
     "name": "T71.08",
+    "type": "WAYPOINT",
     "latitude": 37.61504883333333,
     "longitude": -116.93977633333333,
     "elevation": 4724
   },
   {
     "name": "T71.09",
+    "type": "WAYPOINT",
     "latitude": 37.6002865,
     "longitude": -116.94308483333333,
     "elevation": 4734
   },
   {
     "name": "T71.12",
+    "type": "WAYPOINT",
     "latitude": 37.6653005,
     "longitude": -116.9429785,
     "elevation": 4780
   },
   {
     "name": "T71.13",
+    "type": "WAYPOINT",
     "latitude": 37.5980395,
     "longitude": -116.9227295,
     "elevation": 4813
   },
   {
     "name": "T71.14",
+    "type": "WAYPOINT",
     "latitude": 37.59565283333333,
     "longitude": -116.92568866666667,
     "elevation": 4813
   },
   {
     "name": "T71.21",
+    "type": "WAYPOINT",
     "latitude": 37.585617,
     "longitude": -116.93447666666667,
     "elevation": 4800
   },
   {
     "name": "T71.22",
+    "type": "WAYPOINT",
     "latitude": 37.5909275,
     "longitude": -116.92228383333334,
     "elevation": 4823
   },
   {
     "name": "T71.23",
+    "type": "WAYPOINT",
     "latitude": 37.595108,
     "longitude": -116.90729266666666,
     "elevation": 4875
   },
   {
     "name": "T71.24",
+    "type": "WAYPOINT",
     "latitude": 37.5806875,
     "longitude": -116.9213545,
     "elevation": 4843
   },
   {
     "name": "T71.25",
+    "type": "WAYPOINT",
     "latitude": 37.58257233333333,
     "longitude": -116.91011716666667,
     "elevation": 4875
   },
   {
     "name": "T71.26",
+    "type": "WAYPOINT",
     "latitude": 37.585315,
     "longitude": -116.9020155,
     "elevation": 4915
   },
   {
     "name": "T74.01",
+    "type": "WAYPOINT",
     "latitude": 37.4882915,
     "longitude": -116.22827516666666,
     "elevation": 5331
   },
   {
     "name": "T74.04",
+    "type": "WAYPOINT",
     "latitude": 37.40673966666667,
     "longitude": -116.234231,
     "elevation": 5423
   },
   {
     "name": "T74.06",
+    "type": "WAYPOINT",
     "latitude": 37.511820666666665,
     "longitude": -116.25415933333333,
     "elevation": 5390
   },
   {
     "name": "T74.08",
+    "type": "WAYPOINT",
     "latitude": 37.49240416666667,
     "longitude": -116.24542733333334,
     "elevation": 5328
   },
   {
     "name": "T74.11",
+    "type": "WAYPOINT",
     "latitude": 37.453745833333336,
     "longitude": -116.256896,
     "elevation": 5413
   },
   {
     "name": "T74.21",
+    "type": "WAYPOINT",
     "latitude": 37.60586683333333,
     "longitude": -116.17954733333333,
     "elevation": 5568
   },
   {
     "name": "T74.25",
+    "type": "WAYPOINT",
     "latitude": 37.458403,
     "longitude": -116.22971316666667,
     "elevation": 5351
   },
   {
     "name": "T74.26",
+    "type": "WAYPOINT",
     "latitude": 37.55775533333333,
     "longitude": -116.24744066666666,
     "elevation": 5545
   },
   {
     "name": "T74.27",
+    "type": "WAYPOINT",
     "latitude": 37.5740055,
     "longitude": -116.21273783333334,
     "elevation": 5456
   },
   {
     "name": "T74.29",
+    "type": "WAYPOINT",
     "latitude": 37.54148883333333,
     "longitude": -116.2578145,
     "elevation": 5538
   },
   {
     "name": "T74.30",
+    "type": "WAYPOINT",
     "latitude": 37.5275435,
     "longitude": -116.22255183333333,
     "elevation": 5348
   },
   {
     "name": "T74.32",
+    "type": "WAYPOINT",
     "latitude": 37.4788635,
     "longitude": -116.1905855,
     "elevation": 5381
   },
   {
     "name": "T74.33",
+    "type": "WAYPOINT",
     "latitude": 37.49356616666667,
     "longitude": -116.142282,
     "elevation": 5804
   },
   {
     "name": "T74.36",
+    "type": "WAYPOINT",
     "latitude": 37.61709783333333,
     "longitude": -116.18744616666666,
     "elevation": 5548
   },
   {
     "name": "T74.42",
+    "type": "WAYPOINT",
     "latitude": 37.5629825,
     "longitude": -116.14538183333333,
     "elevation": 5820
   },
   {
     "name": "T75.03",
+    "type": "WAYPOINT",
     "latitude": 37.4093,
     "longitude": -116.56672033333334,
     "elevation": 5220
   },
   {
     "name": "T75.04",
+    "type": "WAYPOINT",
     "latitude": 37.471431833333334,
     "longitude": -116.42339266666667,
     "elevation": 5105
   },
   {
     "name": "T75.06",
+    "type": "WAYPOINT",
     "latitude": 37.4658815,
     "longitude": -116.5118995,
     "elevation": 5135
   },
   {
     "name": "T75.08",
+    "type": "WAYPOINT",
     "latitude": 37.46147083333334,
     "longitude": -116.52440033333333,
     "elevation": 5154
   },
   {
     "name": "T75.10",
+    "type": "WAYPOINT",
     "latitude": 37.457399833333334,
     "longitude": -116.468061,
     "elevation": 5125
   },
   {
     "name": "T75.15",
+    "type": "WAYPOINT",
     "latitude": 37.443152,
     "longitude": -116.54186933333334,
     "elevation": 5164
   },
   {
     "name": "T75.16",
+    "type": "WAYPOINT",
     "latitude": 37.487218666666664,
     "longitude": -116.61760216666667,
     "elevation": 5361
   },
   {
     "name": "T75.19",
+    "type": "WAYPOINT",
     "latitude": 37.45825283333333,
     "longitude": -116.63603333333333,
     "elevation": 5322
   },
   {
     "name": "T75.20",
+    "type": "WAYPOINT",
     "latitude": 37.457196333333336,
     "longitude": -116.60455983333334,
     "elevation": 5282
   },
   {
     "name": "T75.29",
+    "type": "WAYPOINT",
     "latitude": 37.38109516666667,
     "longitude": -116.44757966666667,
     "elevation": 5322
   },
   {
     "name": "T75.32",
+    "type": "WAYPOINT",
     "latitude": 37.4241775,
     "longitude": -116.45858783333334,
     "elevation": 5187
   },
   {
     "name": "T75.34",
+    "type": "WAYPOINT",
     "latitude": 37.45644466666667,
     "longitude": -116.45429616666667,
     "elevation": 5135
   },
   {
     "name": "T75.43",
+    "type": "WAYPOINT",
     "latitude": 37.46813916666667,
     "longitude": -116.41369266666666,
     "elevation": 5121
   },
   {
     "name": "T75.46",
+    "type": "WAYPOINT",
     "latitude": 37.498846,
     "longitude": -116.3918105,
     "elevation": 5066
   },
   {
     "name": "T75.47",
+    "type": "WAYPOINT",
     "latitude": 37.4239685,
     "longitude": -116.65533366666666,
     "elevation": 5272
   },
   {
     "name": "T76.01",
+    "type": "WAYPOINT",
     "latitude": 37.4007635,
     "longitude": -116.89543183333333,
     "elevation": 5269
   },
   {
     "name": "T76.03",
+    "type": "WAYPOINT",
     "latitude": 37.4304555,
     "longitude": -116.85360333333334,
     "elevation": 5384
   },
   {
     "name": "T76.05",
+    "type": "WAYPOINT",
     "latitude": 37.451755666666664,
     "longitude": -116.84703816666666,
     "elevation": 5554
   },
   {
     "name": "T76.08",
+    "type": "WAYPOINT",
     "latitude": 37.400937166666665,
     "longitude": -116.77452566666666,
     "elevation": 5663
   },
   {
     "name": "T76.09",
+    "type": "WAYPOINT",
     "latitude": 37.419797833333334,
     "longitude": -116.82454566666667,
     "elevation": 5374
   },
   {
     "name": "T76.10",
+    "type": "WAYPOINT",
     "latitude": 37.401421,
     "longitude": -116.86793016666667,
     "elevation": 5240
   },
   {
     "name": "T76.11",
+    "type": "WAYPOINT",
     "latitude": 37.4174935,
     "longitude": -116.8609065,
     "elevation": 5282
   },
   {
     "name": "T76.20",
+    "type": "WAYPOINT",
     "latitude": 37.394408166666665,
     "longitude": -116.86791983333333,
     "elevation": 5259
   },
   {
     "name": "T76.21",
+    "type": "WAYPOINT",
     "latitude": 37.43896483333333,
     "longitude": -116.8210305,
     "elevation": 5509
   },
   {
     "name": "T76.29",
+    "type": "WAYPOINT",
     "latitude": 37.4431305,
     "longitude": -116.88800216666667,
     "elevation": 5322
   },
   {
     "name": "T76.30",
+    "type": "WAYPOINT",
     "latitude": 37.42229833333333,
     "longitude": -116.83333266666666,
     "elevation": 5361
   },
   {
     "name": "T77.01",
+    "type": "WAYPOINT",
     "latitude": 37.166424166666665,
     "longitude": -116.72894233333334,
     "elevation": 4803
   },
   {
     "name": "T77.02",
+    "type": "WAYPOINT",
     "latitude": 37.158843,
     "longitude": -116.6318875,
     "elevation": 4764
   },
   {
     "name": "TBIRD LAKE",
+    "type": "WAYPOINT",
     "latitude": 36.968336666666666,
     "longitude": -115.22498916666666,
     "elevation": 3212
   },
   {
     "name": "TEXAS LAKE",
+    "type": "WAYPOINT",
     "latitude": 37.316660666666664,
     "longitude": -114.95834016666667,
     "elevation": 4547
   },
   {
     "name": "THULE",
+    "type": "WAYPOINT",
     "latitude": 36.323335166666666,
     "longitude": -115.23666983333334,
     "elevation": 2425
   },
   {
     "name": "TIMBR",
+    "type": "WAYPOINT",
     "latitude": 36.7500025,
     "longitude": -114.74305,
     "elevation": 2005
   },
   {
     "name": "TOKEN",
+    "type": "WAYPOINT",
     "latitude": 37.774838333333335,
     "longitude": -116.3703325,
     "elevation": 6772
   },
   {
     "name": "TPH",
+    "type": "WAYPOINT",
     "latitude": 38.030674833333336,
     "longitude": -117.03350016666667,
     "elevation": 5358
   },
   {
     "name": "TQQ",
+    "type": "WAYPOINT",
     "latitude": 37.790473666666664,
     "longitude": -116.77924183333333,
     "elevation": 5551
   },
   {
     "name": "TRES BURROS",
+    "type": "WAYPOINT",
     "latitude": 37.17032833333333,
     "longitude": -116.80782233333333,
     "elevation": 4229
   },
   {
     "name": "TROPP",
+    "type": "WAYPOINT",
     "latitude": 36.589730333333335,
     "longitude": -114.94971683333333,
     "elevation": 2976
   },
   {
     "name": "TROUTT",
+    "type": "WAYPOINT",
     "latitude": 37.28333283333333,
     "longitude": -115.12498916666667,
     "elevation": 3353
   },
   {
     "name": "TUCKY",
+    "type": "WAYPOINT",
     "latitude": 36.591674,
     "longitude": -117.00166566666667,
     "elevation": -177
   },
   {
     "name": "TUMBE",
+    "type": "WAYPOINT",
     "latitude": 36.80554716666666,
     "longitude": -116.66749733333333,
     "elevation": 3602
   },
   {
     "name": "Tempiute",
+    "type": "TOWN",
     "latitude": 37.652452,
     "longitude": -115.635865,
     "elevation": 6119
   },
   {
     "name": "The Crossing",
+    "type": "TOWN",
     "latitude": 37.869625,
     "longitude": -117.971427,
     "elevation": 4708
   },
   {
     "name": "Tonopah",
+    "type": "TOWN",
     "latitude": 38.068101,
     "longitude": -117.23095,
     "elevation": 6050
   },
   {
     "name": "Topock",
+    "type": "TOWN",
     "latitude": 34.772075,
     "longitude": -114.491186,
     "elevation": 617
   },
   {
     "name": "Torino Ranch",
+    "type": "TOWN",
     "latitude": 36.168451,
     "longitude": -115.578663,
     "elevation": 5958
   },
   {
     "name": "Trout Canyon",
+    "type": "TOWN",
     "latitude": 36.181736,
     "longitude": -115.679231,
     "elevation": 6056
   },
   {
     "name": "Tule Springs",
+    "type": "TOWN",
     "latitude": 36.297317,
     "longitude": -115.260856,
     "elevation": 2428
   },
   {
     "name": "Tuscany Residential Village",
+    "type": "TOWN",
     "latitude": 36.080446,
     "longitude": -114.972675,
     "elevation": 1578
   },
   {
     "name": "Tybo",
+    "type": "TOWN",
     "latitude": 38.369934,
     "longitude": -116.401168,
     "elevation": 6608
   },
   {
     "name": "UTI",
+    "type": "VOR_DME",
     "latitude": 37.088212,
     "longitude": -113.592167,
     "elevation": 2907
   },
   {
     "name": "Ursine",
+    "type": "TOWN",
     "latitude": 37.984684,
     "longitude": -114.215261,
     "elevation": 5597
   },
   {
     "name": "Ute",
+    "type": "TOWN",
     "latitude": 36.566082,
     "longitude": -114.715551,
     "elevation": 1936
   },
   {
     "name": "VETTT",
+    "type": "WAYPOINT",
     "latitude": 36.62222833333333,
     "longitude": -114.58639933333333,
     "elevation": 1932
   },
   {
     "name": "VIKING.1",
+    "type": "WAYPOINT",
     "latitude": 36.57499933333333,
     "longitude": -114.79166983333333,
     "elevation": 2388
   },
   {
     "name": "VIKING.2",
+    "type": "WAYPOINT",
     "latitude": 37.141658166666666,
     "longitude": -114.349993,
     "elevation": 3412
   },
   {
     "name": "VIRGINIA",
+    "type": "WAYPOINT",
     "latitude": 37.466672833333334,
     "longitude": -114.9166605,
     "elevation": 4728
   },
   {
     "name": "Valley",
+    "type": "TOWN",
     "latitude": 36.274136,
     "longitude": -115.071392,
     "elevation": 2018
   },
   {
     "name": "Valley View",
+    "type": "TOWN",
     "latitude": 38.068267,
     "longitude": -117.224527,
     "elevation": 6148
   },
   {
     "name": "Vegas Heights",
+    "type": "TOWN",
     "latitude": 36.199396,
     "longitude": -115.156301,
     "elevation": 2054
   },
   {
     "name": "Victory Village",
+    "type": "TOWN",
     "latitude": 36.037199,
     "longitude": -114.976103,
     "elevation": 1906
   },
   {
     "name": "WASHINGTON",
+    "type": "WAYPOINT",
     "latitude": 37.82500183333333,
     "longitude": -116.78334333333333,
     "elevation": 5423
   },
   {
     "name": "WATLU",
+    "type": "WAYPOINT",
     "latitude": 37.77601416666667,
     "longitude": -116.76865616666667,
     "elevation": 5568
   },
   {
     "name": "WEBSO",
+    "type": "WAYPOINT",
     "latitude": 36.174088,
     "longitude": -115.10072166666667,
     "elevation": 1827
   },
   {
     "name": "WEBUL",
+    "type": "WAYPOINT",
     "latitude": 37.75251866666667,
     "longitude": -116.75621966666667,
     "elevation": 5604
   },
   {
     "name": "WILD HORSE",
+    "type": "WAYPOINT",
     "latitude": 37.793171,
     "longitude": -116.3961525,
     "elevation": 6519
   },
   {
     "name": "WILIE",
+    "type": "WAYPOINT",
     "latitude": 36.27318366666667,
     "longitude": -114.99334933333333,
     "elevation": 2014
   },
   {
     "name": "WINNER LZ",
+    "type": "WAYPOINT",
     "latitude": 36.3388955,
     "longitude": -115.00417583333333,
     "elevation": 2881
   },
   {
     "name": "WISTO",
+    "type": "WAYPOINT",
     "latitude": 36.5897915,
     "longitude": -114.9496035,
     "elevation": 2976
   },
   {
     "name": "Walker Lake",
+    "type": "TOWN",
     "latitude": 38.648203,
     "longitude": -118.755169,
     "elevation": 4091
   },
   {
     "name": "Wann",
+    "type": "TOWN",
     "latitude": 36.233303,
     "longitude": -115.113336,
     "elevation": 1923
   },
   {
     "name": "Washington",
+    "type": "TOWN",
     "latitude": 37.130537,
     "longitude": -113.508287,
     "elevation": 2805
   },
   {
     "name": "Washington Fields",
+    "type": "TOWN",
     "latitude": 37.097612,
     "longitude": -113.51129,
     "elevation": 2621
   },
   {
     "name": "West Spring",
+    "type": "TOWN",
     "latitude": 37.722155,
     "longitude": -117.270636,
     "elevation": 5846
   },
   {
     "name": "Whitney",
+    "type": "TOWN",
     "latitude": 36.088532,
     "longitude": -115.037213,
     "elevation": 1660
   },
   {
     "name": "WillowValley",
+    "type": "TOWN",
     "latitude": 34.899448,
     "longitude": -114.590344,
     "elevation": 482
   },
   {
     "name": "Winchester",
+    "type": "TOWN",
     "latitude": 36.129978,
     "longitude": -115.118889,
     "elevation": 1932
   },
   {
     "name": "XR.CIRC",
+    "type": "WAYPOINT",
     "latitude": 36.574995333333334,
     "longitude": -114.96665683333333,
     "elevation": 2930
   },
   {
     "name": "Yucca Pass",
+    "type": "TOWN",
     "latitude": 36.93306,
     "longitude": -116.051728,
     "elevation": 4088
   },
   {
     "name": "ZINAX",
+    "type": "WAYPOINT",
     "latitude": 36.39039783333333,
     "longitude": -114.85086216666667,
     "elevation": 2329
   },
   {
     "name": "Zane",
+    "type": "TOWN",
     "latitude": 37.925247,
     "longitude": -113.5833,
     "elevation": 5213

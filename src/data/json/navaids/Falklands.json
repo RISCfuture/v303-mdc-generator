@@ -1,8010 +1,9345 @@
 [
   {
     "name": "Administracia Parque Torres del Paine",
+    "type": "TOWN",
     "latitude": -51.175866,
     "longitude": -72.954499,
     "elevation": 89
   },
   {
     "name": "Adventure Harbour",
+    "type": "TOWN",
     "latitude": -52.141347,
     "longitude": -59.128372,
     "elevation": 0
   },
   {
     "name": "Adventure Sound",
+    "type": "TOWN",
     "latitude": -52.098386,
     "longitude": -59.026794,
     "elevation": 0
   },
   {
     "name": "Aerodromo Enrique Mayer Soto",
+    "type": "TOWN",
     "latitude": -47.785862,
     "longitude": -73.526357,
     "elevation": 10
   },
   {
     "name": "Aeropuerto",
+    "type": "TOWN",
     "latitude": -53.00684,
     "longitude": -70.830867,
     "elevation": 125
   },
   {
     "name": "Aeropuerto Viejo",
+    "type": "TOWN",
     "latitude": -50.338096,
     "longitude": -72.246806,
     "elevation": 725
   },
   {
     "name": "Agroturismo Los Manantiales",
+    "type": "TOWN",
     "latitude": -51.216136,
     "longitude": -72.455777,
     "elevation": 236
   },
   {
     "name": "Agua Fresca Norte",
+    "type": "TOWN",
     "latitude": -53.459476,
     "longitude": -70.973166,
     "elevation": 36
   },
   {
     "name": "Agua Fresca Sur",
+    "type": "TOWN",
     "latitude": -53.514716,
     "longitude": -70.951519,
     "elevation": 43
   },
   {
     "name": "Ajax Bay",
+    "type": "TOWN",
     "latitude": -51.552937,
     "longitude": -59.058947,
     "elevation": 0
   },
   {
     "name": "Alaska",
+    "type": "TOWN",
     "latitude": -51.185763,
     "longitude": -71.336965,
     "elevation": 1306
   },
   {
     "name": "Albemarle Harbour",
+    "type": "TOWN",
     "latitude": -52.128746,
     "longitude": -60.555181,
     "elevation": 0
   },
   {
     "name": "Albemarle Sealing Station",
+    "type": "TOWN",
     "latitude": -52.191718,
     "longitude": -60.541186,
     "elevation": 49
   },
   {
     "name": "Albemarle Station Farm",
+    "type": "TOWN",
     "latitude": -52.192037,
     "longitude": -60.541448,
     "elevation": 49
   },
   {
     "name": "Albergue Chileno",
+    "type": "TOWN",
     "latitude": -50.97313,
     "longitude": -72.875996,
     "elevation": 476
   },
   {
     "name": "Alma Gaucha",
+    "type": "TOWN",
     "latitude": -47.888418,
     "longitude": -66.948698,
     "elevation": 371
   },
   {
     "name": "Almafuerte",
+    "type": "TOWN",
     "latitude": -47.73964,
     "longitude": -65.888611,
     "elevation": 180
   },
   {
     "name": "Alquinta",
+    "type": "TOWN",
     "latitude": -51.734466,
     "longitude": -70.339546,
     "elevation": 210
   },
   {
     "name": "Alto Calafate",
+    "type": "TOWN",
     "latitude": -50.33851,
     "longitude": -72.232535,
     "elevation": 850
   },
   {
     "name": "Altos de Soberana",
+    "type": "TOWN",
     "latitude": -50.320239,
     "longitude": -72.325721,
     "elevation": 761
   },
   {
     "name": "Ana Navarro",
+    "type": "TOWN",
     "latitude": -53.080864,
     "longitude": -70.88965,
     "elevation": 203
   },
   {
     "name": "Anchor Inlet",
+    "type": "TOWN",
     "latitude": -52.163469,
     "longitude": -60.675087,
     "elevation": 0
   },
   {
     "name": "Angostura Kirke",
+    "type": "TOWN",
     "latitude": -52.058432,
     "longitude": -73.010308,
     "elevation": 0
   },
   {
     "name": "Anguila",
+    "type": "TOWN",
     "latitude": -52.409154,
     "longitude": -68.784227,
     "elevation": 0
   },
   {
     "name": "Animales",
+    "type": "TOWN",
     "latitude": -47.833332,
     "longitude": -73.46671,
     "elevation": 2913
   },
   {
     "name": "Ankel",
+    "type": "TOWN",
     "latitude": -52.906627,
     "longitude": -71.021444,
     "elevation": 141
   },
   {
     "name": "Ann Aiken",
+    "type": "TOWN",
     "latitude": -52.061522,
     "longitude": -71.23021,
     "elevation": 505
   },
   {
     "name": "Anthony Creek",
+    "type": "TOWN",
     "latitude": -51.991294,
     "longitude": -60.704667,
     "elevation": 0
   },
   {
     "name": "Antonio de Biedma",
+    "type": "TOWN",
     "latitude": -47.487031,
     "longitude": -66.503434,
     "elevation": 453
   },
   {
     "name": "Arch Road",
+    "type": "TOWN",
     "latitude": -52.217481,
     "longitude": -60.481882,
     "elevation": 0
   },
   {
     "name": "Archer Cove",
+    "type": "TOWN",
     "latitude": -51.900713,
     "longitude": -58.621588,
     "elevation": 0
   },
   {
     "name": "Arrow Harbour",
+    "type": "TOWN",
     "latitude": -51.870955,
     "longitude": -58.938896,
     "elevation": 0
   },
   {
     "name": "Arrow Point",
+    "type": "TOWN",
     "latitude": -51.390883,
     "longitude": -60.309993,
     "elevation": 46
   },
   {
     "name": "Arroyo Chueco",
+    "type": "TOWN",
     "latitude": -47.337493,
     "longitude": -72.962271,
     "elevation": 646
   },
   {
     "name": "Arroyo El Sucio",
+    "type": "TOWN",
     "latitude": -48.191174,
     "longitude": -72.309602,
     "elevation": 1640
   },
   {
     "name": "Arroyo Los Toros",
+    "type": "TOWN",
     "latitude": -47.818186,
     "longitude": -72.730822,
     "elevation": 1040
   },
   {
     "name": "Aserradero Americano",
+    "type": "TOWN",
     "latitude": -54.465721,
     "longitude": -67.460604,
     "elevation": 502
   },
   {
     "name": "Aserradero La Paciencia",
+    "type": "TOWN",
     "latitude": -54.369495,
     "longitude": -69.162109,
     "elevation": 33
   },
   {
     "name": "Aserradero Monte Alto",
+    "type": "TOWN",
     "latitude": -52.051198,
     "longitude": -71.89472,
     "elevation": 679
   },
   {
     "name": "Astrid",
+    "type": "TOWN",
     "latitude": -54.271704,
     "longitude": -68.002457,
     "elevation": 600
   },
   {
     "name": "Asturiana",
+    "type": "TOWN",
     "latitude": -51.879134,
     "longitude": -72.083448,
     "elevation": 144
   },
   {
     "name": "Aurelia",
+    "type": "TOWN",
     "latitude": -53.899264,
     "longitude": -68.368782,
     "elevation": 246
   },
   {
     "name": "Aves del Sur",
+    "type": "TOWN",
     "latitude": -53.033232,
     "longitude": -70.903856,
     "elevation": 236
   },
   {
     "name": "Bagwell Point",
+    "type": "TOWN",
     "latitude": -52.199496,
     "longitude": -59.037158,
     "elevation": 26
   },
   {
     "name": "Bajo Caracoles",
+    "type": "TOWN",
     "latitude": -47.443328,
     "longitude": -70.926533,
     "elevation": 2021
   },
   {
     "name": "Bajo Esperanza",
+    "type": "TOWN",
     "latitude": -48.421037,
     "longitude": -72.980907,
     "elevation": 879
   },
   {
     "name": "Bajo Pascua",
+    "type": "TOWN",
     "latitude": -48.228838,
     "longitude": -73.215855,
     "elevation": 23
   },
   {
     "name": "Bajo Picaso",
+    "type": "TOWN",
     "latitude": -49.051259,
     "longitude": -68.387156,
     "elevation": 633
   },
   {
     "name": "Bald Road",
+    "type": "TOWN",
     "latitude": -51.788896,
     "longitude": -60.934811,
     "elevation": 0
   },
   {
     "name": "Bandera",
+    "type": "TOWN",
     "latitude": -51.208097,
     "longitude": -71.176304,
     "elevation": 1086
   },
   {
     "name": "Baquedano",
+    "type": "TOWN",
     "latitude": -53.266667,
     "longitude": -69.983337,
     "elevation": 1585
   },
   {
     "name": "Barranco Amarrillo",
+    "type": "TOWN",
     "latitude": -53.095566,
     "longitude": -70.878004,
     "elevation": 131
   },
   {
     "name": "Barrio Industrial",
+    "type": "TOWN",
     "latitude": -54.930718,
     "longitude": -67.571524,
     "elevation": 43
   },
   {
     "name": "Barrow Harbour",
+    "type": "TOWN",
     "latitude": -52.137979,
     "longitude": -59.122324,
     "elevation": 0
   },
   {
     "name": "Barthe Creek",
+    "type": "TOWN",
     "latitude": -51.569221,
     "longitude": -58.128761,
     "elevation": 0
   },
   {
     "name": "Bay Point",
+    "type": "TOWN",
     "latitude": -51.322665,
     "longitude": -59.779232,
     "elevation": 10
   },
   {
     "name": "Bay of Harbours",
+    "type": "TOWN",
     "latitude": -52.201295,
     "longitude": -59.306774,
     "elevation": 0
   },
   {
     "name": "Beach Point",
+    "type": "TOWN",
     "latitude": -51.754544,
     "longitude": -57.967429,
     "elevation": 10
   },
   {
     "name": "Beacon Point",
+    "type": "TOWN",
     "latitude": -51.779966,
     "longitude": -60.97664,
     "elevation": 62
   },
   {
     "name": "Beatrice Cove",
+    "type": "TOWN",
     "latitude": -51.652524,
     "longitude": -57.750449,
     "elevation": 0
   },
   {
     "name": "Beaver Bay",
+    "type": "TOWN",
     "latitude": -51.822272,
     "longitude": -61.26805,
     "elevation": 0
   },
   {
     "name": "Beaver Farm",
+    "type": "TOWN",
     "latitude": -51.853341,
     "longitude": -61.25373,
     "elevation": 46
   },
   {
     "name": "Beaver Harbour",
+    "type": "TOWN",
     "latitude": -51.82863,
     "longitude": -61.232042,
     "elevation": 0
   },
   {
     "name": "Bense Harbour",
+    "type": "TOWN",
     "latitude": -51.491511,
     "longitude": -60.50261,
     "elevation": 0
   },
   {
     "name": "Berkeley Sound",
+    "type": "TOWN",
     "latitude": -51.567041,
     "longitude": -57.920952,
     "elevation": 0
   },
   {
     "name": "Bersovio el Covacio",
+    "type": "TOWN",
     "latitude": -53.433333,
     "longitude": -70.066671,
     "elevation": 138
   },
   {
     "name": "Beta",
+    "type": "TOWN",
     "latitude": -52.72625,
     "longitude": -68.547351,
     "elevation": 39
   },
   {
     "name": "Biotex",
+    "type": "TOWN",
     "latitude": -53.658004,
     "longitude": -69.717224,
     "elevation": 102
   },
   {
     "name": "Bitzch",
+    "type": "TOWN",
     "latitude": -51.813905,
     "longitude": -69.7753,
     "elevation": 249
   },
   {
     "name": "Black Bog Hill",
+    "type": "TOWN",
     "latitude": -51.350456,
     "longitude": -60.707095,
     "elevation": 243
   },
   {
     "name": "Black Point",
+    "type": "TOWN",
     "latitude": -51.636176,
     "longitude": -57.741265,
     "elevation": 46
   },
   {
     "name": "Black Rock",
+    "type": "TOWN",
     "latitude": -51.782947,
     "longitude": -58.667048,
     "elevation": 161
   },
   {
     "name": "Blanco Bay",
+    "type": "TOWN",
     "latitude": -51.667205,
     "longitude": -57.801819,
     "elevation": 0
   },
   {
     "name": "Bleaker Farm",
+    "type": "TOWN",
     "latitude": -52.20727,
     "longitude": -58.851203,
     "elevation": 13
   },
   {
     "name": "Blessen",
+    "type": "TOWN",
     "latitude": -53.079155,
     "longitude": -70.869196,
     "elevation": 82
   },
   {
     "name": "Blue Beach Farm",
+    "type": "TOWN",
     "latitude": -51.573737,
     "longitude": -59.035232,
     "elevation": 59
   },
   {
     "name": "Bluff Cove",
+    "type": "TOWN",
     "latitude": -51.744749,
     "longitude": -58.163363,
     "elevation": 0
   },
   {
     "name": "Bluff Cove Farm",
+    "type": "TOWN",
     "latitude": -51.747866,
     "longitude": -58.180226,
     "elevation": 23
   },
   {
     "name": "Bluff Creek",
+    "type": "TOWN",
     "latitude": -51.884591,
     "longitude": -58.738339,
     "elevation": 0
   },
   {
     "name": "Bluff Head",
+    "type": "TOWN",
     "latitude": -52.08293,
     "longitude": -58.866933,
     "elevation": 79
   },
   {
     "name": "Bluff Point",
+    "type": "TOWN",
     "latitude": -51.346054,
     "longitude": -60.242318,
     "elevation": 20
   },
   {
     "name": "Boat Point",
+    "type": "TOWN",
     "latitude": -51.846095,
     "longitude": -58.215147,
     "elevation": 13
   },
   {
     "name": "Bodie Inlet",
+    "type": "TOWN",
     "latitude": -51.845592,
     "longitude": -59.089907,
     "elevation": 0
   },
   {
     "name": "Bold Cove",
+    "type": "TOWN",
     "latitude": -51.59234,
     "longitude": -59.449896,
     "elevation": 0
   },
   {
     "name": "Bold Point",
+    "type": "TOWN",
     "latitude": -51.770471,
     "longitude": -58.064755,
     "elevation": 30
   },
   {
     "name": "Boleadoras",
+    "type": "TOWN",
     "latitude": -50.867863,
     "longitude": -70.81022,
     "elevation": 1010
   },
   {
     "name": "Bombalot",
+    "type": "TOWN",
     "latitude": -52.269362,
     "longitude": -71.185096,
     "elevation": 653
   },
   {
     "name": "Bonners Bay",
+    "type": "TOWN",
     "latitude": -51.57857,
     "longitude": -59.031708,
     "elevation": 0
   },
   {
     "name": "Bougainville Creek",
+    "type": "TOWN",
     "latitude": -51.531834,
     "longitude": -58.102505,
     "elevation": 0
   },
   {
     "name": "Boulder Point",
+    "type": "TOWN",
     "latitude": -51.876981,
     "longitude": -61.24099,
     "elevation": 194
   },
   {
     "name": "Boundary Farm",
+    "type": "TOWN",
     "latitude": -51.501099,
     "longitude": -60.167983,
     "elevation": 43
   },
   {
     "name": "Bouy Beach",
+    "type": "TOWN",
     "latitude": -51.621968,
     "longitude": -60.438983,
     "elevation": 10
   },
   {
     "name": "Boxwood Gulch",
+    "type": "TOWN",
     "latitude": -51.606642,
     "longitude": -60.457182,
     "elevation": 128
   },
   {
     "name": "Boxwood Point",
+    "type": "TOWN",
     "latitude": -51.34751,
     "longitude": -60.679375,
     "elevation": 75
   },
   {
     "name": "Brasse Mar",
+    "type": "TOWN",
     "latitude": -51.582116,
     "longitude": -58.20178,
     "elevation": 0
   },
   {
     "name": "Brazo Norte",
+    "type": "TOWN",
     "latitude": -52.056235,
     "longitude": -70.005431,
     "elevation": 341
   },
   {
     "name": "Brenton Loch",
+    "type": "TOWN",
     "latitude": -51.788436,
     "longitude": -59.01148,
     "elevation": 0
   },
   {
     "name": "Brett Harbour",
+    "type": "TOWN",
     "latitude": -51.370588,
     "longitude": -60.157485,
     "elevation": 0
   },
   {
     "name": "Brookfield Farm",
+    "type": "TOWN",
     "latitude": -51.54765,
     "longitude": -58.202158,
     "elevation": 79
   },
   {
     "name": "Brown Harbour",
+    "type": "TOWN",
     "latitude": -51.819877,
     "longitude": -60.311422,
     "elevation": 0
   },
   {
     "name": "Brown Point",
+    "type": "TOWN",
     "latitude": -51.624484,
     "longitude": -60.255375,
     "elevation": 112
   },
   {
     "name": "Buena Vista Sur",
+    "type": "TOWN",
     "latitude": -47.496748,
     "longitude": -72.894065,
     "elevation": 243
   },
   {
     "name": "Buenos Aires",
+    "type": "TOWN",
     "latitude": -54.162247,
     "longitude": -67.647718,
     "elevation": 171
   },
   {
     "name": "Bull Cove",
+    "type": "TOWN",
     "latitude": -52.341695,
     "longitude": -59.331846,
     "elevation": 0
   },
   {
     "name": "Bull Point",
+    "type": "TOWN",
     "latitude": -51.820633,
     "longitude": -58.299768,
     "elevation": 46
   },
   {
     "name": "Bull Road",
+    "type": "TOWN",
     "latitude": -52.31322,
     "longitude": -59.350524,
     "elevation": 0
   },
   {
     "name": "Burnt Harbour",
+    "type": "TOWN",
     "latitude": -51.408084,
     "longitude": -60.132833,
     "elevation": 0
   },
   {
     "name": "Button Bay",
+    "type": "TOWN",
     "latitude": -51.897906,
     "longitude": -58.642911,
     "elevation": 0
   },
   {
     "name": "Byron Sound",
+    "type": "TOWN",
     "latitude": -51.434668,
     "longitude": -60.278292,
     "elevation": 0
   },
   {
     "name": "Cabeza de Mar",
+    "type": "TOWN",
     "latitude": -52.801717,
     "longitude": -71.001175,
     "elevation": 26
   },
   {
     "name": "Cabo Buen Tiempo",
+    "type": "TOWN",
     "latitude": -51.564513,
     "longitude": -69.070573,
     "elevation": 144
   },
   {
     "name": "Cabo Fletcher",
+    "type": "TOWN",
     "latitude": -54.653279,
     "longitude": -71.308521,
     "elevation": 72
   },
   {
     "name": "Cabo Negro",
+    "type": "TOWN",
     "latitude": -52.974696,
     "longitude": -70.825217,
     "elevation": 36
   },
   {
     "name": "Cabo de San Juan",
+    "type": "TOWN",
     "latitude": -54.723422,
     "longitude": -63.813242,
     "elevation": 482
   },
   {
     "name": "Cacique Mulato",
+    "type": "TOWN",
     "latitude": -52.456263,
     "longitude": -71.33835,
     "elevation": 423
   },
   {
     "name": "Caleta",
+    "type": "TOWN",
     "latitude": -53.056841,
     "longitude": -71.283647,
     "elevation": 0
   },
   {
     "name": "Caleta Aguada",
+    "type": "TOWN",
     "latitude": -55.072852,
     "longitude": -70.840915,
     "elevation": 52
   },
   {
     "name": "Caleta Aihuaia",
+    "type": "TOWN",
     "latitude": -54.945317,
     "longitude": -68.4313,
     "elevation": 36
   },
   {
     "name": "Caleta Banner",
+    "type": "TOWN",
     "latitude": -55.019887,
     "longitude": -66.925857,
     "elevation": 0
   },
   {
     "name": "Caleta Bevan",
+    "type": "TOWN",
     "latitude": -55.229353,
     "longitude": -67.440832,
     "elevation": 13
   },
   {
     "name": "Caleta Brecknock",
+    "type": "TOWN",
     "latitude": -54.551152,
     "longitude": -71.87716,
     "elevation": 20
   },
   {
     "name": "Caleta Buen Refugio",
+    "type": "TOWN",
     "latitude": -52.836867,
     "longitude": -74.576989,
     "elevation": 3
   },
   {
     "name": "Caleta Cachorro",
+    "type": "TOWN",
     "latitude": -47.70442,
     "longitude": -73.090578,
     "elevation": 72
   },
   {
     "name": "Caleta Canacus",
+    "type": "TOWN",
     "latitude": -55.219714,
     "longitude": -68.298607,
     "elevation": 26
   },
   {
     "name": "Caleta Carlos",
+    "type": "TOWN",
     "latitude": -55.177094,
     "longitude": -66.548154,
     "elevation": 26
   },
   {
     "name": "Caleta Castillo",
+    "type": "TOWN",
     "latitude": -55.230168,
     "longitude": -68.255568,
     "elevation": 59
   },
   {
     "name": "Caleta Clarencia",
+    "type": "TOWN",
     "latitude": -52.892751,
     "longitude": -70.10651,
     "elevation": 13
   },
   {
     "name": "Caleta Contreras",
+    "type": "TOWN",
     "latitude": -54.87352,
     "longitude": -68.775852,
     "elevation": 95
   },
   {
     "name": "Caleta Domingo",
+    "type": "TOWN",
     "latitude": -55.039458,
     "longitude": -68.317066,
     "elevation": 52
   },
   {
     "name": "Caleta Doris",
+    "type": "TOWN",
     "latitude": -54.979973,
     "longitude": -71.139211,
     "elevation": 0
   },
   {
     "name": "Caleta Dos de Mayo",
+    "type": "TOWN",
     "latitude": -54.866105,
     "longitude": -68.691247,
     "elevation": 36
   },
   {
     "name": "Caleta Douglas",
+    "type": "TOWN",
     "latitude": -55.174065,
     "longitude": -68.103992,
     "elevation": 7
   },
   {
     "name": "Caleta Eugenia",
+    "type": "TOWN",
     "latitude": -54.932967,
     "longitude": -67.312696,
     "elevation": 26
   },
   {
     "name": "Caleta Evening",
+    "type": "TOWN",
     "latitude": -54.959179,
     "longitude": -69.479897,
     "elevation": 0
   },
   {
     "name": "Caleta Ferrari",
+    "type": "TOWN",
     "latitude": -54.857108,
     "longitude": -68.819531,
     "elevation": 26
   },
   {
     "name": "Caleta Fique",
+    "type": "TOWN",
     "latitude": -54.908449,
     "longitude": -68.212819,
     "elevation": 0
   },
   {
     "name": "Caleta Grau",
+    "type": "TOWN",
     "latitude": -49.340337,
     "longitude": -74.41071,
     "elevation": 62
   },
   {
     "name": "Caleta Hoskyn",
+    "type": "TOWN",
     "latitude": -48.943895,
     "longitude": -74.414108,
     "elevation": 102
   },
   {
     "name": "Caleta Jara",
+    "type": "TOWN",
     "latitude": -52.533409,
     "longitude": -72.199463,
     "elevation": 16
   },
   {
     "name": "Caleta Lackawana",
+    "type": "TOWN",
     "latitude": -49.168349,
     "longitude": -74.40865,
     "elevation": 3
   },
   {
     "name": "Caleta Las Casas",
+    "type": "TOWN",
     "latitude": -55.270341,
     "longitude": -66.643108,
     "elevation": 20
   },
   {
     "name": "Caleta Letier",
+    "type": "TOWN",
     "latitude": -54.942406,
     "longitude": -68.462551,
     "elevation": 10
   },
   {
     "name": "Caleta Level",
+    "type": "TOWN",
     "latitude": -49.11804,
     "longitude": -74.355904,
     "elevation": 23
   },
   {
     "name": "Caleta Lewaia",
+    "type": "TOWN",
     "latitude": -54.929608,
     "longitude": -68.338882,
     "elevation": 20
   },
   {
     "name": "Caleta Los Crillos",
+    "type": "TOWN",
     "latitude": -53.339076,
     "longitude": -69.608123,
     "elevation": 141
   },
   {
     "name": "Caleta Lucas",
+    "type": "TOWN",
     "latitude": -49.000589,
     "longitude": -74.407219,
     "elevation": 59
   },
   {
     "name": "Caleta Lucrecia",
+    "type": "TOWN",
     "latitude": -49.511862,
     "longitude": -74.266193,
     "elevation": 39
   },
   {
     "name": "Caleta Mejillones",
+    "type": "TOWN",
     "latitude": -54.900733,
     "longitude": -68.002317,
     "elevation": 46
   },
   {
     "name": "Caleta Molinare",
+    "type": "TOWN",
     "latitude": -55.000482,
     "longitude": -68.352353,
     "elevation": 3
   },
   {
     "name": "Caleta Molinate",
+    "type": "TOWN",
     "latitude": -55.009354,
     "longitude": -68.334574,
     "elevation": 20
   },
   {
     "name": "Caleta Morning",
+    "type": "TOWN",
     "latitude": -54.920202,
     "longitude": -69.496822,
     "elevation": 0
   },
   {
     "name": "Caleta Olla",
+    "type": "TOWN",
     "latitude": -54.940564,
     "longitude": -69.146661,
     "elevation": 0
   },
   {
     "name": "Caleta Piedras",
+    "type": "TOWN",
     "latitude": -55.036483,
     "longitude": -67.021939,
     "elevation": 43
   },
   {
     "name": "Caleta Puerto Alegre",
+    "type": "TOWN",
     "latitude": -47.7477,
     "longitude": -73.241568,
     "elevation": 89
   },
   {
     "name": "Caleta Puerto Nuevo",
+    "type": "TOWN",
     "latitude": -47.676575,
     "longitude": -73.081475,
     "elevation": 92
   },
   {
     "name": "Caleta Rayo",
+    "type": "TOWN",
     "latitude": -50.758314,
     "longitude": -74.537411,
     "elevation": 7
   },
   {
     "name": "Caleta Segura",
+    "type": "TOWN",
     "latitude": -54.91654,
     "longitude": -68.212304,
     "elevation": 3
   },
   {
     "name": "Caleta Sonia",
+    "type": "TOWN",
     "latitude": -54.960376,
     "longitude": -69.010499,
     "elevation": 13
   },
   {
     "name": "Caleta Tanswuani",
+    "type": "TOWN",
     "latitude": -55.072564,
     "longitude": -68.327241,
     "elevation": 69
   },
   {
     "name": "Caleta Tortel",
+    "type": "TOWN",
     "latitude": -47.803471,
     "longitude": -73.537689,
     "elevation": 36
   },
   {
     "name": "Caleta Wilfredo",
+    "type": "TOWN",
     "latitude": -55.870673,
     "longitude": -67.114708,
     "elevation": 82
   },
   {
     "name": "Caleta Wulaia",
+    "type": "TOWN",
     "latitude": -55.047595,
     "longitude": -68.147134,
     "elevation": 20
   },
   {
     "name": "Caleta Yamana",
+    "type": "TOWN",
     "latitude": -54.965738,
     "longitude": -69.028905,
     "elevation": 39
   },
   {
     "name": "Caleta Yungay",
+    "type": "TOWN",
     "latitude": -47.933368,
     "longitude": -73.324544,
     "elevation": 56
   },
   {
     "name": "Caleta Zorro",
+    "type": "TOWN",
     "latitude": -52.065605,
     "longitude": -73.010522,
     "elevation": 52
   },
   {
     "name": "Calf Creek",
+    "type": "TOWN",
     "latitude": -51.953,
     "longitude": -58.798946,
     "elevation": 0
   },
   {
     "name": "Calluqueo",
+    "type": "TOWN",
     "latitude": -47.657245,
     "longitude": -72.477491,
     "elevation": 2198
   },
   {
     "name": "Calm Head",
+    "type": "TOWN",
     "latitude": -52.115282,
     "longitude": -60.927773,
     "elevation": 0
   },
   {
     "name": "Camilla Creek",
+    "type": "TOWN",
     "latitude": -51.773596,
     "longitude": -58.958377,
     "elevation": 7
   },
   {
     "name": "Campa Menta Bay",
+    "type": "TOWN",
     "latitude": -51.381192,
     "longitude": -58.136919,
     "elevation": 0
   },
   {
     "name": "Campamento Mayer",
+    "type": "TOWN",
     "latitude": -48.195712,
     "longitude": -72.337717,
     "elevation": 1535
   },
   {
     "name": "Campo Lindo",
+    "type": "TOWN",
     "latitude": -53.312178,
     "longitude": -69.460037,
     "elevation": 138
   },
   {
     "name": "Campo Marina",
+    "type": "TOWN",
     "latitude": -47.770016,
     "longitude": -66.01892,
     "elevation": 33
   },
   {
     "name": "Campo de Invierno",
+    "type": "TOWN",
     "latitude": -50.319583,
     "longitude": -72.246984,
     "elevation": 791
   },
   {
     "name": "Camusu Aike",
+    "type": "TOWN",
     "latitude": -51.116296,
     "longitude": -70.289348,
     "elevation": 653
   },
   {
     "name": "Canard Cove",
+    "type": "TOWN",
     "latitude": -51.546029,
     "longitude": -58.148442,
     "elevation": 0
   },
   {
     "name": "Cancha Carrera",
+    "type": "TOWN",
     "latitude": -51.256817,
     "longitude": -72.220102,
     "elevation": 771
   },
   {
     "name": "Candelario Mancilla",
+    "type": "TOWN",
     "latitude": -48.868596,
     "longitude": -72.743227,
     "elevation": 1010
   },
   {
     "name": "Caneja Creek",
+    "type": "TOWN",
     "latitude": -51.852958,
     "longitude": -58.268201,
     "elevation": 0
   },
   {
     "name": "Cape Bougainville",
+    "type": "TOWN",
     "latitude": -51.297778,
     "longitude": -58.461667,
     "elevation": 0
   },
   {
     "name": "Cape Carysfort",
+    "type": "TOWN",
     "latitude": -51.414145,
     "longitude": -57.857702,
     "elevation": 69
   },
   {
     "name": "Cape Dolphin",
+    "type": "TOWN",
     "latitude": -51.233056,
     "longitude": -58.965556,
     "elevation": 0
   },
   {
     "name": "Cape Dolphin Farm",
+    "type": "TOWN",
     "latitude": -51.340202,
     "longitude": -58.841209,
     "elevation": 190
   },
   {
     "name": "Cape Frehel",
+    "type": "TOWN",
     "latitude": -51.383332,
     "longitude": -58.232592,
     "elevation": 7
   },
   {
     "name": "Cape Meredith",
+    "type": "TOWN",
     "latitude": -52.256569,
     "longitude": -60.647004,
     "elevation": 348
   },
   {
     "name": "Cape Orford",
+    "type": "TOWN",
     "latitude": -52.012676,
     "longitude": -61.070166,
     "elevation": 89
   },
   {
     "name": "Cape Pembroke",
+    "type": "TOWN",
     "latitude": -51.682622,
     "longitude": -57.719467,
     "elevation": 46
   },
   {
     "name": "Cape Percival",
+    "type": "TOWN",
     "latitude": -51.82989,
     "longitude": -61.342871,
     "elevation": 420
   },
   {
     "name": "Cape Split",
+    "type": "TOWN",
     "latitude": -51.808953,
     "longitude": -61.321392,
     "elevation": 174
   },
   {
     "name": "Cape Tamar",
+    "type": "TOWN",
     "latitude": -51.279334,
     "longitude": -59.496009,
     "elevation": 62
   },
   {
     "name": "Cape Terrible",
+    "type": "TOWN",
     "latitude": -51.328255,
     "longitude": -60.729069,
     "elevation": 36
   },
   {
     "name": "Capilla",
+    "type": "TOWN",
     "latitude": -50.315016,
     "longitude": -72.791469,
     "elevation": 610
   },
   {
     "name": "Capilla Buen Pastor",
+    "type": "TOWN",
     "latitude": -51.731365,
     "longitude": -72.490678,
     "elevation": 95
   },
   {
     "name": "Capilla Puerto Bertrand",
+    "type": "TOWN",
     "latitude": -47.015288,
     "longitude": -72.828226,
     "elevation": 814
   },
   {
     "name": "Carcass Bay",
+    "type": "TOWN",
     "latitude": -51.969211,
     "longitude": -59.910014,
     "elevation": 0
   },
   {
     "name": "Carcass Farm",
+    "type": "TOWN",
     "latitude": -51.290598,
     "longitude": -60.555728,
     "elevation": 82
   },
   {
     "name": "Careening Cove",
+    "type": "TOWN",
     "latitude": -51.511908,
     "longitude": -58.968086,
     "elevation": 0
   },
   {
     "name": "Carew Harbour",
+    "type": "TOWN",
     "latitude": -52.002942,
     "longitude": -60.675095,
     "elevation": 0
   },
   {
     "name": "Carpa",
+    "type": "TOWN",
     "latitude": -52.598697,
     "longitude": -71.201065,
     "elevation": 630
   },
   {
     "name": "Carruther Point",
+    "type": "TOWN",
     "latitude": -51.356703,
     "longitude": -59.949984,
     "elevation": 26
   },
   {
     "name": "Casco Viejo",
+    "type": "TOWN",
     "latitude": -50.334722,
     "longitude": -72.26639,
     "elevation": 614
   },
   {
     "name": "Castillo",
+    "type": "TOWN",
     "latitude": -53.66811,
     "longitude": -68.465338,
     "elevation": 436
   },
   {
     "name": "Cat Cove",
+    "type": "TOWN",
     "latitude": -51.339848,
     "longitude": -60.692468,
     "elevation": 0
   },
   {
     "name": "Catalana",
+    "type": "TOWN",
     "latitude": -54.173351,
     "longitude": -67.278732,
     "elevation": 148
   },
   {
     "name": "Catalina Dos",
+    "type": "TOWN",
     "latitude": -52.375862,
     "longitude": -68.787445,
     "elevation": 0
   },
   {
     "name": "Catalina Uno",
+    "type": "TOWN",
     "latitude": -52.390295,
     "longitude": -68.787268,
     "elevation": 0
   },
   {
     "name": "Cattle Point",
+    "type": "TOWN",
     "latitude": -52.180656,
     "longitude": -59.316613,
     "elevation": 56
   },
   {
     "name": "Cauchicol",
+    "type": "TOWN",
     "latitude": -53.881017,
     "longitude": -67.929884,
     "elevation": 190
   },
   {
     "name": "Cecilia",
+    "type": "TOWN",
     "latitude": -53.278268,
     "longitude": -69.326345,
     "elevation": 151
   },
   {
     "name": "Centenario",
+    "type": "TOWN",
     "latitude": -47.74568,
     "longitude": -65.888739,
     "elevation": 125
   },
   {
     "name": "Cerro Calafate",
+    "type": "TOWN",
     "latitude": -50.345661,
     "longitude": -72.260605,
     "elevation": 817
   },
   {
     "name": "Cerro Castillo",
+    "type": "TOWN",
     "latitude": -51.256249,
     "longitude": -72.344706,
     "elevation": 377
   },
   {
     "name": "Cerro Colorado",
+    "type": "TOWN",
     "latitude": -49.058749,
     "longitude": -71.839008,
     "elevation": 3297
   },
   {
     "name": "Cerro Cuadrado",
+    "type": "TOWN",
     "latitude": -51.320499,
     "longitude": -70.002893,
     "elevation": 499
   },
   {
     "name": "Cerro Guido",
+    "type": "TOWN",
     "latitude": -50.940219,
     "longitude": -72.454272,
     "elevation": 856
   },
   {
     "name": "Cerro Negro",
+    "type": "TOWN",
     "latitude": -51.931893,
     "longitude": -70.24268,
     "elevation": 495
   },
   {
     "name": "Cerro Norte",
+    "type": "TOWN",
     "latitude": -51.840693,
     "longitude": -69.404454,
     "elevation": 249
   },
   {
     "name": "Cerro Pancho",
+    "type": "TOWN",
     "latitude": -51.686884,
     "longitude": -72.492078,
     "elevation": 331
   },
   {
     "name": "Cerro Sombrero",
+    "type": "TOWN",
     "latitude": -52.776462,
     "longitude": -69.290911,
     "elevation": 207
   },
   {
     "name": "Cerro del Paso",
+    "type": "TOWN",
     "latitude": -47.824283,
     "longitude": -66.140911,
     "elevation": 141
   },
   {
     "name": "Chabot Creek",
+    "type": "TOWN",
     "latitude": -51.499486,
     "longitude": -58.052144,
     "elevation": 0
   },
   {
     "name": "Chabot Point",
+    "type": "TOWN",
     "latitude": -51.521119,
     "longitude": -58.045393,
     "elevation": 30
   },
   {
     "name": "Chabunco",
+    "type": "TOWN",
     "latitude": -52.98812,
     "longitude": -70.814839,
     "elevation": 46
   },
   {
     "name": "Chacabuco",
+    "type": "TOWN",
     "latitude": -49.055477,
     "longitude": -72.313304,
     "elevation": 1040
   },
   {
     "name": "Chacras Piedrabuena",
+    "type": "TOWN",
     "latitude": -50.021569,
     "longitude": -69.004401,
     "elevation": 46
   },
   {
     "name": "Chaffers Gullet",
+    "type": "TOWN",
     "latitude": -52.128539,
     "longitude": -60.381927,
     "elevation": 13
   },
   {
     "name": "Chali Aike",
+    "type": "TOWN",
     "latitude": -51.047507,
     "longitude": -70.856328,
     "elevation": 669
   },
   {
     "name": "Chancho Point",
+    "type": "TOWN",
     "latitude": -51.497271,
     "longitude": -59.12786,
     "elevation": 30
   },
   {
     "name": "Chank Aike",
+    "type": "TOWN",
     "latitude": -51.45302,
     "longitude": -70.514579,
     "elevation": 482
   },
   {
     "name": "Channel Point",
+    "type": "TOWN",
     "latitude": -51.408586,
     "longitude": -60.080028,
     "elevation": 20
   },
   {
     "name": "Charles Fuhr",
+    "type": "TOWN",
     "latitude": -50.270052,
     "longitude": -71.887286,
     "elevation": 591
   },
   {
     "name": "Charles Point",
+    "type": "TOWN",
     "latitude": -51.654294,
     "longitude": -57.774345,
     "elevation": 79
   },
   {
     "name": "Chatham Harbour",
+    "type": "TOWN",
     "latitude": -51.844408,
     "longitude": -60.968499,
     "elevation": 0
   },
   {
     "name": "Chile Nuevo",
+    "type": "TOWN",
     "latitude": -51.735838,
     "longitude": -72.490441,
     "elevation": 59
   },
   {
     "name": "Chimen Aike",
+    "type": "TOWN",
     "latitude": -51.706819,
     "longitude": -69.282341,
     "elevation": 33
   },
   {
     "name": "China Creek",
+    "type": "TOWN",
     "latitude": -53.154076,
     "longitude": -69.182848,
     "elevation": 187
   },
   {
     "name": "Choiseul Sound",
+    "type": "TOWN",
     "latitude": -51.91992,
     "longitude": -58.667164,
     "elevation": 0
   },
   {
     "name": "Chorrillo",
+    "type": "TOWN",
     "latitude": -50.849175,
     "longitude": -71.211925,
     "elevation": 1040
   },
   {
     "name": "Christina Bay",
+    "type": "TOWN",
     "latitude": -51.689036,
     "longitude": -57.725301,
     "elevation": 0
   },
   {
     "name": "Christmas Harbour",
+    "type": "TOWN",
     "latitude": -51.676497,
     "longitude": -60.175563,
     "elevation": 0
   },
   {
     "name": "Cinnamon Valley",
+    "type": "TOWN",
     "latitude": -51.615123,
     "longitude": -60.439326,
     "elevation": 200
   },
   {
     "name": "Cliff Point",
+    "type": "TOWN",
     "latitude": -52.009645,
     "longitude": -58.521316,
     "elevation": 16
   },
   {
     "name": "Cochrane",
+    "type": "TOWN",
     "latitude": -47.254164,
     "longitude": -72.573244,
     "elevation": 482
   },
   {
     "name": "Comandante Luis Piedrabuena",
+    "type": "TOWN",
     "latitude": -49.987276,
     "longitude": -68.912991,
     "elevation": 39
   },
   {
     "name": "Comandante Portillo",
+    "type": "TOWN",
     "latitude": -54.9,
     "longitude": -66.0,
     "elevation": 289
   },
   {
     "name": "Comercial",
+    "type": "TOWN",
     "latitude": -51.537104,
     "longitude": -72.336783,
     "elevation": 1073
   },
   {
     "name": "Committee Bay",
+    "type": "TOWN",
     "latitude": -51.329808,
     "longitude": -59.928579,
     "elevation": 0
   },
   {
     "name": "Complejo Torres del Paine",
+    "type": "TOWN",
     "latitude": -51.386627,
     "longitude": -72.794637,
     "elevation": 223
   },
   {
     "name": "Concordia Bay",
+    "type": "TOWN",
     "latitude": -51.308316,
     "longitude": -58.60367,
     "elevation": 0
   },
   {
     "name": "Condominio Vista Norte",
+    "type": "TOWN",
     "latitude": -53.09671,
     "longitude": -70.881977,
     "elevation": 105
   },
   {
     "name": "Condor Cliff",
+    "type": "TOWN",
     "latitude": -50.220282,
     "longitude": -70.93125,
     "elevation": 420
   },
   {
     "name": "Convivir",
+    "type": "TOWN",
     "latitude": -47.739251,
     "longitude": -65.902745,
     "elevation": 253
   },
   {
     "name": "Coronel Guarumba",
+    "type": "TOWN",
     "latitude": -50.862275,
     "longitude": -71.815526,
     "elevation": 1578
   },
   {
     "name": "Corpen",
+    "type": "TOWN",
     "latitude": -49.583333,
     "longitude": -69.500005,
     "elevation": 240
   },
   {
     "name": "Corpie Aike",
+    "type": "TOWN",
     "latitude": -51.353084,
     "longitude": -70.654609,
     "elevation": 623
   },
   {
     "name": "Corvi",
+    "type": "TOWN",
     "latitude": -51.73318,
     "longitude": -72.491331,
     "elevation": 72
   },
   {
     "name": "Costa Centro",
+    "type": "TOWN",
     "latitude": -54.808705,
     "longitude": -68.304695,
     "elevation": 16
   },
   {
     "name": "Costanera",
+    "type": "TOWN",
     "latitude": -51.734219,
     "longitude": -72.504367,
     "elevation": 23
   },
   {
     "name": "Cow Bay",
+    "type": "TOWN",
     "latitude": -51.43436,
     "longitude": -57.860742,
     "elevation": 0
   },
   {
     "name": "Cow Point",
+    "type": "TOWN",
     "latitude": -52.222534,
     "longitude": -59.222787,
     "elevation": 46
   },
   {
     "name": "Coy Inlet",
+    "type": "TOWN",
     "latitude": -50.927556,
     "longitude": -69.218341,
     "elevation": 148
   },
   {
     "name": "Cracker Point",
+    "type": "TOWN",
     "latitude": -51.62318,
     "longitude": -60.446547,
     "elevation": 0
   },
   {
     "name": "Creek Point",
+    "type": "TOWN",
     "latitude": -51.391317,
     "longitude": -59.861594,
     "elevation": 10
   },
   {
     "name": "Crooked Inlet",
+    "type": "TOWN",
     "latitude": -51.547676,
     "longitude": -60.317216,
     "elevation": 0
   },
   {
     "name": "Crooked Inlet Farm",
+    "type": "TOWN",
     "latitude": -51.584687,
     "longitude": -60.211575,
     "elevation": 187
   },
   {
     "name": "Cruz del Sur",
+    "type": "TOWN",
     "latitude": -52.557386,
     "longitude": -71.544394,
     "elevation": 108
   },
   {
     "name": "Cuadrado",
+    "type": "TOWN",
     "latitude": -51.743128,
     "longitude": -71.315743,
     "elevation": 778
   },
   {
     "name": "Cutter Cove",
+    "type": "TOWN",
     "latitude": -51.756514,
     "longitude": -59.251089,
     "elevation": 0
   },
   {
     "name": "Cygnet Harbour",
+    "type": "TOWN",
     "latitude": -51.889092,
     "longitude": -59.485505,
     "elevation": 0
   },
   {
     "name": "DFO",
+    "type": "VOR",
     "latitude": -51.684733,
     "longitude": -57.773487,
     "elevation": 89
   },
   {
     "name": "Dangerous Point",
+    "type": "TOWN",
     "latitude": -52.004271,
     "longitude": -58.350184,
     "elevation": 26
   },
   {
     "name": "Daniel Uno",
+    "type": "TOWN",
     "latitude": -52.34234,
     "longitude": -68.666549,
     "elevation": 0
   },
   {
     "name": "Danson Harbour",
+    "type": "TOWN",
     "latitude": -52.105342,
     "longitude": -59.64006,
     "elevation": 0
   },
   {
     "name": "Darwin Harbour",
+    "type": "TOWN",
     "latitude": -51.819754,
     "longitude": -58.949755,
     "elevation": 0
   },
   {
     "name": "De La Costa",
+    "type": "TOWN",
     "latitude": -53.597802,
     "longitude": -67.987795,
     "elevation": 23
   },
   {
     "name": "Deaths Head",
+    "type": "TOWN",
     "latitude": -51.412424,
     "longitude": -60.646141,
     "elevation": 492
   },
   {
     "name": "Del Alto",
+    "type": "TOWN",
     "latitude": -47.743659,
     "longitude": -65.891165,
     "elevation": 167
   },
   {
     "name": "Del Frigorifico",
+    "type": "TOWN",
     "latitude": -51.614578,
     "longitude": -69.350605,
     "elevation": 52
   },
   {
     "name": "Del Rio Chico",
+    "type": "TOWN",
     "latitude": -51.671139,
     "longitude": -69.118381,
     "elevation": 23
   },
   {
     "name": "Dick Point",
+    "type": "TOWN",
     "latitude": -51.80596,
     "longitude": -60.538446,
     "elevation": 36
   },
   {
     "name": "Dieciseis",
+    "type": "TOWN",
     "latitude": -51.854132,
     "longitude": -71.253222,
     "elevation": 331
   },
   {
     "name": "Diego Ritchie",
+    "type": "TOWN",
     "latitude": -51.97805,
     "longitude": -70.396159,
     "elevation": 459
   },
   {
     "name": "Diez Y Ocho",
+    "type": "TOWN",
     "latitude": -51.776086,
     "longitude": -71.123926,
     "elevation": 591
   },
   {
     "name": "Diffunta Correa",
+    "type": "TOWN",
     "latitude": -51.698075,
     "longitude": -72.431193,
     "elevation": 433
   },
   {
     "name": "Discordia",
+    "type": "TOWN",
     "latitude": -53.268093,
     "longitude": -70.94488,
     "elevation": 13
   },
   {
     "name": "Doce de Febrero",
+    "type": "TOWN",
     "latitude": -52.893513,
     "longitude": -70.14117,
     "elevation": 66
   },
   {
     "name": "Doctor Point",
+    "type": "TOWN",
     "latitude": -51.662827,
     "longitude": -57.818266,
     "elevation": 66
   },
   {
     "name": "Doctors Head",
+    "type": "TOWN",
     "latitude": -51.517838,
     "longitude": -59.060551,
     "elevation": 177
   },
   {
     "name": "Dog Point",
+    "type": "TOWN",
     "latitude": -51.917862,
     "longitude": -58.887792,
     "elevation": 3
   },
   {
     "name": "Domi Aike",
+    "type": "TOWN",
     "latitude": -50.830417,
     "longitude": -69.689989,
     "elevation": 764
   },
   {
     "name": "Don Bosco",
+    "type": "TOWN",
     "latitude": -51.587917,
     "longitude": -72.216739,
     "elevation": 794
   },
   {
     "name": "Don Carlos Bay",
+    "type": "TOWN",
     "latitude": -51.635786,
     "longitude": -57.751898,
     "elevation": 0
   },
   {
     "name": "Dorotea",
+    "type": "TOWN",
     "latitude": -51.647924,
     "longitude": -72.339118,
     "elevation": 951
   },
   {
     "name": "Dos Arroyos",
+    "type": "TOWN",
     "latitude": -47.24213,
     "longitude": -72.329903,
     "elevation": 535
   },
   {
     "name": "Dos Hermanas",
+    "type": "TOWN",
     "latitude": -54.106919,
     "longitude": -67.859184,
     "elevation": 495
   },
   {
     "name": "Dos Lagunas",
+    "type": "TOWN",
     "latitude": -51.511928,
     "longitude": -72.509151,
     "elevation": 551
   },
   {
     "name": "Double Creek",
+    "type": "TOWN",
     "latitude": -52.007008,
     "longitude": -60.585358,
     "elevation": 0
   },
   {
     "name": "Driftwood Point",
+    "type": "TOWN",
     "latitude": -52.257556,
     "longitude": -59.024863,
     "elevation": 10
   },
   {
     "name": "Duclos Point",
+    "type": "TOWN",
     "latitude": -51.534758,
     "longitude": -58.023005,
     "elevation": 7
   },
   {
     "name": "Dumestre",
+    "type": "TOWN",
     "latitude": -51.788672,
     "longitude": -72.467155,
     "elevation": 72
   },
   {
     "name": "Dunbar Creek",
+    "type": "TOWN",
     "latitude": -51.408398,
     "longitude": -60.449023,
     "elevation": 0
   },
   {
     "name": "Dunbar Farm",
+    "type": "TOWN",
     "latitude": -51.412911,
     "longitude": -60.453126,
     "elevation": 26
   },
   {
     "name": "Dungeness",
+    "type": "TOWN",
     "latitude": -52.394832,
     "longitude": -68.431165,
     "elevation": 23
   },
   {
     "name": "Dunnose Head",
+    "type": "TOWN",
     "latitude": -51.680273,
     "longitude": -60.644741,
     "elevation": 138
   },
   {
     "name": "Dunnose Head Farm",
+    "type": "TOWN",
     "latitude": -51.756294,
     "longitude": -60.4193,
     "elevation": 36
   },
   {
     "name": "Duperrey Harbour",
+    "type": "TOWN",
     "latitude": -51.570575,
     "longitude": -58.110766,
     "elevation": 0
   },
   {
     "name": "Dyke Point",
+    "type": "TOWN",
     "latitude": -51.930136,
     "longitude": -61.07789,
     "elevation": 157
   },
   {
     "name": "ECA",
+    "type": "VOR_DME",
     "latitude": -50.278446,
     "longitude": -72.04517,
     "elevation": 643
   },
   {
     "name": "Eagle Point",
+    "type": "TOWN",
     "latitude": -51.539609,
     "longitude": -57.769933,
     "elevation": 102
   },
   {
     "name": "East Bay",
+    "type": "TOWN",
     "latitude": -51.7629,
     "longitude": -60.244217,
     "elevation": 0
   },
   {
     "name": "East Branch",
+    "type": "TOWN",
     "latitude": -51.57795,
     "longitude": -60.283935,
     "elevation": 16
   },
   {
     "name": "East Cove",
+    "type": "TOWN",
     "latitude": -51.906194,
     "longitude": -58.434863,
     "elevation": 0
   },
   {
     "name": "East Head",
+    "type": "TOWN",
     "latitude": -51.998721,
     "longitude": -60.012603,
     "elevation": 417
   },
   {
     "name": "East Point",
+    "type": "TOWN",
     "latitude": -51.336376,
     "longitude": -60.048802,
     "elevation": 72
   },
   {
     "name": "East Road",
+    "type": "TOWN",
     "latitude": -51.792227,
     "longitude": -58.08933,
     "elevation": 0
   },
   {
     "name": "Eddy Point",
+    "type": "TOWN",
     "latitude": -51.757431,
     "longitude": -61.27868,
     "elevation": 0
   },
   {
     "name": "Editha",
+    "type": "TOWN",
     "latitude": -48.91758,
     "longitude": -72.326083,
     "elevation": 863
   },
   {
     "name": "Eduardo Frei Montalva",
+    "type": "TOWN",
     "latitude": -51.741191,
     "longitude": -72.486353,
     "elevation": 49
   },
   {
     "name": "Egg Harbour",
+    "type": "TOWN",
     "latitude": -51.838668,
     "longitude": -59.384837,
     "elevation": 0
   },
   {
     "name": "Ekewern",
+    "type": "TOWN",
     "latitude": -52.866667,
     "longitude": -69.51667,
     "elevation": 541
   },
   {
     "name": "Elephant Bay",
+    "type": "TOWN",
     "latitude": -51.295372,
     "longitude": -59.569987,
     "elevation": 0
   },
   {
     "name": "Elephant Beach Farm",
+    "type": "TOWN",
     "latitude": -51.386471,
     "longitude": -58.76112,
     "elevation": 39
   },
   {
     "name": "Elephant Cove",
+    "type": "TOWN",
     "latitude": -51.801556,
     "longitude": -60.919018,
     "elevation": 0
   },
   {
     "name": "Elephant Island",
+    "type": "TOWN",
     "latitude": -51.876758,
     "longitude": -58.291741,
     "elevation": 36
   },
   {
     "name": "Elephant Point",
+    "type": "TOWN",
     "latitude": -51.884396,
     "longitude": -58.30241,
     "elevation": 13
   },
   {
     "name": "Eliza Cove",
+    "type": "TOWN",
     "latitude": -51.733162,
     "longitude": -57.832224,
     "elevation": 0
   },
   {
     "name": "Enderby Point",
+    "type": "TOWN",
     "latitude": -52.027125,
     "longitude": -58.550929,
     "elevation": 23
   },
   {
     "name": "Endesa",
+    "type": "TOWN",
     "latitude": -51.731143,
     "longitude": -72.48635,
     "elevation": 131
   },
   {
     "name": "Engineer Point",
+    "type": "TOWN",
     "latitude": -51.682155,
     "longitude": -57.832434,
     "elevation": 30
   },
   {
     "name": "Ensenada Villarino",
+    "type": "TOWN",
     "latitude": -54.922173,
     "longitude": -67.779399,
     "elevation": 33
   },
   {
     "name": "Entrada Mayer",
+    "type": "TOWN",
     "latitude": -48.209324,
     "longitude": -72.323345,
     "elevation": 1473
   },
   {
     "name": "Entrance Cove",
+    "type": "TOWN",
     "latitude": -51.958204,
     "longitude": -60.582047,
     "elevation": 0
   },
   {
     "name": "Entre Rios",
+    "type": "TOWN",
     "latitude": -54.130726,
     "longitude": -67.272466,
     "elevation": 75
   },
   {
     "name": "Esmeralda",
+    "type": "TOWN",
     "latitude": -53.622372,
     "longitude": -70.475991,
     "elevation": 108
   },
   {
     "name": "Espora",
+    "type": "TOWN",
     "latitude": -52.491211,
     "longitude": -69.422756,
     "elevation": 36
   },
   {
     "name": "Estadio",
+    "type": "TOWN",
     "latitude": -51.726139,
     "longitude": -72.484459,
     "elevation": 112
   },
   {
     "name": "Estancia Adela",
+    "type": "TOWN",
     "latitude": -52.850396,
     "longitude": -71.510362,
     "elevation": 66
   },
   {
     "name": "Estancia Almirantazgo",
+    "type": "TOWN",
     "latitude": -54.461441,
     "longitude": -69.08707,
     "elevation": 154
   },
   {
     "name": "Estancia Ana",
+    "type": "TOWN",
     "latitude": -50.594091,
     "longitude": -71.346879,
     "elevation": 1604
   },
   {
     "name": "Estancia Armonia",
+    "type": "TOWN",
     "latitude": -53.335002,
     "longitude": -69.774712,
     "elevation": 394
   },
   {
     "name": "Estancia Asturiana",
+    "type": "TOWN",
     "latitude": -51.879054,
     "longitude": -72.083969,
     "elevation": 144
   },
   {
     "name": "Estancia Aurelia Del Carmen",
+    "type": "TOWN",
     "latitude": -52.748023,
     "longitude": -71.01305,
     "elevation": 33
   },
   {
     "name": "Estancia Avelina",
+    "type": "TOWN",
     "latitude": -52.5733,
     "longitude": -70.772019,
     "elevation": 210
   },
   {
     "name": "Estancia Avellaneda",
+    "type": "TOWN",
     "latitude": -50.265333,
     "longitude": -72.837388,
     "elevation": 656
   },
   {
     "name": "Estancia Berta",
+    "type": "TOWN",
     "latitude": -52.009169,
     "longitude": -72.038526,
     "elevation": 568
   },
   {
     "name": "Estancia Chilenita",
+    "type": "TOWN",
     "latitude": -52.701817,
     "longitude": -71.804749,
     "elevation": 39
   },
   {
     "name": "Estancia Creek",
+    "type": "TOWN",
     "latitude": -52.027585,
     "longitude": -71.835858,
     "elevation": 597
   },
   {
     "name": "Estancia Cullen",
+    "type": "TOWN",
     "latitude": -52.88334,
     "longitude": -68.446516,
     "elevation": 56
   },
   {
     "name": "Estancia Despedida",
+    "type": "TOWN",
     "latitude": -53.9522,
     "longitude": -68.256912,
     "elevation": 295
   },
   {
     "name": "Estancia Divina Esperanza",
+    "type": "TOWN",
     "latitude": -52.321467,
     "longitude": -71.04279,
     "elevation": 551
   },
   {
     "name": "Estancia Don Braulio",
+    "type": "TOWN",
     "latitude": -51.718385,
     "longitude": -69.296456,
     "elevation": 66
   },
   {
     "name": "Estancia Don Doimo",
+    "type": "TOWN",
     "latitude": -52.78967,
     "longitude": -71.091457,
     "elevation": 62
   },
   {
     "name": "Estancia Don Marcelino",
+    "type": "TOWN",
     "latitude": -51.758165,
     "longitude": -72.24736,
     "elevation": 627
   },
   {
     "name": "Estancia Don Pancho",
+    "type": "TOWN",
     "latitude": -52.689704,
     "longitude": -71.904227,
     "elevation": 7
   },
   {
     "name": "Estancia Dora",
+    "type": "TOWN",
     "latitude": -52.198713,
     "longitude": -72.55585,
     "elevation": 23
   },
   {
     "name": "Estancia Draga",
+    "type": "TOWN",
     "latitude": -53.415109,
     "longitude": -70.052471,
     "elevation": 177
   },
   {
     "name": "Estancia Dynevor",
+    "type": "TOWN",
     "latitude": -52.532138,
     "longitude": -72.327485,
     "elevation": 79
   },
   {
     "name": "Estancia El Estero",
+    "type": "TOWN",
     "latitude": -53.60544,
     "longitude": -68.745337,
     "elevation": 738
   },
   {
     "name": "Estancia El Palenque",
+    "type": "TOWN",
     "latitude": -51.728046,
     "longitude": -72.267951,
     "elevation": 656
   },
   {
     "name": "Estancia El Salto",
+    "type": "TOWN",
     "latitude": -52.690165,
     "longitude": -71.637657,
     "elevation": 33
   },
   {
     "name": "Estancia Entre Lagos",
+    "type": "TOWN",
     "latitude": -51.065949,
     "longitude": -72.549804,
     "elevation": 269
   },
   {
     "name": "Estancia Entre Rios",
+    "type": "TOWN",
     "latitude": -48.265328,
     "longitude": -72.218942,
     "elevation": 1591
   },
   {
     "name": "Estancia Entre Vientos",
+    "type": "TOWN",
     "latitude": -52.744968,
     "longitude": -71.450824,
     "elevation": 62
   },
   {
     "name": "Estancia Eva",
+    "type": "TOWN",
     "latitude": -52.69434,
     "longitude": -71.678652,
     "elevation": 36
   },
   {
     "name": "Estancia Farm",
+    "type": "TOWN",
     "latitude": -51.656414,
     "longitude": -58.158132,
     "elevation": 115
   },
   {
     "name": "Estancia Flores",
+    "type": "TOWN",
     "latitude": -51.962168,
     "longitude": -72.145017,
     "elevation": 397
   },
   {
     "name": "Estancia Florita",
+    "type": "TOWN",
     "latitude": -52.815156,
     "longitude": -71.401451,
     "elevation": 82
   },
   {
     "name": "Estancia Gladis",
+    "type": "TOWN",
     "latitude": -52.554967,
     "longitude": -70.406201,
     "elevation": 217
   },
   {
     "name": "Estancia Glencross",
+    "type": "TOWN",
     "latitude": -51.828291,
     "longitude": -71.692448,
     "elevation": 381
   },
   {
     "name": "Estancia Gloria",
+    "type": "TOWN",
     "latitude": -52.651371,
     "longitude": -71.489438,
     "elevation": 102
   },
   {
     "name": "Estancia Harberton",
+    "type": "TOWN",
     "latitude": -54.877762,
     "longitude": -67.329386,
     "elevation": 56
   },
   {
     "name": "Estancia Iniverno",
+    "type": "TOWN",
     "latitude": -52.888426,
     "longitude": -71.607353,
     "elevation": 36
   },
   {
     "name": "Estancia Jeanette Naria",
+    "type": "TOWN",
     "latitude": -53.314245,
     "longitude": -69.731072,
     "elevation": 518
   },
   {
     "name": "Estancia Kerber",
+    "type": "TOWN",
     "latitude": -52.092902,
     "longitude": -72.059502,
     "elevation": 735
   },
   {
     "name": "Estancia La Caravana",
+    "type": "TOWN",
     "latitude": -51.818187,
     "longitude": -72.225514,
     "elevation": 171
   },
   {
     "name": "Estancia La Cumbre",
+    "type": "TOWN",
     "latitude": -50.734411,
     "longitude": -72.409431,
     "elevation": 2310
   },
   {
     "name": "Estancia La Florida",
+    "type": "TOWN",
     "latitude": -48.796935,
     "longitude": -72.551855,
     "elevation": 928
   },
   {
     "name": "Estancia La Invernada",
+    "type": "TOWN",
     "latitude": -52.278024,
     "longitude": -71.347983,
     "elevation": 873
   },
   {
     "name": "Estancia La Laguna",
+    "type": "TOWN",
     "latitude": -53.470639,
     "longitude": -68.724388,
     "elevation": 610
   },
   {
     "name": "Estancia La Portada",
+    "type": "TOWN",
     "latitude": -52.072955,
     "longitude": -70.195828,
     "elevation": 407
   },
   {
     "name": "Estancia La Reina",
+    "type": "TOWN",
     "latitude": -52.761944,
     "longitude": -71.354814,
     "elevation": 148
   },
   {
     "name": "Estancia La Siberia",
+    "type": "TOWN",
     "latitude": -49.014304,
     "longitude": -71.061427,
     "elevation": 1411
   },
   {
     "name": "Estancia La Silesia",
+    "type": "TOWN",
     "latitude": -49.743146,
     "longitude": -71.941012,
     "elevation": 837
   },
   {
     "name": "Estancia La Suerte",
+    "type": "TOWN",
     "latitude": -49.138454,
     "longitude": -72.937655,
     "elevation": 1539
   },
   {
     "name": "Estancia Lago Pinto",
+    "type": "TOWN",
     "latitude": -52.060065,
     "longitude": -72.399181,
     "elevation": 522
   },
   {
     "name": "Estancia Laguna Dorotea",
+    "type": "TOWN",
     "latitude": -51.548837,
     "longitude": -72.496217,
     "elevation": 906
   },
   {
     "name": "Estancia Laguna Toro",
+    "type": "TOWN",
     "latitude": -52.793563,
     "longitude": -71.14704,
     "elevation": 121
   },
   {
     "name": "Estancia Las Flores",
+    "type": "TOWN",
     "latitude": -53.685009,
     "longitude": -68.702034,
     "elevation": 577
   },
   {
     "name": "Estancia Las Nieves",
+    "type": "TOWN",
     "latitude": -52.305619,
     "longitude": -71.840212,
     "elevation": 1654
   },
   {
     "name": "Estancia Leona English",
+    "type": "TOWN",
     "latitude": -52.389336,
     "longitude": -71.048506,
     "elevation": 666
   },
   {
     "name": "Estancia Linacre",
+    "type": "TOWN",
     "latitude": -52.041183,
     "longitude": -72.664249,
     "elevation": 10
   },
   {
     "name": "Estancia Los Cisnes",
+    "type": "TOWN",
     "latitude": -52.620034,
     "longitude": -70.825887,
     "elevation": 207
   },
   {
     "name": "Estancia Los Coipos",
+    "type": "TOWN",
     "latitude": -52.678978,
     "longitude": -70.786135,
     "elevation": 89
   },
   {
     "name": "Estancia Los Copihues",
+    "type": "TOWN",
     "latitude": -53.336877,
     "longitude": -69.456837,
     "elevation": 85
   },
   {
     "name": "Estancia Los Ventisqueros",
+    "type": "TOWN",
     "latitude": -50.416912,
     "longitude": -72.745527,
     "elevation": 758
   },
   {
     "name": "Estancia Macerena",
+    "type": "TOWN",
     "latitude": -53.094961,
     "longitude": -71.195519,
     "elevation": 515
   },
   {
     "name": "Estancia Maria Soledad",
+    "type": "TOWN",
     "latitude": -53.325603,
     "longitude": -69.675789,
     "elevation": 292
   },
   {
     "name": "Estancia Mercedes",
+    "type": "TOWN",
     "latitude": -53.395959,
     "longitude": -70.31198,
     "elevation": 69
   },
   {
     "name": "Estancia Mimica",
+    "type": "TOWN",
     "latitude": -52.766262,
     "longitude": -69.521196,
     "elevation": 138
   },
   {
     "name": "Estancia Mina Rica",
+    "type": "TOWN",
     "latitude": -53.020308,
     "longitude": -71.048847,
     "elevation": 308
   },
   {
     "name": "Estancia Moat",
+    "type": "TOWN",
     "latitude": -54.973617,
     "longitude": -66.745034,
     "elevation": 33
   },
   {
     "name": "Estancia Monte Entrance",
+    "type": "TOWN",
     "latitude": -50.070337,
     "longitude": -68.515416,
     "elevation": 36
   },
   {
     "name": "Estancia Nibepo Aike",
+    "type": "TOWN",
     "latitude": -50.56428,
     "longitude": -72.863877,
     "elevation": 741
   },
   {
     "name": "Estancia Oasy Harbour",
+    "type": "TOWN",
     "latitude": -52.516535,
     "longitude": -70.431899,
     "elevation": 210
   },
   {
     "name": "Estancia Onamonte",
+    "type": "TOWN",
     "latitude": -53.989247,
     "longitude": -69.115475,
     "elevation": 482
   },
   {
     "name": "Estancia Penitente",
+    "type": "TOWN",
     "latitude": -52.119768,
     "longitude": -71.384551,
     "elevation": 640
   },
   {
     "name": "Estancia Perales",
+    "type": "TOWN",
     "latitude": -51.542409,
     "longitude": -72.843228,
     "elevation": 16
   },
   {
     "name": "Estancia Pirinaica",
+    "type": "TOWN",
     "latitude": -54.258577,
     "longitude": -66.910229,
     "elevation": 171
   },
   {
     "name": "Estancia Puerto Aldea",
+    "type": "TOWN",
     "latitude": -52.1381,
     "longitude": -72.654624,
     "elevation": 33
   },
   {
     "name": "Estancia Puerto Consuelo",
+    "type": "TOWN",
     "latitude": -51.604313,
     "longitude": -72.656923,
     "elevation": 43
   },
   {
     "name": "Estancia Puerto Rancho",
+    "type": "TOWN",
     "latitude": -55.046937,
     "longitude": -66.561407,
     "elevation": 52
   },
   {
     "name": "Estancia Rio Ewan",
+    "type": "TOWN",
     "latitude": -54.233493,
     "longitude": -67.21631,
     "elevation": 105
   },
   {
     "name": "Estancia Rocallosa",
+    "type": "TOWN",
     "latitude": -52.658995,
     "longitude": -71.97367,
     "elevation": 30
   },
   {
     "name": "Estancia Rosario",
+    "type": "TOWN",
     "latitude": -51.734992,
     "longitude": -72.527791,
     "elevation": 39
   },
   {
     "name": "Estancia Rose Aike Sur",
+    "type": "TOWN",
     "latitude": -52.284494,
     "longitude": -70.114229,
     "elevation": 699
   },
   {
     "name": "Estancia San Carlos",
+    "type": "TOWN",
     "latitude": -52.693495,
     "longitude": -71.59126,
     "elevation": 171
   },
   {
     "name": "Estancia San Jose",
+    "type": "TOWN",
     "latitude": -49.415962,
     "longitude": -72.789599,
     "elevation": 886
   },
   {
     "name": "Estancia San Justo",
+    "type": "TOWN",
     "latitude": -54.028494,
     "longitude": -68.544922,
     "elevation": 443
   },
   {
     "name": "Estancia San Lucas",
+    "type": "TOWN",
     "latitude": -52.14333,
     "longitude": -72.059988,
     "elevation": 883
   },
   {
     "name": "Estancia San Pedro",
+    "type": "TOWN",
     "latitude": -53.250811,
     "longitude": -70.953361,
     "elevation": 36
   },
   {
     "name": "Estancia San Ramon",
+    "type": "TOWN",
     "latitude": -50.1966,
     "longitude": -69.906312,
     "elevation": 256
   },
   {
     "name": "Estancia Santa Florencia",
+    "type": "TOWN",
     "latitude": -52.688038,
     "longitude": -71.159152,
     "elevation": 161
   },
   {
     "name": "Estancia Santa Rosa",
+    "type": "TOWN",
     "latitude": -54.903466,
     "longitude": -68.157187,
     "elevation": 20
   },
   {
     "name": "Estancia Santa Rosa de Lima",
+    "type": "TOWN",
     "latitude": -52.981408,
     "longitude": -71.840572,
     "elevation": 89
   },
   {
     "name": "Estancia Sara",
+    "type": "TOWN",
     "latitude": -53.433583,
     "longitude": -68.183738,
     "elevation": 59
   },
   {
     "name": "Estancia Skyring",
+    "type": "TOWN",
     "latitude": -52.549343,
     "longitude": -71.958305,
     "elevation": 20
   },
   {
     "name": "Estancia Solar",
+    "type": "TOWN",
     "latitude": -51.930372,
     "longitude": -72.362387,
     "elevation": 39
   },
   {
     "name": "Estancia Tamel Aike",
+    "type": "TOWN",
     "latitude": -52.756655,
     "longitude": -70.810397,
     "elevation": 43
   },
   {
     "name": "Estancia Tapi Aike",
+    "type": "TOWN",
     "latitude": -51.056127,
     "longitude": -71.794226,
     "elevation": 974
   },
   {
     "name": "Estancia Tepi",
+    "type": "TOWN",
     "latitude": -54.250082,
     "longitude": -67.156238,
     "elevation": 374
   },
   {
     "name": "Estancia Teresita",
+    "type": "TOWN",
     "latitude": -53.330793,
     "longitude": -69.761221,
     "elevation": 423
   },
   {
     "name": "Estancia Tranquilo",
+    "type": "TOWN",
     "latitude": -51.822437,
     "longitude": -72.164226,
     "elevation": 112
   },
   {
     "name": "Estancia Tres Chorrillos",
+    "type": "TOWN",
     "latitude": -52.519286,
     "longitude": -70.716552,
     "elevation": 377
   },
   {
     "name": "Estancia Tres Pasos",
+    "type": "TOWN",
     "latitude": -51.420599,
     "longitude": -72.466943,
     "elevation": 571
   },
   {
     "name": "Estancia Valdivia",
+    "type": "TOWN",
     "latitude": -51.503187,
     "longitude": -72.688892,
     "elevation": 167
   },
   {
     "name": "Estancia Viamonte",
+    "type": "TOWN",
     "latitude": -53.995575,
     "longitude": -67.414225,
     "elevation": 49
   },
   {
     "name": "Estancia Yendegaia",
+    "type": "TOWN",
     "latitude": -54.858305,
     "longitude": -68.820743,
     "elevation": 20
   },
   {
     "name": "Estancia Zenia",
+    "type": "TOWN",
     "latitude": -53.318641,
     "longitude": -69.701763,
     "elevation": 433
   },
   {
     "name": "Estancia Zenteno",
+    "type": "TOWN",
     "latitude": -52.806512,
     "longitude": -70.797879,
     "elevation": 36
   },
   {
     "name": "Estancia del Pilar",
+    "type": "TOWN",
     "latitude": -52.710677,
     "longitude": -71.423951,
     "elevation": 89
   },
   {
     "name": "Estancia la Oriental",
+    "type": "TOWN",
     "latitude": -47.804487,
     "longitude": -72.094099,
     "elevation": 2707
   },
   {
     "name": "Etnias Unidas",
+    "type": "TOWN",
     "latitude": -51.739156,
     "longitude": -72.48176,
     "elevation": 79
   },
   {
     "name": "Evelyn Station Farm",
+    "type": "TOWN",
     "latitude": -51.557936,
     "longitude": -58.438389,
     "elevation": 95
   },
   {
     "name": "Fairy Cove",
+    "type": "TOWN",
     "latitude": -51.68231,
     "longitude": -57.881263,
     "elevation": 23
   },
   {
     "name": "Fall Point",
+    "type": "TOWN",
     "latitude": -51.355221,
     "longitude": -59.930109,
     "elevation": 148
   },
   {
     "name": "False Creek",
+    "type": "TOWN",
     "latitude": -51.947274,
     "longitude": -58.720797,
     "elevation": 0
   },
   {
     "name": "Fanning Harbour",
+    "type": "TOWN",
     "latitude": -51.476264,
     "longitude": -59.087048,
     "elevation": 0
   },
   {
     "name": "Fanning Head",
+    "type": "TOWN",
     "latitude": -51.468689,
     "longitude": -59.133956,
     "elevation": 305
   },
   {
     "name": "Fanny Road",
+    "type": "TOWN",
     "latitude": -52.228709,
     "longitude": -59.355979,
     "elevation": 0
   },
   {
     "name": "Faro Negro",
+    "type": "TOWN",
     "latitude": -49.257222,
     "longitude": -67.643271,
     "elevation": 23
   },
   {
     "name": "Fegen Inlet",
+    "type": "TOWN",
     "latitude": -52.069906,
     "longitude": -60.877425,
     "elevation": 0
   },
   {
     "name": "Felix Frias",
+    "type": "TOWN",
     "latitude": -50.333138,
     "longitude": -72.257843,
     "elevation": 636
   },
   {
     "name": "Fern Valley Creek",
+    "type": "TOWN",
     "latitude": -51.559577,
     "longitude": -59.03218,
     "elevation": 0
   },
   {
     "name": "Findlay Creek",
+    "type": "TOWN",
     "latitude": -51.86522,
     "longitude": -59.007858,
     "elevation": 3
   },
   {
     "name": "Findlay Harbour",
+    "type": "TOWN",
     "latitude": -51.991712,
     "longitude": -59.610271,
     "elevation": 0
   },
   {
     "name": "Fiordo Steffens",
+    "type": "TOWN",
     "latitude": -47.622366,
     "longitude": -73.657725,
     "elevation": 3
   },
   {
     "name": "First Sand Grass Bay",
+    "type": "TOWN",
     "latitude": -51.410798,
     "longitude": -58.287214,
     "elevation": 0
   },
   {
     "name": "Fish Creek",
+    "type": "TOWN",
     "latitude": -51.851089,
     "longitude": -61.238351,
     "elevation": 0
   },
   {
     "name": "Fitz Cove",
+    "type": "TOWN",
     "latitude": -51.757362,
     "longitude": -58.184152,
     "elevation": 0
   },
   {
     "name": "Fitzroy",
+    "type": "TOWN",
     "latitude": -51.784321,
     "longitude": -58.228791,
     "elevation": 39
   },
   {
     "name": "Fitzroy Basin",
+    "type": "TOWN",
     "latitude": -51.748116,
     "longitude": -58.163295,
     "elevation": 0
   },
   {
     "name": "Fitzroy Creek",
+    "type": "TOWN",
     "latitude": -51.801795,
     "longitude": -58.233783,
     "elevation": 0
   },
   {
     "name": "Flecha Negra",
+    "type": "TOWN",
     "latitude": -47.833333,
     "longitude": -69.666674,
     "elevation": 2779
   },
   {
     "name": "Flora",
+    "type": "TOWN",
     "latitude": -50.968965,
     "longitude": -70.361627,
     "elevation": 827
   },
   {
     "name": "Flores Harbour",
+    "type": "TOWN",
     "latitude": -52.221937,
     "longitude": -59.589586,
     "elevation": 0
   },
   {
     "name": "Florida Negra",
+    "type": "TOWN",
     "latitude": -48.42205,
     "longitude": -67.35471,
     "elevation": 374
   },
   {
     "name": "Foam Creek",
+    "type": "TOWN",
     "latitude": -51.461585,
     "longitude": -58.308689,
     "elevation": 187
   },
   {
     "name": "Foot Point",
+    "type": "TOWN",
     "latitude": -51.486594,
     "longitude": -60.156605,
     "elevation": 26
   },
   {
     "name": "Foul Bay",
+    "type": "TOWN",
     "latitude": -51.356882,
     "longitude": -58.907793,
     "elevation": 0
   },
   {
     "name": "Fox Bay",
+    "type": "TOWN",
     "latitude": -51.980544,
     "longitude": -60.054567,
     "elevation": 0
   },
   {
     "name": "Fox Harbour",
+    "type": "TOWN",
     "latitude": -52.090174,
     "longitude": -59.113212,
     "elevation": 0
   },
   {
     "name": "Fox Point",
+    "type": "TOWN",
     "latitude": -51.921434,
     "longitude": -58.404849,
     "elevation": 20
   },
   {
     "name": "Fox Point West",
+    "type": "TOWN",
     "latitude": -51.48459,
     "longitude": -60.066399,
     "elevation": 39
   },
   {
     "name": "Frailes de Condor",
+    "type": "TOWN",
     "latitude": -51.913756,
     "longitude": -69.122404,
     "elevation": 171
   },
   {
     "name": "Frailes de Loyola",
+    "type": "TOWN",
     "latitude": -51.870196,
     "longitude": -68.972497,
     "elevation": 79
   },
   {
     "name": "French Harbour",
+    "type": "TOWN",
     "latitude": -51.851182,
     "longitude": -61.10291,
     "elevation": 0
   },
   {
     "name": "Frontera Austral",
+    "type": "TOWN",
     "latitude": -51.586442,
     "longitude": -72.212121,
     "elevation": 735
   },
   {
     "name": "Frutillar",
+    "type": "TOWN",
     "latitude": -47.246107,
     "longitude": -72.428696,
     "elevation": 525
   },
   {
     "name": "Fuentes del Coyle",
+    "type": "TOWN",
     "latitude": -51.146514,
     "longitude": -71.915765,
     "elevation": 1119
   },
   {
     "name": "Fuerte Bulnes",
+    "type": "TOWN",
     "latitude": -53.629971,
     "longitude": -70.918854,
     "elevation": 102
   },
   {
     "name": "Fuerte San Carlos",
+    "type": "TOWN",
     "latitude": -47.753911,
     "longitude": -65.900867,
     "elevation": 72
   },
   {
     "name": "Fundo San Fernando",
+    "type": "TOWN",
     "latitude": -53.516299,
     "longitude": -70.96334,
     "elevation": 276
   },
   {
     "name": "Futuro Patagonia",
+    "type": "TOWN",
     "latitude": -53.291369,
     "longitude": -70.378248,
     "elevation": 79
   },
   {
     "name": "GAL",
+    "type": "VOR_DME",
     "latitude": -51.610861,
     "longitude": -69.330441,
     "elevation": 62
   },
   {
     "name": "GRA",
+    "type": "VOR_DME",
     "latitude": -53.775134,
     "longitude": -67.745751,
     "elevation": 52
   },
   {
     "name": "Garden Point",
+    "type": "TOWN",
     "latitude": -51.765499,
     "longitude": -58.199429,
     "elevation": 39
   },
   {
     "name": "Garibaldi Bay",
+    "type": "TOWN",
     "latitude": -51.923011,
     "longitude": -60.884712,
     "elevation": 0
   },
   {
     "name": "Garibaldi Point",
+    "type": "TOWN",
     "latitude": -51.917258,
     "longitude": -60.872606,
     "elevation": 59
   },
   {
     "name": "Gascoigne Point",
+    "type": "TOWN",
     "latitude": -51.336667,
     "longitude": -59.920724,
     "elevation": 13
   },
   {
     "name": "Gemita",
+    "type": "TOWN",
     "latitude": -50.874411,
     "longitude": -72.703797,
     "elevation": 1191
   },
   {
     "name": "George Island Farm",
+    "type": "TOWN",
     "latitude": -52.35431,
     "longitude": -59.750933,
     "elevation": 26
   },
   {
     "name": "Gibraltar Reef",
+    "type": "TOWN",
     "latitude": -51.297752,
     "longitude": -60.841599,
     "elevation": 0
   },
   {
     "name": "Gibraltar Station Farm",
+    "type": "TOWN",
     "latitude": -51.435519,
     "longitude": -58.372301,
     "elevation": 69
   },
   {
     "name": "Glaciar Grey",
+    "type": "TOWN",
     "latitude": -51.738356,
     "longitude": -72.474903,
     "elevation": 141
   },
   {
     "name": "Glaciar Serrano",
+    "type": "TOWN",
     "latitude": -51.738108,
     "longitude": -72.472936,
     "elevation": 164
   },
   {
     "name": "Gladys Cove",
+    "type": "TOWN",
     "latitude": -51.964385,
     "longitude": -60.767355,
     "elevation": 0
   },
   {
     "name": "Glen Point",
+    "type": "TOWN",
     "latitude": -51.344044,
     "longitude": -59.988903,
     "elevation": 72
   },
   {
     "name": "Goat Point",
+    "type": "TOWN",
     "latitude": -51.41988,
     "longitude": -58.295414,
     "elevation": 20
   },
   {
     "name": "Gobernador Gregores",
+    "type": "TOWN",
     "latitude": -48.75087,
     "longitude": -70.248552,
     "elevation": 948
   },
   {
     "name": "Gobernador Mayer",
+    "type": "TOWN",
     "latitude": -51.348268,
     "longitude": -70.291809,
     "elevation": 371
   },
   {
     "name": "Gobernador Moyano",
+    "type": "TOWN",
     "latitude": -51.863858,
     "longitude": -70.559914,
     "elevation": 223
   },
   {
     "name": "Gobernador Philippi",
+    "type": "TOWN",
     "latitude": -52.747488,
     "longitude": -71.009229,
     "elevation": 30
   },
   {
     "name": "Golding Bay",
+    "type": "TOWN",
     "latitude": -51.337682,
     "longitude": -59.80015,
     "elevation": 0
   },
   {
     "name": "Golding Island Farm",
+    "type": "TOWN",
     "latitude": -51.365733,
     "longitude": -59.688851,
     "elevation": 7
   },
   {
     "name": "Goose Green Farm",
+    "type": "TOWN",
     "latitude": -51.827197,
     "longitude": -58.973479,
     "elevation": 16
   },
   {
     "name": "Gosling Creek",
+    "type": "TOWN",
     "latitude": -51.99577,
     "longitude": -58.483548,
     "elevation": 10
   },
   {
     "name": "Grantham Sound",
+    "type": "TOWN",
     "latitude": -51.66276,
     "longitude": -59.094429,
     "elevation": 0
   },
   {
     "name": "Grave Cove",
+    "type": "TOWN",
     "latitude": -51.363813,
     "longitude": -60.632306,
     "elevation": 0
   },
   {
     "name": "Grave Point",
+    "type": "TOWN",
     "latitude": -51.534778,
     "longitude": -58.02205,
     "elevation": 7
   },
   {
     "name": "Green Rincon",
+    "type": "TOWN",
     "latitude": -51.259715,
     "longitude": -59.730316,
     "elevation": 46
   },
   {
     "name": "Greenfield Farm",
+    "type": "TOWN",
     "latitude": -51.566702,
     "longitude": -58.913984,
     "elevation": 226
   },
   {
     "name": "Grota Antonio Gil",
+    "type": "TOWN",
     "latitude": -51.500582,
     "longitude": -72.252174,
     "elevation": 932
   },
   {
     "name": "Gruta Virgen de Covadonga",
+    "type": "TOWN",
     "latitude": -53.053915,
     "longitude": -70.891379,
     "elevation": 197
   },
   {
     "name": "Guairabo",
+    "type": "TOWN",
     "latitude": -53.338356,
     "longitude": -70.956558,
     "elevation": 46
   },
   {
     "name": "Guankenken Aike",
+    "type": "TOWN",
     "latitude": -51.42932,
     "longitude": -69.82783,
     "elevation": 210
   },
   {
     "name": "Guer Aike",
+    "type": "TOWN",
     "latitude": -51.452278,
     "longitude": -70.005562,
     "elevation": 253
   },
   {
     "name": "Gull Harbour",
+    "type": "TOWN",
     "latitude": -51.89929,
     "longitude": -60.891627,
     "elevation": 0
   },
   {
     "name": "Gull Point",
+    "type": "TOWN",
     "latitude": -51.305412,
     "longitude": -60.04142,
     "elevation": 52
   },
   {
     "name": "Gypsy Cove",
+    "type": "TOWN",
     "latitude": -51.675343,
     "longitude": -57.807646,
     "elevation": 30
   },
   {
     "name": "Hadassa Bay",
+    "type": "TOWN",
     "latitude": -51.679617,
     "longitude": -57.822095,
     "elevation": 0
   },
   {
     "name": "Halfway Cove",
+    "type": "TOWN",
     "latitude": -52.213418,
     "longitude": -59.688356,
     "elevation": 0
   },
   {
     "name": "Hamblin Cove",
+    "type": "TOWN",
     "latitude": -51.665914,
     "longitude": -57.829628,
     "elevation": 0
   },
   {
     "name": "Hamond Cove",
+    "type": "TOWN",
     "latitude": -51.970619,
     "longitude": -58.619442,
     "elevation": 0
   },
   {
     "name": "Head of the Bay Creek",
+    "type": "TOWN",
     "latitude": -51.595324,
     "longitude": -59.036449,
     "elevation": 0
   },
   {
     "name": "Head of the Bay Farm",
+    "type": "TOWN",
     "latitude": -51.601,
     "longitude": -59.028733,
     "elevation": 43
   },
   {
     "name": "Hearnden Water",
+    "type": "TOWN",
     "latitude": -51.66668,
     "longitude": -57.870111,
     "elevation": 7
   },
   {
     "name": "Helena",
+    "type": "TOWN",
     "latitude": -49.897482,
     "longitude": -68.607133,
     "elevation": 56
   },
   {
     "name": "Hells Kitchen",
+    "type": "TOWN",
     "latitude": -51.649646,
     "longitude": -57.771212,
     "elevation": 0
   },
   {
     "name": "Herminita",
+    "type": "TOWN",
     "latitude": -54.024204,
     "longitude": -67.989174,
     "elevation": 358
   },
   {
     "name": "Hevia",
+    "type": "TOWN",
     "latitude": -48.912764,
     "longitude": -72.411481,
     "elevation": 978
   },
   {
     "name": "Hielos Continentales",
+    "type": "TOWN",
     "latitude": -51.541815,
     "longitude": -72.346996,
     "elevation": 1309
   },
   {
     "name": "High Bluff Cape",
+    "type": "TOWN",
     "latitude": -52.077307,
     "longitude": -61.019633,
     "elevation": 138
   },
   {
     "name": "Hill Cove",
+    "type": "TOWN",
     "latitude": -51.499126,
     "longitude": -60.10088,
     "elevation": 0
   },
   {
     "name": "Hill Gap",
+    "type": "TOWN",
     "latitude": -51.808568,
     "longitude": -59.753351,
     "elevation": 10
   },
   {
     "name": "Hill Station",
+    "type": "TOWN",
     "latitude": -51.575508,
     "longitude": -69.232891,
     "elevation": 46
   },
   {
     "name": "Home Farm",
+    "type": "TOWN",
     "latitude": -51.459496,
     "longitude": -58.60819,
     "elevation": 62
   },
   {
     "name": "Hookers Point",
+    "type": "TOWN",
     "latitude": -51.69938,
     "longitude": -57.776114,
     "elevation": 10
   },
   {
     "name": "Hope Cottage Farm",
+    "type": "TOWN",
     "latitude": -51.476205,
     "longitude": -58.627879,
     "elevation": 59
   },
   {
     "name": "Hope Harbour",
+    "type": "TOWN",
     "latitude": -51.354444,
     "longitude": -60.635519,
     "elevation": 0
   },
   {
     "name": "Hope Place",
+    "type": "TOWN",
     "latitude": -51.845482,
     "longitude": -59.01805,
     "elevation": 85
   },
   {
     "name": "Hope Point",
+    "type": "TOWN",
     "latitude": -51.340919,
     "longitude": -60.663009,
     "elevation": 23
   },
   {
     "name": "Hope Reef",
+    "type": "TOWN",
     "latitude": -51.188422,
     "longitude": -60.748644,
     "elevation": 0
   },
   {
     "name": "Horse Point",
+    "type": "TOWN",
     "latitude": -51.720542,
     "longitude": -57.825481,
     "elevation": 13
   },
   {
     "name": "Horseshoe Bay",
+    "type": "TOWN",
     "latitude": -51.501874,
     "longitude": -58.295734,
     "elevation": 0
   },
   {
     "name": "Horseshoe Bay Farm",
+    "type": "TOWN",
     "latitude": -51.5006,
     "longitude": -58.282186,
     "elevation": 36
   },
   {
     "name": "Hospital Point",
+    "type": "TOWN",
     "latitude": -51.506539,
     "longitude": -59.040613,
     "elevation": 223
   },
   {
     "name": "Hoste Inlet",
+    "type": "TOWN",
     "latitude": -52.122396,
     "longitude": -60.719805,
     "elevation": 0
   },
   {
     "name": "Hotel Explora",
+    "type": "TOWN",
     "latitude": -51.116256,
     "longitude": -72.99073,
     "elevation": 164
   },
   {
     "name": "Hotel Lago Grey",
+    "type": "TOWN",
     "latitude": -51.12288,
     "longitude": -73.11635,
     "elevation": 174
   },
   {
     "name": "Hotel Rubens",
+    "type": "TOWN",
     "latitude": -52.039287,
     "longitude": -71.941053,
     "elevation": 614
   },
   {
     "name": "House Bay",
+    "type": "TOWN",
     "latitude": -51.615731,
     "longitude": -60.430427,
     "elevation": 0
   },
   {
     "name": "House Cove",
+    "type": "TOWN",
     "latitude": -51.97927,
     "longitude": -60.834174,
     "elevation": 0
   },
   {
     "name": "Huertos Dorotea",
+    "type": "TOWN",
     "latitude": -51.618157,
     "longitude": -72.332252,
     "elevation": 1234
   },
   {
     "name": "Huertos Endesa",
+    "type": "TOWN",
     "latitude": -51.732968,
     "longitude": -72.467439,
     "elevation": 187
   },
   {
     "name": "Huertos Familiares",
+    "type": "TOWN",
     "latitude": -51.698345,
     "longitude": -72.488467,
     "elevation": 236
   },
   {
     "name": "Huiliche",
+    "type": "TOWN",
     "latitude": -50.364216,
     "longitude": -72.261491,
     "elevation": 1083
   },
   {
     "name": "Hummock Point",
+    "type": "TOWN",
     "latitude": -51.369627,
     "longitude": -59.661486,
     "elevation": 36
   },
   {
     "name": "Hut Point",
+    "type": "TOWN",
     "latitude": -51.391855,
     "longitude": -58.28172,
     "elevation": 7
   },
   {
     "name": "Iglesia Cerro Sombrero",
+    "type": "TOWN",
     "latitude": -52.776627,
     "longitude": -69.288748,
     "elevation": 203
   },
   {
     "name": "Iglesia Exumenica",
+    "type": "TOWN",
     "latitude": -52.427218,
     "longitude": -71.415102,
     "elevation": 568
   },
   {
     "name": "Iglesia Metodista Chile Nuevo",
+    "type": "TOWN",
     "latitude": -51.73492,
     "longitude": -72.491168,
     "elevation": 62
   },
   {
     "name": "Iglesia Puerto Williams",
+    "type": "TOWN",
     "latitude": -54.934527,
     "longitude": -67.610928,
     "elevation": 56
   },
   {
     "name": "Indiana",
+    "type": "TOWN",
     "latitude": -54.347025,
     "longitude": -67.422838,
     "elevation": 276
   },
   {
     "name": "Inlet Point",
+    "type": "TOWN",
     "latitude": -52.032347,
     "longitude": -60.896101,
     "elevation": 20
   },
   {
     "name": "Interior Dungeness",
+    "type": "TOWN",
     "latitude": -52.339613,
     "longitude": -68.469438,
     "elevation": 98
   },
   {
     "name": "Isabel Riquelme",
+    "type": "TOWN",
     "latitude": -51.871646,
     "longitude": -72.465547,
     "elevation": 85
   },
   {
     "name": "Isla Astorga",
+    "type": "TOWN",
     "latitude": -54.597906,
     "longitude": -72.077724,
     "elevation": 797
   },
   {
     "name": "Isla Central",
+    "type": "TOWN",
     "latitude": -48.774391,
     "longitude": -72.89582,
     "elevation": 892
   },
   {
     "name": "Isla Dawson",
+    "type": "TOWN",
     "latitude": -53.890515,
     "longitude": -70.685742,
     "elevation": 207
   },
   {
     "name": "Isla Lincoln",
+    "type": "TOWN",
     "latitude": -51.168967,
     "longitude": -72.597499,
     "elevation": 98
   },
   {
     "name": "Isla Marta",
+    "type": "TOWN",
     "latitude": -52.556943,
     "longitude": -72.298979,
     "elevation": 0
   },
   {
     "name": "Isla San Francisco",
+    "type": "TOWN",
     "latitude": -48.067385,
     "longitude": -73.580907,
     "elevation": 52
   },
   {
     "name": "Isla Selma",
+    "type": "TOWN",
     "latitude": -54.921881,
     "longitude": -71.475756,
     "elevation": 0
   },
   {
     "name": "Isla Treble",
+    "type": "TOWN",
     "latitude": -55.092597,
     "longitude": -71.035583,
     "elevation": 837
   },
   {
     "name": "Isla Unicornio",
+    "type": "TOWN",
     "latitude": -52.631631,
     "longitude": -72.373973,
     "elevation": 0
   },
   {
     "name": "Isla Unicornio Sur",
+    "type": "TOWN",
     "latitude": -52.63809,
     "longitude": -72.396043,
     "elevation": 0
   },
   {
     "name": "Isla Victor",
+    "type": "TOWN",
     "latitude": -47.176348,
     "longitude": -72.114299,
     "elevation": 925
   },
   {
     "name": "Island Creek",
+    "type": "TOWN",
     "latitude": -51.966375,
     "longitude": -58.690896,
     "elevation": 20
   },
   {
     "name": "Island Harbour",
+    "type": "TOWN",
     "latitude": -51.826817,
     "longitude": -58.328615,
     "elevation": 0
   },
   {
     "name": "Islas Ildefonso",
+    "type": "TOWN",
     "latitude": -55.838351,
     "longitude": -69.348071,
     "elevation": 95
   },
   {
     "name": "Islas Malvinas",
+    "type": "TOWN",
     "latitude": -51.534273,
     "longitude": -72.329881,
     "elevation": 997
   },
   {
     "name": "Islas del Sur",
+    "type": "TOWN",
     "latitude": -54.518772,
     "longitude": -67.201981,
     "elevation": 325
   },
   {
     "name": "Isthmus Cove",
+    "type": "TOWN",
     "latitude": -51.702373,
     "longitude": -60.318353,
     "elevation": 0
   },
   {
     "name": "Jenesta Point",
+    "type": "TOWN",
     "latitude": -51.263972,
     "longitude": -59.604113,
     "elevation": 10
   },
   {
     "name": "Jersey Harbour",
+    "type": "TOWN",
     "latitude": -51.460572,
     "longitude": -59.281497,
     "elevation": 0
   },
   {
     "name": "Jersey Point",
+    "type": "TOWN",
     "latitude": -51.437514,
     "longitude": -59.203734,
     "elevation": 108
   },
   {
     "name": "John Point",
+    "type": "TOWN",
     "latitude": -51.878341,
     "longitude": -58.810311,
     "elevation": 30
   },
   {
     "name": "Johnson Harbour",
+    "type": "TOWN",
     "latitude": -51.51849,
     "longitude": -58.014982,
     "elevation": 0
   },
   {
     "name": "Juan Pablo II",
+    "type": "TOWN",
     "latitude": -51.740819,
     "longitude": -72.491847,
     "elevation": 46
   },
   {
     "name": "Julia Dufour",
+    "type": "TOWN",
     "latitude": -51.547098,
     "longitude": -72.238197,
     "elevation": 823
   },
   {
     "name": "Justice Inlet",
+    "type": "TOWN",
     "latitude": -51.317746,
     "longitude": -59.933861,
     "elevation": 0
   },
   {
     "name": "Kelp Bay",
+    "type": "TOWN",
     "latitude": -51.997446,
     "longitude": -58.502669,
     "elevation": 0
   },
   {
     "name": "Kelp Creek",
+    "type": "TOWN",
     "latitude": -51.878802,
     "longitude": -61.035726,
     "elevation": 3
   },
   {
     "name": "Kelp Harbour",
+    "type": "TOWN",
     "latitude": -51.783958,
     "longitude": -59.314842,
     "elevation": 0
   },
   {
     "name": "Kelp Point",
+    "type": "TOWN",
     "latitude": -51.860206,
     "longitude": -58.214683,
     "elevation": 10
   },
   {
     "name": "Kemoa",
+    "type": "TOWN",
     "latitude": -55.187355,
     "longitude": -67.457751,
     "elevation": 13
   },
   {
     "name": "Keppel Sound",
+    "type": "TOWN",
     "latitude": -51.275503,
     "longitude": -59.91423,
     "elevation": 0
   },
   {
     "name": "Kidney Cove",
+    "type": "TOWN",
     "latitude": -51.629979,
     "longitude": -57.751222,
     "elevation": 0
   },
   {
     "name": "Killik Aike Norte",
+    "type": "TOWN",
     "latitude": -51.571289,
     "longitude": -69.445227,
     "elevation": 36
   },
   {
     "name": "Killik Aike Sur",
+    "type": "TOWN",
     "latitude": -51.61758,
     "longitude": -69.466862,
     "elevation": 85
   },
   {
     "name": "King George Bay",
+    "type": "TOWN",
     "latitude": -51.639195,
     "longitude": -60.487091,
     "elevation": 0
   },
   {
     "name": "Kingsford Valley Farm",
+    "type": "TOWN",
     "latitude": -51.575244,
     "longitude": -59.030547,
     "elevation": 46
   },
   {
     "name": "Kits Creek",
+    "type": "TOWN",
     "latitude": -52.181281,
     "longitude": -60.646999,
     "elevation": 3
   },
   {
     "name": "Knob Point",
+    "type": "TOWN",
     "latitude": -51.990574,
     "longitude": -58.604448,
     "elevation": 3
   },
   {
     "name": "Kon Aiken",
+    "type": "TOWN",
     "latitude": -52.947987,
     "longitude": -70.844535,
     "elevation": 69
   },
   {
     "name": "La Aguada",
+    "type": "TOWN",
     "latitude": -50.945091,
     "longitude": -69.340512,
     "elevation": 174
   },
   {
     "name": "La Aida",
+    "type": "TOWN",
     "latitude": -51.167254,
     "longitude": -70.014336,
     "elevation": 679
   },
   {
     "name": "La Angelina",
+    "type": "TOWN",
     "latitude": -51.436005,
     "longitude": -69.119121,
     "elevation": 354
   },
   {
     "name": "La Aragonesa",
+    "type": "TOWN",
     "latitude": -48.075173,
     "longitude": -69.761083,
     "elevation": 2313
   },
   {
     "name": "La Argentina",
+    "type": "TOWN",
     "latitude": -51.899693,
     "longitude": -70.042259,
     "elevation": 325
   },
   {
     "name": "La Bajada",
+    "type": "TOWN",
     "latitude": -48.883333,
     "longitude": -69.700006,
     "elevation": 1335
   },
   {
     "name": "La Barrancosa",
+    "type": "TOWN",
     "latitude": -50.199745,
     "longitude": -70.213738,
     "elevation": 322
   },
   {
     "name": "La Beatriz",
+    "type": "TOWN",
     "latitude": -47.453055,
     "longitude": -67.105937,
     "elevation": 495
   },
   {
     "name": "La Bernarda",
+    "type": "TOWN",
     "latitude": -49.162391,
     "longitude": -71.926102,
     "elevation": 1339
   },
   {
     "name": "La Brisca",
+    "type": "TOWN",
     "latitude": -47.807504,
     "longitude": -73.526652,
     "elevation": 30
   },
   {
     "name": "La Calandria",
+    "type": "TOWN",
     "latitude": -47.61957,
     "longitude": -67.353367,
     "elevation": 443
   },
   {
     "name": "La Carlota",
+    "type": "TOWN",
     "latitude": -51.847674,
     "longitude": -70.516124,
     "elevation": 240
   },
   {
     "name": "La Carmen",
+    "type": "TOWN",
     "latitude": -50.948439,
     "longitude": -70.292328,
     "elevation": 810
   },
   {
     "name": "La Carolina",
+    "type": "TOWN",
     "latitude": -51.059781,
     "longitude": -70.171849,
     "elevation": 709
   },
   {
     "name": "La Castora",
+    "type": "TOWN",
     "latitude": -47.584397,
     "longitude": -67.136232,
     "elevation": 499
   },
   {
     "name": "La Centinela",
+    "type": "TOWN",
     "latitude": -48.395002,
     "longitude": -72.649259,
     "elevation": 915
   },
   {
     "name": "La Chacra",
+    "type": "TOWN",
     "latitude": -50.982005,
     "longitude": -70.676252,
     "elevation": 600
   },
   {
     "name": "La Constancia",
+    "type": "TOWN",
     "latitude": -54.028761,
     "longitude": -68.294282,
     "elevation": 433
   },
   {
     "name": "La Correntina",
+    "type": "TOWN",
     "latitude": -50.916124,
     "longitude": -71.764777,
     "elevation": 1411
   },
   {
     "name": "La Criolla",
+    "type": "TOWN",
     "latitude": -54.214327,
     "longitude": -67.510475,
     "elevation": 853
   },
   {
     "name": "La Cruz",
+    "type": "TOWN",
     "latitude": -53.063169,
     "longitude": -70.869064,
     "elevation": 151
   },
   {
     "name": "La Delicia",
+    "type": "TOWN",
     "latitude": -47.478502,
     "longitude": -72.482797,
     "elevation": 1181
   },
   {
     "name": "La Esperanza",
+    "type": "TOWN",
     "latitude": -48.24263,
     "longitude": -73.516136,
     "elevation": 3
   },
   {
     "name": "La Esperanza Sur",
+    "type": "TOWN",
     "latitude": -47.481088,
     "longitude": -72.908613,
     "elevation": 226
   },
   {
     "name": "La Federica",
+    "type": "TOWN",
     "latitude": -49.036873,
     "longitude": -72.238162,
     "elevation": 892
   },
   {
     "name": "La Felicidad",
+    "type": "TOWN",
     "latitude": -50.92111,
     "longitude": -71.446839,
     "elevation": 1316
   },
   {
     "name": "La Fermina",
+    "type": "TOWN",
     "latitude": -51.690785,
     "longitude": -72.083675,
     "elevation": 538
   },
   {
     "name": "La Filomena",
+    "type": "TOWN",
     "latitude": -51.014731,
     "longitude": -70.277271,
     "elevation": 738
   },
   {
     "name": "La Frontera",
+    "type": "TOWN",
     "latitude": -53.265089,
     "longitude": -68.716562,
     "elevation": 39
   },
   {
     "name": "La Guachita",
+    "type": "TOWN",
     "latitude": -47.24245,
     "longitude": -72.285947,
     "elevation": 515
   },
   {
     "name": "La Herradura",
+    "type": "TOWN",
     "latitude": -48.253982,
     "longitude": -72.387931,
     "elevation": 1348
   },
   {
     "name": "La Ines",
+    "type": "TOWN",
     "latitude": -54.176529,
     "longitude": -67.030391,
     "elevation": 180
   },
   {
     "name": "La Isla",
+    "type": "TOWN",
     "latitude": -47.332723,
     "longitude": -72.870774,
     "elevation": 738
   },
   {
     "name": "La Juanita",
+    "type": "TOWN",
     "latitude": -47.336737,
     "longitude": -72.174784,
     "elevation": 1647
   },
   {
     "name": "La Laguna",
+    "type": "TOWN",
     "latitude": -54.423523,
     "longitude": -67.553129,
     "elevation": 194
   },
   {
     "name": "La Leona",
+    "type": "TOWN",
     "latitude": -49.809259,
     "longitude": -72.053103,
     "elevation": 823
   },
   {
     "name": "La Levadura",
+    "type": "TOWN",
     "latitude": -47.314061,
     "longitude": -68.289946,
     "elevation": 1073
   },
   {
     "name": "La Lezna",
+    "type": "TOWN",
     "latitude": -48.706184,
     "longitude": -73.023382,
     "elevation": 876
   },
   {
     "name": "La Libertad",
+    "type": "TOWN",
     "latitude": -54.096262,
     "longitude": -68.287415,
     "elevation": 531
   },
   {
     "name": "La Lila",
+    "type": "TOWN",
     "latitude": -49.013507,
     "longitude": -72.220039,
     "elevation": 1056
   },
   {
     "name": "La Lolita",
+    "type": "TOWN",
     "latitude": -51.153055,
     "longitude": -71.579754,
     "elevation": 1152
   },
   {
     "name": "La Lucila",
+    "type": "TOWN",
     "latitude": -50.997406,
     "longitude": -71.908714,
     "elevation": 1007
   },
   {
     "name": "La Maragata",
+    "type": "TOWN",
     "latitude": -51.868931,
     "longitude": -70.21906,
     "elevation": 364
   },
   {
     "name": "La Maria",
+    "type": "TOWN",
     "latitude": -51.052124,
     "longitude": -71.603784,
     "elevation": 922
   },
   {
     "name": "La Marina",
+    "type": "TOWN",
     "latitude": -54.316667,
     "longitude": -68.550002,
     "elevation": 1014
   },
   {
     "name": "La Matilde",
+    "type": "TOWN",
     "latitude": -51.294548,
     "longitude": -69.971165,
     "elevation": 486
   },
   {
     "name": "La Montosa",
+    "type": "TOWN",
     "latitude": -47.299292,
     "longitude": -72.027116,
     "elevation": 531
   },
   {
     "name": "La Nelida",
+    "type": "TOWN",
     "latitude": -51.057675,
     "longitude": -71.284264,
     "elevation": 1056
   },
   {
     "name": "La Obligada",
+    "type": "TOWN",
     "latitude": -51.275958,
     "longitude": -71.175486,
     "elevation": 1086
   },
   {
     "name": "La Pachacha",
+    "type": "TOWN",
     "latitude": -47.454064,
     "longitude": -72.577453,
     "elevation": 1043
   },
   {
     "name": "La Paloma",
+    "type": "TOWN",
     "latitude": -50.937877,
     "longitude": -71.499452,
     "elevation": 1322
   },
   {
     "name": "La Pampita",
+    "type": "TOWN",
     "latitude": -49.306602,
     "longitude": -67.774832,
     "elevation": 98
   },
   {
     "name": "La Peligrosa",
+    "type": "TOWN",
     "latitude": -47.380286,
     "longitude": -72.247977,
     "elevation": 1716
   },
   {
     "name": "La Peninsula",
+    "type": "TOWN",
     "latitude": -49.06444,
     "longitude": -68.315556,
     "elevation": 699
   },
   {
     "name": "La Piedra Blanca",
+    "type": "TOWN",
     "latitude": -47.296636,
     "longitude": -72.916975,
     "elevation": 295
   },
   {
     "name": "La Primavera",
+    "type": "TOWN",
     "latitude": -51.447714,
     "longitude": -72.22827,
     "elevation": 1106
   },
   {
     "name": "La Quema",
+    "type": "TOWN",
     "latitude": -47.599999,
     "longitude": -73.100039,
     "elevation": 981
   },
   {
     "name": "La Quinta",
+    "type": "TOWN",
     "latitude": -47.466841,
     "longitude": -67.341048,
     "elevation": 551
   },
   {
     "name": "La Rinconada",
+    "type": "TOWN",
     "latitude": -47.566979,
     "longitude": -72.523841,
     "elevation": 1503
   },
   {
     "name": "La Ruby",
+    "type": "TOWN",
     "latitude": -54.156781,
     "longitude": -67.726511,
     "elevation": 299
   },
   {
     "name": "La Sarita Argentina",
+    "type": "TOWN",
     "latitude": -51.145214,
     "longitude": -71.841294,
     "elevation": 1138
   },
   {
     "name": "La Siberia",
+    "type": "TOWN",
     "latitude": -51.249165,
     "longitude": -71.429055,
     "elevation": 1398
   },
   {
     "name": "La Soledad",
+    "type": "TOWN",
     "latitude": -47.381977,
     "longitude": -72.207754,
     "elevation": 1654
   },
   {
     "name": "La Tapera",
+    "type": "TOWN",
     "latitude": -51.135301,
     "longitude": -71.467681,
     "elevation": 1161
   },
   {
     "name": "La Tercera",
+    "type": "TOWN",
     "latitude": -49.186332,
     "longitude": -72.364433,
     "elevation": 991
   },
   {
     "name": "La Vanguardia",
+    "type": "TOWN",
     "latitude": -51.021755,
     "longitude": -71.111929,
     "elevation": 748
   },
   {
     "name": "La Vega",
+    "type": "TOWN",
     "latitude": -52.289937,
     "longitude": -70.531644,
     "elevation": 630
   },
   {
     "name": "La gruta de Lurdes",
+    "type": "TOWN",
     "latitude": -47.68755,
     "longitude": -66.014012,
     "elevation": 213
   },
   {
     "name": "Ladrilleros",
+    "type": "TOWN",
     "latitude": -51.83417,
     "longitude": -72.7256,
     "elevation": 16
   },
   {
     "name": "Lafonia",
+    "type": "TOWN",
     "latitude": -51.963629,
     "longitude": -59.269508,
     "elevation": 184
   },
   {
     "name": "Lago Argentino",
+    "type": "TOWN",
     "latitude": -50.344446,
     "longitude": -72.276446,
     "elevation": 797
   },
   {
     "name": "Lago Bertrand",
+    "type": "TOWN",
     "latitude": -46.901836,
     "longitude": -72.877137,
     "elevation": 725
   },
   {
     "name": "Lago Cardiel",
+    "type": "TOWN",
     "latitude": -48.947044,
     "longitude": -71.376108,
     "elevation": 978
   },
   {
     "name": "Lago Escondido",
+    "type": "TOWN",
     "latitude": -54.640774,
     "longitude": -67.762884,
     "elevation": 397
   },
   {
     "name": "Lago Leal",
+    "type": "TOWN",
     "latitude": -48.025871,
     "longitude": -73.122166,
     "elevation": 138
   },
   {
     "name": "Lago Negro",
+    "type": "TOWN",
     "latitude": -46.895252,
     "longitude": -72.789063,
     "elevation": 820
   },
   {
     "name": "Lago Pinto",
+    "type": "TOWN",
     "latitude": -52.102842,
     "longitude": -72.412986,
     "elevation": 577
   },
   {
     "name": "Lago Plomo Norte",
+    "type": "TOWN",
     "latitude": -47.001796,
     "longitude": -72.979792,
     "elevation": 682
   },
   {
     "name": "Lago Plomo Sur",
+    "type": "TOWN",
     "latitude": -47.01074,
     "longitude": -72.988804,
     "elevation": 692
   },
   {
     "name": "Lago Posadas",
+    "type": "TOWN",
     "latitude": -47.565618,
     "longitude": -71.742692,
     "elevation": 600
   },
   {
     "name": "Lago Quetru",
+    "type": "TOWN",
     "latitude": -48.146783,
     "longitude": -73.107067,
     "elevation": 56
   },
   {
     "name": "Lago Sarmiento",
+    "type": "TOWN",
     "latitude": -51.005428,
     "longitude": -72.599023,
     "elevation": 295
   },
   {
     "name": "Lago Tar",
+    "type": "TOWN",
     "latitude": -49.277014,
     "longitude": -72.002692,
     "elevation": 1001
   },
   {
     "name": "Lago Vargas",
+    "type": "TOWN",
     "latitude": -47.69706,
     "longitude": -73.076762,
     "elevation": 79
   },
   {
     "name": "Laguna Algas",
+    "type": "TOWN",
     "latitude": -52.338435,
     "longitude": -59.374844,
     "elevation": 0
   },
   {
     "name": "Laguna Amarga",
+    "type": "TOWN",
     "latitude": -50.979515,
     "longitude": -72.800459,
     "elevation": 289
   },
   {
     "name": "Laguna Azul",
+    "type": "TOWN",
     "latitude": -50.853998,
     "longitude": -72.700889,
     "elevation": 922
   },
   {
     "name": "Laguna Cifre",
+    "type": "TOWN",
     "latitude": -50.950353,
     "longitude": -69.983062,
     "elevation": 705
   },
   {
     "name": "Laguna Colorada",
+    "type": "TOWN",
     "latitude": -51.667626,
     "longitude": -69.917869,
     "elevation": 98
   },
   {
     "name": "Laguna Escondida",
+    "type": "TOWN",
     "latitude": -47.243732,
     "longitude": -72.388162,
     "elevation": 892
   },
   {
     "name": "Laguna Esmeralda",
+    "type": "TOWN",
     "latitude": -47.320104,
     "longitude": -72.576745,
     "elevation": 1056
   },
   {
     "name": "Laguna Grande",
+    "type": "TOWN",
     "latitude": -49.506762,
     "longitude": -70.159896,
     "elevation": 449
   },
   {
     "name": "Laguna La Manga",
+    "type": "TOWN",
     "latitude": -46.877339,
     "longitude": -72.701664,
     "elevation": 1562
   },
   {
     "name": "Laguna Larga",
+    "type": "TOWN",
     "latitude": -51.808214,
     "longitude": -71.882625,
     "elevation": 436
   },
   {
     "name": "Laguna Lynch",
+    "type": "TOWN",
     "latitude": -53.173128,
     "longitude": -71.001413,
     "elevation": 725
   },
   {
     "name": "Laguna Negra",
+    "type": "TOWN",
     "latitude": -54.52473,
     "longitude": -67.292677,
     "elevation": 135
   },
   {
     "name": "Laguna San Rafael",
+    "type": "TOWN",
     "latitude": -46.639497,
     "longitude": -73.872997,
     "elevation": 10
   },
   {
     "name": "Laguna de Los Cisnes",
+    "type": "TOWN",
     "latitude": -53.274474,
     "longitude": -70.367704,
     "elevation": 161
   },
   {
     "name": "Lagunita",
+    "type": "TOWN",
     "latitude": -52.110769,
     "longitude": -71.163455,
     "elevation": 531
   },
   {
     "name": "Lai Aike",
+    "type": "TOWN",
     "latitude": -49.4,
     "longitude": -68.750004,
     "elevation": 984
   },
   {
     "name": "Lake Point",
+    "type": "TOWN",
     "latitude": -51.723313,
     "longitude": -57.855957,
     "elevation": 46
   },
   {
     "name": "Lamarche Point",
+    "type": "TOWN",
     "latitude": -51.529779,
     "longitude": -57.977386,
     "elevation": 161
   },
   {
     "name": "Lancaster Point",
+    "type": "TOWN",
     "latitude": -51.320139,
     "longitude": -59.916086,
     "elevation": 23
   },
   {
     "name": "Landsend Bluff",
+    "type": "TOWN",
     "latitude": -51.692622,
     "longitude": -61.332394,
     "elevation": 0
   },
   {
     "name": "Lapataia",
+    "type": "TOWN",
     "latitude": -54.855622,
     "longitude": -68.577236,
     "elevation": 23
   },
   {
     "name": "Las Barrancas",
+    "type": "TOWN",
     "latitude": -52.167131,
     "longitude": -70.266302,
     "elevation": 505
   },
   {
     "name": "Las Buitreras",
+    "type": "TOWN",
     "latitude": -51.72522,
     "longitude": -70.12885,
     "elevation": 138
   },
   {
     "name": "Las Carmelas",
+    "type": "TOWN",
     "latitude": -48.900666,
     "longitude": -72.979865,
     "elevation": 932
   },
   {
     "name": "Las Chacras",
+    "type": "TOWN",
     "latitude": -48.478452,
     "longitude": -72.557845,
     "elevation": 912
   },
   {
     "name": "Las Claras",
+    "type": "TOWN",
     "latitude": -48.295892,
     "longitude": -72.476684,
     "elevation": 1201
   },
   {
     "name": "Las Hijas",
+    "type": "TOWN",
     "latitude": -54.211277,
     "longitude": -67.278314,
     "elevation": 233
   },
   {
     "name": "Las Horquetas",
+    "type": "TOWN",
     "latitude": -51.395724,
     "longitude": -70.224121,
     "elevation": 305
   },
   {
     "name": "Las Lengas",
+    "type": "TOWN",
     "latitude": -51.537738,
     "longitude": -72.343467,
     "elevation": 1201
   },
   {
     "name": "Las Margaritas",
+    "type": "TOWN",
     "latitude": -48.305712,
     "longitude": -72.436809,
     "elevation": 1388
   },
   {
     "name": "Las Perdices",
+    "type": "TOWN",
     "latitude": -50.316667,
     "longitude": -71.250012,
     "elevation": 2293
   },
   {
     "name": "Las Piedras",
+    "type": "TOWN",
     "latitude": -50.341583,
     "longitude": -72.253668,
     "elevation": 676
   },
   {
     "name": "Las Siembras",
+    "type": "TOWN",
     "latitude": -53.039477,
     "longitude": -70.878621,
     "elevation": 200
   },
   {
     "name": "Las Vegas",
+    "type": "TOWN",
     "latitude": -51.325617,
     "longitude": -70.310106,
     "elevation": 354
   },
   {
     "name": "Las Violetas",
+    "type": "TOWN",
     "latitude": -53.672897,
     "longitude": -67.926644,
     "elevation": 20
   },
   {
     "name": "Las Vizcachas",
+    "type": "TOWN",
     "latitude": -50.762696,
     "longitude": -72.048624,
     "elevation": 2277
   },
   {
     "name": "Lazo",
+    "type": "TOWN",
     "latitude": -51.123177,
     "longitude": -72.821959,
     "elevation": 955
   },
   {
     "name": "Le Marchand",
+    "type": "TOWN",
     "latitude": -50.745431,
     "longitude": -69.476891,
     "elevation": 909
   },
   {
     "name": "Lebon Creek",
+    "type": "TOWN",
     "latitude": -51.567057,
     "longitude": -58.115262,
     "elevation": 23
   },
   {
     "name": "Leicester Creek",
+    "type": "TOWN",
     "latitude": -51.945932,
     "longitude": -60.31949,
     "elevation": 3
   },
   {
     "name": "Leicester Creek Farm",
+    "type": "TOWN",
     "latitude": -51.894767,
     "longitude": -60.282105,
     "elevation": 135
   },
   {
     "name": "Letterbox Point",
+    "type": "TOWN",
     "latitude": -51.388649,
     "longitude": -60.045455,
     "elevation": 33
   },
   {
     "name": "Librun",
+    "type": "TOWN",
     "latitude": -50.840033,
     "longitude": -71.099003,
     "elevation": 1040
   },
   {
     "name": "Limpet Creek",
+    "type": "TOWN",
     "latitude": -51.34978,
     "longitude": -58.605237,
     "elevation": 0
   },
   {
     "name": "Linda Vista",
+    "type": "TOWN",
     "latitude": -50.353162,
     "longitude": -72.289283,
     "elevation": 935
   },
   {
     "name": "Lion Point",
+    "type": "TOWN",
     "latitude": -51.418767,
     "longitude": -60.409144,
     "elevation": 3
   },
   {
     "name": "Lively Farm",
+    "type": "TOWN",
     "latitude": -51.994056,
     "longitude": -58.46481,
     "elevation": 16
   },
   {
     "name": "Lomas del Baquedano",
+    "type": "TOWN",
     "latitude": -53.289182,
     "longitude": -70.358475,
     "elevation": 128
   },
   {
     "name": "Long Creek",
+    "type": "TOWN",
     "latitude": -52.013724,
     "longitude": -58.519495,
     "elevation": 10
   },
   {
     "name": "Long Island Farm",
+    "type": "TOWN",
     "latitude": -51.576691,
     "longitude": -58.072443,
     "elevation": 13
   },
   {
     "name": "Loop Head",
+    "type": "TOWN",
     "latitude": -51.763743,
     "longitude": -60.898901,
     "elevation": 72
   },
   {
     "name": "Lorenzo Farm",
+    "type": "TOWN",
     "latitude": -51.458481,
     "longitude": -58.610466,
     "elevation": 69
   },
   {
     "name": "Los Alamos",
+    "type": "TOWN",
     "latitude": -50.91346,
     "longitude": -69.398775,
     "elevation": 266
   },
   {
     "name": "Los CIpreses",
+    "type": "TOWN",
     "latitude": -47.485511,
     "longitude": -72.940629,
     "elevation": 197
   },
   {
     "name": "Los Calafates",
+    "type": "TOWN",
     "latitude": -53.03445,
     "longitude": -70.861454,
     "elevation": 138
   },
   {
     "name": "Los Canelos",
+    "type": "TOWN",
     "latitude": -53.464275,
     "longitude": -70.179761,
     "elevation": 26
   },
   {
     "name": "Los Carreras",
+    "type": "TOWN",
     "latitude": -47.040647,
     "longitude": -72.347796,
     "elevation": 1073
   },
   {
     "name": "Los Cerros",
+    "type": "TOWN",
     "latitude": -54.335686,
     "longitude": -67.856079,
     "elevation": 269
   },
   {
     "name": "Los Coihues",
+    "type": "TOWN",
     "latitude": -51.53573,
     "longitude": -72.339195,
     "elevation": 1109
   },
   {
     "name": "Los Coles",
+    "type": "TOWN",
     "latitude": -52.560165,
     "longitude": -71.696809,
     "elevation": 69
   },
   {
     "name": "Los Granaderos",
+    "type": "TOWN",
     "latitude": -48.223989,
     "longitude": -69.094696,
     "elevation": 2047
   },
   {
     "name": "Los Leones",
+    "type": "TOWN",
     "latitude": -47.213851,
     "longitude": -72.869481,
     "elevation": 2018
   },
   {
     "name": "Los Lupinos",
+    "type": "TOWN",
     "latitude": -51.542482,
     "longitude": -72.342855,
     "elevation": 1211
   },
   {
     "name": "Los Maitenes",
+    "type": "TOWN",
     "latitude": -46.855073,
     "longitude": -72.379703,
     "elevation": 2208
   },
   {
     "name": "Los Medanos",
+    "type": "TOWN",
     "latitude": -47.623271,
     "longitude": -65.817736,
     "elevation": 59
   },
   {
     "name": "Los Mineros",
+    "type": "TOWN",
     "latitude": -51.537769,
     "longitude": -72.332485,
     "elevation": 1030
   },
   {
     "name": "Los Naranjos",
+    "type": "TOWN",
     "latitude": -53.032203,
     "longitude": -70.83724,
     "elevation": 62
   },
   {
     "name": "Los Notros",
+    "type": "TOWN",
     "latitude": -50.32895,
     "longitude": -72.242808,
     "elevation": 758
   },
   {
     "name": "Los Pioneros",
+    "type": "TOWN",
     "latitude": -51.728856,
     "longitude": -72.476261,
     "elevation": 135
   },
   {
     "name": "Los Pozos",
+    "type": "TOWN",
     "latitude": -51.451639,
     "longitude": -69.315894,
     "elevation": 266
   },
   {
     "name": "Los Rubios",
+    "type": "TOWN",
     "latitude": -50.786879,
     "longitude": -71.430251,
     "elevation": 1375
   },
   {
     "name": "Los Tres Limones",
+    "type": "TOWN",
     "latitude": -47.303094,
     "longitude": -72.970077,
     "elevation": 331
   },
   {
     "name": "Los Vascos",
+    "type": "TOWN",
     "latitude": -51.43107,
     "longitude": -70.863302,
     "elevation": 722
   },
   {
     "name": "Los Viejos",
+    "type": "TOWN",
     "latitude": -50.794872,
     "longitude": -71.347036,
     "elevation": 1276
   },
   {
     "name": "Loteo Las Flores",
+    "type": "TOWN",
     "latitude": -53.055261,
     "longitude": -70.867235,
     "elevation": 118
   },
   {
     "name": "Low Bay",
+    "type": "TOWN",
     "latitude": -52.087312,
     "longitude": -58.924913,
     "elevation": 62
   },
   {
     "name": "Low Point",
+    "type": "TOWN",
     "latitude": -52.08031,
     "longitude": -59.100845,
     "elevation": 7
   },
   {
     "name": "Lucas Bay",
+    "type": "TOWN",
     "latitude": -52.161806,
     "longitude": -60.428802,
     "elevation": 0
   },
   {
     "name": "Lucas Point",
+    "type": "TOWN",
     "latitude": -52.170535,
     "longitude": -60.371744,
     "elevation": 180
   },
   {
     "name": "Lujan",
+    "type": "TOWN",
     "latitude": -51.17605,
     "longitude": -70.994412,
     "elevation": 955
   },
   {
     "name": "MPA",
+    "type": "TACAN",
     "latitude": -51.824087,
     "longitude": -58.456949,
     "elevation": 233
   },
   {
     "name": "MTP",
+    "type": "VOR",
     "latitude": -51.826531,
     "longitude": -58.422928,
     "elevation": 180
   },
   {
     "name": "MacBride Head",
+    "type": "TOWN",
     "latitude": -51.363595,
     "longitude": -57.947688,
     "elevation": 98
   },
   {
     "name": "Macarena",
+    "type": "TOWN",
     "latitude": -52.287854,
     "longitude": -71.613371,
     "elevation": 1286
   },
   {
     "name": "Mackinnon Creek",
+    "type": "TOWN",
     "latitude": -51.888239,
     "longitude": -58.642407,
     "elevation": 0
   },
   {
     "name": "Magellan Cove",
+    "type": "TOWN",
     "latitude": -51.507884,
     "longitude": -58.000527,
     "elevation": 0
   },
   {
     "name": "Magellan Point",
+    "type": "TOWN",
     "latitude": -51.508729,
     "longitude": -58.017204,
     "elevation": 46
   },
   {
     "name": "Main Point",
+    "type": "TOWN",
     "latitude": -51.423793,
     "longitude": -59.733845,
     "elevation": 33
   },
   {
     "name": "Main Point Farm",
+    "type": "TOWN",
     "latitude": -51.435452,
     "longitude": -59.910888,
     "elevation": 98
   },
   {
     "name": "Maipu",
+    "type": "TOWN",
     "latitude": -49.147049,
     "longitude": -72.483949,
     "elevation": 968
   },
   {
     "name": "Malo Creek",
+    "type": "TOWN",
     "latitude": -51.988144,
     "longitude": -60.200014,
     "elevation": 0
   },
   {
     "name": "Manantiales",
+    "type": "TOWN",
     "latitude": -52.54509,
     "longitude": -69.420827,
     "elevation": 43
   },
   {
     "name": "Mancha Blanca",
+    "type": "TOWN",
     "latitude": -47.455083,
     "longitude": -66.880167,
     "elevation": 715
   },
   {
     "name": "Marcela",
+    "type": "TOWN",
     "latitude": -53.475945,
     "longitude": -71.195189,
     "elevation": 522
   },
   {
     "name": "Mardin",
+    "type": "TOWN",
     "latitude": -52.651056,
     "longitude": -72.415392,
     "elevation": 0
   },
   {
     "name": "Mare Harbour",
+    "type": "TOWN",
     "latitude": -51.899019,
     "longitude": -58.499322,
     "elevation": 0
   },
   {
     "name": "Mare Rincon",
+    "type": "TOWN",
     "latitude": -51.788602,
     "longitude": -60.556644,
     "elevation": 72
   },
   {
     "name": "Maria Behety",
+    "type": "TOWN",
     "latitude": -53.78615,
     "longitude": -67.936297,
     "elevation": 112
   },
   {
     "name": "Maria Ines",
+    "type": "TOWN",
     "latitude": -51.03291,
     "longitude": -70.574696,
     "elevation": 509
   },
   {
     "name": "Maria Laura",
+    "type": "TOWN",
     "latitude": -54.156995,
     "longitude": -68.308915,
     "elevation": 627
   },
   {
     "name": "Mark Point",
+    "type": "TOWN",
     "latitude": -51.88914,
     "longitude": -60.873914,
     "elevation": 33
   },
   {
     "name": "Markatch Aike",
+    "type": "TOWN",
     "latitude": -51.919502,
     "longitude": -69.630911,
     "elevation": 223
   },
   {
     "name": "Marville Bay",
+    "type": "TOWN",
     "latitude": -51.381511,
     "longitude": -58.190567,
     "elevation": 0
   },
   {
     "name": "Mata Amarilla",
+    "type": "TOWN",
     "latitude": -49.583809,
     "longitude": -71.179944,
     "elevation": 666
   },
   {
     "name": "Mata Grande",
+    "type": "TOWN",
     "latitude": -48.855507,
     "longitude": -67.582036,
     "elevation": 696
   },
   {
     "name": "McGill Shoals",
+    "type": "TOWN",
     "latitude": -51.215896,
     "longitude": -60.54883,
     "elevation": 0
   },
   {
     "name": "Media Agua",
+    "type": "TOWN",
     "latitude": -51.840896,
     "longitude": -69.881413,
     "elevation": 243
   },
   {
     "name": "Mengeary Point",
+    "type": "TOWN",
     "latitude": -51.644166,
     "longitude": -57.729877,
     "elevation": 30
   },
   {
     "name": "Middle Bay",
+    "type": "TOWN",
     "latitude": -51.414759,
     "longitude": -59.037867,
     "elevation": 0
   },
   {
     "name": "Middle Creek",
+    "type": "TOWN",
     "latitude": -51.523077,
     "longitude": -58.27334,
     "elevation": 13
   },
   {
     "name": "Middle Point",
+    "type": "TOWN",
     "latitude": -51.386296,
     "longitude": -59.004149,
     "elevation": 33
   },
   {
     "name": "Miles Creek",
+    "type": "TOWN",
     "latitude": -51.926883,
     "longitude": -58.85501,
     "elevation": 0
   },
   {
     "name": "Mina Guarello",
+    "type": "TOWN",
     "latitude": -50.367541,
     "longitude": -75.337388,
     "elevation": 36
   },
   {
     "name": "Mina Invierno",
+    "type": "TOWN",
     "latitude": -52.885486,
     "longitude": -71.611374,
     "elevation": 105
   },
   {
     "name": "Minik Aike",
+    "type": "TOWN",
     "latitude": -51.422814,
     "longitude": -71.081302,
     "elevation": 922
   },
   {
     "name": "Mirador",
+    "type": "TOWN",
     "latitude": -47.747263,
     "longitude": -65.901249,
     "elevation": 207
   },
   {
     "name": "Miraflores",
+    "type": "TOWN",
     "latitude": -46.755841,
     "longitude": -72.872506,
     "elevation": 1056
   },
   {
     "name": "Miramonte",
+    "type": "TOWN",
     "latitude": -54.210512,
     "longitude": -67.744277,
     "elevation": 217
   },
   {
     "name": "Miranda",
+    "type": "TOWN",
     "latitude": -53.683333,
     "longitude": -68.116668,
     "elevation": 72
   },
   {
     "name": "Misery Valley",
+    "type": "TOWN",
     "latitude": -51.370012,
     "longitude": -60.701308,
     "elevation": 928
   },
   {
     "name": "Moffit Bay",
+    "type": "TOWN",
     "latitude": -52.229469,
     "longitude": -59.045205,
     "elevation": 0
   },
   {
     "name": "Moffitt Harbour",
+    "type": "TOWN",
     "latitude": -52.086561,
     "longitude": -59.608255,
     "elevation": 0
   },
   {
     "name": "Monkey Point",
+    "type": "TOWN",
     "latitude": -51.539112,
     "longitude": -57.956153,
     "elevation": 13
   },
   {
     "name": "Monte Alto",
+    "type": "TOWN",
     "latitude": -52.533167,
     "longitude": -70.966644,
     "elevation": 879
   },
   {
     "name": "Monte Aymond",
+    "type": "TOWN",
     "latitude": -52.146118,
     "longitude": -69.516473,
     "elevation": 535
   },
   {
     "name": "Monte Bello",
+    "type": "TOWN",
     "latitude": -52.633102,
     "longitude": -71.208709,
     "elevation": 551
   },
   {
     "name": "Monte Carlo",
+    "type": "TOWN",
     "latitude": -51.02459,
     "longitude": -70.629508,
     "elevation": 525
   },
   {
     "name": "Monte Dinero",
+    "type": "TOWN",
     "latitude": -52.323463,
     "longitude": -68.559501,
     "elevation": 148
   },
   {
     "name": "Monte Negro",
+    "type": "TOWN",
     "latitude": -51.04109,
     "longitude": -69.869563,
     "elevation": 522
   },
   {
     "name": "Morro Chico",
+    "type": "TOWN",
     "latitude": -52.055267,
     "longitude": -71.428107,
     "elevation": 564
   },
   {
     "name": "Moss Side Farm",
+    "type": "TOWN",
     "latitude": -51.480737,
     "longitude": -58.92177,
     "elevation": 164
   },
   {
     "name": "Mound Point",
+    "type": "TOWN",
     "latitude": -51.965423,
     "longitude": -60.838165,
     "elevation": 89
   },
   {
     "name": "Mount Challenger",
+    "type": "TOWN",
     "latitude": -51.699074,
     "longitude": -58.12639,
     "elevation": 919
   },
   {
     "name": "Mount Kent",
+    "type": "TOWN",
     "latitude": -51.670161,
     "longitude": -58.101211,
     "elevation": 1093
   },
   {
     "name": "Mount Kent Farm",
+    "type": "TOWN",
     "latitude": -51.558594,
     "longitude": -58.133369,
     "elevation": 75
   },
   {
     "name": "Mount Usborne",
+    "type": "TOWN",
     "latitude": -51.703101,
     "longitude": -58.834935,
     "elevation": 1795
   },
   {
     "name": "Moy",
+    "type": "TOWN",
     "latitude": -51.179483,
     "longitude": -69.614896,
     "elevation": 144
   },
   {
     "name": "Moy Aike Chico",
+    "type": "TOWN",
     "latitude": -51.247602,
     "longitude": -69.624339,
     "elevation": 194
   },
   {
     "name": "Muddy Creek",
+    "type": "TOWN",
     "latitude": -51.404714,
     "longitude": -58.550541,
     "elevation": 0
   },
   {
     "name": "Mulato",
+    "type": "TOWN",
     "latitude": -51.924313,
     "longitude": -70.879837,
     "elevation": 633
   },
   {
     "name": "Murrell Farm",
+    "type": "TOWN",
     "latitude": -51.649688,
     "longitude": -57.915065,
     "elevation": 49
   },
   {
     "name": "NAS",
+    "type": "VOR_DME",
     "latitude": -53.00407,
     "longitude": -70.855336,
     "elevation": 128
   },
   {
     "name": "Narrow Creek",
+    "type": "TOWN",
     "latitude": -51.984336,
     "longitude": -60.630289,
     "elevation": 16
   },
   {
     "name": "Natales Antiguo",
+    "type": "TOWN",
     "latitude": -51.723359,
     "longitude": -72.491379,
     "elevation": 85
   },
   {
     "name": "Natales Oriente",
+    "type": "TOWN",
     "latitude": -51.729525,
     "longitude": -72.473877,
     "elevation": 144
   },
   {
     "name": "Nativos",
+    "type": "TOWN",
     "latitude": -47.743195,
     "longitude": -65.91098,
     "elevation": 243
   },
   {
     "name": "Negro",
+    "type": "TOWN",
     "latitude": -51.742656,
     "longitude": -68.95457,
     "elevation": 43
   },
   {
     "name": "New Haven",
+    "type": "TOWN",
     "latitude": -51.730937,
     "longitude": -59.206936,
     "elevation": 0
   },
   {
     "name": "New Year Cove",
+    "type": "TOWN",
     "latitude": -51.941506,
     "longitude": -60.902967,
     "elevation": 0
   },
   {
     "name": "No Mans Land",
+    "type": "TOWN",
     "latitude": -51.689332,
     "longitude": -58.688344,
     "elevation": 443
   },
   {
     "name": "Norte",
+    "type": "TOWN",
     "latitude": -51.576708,
     "longitude": -72.212228,
     "elevation": 751
   },
   {
     "name": "North Arm",
+    "type": "TOWN",
     "latitude": -52.132566,
     "longitude": -59.366813,
     "elevation": 0
   },
   {
     "name": "North Arm Farm",
+    "type": "TOWN",
     "latitude": -52.123686,
     "longitude": -59.367667,
     "elevation": 36
   },
   {
     "name": "North Basin",
+    "type": "TOWN",
     "latitude": -51.739801,
     "longitude": -58.059073,
     "elevation": 0
   },
   {
     "name": "North Bluff",
+    "type": "TOWN",
     "latitude": -51.676951,
     "longitude": -61.263334,
     "elevation": 72
   },
   {
     "name": "North Creek",
+    "type": "TOWN",
     "latitude": -51.504976,
     "longitude": -58.298178,
     "elevation": 0
   },
   {
     "name": "North East Creek",
+    "type": "TOWN",
     "latitude": -51.536379,
     "longitude": -58.228826,
     "elevation": 0
   },
   {
     "name": "North East Point",
+    "type": "TOWN",
     "latitude": -51.788059,
     "longitude": -58.110879,
     "elevation": 7
   },
   {
     "name": "North Harbour",
+    "type": "TOWN",
     "latitude": -51.704812,
     "longitude": -61.2398,
     "elevation": 0
   },
   {
     "name": "North Head",
+    "type": "TOWN",
     "latitude": -52.013191,
     "longitude": -60.236063,
     "elevation": 187
   },
   {
     "name": "North Point",
+    "type": "TOWN",
     "latitude": -52.133682,
     "longitude": -58.826962,
     "elevation": 13
   },
   {
     "name": "North West Bay",
+    "type": "TOWN",
     "latitude": -51.72663,
     "longitude": -60.351934,
     "elevation": 0
   },
   {
     "name": "North West Point",
+    "type": "TOWN",
     "latitude": -51.246296,
     "longitude": -60.600007,
     "elevation": 13
   },
   {
     "name": "North West Rincon",
+    "type": "TOWN",
     "latitude": -51.584008,
     "longitude": -59.174866,
     "elevation": 52
   },
   {
     "name": "Northwest Bay",
+    "type": "TOWN",
     "latitude": -51.607022,
     "longitude": -60.446616,
     "elevation": 0
   },
   {
     "name": "Norton Inlet",
+    "type": "TOWN",
     "latitude": -51.848392,
     "longitude": -58.852891,
     "elevation": 10
   },
   {
     "name": "Noya",
+    "type": "TOWN",
     "latitude": -51.722144,
     "longitude": -69.987192,
     "elevation": 118
   },
   {
     "name": "Nueva Esperanza",
+    "type": "TOWN",
     "latitude": -51.733536,
     "longitude": -72.479856,
     "elevation": 144
   },
   {
     "name": "Nueva Patagonia",
+    "type": "TOWN",
     "latitude": -51.732517,
     "longitude": -72.505584,
     "elevation": 36
   },
   {
     "name": "Nueva Soberana",
+    "type": "TOWN",
     "latitude": -50.315879,
     "longitude": -72.314947,
     "elevation": 699
   },
   {
     "name": "Nuevo Manantiales",
+    "type": "TOWN",
     "latitude": -50.335789,
     "longitude": -72.317838,
     "elevation": 656
   },
   {
     "name": "Ocho Hermanas",
+    "type": "TOWN",
     "latitude": -47.12072,
     "longitude": -72.881843,
     "elevation": 702
   },
   {
     "name": "Ocho Hermanos",
+    "type": "TOWN",
     "latitude": -51.082876,
     "longitude": -71.33992,
     "elevation": 1089
   },
   {
     "name": "Octavio Castro",
+    "type": "TOWN",
     "latitude": -51.720114,
     "longitude": -72.494355,
     "elevation": 85
   },
   {
     "name": "Oeste",
+    "type": "TOWN",
     "latitude": -51.517235,
     "longitude": -69.615717,
     "elevation": 325
   },
   {
     "name": "Old House Creek",
+    "type": "TOWN",
     "latitude": -51.532889,
     "longitude": -59.05426,
     "elevation": 23
   },
   {
     "name": "Onaisin",
+    "type": "TOWN",
     "latitude": -53.387012,
     "longitude": -69.280914,
     "elevation": 43
   },
   {
     "name": "Ordnance Point",
+    "type": "TOWN",
     "latitude": -51.682707,
     "longitude": -57.826334,
     "elevation": 26
   },
   {
     "name": "Osasuna",
+    "type": "TOWN",
     "latitude": -51.955927,
     "longitude": -69.891237,
     "elevation": 282
   },
   {
     "name": "Ototel Aike",
+    "type": "TOWN",
     "latitude": -50.818402,
     "longitude": -69.51547,
     "elevation": 591
   },
   {
     "name": "PNT",
+    "type": "VOR_DME",
     "latitude": -51.738041,
     "longitude": -72.422021,
     "elevation": 335
   },
   {
     "name": "PWL",
+    "type": "VOR_DME",
     "latitude": -54.929549,
     "longitude": -67.621059,
     "elevation": 79
   },
   {
     "name": "Palermo",
+    "type": "TOWN",
     "latitude": -52.128193,
     "longitude": -71.403654,
     "elevation": 686
   },
   {
     "name": "Palermo Aike",
+    "type": "TOWN",
     "latitude": -51.705803,
     "longitude": -69.717042,
     "elevation": 167
   },
   {
     "name": "Pali Aike",
+    "type": "TOWN",
     "latitude": -51.983025,
     "longitude": -69.748869,
     "elevation": 240
   },
   {
     "name": "Pampa",
+    "type": "TOWN",
     "latitude": -51.949091,
     "longitude": -71.168665,
     "elevation": 505
   },
   {
     "name": "Pampa Alegre",
+    "type": "TOWN",
     "latitude": -53.07289,
     "longitude": -70.86513,
     "elevation": 98
   },
   {
     "name": "Pampa Chica",
+    "type": "TOWN",
     "latitude": -48.316616,
     "longitude": -72.503967,
     "elevation": 1207
   },
   {
     "name": "Pampa Grande",
+    "type": "TOWN",
     "latitude": -48.296577,
     "longitude": -72.493432,
     "elevation": 1178
   },
   {
     "name": "Pampa Guanaco",
+    "type": "TOWN",
     "latitude": -54.051056,
     "longitude": -68.803126,
     "elevation": 518
   },
   {
     "name": "Pampa Seguel",
+    "type": "TOWN",
     "latitude": -46.986004,
     "longitude": -72.788397,
     "elevation": 1227
   },
   {
     "name": "Papa Francisco",
+    "type": "TOWN",
     "latitude": -49.307534,
     "longitude": -67.756625,
     "elevation": 36
   },
   {
     "name": "Parador Laguna Blanca",
+    "type": "TOWN",
     "latitude": -52.799794,
     "longitude": -71.190625,
     "elevation": 108
   },
   {
     "name": "Parador Yawen",
+    "type": "TOWN",
     "latitude": -54.368807,
     "longitude": -67.716894,
     "elevation": 568
   },
   {
     "name": "Parque Karukinka",
+    "type": "TOWN",
     "latitude": -54.150252,
     "longitude": -68.711751,
     "elevation": 591
   },
   {
     "name": "Parroquia",
+    "type": "TOWN",
     "latitude": -53.301643,
     "longitude": -70.437442,
     "elevation": 59
   },
   {
     "name": "Parroquia de Barranco Amarillo",
+    "type": "TOWN",
     "latitude": -53.094565,
     "longitude": -70.877653,
     "elevation": 125
   },
   {
     "name": "Paso Gobernador Gregores",
+    "type": "TOWN",
     "latitude": -47.833333,
     "longitude": -66.583334,
     "elevation": 52
   },
   {
     "name": "Paso Gregores",
+    "type": "TOWN",
     "latitude": -47.8,
     "longitude": -66.583334,
     "elevation": 387
   },
   {
     "name": "Paso Laurita",
+    "type": "TOWN",
     "latitude": -51.689279,
     "longitude": -72.298001,
     "elevation": 814
   },
   {
     "name": "Paso Rodolfo Roballos",
+    "type": "TOWN",
     "latitude": -47.133332,
     "longitude": -71.850023,
     "elevation": 2543
   },
   {
     "name": "Paso del Vuelto",
+    "type": "TOWN",
     "latitude": -49.821923,
     "longitude": -73.850491,
     "elevation": 0
   },
   {
     "name": "Pea Point",
+    "type": "TOWN",
     "latitude": -52.18478,
     "longitude": -60.721951,
     "elevation": 66
   },
   {
     "name": "Peat Bog Point",
+    "type": "TOWN",
     "latitude": -52.359314,
     "longitude": -59.811794,
     "elevation": 20
   },
   {
     "name": "Pebble Cove",
+    "type": "TOWN",
     "latitude": -51.258457,
     "longitude": -59.826415,
     "elevation": 0
   },
   {
     "name": "Pebble Sound",
+    "type": "TOWN",
     "latitude": -51.357472,
     "longitude": -59.512424,
     "elevation": 0
   },
   {
     "name": "Pebbly Bay",
+    "type": "TOWN",
     "latitude": -52.211735,
     "longitude": -58.847901,
     "elevation": 0
   },
   {
     "name": "Penarrow Point",
+    "type": "TOWN",
     "latitude": -51.684214,
     "longitude": -57.866423,
     "elevation": 16
   },
   {
     "name": "Penguin Cove",
+    "type": "TOWN",
     "latitude": -51.96106,
     "longitude": -60.933952,
     "elevation": 0
   },
   {
     "name": "Penguin Point",
+    "type": "TOWN",
     "latitude": -51.925935,
     "longitude": -60.645309,
     "elevation": 13
   },
   {
     "name": "Peninsula Baquedano",
+    "type": "TOWN",
     "latitude": -48.722342,
     "longitude": -74.322657,
     "elevation": 354
   },
   {
     "name": "Peninsula Broome",
+    "type": "TOWN",
     "latitude": -49.372174,
     "longitude": -74.4147,
     "elevation": 161
   },
   {
     "name": "Peninsula Elliott",
+    "type": "TOWN",
     "latitude": -49.338714,
     "longitude": -74.416246,
     "elevation": 364
   },
   {
     "name": "Pesquera Mac Lean",
+    "type": "TOWN",
     "latitude": -54.940111,
     "longitude": -67.712389,
     "elevation": 16
   },
   {
     "name": "Peter",
+    "type": "TOWN",
     "latitude": -50.914322,
     "longitude": -70.635606,
     "elevation": 886
   },
   {
     "name": "Petrel City",
+    "type": "TOWN",
     "latitude": -51.610911,
     "longitude": -60.455966,
     "elevation": 180
   },
   {
     "name": "Pevep",
+    "type": "TOWN",
     "latitude": -47.746133,
     "longitude": -65.884953,
     "elevation": 121
   },
   {
     "name": "Phillips Bay",
+    "type": "TOWN",
     "latitude": -52.169471,
     "longitude": -59.762535,
     "elevation": 0
   },
   {
     "name": "Phillips Point",
+    "type": "TOWN",
     "latitude": -51.717188,
     "longitude": -57.815852,
     "elevation": 16
   },
   {
     "name": "Pickthorne Point",
+    "type": "TOWN",
     "latitude": -51.491082,
     "longitude": -60.482486,
     "elevation": 7
   },
   {
     "name": "Piedra del Fraile",
+    "type": "TOWN",
     "latitude": -49.227558,
     "longitude": -73.013723,
     "elevation": 1798
   },
   {
     "name": "Pilarica",
+    "type": "TOWN",
     "latitude": -54.114219,
     "longitude": -68.189271,
     "elevation": 597
   },
   {
     "name": "Pillar Bluff",
+    "type": "TOWN",
     "latitude": -51.929733,
     "longitude": -61.096022,
     "elevation": 226
   },
   {
     "name": "Pillar Cove",
+    "type": "TOWN",
     "latitude": -51.919742,
     "longitude": -61.080251,
     "elevation": 0
   },
   {
     "name": "Pitt Creek",
+    "type": "TOWN",
     "latitude": -51.835184,
     "longitude": -61.05757,
     "elevation": 0
   },
   {
     "name": "Platt Point",
+    "type": "TOWN",
     "latitude": -51.485101,
     "longitude": -58.371542,
     "elevation": 16
   },
   {
     "name": "Platt Point Rincon",
+    "type": "TOWN",
     "latitude": -51.483051,
     "longitude": -58.362437,
     "elevation": 59
   },
   {
     "name": "Playita de Pescadores",
+    "type": "TOWN",
     "latitude": -49.216693,
     "longitude": -72.984858,
     "elevation": 1926
   },
   {
     "name": "Plaza Creek",
+    "type": "TOWN",
     "latitude": -51.389593,
     "longitude": -58.50327,
     "elevation": 0
   },
   {
     "name": "Pleasant Point",
+    "type": "TOWN",
     "latitude": -51.816171,
     "longitude": -58.166513,
     "elevation": 33
   },
   {
     "name": "Pleasant Road",
+    "type": "TOWN",
     "latitude": -51.834253,
     "longitude": -58.220286,
     "elevation": 0
   },
   {
     "name": "Plumas Verdes",
+    "type": "TOWN",
     "latitude": -50.341102,
     "longitude": -72.284337,
     "elevation": 676
   },
   {
     "name": "Poco a Poco",
+    "type": "TOWN",
     "latitude": -47.333421,
     "longitude": -72.755587,
     "elevation": 1398
   },
   {
     "name": "Point Frances",
+    "type": "TOWN",
     "latitude": -51.306076,
     "longitude": -59.926413,
     "elevation": 13
   },
   {
     "name": "Point Frio",
+    "type": "TOWN",
     "latitude": -51.469817,
     "longitude": -58.438331,
     "elevation": 36
   },
   {
     "name": "Poke Point",
+    "type": "TOWN",
     "latitude": -51.603985,
     "longitude": -59.39548,
     "elevation": 30
   },
   {
     "name": "Poker Point",
+    "type": "TOWN",
     "latitude": -51.572567,
     "longitude": -59.065837,
     "elevation": 36
   },
   {
     "name": "Pond Bay",
+    "type": "TOWN",
     "latitude": -51.874822,
     "longitude": -60.45536,
     "elevation": 0
   },
   {
     "name": "Ponsomby",
+    "type": "TOWN",
     "latitude": -52.654276,
     "longitude": -71.470338,
     "elevation": 16
   },
   {
     "name": "Porpoise Cove",
+    "type": "TOWN",
     "latitude": -51.963995,
     "longitude": -60.740833,
     "elevation": 0
   },
   {
     "name": "Porpoise Point",
+    "type": "TOWN",
     "latitude": -52.349135,
     "longitude": -59.310699,
     "elevation": 3
   },
   {
     "name": "Port Albemarle",
+    "type": "TOWN",
     "latitude": -52.189141,
     "longitude": -60.433045,
     "elevation": 0
   },
   {
     "name": "Port Edgar",
+    "type": "TOWN",
     "latitude": -52.007587,
     "longitude": -60.258315,
     "elevation": 0
   },
   {
     "name": "Port Edgar Farm",
+    "type": "TOWN",
     "latitude": -52.049719,
     "longitude": -60.280796,
     "elevation": 33
   },
   {
     "name": "Port Egmont",
+    "type": "TOWN",
     "latitude": -51.358531,
     "longitude": -60.028546,
     "elevation": 0
   },
   {
     "name": "Port Fitzroy",
+    "type": "TOWN",
     "latitude": -51.776292,
     "longitude": -58.122988,
     "elevation": 0
   },
   {
     "name": "Port Harriet",
+    "type": "TOWN",
     "latitude": -51.731387,
     "longitude": -57.930307,
     "elevation": 0
   },
   {
     "name": "Port Howard",
+    "type": "TOWN",
     "latitude": -51.641454,
     "longitude": -59.549389,
     "elevation": 0
   },
   {
     "name": "Port Howard Farm",
+    "type": "TOWN",
     "latitude": -51.611011,
     "longitude": -59.520974,
     "elevation": 46
   },
   {
     "name": "Port King",
+    "type": "TOWN",
     "latitude": -51.911053,
     "longitude": -59.538088,
     "elevation": 0
   },
   {
     "name": "Port Louis",
+    "type": "TOWN",
     "latitude": -51.529323,
     "longitude": -58.128474,
     "elevation": 49
   },
   {
     "name": "Port Louis Farm",
+    "type": "TOWN",
     "latitude": -51.529193,
     "longitude": -58.1283,
     "elevation": 46
   },
   {
     "name": "Port Louis Harbour",
+    "type": "TOWN",
     "latitude": -51.530323,
     "longitude": -58.121733,
     "elevation": 0
   },
   {
     "name": "Port North",
+    "type": "TOWN",
     "latitude": -51.471765,
     "longitude": -60.449009,
     "elevation": 0
   },
   {
     "name": "Port North Farm",
+    "type": "TOWN",
     "latitude": -51.48749,
     "longitude": -60.354387,
     "elevation": 36
   },
   {
     "name": "Port Philomel",
+    "type": "TOWN",
     "latitude": -51.733673,
     "longitude": -60.280781,
     "elevation": 0
   },
   {
     "name": "Port Pleasant",
+    "type": "TOWN",
     "latitude": -51.776405,
     "longitude": -58.178043,
     "elevation": 0
   },
   {
     "name": "Port Purvis",
+    "type": "TOWN",
     "latitude": -51.432715,
     "longitude": -59.461441,
     "elevation": 0
   },
   {
     "name": "Port Richards",
+    "type": "TOWN",
     "latitude": -51.957966,
     "longitude": -60.470295,
     "elevation": 0
   },
   {
     "name": "Port Salvador",
+    "type": "TOWN",
     "latitude": -51.519052,
     "longitude": -58.386283,
     "elevation": 0
   },
   {
     "name": "Port Stephens",
+    "type": "TOWN",
     "latitude": -52.126928,
     "longitude": -60.792761,
     "elevation": 0
   },
   {
     "name": "Port Stephens Farm",
+    "type": "TOWN",
     "latitude": -52.097294,
     "longitude": -60.831988,
     "elevation": 52
   },
   {
     "name": "Port Sussex",
+    "type": "TOWN",
     "latitude": -51.6598,
     "longitude": -59.008681,
     "elevation": 0
   },
   {
     "name": "Port Sussex Farm",
+    "type": "TOWN",
     "latitude": -51.655203,
     "longitude": -59.015105,
     "elevation": 56
   },
   {
     "name": "Port William",
+    "type": "TOWN",
     "latitude": -51.665188,
     "longitude": -57.765262,
     "elevation": 0
   },
   {
     "name": "Porvenir",
+    "type": "TOWN",
     "latitude": -53.295674,
     "longitude": -70.368745,
     "elevation": 98
   },
   {
     "name": "Porvenir Gulch",
+    "type": "TOWN",
     "latitude": -51.616643,
     "longitude": -60.434527,
     "elevation": 7
   },
   {
     "name": "Potrero Las Vacas",
+    "type": "TOWN",
     "latitude": -47.049537,
     "longitude": -72.383845,
     "elevation": 997
   },
   {
     "name": "Praltos Point",
+    "type": "TOWN",
     "latitude": -51.723094,
     "longitude": -59.197469,
     "elevation": 13
   },
   {
     "name": "Prefectura",
+    "type": "TOWN",
     "latitude": -47.752433,
     "longitude": -65.909614,
     "elevation": 66
   },
   {
     "name": "Prong Point",
+    "type": "TOWN",
     "latitude": -52.096086,
     "longitude": -58.419714,
     "elevation": 30
   },
   {
     "name": "Provincias Unidas",
+    "type": "TOWN",
     "latitude": -54.495274,
     "longitude": -67.208691,
     "elevation": 390
   },
   {
     "name": "Pueblo Vasco",
+    "type": "TOWN",
     "latitude": -53.075704,
     "longitude": -70.874987,
     "elevation": 118
   },
   {
     "name": "Puente Blanco",
+    "type": "TOWN",
     "latitude": -51.892305,
     "longitude": -71.594124,
     "elevation": 417
   },
   {
     "name": "Puerto Almanza",
+    "type": "TOWN",
     "latitude": -54.870409,
     "longitude": -67.564406,
     "elevation": 43
   },
   {
     "name": "Puerto Almeida",
+    "type": "TOWN",
     "latitude": -54.854675,
     "longitude": -70.657038,
     "elevation": 0
   },
   {
     "name": "Puerto Bajo las Sombras",
+    "type": "TOWN",
     "latitude": -50.474128,
     "longitude": -72.994062,
     "elevation": 663
   },
   {
     "name": "Puerto Ballenas",
+    "type": "TOWN",
     "latitude": -54.847283,
     "longitude": -70.550351,
     "elevation": 3
   },
   {
     "name": "Puerto Bandera",
+    "type": "TOWN",
     "latitude": -50.313724,
     "longitude": -72.791908,
     "elevation": 607
   },
   {
     "name": "Puerto Bertrand",
+    "type": "TOWN",
     "latitude": -47.015128,
     "longitude": -72.827529,
     "elevation": 814
   },
   {
     "name": "Puerto Bories",
+    "type": "TOWN",
     "latitude": -51.689948,
     "longitude": -72.536391,
     "elevation": 62
   },
   {
     "name": "Puerto Chico",
+    "type": "TOWN",
     "latitude": -55.094981,
     "longitude": -70.618452,
     "elevation": 0
   },
   {
     "name": "Puerto Coig",
+    "type": "TOWN",
     "latitude": -50.954045,
     "longitude": -69.220979,
     "elevation": 33
   },
   {
     "name": "Puerto Consuelo",
+    "type": "TOWN",
     "latitude": -54.545932,
     "longitude": -71.516158,
     "elevation": 0
   },
   {
     "name": "Puerto Corriente",
+    "type": "TOWN",
     "latitude": -54.989434,
     "longitude": -68.365872,
     "elevation": 121
   },
   {
     "name": "Puerto Curtze",
+    "type": "TOWN",
     "latitude": -52.802679,
     "longitude": -71.39458,
     "elevation": 13
   },
   {
     "name": "Puerto Grandi",
+    "type": "TOWN",
     "latitude": -55.211109,
     "longitude": -67.921785,
     "elevation": 46
   },
   {
     "name": "Puerto Gray",
+    "type": "TOWN",
     "latitude": -48.919049,
     "longitude": -74.313453,
     "elevation": 20
   },
   {
     "name": "Puerto Guadal",
+    "type": "TOWN",
     "latitude": -46.844571,
     "longitude": -72.704322,
     "elevation": 689
   },
   {
     "name": "Puerto Harris",
+    "type": "TOWN",
     "latitude": -53.835225,
     "longitude": -70.453125,
     "elevation": 39
   },
   {
     "name": "Puerto Hondo",
+    "type": "TOWN",
     "latitude": -55.079105,
     "longitude": -70.032788,
     "elevation": 39
   },
   {
     "name": "Puerto Jenkins",
+    "type": "TOWN",
     "latitude": -47.764178,
     "longitude": -65.901115,
     "elevation": 16
   },
   {
     "name": "Puerto King",
+    "type": "TOWN",
     "latitude": -54.422819,
     "longitude": -71.221705,
     "elevation": 0
   },
   {
     "name": "Puerto Mejillones",
+    "type": "TOWN",
     "latitude": -54.904021,
     "longitude": -67.989808,
     "elevation": 13
   },
   {
     "name": "Puerto Micaela",
+    "type": "TOWN",
     "latitude": -49.511862,
     "longitude": -74.271064,
     "elevation": 13
   },
   {
     "name": "Puerto Micalvito",
+    "type": "TOWN",
     "latitude": -55.19551,
     "longitude": -67.867415,
     "elevation": 39
   },
   {
     "name": "Puerto Navarino",
+    "type": "TOWN",
     "latitude": -54.925972,
     "longitude": -68.323515,
     "elevation": 36
   },
   {
     "name": "Puerto Nuevo",
+    "type": "TOWN",
     "latitude": -52.55545,
     "longitude": -71.964865,
     "elevation": 26
   },
   {
     "name": "Puerto Paredes",
+    "type": "TOWN",
     "latitude": -55.091295,
     "longitude": -70.68297,
     "elevation": 75
   },
   {
     "name": "Puerto Parry",
+    "type": "TOWN",
     "latitude": -54.798059,
     "longitude": -64.365642,
     "elevation": 0
   },
   {
     "name": "Puerto Percy",
+    "type": "TOWN",
     "latitude": -52.900763,
     "longitude": -70.26733,
     "elevation": 16
   },
   {
     "name": "Puerto Prat",
+    "type": "TOWN",
     "latitude": -51.636103,
     "longitude": -72.648449,
     "elevation": 16
   },
   {
     "name": "Puerto Progreso",
+    "type": "TOWN",
     "latitude": -52.479026,
     "longitude": -69.469991,
     "elevation": 13
   },
   {
     "name": "Puerto Remolino",
+    "type": "TOWN",
     "latitude": -54.860454,
     "longitude": -67.859145,
     "elevation": 66
   },
   {
     "name": "Puerto San Julian",
+    "type": "TOWN",
     "latitude": -49.306953,
     "longitude": -67.729787,
     "elevation": 72
   },
   {
     "name": "Puerto Sara",
+    "type": "TOWN",
     "latitude": -52.623815,
     "longitude": -70.199421,
     "elevation": 26
   },
   {
     "name": "Puerto Slight",
+    "type": "TOWN",
     "latitude": -46.805303,
     "longitude": -75.58201,
     "elevation": 46
   },
   {
     "name": "Puerto Tanteo",
+    "type": "TOWN",
     "latitude": -54.413299,
     "longitude": -71.499703,
     "elevation": 0
   },
   {
     "name": "Puerto Toro",
+    "type": "TOWN",
     "latitude": -55.08306,
     "longitude": -67.075865,
     "elevation": 46
   },
   {
     "name": "Puerto Williams",
+    "type": "TOWN",
     "latitude": -54.935496,
     "longitude": -67.606704,
     "elevation": 56
   },
   {
     "name": "Puerto Yartou",
+    "type": "TOWN",
     "latitude": -53.885965,
     "longitude": -70.140251,
     "elevation": 26
   },
   {
     "name": "Puerto Zenteno",
+    "type": "TOWN",
     "latitude": -52.785992,
     "longitude": -70.804605,
     "elevation": 16
   },
   {
     "name": "Puesto Alamiro",
+    "type": "TOWN",
     "latitude": -52.228077,
     "longitude": -69.023152,
     "elevation": 138
   },
   {
     "name": "Puesto Ann Aiken",
+    "type": "TOWN",
     "latitude": -52.088304,
     "longitude": -71.274698,
     "elevation": 676
   },
   {
     "name": "Puesto Bishop",
+    "type": "TOWN",
     "latitude": -52.132876,
     "longitude": -71.406739,
     "elevation": 722
   },
   {
     "name": "Puesto Borrego Uno",
+    "type": "TOWN",
     "latitude": -52.524688,
     "longitude": -71.318402,
     "elevation": 564
   },
   {
     "name": "Puesto Buque Quemado",
+    "type": "TOWN",
     "latitude": -52.407205,
     "longitude": -69.56815,
     "elevation": 23
   },
   {
     "name": "Puesto Bus",
+    "type": "TOWN",
     "latitude": -52.297255,
     "longitude": -71.452035,
     "elevation": 1362
   },
   {
     "name": "Puesto Caravana",
+    "type": "TOWN",
     "latitude": -52.115203,
     "longitude": -71.276688,
     "elevation": 801
   },
   {
     "name": "Puesto Cerro Negro",
+    "type": "TOWN",
     "latitude": -52.400557,
     "longitude": -69.641565,
     "elevation": 52
   },
   {
     "name": "Puesto Chocolate",
+    "type": "TOWN",
     "latitude": -52.176616,
     "longitude": -69.453188,
     "elevation": 387
   },
   {
     "name": "Puesto Cuarenta y Cuatro",
+    "type": "TOWN",
     "latitude": -52.074871,
     "longitude": -70.860037,
     "elevation": 830
   },
   {
     "name": "Puesto Dieciocho",
+    "type": "TOWN",
     "latitude": -52.446408,
     "longitude": -71.44247,
     "elevation": 669
   },
   {
     "name": "Puesto El Centro",
+    "type": "TOWN",
     "latitude": -52.091769,
     "longitude": -70.417326,
     "elevation": 600
   },
   {
     "name": "Puesto Final",
+    "type": "TOWN",
     "latitude": -52.157786,
     "longitude": -70.535451,
     "elevation": 738
   },
   {
     "name": "Puesto Gallego Chico",
+    "type": "TOWN",
     "latitude": -52.024748,
     "longitude": -70.735214,
     "elevation": 551
   },
   {
     "name": "Puesto Galy",
+    "type": "TOWN",
     "latitude": -52.385479,
     "longitude": -71.404517,
     "elevation": 810
   },
   {
     "name": "Puesto Garay",
+    "type": "TOWN",
     "latitude": -52.669103,
     "longitude": -72.09318,
     "elevation": 23
   },
   {
     "name": "Puesto La Calle",
+    "type": "TOWN",
     "latitude": -52.620097,
     "longitude": -71.146565,
     "elevation": 518
   },
   {
     "name": "Puesto La Laguna",
+    "type": "TOWN",
     "latitude": -52.50673,
     "longitude": -71.208715,
     "elevation": 374
   },
   {
     "name": "Puesto Lagunita",
+    "type": "TOWN",
     "latitude": -52.121721,
     "longitude": -71.171534,
     "elevation": 564
   },
   {
     "name": "Puesto Las Charas",
+    "type": "TOWN",
     "latitude": -52.689612,
     "longitude": -71.416774,
     "elevation": 75
   },
   {
     "name": "Puesto Manantial Alto",
+    "type": "TOWN",
     "latitude": -52.265334,
     "longitude": -69.54581,
     "elevation": 223
   },
   {
     "name": "Puesto Martinic",
+    "type": "TOWN",
     "latitude": -52.551349,
     "longitude": -71.826623,
     "elevation": 95
   },
   {
     "name": "Puesto Monte Aymond",
+    "type": "TOWN",
     "latitude": -52.152339,
     "longitude": -69.595839,
     "elevation": 548
   },
   {
     "name": "Puesto Morro Chico",
+    "type": "TOWN",
     "latitude": -52.048631,
     "longitude": -71.553665,
     "elevation": 591
   },
   {
     "name": "Puesto Mulato",
+    "type": "TOWN",
     "latitude": -52.018599,
     "longitude": -71.252006,
     "elevation": 502
   },
   {
     "name": "Puesto Nutria",
+    "type": "TOWN",
     "latitude": -52.523961,
     "longitude": -72.127942,
     "elevation": 23
   },
   {
     "name": "Puesto Once",
+    "type": "TOWN",
     "latitude": -52.677206,
     "longitude": -71.948967,
     "elevation": 20
   },
   {
     "name": "Puesto Palermo",
+    "type": "TOWN",
     "latitude": -52.062465,
     "longitude": -71.426839,
     "elevation": 591
   },
   {
     "name": "Puesto Pampa Larga",
+    "type": "TOWN",
     "latitude": -52.231292,
     "longitude": -69.828837,
     "elevation": 758
   },
   {
     "name": "Puesto Pioneros",
+    "type": "TOWN",
     "latitude": -52.026759,
     "longitude": -71.54079,
     "elevation": 574
   },
   {
     "name": "Puesto Rancho Carancho",
+    "type": "TOWN",
     "latitude": -52.360647,
     "longitude": -69.487559,
     "elevation": 26
   },
   {
     "name": "Puesto Roci Aike",
+    "type": "TOWN",
     "latitude": -52.187763,
     "longitude": -70.177161,
     "elevation": 499
   },
   {
     "name": "Puesto Segunda Angostura",
+    "type": "TOWN",
     "latitude": -52.648078,
     "longitude": -70.347401,
     "elevation": 23
   },
   {
     "name": "Puesto Tejuela",
+    "type": "TOWN",
     "latitude": -47.176759,
     "longitude": -72.366164,
     "elevation": 1486
   },
   {
     "name": "Puesto Teniente Merino",
+    "type": "TOWN",
     "latitude": -52.143342,
     "longitude": -70.452375,
     "elevation": 669
   },
   {
     "name": "Puesto Treinta y Siete",
+    "type": "TOWN",
     "latitude": -52.05597,
     "longitude": -70.536943,
     "elevation": 653
   },
   {
     "name": "Puesto Vargas",
+    "type": "TOWN",
     "latitude": -52.159971,
     "longitude": -70.532484,
     "elevation": 725
   },
   {
     "name": "Puesto Viejo",
+    "type": "TOWN",
     "latitude": -52.723083,
     "longitude": -71.551014,
     "elevation": 318
   },
   {
     "name": "Puesto Vilicic",
+    "type": "TOWN",
     "latitude": -52.802563,
     "longitude": -71.402667,
     "elevation": 43
   },
   {
     "name": "Puesto de Arrieros",
+    "type": "TOWN",
     "latitude": -52.396285,
     "longitude": -71.410879,
     "elevation": 771
   },
   {
     "name": "Punta Alta",
+    "type": "TOWN",
     "latitude": -52.085335,
     "longitude": -73.082577,
     "elevation": 0
   },
   {
     "name": "Punta Arboleda",
+    "type": "TOWN",
     "latitude": -53.864722,
     "longitude": -70.420742,
     "elevation": 82
   },
   {
     "name": "Punta Arenas",
+    "type": "TOWN",
     "latitude": -53.15505,
     "longitude": -70.922954,
     "elevation": 148
   },
   {
     "name": "Punta Ave Marina",
+    "type": "TOWN",
     "latitude": -51.401776,
     "longitude": -59.496803,
     "elevation": 154
   },
   {
     "name": "Punta Azconape",
+    "type": "TOWN",
     "latitude": -49.253917,
     "longitude": -67.631239,
     "elevation": 66
   },
   {
     "name": "Punta Barranco",
+    "type": "TOWN",
     "latitude": -52.091255,
     "longitude": -73.098177,
     "elevation": 3
   },
   {
     "name": "Punta Bartlett",
+    "type": "TOWN",
     "latitude": -54.903021,
     "longitude": -68.222947,
     "elevation": 23
   },
   {
     "name": "Punta Benitez",
+    "type": "TOWN",
     "latitude": -52.078069,
     "longitude": -73.081548,
     "elevation": 30
   },
   {
     "name": "Punta Bernabe",
+    "type": "TOWN",
     "latitude": -53.838423,
     "longitude": -70.42754,
     "elevation": 10
   },
   {
     "name": "Punta Boca",
+    "type": "TOWN",
     "latitude": -52.086456,
     "longitude": -73.109958,
     "elevation": 98
   },
   {
     "name": "Punta Carpintero",
+    "type": "TOWN",
     "latitude": -55.221301,
     "longitude": -68.210509,
     "elevation": 49
   },
   {
     "name": "Punta Catalina",
+    "type": "TOWN",
     "latitude": -52.548403,
     "longitude": -68.757271,
     "elevation": 33
   },
   {
     "name": "Punta Cono",
+    "type": "TOWN",
     "latitude": -52.073097,
     "longitude": -73.048031,
     "elevation": 20
   },
   {
     "name": "Punta Cuchillo",
+    "type": "TOWN",
     "latitude": -54.836439,
     "longitude": -64.753253,
     "elevation": 141
   },
   {
     "name": "Punta Cutter",
+    "type": "TOWN",
     "latitude": -50.711786,
     "longitude": -74.517988,
     "elevation": 46
   },
   {
     "name": "Punta Entrada",
+    "type": "TOWN",
     "latitude": -52.060196,
     "longitude": -73.003398,
     "elevation": 36
   },
   {
     "name": "Punta Escoben",
+    "type": "TOWN",
     "latitude": -52.055789,
     "longitude": -73.019878,
     "elevation": 253
   },
   {
     "name": "Punta Espora",
+    "type": "TOWN",
     "latitude": -52.49601,
     "longitude": -69.520669,
     "elevation": 39
   },
   {
     "name": "Punta Flores",
+    "type": "TOWN",
     "latitude": -54.921092,
     "longitude": -68.253785,
     "elevation": 33
   },
   {
     "name": "Punta Gallows",
+    "type": "TOWN",
     "latitude": -49.310372,
     "longitude": -67.695671,
     "elevation": 36
   },
   {
     "name": "Punta Guijarro",
+    "type": "TOWN",
     "latitude": -49.256868,
     "longitude": -67.667435,
     "elevation": 20
   },
   {
     "name": "Punta Kirke Sur",
+    "type": "TOWN",
     "latitude": -52.101023,
     "longitude": -73.120687,
     "elevation": 89
   },
   {
     "name": "Punta Laura",
+    "type": "TOWN",
     "latitude": -52.649443,
     "longitude": -72.403982,
     "elevation": 0
   },
   {
     "name": "Punta Loyola",
+    "type": "TOWN",
     "latitude": -51.608878,
     "longitude": -69.011639,
     "elevation": 33
   },
   {
     "name": "Punta Mancilla",
+    "type": "TOWN",
     "latitude": -47.801782,
     "longitude": -73.534946,
     "elevation": 30
   },
   {
     "name": "Punta Medio",
+    "type": "TOWN",
     "latitude": -52.065025,
     "longitude": -73.025456,
     "elevation": 105
   },
   {
     "name": "Punta Morrison",
+    "type": "TOWN",
     "latitude": -53.836012,
     "longitude": -70.436359,
     "elevation": 13
   },
   {
     "name": "Punta Moya",
+    "type": "TOWN",
     "latitude": -54.918267,
     "longitude": -68.233847,
     "elevation": 20
   },
   {
     "name": "Punta Pasaje",
+    "type": "TOWN",
     "latitude": -52.066581,
     "longitude": -73.032796,
     "elevation": 0
   },
   {
     "name": "Punta Passage",
+    "type": "TOWN",
     "latitude": -50.766254,
     "longitude": -74.420393,
     "elevation": 46
   },
   {
     "name": "Punta Porpoise",
+    "type": "TOWN",
     "latitude": -50.740802,
     "longitude": -74.519732,
     "elevation": 161
   },
   {
     "name": "Punta Rafael",
+    "type": "TOWN",
     "latitude": -53.855256,
     "longitude": -70.4319,
     "elevation": 56
   },
   {
     "name": "Punta Redonda",
+    "type": "TOWN",
     "latitude": -51.752796,
     "longitude": -60.361038,
     "elevation": 49
   },
   {
     "name": "Punta Restinga",
+    "type": "TOWN",
     "latitude": -52.059833,
     "longitude": -73.009986,
     "elevation": 0
   },
   {
     "name": "Punta Rodolfo",
+    "type": "TOWN",
     "latitude": -47.806386,
     "longitude": -73.548738,
     "elevation": -3
   },
   {
     "name": "Punta Seca",
+    "type": "TOWN",
     "latitude": -52.078425,
     "longitude": -73.058202,
     "elevation": 43
   },
   {
     "name": "Punta Sedger",
+    "type": "TOWN",
     "latitude": -53.661658,
     "longitude": -70.956762,
     "elevation": 30
   },
   {
     "name": "Punta Segunda",
+    "type": "TOWN",
     "latitude": -52.090345,
     "longitude": -73.096054,
     "elevation": 0
   },
   {
     "name": "Punta Tasbani",
+    "type": "TOWN",
     "latitude": -55.079857,
     "longitude": -68.329511,
     "elevation": 75
   },
   {
     "name": "Punta Tesner",
+    "type": "TOWN",
     "latitude": -53.836106,
     "longitude": -70.421532,
     "elevation": 39
   },
   {
     "name": "Punta Turano",
+    "type": "TOWN",
     "latitude": -51.519542,
     "longitude": -59.337199,
     "elevation": 417
   },
   {
     "name": "Punta Vergara",
+    "type": "TOWN",
     "latitude": -51.928689,
     "longitude": -72.576822,
     "elevation": 10
   },
   {
     "name": "Punta Yamana",
+    "type": "TOWN",
     "latitude": -54.967033,
     "longitude": -69.031027,
     "elevation": 39
   },
   {
     "name": "Punta del Lago",
+    "type": "TOWN",
     "latitude": -49.595274,
     "longitude": -72.057822,
     "elevation": 1345
   },
   {
     "name": "Punta del Monte",
+    "type": "TOWN",
     "latitude": -51.634492,
     "longitude": -71.312863,
     "elevation": 1066
   },
   {
     "name": "Punte Triste",
+    "type": "TOWN",
     "latitude": -52.139807,
     "longitude": -58.658876,
     "elevation": 20
   },
   {
     "name": "Purvis Point",
+    "type": "TOWN",
     "latitude": -51.402686,
     "longitude": -59.467578,
     "elevation": 161
   },
   {
     "name": "Pyramid Cove",
+    "type": "TOWN",
     "latitude": -52.009196,
     "longitude": -58.600495,
     "elevation": 0
   },
   {
     "name": "Pyramid Point",
+    "type": "TOWN",
     "latitude": -52.013822,
     "longitude": -58.592663,
     "elevation": 59
   },
   {
     "name": "Quaker Harbour",
+    "type": "TOWN",
     "latitude": -51.812733,
     "longitude": -61.079292,
     "elevation": 0
   },
   {
     "name": "Queen Charlotte Bay",
+    "type": "TOWN",
     "latitude": -51.846903,
     "longitude": -60.698646,
     "elevation": 0
   },
   {
     "name": "Queen Point",
+    "type": "TOWN",
     "latitude": -51.931631,
     "longitude": -60.585415,
     "elevation": 56
   },
   {
     "name": "Quinta Cadario",
+    "type": "TOWN",
     "latitude": -47.749571,
     "longitude": -65.900253,
     "elevation": 105
   },
   {
     "name": "Quiroga",
+    "type": "TOWN",
     "latitude": -51.583425,
     "longitude": -72.212723,
     "elevation": 745
   },
   {
     "name": "Rabbit Cove",
+    "type": "TOWN",
     "latitude": -51.428835,
     "longitude": -59.643831,
     "elevation": 0
   },
   {
     "name": "Rabbit Point",
+    "type": "TOWN",
     "latitude": -51.301898,
     "longitude": -59.712549,
     "elevation": 20
   },
   {
     "name": "Rabbit Rincon",
+    "type": "TOWN",
     "latitude": -51.379738,
     "longitude": -58.062168,
     "elevation": 131
   },
   {
     "name": "Race Point",
+    "type": "TOWN",
     "latitude": -51.41326,
     "longitude": -59.097487,
     "elevation": 105
   },
   {
     "name": "Race Point Farm",
+    "type": "TOWN",
     "latitude": -51.502265,
     "longitude": -58.995508,
     "elevation": 72
   },
   {
     "name": "Rain Cove",
+    "type": "TOWN",
     "latitude": -51.966659,
     "longitude": -58.646178,
     "elevation": 0
   },
   {
     "name": "Rame Head",
+    "type": "TOWN",
     "latitude": -51.413434,
     "longitude": -60.240043,
     "elevation": 197
   },
   {
     "name": "Rancho Salazar Dos",
+    "type": "TOWN",
     "latitude": -52.495899,
     "longitude": -71.693263,
     "elevation": 1099
   },
   {
     "name": "Rancho Salazar Uno",
+    "type": "TOWN",
     "latitude": -52.402236,
     "longitude": -71.795105,
     "elevation": 1880
   },
   {
     "name": "Rancho Tres Amigos",
+    "type": "TOWN",
     "latitude": -54.632427,
     "longitude": -65.280272,
     "elevation": 43
   },
   {
     "name": "Randisi",
+    "type": "TOWN",
     "latitude": -47.741155,
     "longitude": -65.88955,
     "elevation": 171
   },
   {
     "name": "Rapid Point",
+    "type": "TOWN",
     "latitude": -51.382959,
     "longitude": -60.005486,
     "elevation": 30
   },
   {
     "name": "Red Hill Point",
+    "type": "TOWN",
     "latitude": -51.554681,
     "longitude": -59.075482,
     "elevation": 30
   },
   {
     "name": "Red Point",
+    "type": "TOWN",
     "latitude": -51.381679,
     "longitude": -60.082017,
     "elevation": 26
   },
   {
     "name": "Reef Point",
+    "type": "TOWN",
     "latitude": -51.316063,
     "longitude": -59.90555,
     "elevation": 23
   },
   {
     "name": "Refugio de Arrieros",
+    "type": "TOWN",
     "latitude": -52.280578,
     "longitude": -71.347799,
     "elevation": 869
   },
   {
     "name": "Regimiento Lanceros",
+    "type": "TOWN",
     "latitude": -51.711773,
     "longitude": -72.439286,
     "elevation": 279
   },
   {
     "name": "Reserva Fiscal",
+    "type": "TOWN",
     "latitude": -52.65,
     "longitude": -69.350003,
     "elevation": 36
   },
   {
     "name": "Reserva Nacional Tamango",
+    "type": "TOWN",
     "latitude": -47.242465,
     "longitude": -72.524046,
     "elevation": 574
   },
   {
     "name": "Rincan",
+    "type": "TOWN",
     "latitude": -50.29421,
     "longitude": -69.91891,
     "elevation": 840
   },
   {
     "name": "Rincon",
+    "type": "TOWN",
     "latitude": -50.294309,
     "longitude": -69.918822,
     "elevation": 840
   },
   {
     "name": "Rincon Grande Estate Farm",
+    "type": "TOWN",
     "latitude": -51.46158,
     "longitude": -58.309318,
     "elevation": 177
   },
   {
     "name": "Rincon de Los Morros",
+    "type": "TOWN",
     "latitude": -51.920101,
     "longitude": -71.497324,
     "elevation": 433
   },
   {
     "name": "Rincon de Saino",
+    "type": "TOWN",
     "latitude": -51.615658,
     "longitude": -58.255112,
     "elevation": 49
   },
   {
     "name": "Rinconada Bulnes",
+    "type": "TOWN",
     "latitude": -53.593269,
     "longitude": -70.938812,
     "elevation": 39
   },
   {
     "name": "Rio Gallegos",
+    "type": "TOWN",
     "latitude": -51.625855,
     "longitude": -69.223086,
     "elevation": 39
   },
   {
     "name": "Rio Grande",
+    "type": "TOWN",
     "latitude": -53.79151,
     "longitude": -67.704934,
     "elevation": 30
   },
   {
     "name": "Rio Meseta",
+    "type": "TOWN",
     "latitude": -49.282194,
     "longitude": -71.921164,
     "elevation": 909
   },
   {
     "name": "Rio Nef",
+    "type": "TOWN",
     "latitude": -47.112893,
     "longitude": -72.925101,
     "elevation": 712
   },
   {
     "name": "Rio Pelque",
+    "type": "TOWN",
     "latitude": -50.981447,
     "longitude": -70.992185,
     "elevation": 797
   },
   {
     "name": "Ripidos del Baker",
+    "type": "TOWN",
     "latitude": -47.0422,
     "longitude": -72.818297,
     "elevation": 725
   },
   {
     "name": "Rivadavia",
+    "type": "TOWN",
     "latitude": -54.355029,
     "longitude": -67.540597,
     "elevation": 354
   },
   {
     "name": "River Harbour",
+    "type": "TOWN",
     "latitude": -51.440768,
     "longitude": -59.723396,
     "elevation": 0
   },
   {
     "name": "Riverside Farm",
+    "type": "TOWN",
     "latitude": -51.752827,
     "longitude": -58.464821,
     "elevation": 285
   },
   {
     "name": "Riverview Farm",
+    "type": "TOWN",
     "latitude": -51.630201,
     "longitude": -58.320929,
     "elevation": 46
   },
   {
     "name": "Robinson Point",
+    "type": "TOWN",
     "latitude": -51.286762,
     "longitude": -59.988474,
     "elevation": 16
   },
   {
     "name": "Rock Harbour",
+    "type": "TOWN",
     "latitude": -51.383419,
     "longitude": -59.797468,
     "elevation": 0
   },
   {
     "name": "Rocky Inlet",
+    "type": "TOWN",
     "latitude": -51.696315,
     "longitude": -60.06011,
     "elevation": 0
   },
   {
     "name": "Rodney Bluff",
+    "type": "TOWN",
     "latitude": -52.074534,
     "longitude": -61.018839,
     "elevation": 174
   },
   {
     "name": "Rodney Cove",
+    "type": "TOWN",
     "latitude": -52.060192,
     "longitude": -61.005482,
     "elevation": 0
   },
   {
     "name": "Romero",
+    "type": "TOWN",
     "latitude": -52.35666,
     "longitude": -70.444921,
     "elevation": 538
   },
   {
     "name": "Ronda House",
+    "type": "TOWN",
     "latitude": -51.369944,
     "longitude": -58.359965,
     "elevation": 52
   },
   {
     "name": "Rookery Bay",
+    "type": "TOWN",
     "latitude": -51.705132,
     "longitude": -57.796626,
     "elevation": 0
   },
   {
     "name": "Rosita",
+    "type": "TOWN",
     "latitude": -54.021954,
     "longitude": -68.472809,
     "elevation": 407
   },
   {
     "name": "Rospentek",
+    "type": "TOWN",
     "latitude": -51.665372,
     "longitude": -72.145268,
     "elevation": 587
   },
   {
     "name": "Rotunda",
+    "type": "TOWN",
     "latitude": -51.964359,
     "longitude": -72.584992,
     "elevation": 23
   },
   {
     "name": "Round Point",
+    "type": "TOWN",
     "latitude": -51.761193,
     "longitude": -60.323406,
     "elevation": 3
   },
   {
     "name": "Ruggles Bay",
+    "type": "TOWN",
     "latitude": -52.062724,
     "longitude": -59.657641,
     "elevation": 0
   },
   {
     "name": "Russfin",
+    "type": "TOWN",
     "latitude": -53.750757,
     "longitude": -69.210967,
     "elevation": 735
   },
   {
     "name": "Sal Point",
+    "type": "TOWN",
     "latitude": -52.05821,
     "longitude": -58.528891,
     "elevation": 0
   },
   {
     "name": "Saladero Farm",
+    "type": "TOWN",
     "latitude": -51.722688,
     "longitude": -59.061739,
     "elevation": 49
   },
   {
     "name": "Salesiano",
+    "type": "TOWN",
     "latitude": -50.348902,
     "longitude": -72.277424,
     "elevation": 883
   },
   {
     "name": "Salvador",
+    "type": "TOWN",
     "latitude": -51.434775,
     "longitude": -58.370467,
     "elevation": 56
   },
   {
     "name": "Salvador Water",
+    "type": "TOWN",
     "latitude": -51.456596,
     "longitude": -58.415279,
     "elevation": 0
   },
   {
     "name": "San Adolfo",
+    "type": "TOWN",
     "latitude": -49.155453,
     "longitude": -71.725175,
     "elevation": 3225
   },
   {
     "name": "San Antonio",
+    "type": "TOWN",
     "latitude": -51.152146,
     "longitude": -72.520213,
     "elevation": 217
   },
   {
     "name": "San Carlos Water",
+    "type": "TOWN",
     "latitude": -51.497988,
     "longitude": -59.079257,
     "elevation": 0
   },
   {
     "name": "San Cristobal",
+    "type": "TOWN",
     "latitude": -51.515125,
     "longitude": -70.085139,
     "elevation": 394
   },
   {
     "name": "San Jose",
+    "type": "TOWN",
     "latitude": -51.281311,
     "longitude": -70.812392,
     "elevation": 755
   },
   {
     "name": "San Juan",
+    "type": "TOWN",
     "latitude": -53.644662,
     "longitude": -70.958192,
     "elevation": 23
   },
   {
     "name": "San Julian",
+    "type": "VOR_DME",
     "latitude": -49.309587,
     "longitude": -67.812946,
     "elevation": 177
   },
   {
     "name": "San Lorenzo",
+    "type": "TOWN",
     "latitude": -51.039574,
     "longitude": -70.386488,
     "elevation": 715
   },
   {
     "name": "San Luis",
+    "type": "TOWN",
     "latitude": -51.690244,
     "longitude": -72.641448,
     "elevation": 36
   },
   {
     "name": "San Miguel",
+    "type": "TOWN",
     "latitude": -50.779461,
     "longitude": -71.194408,
     "elevation": 1194
   },
   {
     "name": "Sand Bay",
+    "type": "TOWN",
     "latitude": -51.55258,
     "longitude": -57.990131,
     "elevation": 0
   },
   {
     "name": "Sand Paddock",
+    "type": "TOWN",
     "latitude": -51.33416,
     "longitude": -60.720062,
     "elevation": 72
   },
   {
     "name": "Sandy Bay",
+    "type": "TOWN",
     "latitude": -52.187524,
     "longitude": -58.837839,
     "elevation": 0
   },
   {
     "name": "Sandy Cove",
+    "type": "TOWN",
     "latitude": -52.053058,
     "longitude": -59.144211,
     "elevation": 0
   },
   {
     "name": "Santa Ana",
+    "type": "TOWN",
     "latitude": -54.287321,
     "longitude": -66.756918,
     "elevation": 56
   },
   {
     "name": "Santa Angelita",
+    "type": "TOWN",
     "latitude": -49.207191,
     "longitude": -72.224056,
     "elevation": 1155
   },
   {
     "name": "Santa Catalina",
+    "type": "TOWN",
     "latitude": -48.297926,
     "longitude": -69.076465,
     "elevation": 1755
   },
   {
     "name": "Santa Cruz",
+    "type": "TOWN",
     "latitude": -51.581889,
     "longitude": -72.215229,
     "elevation": 748
   },
   {
     "name": "Santa Elena",
+    "type": "TOWN",
     "latitude": -47.794311,
     "longitude": -65.911261,
     "elevation": 102
   },
   {
     "name": "Santa Eva",
+    "type": "TOWN",
     "latitude": -48.430265,
     "longitude": -72.635015,
     "elevation": 896
   },
   {
     "name": "Santa Flavia",
+    "type": "TOWN",
     "latitude": -51.545274,
     "longitude": -72.353929,
     "elevation": 1398
   },
   {
     "name": "Santa Margarita",
+    "type": "TOWN",
     "latitude": -47.33251,
     "longitude": -72.847759,
     "elevation": 259
   },
   {
     "name": "Santa Rosa",
+    "type": "TOWN",
     "latitude": -47.465831,
     "longitude": -72.446287,
     "elevation": 1578
   },
   {
     "name": "Santucci",
+    "type": "TOWN",
     "latitude": -51.307294,
     "longitude": -72.646857,
     "elevation": 138
   },
   {
     "name": "Sarmiento",
+    "type": "TOWN",
     "latitude": -54.337442,
     "longitude": -68.180968,
     "elevation": 850
   },
   {
     "name": "Saturday Point",
+    "type": "TOWN",
     "latitude": -52.029294,
     "longitude": -59.099526,
     "elevation": 26
   },
   {
     "name": "Sea Lion Cove",
+    "type": "TOWN",
     "latitude": -51.627591,
     "longitude": -60.419411,
     "elevation": 26
   },
   {
     "name": "Sea Lion Point",
+    "type": "TOWN",
     "latitude": -51.355033,
     "longitude": -58.342606,
     "elevation": 16
   },
   {
     "name": "Seablite Point",
+    "type": "TOWN",
     "latitude": -51.60488,
     "longitude": -60.458946,
     "elevation": 0
   },
   {
     "name": "Seal Bay",
+    "type": "TOWN",
     "latitude": -51.378751,
     "longitude": -58.011522,
     "elevation": 0
   },
   {
     "name": "Seal Cove",
+    "type": "TOWN",
     "latitude": -52.028603,
     "longitude": -58.659652,
     "elevation": 0
   },
   {
     "name": "Seal Point",
+    "type": "TOWN",
     "latitude": -52.10203,
     "longitude": -59.070403,
     "elevation": 3
   },
   {
     "name": "Sealer Cove",
+    "type": "TOWN",
     "latitude": -51.364252,
     "longitude": -60.077974,
     "elevation": 0
   },
   {
     "name": "Seaview Creek",
+    "type": "TOWN",
     "latitude": -51.5839,
     "longitude": -59.076281,
     "elevation": 16
   },
   {
     "name": "Seaview Point",
+    "type": "TOWN",
     "latitude": -51.580231,
     "longitude": -59.059531,
     "elevation": 7
   },
   {
     "name": "Second Sand Grass Bay",
+    "type": "TOWN",
     "latitude": -51.399848,
     "longitude": -58.280358,
     "elevation": 0
   },
   {
     "name": "Sector Chacras",
+    "type": "TOWN",
     "latitude": -46.850571,
     "longitude": -72.698799,
     "elevation": 699
   },
   {
     "name": "Sector Las Siembras",
+    "type": "TOWN",
     "latitude": -53.035698,
     "longitude": -70.899996,
     "elevation": 207
   },
   {
     "name": "Seguel",
+    "type": "TOWN",
     "latitude": -46.949489,
     "longitude": -72.793955,
     "elevation": 705
   },
   {
     "name": "Seis Hermanos",
+    "type": "TOWN",
     "latitude": -47.463175,
     "longitude": -72.542154,
     "elevation": 1043
   },
   {
     "name": "Semaphore Point",
+    "type": "TOWN",
     "latitude": -52.166661,
     "longitude": -59.659719,
     "elevation": 75
   },
   {
     "name": "Seno Otway Norte",
+    "type": "TOWN",
     "latitude": -52.803131,
     "longitude": -71.173937,
     "elevation": 102
   },
   {
     "name": "Settlement Creek",
+    "type": "TOWN",
     "latitude": -52.056713,
     "longitude": -60.270653,
     "elevation": 0
   },
   {
     "name": "Severino Amelung",
+    "type": "TOWN",
     "latitude": -47.744353,
     "longitude": -65.882563,
     "elevation": 112
   },
   {
     "name": "Shag Cove",
+    "type": "TOWN",
     "latitude": -51.738039,
     "longitude": -59.644865,
     "elevation": 16
   },
   {
     "name": "Shag Harbour",
+    "type": "TOWN",
     "latitude": -51.736809,
     "longitude": -59.618897,
     "elevation": 0
   },
   {
     "name": "Shag Point",
+    "type": "TOWN",
     "latitude": -52.222292,
     "longitude": -59.672306,
     "elevation": 30
   },
   {
     "name": "Shallop Point",
+    "type": "TOWN",
     "latitude": -51.700088,
     "longitude": -60.093706,
     "elevation": 10
   },
   {
     "name": "Shallow Bay",
+    "type": "TOWN",
     "latitude": -51.675373,
     "longitude": -60.103057,
     "elevation": 0
   },
   {
     "name": "Shallow Bay Farm",
+    "type": "TOWN",
     "latitude": -51.423212,
     "longitude": -59.996788,
     "elevation": 62
   },
   {
     "name": "Shallow Bluff",
+    "type": "TOWN",
     "latitude": -51.774074,
     "longitude": -60.590136,
     "elevation": 266
   },
   {
     "name": "Shallow Cove",
+    "type": "TOWN",
     "latitude": -51.780765,
     "longitude": -58.220458,
     "elevation": 0
   },
   {
     "name": "Shallow Harbour",
+    "type": "TOWN",
     "latitude": -51.777055,
     "longitude": -60.508747,
     "elevation": 0
   },
   {
     "name": "Shallow Harbour Farm",
+    "type": "TOWN",
     "latitude": -51.746787,
     "longitude": -60.523139,
     "elevation": 167
   },
   {
     "name": "Sheffield Farm",
+    "type": "TOWN",
     "latitude": -51.656998,
     "longitude": -60.189851,
     "elevation": 49
   },
   {
     "name": "Shell Bay",
+    "type": "TOWN",
     "latitude": -52.074099,
     "longitude": -58.955,
     "elevation": 0
   },
   {
     "name": "Shell Point",
+    "type": "TOWN",
     "latitude": -52.096211,
     "longitude": -58.987538,
     "elevation": 16
   },
   {
     "name": "Ship Harbour",
+    "type": "TOWN",
     "latitude": -51.329505,
     "longitude": -59.468029,
     "elevation": 0
   },
   {
     "name": "Ship Point",
+    "type": "TOWN",
     "latitude": -52.100205,
     "longitude": -59.093109,
     "elevation": 7
   },
   {
     "name": "Shivery Creek",
+    "type": "TOWN",
     "latitude": -52.156968,
     "longitude": -60.71101,
     "elevation": 0
   },
   {
     "name": "Shuka",
+    "type": "TOWN",
     "latitude": -51.73876,
     "longitude": -72.479123,
     "elevation": 115
   },
   {
     "name": "Sierra Nevada",
+    "type": "TOWN",
     "latitude": -54.277743,
     "longitude": -68.380788,
     "elevation": 860
   },
   {
     "name": "Sin Huella",
+    "type": "TOWN",
     "latitude": -47.432107,
     "longitude": -72.589201,
     "elevation": 1027
   },
   {
     "name": "Skull Bay",
+    "type": "TOWN",
     "latitude": -51.885657,
     "longitude": -61.127629,
     "elevation": 0
   },
   {
     "name": "Smokey Point",
+    "type": "TOWN",
     "latitude": -51.609499,
     "longitude": -60.429868,
     "elevation": 23
   },
   {
     "name": "Smylie Creek",
+    "type": "TOWN",
     "latitude": -51.431899,
     "longitude": -58.967657,
     "elevation": 0
   },
   {
     "name": "Snug Cove",
+    "type": "TOWN",
     "latitude": -52.186721,
     "longitude": -59.421272,
     "elevation": 0
   },
   {
     "name": "Solo Terra",
+    "type": "TOWN",
     "latitude": -50.350922,
     "longitude": -72.245328,
     "elevation": 889
   },
   {
     "name": "Sound Point",
+    "type": "TOWN",
     "latitude": -51.438062,
     "longitude": -60.098868,
     "elevation": 26
   },
   {
     "name": "South East Point",
+    "type": "TOWN",
     "latitude": -51.796862,
     "longitude": -58.117493,
     "elevation": 20
   },
   {
     "name": "South Harbour",
+    "type": "TOWN",
     "latitude": -52.021379,
     "longitude": -60.863314,
     "elevation": 0
   },
   {
     "name": "South Harbour Farm",
+    "type": "TOWN",
     "latitude": -52.005681,
     "longitude": -60.745499,
     "elevation": 69
   },
   {
     "name": "South Head",
+    "type": "TOWN",
     "latitude": -52.018077,
     "longitude": -60.246792,
     "elevation": 131
   },
   {
     "name": "Southwest Bay",
+    "type": "TOWN",
     "latitude": -51.62138,
     "longitude": -60.443805,
     "elevation": 0
   },
   {
     "name": "Sparrow Cove",
+    "type": "TOWN",
     "latitude": -51.650953,
     "longitude": -57.808256,
     "elevation": 0
   },
   {
     "name": "Spring Point Farm",
+    "type": "TOWN",
     "latitude": -51.830975,
     "longitude": -60.465875,
     "elevation": 10
   },
   {
     "name": "Squib Point",
+    "type": "TOWN",
     "latitude": -51.834199,
     "longitude": -58.932243,
     "elevation": 0
   },
   {
     "name": "Stag River",
+    "type": "TOWN",
     "latitude": -51.66366,
     "longitude": -72.02584,
     "elevation": 715
   },
   {
     "name": "Stanley Harbour",
+    "type": "TOWN",
     "latitude": -51.68685,
     "longitude": -57.837498,
     "elevation": 0
   },
   {
     "name": "Starfish Creek",
+    "type": "TOWN",
     "latitude": -52.016717,
     "longitude": -60.266876,
     "elevation": 0
   },
   {
     "name": "States Cove",
+    "type": "TOWN",
     "latitude": -51.835617,
     "longitude": -60.901174,
     "elevation": 0
   },
   {
     "name": "Steep Point",
+    "type": "TOWN",
     "latitude": -51.716846,
     "longitude": -60.286209,
     "elevation": 302
   },
   {
     "name": "Steeple Jason East",
+    "type": "TOWN",
     "latitude": -51.0485,
     "longitude": -61.190185,
     "elevation": 453
   },
   {
     "name": "Steeple Jason West",
+    "type": "TOWN",
     "latitude": -51.024536,
     "longitude": -61.235246,
     "elevation": 443
   },
   {
     "name": "Stevelly Bay",
+    "type": "TOWN",
     "latitude": -51.443777,
     "longitude": -60.464029,
     "elevation": 0
   },
   {
     "name": "Stinker Point",
+    "type": "TOWN",
     "latitude": -51.821081,
     "longitude": -61.198139,
     "elevation": 62
   },
   {
     "name": "Stoney Ridge Farm",
+    "type": "TOWN",
     "latitude": -52.015289,
     "longitude": -60.489749,
     "elevation": 200
   },
   {
     "name": "Strike Off Point",
+    "type": "TOWN",
     "latitude": -51.589443,
     "longitude": -57.975369,
     "elevation": 75
   },
   {
     "name": "Suarez",
+    "type": "TOWN",
     "latitude": -51.380322,
     "longitude": -70.213085,
     "elevation": 361
   },
   {
     "name": "Sulivan Harbour",
+    "type": "TOWN",
     "latitude": -52.046051,
     "longitude": -59.176741,
     "elevation": 0
   },
   {
     "name": "Surf Bay",
+    "type": "TOWN",
     "latitude": -51.695176,
     "longitude": -57.774713,
     "elevation": 0
   },
   {
     "name": "Surgidero Furia",
+    "type": "TOWN",
     "latitude": -52.625027,
     "longitude": -72.410892,
     "elevation": 0
   },
   {
     "name": "Swan Inlet Farm",
+    "type": "TOWN",
     "latitude": -51.828249,
     "longitude": -58.621617,
     "elevation": 49
   },
   {
     "name": "Swan Point",
+    "type": "TOWN",
     "latitude": -51.765078,
     "longitude": -60.865615,
     "elevation": 23
   },
   {
     "name": "Symonds Harbour",
+    "type": "TOWN",
     "latitude": -51.832967,
     "longitude": -60.352449,
     "elevation": 0
   },
   {
     "name": "Table Cove",
+    "type": "TOWN",
     "latitude": -51.809716,
     "longitude": -61.245239,
     "elevation": 0
   },
   {
     "name": "Table Point",
+    "type": "TOWN",
     "latitude": -51.797256,
     "longitude": -61.23186,
     "elevation": 131
   },
   {
     "name": "Tamar Point",
+    "type": "TOWN",
     "latitude": -51.343849,
     "longitude": -59.400786,
     "elevation": 95
   },
   {
     "name": "Tamel Aike",
+    "type": "TOWN",
     "latitude": -48.316667,
     "longitude": -70.96668,
     "elevation": 1762
   },
   {
     "name": "Tank Point",
+    "type": "TOWN",
     "latitude": -52.293205,
     "longitude": -59.743459,
     "elevation": 20
   },
   {
     "name": "Tea Point",
+    "type": "TOWN",
     "latitude": -52.350651,
     "longitude": -59.658444,
     "elevation": 16
   },
   {
     "name": "Teal Creek",
+    "type": "TOWN",
     "latitude": -51.819781,
     "longitude": -58.924652,
     "elevation": 20
   },
   {
     "name": "Teal River Farm",
+    "type": "TOWN",
     "latitude": -51.656837,
     "longitude": -60.077527,
     "elevation": 82
   },
   {
     "name": "Tellier",
+    "type": "TOWN",
     "latitude": -47.648895,
     "longitude": -66.040225,
     "elevation": 361
   },
   {
     "name": "Templo San Juan Bosco",
+    "type": "TOWN",
     "latitude": -51.736955,
     "longitude": -72.494012,
     "elevation": 56
   },
   {
     "name": "Tern Point",
+    "type": "TOWN",
     "latitude": -51.954475,
     "longitude": -60.845847,
     "elevation": 3
   },
   {
     "name": "Terra Motas Point",
+    "type": "TOWN",
     "latitude": -51.653839,
     "longitude": -59.045895,
     "elevation": 23
   },
   {
     "name": "Terranova",
+    "type": "TOWN",
     "latitude": -51.738501,
     "longitude": -72.477245,
     "elevation": 118
   },
   {
     "name": "Terrazas de Manantiales",
+    "type": "TOWN",
     "latitude": -50.344153,
     "longitude": -72.310335,
     "elevation": 915
   },
   {
     "name": "Terrazas de Nimez",
+    "type": "TOWN",
     "latitude": -50.322286,
     "longitude": -72.260833,
     "elevation": 604
   },
   {
     "name": "The Canache",
+    "type": "TOWN",
     "latitude": -51.696076,
     "longitude": -57.79058,
     "elevation": 10
   },
   {
     "name": "The Careenage",
+    "type": "TOWN",
     "latitude": -51.535925,
     "longitude": -58.108857,
     "elevation": 0
   },
   {
     "name": "The Moro",
+    "type": "TOWN",
     "latitude": -51.426845,
     "longitude": -58.52465,
     "elevation": 62
   },
   {
     "name": "The Narrows",
+    "type": "TOWN",
     "latitude": -51.682131,
     "longitude": -57.829232,
     "elevation": 0
   },
   {
     "name": "The Sound",
+    "type": "TOWN",
     "latitude": -51.658177,
     "longitude": -59.321324,
     "elevation": 0
   },
   {
     "name": "The Waterfall",
+    "type": "TOWN",
     "latitude": -51.368482,
     "longitude": -60.687188,
     "elevation": 387
   },
   {
     "name": "Tierra del Fuego",
+    "type": "TOWN",
     "latitude": -54.407107,
     "longitude": -67.897491,
     "elevation": 427
   },
   {
     "name": "Timaukel",
+    "type": "TOWN",
     "latitude": -53.688797,
     "longitude": -69.902275,
     "elevation": 36
   },
   {
     "name": "Tolhuin",
+    "type": "TOWN",
     "latitude": -54.511349,
     "longitude": -67.195401,
     "elevation": 400
   },
   {
     "name": "Tonite",
+    "type": "TOWN",
     "latitude": -54.316052,
     "longitude": -67.272485,
     "elevation": 299
   },
   {
     "name": "Torres del Paine",
+    "type": "TOWN",
     "latitude": -51.738845,
     "longitude": -72.484287,
     "elevation": 62
   },
   {
     "name": "Town Point",
+    "type": "TOWN",
     "latitude": -51.658161,
     "longitude": -60.241948,
     "elevation": 20
   },
   {
     "name": "Tres Cerros",
+    "type": "TOWN",
     "latitude": -48.143225,
     "longitude": -67.652099,
     "elevation": 571
   },
   {
     "name": "Tres Hermanos",
+    "type": "TOWN",
     "latitude": -51.940785,
     "longitude": -69.604545,
     "elevation": 240
   },
   {
     "name": "Tres Lagos",
+    "type": "TOWN",
     "latitude": -49.59808,
     "longitude": -71.446487,
     "elevation": 745
   },
   {
     "name": "Tres Lagunas",
+    "type": "TOWN",
     "latitude": -50.775976,
     "longitude": -70.077831,
     "elevation": 797
   },
   {
     "name": "Tres Marias",
+    "type": "TOWN",
     "latitude": -51.318977,
     "longitude": -72.176226,
     "elevation": 1526
   },
   {
     "name": "Tres Puentes",
+    "type": "TOWN",
     "latitude": -53.119153,
     "longitude": -70.875206,
     "elevation": 23
   },
   {
     "name": "Tucu Tucu",
+    "type": "TOWN",
     "latitude": -48.433333,
     "longitude": -71.85002,
     "elevation": 2470
   },
   {
     "name": "Tussac Point",
+    "type": "TOWN",
     "latitude": -52.347217,
     "longitude": -59.377799,
     "elevation": 20
   },
   {
     "name": "USU",
+    "type": "VOR",
     "latitude": -54.83908,
     "longitude": -68.282349,
     "elevation": 167
   },
   {
     "name": "Uranie Bay",
+    "type": "TOWN",
     "latitude": -51.580497,
     "longitude": -58.037639,
     "elevation": 0
   },
   {
     "name": "Useless Bay",
+    "type": "TOWN",
     "latitude": -51.831826,
     "longitude": -60.938501,
     "elevation": 0
   },
   {
     "name": "Useless Water",
+    "type": "TOWN",
     "latitude": -52.01576,
     "longitude": -58.438264,
     "elevation": 0
   },
   {
     "name": "Ushuaia",
+    "type": "TOWN",
     "latitude": -54.806933,
     "longitude": -68.307325,
     "elevation": 62
   },
   {
     "name": "Valle Chacabuco",
+    "type": "TOWN",
     "latitude": -47.11702,
     "longitude": -72.486045,
     "elevation": 1119
   },
   {
     "name": "Valle Grande",
+    "type": "TOWN",
     "latitude": -47.281788,
     "longitude": -72.72798,
     "elevation": 256
   },
   {
     "name": "Valle La Tranquera",
+    "type": "TOWN",
     "latitude": -47.60701,
     "longitude": -72.930341,
     "elevation": 528
   },
   {
     "name": "Vega Castillo",
+    "type": "TOWN",
     "latitude": -51.303816,
     "longitude": -72.647865,
     "elevation": 135
   },
   {
     "name": "Veintidos",
+    "type": "TOWN",
     "latitude": -51.35633,
     "longitude": -69.580161,
     "elevation": 305
   },
   {
     "name": "Veintiocho de Noviembre",
+    "type": "TOWN",
     "latitude": -51.579567,
     "longitude": -72.211488,
     "elevation": 745
   },
   {
     "name": "Ventisquero Chico",
+    "type": "TOWN",
     "latitude": -48.86302,
     "longitude": -72.897756,
     "elevation": 925
   },
   {
     "name": "Ventisquero Jorge Montt",
+    "type": "TOWN",
     "latitude": -48.194167,
     "longitude": -73.464083,
     "elevation": 7
   },
   {
     "name": "Vertedero",
+    "type": "TOWN",
     "latitude": -49.115832,
     "longitude": -74.390374,
     "elevation": 16
   },
   {
     "name": "Victoria Harbour",
+    "type": "TOWN",
     "latitude": -51.931896,
     "longitude": -58.829985,
     "elevation": 0
   },
   {
     "name": "Vieira",
+    "type": "TOWN",
     "latitude": -47.745152,
     "longitude": -65.895467,
     "elevation": 167
   },
   {
     "name": "Vieja Carmen",
+    "type": "TOWN",
     "latitude": -54.49821,
     "longitude": -67.767154,
     "elevation": 131
   },
   {
     "name": "Viejo",
+    "type": "TOWN",
     "latitude": -51.834961,
     "longitude": -69.51928,
     "elevation": 154
   },
   {
     "name": "Viejo Roble",
+    "type": "TOWN",
     "latitude": -48.783798,
     "longitude": -72.759755,
     "elevation": 899
   },
   {
     "name": "Vilicic",
+    "type": "TOWN",
     "latitude": -52.134897,
     "longitude": -71.555307,
     "elevation": 1280
   },
   {
     "name": "Volunteer Lagoon",
+    "type": "TOWN",
     "latitude": -51.503374,
     "longitude": -57.862759,
     "elevation": 0
   },
   {
     "name": "Volunteer Point",
+    "type": "TOWN",
     "latitude": -51.51227,
     "longitude": -57.741694,
     "elevation": 66
   },
   {
     "name": "Vrsalovic",
+    "type": "TOWN",
     "latitude": -53.078356,
     "longitude": -70.887325,
     "elevation": 233
   },
   {
     "name": "Watering Cove",
+    "type": "TOWN",
     "latitude": -51.940323,
     "longitude": -60.430641,
     "elevation": 0
   },
   {
     "name": "Weddell Farm",
+    "type": "TOWN",
     "latitude": -51.893838,
     "longitude": -60.910683,
     "elevation": 33
   },
   {
     "name": "Weddell Point",
+    "type": "TOWN",
     "latitude": -51.90356,
     "longitude": -61.135711,
     "elevation": 7
   },
   {
     "name": "Weir Creek",
+    "type": "TOWN",
     "latitude": -51.662754,
     "longitude": -57.868638,
     "elevation": 10
   },
   {
     "name": "West Arm",
+    "type": "TOWN",
     "latitude": -52.191772,
     "longitude": -60.526042,
     "elevation": 0
   },
   {
     "name": "West Bluff",
+    "type": "TOWN",
     "latitude": -51.378002,
     "longitude": -60.704999,
     "elevation": 801
   },
   {
     "name": "West Cove",
+    "type": "TOWN",
     "latitude": -51.893768,
     "longitude": -58.54467,
     "elevation": 0
   },
   {
     "name": "West Head",
+    "type": "TOWN",
     "latitude": -52.002374,
     "longitude": -60.104839,
     "elevation": 564
   },
   {
     "name": "West Point",
+    "type": "TOWN",
     "latitude": -51.359234,
     "longitude": -59.830078,
     "elevation": 7
   },
   {
     "name": "Westley Farm",
+    "type": "TOWN",
     "latitude": -51.559167,
     "longitude": -60.245445,
     "elevation": 187
   },
   {
     "name": "Westpoint Cove",
+    "type": "TOWN",
     "latitude": -51.350966,
     "longitude": -60.680022,
     "elevation": 0
   },
   {
     "name": "Whale Bay",
+    "type": "TOWN",
     "latitude": -51.384049,
     "longitude": -59.448223,
     "elevation": 0
   },
   {
     "name": "Whale Point",
+    "type": "TOWN",
     "latitude": -51.873196,
     "longitude": -58.247151,
     "elevation": 20
   },
   {
     "name": "Whalebone Cove",
+    "type": "TOWN",
     "latitude": -51.687674,
     "longitude": -57.805515,
     "elevation": 0
   },
   {
     "name": "Whaler Bay",
+    "type": "TOWN",
     "latitude": -51.537127,
     "longitude": -60.481153,
     "elevation": 3
   },
   {
     "name": "Wharton Harbour",
+    "type": "TOWN",
     "latitude": -51.966096,
     "longitude": -59.585808,
     "elevation": 0
   },
   {
     "name": "White Bluff",
+    "type": "TOWN",
     "latitude": -51.895517,
     "longitude": -58.750505,
     "elevation": 62
   },
   {
     "name": "White Cliff Point",
+    "type": "TOWN",
     "latitude": -51.905011,
     "longitude": -59.593413,
     "elevation": 16
   },
   {
     "name": "White Rock Bay",
+    "type": "TOWN",
     "latitude": -51.437584,
     "longitude": -59.245148,
     "elevation": 0
   },
   {
     "name": "White Rock Point",
+    "type": "TOWN",
     "latitude": -51.400605,
     "longitude": -59.195913,
     "elevation": 69
   },
   {
     "name": "Whitsand Bay",
+    "type": "TOWN",
     "latitude": -51.717405,
     "longitude": -60.201817,
     "elevation": 0
   },
   {
     "name": "Wickham Heights",
+    "type": "TOWN",
     "latitude": -51.699126,
     "longitude": -58.419443,
     "elevation": 1375
   },
   {
     "name": "Windy Valley",
+    "type": "TOWN",
     "latitude": -51.618994,
     "longitude": -60.437008,
     "elevation": 69
   },
   {
     "name": "Wine Bay",
+    "type": "TOWN",
     "latitude": -52.26322,
     "longitude": -59.503219,
     "elevation": 0
   },
   {
     "name": "Wine Bluff",
+    "type": "TOWN",
     "latitude": -51.964795,
     "longitude": -61.052753,
     "elevation": 52
   },
   {
     "name": "Wood Cove",
+    "type": "TOWN",
     "latitude": -52.114175,
     "longitude": -60.828552,
     "elevation": 0
   },
   {
     "name": "Woods Valley",
+    "type": "TOWN",
     "latitude": -51.611764,
     "longitude": -60.447296,
     "elevation": 138
   },
   {
     "name": "Woolly Gut Point",
+    "type": "TOWN",
     "latitude": -51.351663,
     "longitude": -60.665646,
     "elevation": 16
   },
   {
     "name": "Wreck Point",
+    "type": "TOWN",
     "latitude": -51.278634,
     "longitude": -59.545552,
     "elevation": 23
   },
   {
     "name": "Wreck Point Farm",
+    "type": "TOWN",
     "latitude": -51.577344,
     "longitude": -59.083134,
     "elevation": 128
   },
   {
     "name": "Yeguada",
+    "type": "TOWN",
     "latitude": -51.861793,
     "longitude": -59.417379,
     "elevation": 151
   },
   {
     "name": "Yorke Bay",
+    "type": "TOWN",
     "latitude": -51.679262,
     "longitude": -57.800362,
     "elevation": 0
   },
   {
     "name": "gra",
+    "type": "TACAN",
     "latitude": -53.779056,
     "longitude": -67.747975,
     "elevation": 56

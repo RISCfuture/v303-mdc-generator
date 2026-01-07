@@ -69,6 +69,19 @@ BEACON_TYPES = {
 # Exclude ILS components and airport-specific beacons
 NAVAID_BEACON_TYPES = {1, 2, 3, 4, 5, 6, 8, 19}  # VOR, DME, VOR_DME, TACAN, VORTAC, RSBN, HOMER, NAUTICAL_HOMER
 
+# Map DCS beacon type numbers to output type strings
+# HOMER (8) and NAUTICAL_HOMER (19) are non-directional beacons
+BEACON_TYPE_TO_OUTPUT = {
+    1: "VOR",
+    2: "DME",
+    3: "VOR_DME",
+    4: "TACAN",
+    5: "VORTAC",
+    6: "RSBN",
+    8: "NDB",      # HOMER
+    19: "NDB",     # NAUTICAL_HOMER
+}
+
 
 class BeaconTownExtractor:
     """Extracts beacons and towns from DCS World installation."""
@@ -308,6 +321,7 @@ class BeaconTownExtractor:
 
                     navaids.append({
                         'name': str(name).strip(),
+                        'type': BEACON_TYPE_TO_OUTPUT.get(beacon_type, 'VOR'),
                         'latitude': float(latitude),
                         'longitude': float(longitude),
                         'elevation': None  # Will be filled by merge script
@@ -394,6 +408,7 @@ class BeaconTownExtractor:
 
                 navaids.append({
                     'name': name,
+                    'type': BEACON_TYPE_TO_OUTPUT.get(beacon_type, 'VOR'),
                     'latitude': latitude,
                     'longitude': longitude,
                     'elevation': None
@@ -479,6 +494,7 @@ class BeaconTownExtractor:
 
                     locations.append({
                         'name': str(name).strip(),
+                        'type': 'TOWN',
                         'latitude': float(latitude),
                         'longitude': float(longitude),
                         'elevation': None
@@ -526,6 +542,7 @@ class BeaconTownExtractor:
                 if not any(loc['name'] == name for loc in locations):
                     locations.append({
                         'name': name,
+                        'type': 'TOWN',
                         'latitude': latitude,
                         'longitude': longitude,
                         'elevation': None
@@ -547,6 +564,7 @@ class BeaconTownExtractor:
                 if not any(loc['name'] == name for loc in locations):
                     locations.append({
                         'name': name,
+                        'type': 'TOWN',
                         'latitude': latitude,
                         'longitude': longitude,
                         'elevation': None

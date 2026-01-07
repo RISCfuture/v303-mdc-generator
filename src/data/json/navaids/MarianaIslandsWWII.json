@@ -1,132 +1,154 @@
 [
   {
     "name": "Agat",
+    "type": "TOWN",
     "latitude": 13.396072,
     "longitude": 144.662918,
     "elevation": 13
   },
   {
     "name": "Akashi",
+    "type": "TOWN",
     "latitude": 13.476011,
     "longitude": 144.752809,
     "elevation": 16
   },
   {
     "name": "Asan",
+    "type": "TOWN",
     "latitude": 13.472483,
     "longitude": 144.714066,
     "elevation": 16
   },
   {
     "name": "Dandan",
+    "type": "TOWN",
     "latitude": 15.126744,
     "longitude": 145.726518,
     "elevation": 194
   },
   {
     "name": "Garapan",
+    "type": "TOWN",
     "latitude": 15.207571,
     "longitude": 145.719597,
     "elevation": 23
   },
   {
     "name": "Inarajan",
+    "type": "TOWN",
     "latitude": 13.275089,
     "longitude": 144.74742,
     "elevation": 33
   },
   {
     "name": "Kagman",
+    "type": "TOWN",
     "latitude": 15.17538,
     "longitude": 145.771259,
     "elevation": 220
   },
   {
     "name": "Koblerville",
+    "type": "TOWN",
     "latitude": 15.116521,
     "longitude": 145.708356,
     "elevation": 121
   },
   {
     "name": "Pigua",
+    "type": "TOWN",
     "latitude": 13.264897,
     "longitude": 144.671605,
     "elevation": 72
   },
   {
     "name": "Piti",
+    "type": "TOWN",
     "latitude": 13.462603,
     "longitude": 144.689856,
     "elevation": 23
   },
   {
     "name": "Puerto Rico",
+    "type": "TOWN",
     "latitude": 15.226934,
     "longitude": 145.738913,
     "elevation": 7
   },
   {
     "name": "Rota sugar factory",
+    "type": "TOWN",
     "latitude": 14.137153,
     "longitude": 145.136033,
     "elevation": 13
   },
   {
     "name": "Saipan sugar factory",
+    "type": "TOWN",
     "latitude": 15.148652,
     "longitude": 145.70265,
     "elevation": 26
   },
   {
     "name": "San Jose",
+    "type": "TOWN",
     "latitude": 14.968508,
     "longitude": 145.621609,
     "elevation": 46
   },
   {
     "name": "San Lois Point",
+    "type": "TOWN",
     "latitude": 13.43944,
     "longitude": 144.649761,
     "elevation": 89
   },
   {
     "name": "Sinapalo",
+    "type": "TOWN",
     "latitude": 14.167866,
     "longitude": 145.226755,
     "elevation": 617
   },
   {
     "name": "Songsong",
+    "type": "TOWN",
     "latitude": 14.139157,
     "longitude": 145.139697,
     "elevation": 26
   },
   {
     "name": "Susupe",
+    "type": "TOWN",
     "latitude": 15.1524,
     "longitude": 145.705051,
     "elevation": 20
   },
   {
     "name": "Tepungan",
+    "type": "TOWN",
     "latitude": 13.467035,
     "longitude": 144.699033,
     "elevation": 10
   },
   {
     "name": "Tinian sugar factory",
+    "type": "TOWN",
     "latitude": 14.970802,
     "longitude": 145.617391,
     "elevation": 30
   },
   {
     "name": "Umatac",
+    "type": "TOWN",
     "latitude": 13.299452,
     "longitude": 144.660904,
     "elevation": 62
   },
   {
     "name": "Yopa",
+    "type": "TOWN",
     "latitude": 13.411814,
     "longitude": 144.773992,
     "elevation": 295

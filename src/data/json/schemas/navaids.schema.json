@@ -12,6 +12,11 @@
         "type": "string",
         "description": "Navigation aid name/identifier"
       },
+      "type": {
+        "type": "string",
+        "enum": ["VOR", "DME", "VOR_DME", "TACAN", "VORTAC", "NDB", "RSBN", "TOWN", "WAYPOINT"],
+        "description": "Type of navigation aid. VOR/DME/TACAN/VORTAC/NDB/RSBN are radio beacons from DCS. TOWN is a populated place from DCS. WAYPOINT is a tactical waypoint from v303 FG."
+      },
       "latitude": {
         "type": "number",
         "minimum": -90,

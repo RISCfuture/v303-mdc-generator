@@ -135,19 +135,23 @@ class NavaidLoader:
         print(f"  Processing {len(merged_data)} unique entries")
 
         # Fetch elevations for entries with null elevation
-        print(f"  Fetching elevations...")
-        elevation_count = 0
+        entries_needing_elevation = [e for e in merged_data if e.get('elevation') is None]
+        total_needed = len(entries_needing_elevation)
 
-        for i, entry in enumerate(merged_data):
-            if entry.get('elevation') is None:
+        if total_needed > 0:
+            print(f"  Fetching elevations for {total_needed} entries...")
+            for i, entry in enumerate(entries_needing_elevation):
                 elevation = self.fetch_elevation(entry['latitude'], entry['longitude'])
                 entry['elevation'] = elevation
-                elevation_count += 1
 
-                if (elevation_count) % 50 == 0:
-                    print(f"    {elevation_count} elevations fetched...")
+                # Progress every 25 entries or at completion
+                if (i + 1) % 25 == 0 or (i + 1) == total_needed:
+                    pct = ((i + 1) / total_needed) * 100
+                    print(f"    [{i + 1}/{total_needed}] {pct:.1f}% complete", flush=True)
 
-        print(f"  Fetched {elevation_count} elevations")
+            print(f"  ✓ Fetched {total_needed} elevations")
+        else:
+            print(f"  All entries already have elevations")
 
         # Sort by name
         merged_data.sort(key=lambda n: n['name'])

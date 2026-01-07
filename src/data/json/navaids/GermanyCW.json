@@ -1,1278 +1,1491 @@
 [
   {
     "name": "AL",
+    "type": "RSBN",
     "latitude": 51.379075,
     "longitude": 11.445329,
     "elevation": 928
   },
   {
     "name": "ALF",
+    "type": "VOR_DME",
     "latitude": 53.636303,
     "longitude": 9.993739,
     "elevation": 33
   },
   {
     "name": "AR",
+    "type": "RSBN",
     "latitude": 51.994426,
     "longitude": 12.977758,
     "elevation": 312
   },
   {
     "name": "AT",
+    "type": "RSBN",
     "latitude": 52.937698,
     "longitude": 14.415923,
     "elevation": 177
   },
   {
     "name": "Anklam",
+    "type": "TOWN",
     "latitude": 53.856053,
     "longitude": 13.688091,
     "elevation": 26
   },
   {
     "name": "Aschersleben",
+    "type": "TOWN",
     "latitude": 51.755955,
     "longitude": 11.462133,
     "elevation": 374
   },
   {
     "name": "B NCIRCLE",
+    "type": "WAYPOINT",
     "latitude": 49.6559445,
     "longitude": 7.3728225,
     "elevation": 1860
   },
   {
     "name": "B SCIRCLE",
+    "type": "WAYPOINT",
     "latitude": 49.653868833333334,
     "longitude": 7.376644833333334,
     "elevation": 1847
   },
   {
     "name": "B TOWER",
+    "type": "WAYPOINT",
     "latitude": 49.64921,
     "longitude": 7.375559666666667,
     "elevation": 1739
   },
   {
     "name": "B TTS1",
+    "type": "WAYPOINT",
     "latitude": 49.647145,
     "longitude": 7.373402666666666,
     "elevation": 1647
   },
   {
     "name": "B TTS2",
+    "type": "WAYPOINT",
     "latitude": 49.65085283333333,
     "longitude": 7.371186833333334,
     "elevation": 1690
   },
   {
     "name": "B WSTRAFE",
+    "type": "WAYPOINT",
     "latitude": 49.655237,
     "longitude": 7.376206,
     "elevation": 1883
   },
   {
     "name": "BIT",
+    "type": "TACAN",
     "latitude": 49.938601,
     "longitude": 6.555683,
     "elevation": 1217
   },
   {
     "name": "BKD",
+    "type": "VORTAC",
     "latitude": 53.034494,
     "longitude": 11.546217,
     "elevation": 52
   },
   {
     "name": "BL",
+    "type": "RSBN",
     "latitude": 51.551358,
     "longitude": 13.231059,
     "elevation": 279
   },
   {
     "name": "BMN",
+    "type": "VOR_DME",
     "latitude": 53.044199,
     "longitude": 8.782206,
     "elevation": 7
   },
   {
     "name": "BU",
+    "type": "RSBN",
     "latitude": 52.611004,
     "longitude": 14.242045,
     "elevation": 23
   },
   {
     "name": "BUE",
+    "type": "TACAN",
     "latitude": 50.178211,
     "longitude": 7.070576,
     "elevation": 1562
   },
   {
     "name": "Bad Belzig",
+    "type": "TOWN",
     "latitude": 52.140562,
     "longitude": 12.586587,
     "elevation": 305
   },
   {
     "name": "Bad Bevensen",
+    "type": "TOWN",
     "latitude": 53.080941,
     "longitude": 10.574481,
     "elevation": 108
   },
   {
     "name": "Bad Fallingbostel",
+    "type": "TOWN",
     "latitude": 52.865449,
     "longitude": 9.693018,
     "elevation": 138
   },
   {
     "name": "Bad Kreuznach",
+    "type": "TOWN",
     "latitude": 49.831043,
     "longitude": 7.876043,
     "elevation": 482
   },
   {
     "name": "Bad Segeberg",
+    "type": "TOWN",
     "latitude": 53.936935,
     "longitude": 10.304477,
     "elevation": 148
   },
   {
     "name": "Barth",
+    "type": "TOWN",
     "latitude": 54.369055,
     "longitude": 12.725858,
     "elevation": 20
   },
   {
     "name": "Berlin",
+    "type": "TOWN",
     "latitude": 52.517036,
     "longitude": 13.38886,
     "elevation": 141
   },
   {
     "name": "Bernburg (Saale)",
+    "type": "TOWN",
     "latitude": 51.793079,
     "longitude": 11.73916,
     "elevation": 299
   },
   {
     "name": "Bielefeld",
+    "type": "TOWN",
     "latitude": 52.023927,
     "longitude": 8.538114,
     "elevation": 367
   },
   {
     "name": "Bitburg",
+    "type": "TOWN",
     "latitude": 49.985912,
     "longitude": 6.511769,
     "elevation": 1115
   },
   {
     "name": "Blankenburg (Harz)",
+    "type": "TOWN",
     "latitude": 51.790268,
     "longitude": 10.955198,
     "elevation": 728
   },
   {
     "name": "Boizenburg",
+    "type": "TOWN",
     "latitude": 53.375079,
     "longitude": 10.723236,
     "elevation": 43
   },
   {
     "name": "Bonn",
+    "type": "TOWN",
     "latitude": 50.698964,
     "longitude": 7.074078,
     "elevation": 381
   },
   {
     "name": "Brandenburg an der Havel",
+    "type": "TOWN",
     "latitude": 52.410826,
     "longitude": 12.549793,
     "elevation": 115
   },
   {
     "name": "Braunschweig",
+    "type": "TOWN",
     "latitude": 52.264658,
     "longitude": 10.523606,
     "elevation": 259
   },
   {
     "name": "Bremen",
+    "type": "TOWN",
     "latitude": 53.07582,
     "longitude": 8.807162,
     "elevation": 49
   },
   {
     "name": "Bremerhaven",
+    "type": "TOWN",
     "latitude": 53.566169,
     "longitude": 8.635711,
     "elevation": 13
   },
   {
     "name": "Buchholz in der Nordheide",
+    "type": "TOWN",
     "latitude": 53.333302,
     "longitude": 9.866664,
     "elevation": 233
   },
   {
     "name": "Burg",
+    "type": "TOWN",
     "latitude": 52.270563,
     "longitude": 11.858819,
     "elevation": 154
   },
   {
     "name": "Butzow",
+    "type": "TOWN",
     "latitude": 53.850005,
     "longitude": 11.983295,
     "elevation": 7
   },
   {
     "name": "Buxtehude",
+    "type": "TOWN",
     "latitude": 53.476735,
     "longitude": 9.700393,
     "elevation": 16
   },
   {
     "name": "CH",
+    "type": "DME",
     "latitude": 55.593106,
     "longitude": 12.609307,
     "elevation": 3
   },
   {
     "name": "COL",
+    "type": "VORTAC",
     "latitude": 50.782859,
     "longitude": 7.253347,
     "elevation": 226
   },
   {
     "name": "Celle",
+    "type": "TOWN",
     "latitude": 52.624056,
     "longitude": 10.081051,
     "elevation": 151
   },
   {
     "name": "Cologne",
+    "type": "TOWN",
     "latitude": 50.914806,
     "longitude": 6.858789,
     "elevation": 200
   },
   {
     "name": "Copenhagen",
+    "type": "TOWN",
     "latitude": 55.691109,
     "longitude": 12.570825,
     "elevation": 23
   },
   {
     "name": "DK",
+    "type": "RSBN",
     "latitude": 51.363072,
     "longitude": 11.963342,
     "elevation": 344
   },
   {
     "name": "DLE",
+    "type": "VOR_DME",
     "latitude": 52.250863,
     "longitude": 9.884677,
     "elevation": 351
   },
   {
     "name": "DUS",
+    "type": "VOR",
     "latitude": 51.283352,
     "longitude": 6.75443,
     "elevation": 115
   },
   {
     "name": "Dabendorf",
+    "type": "TOWN",
     "latitude": 52.23962,
     "longitude": 13.43268,
     "elevation": 128
   },
   {
     "name": "Demmin",
+    "type": "TOWN",
     "latitude": 53.907002,
     "longitude": 13.032784,
     "elevation": 30
   },
   {
     "name": "Dessau",
+    "type": "TOWN",
     "latitude": 51.830996,
     "longitude": 12.243072,
     "elevation": 210
   },
   {
     "name": "Dusseldorf",
+    "type": "TOWN",
     "latitude": 51.180399,
     "longitude": 6.720742,
     "elevation": 138
   },
   {
     "name": "Eberswalde",
+    "type": "TOWN",
     "latitude": 52.835081,
     "longitude": 13.799654,
     "elevation": 75
   },
   {
     "name": "Einbeck",
+    "type": "TOWN",
     "latitude": 51.818507,
     "longitude": 9.867845,
     "elevation": 377
   },
   {
     "name": "Elmshorn",
+    "type": "TOWN",
     "latitude": 53.753249,
     "longitude": 9.652455,
     "elevation": 23
   },
   {
     "name": "Erfurt",
+    "type": "TOWN",
     "latitude": 50.993575,
     "longitude": 11.023765,
     "elevation": 614
   },
   {
     "name": "Eutin",
+    "type": "TOWN",
     "latitude": 54.136464,
     "longitude": 10.615907,
     "elevation": 115
   },
   {
     "name": "FFM",
+    "type": "VORTAC",
     "latitude": 50.053775,
     "longitude": 8.637223,
     "elevation": 390
   },
   {
     "name": "FSB",
+    "type": "VORTAC",
     "latitude": 52.921621,
     "longitude": 10.202136,
     "elevation": 236
   },
   {
     "name": "FUL",
+    "type": "VORTAC",
     "latitude": 50.592461,
     "longitude": 9.572224,
     "elevation": 1096
   },
   {
     "name": "Frankfurt",
+    "type": "TOWN",
     "latitude": 50.116661,
     "longitude": 8.670233,
     "elevation": 367
   },
   {
     "name": "Fulda",
+    "type": "TOWN",
     "latitude": 50.553317,
     "longitude": 9.693899,
     "elevation": 981
   },
   {
     "name": "Furstenwalde",
+    "type": "TOWN",
     "latitude": 52.358021,
     "longitude": 14.064985,
     "elevation": 157
   },
   {
     "name": "GBL",
+    "type": "TACAN",
     "latitude": 49.643663,
     "longitude": 9.950428,
     "elevation": 978
   },
   {
     "name": "GJ",
+    "type": "RSBN",
     "latitude": 53.205844,
     "longitude": 12.531033,
     "elevation": 220
   },
   {
     "name": "GN",
+    "type": "RSBN",
     "latitude": 52.53274,
     "longitude": 11.353838,
     "elevation": 240
   },
   {
     "name": "GSO",
+    "type": "TACAN",
     "latitude": 51.924309,
     "longitude": 8.286726,
     "elevation": 203
   },
   {
     "name": "Gardelegen",
+    "type": "TOWN",
     "latitude": 52.526556,
     "longitude": 11.392978,
     "elevation": 161
   },
   {
     "name": "Geesthacht",
+    "type": "TOWN",
     "latitude": 53.437468,
     "longitude": 10.367823,
     "elevation": 36
   },
   {
     "name": "Genthin",
+    "type": "TOWN",
     "latitude": 52.406374,
     "longitude": 12.156174,
     "elevation": 135
   },
   {
     "name": "Giessen",
+    "type": "TOWN",
     "latitude": 50.584796,
     "longitude": 8.670472,
     "elevation": 518
   },
   {
     "name": "Gottingen",
+    "type": "TOWN",
     "latitude": 51.532833,
     "longitude": 9.93518,
     "elevation": 509
   },
   {
     "name": "Greifswald",
+    "type": "TOWN",
     "latitude": 54.095791,
     "longitude": 13.381524,
     "elevation": 33
   },
   {
     "name": "Grevesmuhlen",
+    "type": "TOWN",
     "latitude": 53.864471,
     "longitude": 11.189884,
     "elevation": 128
   },
   {
     "name": "Gustrow",
+    "type": "TOWN",
     "latitude": 53.793652,
     "longitude": 12.175965,
     "elevation": 56
   },
   {
     "name": "H CCIRCLE",
+    "type": "WAYPOINT",
     "latitude": 50.070985,
     "longitude": 9.846221833333333,
     "elevation": 876
   },
   {
     "name": "H ECIRCLE",
+    "type": "WAYPOINT",
     "latitude": 50.072390166666665,
     "longitude": 9.848861666666666,
     "elevation": 896
   },
   {
     "name": "H ESTRAFE",
+    "type": "WAYPOINT",
     "latitude": 50.06644983333333,
     "longitude": 9.8416845,
     "elevation": 912
   },
   {
     "name": "H TOWER",
+    "type": "WAYPOINT",
     "latitude": 50.071902,
     "longitude": 9.840264666666666,
     "elevation": 912
   },
   {
     "name": "H TTS1",
+    "type": "WAYPOINT",
     "latitude": 50.06639366666667,
     "longitude": 9.836596,
     "elevation": 919
   },
   {
     "name": "H TTS2",
+    "type": "WAYPOINT",
     "latitude": 50.064556833333334,
     "longitude": 9.836990833333333,
     "elevation": 935
   },
   {
     "name": "H WCIRCLE",
+    "type": "WAYPOINT",
     "latitude": 50.0697965,
     "longitude": 9.843881833333333,
     "elevation": 922
   },
   {
     "name": "H WSTRAFE",
+    "type": "WAYPOINT",
     "latitude": 50.06635516666667,
     "longitude": 9.839137833333334,
     "elevation": 892
   },
   {
     "name": "HAD",
+    "type": "DME",
     "latitude": 52.46188,
     "longitude": 9.688376,
     "elevation": 161
   },
   {
     "name": "HAH",
+    "type": "TACAN",
     "latitude": 49.941656,
     "longitude": 7.260916,
     "elevation": 1624
   },
   {
     "name": "HAM",
+    "type": "VORTAC",
     "latitude": 53.685493,
     "longitude": 10.205137,
     "elevation": 131
   },
   {
     "name": "HLZ",
+    "type": "VORTAC",
     "latitude": 52.363646,
     "longitude": 10.795417,
     "elevation": 371
   },
   {
     "name": "HVL",
+    "type": "VOR_DME",
     "latitude": 52.456774,
     "longitude": 13.132528,
     "elevation": 144
   },
   {
     "name": "HX",
+    "type": "RSBN",
     "latitude": 51.765416,
     "longitude": 13.166705,
     "elevation": 262
   },
   {
     "name": "Hagenow",
+    "type": "TOWN",
     "latitude": 53.43058,
     "longitude": 11.190482,
     "elevation": 85
   },
   {
     "name": "Haldensleben",
+    "type": "TOWN",
     "latitude": 52.291124,
     "longitude": 11.413272,
     "elevation": 180
   },
   {
     "name": "Halle",
+    "type": "TOWN",
     "latitude": 51.482504,
     "longitude": 11.970545,
     "elevation": 322
   },
   {
     "name": "Hamburg",
+    "type": "TOWN",
     "latitude": 53.569715,
     "longitude": 10.016331,
     "elevation": 33
   },
   {
     "name": "Hameln",
+    "type": "TOWN",
     "latitude": 52.103994,
     "longitude": 9.356155,
     "elevation": 246
   },
   {
     "name": "Hannover",
+    "type": "TOWN",
     "latitude": 52.374478,
     "longitude": 9.738552,
     "elevation": 217
   },
   {
     "name": "Helmstedt",
+    "type": "TOWN",
     "latitude": 52.227704,
     "longitude": 11.010469,
     "elevation": 427
   },
   {
     "name": "Hildesheim",
+    "type": "TOWN",
     "latitude": 52.152164,
     "longitude": 9.951303,
     "elevation": 302
   },
   {
     "name": "Holzminden",
+    "type": "TOWN",
     "latitude": 51.828835,
     "longitude": 9.446657,
     "elevation": 302
   },
   {
     "name": "IAR",
+    "type": "VOR_DME",
     "latitude": 55.064491,
     "longitude": 14.749231,
     "elevation": 46
   },
   {
     "name": "Jena",
+    "type": "TOWN",
     "latitude": 50.92807,
     "longitude": 11.585796,
     "elevation": 525
   },
   {
     "name": "Juterbog",
+    "type": "TOWN",
     "latitude": 51.991649,
     "longitude": 13.080113,
     "elevation": 253
   },
   {
     "name": "KA",
+    "type": "DME",
     "latitude": 55.621603,
     "longitude": 12.640704,
     "elevation": 10
   },
   {
     "name": "KAS",
+    "type": "VOR",
     "latitude": 55.603752,
     "longitude": 12.643908,
     "elevation": 7
   },
   {
     "name": "KBO",
+    "type": "VOR_DME",
     "latitude": 50.861696,
     "longitude": 7.145696,
     "elevation": 266
   },
   {
     "name": "KHD",
+    "type": "DME",
     "latitude": 54.378515,
     "longitude": 10.150025,
     "elevation": 79
   },
   {
     "name": "KIR",
+    "type": "VORTAC",
     "latitude": 49.850192,
     "longitude": 7.371146,
     "elevation": 1398
   },
   {
     "name": "KJ",
+    "type": "RSBN",
     "latitude": 51.998443,
     "longitude": 12.148161,
     "elevation": 262
   },
   {
     "name": "KLK",
+    "type": "DME",
     "latitude": 55.609343,
     "longitude": 12.634347,
     "elevation": 13
   },
   {
     "name": "KT",
+    "type": "RSBN",
     "latitude": 51.720732,
     "longitude": 11.975168,
     "elevation": 299
   },
   {
     "name": "Kaiserslautern",
+    "type": "TOWN",
     "latitude": 49.436429,
     "longitude": 7.759265,
     "elevation": 810
   },
   {
     "name": "Kaltenkirchen",
+    "type": "TOWN",
     "latitude": 53.837171,
     "longitude": 9.961488,
     "elevation": 95
   },
   {
     "name": "Kassel",
+    "type": "TOWN",
     "latitude": 51.316397,
     "longitude": 9.490107,
     "elevation": 636
   },
   {
     "name": "Koblenz",
+    "type": "TOWN",
     "latitude": 50.383869,
     "longitude": 7.582582,
     "elevation": 233
   },
   {
     "name": "Kothen (Anhalt)",
+    "type": "TOWN",
     "latitude": 51.751033,
     "longitude": 11.973698,
     "elevation": 279
   },
   {
     "name": "LBE",
+    "type": "VOR_DME",
     "latitude": 53.654074,
     "longitude": 9.595031,
     "elevation": -7
   },
   {
     "name": "LD",
+    "type": "RSBN",
     "latitude": 53.033792,
     "longitude": 13.536035,
     "elevation": 187
   },
   {
     "name": "LEG",
+    "type": "VOR_DME",
     "latitude": 51.436008,
     "longitude": 12.473604,
     "elevation": 449
   },
   {
     "name": "LR",
+    "type": "RSBN",
     "latitude": 53.914347,
     "longitude": 12.271285,
     "elevation": 121
   },
   {
     "name": "LUB",
+    "type": "VOR",
     "latitude": 53.941661,
     "longitude": 10.66841,
     "elevation": 203
   },
   {
     "name": "LZ",
+    "type": "RSBN",
     "latitude": 53.301147,
     "longitude": 12.743561,
     "elevation": 210
   },
   {
     "name": "Leipzig",
+    "type": "TOWN",
     "latitude": 51.342248,
     "longitude": 12.38866,
     "elevation": 374
   },
   {
     "name": "Lubeck",
+    "type": "TOWN",
     "latitude": 53.866444,
     "longitude": 10.684738,
     "elevation": 56
   },
   {
     "name": "Luchow",
+    "type": "TOWN",
     "latitude": 52.968667,
     "longitude": 11.156762,
     "elevation": 56
   },
   {
     "name": "Luckenwalde",
+    "type": "TOWN",
     "latitude": 52.090204,
     "longitude": 13.174188,
     "elevation": 161
   },
   {
     "name": "Ludwigslust",
+    "type": "TOWN",
     "latitude": 53.330023,
     "longitude": 11.499364,
     "elevation": 125
   },
   {
     "name": "Luneburg",
+    "type": "TOWN",
     "latitude": 53.248706,
     "longitude": 10.407854,
     "elevation": 75
   },
   {
     "name": "Lutherstadt Eisleben",
+    "type": "TOWN",
     "latitude": 51.517707,
     "longitude": 11.551967,
     "elevation": 568
   },
   {
     "name": "Lutherstadt Wittenberg",
+    "type": "TOWN",
     "latitude": 51.866653,
     "longitude": 12.64676,
     "elevation": 249
   },
   {
     "name": "MA",
+    "type": "RSBN",
     "latitude": 54.265801,
     "longitude": 12.432423,
     "elevation": 10
   },
   {
     "name": "MK",
+    "type": "RSBN",
     "latitude": 52.386733,
     "longitude": 11.821375,
     "elevation": 125
   },
   {
     "name": "Magdeburg",
+    "type": "TOWN",
     "latitude": 52.131589,
     "longitude": 11.63996,
     "elevation": 200
   },
   {
     "name": "Mainz",
+    "type": "TOWN",
     "latitude": 50.006234,
     "longitude": 8.251375,
     "elevation": 299
   },
   {
     "name": "Malmo",
+    "type": "TOWN",
     "latitude": 55.591917,
     "longitude": 13.022326,
     "elevation": 36
   },
   {
     "name": "Mannheim",
+    "type": "TOWN",
     "latitude": 49.549269,
     "longitude": 8.522608,
     "elevation": 328
   },
   {
     "name": "Merseburg",
+    "type": "TOWN",
     "latitude": 51.356441,
     "longitude": 11.996147,
     "elevation": 308
   },
   {
     "name": "Molln",
+    "type": "TOWN",
     "latitude": 53.62892,
     "longitude": 10.688017,
     "elevation": 16
   },
   {
     "name": "NE",
+    "type": "DME",
     "latitude": 55.602404,
     "longitude": 12.634663,
     "elevation": -3
   },
   {
     "name": "NIE",
+    "type": "VOR",
     "latitude": 52.625896,
     "longitude": 9.372113,
     "elevation": 157
   },
   {
     "name": "NOR",
+    "type": "VORTAC",
     "latitude": 50.831069,
     "longitude": 6.662962,
     "elevation": 344
   },
   {
     "name": "NTM",
+    "type": "VORTAC",
     "latitude": 50.016666,
     "longitude": 6.531656,
     "elevation": 1329
   },
   {
     "name": "Naumburg (Saale)",
+    "type": "TOWN",
     "latitude": 51.152565,
     "longitude": 11.809918,
     "elevation": 433
   },
   {
     "name": "Neubrandenburg",
+    "type": "TOWN",
     "latitude": 53.557446,
     "longitude": 13.260278,
     "elevation": 66
   },
   {
     "name": "Neuruppin",
+    "type": "TOWN",
     "latitude": 52.924386,
     "longitude": 12.809292,
     "elevation": 148
   },
   {
     "name": "Neustadt",
+    "type": "TOWN",
     "latitude": 54.10299,
     "longitude": 10.818674,
     "elevation": 62
   },
   {
     "name": "Neustrelitz",
+    "type": "TOWN",
     "latitude": 53.361716,
     "longitude": 13.063,
     "elevation": 253
   },
   {
     "name": "Nienburg/Weser",
+    "type": "TOWN",
     "latitude": 52.641085,
     "longitude": 9.21819,
     "elevation": 89
   },
   {
     "name": "Nordhausen",
+    "type": "TOWN",
     "latitude": 51.497892,
     "longitude": 10.79224,
     "elevation": 604
   },
   {
     "name": "OSN",
+    "type": "VOR",
     "latitude": 52.200022,
     "longitude": 8.285068,
     "elevation": 348
   },
   {
     "name": "OXS",
+    "type": "DME",
     "latitude": 55.621593,
     "longitude": 12.665459,
     "elevation": 3
   },
   {
     "name": "OY",
+    "type": "DME",
     "latitude": 55.612082,
     "longitude": 12.666613,
     "elevation": 3
   },
   {
     "name": "Oldenburg",
+    "type": "TOWN",
     "latitude": 53.109976,
     "longitude": 8.203132,
     "elevation": 3
   },
   {
     "name": "Oranienburg",
+    "type": "TOWN",
     "latitude": 52.752938,
     "longitude": 13.245759,
     "elevation": 112
   },
   {
     "name": "Osnabruck",
+    "type": "TOWN",
     "latitude": 52.268156,
     "longitude": 8.021913,
     "elevation": 233
   },
   {
     "name": "Osterode am Harz",
+    "type": "TOWN",
     "latitude": 51.72784,
     "longitude": 10.250819,
     "elevation": 715
   },
   {
     "name": "PFF",
+    "type": "TACAN",
     "latitude": 49.858278,
     "longitude": 7.600243,
     "elevation": 1306
   },
   {
     "name": "PM",
+    "type": "RSBN",
     "latitude": 53.432656,
     "longitude": 11.784527,
     "elevation": 154
   },
   {
     "name": "Paderborn",
+    "type": "TOWN",
     "latitude": 51.721605,
     "longitude": 8.751781,
     "elevation": 361
   },
   {
     "name": "Parchim",
+    "type": "TOWN",
     "latitude": 53.425845,
     "longitude": 11.847524,
     "elevation": 174
   },
   {
     "name": "Pasewalk",
+    "type": "TOWN",
     "latitude": 53.505368,
     "longitude": 13.988905,
     "elevation": 52
   },
   {
     "name": "Potsdam",
+    "type": "TOWN",
     "latitude": 52.400931,
     "longitude": 13.059139,
     "elevation": 112
   },
   {
     "name": "Prenzlau",
+    "type": "TOWN",
     "latitude": 53.3167,
     "longitude": 13.866575,
     "elevation": 92
   },
   {
     "name": "Quedlinburg",
+    "type": "TOWN",
     "latitude": 51.785543,
     "longitude": 11.151993,
     "elevation": 394
   },
   {
     "name": "Querfurt",
+    "type": "TOWN",
     "latitude": 51.378527,
     "longitude": 11.597443,
     "elevation": 571
   },
   {
     "name": "RMS",
+    "type": "TACAN",
     "latitude": 49.434471,
     "longitude": 7.591479,
     "elevation": 755
   },
   {
     "name": "ROD",
+    "type": "VOR",
     "latitude": 52.217786,
     "longitude": 9.289077,
     "elevation": 1001
   },
   {
     "name": "ROE",
+    "type": "VOR",
     "latitude": 55.065587,
     "longitude": 14.75872,
     "elevation": 43
   },
   {
     "name": "Rathenow",
+    "type": "TOWN",
     "latitude": 52.60637,
     "longitude": 12.338225,
     "elevation": 102
   },
   {
     "name": "Rostock",
+    "type": "TOWN",
     "latitude": 54.092444,
     "longitude": 12.128612,
     "elevation": 0
   },
   {
     "name": "Rotenburg (Wumme)",
+    "type": "TOWN",
     "latitude": 53.110891,
     "longitude": 9.404928,
     "elevation": 75
   },
   {
     "name": "SEM",
+    "type": "TACAN",
     "latitude": 49.506848,
     "longitude": 7.869962,
     "elevation": 1024
   },
   {
     "name": "SPA",
+    "type": "TACAN",
     "latitude": 49.976839,
     "longitude": 6.702138,
     "elevation": 1175
   },
   {
     "name": "SR",
+    "type": "RSBN",
     "latitude": 52.134881,
     "longitude": 13.319215,
     "elevation": 154
   },
   {
     "name": "SUP",
+    "type": "VOR",
     "latitude": 55.529324,
     "longitude": 13.380801,
     "elevation": 236
   },
   {
     "name": "Salzwedel",
+    "type": "TOWN",
     "latitude": 52.852846,
     "longitude": 11.15397,
     "elevation": 79
   },
   {
     "name": "Sangerhausen",
+    "type": "TOWN",
     "latitude": 51.482864,
     "longitude": 11.297828,
     "elevation": 584
   },
   {
     "name": "Schneverdingen",
+    "type": "TOWN",
     "latitude": 53.116597,
     "longitude": 9.792589,
     "elevation": 302
   },
   {
     "name": "Schonebeck (Elbe)",
+    "type": "TOWN",
     "latitude": 52.020618,
     "longitude": 11.738391,
     "elevation": 177
   },
   {
     "name": "Schwedt",
+    "type": "TOWN",
     "latitude": 53.058637,
     "longitude": 14.284086,
     "elevation": 10
   },
   {
     "name": "Schweinfurt",
+    "type": "TOWN",
     "latitude": 50.04399,
     "longitude": 10.211814,
     "elevation": 755
   },
   {
     "name": "Schwerin",
+    "type": "TOWN",
     "latitude": 53.62883,
     "longitude": 11.414804,
     "elevation": 161
   },
   {
     "name": "Stabfurt",
+    "type": "TOWN",
     "latitude": 51.851451,
     "longitude": 11.592945,
     "elevation": 223
   },
   {
     "name": "Stade",
+    "type": "TOWN",
     "latitude": 53.599794,
     "longitude": 9.475436,
     "elevation": 46
   },
   {
     "name": "Stadthagen",
+    "type": "TOWN",
     "latitude": 52.328969,
     "longitude": 9.205347,
     "elevation": 217
   },
   {
     "name": "Stendal",
+    "type": "TOWN",
     "latitude": 52.605078,
     "longitude": 11.859428,
     "elevation": 121
   },
   {
     "name": "Stralsund",
+    "type": "TOWN",
     "latitude": 54.309631,
     "longitude": 13.082085,
     "elevation": 16
   },
   {
     "name": "Strausberg",
+    "type": "TOWN",
     "latitude": 52.581401,
     "longitude": 13.883395,
     "elevation": 230
   },
   {
     "name": "Szczecin",
+    "type": "TOWN",
     "latitude": 53.431799,
     "longitude": 14.526161,
     "elevation": 82
   },
   {
     "name": "TGL",
+    "type": "VORTAC",
     "latitude": 52.561496,
     "longitude": 13.287589,
     "elevation": 105
   },
   {
     "name": "TOF",
+    "type": "VORTAC",
     "latitude": 52.473115,
     "longitude": 13.405431,
     "elevation": 161
   },
   {
     "name": "Tangermunde",
+    "type": "TOWN",
     "latitude": 52.54311,
     "longitude": 11.972252,
     "elevation": 157
   },
   {
     "name": "Templin",
+    "type": "TOWN",
     "latitude": 53.11935,
     "longitude": 13.500556,
     "elevation": 197
   },
   {
     "name": "UT",
+    "type": "RSBN",
     "latitude": 52.436038,
     "longitude": 12.458448,
     "elevation": 95
   },
   {
     "name": "Uelzen",
+    "type": "TOWN",
     "latitude": 52.966684,
     "longitude": 10.558485,
     "elevation": 131
   },
   {
     "name": "Verden (Aller)",
+    "type": "TOWN",
     "latitude": 52.922341,
     "longitude": 9.228151,
     "elevation": 59
   },
   {
     "name": "WBD",
+    "type": "TACAN",
     "latitude": 50.04609,
     "longitude": 8.310909,
     "elevation": 453
   },
   {
     "name": "WC",
+    "type": "RSBN",
     "latitude": 52.629948,
     "longitude": 13.767737,
     "elevation": 249
   },
   {
     "name": "WRB",
+    "type": "VOR_DME",
     "latitude": 51.505745,
     "longitude": 9.110843,
     "elevation": 797
   },
   {
     "name": "WSR",
+    "type": "VORTAC",
     "latitude": 53.347636,
     "longitude": 8.875362,
     "elevation": 23
   },
   {
     "name": "WUN",
+    "type": "TACAN",
     "latitude": 52.459718,
     "longitude": 9.444945,
     "elevation": 167
   },
   {
     "name": "WYP",
+    "type": "VOR",
     "latitude": 51.048373,
     "longitude": 7.28023,
     "elevation": 876
   },
   {
     "name": "Waren (Muritz)",
+    "type": "TOWN",
     "latitude": 53.515625,
     "longitude": 12.685061,
     "elevation": 220
   },
   {
     "name": "Weimar",
+    "type": "TOWN",
     "latitude": 50.988118,
     "longitude": 11.323693,
     "elevation": 751
   },
   {
     "name": "Weissenfels",
+    "type": "TOWN",
     "latitude": 51.199979,
     "longitude": 11.966785,
     "elevation": 335
   },
   {
     "name": "Wernigerode",
+    "type": "TOWN",
     "latitude": 51.834417,
     "longitude": 10.786252,
     "elevation": 801
   },
   {
     "name": "Wismar",
+    "type": "TOWN",
     "latitude": 53.890983,
     "longitude": 11.464793,
     "elevation": 49
   },
   {
     "name": "Wittenberge",
+    "type": "TOWN",
     "latitude": 52.998372,
     "longitude": 11.75072,
     "elevation": 85
   },
   {
     "name": "Wittenburg",
+    "type": "TOWN",
     "latitude": 53.505962,
     "longitude": 11.084783,
     "elevation": 128
   },
   {
     "name": "Wolfsburg",
+    "type": "TOWN",
     "latitude": 52.420559,
     "longitude": 10.786168,
     "elevation": 220
   },
   {
     "name": "Wolgast",
+    "type": "TOWN",
     "latitude": 54.053647,
     "longitude": 13.775781,
     "elevation": 30
   },
   {
     "name": "Wurzburg",
+    "type": "TOWN",
     "latitude": 49.794783,
     "longitude": 9.959447,
     "elevation": 732
   },
   {
     "name": "ZB",
+    "type": "RSBN",
     "latitude": 52.038279,
     "longitude": 13.747754,
     "elevation": 256
   },
   {
     "name": "ZBU",
+    "type": "TACAN",
     "latitude": 49.215874,
     "longitude": 7.408222,
     "elevation": 1109
   },
   {
     "name": "Zeitz",
+    "type": "TOWN",
     "latitude": 51.049164,
     "longitude": 12.134999,
     "elevation": 636
   },
   {
     "name": "Zerbst",
+    "type": "TOWN",
     "latitude": 51.964034,
     "longitude": 12.085502,
     "elevation": 233
