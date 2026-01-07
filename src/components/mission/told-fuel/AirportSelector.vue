@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { watch, toRef } from 'vue'
-import { NCard, NSelect, NInput, NText, NGrid, NGridItem } from 'naive-ui'
+import { NCard, NSelect, NInput, NText, NGrid, NGridItem, NSpace } from 'naive-ui'
 import { useAirportSelection } from '@/composables/useAirportSelection'
 import { formatInteger } from '@/utils/numberFormatting'
 import type { Theater } from '@/types'
@@ -62,41 +62,45 @@ function handleRunwayChange(value: string | null) {
   <NCard title="Airport" size="small">
     <NGrid :cols="1" :y-gap="12">
       <NGridItem>
-        <NText tag="label" strong style="display: block; margin-bottom: 8px">Airport</NText>
-        <NSelect
-          :value="airport.selectedAirfieldName.value"
-          @update:value="handleAirportChange"
-          :options="airport.airfieldOptions.value"
-          placeholder="Select airport"
-          filterable
-          clearable
-          :disabled="disabled"
-        />
+        <NSpace vertical size="small">
+          <NText tag="label" strong>Airport</NText>
+          <NSelect
+            :value="airport.selectedAirfieldName.value"
+            @update:value="handleAirportChange"
+            :options="airport.airfieldOptions.value"
+            placeholder="Select airport"
+            filterable
+            clearable
+            :disabled="disabled"
+          />
+        </NSpace>
       </NGridItem>
       <NGridItem>
-        <NText tag="label" strong style="display: block; margin-bottom: 8px">Runway</NText>
-        <NSelect
-          :value="airport.selectedRunwayName.value"
-          @update:value="handleRunwayChange"
-          :options="airport.runwayOptions.value"
-          placeholder="Select runway"
-          :disabled="disabled"
-          clearable
-        />
+        <NSpace vertical size="small">
+          <NText tag="label" strong>Runway</NText>
+          <NSelect
+            :value="airport.selectedRunwayName.value"
+            @update:value="handleRunwayChange"
+            :options="airport.runwayOptions.value"
+            placeholder="Select runway"
+            :disabled="disabled"
+            clearable
+          />
+        </NSpace>
       </NGridItem>
       <NGridItem>
         <NGrid :cols="2" :x-gap="8">
           <NGridItem v-if="airport.fieldElevation.value !== null">
-            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Field Elevation</NText
-            >
-            <NInput :value="`${airport.fieldElevation.value.toLocaleString()} ft MSL`" disabled />
+            <NSpace vertical size="small">
+              <NText tag="label" depth="2">Field Elevation</NText>
+              <NInput :value="`${airport.fieldElevation.value.toLocaleString()} ft MSL`" disabled />
+            </NSpace>
           </NGridItem>
           <NGridItem v-if="airport.selectedRunway.value">
-            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Runway Heading</NText
-            >
-            <NInput :value="`${formatInteger(airport.selectedRunway.value.heading)}°`" disabled />
+            <NSpace vertical size="small">
+              <NText tag="label" depth="2">Runway Heading</NText>
+              <NInput :value="`${formatInteger(airport.selectedRunway.value.heading)}°`" disabled />
+            </NSpace>
           </NGridItem>
         </NGrid>
       </NGridItem>

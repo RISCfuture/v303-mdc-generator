@@ -183,22 +183,25 @@ function handleCancel() {
       <NCard title="Mission Info" size="small">
         <NGrid :cols="1" :y-gap="12">
           <NGridItem>
-            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Flight Size</NText
-            >
-            <NInput :value="`${numberOfPilots} pilot${numberOfPilots !== 1 ? 's' : ''}`" disabled />
+            <NSpace vertical size="small">
+              <NText tag="label" depth="2">Flight Size</NText>
+              <NInput
+                :value="`${numberOfPilots} pilot${numberOfPilots !== 1 ? 's' : ''}`"
+                disabled
+              />
+            </NSpace>
           </NGridItem>
           <NGridItem v-if="distanceHomeToTarget !== null">
-            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Distance: Home → Target</NText
-            >
-            <NInput :value="`${distanceHomeToTarget.toFixed(1)} nm`" disabled />
+            <NSpace vertical size="small">
+              <NText tag="label" depth="2">Distance: Home → Target</NText>
+              <NInput :value="`${distanceHomeToTarget.toFixed(1)} nm`" disabled />
+            </NSpace>
           </NGridItem>
           <NGridItem v-if="distanceHomeToAlternate !== null">
-            <NText tag="label" depth="2" style="display: block; margin-bottom: 8px"
-              >Distance: Home → Alternate</NText
-            >
-            <NInput :value="`${distanceHomeToAlternate.toFixed(1)} nm`" disabled />
+            <NSpace vertical size="small">
+              <NText tag="label" depth="2">Distance: Home → Alternate</NText>
+              <NInput :value="`${distanceHomeToAlternate.toFixed(1)} nm`" disabled />
+            </NSpace>
           </NGridItem>
           <NGridItem v-if="!recoveryLocation">
             <NText type="warning"> ⚠️ Recovery airport not specified or location not found </NText>
@@ -213,37 +216,37 @@ function handleCancel() {
       <NCard title="Configuration" size="small">
         <NGrid :cols="1" :y-gap="12">
           <NGridItem>
-            <NText tag="label" strong style="display: block; margin-bottom: 8px"
-              >AAR Expected</NText
-            >
-            <NSwitch v-model:value="aarExpected" />
+            <NSpace vertical size="small">
+              <NText tag="label" strong>AAR Expected</NText>
+              <NSwitch v-model:value="aarExpected" />
+            </NSpace>
           </NGridItem>
 
           <!-- Show these fields only if AAR is NOT expected -->
           <NGridItem v-if="!aarExpected">
-            <NText tag="label" strong style="display: block; margin-bottom: 8px"
-              >Approach Type</NText
-            >
-            <NSelect
-              v-model:value="approachType"
-              :options="[
-                { label: 'VFR (Visual)', value: 'VFR' },
-                { label: 'IFR (Instrument)', value: 'IFR' },
-              ]"
-            />
+            <NSpace vertical size="small">
+              <NText tag="label" strong>Approach Type</NText>
+              <NSelect
+                v-model:value="approachType"
+                :options="[
+                  { label: 'VFR (Visual)', value: 'VFR' },
+                  { label: 'IFR (Instrument)', value: 'IFR' },
+                ]"
+              />
+            </NSpace>
           </NGridItem>
 
           <NGridItem>
-            <NText tag="label" strong style="display: block; margin-bottom: 8px"
-              >Altitude Profile</NText
-            >
-            <NSelect
-              v-model:value="altitudeProfile"
-              :options="[
-                { label: 'Medium Altitude', value: 'medium' },
-                { label: 'Low Altitude', value: 'low' },
-              ]"
-            />
+            <NSpace vertical size="small">
+              <NText tag="label" strong>Altitude Profile</NText>
+              <NSelect
+                v-model:value="altitudeProfile"
+                :options="[
+                  { label: 'Medium Altitude', value: 'medium' },
+                  { label: 'Low Altitude', value: 'low' },
+                ]"
+              />
+            </NSpace>
           </NGridItem>
         </NGrid>
       </NCard>

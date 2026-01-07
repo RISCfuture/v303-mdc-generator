@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NCard, NSelect, NForm, NFormItem, NInput, NAutoComplete, NText } from 'naive-ui'
+import { NCard, NSelect, NForm, NFormItem, NInput, NAutoComplete, NText, NSpace } from 'naive-ui'
 import { FORM, SPACING, WIDTH } from '@/styles/design-tokens'
 import { airframeDatabase } from '@/data/airframes'
 import { getDatalinkType, getDatalinkLabel } from '@/utils/datalinkHelpers'
@@ -44,8 +44,8 @@ const showDatalinkPrefix = computed(() => datalinkType.value !== null)
 </script>
 
 <template>
-  <div>
-    <NCard title="Flight Composition" :style="{ marginBottom: SPACING['2xl'] }">
+  <NSpace vertical size="large">
+    <NCard title="Flight Composition">
       <div v-if="crew.length === 0" class="empty-state">
         <NText type="error" strong>At least one flight member is required</NText>
       </div>
@@ -123,7 +123,7 @@ const showDatalinkPrefix = computed(() => datalinkType.value !== null)
         </div>
       </NForm>
     </NCard>
-  </div>
+  </NSpace>
 </template>
 
 <style scoped>

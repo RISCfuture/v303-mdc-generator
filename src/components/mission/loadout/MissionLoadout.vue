@@ -126,30 +126,32 @@ const gunAmmoOptions = computed(() => {
     <NDivider />
 
     <div v-if="gunAmmoOptions" class="guns-container">
-      <n-text tag="h3" strong style="font-size: 16px; margin-bottom: 12px; margin-top: 0"
-        >Guns</n-text
-      >
-      <div class="gun-ammo-row">
-        <NFormItem :label="gunAmmoOptions.label" label-placement="left" class="gun-ammo-form-item">
-          <NSelect
-            :value="gunAmmoType || null"
-            @update:value="(v: string | null) => emit('update:gun-ammo-type', v)"
-            :options="gunAmmoOptions.options"
-            placeholder="Select ammunition type"
-            clearable
-            style="max-width: 300px"
-          />
-        </NFormItem>
-      </div>
+      <NSpace vertical size="medium">
+        <n-text tag="h3" strong class="section-heading">Guns</n-text>
+        <div class="gun-ammo-row">
+          <NFormItem
+            :label="gunAmmoOptions.label"
+            label-placement="left"
+            class="gun-ammo-form-item"
+          >
+            <NSelect
+              :value="gunAmmoType || null"
+              @update:value="(v: string | null) => emit('update:gun-ammo-type', v)"
+              :options="gunAmmoOptions.options"
+              placeholder="Select ammunition type"
+              clearable
+              style="max-width: 300px"
+            />
+          </NFormItem>
+        </div>
+      </NSpace>
     </div>
 
     <NDivider v-if="gunAmmoOptions" />
 
     <div class="weights-container">
-      <n-text tag="h3" strong style="font-size: 16px; margin-bottom: 12px; margin-top: 0"
-        >Weights</n-text
-      >
-      <NSpace vertical>
+      <NSpace vertical size="medium">
+        <n-text tag="h3" strong class="section-heading">Weights</n-text>
         <div><strong>Loadout Weight:</strong> {{ formatWeight(loadoutWeight) }}</div>
 
         <!-- Fuel Weight Slider -->
@@ -208,6 +210,11 @@ const gunAmmoOptions = computed(() => {
 .guns-container,
 .weights-container {
   margin: 8px 0;
+}
+
+.section-heading {
+  margin: 0;
+  font-size: 16px;
 }
 
 /* Mobile responsive styles */
