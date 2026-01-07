@@ -168,11 +168,7 @@ function handleOpenBingoCalculator() {
         </NFormItem>
 
         <!-- Aircraft-Specific Takeoff Distance Display -->
-        <NFormItem
-          v-if="takeoffDistanceComponent"
-          label="Takeoff Distance"
-          class="top-aligned-label"
-        >
+        <NFormItem v-if="takeoffDistanceComponent" label="Takeoff Distance">
           <component
             :is="takeoffDistanceComponent"
             :mission="mission"
@@ -234,10 +230,5 @@ function handleOpenBingoCalculator() {
 <style scoped>
 .flex-input {
   flex: 1;
-}
-
-.top-aligned-label :deep(.n-form-item-label) {
-  align-items: flex-start;
-  padding-top: 2px;
 }
 </style>
