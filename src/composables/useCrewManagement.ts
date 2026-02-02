@@ -12,11 +12,11 @@ export interface CrewDatabaseEntry {
   callsign: string[]
   link16Prefix: string
   stn: number
-  mode3: number
+  mode3?: number | null
   aaTacan: number
   freq: string
-  laserCode: number
-  tailNumber: string
+  laserCode?: number | null
+  tailNumber?: string
 }
 
 /**
@@ -34,8 +34,14 @@ export function useCrewManagement(
   /**
    * Calculate Mode 3 code for a crew member based on their position
    * Lead gets their own mode3, others get lead's mode3 + position offset
+   * Returns empty string if mode3 is not applicable (null/undefined)
    */
-  function calculateMode3ForPosition(index: number, pilotMode3: number): string {
+  function calculateMode3ForPosition(index: number, pilotMode3: number | null | undefined): string {
+    if (pilotMode3 == null) {
+      // Mode 3 not applicable for this crew member
+      return ''
+    }
+
     if (index === 0) {
       // Flight lead uses their own mode3 from database
       return formatMode3(pilotMode3)
@@ -63,6 +69,7 @@ export function useCrewManagement(
   /**
    * Recalculate mode-3 codes for all crew members based on current positions
    * Lead gets their original mode3 from database, others get recalculated based on position
+   * Skips recalculation if lead's mode3 is not applicable (null/undefined)
    */
   function recalculateMode3Codes(crewList: CrewMember[]): void {
     if (crewList.length === 0) return
@@ -73,6 +80,14 @@ export function useCrewManagement(
     // Get lead's original mode3 from database
     const leadPilot = availableCrew.value.find((p) => p.pilot === leadCrew.pilot)
     if (!leadPilot) return
+
+    // If lead's mode3 is not applicable, clear all mode3 values
+    if (leadPilot.mode3 == null) {
+      crewList.forEach((member) => {
+        member.mode3 = ''
+      })
+      return
+    }
 
     // Update lead to their original mode3
     leadCrew.mode3 = formatMode3(leadPilot.mode3)
