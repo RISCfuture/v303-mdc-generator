@@ -29,11 +29,9 @@ describe('crew', () => {
           expect(pilot).toHaveProperty('callsign')
           expect(pilot).toHaveProperty('link16Prefix')
           expect(pilot).toHaveProperty('stn')
-          expect(pilot).toHaveProperty('mode3')
           expect(pilot).toHaveProperty('freq')
           expect(pilot).toHaveProperty('aaTacan')
-          expect(pilot).toHaveProperty('laserCode')
-          // tailNumber is optional
+          // mode3, laserCode, and tailNumber are optional
         })
       })
     })
@@ -45,10 +43,16 @@ describe('crew', () => {
           expect(Array.isArray(pilot.callsign)).toBe(true)
           expect(typeof pilot.link16Prefix).toBe('string')
           expect(typeof pilot.stn).toBe('number')
-          expect(typeof pilot.mode3).toBe('number')
           expect(typeof pilot.freq).toBe('string')
           expect(typeof pilot.aaTacan).toBe('number')
-          expect(typeof pilot.laserCode).toBe('number')
+          // mode3 is optional (number, null, or undefined)
+          if (pilot.mode3 != null) {
+            expect(typeof pilot.mode3).toBe('number')
+          }
+          // laserCode is optional (number, null, or undefined)
+          if (pilot.laserCode != null) {
+            expect(typeof pilot.laserCode).toBe('number')
+          }
           // tailNumber is optional
           if (pilot.tailNumber !== undefined) {
             expect(typeof pilot.tailNumber).toBe('string')
@@ -67,11 +71,13 @@ describe('crew', () => {
       })
     })
 
-    it('should have valid Mode 3 values (octal 0000-7777)', () => {
+    it('should have valid Mode 3 values (octal 0000-7777) when present', () => {
       Object.values(crewBySquadron).forEach((pilots) => {
         pilots.forEach((pilot) => {
-          expect(pilot.mode3).toBeGreaterThanOrEqual(0)
-          expect(pilot.mode3).toBeLessThanOrEqual(parseInt('7777', 8))
+          if (pilot.mode3 != null) {
+            expect(pilot.mode3).toBeGreaterThanOrEqual(0)
+            expect(pilot.mode3).toBeLessThanOrEqual(parseInt('7777', 8))
+          }
         })
       })
     })
@@ -85,13 +91,15 @@ describe('crew', () => {
       })
     })
 
-    it('should have valid laser codes', () => {
+    it('should have valid laser codes when present', () => {
       Object.values(crewBySquadron).forEach((pilots) => {
         pilots.forEach((pilot) => {
-          // Laser codes should be positive numbers
+          // Laser codes are optional but when present should be positive numbers
           // They are stored as decimal representations of octal values (e.g., 383 decimal)
-          expect(pilot.laserCode).toBeGreaterThan(0)
-          expect(pilot.laserCode).toBeLessThanOrEqual(10000) // Reasonable upper bound
+          if (pilot.laserCode != null) {
+            expect(pilot.laserCode).toBeGreaterThan(0)
+            expect(pilot.laserCode).toBeLessThanOrEqual(10000) // Reasonable upper bound
+          }
         })
       })
     })
@@ -138,11 +146,9 @@ describe('crew', () => {
         expect(pilot).toHaveProperty('callsign')
         expect(pilot).toHaveProperty('link16Prefix')
         expect(pilot).toHaveProperty('stn')
-        expect(pilot).toHaveProperty('mode3')
         expect(pilot).toHaveProperty('freq')
         expect(pilot).toHaveProperty('aaTacan')
-        expect(pilot).toHaveProperty('laserCode')
-        // tailNumber is optional
+        // mode3, laserCode, and tailNumber are optional
       })
     })
 
@@ -152,8 +158,8 @@ describe('crew', () => {
       expect(uniqueStns.size).toBe(stns.length)
     })
 
-    it('should have unique Mode 3 values', () => {
-      const mode3s = crewDatabase.map((pilot) => pilot.mode3)
+    it('should have unique Mode 3 values among pilots that have them', () => {
+      const mode3s = crewDatabase.map((pilot) => pilot.mode3).filter((m): m is number => m != null)
       const uniqueMode3s = new Set(mode3s)
       expect(uniqueMode3s.size).toBe(mode3s.length)
     })
@@ -164,8 +170,10 @@ describe('crew', () => {
       expect(uniqueTacans.size).toBe(tacans.length)
     })
 
-    it('should have unique laser codes', () => {
-      const lasers = crewDatabase.map((pilot) => pilot.laserCode)
+    it('should have unique laser codes among pilots that have them', () => {
+      const lasers = crewDatabase
+        .map((pilot) => pilot.laserCode)
+        .filter((l): l is number => l != null)
       const uniqueLasers = new Set(lasers)
       expect(uniqueLasers.size).toBe(lasers.length)
     })

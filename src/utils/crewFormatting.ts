@@ -27,11 +27,11 @@ export function parseSTN(value: string | number): number | null {
 
 /**
  * Format Mode 3 as 4-digit octal number
- * @param mode3 - Mode 3 value (stored as decimal, represents octal)
- * @returns 4-digit octal string (e.g., "1101")
+ * @param mode3 - Mode 3 value (stored as decimal, represents octal). Null/undefined if N/A.
+ * @returns 4-digit octal string (e.g., "1101"), or empty string if N/A
  */
-export function formatMode3(mode3: number | null): string {
-  return mode3 !== null ? mode3.toString(8).padStart(4, '0') : ''
+export function formatMode3(mode3: number | null | undefined): string {
+  return mode3 != null ? mode3.toString(8).padStart(4, '0') : ''
 }
 
 /**
@@ -72,11 +72,11 @@ export function incrementMode3(mode3: number): number {
 /**
  * Format Laser code as 4-digit octal with +1 to each digit
  * Laser codes use digits 1-8 instead of 0-7
- * @param laserCode - Laser code value (stored as octal decimal, e.g., 1687)
- * @returns 4-digit laser code string (e.g., "1688" becomes "2788")
+ * @param laserCode - Laser code value (stored as octal decimal, e.g., 1687). Null/undefined if N/A.
+ * @returns 4-digit laser code string (e.g., "1688" becomes "2788"), or empty string if N/A
  */
-export function formatLaserCode(laserCode: number | null): string {
-  if (laserCode === null) return ''
+export function formatLaserCode(laserCode: number | null | undefined): string {
+  if (laserCode == null) return ''
 
   // Convert to octal string
   const octalStr = laserCode.toString(8).padStart(4, '0')
