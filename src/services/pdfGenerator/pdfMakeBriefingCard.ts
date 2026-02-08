@@ -10,9 +10,9 @@ import { imageStorage } from '@/services/imageStorage'
 import type { Mission } from '@/types'
 import { formatNumber } from '@/utils/formatting'
 import { getMunitionShortName } from '@/data/munitions'
-import { getLoadoutOnlyWeight, getFuelCapacity } from '@/data/munitions'
 import { getAirframeData, isHelicopter } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
+import { calculateTakeoffFuel, calculateMissionGrossWeight } from '@/utils/fuelCalculations'
 import { getAirframeDisplayName } from '@/data/airframes'
 import { formatSTN } from '@/utils/crewFormatting'
 import { getAirfieldsForTheater } from '@/data/airfields'
@@ -257,18 +257,7 @@ function calculateReciprocalTacan(tacan: string | undefined): string {
  * Calculate gross weight
  */
 function calculateGrossWeight(mission: Mission): number {
-  const airframe = getSquadronAirframe(mission.squadron)
-  const airframeData = getAirframeData(airframe)
-  const emptyWeight = airframeData?.emptyWeight || 0
-  const loadoutWeight = mission.loadout.reduce((total, station) => {
-    return total + getLoadoutOnlyWeight(station.item)
-  }, 0)
-  const internalFuel = airframeData?.internalFuel || 0
-  const externalFuel = mission.loadout.reduce((total, station) => {
-    const fuelCapacity = getFuelCapacity(station.item)
-    return total + (fuelCapacity > 0 ? fuelCapacity : 0)
-  }, 0)
-  return emptyWeight + loadoutWeight + internalFuel + externalFuel
+  return calculateMissionGrossWeight(mission)
 }
 
 /**
@@ -682,7 +671,7 @@ function generateToldTable(mission: Mission): unknown {
             { text: formatNumber(grossWeight) + ' lbs', fillColor: '#EBF1FA', italics: true },
             { text: 'TO', fillColor: '#DCDCDC', bold: true },
             {
-              text: formatNumber(mission.fuel.takeoff) + ' lbs',
+              text: formatNumber(calculateTakeoffFuel(mission)) + ' lbs',
               fillColor: '#EBF1FA',
               italics: true,
             },
@@ -752,7 +741,7 @@ function generateToldTable(mission: Mission): unknown {
           },
           { text: 'TO', fillColor: '#DCDCDC', bold: true },
           {
-            text: formatNumber(mission.fuel.takeoff) + ' lbs',
+            text: formatNumber(calculateTakeoffFuel(mission)) + ' lbs',
             fillColor: '#EBF1FA',
             italics: true,
           },

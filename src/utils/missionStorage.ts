@@ -125,6 +125,7 @@ export interface SerializedMission {
     to: number // takeoff
     j: number // joker
     b: number // bingo
+    flp?: number // fuelLoadPercentage (defaults to 100)
   }
 
   // Weather
@@ -327,6 +328,7 @@ export function serializeMission(mission: Mission): SerializedMission {
       to: mission.fuel.takeoff,
       j: mission.fuel.joker,
       b: mission.fuel.bingo,
+      flp: mission.fuel.fuelLoadPercentage,
     },
 
     // Details - required for export (at least remarks)
@@ -723,6 +725,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       takeoff: serialized.f.to,
       joker: serialized.f.j,
       bingo: serialized.f.b,
+      fuelLoadPercentage: serialized.f.flp ?? 100,
     },
     weather: serialized.wx || '',
     details: {

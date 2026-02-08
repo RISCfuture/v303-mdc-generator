@@ -1,5 +1,5 @@
 import { computed, type ComputedRef } from 'vue'
-import { getLoadoutOnlyWeight, getFuelCapacity } from '@/data/munitions'
+import { getLoadoutOnlyWeight } from '@/data/munitions'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import {
   calculateStandardSpeeds,
@@ -14,6 +14,7 @@ import {
   calculateSpeeds as calculateA10SpeedsAdvanced,
 } from '@/aircraft/A-10A'
 import { getMissionAirframe } from '@/utils/missionHelpers'
+import { calculateTakeoffFuel } from '@/utils/fuelCalculations'
 import type { Mission } from '@/types'
 
 /**
@@ -28,29 +29,10 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     }, 0)
   })
 
-  // Calculate fuel weight (internal + external tanks)
+  // Calculate fuel weight (scaled internal + full external tanks)
   const fuelWeight = computed(() => {
     if (!mission.value) return 0
-
-    const airframe = getMissionAirframe(mission.value)
-    const airframeData = getAirframeData(airframe)
-    const internalFuel = airframeData?.internalFuel || 0
-
-    // External fuel from tanks in loadout (fuel capacity, not tank weight)
-    const externalFuel = mission.value.loadout.reduce((total, station) => {
-      const item = station.item
-      const fuelCapacity = getFuelCapacity(item)
-      if (fuelCapacity > 0) {
-        return total + fuelCapacity
-      }
-      return total
-    }, 0)
-
-    const maxFuel = internalFuel + externalFuel
-
-    // Apply fuel load percentage (defaults to 100%)
-    const fuelLoadPercentage = mission.value.fuel.fuelLoadPercentage ?? 100
-    return (maxFuel * fuelLoadPercentage) / 100
+    return calculateTakeoffFuel(mission.value)
   })
 
   // Calculate gross weight (empty + loadout + fuel)
@@ -214,25 +196,13 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     return calculateTotalDragIndex(stores)
   })
 
-  // Calculate max fuel capacity (for fuel load slider)
+  // Max internal fuel capacity (for fuel load slider — slider only controls internal fuel)
   const maxFuelCapacity = computed(() => {
     if (!mission.value) return 0
 
     const airframe = getMissionAirframe(mission.value)
     const airframeData = getAirframeData(airframe)
-    const internalFuel = airframeData?.internalFuel || 0
-
-    // External fuel from tanks in loadout
-    const externalFuel = mission.value.loadout.reduce((total, station) => {
-      const item = station.item
-      const fuelCapacity = getFuelCapacity(item)
-      if (fuelCapacity > 0) {
-        return total + fuelCapacity
-      }
-      return total
-    }, 0)
-
-    return internalFuel + externalFuel
+    return airframeData?.internalFuel || 0
   })
 
   return {
