@@ -114,13 +114,12 @@ class NavaidScraper:
 
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Try to find regular HTML table first
-        table = soup.find('table')
+        # Try to find all HTML tables on the page
+        tables = soup.find_all('table')
         navaids = []
 
-        if table:
-            # Standard HTML table
-            navaids = self._parse_html_table(table)
+        for table in tables:
+            navaids.extend(self._parse_html_table(table))
 
         # If no navaids found from table, try JavaScript embedded data
         if not navaids:

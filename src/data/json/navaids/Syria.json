@@ -1,5 +1,19 @@
 [
   {
+    "name": "16DAM",
+    "type": "WAYPOINT",
+    "latitude": 33.554412,
+    "longitude": 36.69350383333333,
+    "elevation": 2005
+  },
+  {
+    "name": "38VOR",
+    "type": "WAYPOINT",
+    "latitude": 35.45981966666667,
+    "longitude": 35.94639683333333,
+    "elevation": 135
+  },
+  {
     "name": "ABBAS",
     "type": "WAYPOINT",
     "latitude": 33.437948666666664,
@@ -9567,6 +9581,13 @@
     "latitude": 33.275537,
     "longitude": 35.215861,
     "elevation": 33
+  },
+  {
+    "name": "USEmbassy",
+    "type": "WAYPOINT",
+    "latitude": 33.93478966666667,
+    "longitude": 35.59781533333334,
+    "elevation": 302
   },
   {
     "name": "Ucgol",
