@@ -8,7 +8,7 @@ export const COLORS = {
   lightGray: [220, 220, 220] as [number, number, number], // Gray for table headers
   lightBlue: [235, 241, 250] as [number, number, number], // Very light blue for content cells
   v93Blue: [15, 141, 242] as [number, number, number], // v93 FS header background (0.059, 0.552, 0.950)
-  v303Tan: [160, 150, 98] as [number, number, number], // v303 FS header background (0.626*255, 0.587*255, 0.383*255)
+  v303Red: [210, 9, 32] as [number, number, number], // v303 FS header background (#d20920)
 }
 
 // Page dimensions and margins

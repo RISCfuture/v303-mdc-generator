@@ -275,7 +275,7 @@ function generateHeaderBanner(mission: Mission): unknown {
 
   const backgroundColor = isV93
     ? rgbToHex(COLORS.v93Blue) // v93 FS blue
-    : rgbToHex(COLORS.v303Tan) // v303 FS tan
+    : rgbToHex(COLORS.v303Red) // v303 FS red
   const squadronLogo = isV93 ? SQUADRON_LOGOS.v93FS : SQUADRON_LOGOS.v303FS
 
   return {
