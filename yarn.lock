@@ -2086,7 +2086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:^14.0.1, @types/markdown-it@npm:^14.1.2":
+"@types/markdown-it@npm:^14.0.1":
   version: 14.1.2
   resolution: "@types/markdown-it@npm:14.1.2"
   dependencies:
@@ -5672,22 +5672,6 @@ __metadata:
   linkType: hard
 
 "markdown-it@npm:^14.0.0":
-  version: 14.1.0
-  resolution: "markdown-it@npm:14.1.0"
-  dependencies:
-    argparse: "npm:^2.0.1"
-    entities: "npm:^4.4.0"
-    linkify-it: "npm:^5.0.0"
-    mdurl: "npm:^2.0.0"
-    punycode.js: "npm:^2.3.1"
-    uc.micro: "npm:^2.1.0"
-  bin:
-    markdown-it: bin/markdown-it.mjs
-  checksum: 10c0/9a6bb444181d2db7016a4173ae56a95a62c84d4cbfb6916a399b11d3e6581bf1cc2e4e1d07a2f022ae72c25f56db90fbe1e529fca16fbf9541659dc53480d4b4
-  languageName: node
-  linkType: hard
-
-"markdown-it@npm:^14.1.1":
   version: 14.1.1
   resolution: "markdown-it@npm:14.1.1"
   dependencies:
@@ -7738,7 +7722,6 @@ __metadata:
     "@tsconfig/node22": "npm:^22.0.5"
     "@types/dompurify": "npm:^3.2.0"
     "@types/jsdom": "npm:^27.0.0"
-    "@types/markdown-it": "npm:^14.1.2"
     "@types/node": "npm:^25.2.3"
     "@types/pdfmake": "npm:^0.3.1"
     "@vicons/ionicons5": "npm:^0.13.0"
@@ -7765,7 +7748,6 @@ __metadata:
     jspdf: "npm:^4.1.0"
     jspdf-autotable: "npm:^5.0.7"
     lint-staged: "npm:^16.2.7"
-    markdown-it: "npm:^14.1.1"
     md-editor-v3: "npm:^6.3.1"
     mdpdfmake: "npm:^1.0.8"
     mgrs: "npm:^2.1.0"
