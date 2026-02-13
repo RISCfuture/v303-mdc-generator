@@ -3,7 +3,7 @@
  * New implementation to replace jsPDF-based generator
  */
 import pdfMake from 'pdfmake/build/pdfmake'
-import * as pdfFonts from 'pdfmake/build/vfs_fonts'
+import 'pdfmake/build/vfs_fonts'
 import type { TDocumentDefinitions, Content } from 'pdfmake/interfaces'
 import { mdpdfmake } from 'mdpdfmake'
 import { imageStorage } from '@/services/imageStorage'
@@ -19,13 +19,6 @@ import { getAirfieldsForTheater } from '@/data/airfields'
 import { formatCoordinate } from '@/utils/coordinateFormatter'
 import { COLORS } from './constants'
 import { SQUADRON_LOGOS } from './squadronAssets'
-
-// Set up fonts
-interface PdfMakeWithVfs {
-  vfs: typeof pdfFonts
-  createPdf: typeof pdfMake.createPdf
-}
-;(pdfMake as unknown as PdfMakeWithVfs).vfs = pdfFonts
 
 // Type for table cells - use pdfMake's type but allow flexibility for our use case
 // pdfMake's TableCell type is complex and strict, so we use a simplified version
@@ -1446,5 +1439,5 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
     content: content as Content,
   }
 
-  pdfMake.createPdf(docDefinition).download(`${mission.name}.pdf`)
+  await pdfMake.createPdf(docDefinition).download(`${mission.name}.pdf`)
 }
