@@ -108,7 +108,7 @@
       "presets": [
         {
           "number": 1,
-          "frequency": "138.3",
+          "frequency": "138.250",
           "description": "v93 FS"
         },
         {
@@ -203,7 +203,7 @@
         },
         {
           "number": 20,
-          "frequency": "126.1",
+          "frequency": "137.000",
           "description": ""
         }
       ]
