@@ -41,18 +41,20 @@ async function selectDepartureAirport(page: Page, airportName: string): Promise<
 async function addCustomSteerpoint(page: Page, name: string): Promise<void> {
   await navigateToSteerpoints(page);
 
-  // Click the "+ Custom Steerpoint" button
+  // Count existing cards before adding
+  const waypointCards = page.locator('.waypoint-item');
+  const countBefore = await waypointCards.count();
+
+  // Click the "+ Custom Steerpoint" button — scroll into view first for Firefox reliability
   const addButton = page.getByRole('button', { name: '+ Custom Steerpoint' });
+  await addButton.scrollIntoViewIfNeeded();
   await addButton.click();
 
-  // After clicking the button, a new waypoint card should appear
-  // We need to wait for it and then fill in the fields
-  // Waypoint cards are identified by having a .waypoint-seq element
-  const waypointCards = page.locator('.waypoint-item');
-  const newCardCount = await waypointCards.count();
+  // Wait for the new card to appear
+  await waypointCards.nth(countBefore).waitFor({ state: 'visible' });
 
   // Get the last card (the newly added one)
-  const lastCard = waypointCards.nth(newCardCount - 1);
+  const lastCard = waypointCards.nth(countBefore);
 
   // Fill in the waypoint name - first input in the card is the name
   const nameInput = lastCard.locator('input').first();
@@ -152,10 +154,9 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
     await navigateToSteerpoints(page);
 
     // Remove the default steerpoint - waypoint cards are wrapped in .waypoint-item
-    const waypointCard = page.locator('.waypoint-item').first();
-    await waypointCard.waitFor({ state: 'visible' });
-    const removeButton = waypointCard.locator('button').filter({ hasText: '' }).last(); // Delete button is the last button
-    await removeButton.click();
+    const removeButton = page.locator('.waypoint-item .waypoint-delete').first();
+    await removeButton.scrollIntoViewIfNeeded();
+    await removeButton.click({ force: true });
 
     // Verify no steerpoints now
     const emptyStateError = page.locator('text="At least one steerpoint is required"');
@@ -179,6 +180,9 @@ test.describe('Steerpoint Departure Airport Behavior', () => {
     // Afghanistan theater already creates Kandahar as steerpoint 1
     // Add a second custom steerpoint
     await addCustomSteerpoint(page, 'Custom Waypoint');
+
+    // Wait for the second steerpoint to appear before counting
+    await page.locator('.waypoint-item').nth(1).waitFor({ state: 'visible' });
 
     // Verify we have 2 steerpoints
     const initialCount = await getSteerpointCount(page);

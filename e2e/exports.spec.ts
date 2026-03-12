@@ -230,7 +230,8 @@ test.describe('Mission Export Operations', () => {
     const fileChooserPromise = page.waitForEvent('filechooser');
 
     // Click "Upload Images" from the menu - this will trigger the file chooser
-    await page.getByRole('menuitem', { name: 'Upload Images' }).click();
+    // Use force:true because Firefox's cm-content can occasionally intercept pointer events
+    await page.getByRole('menuitem', { name: 'Upload Images' }).click({ force: true });
 
     // Wait for the file chooser to appear
     const fileChooser = await fileChooserPromise;

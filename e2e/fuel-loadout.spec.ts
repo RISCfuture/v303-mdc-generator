@@ -94,13 +94,14 @@ test.describe('Fuel & Loadout Integration', () => {
     // Now go back to Loadout and adjust the fuel slider to 50%
     await navigateToTab(page, 'Loadout');
 
-    // Click at the midpoint of the slider rail to set to ~50%
-    const slider = loadoutCard.locator('.n-slider');
-    await slider.waitFor({ state: 'visible' });
-    const sliderBox = await slider.boundingBox();
-    expect(sliderBox).not.toBeNull();
-    // Click at 50% of the slider width (midpoint)
-    await slider.click({ position: { x: sliderBox!.width / 2, y: sliderBox!.height / 2 } });
+    // Set slider to 50% using ARIA keyboard control for cross-browser reliability
+    const sliderHandle = loadoutCard.locator('.n-slider-handle-wrapper[role="slider"]');
+    await sliderHandle.waitFor({ state: 'visible' });
+    await sliderHandle.focus();
+    // Naive UI slider responds to ArrowLeft for -1 steps (starts at 100%)
+    for (let i = 0; i < 50; i++) {
+      await page.keyboard.press('ArrowLeft');
+    }
 
     // The percentage display should show 50%
     await expect(loadoutCard.getByText('50%')).toBeVisible();
