@@ -105,7 +105,7 @@
           },
           "presetCount": {
             "type": "integer",
-            "minimum": 1,
+            "minimum": 0,
             "description": "Number of presets available for this radio"
           },
           "min": {
@@ -117,9 +117,9 @@
             "description": "Maximum frequency in MHz (null if not available)"
           },
           "step": {
-            "type": "number",
+            "type": ["number", "null"],
             "minimum": 0,
-            "description": "Frequency step size in MHz (0.025 for airband, 1 for others)"
+            "description": "Frequency step size in MHz (null if unknown)"
           }
         }
       }

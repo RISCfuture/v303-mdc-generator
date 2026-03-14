@@ -316,7 +316,7 @@ local function extractRadios(panelRadioData)
                 end
             end
 
-            if presetCount > 0 then
+            if presetCount > 0 or minFreq or maxFreq then
                 table.insert(radios, {
                     name = "COM " .. radioIndex,
                     description = description,
