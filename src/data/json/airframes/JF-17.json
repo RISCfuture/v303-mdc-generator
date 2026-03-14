@@ -14,12 +14,20 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "description": "COMM 1/2 Preset",
-      "max": 399.995,
-      "min": 30,
       "name": "COM 1",
+      "description": "COMM 1/2 Preset",
       "presetCount": 20,
-      "step": 0.025
+      "min": 108,
+      "max": 173.975,
+      "step": 0.25
+    },
+    {
+      "name": "COM 2",
+      "description": "COMM 1/2 Preset",
+      "presetCount": 20,
+      "min": 225,
+      "max": 399.975,
+      "step": 0.5
     }
   ],
   "guns": [
@@ -75,7 +83,7 @@
         "DIS_MK_20_DUAL_GDJ_II19_L",
         "DIS_GBU_12_DUAL_GDJ_II19_L",
         "DIS_BRM1_90",
-        "DIS_RKT_90_UG",
+        "DIS_HF20_90_1_HE",
         "DIS_LAU68_MK5_DUAL_GDJ_II19_L",
         "DIS_WMD7",
         "DIS_AKG_DLPOD",
@@ -187,7 +195,7 @@
         "DIS_MK_20_DUAL_GDJ_II19_R",
         "DIS_GBU_12_DUAL_GDJ_II19_R",
         "DIS_BRM1_90",
-        "DIS_RKT_90_UG",
+        "DIS_HF20_90_1_HE",
         "DIS_LAU68_MK5_DUAL_GDJ_II19_R",
         "DIS_WMD7",
         "DIS_AKG_DLPOD",

@@ -2,9 +2,9 @@
   {
     "name": "Andersen AFB",
     "position": {
-      "latitude": 13.57604707035,
-      "longitude": 144.91745889539,
-      "elevation": 545
+      "latitude": 13.576048013947,
+      "longitude": 144.91746092599,
+      "elevation": 546
     },
     "tacan": {
       "channel": 54,
@@ -24,14 +24,14 @@
             "longitude": 144.948539
           }
         },
-        "length": 10490,
+        "length": 10489,
         "width": 197
       },
       {
         "name": "25",
         "heading": 246,
         "ils": null,
-        "length": 10490,
+        "length": 10489,
         "width": 197
       },
       {
@@ -46,14 +46,14 @@
             "longitude": 144.948539
           }
         },
-        "length": 10490,
+        "length": 10489,
         "width": 197
       },
       {
         "name": "25",
         "heading": 246,
         "ils": null,
-        "length": 10490,
+        "length": 10489,
         "width": 197
       }
     ],
@@ -72,8 +72,8 @@
         "name": "6",
         "heading": 65,
         "ils": {
-          "name": "IGUM",
-          "frequency": "110.3",
+          "name": "IAWD",
+          "frequency": "110.9",
           "channel": null,
           "position": {
             "latitude": 13.493032,
@@ -94,8 +94,8 @@
         "name": "24",
         "heading": 65,
         "ils": {
-          "name": "IGUM",
-          "frequency": "110.3",
+          "name": "IAWD",
+          "frequency": "110.9",
           "channel": null,
           "position": {
             "latitude": 13.493032,
@@ -118,9 +118,9 @@
   {
     "name": "North West Field",
     "position": {
-      "latitude": 13.629365787313,
-      "longitude": 144.86661164669,
-      "elevation": 522
+      "latitude": 13.625333782226,
+      "longitude": 144.85839843933,
+      "elevation": 0
     },
     "tacan": null,
     "runways": [],
@@ -221,8 +221,8 @@
           "frequency": "109.9",
           "channel": null,
           "position": {
-            "latitude": 15.124498,
-            "longitude": 145.743327
+            "latitude": 15.124488,
+            "longitude": 145.743333
           }
         },
         "length": 7790,

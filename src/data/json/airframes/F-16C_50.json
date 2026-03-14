@@ -14,20 +14,20 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "description": "COMM 1 (UHF) AN/ARC-164",
-      "max": 399.975,
-      "min": 225,
       "name": "COM 1",
+      "description": "COMM 1 (UHF) AN/ARC-164",
       "presetCount": 20,
+      "min": 225,
+      "max": 399.975,
       "step": 0.025
     },
     {
-      "description": "COMM 2 (VHF) AN/ARC-222",
-      "max": 155.975,
-      "min": 30,
       "name": "COM 2",
+      "description": "COMM 2 (VHF) AN/ARC-222",
       "presetCount": 20,
-      "step": 0.025
+      "min": 30,
+      "max": 173.975,
+      "step": 0.005
     }
   ],
   "guns": [

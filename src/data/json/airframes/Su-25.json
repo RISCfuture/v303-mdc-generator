@@ -10,8 +10,8 @@
   "flareIncrement": 32,
   "defaultChaff": 128,
   "defaultFlare": 128,
-  "defaultJoker": 4000,
-  "defaultBingo": 2500,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
   "radios": [],
   "guns": [
     {

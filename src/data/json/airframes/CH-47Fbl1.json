@@ -19,7 +19,7 @@
       "min": 30,
       "name": "COM 1",
       "presetCount": 20,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "UHF AM: ARC-164",
@@ -27,7 +27,7 @@
       "min": 225,
       "name": "COM 2",
       "presetCount": 20,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "VHF FM: ARC-201D",
@@ -35,7 +35,7 @@
       "min": 30,
       "name": "COM 3",
       "presetCount": 10,
-      "step": 0.1
+      "step": null
     }
   ],
   "guns": [],

@@ -19,7 +19,7 @@
       "min": 100,
       "name": "COM 1",
       "presetCount": 4,
-      "step": 0.025
+      "step": null
     }
   ],
   "guns": [

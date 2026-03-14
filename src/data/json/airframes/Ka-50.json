@@ -19,7 +19,7 @@
       "min": 20,
       "name": "COM 1",
       "presetCount": 10,
-      "step": 0.1
+      "step": null
     },
     {
       "description": "ARK-22",
@@ -27,7 +27,7 @@
       "min": 0.15,
       "name": "COM 2",
       "presetCount": 16,
-      "step": 1
+      "step": null
     }
   ],
   "guns": [],

@@ -90,7 +90,8 @@
     "id": "BF109K_4_FUEL_TANK",
     "name": "300 liter Fuel Tank",
     "weight": 586,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 476
   },
   "BIN_200": {
     "id": "BIN_200",
@@ -255,7 +256,7 @@
   "DIS_BRM1_90": {
     "id": "DIS_BRM1_90",
     "name": "HF20 - 16 x BRM-1 90mm Laser-guided Rocket",
-    "weight": 1020,
+    "weight": 798,
     "category": "rack"
   },
   "DIS_C-701IR": {
@@ -383,6 +384,12 @@
     "name": "24 x 250-2 - 250kg GP Bombs HD",
     "weight": 13228,
     "category": "air-to-ground"
+  },
+  "DIS_HF20_90_1_HE": {
+    "id": "DIS_HF20_90_1_HE",
+    "name": "HF20 - 16 x 90-1 90mm Rocket (HE)",
+    "weight": 720,
+    "category": "rack"
   },
   "DIS_HJ-12": {
     "id": "DIS_HJ-12",
@@ -576,12 +583,6 @@
     "weight": 254,
     "category": "air-to-air"
   },
-  "DIS_RKT_90_UG": {
-    "id": "DIS_RKT_90_UG",
-    "name": "HF20 - 16 x 90-1 90mm Rocket (HE)",
-    "weight": 829,
-    "category": "rack"
-  },
   "DIS_SD-10": {
     "id": "DIS_SD-10",
     "name": "SD-10A AAM",
@@ -646,7 +647,8 @@
     "id": "DIS_TANK1100",
     "name": "1100L Tank",
     "weight": 2346,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2181
   },
   "DIS_TANK1100_EMPTY": {
     "id": "DIS_TANK1100_EMPTY",
@@ -658,7 +660,8 @@
     "id": "DIS_TANK800",
     "name": "800L Tank",
     "weight": 1609,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1510
   },
   "DIS_TANK800_EMPTY": {
     "id": "DIS_TANK800_EMPTY",
@@ -726,7 +729,8 @@
     "id": "FW109_FUEL_TANK",
     "name": "300 liter Fuel Tank Type E2",
     "weight": 586,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 476
   },
   "GBU-31*8": {
     "id": "GBU-31*8",
@@ -1554,7 +1558,8 @@
     "id": "I16_DROP_FUEL_TANK",
     "name": "I-16 External Fuel Tank",
     "weight": 161,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 150
   },
   "I16_FAB_100SV": {
     "id": "I16_FAB_100SV",
@@ -1584,6 +1589,12 @@
     "id": "KORD_12_7_MI24_R",
     "name": "Kord 12.7mm HMG",
     "weight": 209,
+    "category": "rack"
+  },
+  "LA7_AO_25SL": {
+    "id": "LA7_AO_25SL",
+    "name": "AO-25SL",
+    "weight": 55,
     "category": "rack"
   },
   "LAU-105": {
@@ -2173,7 +2184,8 @@
     "id": "PTB-1200-F1",
     "name": "RP35 Pylon Fuel Tank (1137 l usable)",
     "weight": 2332,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1979
   },
   "PTB-1200-F1-EMPTY": {
     "id": "PTB-1200-F1-EMPTY",
@@ -2185,7 +2197,8 @@
     "id": "PTB-580G-F1",
     "name": "RPL201 Pylon Fuel Tank (2310 l usable)",
     "weight": 4608,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 4024
   },
   "PTB-580G-F1-EMPTY": {
     "id": "PTB-580G-F1-EMPTY",
@@ -2197,31 +2210,36 @@
     "id": "PTB300_MIG15",
     "name": "Fuel Tank 300 liters",
     "weight": 597,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 548
   },
   "PTB400_MIG15": {
     "id": "PTB400_MIG15",
     "name": "Fuel Tank 400 liters",
     "weight": 802,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 731
   },
   "PTB400_MIG19": {
     "id": "PTB400_MIG19",
     "name": "Fuel Tank 400 liters",
     "weight": 802,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 731
   },
   "PTB600_MIG15": {
     "id": "PTB600_MIG15",
     "name": "Fuel Tank 600 liters",
     "weight": 1171,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1098
   },
   "PTB760_MIG19": {
     "id": "PTB760_MIG19",
     "name": "Fuel Tank 760 liters",
     "weight": 1463,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1390
   },
   "payloadCLP_P8_154": {
     "id": "payloadCLP_P8_154",
@@ -2245,13 +2263,15 @@
     "id": "SPITFIRE_45GAL_SLIPPER_TANK",
     "name": "45 gal. Slipper Tank",
     "weight": 306,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 271
   },
   "SPITFIRE_45GAL_TORPEDO_TANK": {
     "id": "SPITFIRE_45GAL_TORPEDO_TANK",
     "name": "45 gal. Torpedo Tank",
     "weight": 319,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 270
   },
   "TGM_65H": {
     "id": "TGM_65H",
@@ -2304,7 +2324,7 @@
   "{00F5DAC4-0466-4122-998F-B1A298E34113}": {
     "id": "{00F5DAC4-0466-4122-998F-B1A298E34113}",
     "name": "M117 - 750lb GP Bomb LD",
-    "weight": 750,
+    "weight": 899,
     "category": "air-to-ground"
   },
   "{0180F983-C14A-11d8-9897-000476191836}": {
@@ -2470,13 +2490,15 @@
     "id": "{150_USgal_Corsair_droptank_mk5}",
     "name": "Mk.5 Universal Drop Tank 150 U.S. Gal",
     "weight": 1034,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 937
   },
   "{150_USgal_Corsair_droptank_mk6}": {
     "id": "{150_USgal_Corsair_droptank_mk6}",
     "name": "Mk.6 Lockheed Drop Tank 165 U.S. Gal",
     "weight": 1102,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1001
   },
   "{16602053-4A12-40A2-B214-AB60D481B20E}": {
     "id": "{16602053-4A12-40A2-B214-AB60D481B20E}",
@@ -2496,7 +2518,8 @@
     "id": "{175_USgal_Corsair_droptank_aux}",
     "name": "Auxiliary Drop Tank 175 U.S. Gal",
     "weight": 1204,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1094
   },
   "{18617C93-78E7-4359-A8CE-D754103EDF63}": {
     "id": "{18617C93-78E7-4359-A8CE-D754103EDF63}",
@@ -3111,7 +3134,7 @@
   "{6CDB6B36-7165-47D0-889F-6625FB333561}": {
     "id": "{6CDB6B36-7165-47D0-889F-6625FB333561}",
     "name": "MER6 with 6 x M117 - 750lb GP Bombs LD",
-    "weight": 4630,
+    "weight": 5397,
     "category": "air-to-ground"
   },
   "{6CEB49FC-DED8-4DED-B053-E1F033FF72D3}": {
@@ -3255,7 +3278,7 @@
   "{82F90BEC-0E2E-4CE5-A66E-1E4ADA2B5D1E}": {
     "id": "{82F90BEC-0E2E-4CE5-A66E-1E4ADA2B5D1E}",
     "name": "MER3 with 3 x M117 - 750lb GP Bombs LD",
-    "weight": 2337,
+    "weight": 2698,
     "category": "air-to-ground"
   },
   "{88D18A5E-99C8-4B04-B40B-1C02F2018B6E}": {
@@ -3892,6 +3915,12 @@
     "weight": 415,
     "category": "pod"
   },
+  "{AM39}": {
+    "id": "{AM39}",
+    "name": "AM39 EXOCET AShM",
+    "weight": 1477,
+    "category": "rack"
+  },
   "{AN-M3}": {
     "id": "{AN-M3}",
     "name": "AN-M3 - 2*Browning Machine Guns 12.7mm",
@@ -4102,7 +4131,8 @@
     "id": "{AV8BNA_AERO1D}",
     "name": "AERO 1D 300 Gallons Fuel Tank ",
     "weight": 2201,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2003
   },
   "{AWW-13}": {
     "id": "{AWW-13}",
@@ -4282,7 +4312,7 @@
   "{B58F99BA-5480-4572-8602-28B0449F5260}": {
     "id": "{B58F99BA-5480-4572-8602-28B0449F5260}",
     "name": "27 x M117 - 750lb GP Bombs LD",
-    "weight": 20238,
+    "weight": 24286,
     "category": "air-to-ground"
   },
   "{B5CA9846-776E-4230-B4FD-8BCC9BFB1676}": {
@@ -4361,7 +4391,8 @@
     "id": "{B99EE8A8-99BC-4a8d-89AC-A26831920DCE}",
     "name": "Fuel tank PTB-450",
     "weight": 1213,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 970
   },
   "{BA565F89-2373-4A84-9502-A0E017D3A44A}": {
     "id": "{BA565F89-2373-4A84-9502-A0E017D3A44A}",
@@ -4605,6 +4636,24 @@
     "id": "{BRU-32 GBU-24}",
     "name": "GBU-24",
     "weight": 2441,
+    "category": "air-to-ground"
+  },
+  "{BRU-32 GBU-38}": {
+    "id": "{BRU-32 GBU-38}",
+    "name": "GBU-38(V)1/B - JDAM, 500lb GPS Guided Bomb",
+    "weight": 658,
+    "category": "air-to-ground"
+  },
+  "{BRU-32 GBU_31_V_2B}": {
+    "id": "{BRU-32 GBU_31_V_2B}",
+    "name": "GBU-31(V)2/B - JDAM, 2000lb GPS Guided Bomb",
+    "weight": 2186,
+    "category": "air-to-ground"
+  },
+  "{BRU-32 GBU_31_V_4B}": {
+    "id": "{BRU-32 GBU_31_V_4B}",
+    "name": "GBU-31(V)4/B - JDAM, 2000lb GPS Guided Penetrator Bomb",
+    "weight": 2265,
     "category": "air-to-ground"
   },
   "{BRU-32 MK-20}": {
@@ -5953,13 +6002,15 @@
     "id": "{C130J_Ext_Tank_L}",
     "name": "Fuel Tank 8900 pounds",
     "weight": 9140,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 8900
   },
   "{C130J_Ext_Tank_R}": {
     "id": "{C130J_Ext_Tank_R}",
     "name": "Fuel Tank 8900 pounds",
     "weight": 9140,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 8900
   },
   "{C2593383-3CA8-4b18-B73D-0E750BCA1C85}": {
     "id": "{C2593383-3CA8-4b18-B73D-0E750BCA1C85}",
@@ -6021,7 +6072,7 @@
   "{CBU-52B}": {
     "id": "{CBU-52B}",
     "name": "CBU-52B - 220 x HE/Frag bomblets",
-    "weight": 785,
+    "weight": 539,
     "category": "air-to-ground"
   },
   "{CBU-87}": {
@@ -6597,6 +6648,36 @@
     "weight": 908,
     "category": "air-to-ground"
   },
+  "{CHAP_AIM92}": {
+    "id": "{CHAP_AIM92}",
+    "name": "2 x FIM-92C Stinger",
+    "weight": 104,
+    "category": "rack"
+  },
+  "{CHAP_FZ225_M151}": {
+    "id": "{CHAP_FZ225_M151}",
+    "name": "FZ225 - 19 x 70 mm UnGd Rkts, M151 HE",
+    "weight": 247,
+    "category": "rack"
+  },
+  "{CHAP_FZ225_M229}": {
+    "id": "{CHAP_FZ225_M229}",
+    "name": "FZ225 - 19 x 70 mm UnGd Rkts, M229 HE",
+    "weight": 406,
+    "category": "rack"
+  },
+  "{CHAP_HMP400LC}": {
+    "id": "{CHAP_HMP400LC}",
+    "name": "HMP400LC",
+    "weight": 299,
+    "category": "rack"
+  },
+  "{CHAP_HOT3}": {
+    "id": "{CHAP_HOT3}",
+    "name": "4 x HOT3 - ATGM, SACLOS, Tandem HEAT",
+    "weight": 370,
+    "category": "air-to-ground"
+  },
   "{CHAP_Kh555x6}": {
     "id": "{CHAP_Kh555x6}",
     "name": "6 x Kh-555 ALCM",
@@ -6608,6 +6689,13 @@
     "name": "4 x 9M39 Igla",
     "weight": 233,
     "category": "rack"
+  },
+  "{CHAP_TigerUHT_fueltank}": {
+    "id": "{CHAP_TigerUHT_fueltank}",
+    "name": "Fuel tank 350 liters",
+    "weight": 783,
+    "category": "fuel",
+    "additionalFuel": 684
   },
   "{CH_AASM250}": {
     "id": "{CH_AASM250}",
@@ -6649,7 +6737,8 @@
     "id": "{CH_JAS39C_Tank1100}",
     "name": "Drop tank 1100 litres",
     "weight": 2086,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1877
   },
   "{CH_KEPD350}": {
     "id": "{CH_KEPD350}",
@@ -7180,7 +7269,8 @@
     "id": "{EFT_230GAL}",
     "name": "Fuel tank 230 gal",
     "weight": 1688,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1548
   },
   "{ee368869-c35a-486a-afe7-284beb7c5d52}": {
     "id": "{ee368869-c35a-486a-afe7-284beb7c5d52}",
@@ -7228,13 +7318,15 @@
     "id": "{F14-300gal-empty}",
     "name": "Fuel tank 300 gal (empty)",
     "weight": 154,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 44
   },
   "{F14-300gal}": {
     "id": "{F14-300gal}",
     "name": "Fuel tank 300 gal",
     "weight": 2113,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2003
   },
   "{F14-ALQ167-POD}": {
     "id": "{F14-ALQ167-POD}",
@@ -7276,7 +7368,8 @@
     "id": "{F15E_EXTTANK}",
     "name": "Fuel tank 610 gal",
     "weight": 4285,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 3965
   },
   "{F16A4DE0-116C-4A71-97F0-2CF85B0313EC}": {
     "id": "{F16A4DE0-116C-4A71-97F0-2CF85B0313EC}",
@@ -7338,43 +7431,50 @@
     "id": "{F4_HIGH_PERFORMANCE_CENTERLINE_600_GAL}",
     "name": "High Performance Centerline Tank 600 gallons",
     "weight": 4247,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 3909
   },
   "{F4_SARGENT_TANK_370_GAL_EMPTY}": {
     "id": "{F4_SARGENT_TANK_370_GAL_EMPTY}",
     "name": "Sargent Fletcher Fuel Tank 370 gallons (empty)",
     "weight": 330,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 22
   },
   "{F4_SARGENT_TANK_370_GAL_R_EMPTY}": {
     "id": "{F4_SARGENT_TANK_370_GAL_R_EMPTY}",
     "name": "Sargent Fletcher Fuel Tank 370 gallons (empty)",
     "weight": 330,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 22
   },
   "{F4_SARGENT_TANK_370_GAL_R}": {
     "id": "{F4_SARGENT_TANK_370_GAL_R}",
     "name": "Sargent Fletcher Fuel Tank 370 gallons",
     "weight": 2718,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2410
   },
   "{F4_SARGENT_TANK_370_GAL}": {
     "id": "{F4_SARGENT_TANK_370_GAL}",
     "name": "Sargent Fletcher Fuel Tank 370 gallons",
     "weight": 2718,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2410
   },
   "{F4_SARGENT_TANK_600_GAL_EMPTY}": {
     "id": "{F4_SARGENT_TANK_600_GAL_EMPTY}",
     "name": "Sargent Fletcher Fuel Tank 600 gallons (empty)",
     "weight": 330,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 81
   },
   "{F4_SARGENT_TANK_600_GAL}": {
     "id": "{F4_SARGENT_TANK_600_GAL}",
     "name": "Sargent Fletcher Fuel Tank 600 gallons",
     "weight": 4158,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 3909
   },
   "{F503C276-FE15-4C54-B310-17B50B735A84}": {
     "id": "{F503C276-FE15-4C54-B310-17B50B735A84}",
@@ -7573,37 +7673,43 @@
     "id": "{FPU_8A_FUEL_TANK}",
     "name": "FPU-8A Fuel Tank 330 gallons",
     "weight": 2535,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2244
   },
   "{FUEL-SUBAL_TANK-330}": {
     "id": "{FUEL-SUBAL_TANK-330}",
     "name": "Fuel Tank 330lt",
     "weight": 694,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 584
   },
   "{FUEL-TIP-ELLITTIC-L}": {
     "id": "{FUEL-TIP-ELLITTIC-L}",
     "name": "Elliptic Tip Tank 320lt",
     "weight": 693,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 572
   },
   "{FUEL-TIP-ELLITTIC-R}": {
     "id": "{FUEL-TIP-ELLITTIC-R}",
     "name": "Elliptic Tip Tank 320lt",
     "weight": 693,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 572
   },
   "{FUEL-TIP-TANK-500-L}": {
     "id": "{FUEL-TIP-TANK-500-L}",
     "name": "Cylindrical Tip Tank 500lt",
     "weight": 1038,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 884
   },
   "{FUEL-TIP-TANK-500-R}": {
     "id": "{FUEL-TIP-TANK-500-R}",
     "name": "Cylindrical Tip Tank 500lt",
     "weight": 1038,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 884
   },
   "{FW_190_R4M_LEFT_WING}": {
     "id": "{FW_190_R4M_LEFT_WING}",
@@ -7781,6 +7887,770 @@
     "id": "{GIAT_M621_SAPHEI}",
     "name": "GIAT M621 (240x SAPHEI)",
     "weight": 285,
+    "category": "rack"
+  },
+  "{HB_A6E_AERO1D_EMPTY}": {
+    "id": "{HB_A6E_AERO1D_EMPTY}",
+    "name": "AERO 1D 300 Gallons Fuel Tank (Empty)",
+    "weight": 198,
+    "category": "fuel"
+  },
+  "{HB_A6E_AERO1D}": {
+    "id": "{HB_A6E_AERO1D}",
+    "name": "AERO 1D 300 Gallons Fuel Tank ",
+    "weight": 2201,
+    "category": "fuel",
+    "additionalFuel": 2003
+  },
+  "{HB_A6E_AGM_78}": {
+    "id": "{HB_A6E_AGM_78}",
+    "name": "AGM-78 Standard ARM",
+    "weight": 1424,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU33_MER_6x}": {
+    "id": "{HB_A6E_BDU33_MER_6x}",
+    "name": "6x BDU-33 - 25lb Practice Bomb LD (MER)",
+    "weight": 369,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU33_TER_3x}": {
+    "id": "{HB_A6E_BDU33_TER_3x}",
+    "name": "3x BDU-33 - 25lb Practice Bomb LD (TER)",
+    "weight": 357,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_1x}": {
+    "id": "{HB_A6E_BDU45SE_MER_1x}",
+    "name": "1x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 731,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_2x}": {
+    "id": "{HB_A6E_BDU45SE_MER_2x}",
+    "name": "2x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 1243,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_3x_LEFT}": {
+    "id": "{HB_A6E_BDU45SE_MER_3x_LEFT}",
+    "name": "3x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 1754,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_BDU45SE_MER_3x_RIGHT}",
+    "name": "3x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 1754,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_4x_LEFT}": {
+    "id": "{HB_A6E_BDU45SE_MER_4x_LEFT}",
+    "name": "4x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 2266,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_BDU45SE_MER_4x_RIGHT}",
+    "name": "4x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 2266,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_5x_LEFT}": {
+    "id": "{HB_A6E_BDU45SE_MER_5x_LEFT}",
+    "name": "5x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 2777,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_BDU45SE_MER_5x_RIGHT}",
+    "name": "5x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 2777,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_5x}": {
+    "id": "{HB_A6E_BDU45SE_MER_5x}",
+    "name": "5x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 2777,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_MER_6x}": {
+    "id": "{HB_A6E_BDU45SE_MER_6x}",
+    "name": "6x BDU-45 - 500lb Practice Bomb (MER)",
+    "weight": 3289,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_BDU45SE_TER_2x_RIGHT}",
+    "name": "2x BDU-45 - 500lb Practice Bomb (TER)",
+    "weight": 1305,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45SE_TER_3x}": {
+    "id": "{HB_A6E_BDU45SE_TER_3x}",
+    "name": "3x BDU-45 - 500lb Practice Bomb (TER)",
+    "weight": 1817,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_1x}": {
+    "id": "{HB_A6E_BDU45_MER_1x}",
+    "name": "1x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 731,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_2x}": {
+    "id": "{HB_A6E_BDU45_MER_2x}",
+    "name": "2x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 1243,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_3x_LEFT}": {
+    "id": "{HB_A6E_BDU45_MER_3x_LEFT}",
+    "name": "3x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 1754,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_BDU45_MER_3x_RIGHT}",
+    "name": "3x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 1754,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_4x_LEFT}": {
+    "id": "{HB_A6E_BDU45_MER_4x_LEFT}",
+    "name": "4x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 2266,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_BDU45_MER_4x_RIGHT}",
+    "name": "4x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 2266,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_5x_LEFT}": {
+    "id": "{HB_A6E_BDU45_MER_5x_LEFT}",
+    "name": "5x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 2777,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_BDU45_MER_5x_RIGHT}",
+    "name": "5x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 2777,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_MER_6x}": {
+    "id": "{HB_A6E_BDU45_MER_6x}",
+    "name": "6x BDU-45B - 500lb Practice Bomb (MER)",
+    "weight": 3289,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_BDU45_TER_2x_RIGHT}",
+    "name": "2x BDU-45B - 500lb Practice Bomb (TER)",
+    "weight": 1305,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_BDU45_TER_3x}": {
+    "id": "{HB_A6E_BDU45_TER_3x}",
+    "name": "3x BDU-45B - 500lb Practice Bomb (TER)",
+    "weight": 1817,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_D704}": {
+    "id": "{HB_A6E_D704}",
+    "name": "D-704 Refuelling Pod",
+    "weight": 2721,
+    "category": "fuel",
+    "additionalFuel": 2022
+  },
+  "{HB_A6E_GBU12_MER_2x_LEFT}": {
+    "id": "{HB_A6E_GBU12_MER_2x_LEFT}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (MER)",
+    "weight": 1441,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU12_MER_2x_RIGHT}": {
+    "id": "{HB_A6E_GBU12_MER_2x_RIGHT}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (MER)",
+    "weight": 1441,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU12_TER_1x}": {
+    "id": "{HB_A6E_GBU12_TER_1x}",
+    "name": "1x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": 893,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU12_TER_2x}": {
+    "id": "{HB_A6E_GBU12_TER_2x}",
+    "name": "2x GBU-12 - 500lb Laser Guided Bomb (TER)",
+    "weight": 1504,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU16_MER_1x_AFT}": {
+    "id": "{HB_A6E_GBU16_MER_1x_AFT}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (MER)",
+    "weight": 1351,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU16_MER_1x_FWD}": {
+    "id": "{HB_A6E_GBU16_MER_1x_FWD}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (MER)",
+    "weight": 1351,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_GBU16_TER_1x}": {
+    "id": "{HB_A6E_GBU16_TER_1x}",
+    "name": "1x GBU-16 - 1000lb Laser Guided Bomb (TER)",
+    "weight": 1413,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_LAU10_TER_2x_LEFT}": {
+    "id": "{HB_A6E_LAU10_TER_2x_LEFT}",
+    "name": "2x LAU-10 pod - 4 x 127mm ZUNI, UnGd Rkts Mk71, HE/FRAG (TER)",
+    "weight": 1556,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU10_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_LAU10_TER_2x_RIGHT}",
+    "name": "2x LAU-10 pod - 4 x 127mm ZUNI, UnGd Rkts Mk71, HE/FRAG (TER)",
+    "weight": 1556,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU10_TER_3x}": {
+    "id": "{HB_A6E_LAU10_TER_3x}",
+    "name": "3x LAU-10 pod - 4 x 127mm ZUNI, UnGd Rkts Mk71, HE/FRAG (TER)",
+    "weight": 2193,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU61MK151_TER_2x_LEFT}": {
+    "id": "{HB_A6E_LAU61MK151_TER_2x_LEFT}",
+    "name": "2x LAU-61 pod - 19 x 2.75\" Hydra, UnGd Rkts M151, HE (TER)",
+    "weight": 1488,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU61MK151_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_LAU61MK151_TER_2x_RIGHT}",
+    "name": "2x LAU-61 pod - 19 x 2.75\" Hydra, UnGd Rkts M151, HE (TER)",
+    "weight": 1488,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU61MK151_TER_3x}": {
+    "id": "{HB_A6E_LAU61MK151_TER_3x}",
+    "name": "3x LAU-61 pod - 19 x 2.75\" Hydra, UnGd Rkts M151, HE (TER)",
+    "weight": 2090,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK151_TER_2x_LEFT}": {
+    "id": "{HB_A6E_LAU68MK151_TER_2x_LEFT}",
+    "name": "2x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk151, HE (TER)",
+    "weight": 784,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK151_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_LAU68MK151_TER_2x_RIGHT}",
+    "name": "2x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk151, HE (TER)",
+    "weight": 784,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK151_TER_3x}": {
+    "id": "{HB_A6E_LAU68MK151_TER_3x}",
+    "name": "3x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk151, HE (TER)",
+    "weight": 1036,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK5_TER_2x_LEFT}": {
+    "id": "{HB_A6E_LAU68MK5_TER_2x_LEFT}",
+    "name": "2x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk5, HEAT (TER)",
+    "weight": 769,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK5_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_LAU68MK5_TER_2x_RIGHT}",
+    "name": "2x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk5, HEAT (TER)",
+    "weight": 769,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU68MK5_TER_3x}": {
+    "id": "{HB_A6E_LAU68MK5_TER_3x}",
+    "name": "3x LAU-68 pod - 7 x 2.75\" FFAR, UnGd Rkts Mk5, HEAT (TER)",
+    "weight": 1012,
+    "category": "rack"
+  },
+  "{HB_A6E_LAU7_AIM9B}": {
+    "id": "{HB_A6E_LAU7_AIM9B}",
+    "name": "LAU-7 with AIM-9B Sidewinder IR AAM",
+    "weight": 254,
+    "category": "air-to-air"
+  },
+  "{HB_A6E_LAU7_AIM9L}": {
+    "id": "{HB_A6E_LAU7_AIM9L}",
+    "name": "LAU-7 with AIM-9L Sidewinder IR AAM",
+    "weight": 279,
+    "category": "air-to-air"
+  },
+  "{HB_A6E_LAU7_AIM9M}": {
+    "id": "{HB_A6E_LAU7_AIM9M}",
+    "name": "LAU-7 with AIM-9M Sidewinder IR AAM",
+    "weight": 279,
+    "category": "air-to-air"
+  },
+  "{HB_A6E_M117_MER_4x_LEFT}": {
+    "id": "{HB_A6E_M117_MER_4x_LEFT}",
+    "name": "4x M117 - 750lb GP Bomb LD (MER) (OB)",
+    "weight": 3218,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_M117_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_M117_MER_4x_RIGHT}",
+    "name": "4x M117 - 750lb GP Bomb LD (MER) (OB)",
+    "weight": 3218,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_M117_MER_4x}": {
+    "id": "{HB_A6E_M117_MER_4x}",
+    "name": "4x M117 - 750lb GP Bomb LD (MER)",
+    "weight": 3218,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_M117_TER_2x_LEFT}": {
+    "id": "{HB_A6E_M117_TER_2x_LEFT}",
+    "name": "2x M117 - 750lb GP Bomb LD (TER)",
+    "weight": 1781,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_M117_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_M117_TER_2x_RIGHT}",
+    "name": "2x M117 - 750lb GP Bomb LD (TER)",
+    "weight": 1781,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_M117_TER_3x}": {
+    "id": "{HB_A6E_M117_TER_3x}",
+    "name": "3x M117 - 750lb GP Bomb LD (TER)",
+    "weight": 2531,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MER}": {
+    "id": "{HB_A6E_MER}",
+    "name": "Empty MER",
+    "weight": 220,
+    "category": "rack"
+  },
+  "{HB_A6E_MK106_MER_6x}": {
+    "id": "{HB_A6E_MK106_MER_6x}",
+    "name": "6x Mk 106 - 5lb Practice Bomb LD (MER)",
+    "weight": 250,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK106_TER_3x}": {
+    "id": "{HB_A6E_MK106_TER_3x}",
+    "name": "3x Mk 106 - 5lb Practice Bomb LD (TER)",
+    "weight": 297,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_1x}": {
+    "id": "{HB_A6E_MK20_MER_1x}",
+    "name": "1x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 709,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_2x}": {
+    "id": "{HB_A6E_MK20_MER_2x}",
+    "name": "2x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 1199,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_3x_LEFT}": {
+    "id": "{HB_A6E_MK20_MER_3x_LEFT}",
+    "name": "3x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 1688,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_MK20_MER_3x_RIGHT}",
+    "name": "3x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 1688,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_4x_LEFT}": {
+    "id": "{HB_A6E_MK20_MER_4x_LEFT}",
+    "name": "4x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 2178,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_MK20_MER_4x_RIGHT}",
+    "name": "4x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 2178,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_5x_LEFT}": {
+    "id": "{HB_A6E_MK20_MER_5x_LEFT}",
+    "name": "5x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 2667,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_MK20_MER_5x_RIGHT}",
+    "name": "5x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 2667,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_MER_6x}": {
+    "id": "{HB_A6E_MK20_MER_6x}",
+    "name": "6x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (MER)",
+    "weight": 3157,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_TER_2x_LEFT}": {
+    "id": "{HB_A6E_MK20_TER_2x_LEFT}",
+    "name": "2x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (TER)",
+    "weight": 1261,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK20_TER_2x_RIGHT}",
+    "name": "2x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (TER)",
+    "weight": 1261,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK20_TER_3x}": {
+    "id": "{HB_A6E_MK20_TER_3x}",
+    "name": "3x Mk-20 Rockeye - 490lbs CBU, 247 x HEAT Bomblets (TER)",
+    "weight": 1750,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK76_MER_6x}": {
+    "id": "{HB_A6E_MK76_MER_6x}",
+    "name": "6x Mk 76 - 25lb Practice Bomb LD (MER)",
+    "weight": 369,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK76_TER_3x}": {
+    "id": "{HB_A6E_MK76_TER_3x}",
+    "name": "3x Mk 76 - 25lb Practice Bomb LD (TER)",
+    "weight": 357,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_1x}": {
+    "id": "{HB_A6E_MK81_MER_1x}",
+    "name": "1x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 480,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_2x}": {
+    "id": "{HB_A6E_MK81_MER_2x}",
+    "name": "2x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 740,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_3x_LEFT}": {
+    "id": "{HB_A6E_MK81_MER_3x_LEFT}",
+    "name": "3x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1000,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_MK81_MER_3x_RIGHT}",
+    "name": "3x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1000,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_4x_LEFT}": {
+    "id": "{HB_A6E_MK81_MER_4x_LEFT}",
+    "name": "4x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1261,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_MK81_MER_4x_RIGHT}",
+    "name": "4x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1261,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_5x_LEFT}": {
+    "id": "{HB_A6E_MK81_MER_5x_LEFT}",
+    "name": "5x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1521,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_MK81_MER_5x_RIGHT}",
+    "name": "5x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1521,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_MER_6x}": {
+    "id": "{HB_A6E_MK81_MER_6x}",
+    "name": "6x Mk-81 - 250lb GP Bomb LD (MER)",
+    "weight": 1781,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_TER_2x_LEFT}": {
+    "id": "{HB_A6E_MK81_TER_2x_LEFT}",
+    "name": "2x Mk-81 - 250lb GP Bomb LD (TER)",
+    "weight": 802,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK81_TER_2x_RIGHT}",
+    "name": "2x Mk-81 - 250lb GP Bomb LD (TER)",
+    "weight": 802,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK81_TER_3x}": {
+    "id": "{HB_A6E_MK81_TER_3x}",
+    "name": "3x Mk-81 - 250lb GP Bomb LD (TER)",
+    "weight": 1063,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_1x}": {
+    "id": "{HB_A6E_MK82SE_MER_1x}",
+    "name": "1x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 770,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_2x}": {
+    "id": "{HB_A6E_MK82SE_MER_2x}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 1320,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_3x_LEFT}": {
+    "id": "{HB_A6E_MK82SE_MER_3x_LEFT}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 1870,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_MK82SE_MER_3x_RIGHT}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 1870,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_4x_LEFT}": {
+    "id": "{HB_A6E_MK82SE_MER_4x_LEFT}",
+    "name": "4x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 2420,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_MK82SE_MER_4x_RIGHT}",
+    "name": "4x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 2420,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_5x_LEFT}": {
+    "id": "{HB_A6E_MK82SE_MER_5x_LEFT}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 2970,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_MK82SE_MER_5x_RIGHT}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 2970,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_5x}": {
+    "id": "{HB_A6E_MK82SE_MER_5x}",
+    "name": "5x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 2970,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_MER_6x}": {
+    "id": "{HB_A6E_MK82SE_MER_6x}",
+    "name": "6x Mk-82 Snakeye - 500lb GP Bomb HD (MER)",
+    "weight": 3520,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_TER_2x_LEFT}": {
+    "id": "{HB_A6E_MK82SE_TER_2x_LEFT}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": 1382,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK82SE_TER_2x_RIGHT}",
+    "name": "2x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": 1382,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82SE_TER_3x}": {
+    "id": "{HB_A6E_MK82SE_TER_3x}",
+    "name": "3x Mk-82 Snakeye - 500lb GP Bomb HD (TER)",
+    "weight": 1932,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_1x}": {
+    "id": "{HB_A6E_MK82_MER_1x}",
+    "name": "1x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 723,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_2x}": {
+    "id": "{HB_A6E_MK82_MER_2x}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 1225,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_3x_LEFT}": {
+    "id": "{HB_A6E_MK82_MER_3x_LEFT}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 1728,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_3x_RIGHT}": {
+    "id": "{HB_A6E_MK82_MER_3x_RIGHT}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 1728,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_4x_LEFT}": {
+    "id": "{HB_A6E_MK82_MER_4x_LEFT}",
+    "name": "4x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 2231,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_4x_RIGHT}": {
+    "id": "{HB_A6E_MK82_MER_4x_RIGHT}",
+    "name": "4x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 2231,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_5x_LEFT}": {
+    "id": "{HB_A6E_MK82_MER_5x_LEFT}",
+    "name": "5x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 2733,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_5x_RIGHT}": {
+    "id": "{HB_A6E_MK82_MER_5x_RIGHT}",
+    "name": "5x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 2733,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_MER_6x}": {
+    "id": "{HB_A6E_MK82_MER_6x}",
+    "name": "6x Mk-82 - 500lb GP Bomb LD (MER)",
+    "weight": 3236,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_TER_2x_LEFT}": {
+    "id": "{HB_A6E_MK82_TER_2x_LEFT}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": 1287,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK82_TER_2x_RIGHT}",
+    "name": "2x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": 1287,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK82_TER_3x}": {
+    "id": "{HB_A6E_MK82_TER_3x}",
+    "name": "3x Mk-82 - 500lb GP Bomb LD (TER)",
+    "weight": 1790,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_MER_1x}": {
+    "id": "{HB_A6E_MK83_MER_1x}",
+    "name": "1x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": 1221,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_MER_2x_LEFT}": {
+    "id": "{HB_A6E_MK83_MER_2x_LEFT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": 2222,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_MER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK83_MER_2x_RIGHT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": 2222,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_MER_3x_AFT}": {
+    "id": "{HB_A6E_MK83_MER_3x_AFT}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": 3223,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_MER_3x_FWD}": {
+    "id": "{HB_A6E_MK83_MER_3x_FWD}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (MER)",
+    "weight": 3223,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_TER_2x_LEFT}": {
+    "id": "{HB_A6E_MK83_TER_2x_LEFT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": 2284,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_TER_2x_RIGHT}": {
+    "id": "{HB_A6E_MK83_TER_2x_RIGHT}",
+    "name": "2x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": 2284,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_MK83_TER_3x}": {
+    "id": "{HB_A6E_MK83_TER_3x}",
+    "name": "3x Mk-83 - 1000lb GP Bomb LD (TER)",
+    "weight": 3285,
+    "category": "air-to-ground"
+  },
+  "{HB_A6E_SUU25_MER_2x_LEFT}": {
+    "id": "{HB_A6E_SUU25_MER_2x_LEFT}",
+    "name": "2x SUU-25 x 8 LUU-2 - Target Marker Flares (MER)",
+    "weight": 1220,
+    "category": "rack"
+  },
+  "{HB_A6E_SUU25_MER_2x_RIGHT}": {
+    "id": "{HB_A6E_SUU25_MER_2x_RIGHT}",
+    "name": "2x SUU-25 x 8 LUU-2 - Target Marker Flares (MER)",
+    "weight": 1220,
+    "category": "rack"
+  },
+  "{HB_A6E_SUU25_TER_3x}": {
+    "id": "{HB_A6E_SUU25_TER_3x}",
+    "name": "3x SUU-25 x 8 LUU-2 - Target Marker Flares (TER)",
+    "weight": 1782,
+    "category": "rack"
+  },
+  "{HB_A6E_TALD_MER_2x_LEFT}": {
+    "id": "{HB_A6E_TALD_MER_2x_LEFT}",
+    "name": "2x ADM-141A TALD (MER) (OB)",
+    "weight": 1014,
+    "category": "rack"
+  },
+  "{HB_A6E_TALD_MER_2x_RIGHT}": {
+    "id": "{HB_A6E_TALD_MER_2x_RIGHT}",
+    "name": "2x ADM-141A TALD (MER) (OB)",
+    "weight": 1014,
+    "category": "rack"
+  },
+  "{HB_A6E_TALD_MER_2x}": {
+    "id": "{HB_A6E_TALD_MER_2x}",
+    "name": "2x ADM-141A TALD (MER)",
+    "weight": 1014,
+    "category": "rack"
+  },
+  "{HB_A6E_TALD_MER_4x}": {
+    "id": "{HB_A6E_TALD_MER_4x}",
+    "name": "4x ADM-141A TALD (MER)",
+    "weight": 1807,
+    "category": "rack"
+  },
+  "{HB_A6E_TER}": {
+    "id": "{HB_A6E_TER}",
+    "name": "Empty TER",
+    "weight": 282,
     "category": "rack"
   },
   "{HB_ALE_40_0_0}": {
@@ -8003,6 +8873,12 @@
     "id": "{HB_F4E_BDU-33_2x}",
     "name": "2x BDU-33 - 25lb Practice Bomb LD (TER)",
     "weight": 332,
+    "category": "air-to-ground"
+  },
+  "{HB_F4E_BDU-33_3x_SWA}": {
+    "id": "{HB_F4E_BDU-33_3x_SWA}",
+    "name": "(Special Weapons Adapter) 3x BDU-33 - 25lb Practice Bomb LD (TER)",
+    "weight": 357,
     "category": "air-to-ground"
   },
   "{HB_F4E_BDU-33_3x}": {
@@ -9149,7 +10025,8 @@
     "id": "{IAFS_ComboPak_100}",
     "name": "Internal Auxiliary Fuel tank 100 gal Combo Pak",
     "weight": 977,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 656
   },
   "{INV-SMOKE-BLUE}": {
     "id": "{INV-SMOKE-BLUE}",
@@ -10033,7 +10910,8 @@
     "id": "{M2KC_02_RPL541}",
     "name": "RPL 541 2000 liters Fuel Tank ",
     "weight": 4050,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 3483
   },
   "{M2KC_08_RPL541_EMPTY}": {
     "id": "{M2KC_08_RPL541_EMPTY}",
@@ -10045,7 +10923,8 @@
     "id": "{M2KC_08_RPL541}",
     "name": "RPL 541 2000 liters Fuel Tank ",
     "weight": 4050,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 3483
   },
   "{M2KC_AAF}": {
     "id": "{M2KC_AAF}",
@@ -10135,7 +11014,8 @@
     "id": "{M2KC_RPL_522}",
     "name": "RPL 522 1300 liters Fuel Tank",
     "weight": 2579,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2182
   },
   "{M71BOMBD}": {
     "id": "{M71BOMBD}",
@@ -10649,13 +11529,15 @@
     "id": "{MOSQUITO_100GAL_SLIPPER_TANK}",
     "name": "100 gal. Drop Tank",
     "weight": 827,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 721
   },
   "{MOSQUITO_50GAL_SLIPPER_TANK}": {
     "id": "{MOSQUITO_50GAL_SLIPPER_TANK}",
     "name": "50 gal. Drop Tank",
     "weight": 414,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 361
   },
   "{MOSSIE_2_British_AP_25LBNo1_3INCHNo1_ON_LEFT_WING_RAILS}": {
     "id": "{MOSSIE_2_British_AP_25LBNo1_3INCHNo1_ON_LEFT_WING_RAILS}",
@@ -10938,55 +11820,64 @@
     "id": "{PTB_120_F86F35}",
     "name": "Fuel Tank 120 gallons",
     "weight": 911,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 801
   },
   "{PTB_1500_MIG29A}": {
     "id": "{PTB_1500_MIG29A}",
     "name": "Fuel tank 1400L",
     "weight": 2783,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2563
   },
   "{PTB_150L_L39}": {
     "id": "{PTB_150L_L39}",
     "name": "Fuel Tank 150 liters",
     "weight": 274,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 256
   },
   "{PTB_200_F86F35}": {
     "id": "{PTB_200_F86F35}",
     "name": "Fuel Tank 200 gallons",
     "weight": 1489,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1335
   },
   "{PTB_350L_L39}": {
     "id": "{PTB_350L_L39}",
     "name": "Fuel Tank 350 liters",
     "weight": 624,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 598
   },
   "{PTB_450}": {
     "id": "{PTB_450}",
     "name": "Fuel tank PTB-450",
     "weight": 1213,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 970
   },
   "{PTB_490C_MIG21}": {
     "id": "{PTB_490C_MIG21}",
     "name": "Fuel Tank 490 L Central (21)",
     "weight": 957,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 860
   },
   "{PTB_490_MIG21}": {
     "id": "{PTB_490_MIG21}",
     "name": "Fuel Tank 490 L (21)",
     "weight": 957,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 860
   },
   "{PTB_800_MIG21}": {
     "id": "{PTB_800_MIG21}",
     "name": "Fuel Tank 800 L (21)",
     "weight": 1504,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 1394
   },
   "{R-13M1}": {
     "id": "{R-13M1}",
@@ -12120,19 +13011,22 @@
     "id": "{US_108GAL_PAPER_FUEL_TANK}",
     "name": "108 US gal. Paper Fuel Tank",
     "weight": 703,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 648
   },
   "{US_110GAL_FUEL_TANK}": {
     "id": "{US_110GAL_FUEL_TANK}",
     "name": "110 US gal. Fuel Tank",
     "weight": 769,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 659
   },
   "{US_150GAL_FUEL_TANK}": {
     "id": "{US_150GAL_FUEL_TANK}",
     "name": "150 US gal. Fuel Tank",
     "weight": 1011,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 901
   },
   "{US_M10_SMOKE_TANK_BLUE}": {
     "id": "{US_M10_SMOKE_TANK_BLUE}",
@@ -12174,7 +13068,8 @@
     "id": "{VIGGEN_X-TANK}",
     "name": "AJS External-tank 1013kg fuel",
     "weight": 2663,
-    "category": "fuel"
+    "category": "fuel",
+    "additionalFuel": 2233
   },
   "{WGr21}": {
     "id": "{WGr21}",

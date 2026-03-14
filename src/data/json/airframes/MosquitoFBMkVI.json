@@ -19,7 +19,7 @@
       "min": 38,
       "name": "COM 1",
       "presetCount": 5,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "T.1154N Range 1",
@@ -27,7 +27,7 @@
       "min": 5.5,
       "name": "COM 2",
       "presetCount": 8,
-      "step": 1
+      "step": null
     },
     {
       "description": "T.1154N Range 2",
@@ -35,7 +35,7 @@
       "min": 3,
       "name": "COM 3",
       "presetCount": 8,
-      "step": 1
+      "step": null
     },
     {
       "description": "T.1154N Range 3",
@@ -43,7 +43,7 @@
       "min": 200,
       "name": "COM 4",
       "presetCount": 8,
-      "step": 0.025
+      "step": null
     }
   ],
   "guns": [

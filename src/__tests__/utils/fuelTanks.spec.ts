@@ -8,14 +8,14 @@ describe('Fuel Tank Calculations', () => {
 
     it('should return correct fuel weight for full tank', () => {
       const fuelWeight = getFuelCapacity(tankId)
-      // Tank: 2201 lbs total, no additionalFuel data in DCS (missing Weight_Empty)
-      expect(fuelWeight).toBe(0)
+      // Tank: 2201 lbs total, Weight_Empty 198 lbs, additionalFuel = 2003
+      expect(fuelWeight).toBe(2003)
     })
 
     it('should return correct empty tank weight', () => {
       const emptyWeight = getLoadoutOnlyWeight(tankId)
-      // No additionalFuel data, so loadout weight = total weight
-      expect(emptyWeight).toBe(2201)
+      // Total: 2201 lbs, additionalFuel: 2003 lbs, Empty: 198 lbs
+      expect(emptyWeight).toBe(198)
     })
 
     it('should handle empty tank variant', () => {

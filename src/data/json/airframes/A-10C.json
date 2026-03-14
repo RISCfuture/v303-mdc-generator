@@ -10,16 +10,16 @@
   "flareIncrement": 30,
   "defaultChaff": 240,
   "defaultFlare": 120,
-  "defaultJoker": 4000,
-  "defaultBingo": 2500,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
   "radios": [
     {
-      "description": "UHF/VHF: ARC-210",
-      "max": 399.975,
-      "min": 30,
+      "description": "VHF AM: ARC-186",
+      "max": 151.975,
+      "min": 116,
       "name": "COM 1",
-      "presetCount": 25,
-      "step": 0.025
+      "presetCount": 20,
+      "step": null
     },
     {
       "description": "UHF AM: ARC-164",
@@ -27,7 +27,7 @@
       "min": 225,
       "name": "COM 2",
       "presetCount": 20,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "VHF FM: ARC-186",
@@ -35,7 +35,7 @@
       "min": 30,
       "name": "COM 3",
       "presetCount": 20,
-      "step": 0.1
+      "step": null
     }
   ],
   "guns": [

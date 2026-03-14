@@ -10,8 +10,8 @@
   "flareIncrement": 30,
   "defaultChaff": 220,
   "defaultFlare": 200,
-  "defaultJoker": 10000,
-  "defaultBingo": 7000,
+  "defaultJoker": 3000,
+  "defaultBingo": 2000,
   "radios": [
     {
       "description": "UHF-1/2",
@@ -19,7 +19,7 @@
       "min": 225,
       "name": "COM 1",
       "presetCount": 20,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "VHF-1/2",
@@ -27,7 +27,7 @@
       "min": 30,
       "name": "COM 2",
       "presetCount": 10,
-      "step": 0.025
+      "step": null
     }
   ],
   "guns": [],

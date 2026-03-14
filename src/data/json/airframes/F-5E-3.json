@@ -14,11 +14,11 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "description": "UHF Radio AN/ARC-164",
-      "max": 399.999,
-      "min": 225,
       "name": "COM 1",
+      "description": "UHF Radio AN/ARC-164",
       "presetCount": 20,
+      "min": 225,
+      "max": 399.975,
       "step": 0.025
     }
   ],

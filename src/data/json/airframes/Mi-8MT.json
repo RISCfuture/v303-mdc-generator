@@ -19,7 +19,7 @@
       "min": 100,
       "name": "COM 1",
       "presetCount": 20,
-      "step": 0.025
+      "step": null
     },
     {
       "description": "R-828",
@@ -27,7 +27,7 @@
       "min": 20,
       "name": "COM 2",
       "presetCount": 10,
-      "step": 0.1
+      "step": null
     }
   ],
   "guns": [],

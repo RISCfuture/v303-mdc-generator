@@ -14,36 +14,44 @@
   "defaultBingo": 2000,
   "radios": [
     {
-      "description": "ARC-186",
-      "max": 151.975,
-      "min": 108,
       "name": "COM 1",
+      "description": "ARC-186",
       "presetCount": 10,
+      "min": 108,
+      "max": 151.975,
       "step": 0.025
     },
     {
-      "description": "ARC-164",
-      "max": 399.975,
-      "min": 225,
       "name": "COM 2",
+      "description": "HF",
       "presetCount": 10,
+      "min": 2,
+      "max": 29.9999,
+      "step": 0.0001
+    },
+    {
+      "name": "COM 3",
+      "description": "ARC-164",
+      "presetCount": 10,
+      "min": 225,
+      "max": 399.975,
       "step": 0.025
     },
     {
+      "name": "COM 4",
       "description": "FM 1: ARC-201D",
-      "max": 87.975,
-      "min": 30,
-      "name": "COM 3",
       "presetCount": 10,
-      "step": 0.1
+      "min": 30,
+      "max": 87.975,
+      "step": null
     },
     {
+      "name": "COM 5",
       "description": "FM 2: ARC-201D",
-      "max": 87.975,
-      "min": 30,
-      "name": "COM 4",
       "presetCount": 10,
-      "step": 0.1
+      "min": 30,
+      "max": 87.975,
+      "step": null
     }
   ],
   "guns": [
