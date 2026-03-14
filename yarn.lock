@@ -2154,6 +2154,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/proj4@npm:^2.19.0":
+  version: 2.19.0
+  resolution: "@types/proj4@npm:2.19.0"
+  dependencies:
+    proj4: "npm:*"
+  checksum: 10c0/3df1d7a3613461f3f1c5e0369668e50b02c0149233e235bf4b82af53a1f6c61acea633c9087b0a57ed211c873397c005af31082e202ac642b001d3c866d66871
+  languageName: node
+  linkType: hard
+
 "@types/raf@npm:^3.4.0":
   version: 3.4.3
   resolution: "@types/raf@npm:3.4.3"
@@ -5952,6 +5961,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mgrs@npm:1.0.0":
+  version: 1.0.0
+  resolution: "mgrs@npm:1.0.0"
+  checksum: 10c0/a360853be5a3b4f4734dbf0a193851c08039ccb6077362ab0f890cccd170ef88b59585129757da9fea4d7a313d7dc3ee88f37f594fc1ae3e4e8efc5353144d77
+  languageName: node
+  linkType: hard
+
 "mgrs@npm:^2.1.0":
   version: 2.1.0
   resolution: "mgrs@npm:2.1.0"
@@ -6777,6 +6793,16 @@ __metadata:
   version: 6.1.0
   resolution: "proc-log@npm:6.1.0"
   checksum: 10c0/4f178d4062733ead9d71a9b1ab24ebcecdfe2250916a5b1555f04fe2eda972a0ec76fbaa8df1ad9c02707add6749219d118a4fc46dc56bdfe4dde4b47d80bb82
+  languageName: node
+  linkType: hard
+
+"proj4@npm:*, proj4@npm:^2.20.4":
+  version: 2.20.4
+  resolution: "proj4@npm:2.20.4"
+  dependencies:
+    mgrs: "npm:1.0.0"
+    wkt-parser: "npm:^1.5.3"
+  checksum: 10c0/bb83915ae7973068f02ca440099faca7efd6b1add3cd2903fe8ce816f4d589bd72ac77c9a882d3d60c7beff2cb9d9fb38924590978a87a7165156cb120c8328c
   languageName: node
   linkType: hard
 
@@ -7888,6 +7914,7 @@ __metadata:
     "@types/markdown-it": "npm:^14.1.2"
     "@types/node": "npm:^25.4.0"
     "@types/pdfmake": "npm:^0.3.2"
+    "@types/proj4": "npm:^2.19.0"
     "@vicons/ionicons5": "npm:^0.13.0"
     "@vitejs/plugin-vue": "npm:^6.0.4"
     "@vitest/eslint-plugin": "npm:^1.6.10"
@@ -7923,6 +7950,7 @@ __metadata:
     playwright: "npm:^1.58.2"
     postcss-html: "npm:^1.8.1"
     prettier: "npm:^3.8.1"
+    proj4: "npm:^2.20.4"
     stylelint: "npm:^16"
     stylelint-config-standard-vue: "npm:^1.0.0"
     typescript: "npm:^5.9.3"
@@ -8392,6 +8420,13 @@ __metadata:
   bin:
     why-is-node-running: cli.js
   checksum: 10c0/1cde0b01b827d2cf4cb11db962f3958b9175d5d9e7ac7361d1a7b0e2dc6069a263e69118bd974c4f6d0a890ef4eedfe34cf3d5167ec14203dbc9a18620537054
+  languageName: node
+  linkType: hard
+
+"wkt-parser@npm:^1.5.3":
+  version: 1.5.4
+  resolution: "wkt-parser@npm:1.5.4"
+  checksum: 10c0/70d85e2a4abea83c94021ffc5e11a8d25e9b70b0989d762c470a57600a4ee930d537366b608b26f3fba7f371c4e6d8d814a074831e7cc2914efa4e3cbddc8913
   languageName: node
   linkType: hard
 

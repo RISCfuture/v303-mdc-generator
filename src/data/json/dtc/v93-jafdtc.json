@@ -1,0 +1,90 @@
+{
+  "MFD": {
+    "ModeConfigs": [
+      {
+        "LeftMFD": {
+          "OSB14": "2",
+          "OSB13": "",
+          "OSB12": "",
+          "SelectedOSB": "14"
+        },
+        "RightMFD": {
+          "OSB14": "6",
+          "OSB13": "5",
+          "OSB12": "",
+          "SelectedOSB": "13"
+        }
+      },
+      {
+        "LeftMFD": {
+          "OSB14": "2",
+          "OSB13": "8",
+          "OSB12": "",
+          "SelectedOSB": "14"
+        },
+        "RightMFD": {
+          "OSB14": "6",
+          "OSB13": "5",
+          "OSB12": "",
+          "SelectedOSB": "13"
+        }
+      },
+      {
+        "LeftMFD": {
+          "OSB14": "8",
+          "OSB13": "9",
+          "OSB12": "",
+          "SelectedOSB": "14"
+        },
+        "RightMFD": {
+          "OSB14": "6",
+          "OSB13": "5",
+          "OSB12": "4",
+          "SelectedOSB": "13"
+        }
+      },
+      {
+        "LeftMFD": {
+          "OSB14": "2",
+          "OSB13": "8",
+          "OSB12": "",
+          "SelectedOSB": "14"
+        },
+        "RightMFD": {
+          "OSB14": "6",
+          "OSB13": "5",
+          "OSB12": "",
+          "SelectedOSB": "13"
+        }
+      },
+      {
+        "LeftMFD": {
+          "OSB14": "2",
+          "OSB13": "8",
+          "OSB12": "",
+          "SelectedOSB": "14"
+        },
+        "RightMFD": {
+          "OSB14": "6",
+          "OSB13": "5",
+          "OSB12": "",
+          "SelectedOSB": "13"
+        }
+      }
+    ]
+  },
+  "Misc": {
+    "LaserStartTime": "8",
+    "TACANBand": "",
+    "TACANMode": "1",
+    "HMCSBlankHUD": "True",
+    "HMCSBlankCockpit": "False",
+    "HMCSDisplayRWR": "True",
+    "HMCSDeclutterLvl": "1",
+    "HMCSIntensity": "0.35"
+  },
+  "Radio": {
+    "IsCOMM1MonitorGuard": true,
+    "IsDefault": false
+  }
+}

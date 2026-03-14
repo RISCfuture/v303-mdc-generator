@@ -119,6 +119,26 @@ async function fillRequiredFields(page: Page) {
   await refusalInput.blur();
 }
 
+/**
+ * Helper to export MDC via the submenu dropdown.
+ * Opens "Export MDC" → hovers first crew member → clicks the specified format in submenu.
+ */
+async function exportMdcFormat(page: Page, formatLabel: string) {
+  // Click "Export MDC" button to open dropdown
+  await page.getByRole('button', { name: /Export MDC/ }).click();
+
+  // Wait for the crew member option and hover to open submenu
+  const crewOption = page.locator('.n-dropdown-option').first();
+  await crewOption.waitFor({ state: 'visible' });
+  await crewOption.hover({ force: true });
+
+  // Wait for the submenu format option to appear, then click it
+  // Use the label element inside the option to avoid matching the parent option's combined text
+  const formatOption = page.locator('.n-dropdown-option-body__label', { hasText: formatLabel }).first();
+  await formatOption.waitFor({ state: 'visible', timeout: 3000 });
+  await formatOption.click();
+}
+
 test.describe('Mission Export Operations', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -159,44 +179,102 @@ test.describe('Mission Export Operations', () => {
     expect(download.suggestedFilename()).toMatch(/\.pdf$/);
   });
 
-  test('should trigger JSON MDC download when clicking Export MDC', async ({ page }) => {
+  test('should trigger DCS-DTC JSON download via Export MDC submenu', async ({ page }) => {
     await page.goto('/');
 
-    // Create a mission
+    // Create a mission (v93 = F-16C)
     await page.getByRole('button', { name: /New Mission/ }).first().click();
     await page.getByRole('button', { name: 'Create Mission' }).click();
     await page.waitForURL(/\/mission\/.+/);
     await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' });
 
-    // Add mission name
     const nameInput = page.locator('[aria-label="Mission Name"] input');
     await nameInput.fill('MDC Export Test');
 
-    // Fill in all required fields to make mission exportable
     await fillRequiredFields(page);
 
-    // Wait for Export PDF and Export MDC buttons to be enabled
-    await expect(page.getByRole('button', { name: /Export PDF/ })).toBeEnabled();
     await expect(page.getByRole('button', { name: /Export MDC/ })).toBeEnabled();
 
-    // Set up download listener
     const downloadPromise = page.waitForEvent('download');
-
-    // Click export MDC dropdown button to open the menu
-    await page.getByRole('button', { name: /Export MDC/ }).click();
-
-    // Wait for dropdown menu to appear
-    await page.locator('.n-dropdown-option').first().waitFor({ state: 'visible' });
-
-    // Click the first crew member option in the dropdown (VIPER-1)
-    await page.locator('.n-dropdown-option').first().click();
-
-    // Wait for download to start
+    await exportMdcFormat(page, 'DCS-DTC');
     const download = await downloadPromise;
 
-    // Verify download filename contains expected pattern
-    // v93 squadron (F-16) uses DCS-DTC format which exports as .json
-    expect(download.suggestedFilename()).toMatch(/\.json$/);  // Matches pattern like "MDC Export Test_Wing.json"
+    expect(download.suggestedFilename()).toMatch(/\.json$/);
+  });
+
+  test('should trigger JAFDTC download via Export MDC submenu', async ({ page }) => {
+    await page.goto('/');
+
+    await page.getByRole('button', { name: /New Mission/ }).first().click();
+    await page.getByRole('button', { name: 'Create Mission' }).click();
+    await page.waitForURL(/\/mission\/.+/);
+    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' });
+
+    const nameInput = page.locator('[aria-label="Mission Name"] input');
+    await nameInput.fill('JAFDTC Export Test');
+
+    await fillRequiredFields(page);
+
+    await expect(page.getByRole('button', { name: /Export MDC/ })).toBeEnabled();
+
+    const downloadPromise = page.waitForEvent('download');
+    await exportMdcFormat(page, 'JAFDTC');
+    const download = await downloadPromise;
+
+    expect(download.suggestedFilename()).toMatch(/\.jafdtc$/);
+  });
+
+  test('should trigger DCS ME download via Export MDC submenu', async ({ page }) => {
+    await page.goto('/');
+
+    await page.getByRole('button', { name: /New Mission/ }).first().click();
+    await page.getByRole('button', { name: 'Create Mission' }).click();
+    await page.waitForURL(/\/mission\/.+/);
+    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' });
+
+    const nameInput = page.locator('[aria-label="Mission Name"] input');
+    await nameInput.fill('DCS ME Export Test');
+
+    await fillRequiredFields(page);
+
+    await expect(page.getByRole('button', { name: /Export MDC/ })).toBeEnabled();
+
+    const downloadPromise = page.waitForEvent('download');
+    await exportMdcFormat(page, 'DCS Mission Editor');
+    const download = await downloadPromise;
+
+    expect(download.suggestedFilename()).toMatch(/\.dtc$/);
+  });
+
+  test('should show Export MDC button with format submenus for F-16C squadron', async ({ page }) => {
+    await page.goto('/');
+
+    // Create a v93 (F-16C) mission — default squadron
+    await page.getByRole('button', { name: /New Mission/ }).first().click();
+    await page.getByRole('button', { name: 'Create Mission' }).click();
+    await page.waitForURL(/\/mission\/.+/);
+    await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' });
+
+    await fillRequiredFields(page);
+
+    // Should have a single "Export MDC" button
+    const mdcButton = page.getByRole('button', { name: /Export MDC/ });
+    await expect(mdcButton).toBeVisible();
+    await expect(mdcButton).toBeEnabled();
+
+    // Open dropdown and hover first crew member to open submenu
+    await mdcButton.click();
+    const crewOption = page.locator('.n-dropdown-option').first();
+    await crewOption.waitFor({ state: 'visible' });
+    await crewOption.hover({ force: true });
+
+    // F-16C should show all 3 format options in the submenu
+    await expect(page.locator('.n-dropdown-option-body__label', { hasText: 'DCS-DTC' }).first()).toBeVisible();
+    await expect(page.locator('.n-dropdown-option-body__label', { hasText: 'JAFDTC' }).first()).toBeVisible();
+    await expect(page.locator('.n-dropdown-option-body__label', { hasText: 'DCS Mission Editor' }).first()).toBeVisible();
+
+    // Close the dropdown
+    await page.keyboard.press('Escape');
   });
 
   test('should export PDF with embedded images in remarks', async ({ page }) => {

@@ -16,6 +16,7 @@ import { ChevronDownOutline, AlertCircleOutline } from '@vicons/ionicons5'
 import { useMissionsStore } from '@/stores/missions'
 import { getAircraftComponentLoader } from '@/aircraft'
 import { getSquadronDisplayName } from '@/data/squadrons'
+import { exportFormatLabels, type ExportFormat } from '@/data/exportFormats'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { getCrewPositionShort } from '@/data/constants'
 import { getAirfieldsForTheater } from '@/data/airfields'
@@ -71,7 +72,7 @@ const {
   availableLoadouts,
   availableCrew,
   availableCrewForDropdown,
-  mdcExportSupported,
+  availableExportFormats,
   updateField,
   updateNestedField: updateNestedFieldBase,
 } = useMissionData(missionId)
@@ -431,20 +432,25 @@ function handleBingoCalculated(bingo: number, params: F16BingoCalculatorParams) 
   })
 }
 
-// Create dropdown options for exporting MDC per crew member
-const mdcExportOptions = computed(() => {
+// Build single dropdown with crew members and format submenus
+function getMdcExportOptions() {
   if (!mission.value) return []
-
   return mission.value.crew.map((member, index) => ({
     label: `${effectiveFlightCallsign.value}${getCrewPositionShort(index)} (${member.pilot})`,
-    key: index.toString(),
+    key: `crew-${index}`,
+    children: availableExportFormats.value.map((format) => ({
+      label: exportFormatLabels[format],
+      key: `${index}:${format}`,
+    })),
   }))
-})
+}
 
 function handleSelectMDCExport(key: string) {
   if (!mission.value) return
-  const crewMemberIndex = parseInt(key)
-  handleExportMDC(mission.value, crewMemberIndex)
+  const [indexStr, ...formatParts] = key.split(':')
+  const crewMemberIndex = parseInt(indexStr!)
+  const format = formatParts.join(':') as ExportFormat
+  handleExportMDC(mission.value, crewMemberIndex, format)
 }
 </script>
 
@@ -490,9 +496,9 @@ function handleSelectMDCExport(key: string) {
               >
             </NSpace>
             <NDropdown
-              v-if="mdcExportSupported"
+              v-if="availableExportFormats.length > 0"
               trigger="click"
-              :options="mdcExportOptions"
+              :options="getMdcExportOptions()"
               :disabled="!isComplete"
               @select="handleSelectMDCExport"
             >

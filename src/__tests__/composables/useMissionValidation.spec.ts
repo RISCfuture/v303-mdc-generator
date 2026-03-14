@@ -93,8 +93,8 @@ describe('useMissionValidation', () => {
     updatedAt: '2024-01-15T11:00:00.000Z',
   })
 
-  describe('blank waypoints', () => {
-    it('should consider mission complete with blank waypoint', () => {
+  describe('waypoint validation', () => {
+    it('should reject mission with blank waypoint (null lat/lon/alt)', () => {
       const mission = createValidMission()
       mission.waypoints.push({
         sequence: 2,
@@ -107,36 +107,10 @@ describe('useMissionValidation', () => {
       const missionRef = ref(mission)
       const { isComplete } = useMissionValidation(missionRef)
 
-      expect(isComplete.value).toBe(true)
+      expect(isComplete.value).toBe(false)
     })
 
-    it('should consider mission complete with multiple blank waypoints', () => {
-      const mission = createValidMission()
-      mission.waypoints.push(
-        {
-          sequence: 2,
-          name: 'BLANK1',
-          latitude: null,
-          longitude: null,
-          altitude: null,
-          speed: null,
-        },
-        {
-          sequence: 3,
-          name: 'BLANK2',
-          latitude: null,
-          longitude: null,
-          altitude: null,
-          speed: null,
-        },
-      )
-      const missionRef = ref(mission)
-      const { isComplete } = useMissionValidation(missionRef)
-
-      expect(isComplete.value).toBe(true)
-    })
-
-    it('should not consider blank waypoint field as incomplete', () => {
+    it('should detect blank waypoint fields as incomplete', () => {
       const blankWaypoint = {
         name: 'BLANK',
         latitude: null,
@@ -148,9 +122,9 @@ describe('useMissionValidation', () => {
       const missionRef = ref(mission)
       const { isWaypointFieldIncomplete } = useMissionValidation(missionRef)
 
-      expect(isWaypointFieldIncomplete(blankWaypoint, 'latitude')).toBe(false)
-      expect(isWaypointFieldIncomplete(blankWaypoint, 'longitude')).toBe(false)
-      expect(isWaypointFieldIncomplete(blankWaypoint, 'altitude')).toBe(false)
+      expect(isWaypointFieldIncomplete(blankWaypoint, 'latitude')).toBe(true)
+      expect(isWaypointFieldIncomplete(blankWaypoint, 'longitude')).toBe(true)
+      expect(isWaypointFieldIncomplete(blankWaypoint, 'altitude')).toBe(true)
     })
 
     it('should reject mission with partially filled waypoint', () => {
@@ -186,26 +160,16 @@ describe('useMissionValidation', () => {
       expect(isWaypointFieldIncomplete(partialWaypoint, 'altitude')).toBe(true) // Missing
     })
 
-    it('should validate mission with mix of blank and complete waypoints', () => {
+    it('should accept mission where all waypoints have coordinates', () => {
       const mission = createValidMission()
-      mission.waypoints.push(
-        {
-          sequence: 2,
-          name: 'BLANK',
-          latitude: null,
-          longitude: null,
-          altitude: null,
-          speed: null,
-        },
-        {
-          sequence: 3,
-          name: 'WP3',
-          latitude: 34.5,
-          longitude: 37.2,
-          altitude: 30000,
-          speed: 350,
-        },
-      )
+      mission.waypoints.push({
+        sequence: 2,
+        name: 'WP2',
+        latitude: 34.5,
+        longitude: 37.2,
+        altitude: 30000,
+        speed: 350,
+      })
       const missionRef = ref(mission)
       const { isComplete } = useMissionValidation(missionRef)
 

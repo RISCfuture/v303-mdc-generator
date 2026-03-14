@@ -11,6 +11,8 @@ import type {
   RadioPreset,
   CMDSProgram,
   ECMCMDSProfiles,
+  HARMTable,
+  HTSThreatData,
   Theater,
   Squadron,
   F16CalculatorParams,
@@ -138,6 +140,10 @@ export interface SerializedMission {
   cmdsp?: string // cmdsProfile
   ecmp?: string // ecmProgram - optional
   htsp: string[] // htsThreatTables - required, defaults to empty array
+
+  // HARM tables and HTS threat data (F-16C only)
+  harm?: Array<{ tn: number; em: number[] }> // harmTables: tableNumber + emitters
+  hts?: { me: boolean; em: number[]; ec: boolean[] } // htsThreatData: manualEnabled, emitters, enabledClasses
 
   // Comm ladder - required, defaults to empty array
   cl: string[] // commLadders (freeform text per radio)
@@ -436,6 +442,20 @@ export function serializeMission(mission: Mission): SerializedMission {
   serialized.htsp =
     mission.htsThreatTables && mission.htsThreatTables.length > 0 ? mission.htsThreatTables : []
 
+  // HARM tables (F-16C only)
+  if (mission.harmTables && mission.harmTables.length > 0) {
+    serialized.harm = mission.harmTables.map((t) => ({ tn: t.tableNumber, em: t.emitters }))
+  }
+
+  // HTS threat data (F-16C only)
+  if (mission.htsThreatData) {
+    serialized.hts = {
+      me: mission.htsThreatData.manualTableEnabled,
+      em: mission.htsThreatData.manualEmitters,
+      ec: mission.htsThreatData.enabledClasses,
+    }
+  }
+
   // Comm ladder - required field, defaults to empty array
   serialized.cl = mission.commLadders && mission.commLadders.length > 0 ? mission.commLadders : []
 
@@ -671,6 +691,14 @@ export function deserializeMission(serialized: SerializedMission): Mission {
     cmdsProfile: serialized.cmdsp,
     ecmProgram: serialized.ecmp,
     htsThreatTables: serialized.htsp,
+    harmTables: serialized.harm?.map((t): HARMTable => ({ tableNumber: t.tn, emitters: t.em })),
+    htsThreatData: serialized.hts
+      ? ({
+          manualTableEnabled: serialized.hts.me,
+          manualEmitters: serialized.hts.em,
+          enabledClasses: serialized.hts.ec,
+        } as HTSThreatData)
+      : undefined,
     ecmCmds,
     commLadders: serialized.cl,
     radioDefaults: serialized.rd?.map((rd) => ({

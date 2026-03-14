@@ -1,0 +1,12 @@
+{
+  "Radios": {
+    "Radio1": {
+      "EnableGuard": true,
+      "Mode": 0
+    },
+    "Radio2": {
+      "EnableGuard": true,
+      "Mode": 0
+    }
+  }
+}

@@ -1,21 +1,11 @@
-// JSON MDC Exporter for DCS
-// Generates MDC files compatible with the DCS MDC loader
-import type { Mission, CCIPReferencePoint } from '@/types'
-import { formatF16LatLon, formatA10LatLon } from '@/utils/coordinates'
+// DCS-DTC exporter for F-16C
+import type { Mission } from '@/types'
+import { formatDDM } from './coordinates'
 import { getCrewMemberLink16Callsign } from '@/utils/callsignHelpers'
 import { deepMerge } from '@/utils/deepMerge'
-import { loadTemplateForSquadron } from './mdcTemplateService'
 import { getAirfieldsForTheater } from '@/data/airfields'
-import { squadronDatabase, type SquadronId } from '@/data/squadrons'
-
-/**
- * DTC Reference Point structure (VIP, VRP, OA, PUP)
- */
-interface DTCReferencePoint {
-  Range: number // feet
-  Bearing: number // degrees
-  Elevation: number // feet
-}
+import type { DTCReferencePoint, DeepPartial } from '../helpers'
+import { truncateFrequency, convertCCIPToDTC, getRadioConfig } from '../helpers'
 
 export interface DCSF16MDC {
   Aircraft: 'F16C'
@@ -165,158 +155,6 @@ export interface DCSF16MDC {
 }
 
 /**
- * Utility type for making all properties optional recursively
- */
-export type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
-}
-
-export interface JAFDTCA10MDC {
-  DSMS: {
-    LaserCode: string
-    ProfileOrder?: null | number[]
-    MunitionSettings?: Record<string, unknown>
-  }
-  HMCS?: Record<string, unknown>
-  IFFCC?: Record<string, unknown>
-  Misc: {
-    TACANMode: string
-    TACANBand: string
-    TACANChannel: string
-    IFFMasterMode: string
-    IFFMode3Code: string
-    IFFMode4On: string
-    [key: string]: unknown
-  }
-  Radio: {
-    IsPresetMode: boolean[]
-    DefaultSetting: string[]
-    IsDefault: boolean
-    Presets: Array<
-      Array<{
-        Preset: number
-        Frequency: string
-        Modulation: string
-        Description: string
-      }>
-    >
-    [key: string]: unknown
-  }
-  TAD?: Record<string, unknown>
-  TGP: {
-    LaserCode: string
-    LSS: string
-    [key: string]: unknown
-  }
-  WYPT: {
-    Points: Array<{
-      Alt: string
-      Number: number
-      Name: string
-      Lat: string
-      Lon: string
-    }>
-  }
-  Version: string
-  Airframe: number
-  UID: string
-  Filename: string
-  LinkedSysMap: Record<string, unknown>
-  LastSystemEdited: number
-  IsFavorite: boolean
-  Name: string
-}
-
-/**
- * Format a frequency to 2 decimal places
- * @param freq - Frequency as string or number (e.g., 123.475 becomes "123.48")
- * @returns Frequency string formatted to 2 decimal places
- */
-function truncateFrequency(freq: string | number): string {
-  const num = typeof freq === 'string' ? parseFloat(freq) : freq
-  return num.toFixed(2)
-}
-
-/**
- * Convert CCIP reference point to DTC format
- * Returns null if the reference point is undefined or missing required data
- * @param point - The CCIP reference point to convert
- * @param convertToNM - If true, convert range from feet to nautical miles (for VIP/VRP). If false, keep in feet (for OA/PUP)
- */
-function convertCCIPToDTC(
-  point: CCIPReferencePoint | undefined,
-  convertToNM: boolean = false,
-): DTCReferencePoint | null {
-  if (!point || point.bearing === undefined || point.distance === undefined) {
-    return null
-  }
-
-  // Convert range: if NM, divide by 6076.12 and round to 0.1; otherwise keep in feet
-  const range = convertToNM
-    ? Math.round((point.distance / 6076.12) * 10) / 10 // Round to 0.1 NM
-    : point.distance // Keep in feet
-
-  return {
-    Range: range,
-    Bearing: point.bearing, // degrees
-    Elevation: point.elevation ?? 0, // feet - default to 0 if not specified
-  }
-}
-
-/**
- * Build radio configuration from mission radio defaults
- * @param mission - The mission object containing radio defaults
- * @param radioIndex - Radio index (0 for Radio1, 1 for Radio2, 2 for Radio3 if A-10C)
- * @returns Radio mode (1=Preset, 2=Manual), selected frequency, and selected preset
- */
-function getRadioConfig(
-  mission: Mission,
-  radioIndex: number,
-): {
-  mode: number
-  selectedFrequency: string
-  selectedPreset: string
-} {
-  // Default frequencies based on radio type and aircraft
-  // F-16C: Radio 1 (index 0) = UHF: 225.00-399.975 MHz, Radio 2 (index 1) = VHF: 108.00-155.975 MHz
-  // A-10C: Radio 1 (index 0) = VHF AM: 30.00-87.975 MHz, Radio 2 (index 1) = UHF: 225.00-399.975 MHz, Radio 3 (index 2) = VHF FM: 30.00-76.00 MHz
-  let defaultFrequency: string
-  if (radioIndex === 0) {
-    defaultFrequency = '225.00' // F-16 Radio1 (UHF) or could be VHF AM for A-10 (30.00)
-  } else if (radioIndex === 1) {
-    defaultFrequency = '108.00' // F-16 Radio2 (VHF) or UHF for A-10 (225.00)
-  } else {
-    defaultFrequency = '30.00' // A-10 Radio3 (VHF FM)
-  }
-
-  const radioDefault = mission.radioDefaults?.[radioIndex]
-
-  if (!radioDefault) {
-    // No radio default - default to preset mode with preset 1
-    return {
-      mode: 1, // Preset mode
-      selectedFrequency: defaultFrequency,
-      selectedPreset: '1',
-    }
-  }
-
-  if (radioDefault.mode === 'preset') {
-    return {
-      mode: 1, // Preset mode
-      selectedFrequency: defaultFrequency,
-      selectedPreset: radioDefault.preset?.toString() || '1',
-    }
-  } else {
-    // Manual mode
-    return {
-      mode: 2, // Manual/Frequency mode
-      selectedFrequency: radioDefault.frequency || defaultFrequency,
-      selectedPreset: '1',
-    }
-  }
-}
-
-/**
  * Export mission to DCS F-16C JSON MDC format
  * @param mission - The mission to export
  * @param crewMemberIndex - Index of the crew member (default: 0)
@@ -357,8 +195,8 @@ export function exportF16MDC(
     return {
       Sequence: wp.sequence,
       Name: wp.name!,
-      Latitude: formatF16LatLon(latitude, 'latitude'),
-      Longitude: formatF16LatLon(longitude, 'longitude'),
+      Latitude: formatDDM(latitude, 'latitude'),
+      Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
       TimeOverSteerpoint: wp.timeOnTarget || null,
       Target: wp.type === 'TGT',
@@ -445,7 +283,7 @@ export function exportF16MDC(
         (rw) => rw.name === mission.departureRecovery.recoveryRunwayName,
       )
       if (recoveryRunway && recoveryRunway.ils) {
-        ilsFrequency = recoveryRunway.ils.frequency
+        ilsFrequency = parseFloat(String(recoveryRunway.ils.frequency))
         ilsCourse = recoveryRunway.heading
         ilsFound = true
       }
@@ -595,8 +433,20 @@ export function exportF16MDC(
       Waypoints: waypoints,
     },
     CMS: {
-      ChaffBingo: mission.ecmCmds.chaffBingo,
-      FlareBingo: mission.ecmCmds.flareBingo,
+      Programs: mission.ecmCmds.cmdsPrograms.map((prog) => ({
+        Number: prog.number - 1,
+        FlareBurstQty: prog.flareBurstQty,
+        FlareBurstInterval: prog.flareBurstInterval,
+        FlareSalvoQty: prog.flareSalvoQty,
+        FlareSalvoInterval: prog.flareSalvoInterval,
+        ChaffBurstQty: prog.chaffBurstQty,
+        ChaffBurstInterval: prog.chaffBurstInterval,
+        ChaffSalvoQty: prog.chaffSalvoQty,
+        ChaffSalvoInterval: prog.chaffSalvoInterval,
+        ToBeUpdated: true,
+      })),
+      ChaffBingo: mission.ecmCmds.chaffBingo ?? 10,
+      FlareBingo: mission.ecmCmds.flareBingo ?? 10,
     },
     Radios:
       radio1Presets.length > 0 || radio2Presets.length > 0
@@ -682,209 +532,4 @@ export function exportF16MDC(
   }
 
   return missionData
-}
-
-/**
- * Export mission to A-10C JAFDTC JSON format
- * @param mission - The mission to export
- * @param crewMemberIndex - Index of the crew member (default: 0)
- * @param template - Optional squadron template to merge with mission data
- */
-export function exportA10MDC(
-  mission: Mission,
-  crewMemberIndex: number = 0,
-  template?: DeepPartial<JAFDTCA10MDC>,
-): JAFDTCA10MDC {
-  // Get selected crew member data
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
-  const laserCode = selectedCrewMember.laser.replace(/\s/g, '')
-  const mode3Code = selectedCrewMember.mode3.replace(/\s/g, '')
-
-  // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
-  const tacanMatch = selectedCrewMember.aaTcn.match(/(\d+)([XY])/)!
-  const tacanChannel = tacanMatch[1]!
-  const tacanBand = tacanMatch[2] === 'Y' ? '1' : '0'
-
-  // Convert waypoints to JAFDTC format
-  const waypoints = mission.waypoints.map((wp) => {
-    // For blank steerpoints (all fields null), export as 0°N, 0°E
-    const isBlank =
-      wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
-    const altitude = isBlank ? 0 : wp.altitude!
-
-    return {
-      Alt: altitude.toString(),
-      Number: wp.sequence,
-      Name: wp.name!,
-      Lat: formatA10LatLon(latitude),
-      Lon: formatA10LatLon(longitude),
-    }
-  })
-
-  // Build radio presets for 3 radios (VHF AM, UHF, VHF FM)
-  const radioPresets: Array<
-    Array<{ Preset: number; Frequency: string; Modulation: string; Description: string }>
-  > = []
-
-  // Radio 1 (VHF AM) - Modulation "0" = FM
-  radioPresets.push(
-    mission.radioPresets[0]?.map((preset) => ({
-      Preset: preset.number,
-      Frequency: preset.frequency,
-      Modulation: '0',
-      Description: preset.description,
-    })) || [],
-  )
-
-  // Radio 2 (UHF) - No modulation field
-  radioPresets.push(
-    mission.radioPresets[1]?.map((preset) => ({
-      Preset: preset.number,
-      Frequency: preset.frequency,
-      Modulation: '',
-      Description: preset.description,
-    })) || [],
-  )
-
-  // Radio 3 (VHF FM) - No modulation field
-  radioPresets.push(
-    mission.radioPresets[2]?.map((preset) => ({
-      Preset: preset.number,
-      Frequency: preset.frequency,
-      Modulation: '',
-      Description: preset.description,
-    })) || [],
-  )
-
-  // Generate UUID v4
-  const uid = crypto.randomUUID()
-
-  // Generate filename and name from mission.name (dasherize and underscore)
-  const filename = mission.name
-    .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_-]/g, '')
-  const name = mission.name
-
-  // Get radio configurations from comm ladders for all 3 radios
-  const radio1Config = getRadioConfig(mission, 0) // Radio 1 = VHF AM
-  const radio2Config = getRadioConfig(mission, 1) // Radio 2 = UHF
-  const radio3Config = getRadioConfig(mission, 2) // Radio 3 = VHF FM
-
-  // Build IsPresetMode and DefaultSetting arrays based on comm ladder state
-  const isPresetMode = [
-    radio1Config.mode === 1, // true if preset mode, false if frequency mode
-    radio2Config.mode === 1,
-    radio3Config.mode === 1,
-  ]
-
-  const defaultSetting = [
-    radio1Config.mode === 1 ? radio1Config.selectedPreset : radio1Config.selectedFrequency,
-    radio2Config.mode === 1 ? radio2Config.selectedPreset : radio2Config.selectedFrequency,
-    radio3Config.mode === 1 ? radio3Config.selectedPreset : radio3Config.selectedFrequency,
-  ]
-
-  const missionData: JAFDTCA10MDC = {
-    DSMS: {
-      LaserCode: laserCode,
-    },
-    Misc: {
-      TACANMode: '4', // A/A TR
-      TACANBand: tacanBand,
-      TACANChannel: tacanChannel,
-      IFFMasterMode: '1', // STBY
-      IFFMode3Code: mode3Code,
-      IFFMode4On: 'True',
-    },
-    Radio: {
-      IsPresetMode: isPresetMode,
-      DefaultSetting: defaultSetting,
-      IsDefault: false,
-      Presets: radioPresets,
-    },
-    TGP: {
-      LaserCode: laserCode,
-      LSS: laserCode,
-    },
-    WYPT: {
-      Points: waypoints,
-    },
-    Version: 'A10C-1.0',
-    Airframe: 1,
-    UID: uid,
-    Filename: filename,
-    LinkedSysMap: {},
-    LastSystemEdited: 0,
-    IsFavorite: false,
-    Name: name,
-  }
-
-  // If template provided, merge template with mission data (mission data overwrites template)
-  if (template) {
-    return deepMerge(template as JAFDTCA10MDC, missionData)
-  }
-
-  return missionData
-}
-
-/**
- * Download JSON MDC file
- */
-export function downloadMDC(mission: Mission, crewMemberIndex: number = 0) {
-  let json: string
-  let filename: string
-
-  const squadron = squadronDatabase[mission.squadron as SquadronId]
-  const exportFormat = squadron?.exportFormat
-
-  if (!exportFormat) {
-    throw new Error(`MDC export not supported for squadron: ${mission.squadron}`)
-  }
-
-  // Get crew member pilot name for filename
-  const crewMember = mission.crew[crewMemberIndex]!
-  const pilotSuffix = `_${crewMember.pilot.replace(/\s+/g, '_')}`
-
-  // Load squadron template (with error handling for unknown squadrons)
-  let template: DeepPartial<DCSF16MDC> | DeepPartial<JAFDTCA10MDC> | undefined
-  try {
-    template = loadTemplateForSquadron(mission.squadron)
-  } catch (error) {
-    // If template loading fails (e.g., unknown squadron), continue without template
-    console.warn(
-      `Failed to load template for squadron ${mission.squadron}, continuing without template:`,
-      error,
-    )
-    template = undefined
-  }
-
-  switch (exportFormat) {
-    case 'DCS-DTC': {
-      const mdc = exportF16MDC(mission, crewMemberIndex, template as DeepPartial<DCSF16MDC>)
-      json = JSON.stringify(mdc, null, 2)
-      filename = `${mission.name}${pilotSuffix}.json`
-      break
-    }
-    case 'JAFDTC': {
-      const mdc = exportA10MDC(mission, crewMemberIndex, template as DeepPartial<JAFDTCA10MDC>)
-      json = JSON.stringify(mdc, null, 2)
-      filename = `${mission.name}${pilotSuffix}.jafdtc`
-      break
-    }
-    default:
-      throw new Error(`Unknown export format: ${exportFormat}`)
-  }
-
-  const blob = new Blob([json], { type: 'application/json' })
-  const url = URL.createObjectURL(blob)
-
-  const link = document.createElement('a')
-  link.href = url
-  link.download = filename
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-  URL.revokeObjectURL(url)
 }

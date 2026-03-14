@@ -1,0 +1,41 @@
+{
+  "TSD": {
+    "ShowPresentPosition": true,
+    "ShowCentered": false,
+    "MapType": 1,
+    "MapOrientation": 2,
+    "MapShowGrid": true,
+    "MapElevationColorBand": 1,
+    "MapElevationGray": true,
+    "NavPhaseShowWptData": false,
+    "NavPhaseShowInactiveZones": false,
+    "NavPhaseShowObstacles": true,
+    "NavPhaseShowOtherStationCursor": true,
+    "NavPhaseShowCursorInfo": true,
+    "NavPhaseShowHSI": false,
+    "NavPhaseShowEndurance": false,
+    "NavPhaseShowWind": true,
+    "NavPhaseShowControlMeasures": false,
+    "NavPhaseShowFriendlyUnits": true,
+    "NavPhaseShowEnemyUnits": false,
+    "NavPhaseShowTargets": true,
+    "AttkPhaseShowCurrentRoute": true,
+    "AttkPhaseShowInactiveZones": false,
+    "AttkPhaseShowObstacles": false,
+    "AttkPhaseShowOtherStationCursor": true,
+    "AttkPhaseShowCursorInfo": false,
+    "AttkPhaseShowHSI": true,
+    "AttkPhaseShowEndurance": false,
+    "AttkPhaseShowWind": false,
+    "AttkPhaseShowControlMeasures": false,
+    "AttkPhaseShowFriendlyUnits": true,
+    "AttkPhaseShowEnemyUnits": false,
+    "AttkPhaseShowTargets": false,
+    "AttkPhaseShowShot": true,
+    "ShowASEThreats": true,
+    "ShowThreatRings": true
+  },
+  "Upload": {
+    "TSD": true
+  }
+}

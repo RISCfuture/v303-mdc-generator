@@ -1,24 +1,34 @@
-import type { DCSF16MDC, JAFDTCA10MDC, DeepPartial } from './mdcExporter'
-import v93Template from '@/data/json/dtc/v93.json'
-import v303Template from '@/data/json/dtc/v303.json'
+import type { ExportFormat } from '@/data/exportFormats'
+import type { DeepPartial } from './exporters/helpers'
+import v93DcsDtcTemplate from '@/data/json/dtc/v93-dcsdtc.json'
+import v93JafdtcTemplate from '@/data/json/dtc/v93-jafdtc.json'
+import v93DcsMeTemplate from '@/data/json/dtc/v93-dcsme.json'
+import v303JafdtcTemplate from '@/data/json/dtc/v303-jafdtc.json'
+import v303DcsDtcTemplate from '@/data/json/dtc/v303-dcsdtc.json'
+import v1151DcsDtcTemplate from '@/data/json/dtc/v1-151-dcsdtc.json'
+
+const templateMap: Record<string, unknown> = {
+  'DCS-DTC:v93': v93DcsDtcTemplate,
+  'JAFDTC:v93': v93JafdtcTemplate,
+  'DCS-ME:v93': v93DcsMeTemplate,
+  'JAFDTC:v303': v303JafdtcTemplate,
+  'DCS-DTC:v303': v303DcsDtcTemplate,
+  'DCS-DTC:v1-151': v1151DcsDtcTemplate,
+}
 
 /**
- * Load squadron-specific DTC template
+ * Load DTC template for a given format and squadron
  * Templates contain non-mission-specific settings that are standard for each squadron
  *
- * @param squadronId - The squadron ID ('v93' or 'v303')
- * @returns Template data to be merged with mission export
- * @throws Error if squadron ID is invalid
+ * @param format - The export format ('DCS-DTC', 'JAFDTC', or 'DCS-ME')
+ * @param squadronId - The squadron ID (e.g., 'v93', 'v303')
+ * @returns Template data to be merged with mission export, or empty object if no template exists
  */
-export function loadTemplateForSquadron(
-  squadronId: string,
-): DeepPartial<DCSF16MDC> | DeepPartial<JAFDTCA10MDC> {
-  switch (squadronId) {
-    case 'v93':
-      return v93Template as DeepPartial<DCSF16MDC>
-    case 'v303':
-      return v303Template as DeepPartial<JAFDTCA10MDC>
-    default:
-      throw new Error(`Unknown squadron ID: ${squadronId}`)
+export function loadTemplateForFormat<T>(format: ExportFormat, squadronId: string): DeepPartial<T> {
+  const key = `${format}:${squadronId}`
+  const template = templateMap[key]
+  if (template) {
+    return template as DeepPartial<T>
   }
+  return {} as DeepPartial<T>
 }

@@ -39,6 +39,7 @@
     "naive-ui": "^2.44.1",
     "pdfmake": "^0.3.6",
     "pinia": "^3.0.4",
+    "proj4": "^2.20.4",
     "vfonts": "^0.0.3",
     "vue": "^3.5.30",
     "vue-router": "^5.0.3"
@@ -52,6 +53,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^25.4.0",
     "@types/pdfmake": "^0.3.2",
+    "@types/proj4": "^2.19.0",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vitest/eslint-plugin": "^1.6.10",
     "@vue/compiler-dom": "^3.5.30",

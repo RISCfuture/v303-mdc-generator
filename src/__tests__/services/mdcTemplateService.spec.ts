@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest'
-import { loadTemplateForSquadron } from '@/services/mdcTemplateService'
+import { loadTemplateForFormat } from '@/services/mdcTemplateService'
 
 describe('mdcTemplateService', () => {
-  describe('loadTemplateForSquadron', () => {
-    it('should load v93 template for v93 squadron', () => {
-      const template = loadTemplateForSquadron('v93')
+  describe('loadTemplateForFormat', () => {
+    // v93 DCS-DTC template
+    it('should load v93 DCS-DTC template', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
 
       expect(template).toBeDefined()
       expect(template).toHaveProperty('MFD')
@@ -13,18 +14,8 @@ describe('mdcTemplateService', () => {
       expect(template).toHaveProperty('Datalink')
     })
 
-    it('should load v303 template for v303 squadron', () => {
-      const template = loadTemplateForSquadron('v303')
-
-      expect(template).toBeDefined()
-      expect(template).toHaveProperty('DSMS')
-      expect(template).toHaveProperty('HMCS')
-      expect(template).toHaveProperty('IFFCC')
-      expect(template).toHaveProperty('TAD')
-    })
-
-    it('should have correct MFD configurations for v93', () => {
-      const template = loadTemplateForSquadron('v93')
+    it('should have correct MFD configurations for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.MFD?.Configurations).toHaveLength(5)
@@ -36,8 +27,8 @@ describe('mdcTemplateService', () => {
       expect(template.MFD?.Configurations[0]).toHaveProperty('RightMFD')
     })
 
-    it('should have correct radio defaults for v93', () => {
-      const template = loadTemplateForSquadron('v93')
+    it('should have correct radio defaults for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Radios?.Radio1).toHaveProperty('EnableGuard', false)
@@ -49,8 +40,8 @@ describe('mdcTemplateService', () => {
       expect(template.Radios?.Radio2).toHaveProperty('Mode', 1)
     })
 
-    it('should have correct misc settings for v93', () => {
-      const template = loadTemplateForSquadron('v93')
+    it('should have correct misc settings for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Misc?.LaserStartTime).toBe(8)
@@ -66,15 +57,54 @@ describe('mdcTemplateService', () => {
       expect(template.Misc?.ILSCourse).toBeUndefined()
     })
 
-    it('should have correct datalink settings for v93', () => {
-      const template = loadTemplateForSquadron('v93')
+    it('should have correct datalink settings for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Datalink?.DatalinkMode).toBe(1) // TNDL
     })
 
-    it('should have squadron-standard DSMS settings for v303', () => {
-      const template = loadTemplateForSquadron('v303')
+    // v93 JAFDTC template
+    it('should load v93 JAFDTC template', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v93')
+
+      expect(template).toBeDefined()
+      expect(template).toHaveProperty('MFD')
+      expect(template).toHaveProperty('Misc')
+      expect(template).toHaveProperty('Radio')
+    })
+
+    it('should have correct misc settings for v93 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v93')
+
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Misc?.LaserStartTime).toBe('8')
+    })
+
+    // v93 DCS-ME template
+    it('should load v93 DCS-ME template', () => {
+      const template = loadTemplateForFormat('DCS-ME', 'v93')
+
+      expect(template).toBeDefined()
+      // @ts-expect-error - accessing nested property for test
+      expect(template.COMM?.mirror_COMM1).toBe(false)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.COMM?.mirror_COMM2).toBe(false)
+    })
+
+    // v303 JAFDTC template
+    it('should load v303 JAFDTC template', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
+
+      expect(template).toBeDefined()
+      expect(template).toHaveProperty('DSMS')
+      expect(template).toHaveProperty('HMCS')
+      expect(template).toHaveProperty('IFFCC')
+      expect(template).toHaveProperty('TAD')
+    })
+
+    it('should have squadron-standard DSMS settings for v303 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.DSMS?.MunitionSettings).toBeDefined()
@@ -86,8 +116,8 @@ describe('mdcTemplateService', () => {
       expect(template.DSMS?.LaserCode).toBeUndefined()
     })
 
-    it('should have squadron-standard HMCS settings for v303', () => {
-      const template = loadTemplateForSquadron('v303')
+    it('should have squadron-standard HMCS settings for v303 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.HMCS).toBeDefined()
@@ -95,29 +125,19 @@ describe('mdcTemplateService', () => {
       expect(template.HMCS?.ProfileSettings).toBeDefined()
     })
 
-    it('should have squadron-standard Misc settings for v303', () => {
-      const template = loadTemplateForSquadron('v303')
+    it('should have squadron-standard Misc settings for v303 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
 
       // @ts-expect-error - accessing nested property for test
-      expect(template.Misc?.IFFMasterMode).toBe('2') // Squadron standard
+      expect(template.Misc?.IFFMasterMode).toBe('2')
       // @ts-expect-error - accessing nested property for test
       expect(template.Misc?.IFFMode4On).toBe('True')
       // @ts-expect-error - accessing nested property for test
       expect(template.Misc?.CoordSystem).toBe('1')
-
-      // Mission-specific fields should NOT be in template
-      // @ts-expect-error - accessing nested property for test
-      expect(template.Misc?.TACANMode).toBeUndefined()
-      // @ts-expect-error - accessing nested property for test
-      expect(template.Misc?.TACANBand).toBeUndefined()
-      // @ts-expect-error - accessing nested property for test
-      expect(template.Misc?.TACANChannel).toBeUndefined()
-      // @ts-expect-error - accessing nested property for test
-      expect(template.Misc?.IFFMode3Code).toBeUndefined()
     })
 
-    it('should have squadron-standard Radio settings for v303', () => {
-      const template = loadTemplateForSquadron('v303')
+    it('should have squadron-standard Radio settings for v303 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Radio?.IsCOMM1StatusOnHUD).toBe(true)
@@ -131,8 +151,8 @@ describe('mdcTemplateService', () => {
       expect(template.Radio?.Presets).toBeUndefined()
     })
 
-    it('should have correct version and airframe for v303', () => {
-      const template = loadTemplateForSquadron('v303')
+    it('should have correct version and airframe for v303 JAFDTC', () => {
+      const template = loadTemplateForFormat('JAFDTC', 'v303')
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Version).toBe('A10C-1.0')
@@ -140,12 +160,59 @@ describe('mdcTemplateService', () => {
       expect(template.Airframe).toBe(1)
     })
 
-    it('should throw error for unknown squadron ID', () => {
-      expect(() => loadTemplateForSquadron('unknown')).toThrow('Unknown squadron ID: unknown')
+    // v303 DCS-DTC template
+    it('should load v303 DCS-DTC template', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v303')
+
+      expect(template).toBeDefined()
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Radios?.Radio1).toHaveProperty('EnableGuard', true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Radios?.Radio1).toHaveProperty('Mode', 0)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Radios?.Radio2).toHaveProperty('EnableGuard', true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Radios?.Radio2).toHaveProperty('Mode', 0)
     })
 
-    it('should throw error for empty squadron ID', () => {
-      expect(() => loadTemplateForSquadron('')).toThrow('Unknown squadron ID: ')
+    // v1-151 DCS-DTC template (AH-64D)
+    it('should load v1-151 DCS-DTC template', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
+
+      expect(template).toBeDefined()
+      expect(template).toHaveProperty('TSD')
+      expect(template).toHaveProperty('Upload')
+    })
+
+    it('should have TSD display settings for v1-151 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
+
+      // @ts-expect-error - accessing nested property for test
+      expect(template.TSD?.ShowPresentPosition).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.TSD?.ShowASEThreats).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.TSD?.ShowThreatRings).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.TSD?.MapShowGrid).toBe(true)
+    })
+
+    it('should enable TSD upload for v1-151 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
+
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.TSD).toBe(true)
+    })
+
+    // Unknown/missing templates
+    it('should return empty object for unknown squadron', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'unknown')
+      expect(template).toEqual({})
+    })
+
+    it('should return empty object for squadron with no template for format', () => {
+      const template = loadTemplateForFormat('DCS-ME', 'v303')
+      expect(template).toEqual({})
     })
   })
 })

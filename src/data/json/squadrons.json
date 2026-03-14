@@ -7,8 +7,7 @@
     "defaultGunAmmo": {
       "training": "TP (Target Practice-Tracer PGU)",
       "combat": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)"
-    },
-    "exportFormat": "DCS-DTC"
+    }
   },
   "v1-151": {
     "id": "v1-151",
@@ -28,8 +27,7 @@
     "defaultGunAmmo": {
       "training": "TP - Target Practice",
       "combat": "HEI - High Explosive Incendiary"
-    },
-    "exportFormat": "JAFDTC"
+    }
   },
   "v757": {
     "id": "v757",

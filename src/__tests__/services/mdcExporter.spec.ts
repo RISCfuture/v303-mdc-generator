@@ -8,7 +8,15 @@ vi.stubGlobal('crypto', {
 })
 
 // Import after mocking crypto
-const { downloadMDC, exportF16MDC, exportA10MDC } = await import('@/services/mdcExporter')
+const {
+  downloadMDC,
+  exportF16MDC,
+  exportA10MDC,
+  exportA10DCSDTC,
+  exportC130DCSDTC,
+  exportF16JAFDTC,
+  exportF16DCSME,
+} = await import('@/services/exporters')
 
 describe('MDC Exporter', () => {
   let mockMissionF16: Mission
@@ -982,16 +990,309 @@ describe('MDC Exporter', () => {
     })
   })
 
+  describe('A-10C DCS-DTC Export', () => {
+    it('should output Aircraft A10 and Version 2', () => {
+      const result = exportA10DCSDTC(mockMissionA10)
+      expect(result.Aircraft).toBe('A10')
+      expect(result.Version).toBe(2)
+    })
+
+    it('should format coordinates as DDM', () => {
+      const result = exportA10DCSDTC(mockMissionA10)
+      // DDM format from formatF16LatLon
+      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/)
+      expect(result.Waypoints.Waypoints[0].Longitude).toMatch(/^[EW]\s/)
+    })
+
+    it('should map first 2 radios correctly', () => {
+      const result = exportA10DCSDTC(mockMissionA10)
+      expect(result.Radios).not.toBeNull()
+      expect(result.Radios?.Radio1.Presets).toHaveLength(2)
+      expect(result.Radios?.Radio2.Presets).toHaveLength(2)
+    })
+
+    it('should include WaypointsCapture with correct defaults', () => {
+      const result = exportA10DCSDTC(mockMissionA10)
+      expect(result.WaypointsCapture).toEqual({
+        NavPointsMode: 0,
+        TgtPointsMode: 0,
+        NavPointsRangeFrom: 1,
+        TgtPointsRangeFrom: 1,
+      })
+    })
+
+    it('should map waypoints with correct fields', () => {
+      const result = exportA10DCSDTC(mockMissionA10)
+      const wp = result.Waypoints.Waypoints[0]
+      expect(wp).toHaveProperty('Sequence')
+      expect(wp).toHaveProperty('Name')
+      expect(wp).toHaveProperty('Latitude')
+      expect(wp).toHaveProperty('Longitude')
+      expect(wp).toHaveProperty('Elevation')
+      expect(wp).toHaveProperty('Target')
+    })
+
+    it('should merge template data', () => {
+      const template = {
+        Radios: {
+          Radio1: { EnableGuard: true, Mode: 0 },
+          Radio2: { EnableGuard: true, Mode: 0 },
+        },
+      }
+      const result = exportA10DCSDTC(mockMissionA10, 0, template)
+      // Mission data overwrites template
+      expect(result.Radios?.Radio1.EnableGuard).toBe(false)
+    })
+  })
+
+  describe('C-130J DCS-DTC Export', () => {
+    let mockMissionC130: Mission
+
+    beforeEach(() => {
+      mockMissionC130 = {
+        ...mockMissionA10,
+        id: 'test-c130',
+        name: 'Test C-130 Mission',
+        squadron: 'v757',
+        callsign: 'HERC',
+        flightCallsignOverride: 'HERC',
+        link16PrefixOverride: 'HC',
+        crew: [
+          {
+            position: 'LEAD',
+            pilot: 'Test Pilot C',
+            callsign: 'HC',
+            own: '1',
+            stn: '11111',
+            mode3: '1234',
+            aaTcn: '1Y / 64Y',
+            intraflight: '251.0',
+            laser: '1688',
+            tailNumber: '08-8601',
+          },
+        ],
+      }
+    })
+
+    it('should output Aircraft C130 and Version 2', () => {
+      const result = exportC130DCSDTC(mockMissionC130)
+      expect(result.Aircraft).toBe('C130')
+      expect(result.Version).toBe(2)
+    })
+
+    it('should format coordinates as DDM', () => {
+      const result = exportC130DCSDTC(mockMissionC130)
+      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/)
+    })
+
+    it('should map radios correctly', () => {
+      const result = exportC130DCSDTC(mockMissionC130)
+      expect(result.Radios).not.toBeNull()
+    })
+  })
+
+  describe('F-16C JAFDTC Export', () => {
+    it('should output correct Version and Airframe', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.Version).toBe('F16C-1.1')
+      expect(result.Airframe).toBe(5)
+    })
+
+    it('should format coordinates as decimal 8dp', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.STPT.Points[0].Lat).toBe('12.57611667')
+      expect(result.STPT.Points[0].Lon).toBe('123.76130000')
+    })
+
+    it('should generate valid UUID', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.UID).toBe(mockUUID)
+    })
+
+    it('should generate sanitized Filename', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.Filename).toBe('test_f-16_mission')
+      expect(result.Name).toBe('Test F-16 Mission')
+    })
+
+    it('should map CMDS programs from mission ecmCmds', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      // JAFDTC expects exactly 6 programs (MAN1-4, PANIC, BYPASS)
+      expect(result.CMDS.Programs).toHaveLength(6)
+      expect(result.CMDS.Programs[0].Number).toBe(0) // 0-based indexing
+      expect(result.CMDS.Programs[0].Chaff.BQ).toBe('1')
+      expect(result.CMDS.Programs[0].Flare.BQ).toBe('1')
+      // Programs 1-5 should be defaults
+      expect(result.CMDS.Programs[1].Number).toBe(1)
+      expect(result.CMDS.Programs[5].Number).toBe(5)
+      expect(result.CMDS.BingoChaff).toBe('12')
+      expect(result.CMDS.BingoFlare).toBe('14')
+    })
+
+    it('should map DLNK with Ownship and TeamMembers', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.DLNK).not.toBeNull()
+      expect(result.DLNK?.Ownship).toBe('1') // crewMemberIndex + 1
+      expect(result.DLNK?.TeamMembers).toHaveLength(8)
+      expect(result.DLNK?.TeamMembers[0].TNDL).toBe('12234')
+      expect(result.DLNK?.TeamMembers[0].TDOA).toBe(true)
+      expect(result.DLNK?.IsOwnshipLead).toBe(true)
+    })
+
+    it('should map HARM tables correctly', () => {
+      const missionWithHARM = {
+        ...mockMissionF16,
+        harmTables: [{ tableNumber: 1, emitters: [110, 104, 103] }],
+      }
+      const result = exportF16JAFDTC(missionWithHARM)
+      expect(result.HARM).not.toBeNull()
+      expect(result.HARM?.Tables).toHaveLength(1)
+      expect(result.HARM?.Tables[0].Number).toBe(0) // 0-based
+      expect(result.HARM?.Tables[0].Table).toEqual([
+        { Code: '110' },
+        { Code: '104' },
+        { Code: '103' },
+      ])
+    })
+
+    it('should map HTS MANTable and EnabledThreats', () => {
+      const missionWithHTS = {
+        ...mockMissionF16,
+        htsThreatData: {
+          manualTableEnabled: true,
+          manualEmitters: [101, 102],
+          enabledClasses: [true, false, true, false, true, false, true, false, true, false, true],
+        },
+      }
+      const result = exportF16JAFDTC(missionWithHTS)
+      expect(result.HTS).not.toBeNull()
+      expect(result.HTS?.MANTable).toEqual([{ Code: '101' }, { Code: '102' }])
+      expect(result.HTS?.EnabledThreats).toHaveLength(11)
+    })
+
+    it('should map Misc settings correctly', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.Misc.Bingo).toBe('3000')
+      expect(result.Misc.ALOWCARAALOW).toBe('500')
+      expect(result.Misc.ALOWMSLFloor).toBe('5000')
+      expect(result.Misc.LaserTGPCode).toBe('1688')
+      expect(result.Misc.LaserLSTCode).toBe('1688')
+      expect(result.Misc.TACANChannel).toBe('10')
+    })
+
+    it('should map Radio presets', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.Radio.Presets).toHaveLength(2)
+      expect(result.Radio.Presets[0]).toHaveLength(2)
+      expect(result.Radio.Presets[0][0].Frequency).toBe('300.00')
+      expect(result.Radio.Presets[0][0].Description).toBe('preset 1')
+    })
+
+    it('should map STPT points with OAP and VxP arrays', () => {
+      const result = exportF16JAFDTC(mockMissionF16)
+      expect(result.STPT.Points).toHaveLength(2)
+      const pt = result.STPT.Points[0]
+      expect(pt.OAP).toHaveLength(2)
+      expect(pt.VxP).toHaveLength(2)
+      expect(pt.Alt).toBe('15000')
+      expect(pt.TOS).toBe('11:23:45')
+    })
+
+    it('should merge template data', () => {
+      const template = {
+        MFD: { ModeConfigs: [{ mode: 'test' }] },
+      }
+      const result = exportF16JAFDTC(mockMissionF16, 0, template)
+      // Mission data is exported correctly even with template
+      expect(result.Version).toBe('F16C-1.1')
+    })
+  })
+
+  describe('F-16C DCS ME Export', () => {
+    it('should output correct type and terrain', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      expect(result.type).toBe('F-16C_50')
+      expect(result.data.type).toBe('F-16C_50')
+      expect(result.data.terrain).toBe('PersianGulf')
+      expect(result.data.MPD.terrain).toBe('PersianGulf')
+    })
+
+    it('should convert lat/lon to DCS x,y coordinates', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      expect(result.data.MPD.NAV_PTS).toHaveLength(2)
+      const pt = result.data.MPD.NAV_PTS[0]
+      expect(typeof pt.x).toBe('number')
+      expect(typeof pt.y).toBe('number')
+      expect(pt.x).not.toBe(0) // Should be a real DCS coordinate
+      expect(pt.y).not.toBe(0)
+    })
+
+    it('should map COMM1 and COMM2 channels', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      expect(result.data.COMM.COMM1).toHaveProperty('Channel_1')
+      expect(result.data.COMM.COMM1.Channel_1.freq).toBe(300)
+      expect(result.data.COMM.COMM2).toHaveProperty('Channel_1')
+      expect(result.data.COMM.COMM2.Channel_1.freq).toBe(123.45)
+    })
+
+    it('should map NAV_PTS with steerpoint types', () => {
+      const missionWithTypes = {
+        ...mockMissionF16,
+        waypoints: [
+          { ...mockMissionF16.waypoints[0], type: undefined },
+          { ...mockMissionF16.waypoints[1], type: 'TGT' as const },
+        ],
+      }
+      const result = exportF16DCSME(missionWithTypes)
+      expect(result.data.MPD.NAV_PTS[0].type).toBe('STPT')
+      expect(result.data.MPD.NAV_PTS[1].type).toBe('TGT')
+    })
+
+    it('should convert TOS to seconds', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      // First waypoint has TOS "11:23:45" = 11*3600 + 23*60 + 45 = 40800 + 1380 + 45 = 41025
+      expect(result.data.MPD.NAV_PTS[0].TOS).toBe(41025)
+      expect(result.data.MPD.NAV_PTS[0].isTOSEnabled).toBe(true)
+      // Second waypoint has no TOS
+      expect(result.data.MPD.NAV_PTS[1].TOS).toBe(-1)
+      expect(result.data.MPD.NAV_PTS[1].isTOSEnabled).toBe(false)
+    })
+
+    it('should map CMDS bingo settings', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      expect(result.data.MPD.CMDS.CMDSBingoSettings.ChaffNum).toBe(12)
+      expect(result.data.MPD.CMDS.CMDSBingoSettings.FlaresNum).toBe(14)
+    })
+
+    it('should map CMDS program settings', () => {
+      const result = exportF16DCSME(mockMissionF16)
+      expect(result.data.MPD.CMDS.CMDSProgramSettings).toHaveProperty('MAN1')
+    })
+
+    it('should throw for unsupported theater', () => {
+      const badTheater = { ...mockMissionF16, theater: 'UnknownMap' }
+      expect(() => exportF16DCSME(badTheater)).toThrow('DCS ME export not supported for theater')
+    })
+
+    it('should merge template data', () => {
+      const template = {
+        data: {
+          COMM: { mirror_COMM1: true },
+        },
+      }
+      const result = exportF16DCSME(mockMissionF16, 0, template)
+      // Mission data should overwrite template
+      expect(result.data.COMM.mirror_COMM1).toBe(false)
+    })
+  })
+
   describe('downloadMDC', () => {
     it('should throw error for unsupported airframe', () => {
-      // Create a mission with a squadron that maps to an unsupported airframe
-      // For this test, we'll use a fake squadron that would return an unsupported airframe
       const unsupportedMission = {
         ...mockMissionF16,
         squadron: 'test-unsupported' as Mission['squadron'],
       }
 
-      // This will throw because getSquadronAirframe will fail or return an unsupported airframe
       expect(() => downloadMDC(unsupportedMission)).toThrow()
     })
   })

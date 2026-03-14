@@ -367,7 +367,7 @@ describe('validateMissionStorage', () => {
         expect(result.valid).toBe(true)
       })
 
-      it('should allow waypoint with null altitude (valid for storage, but not complete for export)', () => {
+      it('should reject waypoint with null altitude', () => {
         const mission = createValidMission()
         mission.waypoints[0]!.altitude = null
         const serialized = serializeMission(mission)
@@ -379,12 +379,11 @@ describe('validateMissionStorage', () => {
 
         const result = validateMissionStorage(storageData)
 
-        // Schema validation should pass (null is allowed for storage)
-        // The composable will check for completeness (non-null required for export)
-        expect(result.valid).toBe(true)
+        // Schema requires non-null lat/lon/alt on all waypoints
+        expect(result.valid).toBe(false)
       })
 
-      it('should allow blank waypoint (all fields null)', () => {
+      it('should reject blank waypoint (all fields null)', () => {
         const mission = createValidMission()
         mission.waypoints.push({
           sequence: 2,
@@ -403,11 +402,11 @@ describe('validateMissionStorage', () => {
 
         const result = validateMissionStorage(storageData)
 
-        // Blank waypoints (all fields null) should pass schema validation
-        expect(result.valid).toBe(true)
+        // Blank waypoints are no longer valid — all steerpoints must have coordinates
+        expect(result.valid).toBe(false)
       })
 
-      it('should allow multiple blank waypoints in sequence', () => {
+      it('should reject multiple blank waypoints in sequence', () => {
         const mission = createValidMission()
         mission.waypoints.push(
           {
@@ -436,8 +435,8 @@ describe('validateMissionStorage', () => {
 
         const result = validateMissionStorage(storageData)
 
-        // Multiple blank waypoints should be valid
-        expect(result.valid).toBe(true)
+        // Blank waypoints are no longer valid
+        expect(result.valid).toBe(false)
       })
 
       it('should allow mission without loadout items (all EMPTY is valid)', () => {

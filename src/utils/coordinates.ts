@@ -252,36 +252,3 @@ export function isValidDecimal(value: number, type: CoordinateType): boolean {
     return value >= -180 && value <= 180
   }
 }
-
-/**
- * Format decimal degrees for F-16C DCS-DTC export
- * Format: "N 12°34.567'" (no space after degree symbol, uses prime character)
- * Uses DDM format (Degrees Decimal Minutes)
- */
-export function formatF16LatLon(decimal: number, type: CoordinateType): string {
-  const dms = decimalToDMS(decimal, type)
-  const { hemisphere, degrees, minutes, seconds } = dms
-
-  // Convert seconds back to decimal minutes (DDM format)
-  const minutesWithDecimal = minutes + seconds / 60
-
-  // Format with proper padding
-  const degreesPadding = type === 'latitude' ? 2 : 3
-  const degreesStr = degrees.toString().padStart(degreesPadding, '0')
-
-  // Format minutes with up to 3 decimal places, removing trailing zeros
-  const minutesStr = minutesWithDecimal.toFixed(3).replace(/\.?0+$/, '')
-  const [minutesInt, minutesDec] = minutesStr.split('.')
-  const minutesIntPadded = (minutesInt || '0').padStart(2, '0')
-  const minutesFormatted = minutesDec ? `${minutesIntPadded}.${minutesDec}` : minutesIntPadded
-
-  return `${hemisphere} ${degreesStr}°${minutesFormatted}'`
-}
-
-/**
- * Format decimal degrees for A-10C JAFDTC export
- * Format: "31.52045000" (8 decimal places as string)
- */
-export function formatA10LatLon(decimal: number): string {
-  return decimal.toFixed(8)
-}

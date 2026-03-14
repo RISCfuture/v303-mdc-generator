@@ -5,7 +5,8 @@ import { getAirfieldsForTheater } from '@/data/airfields'
 import { theaterDatabase } from '@/data/theaters'
 import { getLoadoutsForAirframe } from '@/data/loadouts'
 import { crewDatabase, crewBySquadron } from '@/data/crew'
-import { squadronDatabase, type SquadronId } from '@/data/squadrons'
+import { type SquadronId, getSquadronAirframe } from '@/data/squadrons'
+import { getExportFormatsForAirframe, type ExportFormat } from '@/data/exportFormats'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission, Navaid } from '@/types'
 
@@ -64,11 +65,13 @@ export function useMissionData(missionId: ComputedRef<string>) {
     return filtered.sort((a, b) => a.pilot.localeCompare(b.pilot))
   })
 
-  const mdcExportSupported = computed(() => {
-    if (!mission.value) return false
-    const squadron = squadronDatabase[mission.value.squadron as SquadronId]
-    return !!squadron?.exportFormat
+  const availableExportFormats = computed<ExportFormat[]>(() => {
+    if (!mission.value) return []
+    const airframe = getSquadronAirframe(mission.value.squadron as SquadronId)
+    return getExportFormatsForAirframe(airframe)
   })
+
+  const mdcExportSupported = computed(() => availableExportFormats.value.length > 0)
 
   function updateField(field: keyof Mission, value: Mission[keyof Mission]) {
     if (!mission.value) return
@@ -99,6 +102,7 @@ export function useMissionData(missionId: ComputedRef<string>) {
     availableLoadouts,
     availableCrew,
     availableCrewForDropdown,
+    availableExportFormats,
     mdcExportSupported,
     updateField,
     updateNestedField,

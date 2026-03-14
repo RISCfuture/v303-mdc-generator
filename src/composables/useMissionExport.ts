@@ -1,7 +1,8 @@
 import { useMessage, useLoadingBar } from 'naive-ui'
 import * as Sentry from '@sentry/vue'
 import { generatePdfMakeBriefingCard } from '@/services/pdfGenerator/pdfMakeBriefingCard'
-import { downloadMDC } from '@/services/mdcExporter'
+import { downloadMDC } from '@/services/exporters'
+import type { ExportFormat } from '@/data/exportFormats'
 import type { Mission } from '@/types'
 
 /**
@@ -28,12 +29,16 @@ export function useMissionExport() {
     }
   }
 
-  function handleExportMDC(mission: Mission, crewMemberIndex: number = 0) {
+  function handleExportMDC(
+    mission: Mission,
+    crewMemberIndex: number = 0,
+    format: ExportFormat = 'DCS-DTC',
+  ) {
     try {
-      downloadMDC(mission, crewMemberIndex)
-      message.success('JSON MDC exported')
+      downloadMDC(mission, crewMemberIndex, format)
+      message.success('MDC exported')
       Sentry.metrics.count('mission.exported', 1, {
-        attributes: { type: 'mdc', squadron: mission.squadron },
+        attributes: { type: 'mdc', format, squadron: mission.squadron },
       })
     } catch (error) {
       message.error(`Failed to export MDC: ${error}`)
