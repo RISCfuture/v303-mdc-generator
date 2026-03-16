@@ -900,7 +900,7 @@
         },
         {
           "station": 5,
-          "item": "{BDU-50LD}"
+          "item": "{BDU-50HD}"
         },
         {
           "station": 6,
@@ -908,7 +908,7 @@
         },
         {
           "station": 7,
-          "item": "{BDU-50LD}"
+          "item": "{BDU-50HD}"
         },
         {
           "station": 8,
@@ -925,32 +925,40 @@
       ]
     },
     {
-      "name": "CHARLIE (CAS-1/4)",
-      "description": "MQT Training - Close Air Support",
+      "name": "CHARLIE (SA-4)",
+      "description": "B-Course Training",
       "stations": [
         {
           "station": 1,
           "item": "LAU-105_AIS_ASQ_T50_L"
         },
         {
-          "station": 2,
-          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
-        },
-        {
           "station": 3,
-          "item": "LAU_117_AGM_65G"
+          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
         },
         {
           "station": 4,
-          "item": "BRU-42_3*BDU-33"
+          "item": "{BDU-50LD}"
+        },
+        {
+          "station": 5,
+          "item": "{BDU-50LD}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{BDU-50LD}"
         },
         {
           "station": 8,
-          "item": "BRU-42_3*BDU-33"
+          "item": "{BDU-50LD}"
         },
         {
           "station": 9,
-          "item": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}"
+          "item": "LAU_117_AGM_65H"
         },
         {
           "station": 10,
@@ -986,7 +994,7 @@
     },
     {
       "name": "ECHO (ACMT)",
-      "description": "B-Course Training - Air Combat Maneuvering",
+      "description": "Air Combat Maneuvering Training",
       "stations": [
         {
           "station": 1,
@@ -999,92 +1007,16 @@
       ]
     },
     {
-      "name": "FOXTROT (2FLUG-1)",
-      "description": "MQT Training",
+      "name": "FOXTROT (NSA)",
+      "description": "B-Course Training - Night Strike",
       "stations": [
         {
           "station": 1,
           "item": "LAU-105_AIS_ASQ_T50_L"
         },
         {
-          "station": 3,
-          "item": "LAU_117_TGM_65G"
-        },
-        {
-          "station": 4,
-          "item": "BRU-42_3*BDU-33"
-        },
-        {
-          "station": 8,
-          "item": "BRU-42_3*BDU-33"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_CATM_65K"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "GULF (NSAT-2)",
-      "description": "B-Course Training - Night",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_2*CATM-9M"
-        },
-        {
           "station": 2,
-          "item": "{647C5F26-BDD1-41e6-A371-8DE1E4CC0E94}"
-        },
-        {
-          "station": 3,
-          "item": "LAU_117_AGM_65G"
-        },
-        {
-          "station": 4,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 5,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 8,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65L"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "HOTEL (SAT-6)",
-      "description": "B-Course Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "ALQ_184_Long"
-        },
-        {
-          "station": 2,
-          "item": "{A021F29D-18AB-4d3e-985C-FC9C60E35E9E}"
+          "item": "{CAE48299-A294-4bad-8EE6-89EFC5DCDF00}"
         },
         {
           "station": 3,
@@ -1092,11 +1024,11 @@
         },
         {
           "station": 4,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+          "item": "{BDU-50LD}"
         },
         {
           "station": 5,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+          "item": "{BDU-50LD}"
         },
         {
           "station": 6,
@@ -1104,29 +1036,25 @@
         },
         {
           "station": 7,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+          "item": "{BDU-50LD}"
         },
         {
           "station": 8,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+          "item": "{BDU-50LD}"
         },
         {
           "station": 9,
-          "item": "LAU_117_AGM_65H"
+          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
         },
         {
           "station": 10,
           "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        },
-        {
-          "station": 11,
-          "item": "LAU-105_2*CATM-9M"
         }
       ]
     },
     {
-      "name": "INDIA (SAT-1)",
-      "description": "B-Course Training",
+      "name": "GOLF (SAT-1)",
+      "description": "MQT Training",
       "stations": [
         {
           "station": 1,
@@ -1171,88 +1099,8 @@
       ]
     },
     {
-      "name": "JULIET (SAT-5)",
-      "description": "B-Course Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_2*CATM-9M"
-        },
-        {
-          "station": 3,
-          "item": "LAU_117_AGM_65L"
-        },
-        {
-          "station": 4,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 5,
-          "item": "{GBU-38}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{GBU-38}"
-        },
-        {
-          "station": 8,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65L"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "KILO (2FLUG-2)",
+      "name": "HOTEL (SAT-2)",
       "description": "MQT Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
-        },
-        {
-          "station": 3,
-          "item": "LAU_117_AGM_65G"
-        },
-        {
-          "station": 4,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
-        },
-        {
-          "station": 5,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
-        },
-        {
-          "station": 7,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
-        },
-        {
-          "station": 8,
-          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
-        },
-        {
-          "station": 9,
-          "item": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "LIMA (SAT-2)",
-      "description": "B-Course Training",
       "stations": [
         {
           "station": 1,
@@ -1297,96 +1145,8 @@
       ]
     },
     {
-      "name": "MIKE (SAT-7)",
-      "description": "B-Course Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "ALQ_184_Long"
-        },
-        {
-          "station": 3,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
-        },
-        {
-          "station": 4,
-          "item": "{5335D97A-35A5-4643-9D9B-026C75961E52}"
-        },
-        {
-          "station": 5,
-          "item": "{CBU_103}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{CBU_103}"
-        },
-        {
-          "station": 8,
-          "item": "{5335D97A-35A5-4643-9D9B-026C75961E52}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65H"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        },
-        {
-          "station": 11,
-          "item": "LAU-105_2*CATM-9M"
-        }
-      ]
-    },
-    {
-      "name": "NOVEMBER (SA-4)",
-      "description": "B-Course Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
-        },
-        {
-          "station": 3,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
-        },
-        {
-          "station": 4,
-          "item": "{BDU-50LD}"
-        },
-        {
-          "station": 5,
-          "item": "{BDU-50LD}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{BDU-50LD}"
-        },
-        {
-          "station": 8,
-          "item": "{BDU-50LD}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65H"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "OSCAR (SAT-3)",
-      "description": "B-Course Training",
+      "name": "INDIA (SAT-3)",
+      "description": "MQT Training",
       "stations": [
         {
           "station": 1,
@@ -1435,214 +1195,8 @@
       ]
     },
     {
-      "name": "PAPA (SAT-8)",
-      "description": "B-Course Training",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_2*CATM-9M"
-        },
-        {
-          "station": 3,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
-        },
-        {
-          "station": 4,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 5,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 8,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65H"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "QUEBEC (CAS-3)",
-      "description": "MQT Training - Close Air Support",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
-        },
-        {
-          "station": 2,
-          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
-        },
-        {
-          "station": 3,
-          "item": "LAU_117_AGM_65G"
-        },
-        {
-          "station": 4,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 5,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 7,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 8,
-          "item": "{Mk82AIR}"
-        },
-        {
-          "station": 9,
-          "item": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "ROMEO (CAS-2)",
-      "description": "MQT Training - Close Air Support",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
-        },
-        {
-          "station": 2,
-          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
-        },
-        {
-          "station": 3,
-          "item": "LAU_117_AGM_65L"
-        },
-        {
-          "station": 4,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 5,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 7,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 8,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 9,
-          "item": "LAU_117_AGM_65L"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "SIERRA (NSA-2)",
-      "description": "B-Course Training - Night Strike",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
-        },
-        {
-          "station": 2,
-          "item": "{647C5F26-BDD1-41e6-A371-8DE1E4CC0E94}"
-        },
-        {
-          "station": 3,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
-        },
-        {
-          "station": 4,
-          "item": "BRU-42_3*BDU-33"
-        },
-        {
-          "station": 8,
-          "item": "BRU-42_3*BDU-33"
-        },
-        {
-          "station": 9,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "TANGO (NSAT-1/3)",
-      "description": "B-Course Training - Night",
-      "stations": [
-        {
-          "station": 1,
-          "item": "LAU-105_2*CATM-9M"
-        },
-        {
-          "station": 2,
-          "item": "{CAE48299-A294-4bad-8EE6-89EFC5DCDF00}"
-        },
-        {
-          "station": 3,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 4,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 5,
-          "item": "{GBU-38}"
-        },
-        {
-          "station": 6,
-          "item": "EMPTY"
-        },
-        {
-          "station": 7,
-          "item": "{GBU-38}"
-        },
-        {
-          "station": 8,
-          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
-        },
-        {
-          "station": 9,
-          "item": "{GBU_54_V_1B}"
-        },
-        {
-          "station": 10,
-          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
-        }
-      ]
-    },
-    {
-      "name": "UNIFORM (SAT-4)",
-      "description": "B-Course Training",
+      "name": "JULIET (SAT-4)",
+      "description": "MQT Training",
       "stations": [
         {
           "station": 1,
@@ -1665,6 +1219,10 @@
           "item": "{GBU_54_V_1B}"
         },
         {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
           "station": 7,
           "item": "{GBU_54_V_1B}"
         },
@@ -1682,17 +1240,17 @@
         },
         {
           "station": 11,
-          "item": "LAU-105_AIS_ASQ_T50_R"
+          "item": "LAU-105_2*CATM-9M"
         }
       ]
     },
     {
-      "name": "VICTOR (NSA-1)",
-      "description": "B-Course Training - Night Strike",
+      "name": "KILO (NSAT)",
+      "description": "MQT Training - Night",
       "stations": [
         {
           "station": 1,
-          "item": "LAU-105_AIS_ASQ_T50_L"
+          "item": "LAU-105_2*CATM-9M"
         },
         {
           "station": 2,
@@ -1700,15 +1258,15 @@
         },
         {
           "station": 3,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
+          "item": "LAU_117_AGM_65G"
         },
         {
           "station": 4,
-          "item": "{BDU-50LD}"
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
         },
         {
           "station": 5,
-          "item": "{BDU-50LD}"
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
         },
         {
           "station": 6,
@@ -1716,19 +1274,297 @@
         },
         {
           "station": 7,
-          "item": "{BDU-50LD}"
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
         },
         {
           "station": 8,
-          "item": "{BDU-50LD}"
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
         },
         {
           "station": 9,
-          "item": "{444BA8AE-82A7-4345-842E-76154EFCCA46}"
+          "item": "LAU_117_AGM_65L"
         },
         {
           "station": 10,
           "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "LIMA (2FLUG-1)",
+      "description": "Weapons School",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_AIS_ASQ_T50_L"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_TGM_65D"
+        },
+        {
+          "station": 4,
+          "item": "BRU-42_3*BDU-33"
+        },
+        {
+          "station": 8,
+          "item": "BRU-42_3*BDU-33"
+        },
+        {
+          "station": 9,
+          "item": "LAU_117_TGM_65H"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "MIKE (2FLUG-2)",
+      "description": "Weapons School",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_AIS_ASQ_T50_L"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_AGM_65G"
+        },
+        {
+          "station": 4,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 5,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 7,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 8,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 9,
+          "item": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "NOVEMBER (CAS-1)",
+      "description": "Weapons School - CAS",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_1*CATM-9M_L"
+        },
+        {
+          "station": 2,
+          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_AGM_65L"
+        },
+        {
+          "station": 4,
+          "item": "{GBU_54_V_1B}"
+        },
+        {
+          "station": 5,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 8,
+          "item": "{GBU_54_V_1B}"
+        },
+        {
+          "station": 9,
+          "item": "LAU_117_AGM_65L"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "OSCAR (CAS-2)",
+      "description": "Weapons School - CAS",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_1*CATM-9M_L"
+        },
+        {
+          "station": 2,
+          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_AGM_65G"
+        },
+        {
+          "station": 4,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 5,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 8,
+          "item": "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}"
+        },
+        {
+          "station": 9,
+          "item": "{69DC8AE7-8F77-427B-B8AA-B19D3F478B66}"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "PAPA (NCAS)",
+      "description": "Weapons School - Night CAS",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_1*CATM-9M_L"
+        },
+        {
+          "station": 2,
+          "item": "{4F977A2A-CD25-44df-90EF-164BFA2AE72F}"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_AGM_65G"
+        },
+        {
+          "station": 4,
+          "item": "{GBU_54_V_1B}"
+        },
+        {
+          "station": 5,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 8,
+          "item": "{GBU_54_V_1B}"
+        },
+        {
+          "station": 9,
+          "item": "LAU_117_AGM_65L"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "QUEBEC (BHM)",
+      "description": "2026 Bombing and Gunnery",
+      "stations": [
+        {
+          "station": 1,
+          "item": "LAU-105_1*CATM-9M_L"
+        },
+        {
+          "station": 4,
+          "item": "{BDU-50HD}"
+        },
+        {
+          "station": 8,
+          "item": "{BDU-50HD}"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        }
+      ]
+    },
+    {
+      "name": "ROMEO (GREEN FLAG)",
+      "description": "Green Flag Exercise",
+      "stations": [
+        {
+          "station": 1,
+          "item": "ALQ_184_Long"
+        },
+        {
+          "station": 2,
+          "item": "{LAU-131 - 7 AGR-20 M282}"
+        },
+        {
+          "station": 3,
+          "item": "LAU_117_AGM_65G"
+        },
+        {
+          "station": 4,
+          "item": "{GBU_54_V_1B}"
+        },
+        {
+          "station": 5,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 6,
+          "item": "EMPTY"
+        },
+        {
+          "station": 7,
+          "item": "{DB769D48-67D7-42ED-A2BE-108D566C8B1E}"
+        },
+        {
+          "station": 8,
+          "item": "{GBU-38}"
+        },
+        {
+          "station": 9,
+          "item": "LAU_117_AGM_65L"
+        },
+        {
+          "station": 10,
+          "item": "{A111396E-D3E8-4b9c-8AC9-2432489304D5}"
+        },
+        {
+          "station": 11,
+          "item": "{DB434044-F5D0-4F1F-9BA9-B73027E18DD3}"
         }
       ]
     }
