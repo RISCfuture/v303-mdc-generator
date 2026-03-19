@@ -1,7 +1,7 @@
 import type { Theater, SupportAsset, Bullseye } from '@/types'
 import theaterDataJson from '@/data/json/theaters.json'
 
-export interface TheaterData {
+export type TheaterData = {
   name: Theater
   displayName: string
   navaidsUrl: string

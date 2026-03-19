@@ -13,7 +13,7 @@ import {
   exceedsCrosswindLimitations,
 } from '../takeoffDistanceCalculator'
 
-interface Props {
+type Props = {
   grossWeight: number
   dragIndex?: number
   runwayLength?: number | null
@@ -33,6 +33,10 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  dragIndex: undefined,
+  runwayLength: undefined,
+  runwayWidth: undefined,
+  runwayName: undefined,
   initialPowerSetting: 'AB',
   initialCgPercent: 35,
   initialPitchAttitude: 10,

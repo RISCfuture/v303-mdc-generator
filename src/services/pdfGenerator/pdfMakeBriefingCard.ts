@@ -14,6 +14,7 @@ import { getAirframeData, isHelicopter } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
 import { calculateTakeoffFuel, calculateMissionGrossWeight } from '@/utils/fuelCalculations'
 import { getAirframeDisplayName } from '@/data/airframes'
+import { getFlightNumber } from '@/utils/callsignHelpers'
 import { formatSTN } from '@/utils/crewFormatting'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import { formatCoordinate } from '@/utils/coordinateFormatter'
@@ -23,7 +24,7 @@ import { SQUADRON_LOGOS } from './squadronAssets'
 // Type for table cells - use pdfMake's type but allow flexibility for our use case
 // pdfMake's TableCell type is complex and strict, so we use a simplified version
 // that will be cast to Content when needed
-interface TableCell {
+type TableCell = {
   text?: string | number
   fillColor?: string
   bold?: boolean
@@ -38,28 +39,16 @@ type TableRow = TableCell[]
 
 // Helper functions
 function getEffectiveFlightCallsign(mission: Mission): string {
-  return mission.flightCallsignOverride || ''
+  return mission.flightCallsignOverride ?? ''
 }
 
 function getEffectiveLink16Prefix(mission: Mission): string {
-  return mission.link16PrefixOverride || ''
-}
-
-function getFlightNumber(callsign: string): string {
-  if (!callsign) return '1'
-  const match = callsign.match(/(\d)$/)
-  return match && match[1] ? match[1] : '1'
+  return mission.link16PrefixOverride ?? ''
 }
 
 function formatBullseyeCoords(mission: Mission): string {
   const bullseye = mission.bullseye
-  if (
-    !bullseye ||
-    bullseye.latitude === undefined ||
-    bullseye.longitude === null ||
-    bullseye.latitude === null ||
-    bullseye.longitude === undefined
-  ) {
+  if (bullseye?.latitude == null || bullseye.longitude == null) {
     return ''
   }
   // Use the stored format preference, defaulting to DDM if not specified
@@ -78,13 +67,13 @@ function getAirportName(airportId: string, theater: string): string {
 
 function formatZuluTime(timeString: string): string {
   const cleaned = timeString.trim().replace(/[zZ]$/i, '')
-  const colonMatch = cleaned.match(/^(\d{1,2}):(\d{2})$/)
-  if (colonMatch && colonMatch[1] && colonMatch[2]) {
+  const colonMatch = /^(\d{1,2}):(\d{2})$/.exec(cleaned)
+  if (colonMatch?.[1] && colonMatch[2]) {
     const hours = colonMatch[1].padStart(2, '0')
     const minutes = colonMatch[2]
     return `${hours}${minutes}z`
   }
-  const noColonMatch = cleaned.match(/^(\d{2})(\d{2})$/)
+  const noColonMatch = /^(\d{2})(\d{2})$/.exec(cleaned)
   if (noColonMatch) {
     return `${cleaned}z`
   }
@@ -120,12 +109,12 @@ async function markdownToPdfMake(
   try {
     // Split markdown by image boundaries to preserve image positions
     const imagePattern = /!\[([^\]]*)\]\((img_\d+_[a-z0-9]+)\)/g
-    const parts: Array<{
+    const parts: {
       type: 'text' | 'image'
       content: string
       imageId?: string
       alt?: string
-    }> = []
+    }[] = []
 
     let lastIndex = 0
     let match
@@ -191,7 +180,7 @@ async function markdownToPdfMake(
 
         // Add content to array
         if (Array.isArray(content)) {
-          contentArray.push(...content)
+          contentArray.push(...(content as unknown[]))
         } else {
           contentArray.push(content)
         }
@@ -199,9 +188,9 @@ async function markdownToPdfMake(
         // Fetch and add image
         try {
           const storedImage = await imageStorage.getImage(part.imageId)
-          if (storedImage && storedImage.data) {
+          if (storedImage?.data) {
             // Use provided maxImageWidth or default to 400
-            const imageWidth = options?.maxImageWidth || 400
+            const imageWidth = options?.maxImageWidth ?? 400
             contentArray.push({
               image: storedImage.data,
               width: imageWidth, // Max width, maintains aspect ratio
@@ -209,7 +198,7 @@ async function markdownToPdfMake(
             })
           } else {
             contentArray.push({
-              text: `[Image not found: ${part.alt || part.imageId}]`,
+              text: `[Image not found: ${part.alt ?? part.imageId}]`,
               italics: true,
               color: '#999999',
             })
@@ -222,7 +211,7 @@ async function markdownToPdfMake(
 
     // If content is an array with a single item, unwrap it
     if (contentArray.length === 1) {
-      return contentArray[0]!
+      return contentArray[0] ?? { text: '' }
     }
 
     // If content is an array, wrap it in a stack
@@ -237,8 +226,8 @@ async function markdownToPdfMake(
  */
 function calculateReciprocalTacan(tacan: string | undefined): string {
   if (!tacan) return ''
-  const match = tacan.match(/^(\d+)([XY])$/i)
-  if (!match || !match[1] || !match[2]) return ''
+  const match = /^(\d+)([XY])$/i.exec(tacan)
+  if (!match?.[1] || !match[2]) return ''
   const channel = parseInt(match[1])
   const band = match[2].toUpperCase()
   let newChannel = channel + 63
@@ -343,15 +332,14 @@ function generateFlightTable(mission: Mission): unknown {
   const effectiveLink16Prefix = getEffectiveLink16Prefix(mission)
   const flightNumber = getFlightNumber(getEffectiveFlightCallsign(mission))
   const flightLead = mission.crew[0]
-  const leadIntraflight = flightLead?.intraflight || ''
-  const leadAaTcn = flightLead?.aaTcn || ''
+  const leadIntraflight = flightLead.intraflight
+  const leadAaTcn = flightLead.aaTcn
   const reciprocalTacan = calculateReciprocalTacan(leadAaTcn)
 
   const rows = []
   // Only show rows for crew members that are assigned
   for (let i = 0; i < mission.crew.length; i++) {
     const member = mission.crew[i]
-    if (!member) continue
 
     const callsignDisplay =
       member.pilot && effectiveLink16Prefix ? `${effectiveLink16Prefix}${flightNumber}${i + 1}` : ''
@@ -415,8 +403,8 @@ function generateRadiosTable(mission: Mission): unknown {
   const airframeData = getAirframeData(airframe)
   const rows: TableRow[] = []
   mission.radioPresets.forEach((radioPresets, radioIndex) => {
-    const radioLabel = airframeData?.radios[radioIndex]?.name || `Radio ${radioIndex + 1}`
-    let presetDesc = ''
+    const radioLabel = airframeData?.radios[radioIndex]?.name ?? `Radio ${radioIndex + 1}`
+    let presetDesc: string
     const radioCommLadder = mission.commLadders?.[radioIndex]
     if (radioCommLadder && radioCommLadder.trim() !== '') {
       presetDesc = radioCommLadder
@@ -452,7 +440,7 @@ function generateRadiosTable(mission: Mission): unknown {
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
  */
 function generateWeatherBullseyeTable(mission: Mission): unknown {
-  const weatherText = mission.weather || ''
+  const weatherText = mission.weather ?? ''
   const bullseyeText = formatBullseyeCoords(mission)
 
   return {
@@ -485,7 +473,7 @@ function generatePresetsTable(mission: Mission): unknown {
   const airframeData = getAirframeData(airframe)
 
   // Get the first radio's name (typically UHF/COM1)
-  const radioName = airframeData?.radios[0]?.name || 'Radio 1'
+  const radioName = airframeData?.radios[0]?.name ?? 'Radio 1'
 
   const filteredPresets = mission.radioPresets[0]
     ? mission.radioPresets[0].filter((p) => p.description && p.description.trim() !== '')
@@ -495,11 +483,11 @@ function generatePresetsTable(mission: Mission): unknown {
 
   for (let i = 0; i < halfCount; i++) {
     const left = filteredPresets[i]
-    const right = filteredPresets[i + halfCount]
+    const right = filteredPresets[i + halfCount] as (typeof filteredPresets)[number] | undefined
     rows.push([
-      { text: left ? left.number.toString() : '', fillColor: '#DCDCDC', bold: true },
+      { text: left.number.toString(), fillColor: '#DCDCDC', bold: true },
       {
-        text: left ? `${left.frequency} // ${left.description}` : '',
+        text: `${left.frequency} // ${left.description}`,
         fillColor: '#EBF1FA',
         italics: true,
       },
@@ -545,12 +533,12 @@ function generateLoadoutTable(mission: Mission): unknown {
   const airframe = getSquadronAirframe(mission.squadron)
   const airframeData = getAirframeData(airframe)
 
-  const chaffTotal = mission.ecmCmds.chaffTotal || 0
-  const flareTotal = mission.ecmCmds.flareTotal || 0
-  const chaffBingo = mission.ecmCmds.chaffBingo || 0
-  const flareBingo = mission.ecmCmds.flareBingo || 0
-  const cmdsProfile = mission.cmdsProfile || 'PRGM 1'
-  const ecmPrograms = mission.ecmProgram || ''
+  const chaffTotal = mission.ecmCmds.chaffTotal ?? 0
+  const flareTotal = mission.ecmCmds.flareTotal ?? 0
+  const chaffBingo = mission.ecmCmds.chaffBingo
+  const flareBingo = mission.ecmCmds.flareBingo
+  const cmdsProfile = mission.cmdsProfile ?? 'PRGM 1'
+  const ecmPrograms = mission.ecmProgram ?? ''
 
   const cmData = [
     { text: 'CHAFF', fillColor: '#DCDCDC', bold: true },
@@ -566,7 +554,7 @@ function generateLoadoutTable(mission: Mission): unknown {
   const rows: TableRow[] = []
 
   // Add gun row if aircraft has guns
-  const guns = airframeData?.guns || []
+  const guns = airframeData?.guns ?? []
   if (guns.length > 0 && mission.gunAmmoType) {
     // Determine label: gun name if single gun, else "Gun Ammo"
     const gunLabel = guns.length === 1 && guns[0] ? guns[0].name : 'Gun Ammo'
@@ -593,7 +581,7 @@ function generateLoadoutTable(mission: Mission): unknown {
   }
 
   // Add station rows using airframe station data
-  const stations = airframeData?.stations || []
+  const stations = airframeData?.stations ?? []
   const gunRowCount = guns.length > 0 && mission.gunAmmoType ? 1 : 0
   stations.forEach((station, index) => {
     const stationData = mission.loadout.find((s) => String(s.station) === String(station.station))
@@ -642,7 +630,7 @@ function generateLoadoutTable(mission: Mission): unknown {
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
  */
 function generateToldTable(mission: Mission): unknown {
-  const grossWeight = mission.told.grossWeight || calculateGrossWeight(mission)
+  const grossWeight = mission.told.grossWeight ?? calculateGrossWeight(mission)
   const airframe = getSquadronAirframe(mission.squadron)
   const showRotationRefusal = !isHelicopter(airframe)
 
@@ -673,9 +661,7 @@ function generateToldTable(mission: Mission): unknown {
             { text: 'Min AGL', fillColor: '#DCDCDC', bold: true },
             {
               text:
-                mission.told.minAgl !== undefined && mission.told.minAgl !== null
-                  ? formatNumber(mission.told.minAgl) + ' ft'
-                  : '',
+                mission.told.minAgl !== undefined ? formatNumber(mission.told.minAgl) + ' ft' : '',
               fillColor: '#EBF1FA',
               italics: true,
             },
@@ -690,9 +676,7 @@ function generateToldTable(mission: Mission): unknown {
             { text: 'Min MSL', fillColor: '#DCDCDC', bold: true },
             {
               text:
-                mission.told.minMsl !== undefined && mission.told.minMsl !== null
-                  ? formatNumber(mission.told.minMsl) + ' ft'
-                  : '',
+                mission.told.minMsl !== undefined ? formatNumber(mission.told.minMsl) + ' ft' : '',
               fillColor: '#EBF1FA',
               italics: true,
             },
@@ -728,7 +712,7 @@ function generateToldTable(mission: Mission): unknown {
           { text: formatNumber(grossWeight) + ' lbs', fillColor: '#EBF1FA', italics: true },
           { text: 'Rotation', fillColor: '#DCDCDC', bold: true },
           {
-            text: formatNumber(mission.told.rotation || 0) + ' kts',
+            text: formatNumber(mission.told.rotation ?? 0) + ' kts',
             fillColor: '#EBF1FA',
             italics: true,
           },
@@ -743,9 +727,7 @@ function generateToldTable(mission: Mission): unknown {
           { text: 'Min AGL', fillColor: '#DCDCDC', bold: true },
           {
             text:
-              mission.told.minAgl !== undefined && mission.told.minAgl !== null
-                ? formatNumber(mission.told.minAgl) + ' ft'
-                : '',
+              mission.told.minAgl !== undefined ? formatNumber(mission.told.minAgl) + ' ft' : '',
             fillColor: '#EBF1FA',
             italics: true,
           },
@@ -762,9 +744,7 @@ function generateToldTable(mission: Mission): unknown {
           { text: 'Min MSL', fillColor: '#DCDCDC', bold: true },
           {
             text:
-              mission.told.minMsl !== undefined && mission.told.minMsl !== null
-                ? formatNumber(mission.told.minMsl) + ' ft'
-                : '',
+              mission.told.minMsl !== undefined ? formatNumber(mission.told.minMsl) + ' ft' : '',
             fillColor: '#EBF1FA',
             italics: true,
           },
@@ -786,28 +766,28 @@ function generateToldTable(mission: Mission): unknown {
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
  */
 function generateDepartureRecoveryTable(mission: Mission): unknown {
-  const departureProc = mission.departureRecovery.departureProcedure || ''
+  const departureProc = mission.departureRecovery.departureProcedure ?? ''
   const departureAirport = getAirportName(
-    mission.departureRecovery.departureAirportId || '',
+    mission.departureRecovery.departureAirportId ?? '',
     mission.theater,
   )
-  const departureRunway = mission.departureRecovery.departureRunwayName || ''
+  const departureRunway = mission.departureRecovery.departureRunwayName ?? ''
   const departureAirportWithRunway = departureRunway
     ? `${departureAirport} RWY ${departureRunway}`
     : departureAirport
 
-  const arrivalProc = mission.departureRecovery.recoveryProcedure || ''
+  const arrivalProc = mission.departureRecovery.recoveryProcedure ?? ''
   const arrivalAirport = getAirportName(
-    mission.departureRecovery.recoveryAirportId || '',
+    mission.departureRecovery.recoveryAirportId ?? '',
     mission.theater,
   )
-  const arrivalRunway = mission.departureRecovery.recoveryRunwayName || ''
+  const arrivalRunway = mission.departureRecovery.recoveryRunwayName ?? ''
   const arrivalAirportWithRunway = arrivalRunway
     ? `${arrivalAirport} RWY ${arrivalRunway}`
     : arrivalAirport
 
   const alternateAirport = getAirportName(
-    mission.departureRecovery.alternateAirportId || '',
+    mission.departureRecovery.alternateAirportId ?? '',
     mission.theater,
   )
 
@@ -866,8 +846,8 @@ function generateFlightPlanTable(mission: Mission): unknown {
 
       return [
         { text: wp.sequence.toString(), fillColor: '#DCDCDC', bold: true },
-        { text: wp.name || '', fillColor: '#EBF1FA', italics: true },
-        { text: wp.type || '', fillColor: '#EBF1FA', italics: true },
+        { text: wp.name, fillColor: '#EBF1FA', italics: true },
+        { text: wp.type ?? '', fillColor: '#EBF1FA', italics: true },
         { text: coordsDisplay, fillColor: '#EBF1FA', italics: true },
         { text: wp.altitude ? formatNumber(wp.altitude) : '', fillColor: '#EBF1FA', italics: true },
         { text: wp.speed ? formatNumber(wp.speed) : '', fillColor: '#EBF1FA', italics: true },
@@ -919,23 +899,21 @@ function hasTargetData(mission: Mission): boolean {
   const primary = mission.details.primaryTarget
   const secondary = mission.details.secondaryTarget
 
-  const hasPrimaryData = !!(
-    primary?.name ||
-    primary?.dmpi ||
+  const hasPrimaryData =
+    !!primary?.name ||
+    !!primary?.dmpi ||
     (primary?.latitude !== null && primary?.latitude !== undefined) ||
     (primary?.longitude !== null && primary?.longitude !== undefined) ||
-    primary?.remarks ||
+    !!primary?.remarks ||
     primary?.attackHeading !== undefined ||
     primary?.ingressAltitude !== undefined
-  )
 
-  const hasSecondaryData = !!(
-    secondary?.name ||
-    secondary?.dmpi ||
-    secondary?.remarks ||
+  const hasSecondaryData =
+    !!secondary?.name ||
+    !!secondary?.dmpi ||
+    !!secondary?.remarks ||
     secondary?.attackHeading !== undefined ||
     secondary?.ingressAltitude !== undefined
-  )
 
   return hasPrimaryData || hasSecondaryData
 }
@@ -946,24 +924,21 @@ function hasTargetData(mission: Mission): boolean {
  */
 async function generateTargetTable(mission: Mission): Promise<unknown> {
   const primaryTarget = mission.details.primaryTarget
-  const primaryName = primaryTarget?.name || ''
-  const primaryDmpi = primaryTarget?.dmpi || ''
+  const primaryName = primaryTarget?.name ?? ''
+  const primaryDmpi = primaryTarget?.dmpi ?? ''
   const primaryCoords =
-    primaryTarget?.latitude !== null &&
-    primaryTarget?.latitude !== undefined &&
-    primaryTarget?.longitude !== null &&
-    primaryTarget?.longitude !== undefined
+    primaryTarget?.latitude != null && primaryTarget.longitude != null
       ? formatCoordinate(
           primaryTarget.latitude,
           primaryTarget.longitude,
-          primaryTarget.coordinateFormat ?? 'DDM', // Use stored format, default to DDM
+          primaryTarget.coordinateFormat ?? 'DDM',
         )
       : ''
-  const primaryRemarks = primaryTarget?.remarks || ''
+  const primaryRemarks = primaryTarget?.remarks ?? ''
 
-  const secondaryName = mission.details.secondaryTarget?.name || ''
-  const secondaryDmpi = mission.details.secondaryTarget?.dmpi || ''
-  const secondaryRemarks = mission.details.secondaryTarget?.remarks || ''
+  const secondaryName = mission.details.secondaryTarget?.name ?? ''
+  const secondaryDmpi = mission.details.secondaryTarget?.dmpi ?? ''
+  const secondaryRemarks = mission.details.secondaryTarget?.remarks ?? ''
 
   const primaryAttackHdg = mission.details.primaryTarget?.attackHeading
   const primaryIngressAlt = mission.details.primaryTarget?.ingressAltitude
@@ -992,17 +967,13 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
     [
       { text: 'Attack Hdg', fillColor: '#DCDCDC', bold: true },
       {
-        text:
-          primaryAttackHdg !== undefined && primaryAttackHdg !== null ? `${primaryAttackHdg}°` : '',
+        text: primaryAttackHdg !== undefined ? `${primaryAttackHdg}°` : '',
         fillColor: '#EBF1FA',
         italics: true,
       },
       { text: 'Attack Hdg', fillColor: '#DCDCDC', bold: true },
       {
-        text:
-          secondaryAttackHdg !== undefined && secondaryAttackHdg !== null
-            ? `${secondaryAttackHdg}°`
-            : '',
+        text: secondaryAttackHdg !== undefined ? `${secondaryAttackHdg}°` : '',
         fillColor: '#EBF1FA',
         italics: true,
       },
@@ -1010,19 +981,13 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
     [
       { text: 'Ingress Alt', fillColor: '#DCDCDC', bold: true },
       {
-        text:
-          primaryIngressAlt !== undefined && primaryIngressAlt !== null
-            ? `${primaryIngressAlt} ft`
-            : '',
+        text: primaryIngressAlt !== undefined ? `${primaryIngressAlt} ft` : '',
         fillColor: '#EBF1FA',
         italics: true,
       },
       { text: 'Ingress Alt', fillColor: '#DCDCDC', bold: true },
       {
-        text:
-          secondaryIngressAlt !== undefined && secondaryIngressAlt !== null
-            ? `${secondaryIngressAlt} ft`
-            : '',
+        text: secondaryIngressAlt !== undefined ? `${secondaryIngressAlt} ft` : '',
         fillColor: '#EBF1FA',
         italics: true,
       },
@@ -1095,44 +1060,42 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
 function generateDeliveryTables(mission: Mission): unknown[] {
   const tables: unknown[] = []
 
-  const tgtWaypoints = mission.waypoints.filter(
-    (wp) => wp.type === 'TGT' && wp.ccip !== undefined && wp.ccip !== null,
-  )
+  const tgtWaypoints = mission.waypoints.filter((wp) => wp.type === 'TGT' && wp.ccip !== undefined)
 
   for (const waypoint of tgtWaypoints) {
-    const ccip = waypoint.ccip!
+    const ccip = waypoint.ccip
+    if (!ccip) continue
 
-    const hasReferencePoints = !!(
-      ccip?.vip?.bearing !== undefined ||
-      ccip?.vip?.distance !== undefined ||
-      ccip?.vip?.elevation !== undefined ||
-      ccip?.vrp?.bearing !== undefined ||
-      ccip?.vrp?.distance !== undefined ||
-      ccip?.vrp?.elevation !== undefined ||
-      ccip?.oa1?.bearing !== undefined ||
-      ccip?.oa1?.distance !== undefined ||
-      ccip?.oa1?.elevation !== undefined ||
-      ccip?.oa2?.bearing !== undefined ||
-      ccip?.oa2?.distance !== undefined ||
-      ccip?.oa2?.elevation !== undefined ||
-      ccip?.pup?.bearing !== undefined ||
-      ccip?.pup?.distance !== undefined ||
-      ccip?.pup?.elevation !== undefined
-    )
+    const hasReferencePoints =
+      ccip.vip?.bearing !== undefined ||
+      ccip.vip?.distance !== undefined ||
+      ccip.vip?.elevation !== undefined ||
+      ccip.vrp?.bearing !== undefined ||
+      ccip.vrp?.distance !== undefined ||
+      ccip.vrp?.elevation !== undefined ||
+      ccip.oa1?.bearing !== undefined ||
+      ccip.oa1?.distance !== undefined ||
+      ccip.oa1?.elevation !== undefined ||
+      ccip.oa2?.bearing !== undefined ||
+      ccip.oa2?.distance !== undefined ||
+      ccip.oa2?.elevation !== undefined ||
+      ccip.pup?.bearing !== undefined ||
+      ccip.pup?.distance !== undefined ||
+      ccip.pup?.elevation !== undefined
 
     if (!hasReferencePoints) continue
 
-    const refPointType = ccip?.referencePointType ?? 'None'
+    const refPointType = ccip.referencePointType ?? 'None'
     const refPoint =
-      refPointType === 'VIP' ? ccip?.vip : refPointType === 'VRP' ? ccip?.vrp : undefined
+      refPointType === 'VIP' ? ccip.vip : refPointType === 'VRP' ? ccip.vrp : undefined
 
     const formatBearing = (value: number | undefined): string => {
-      if (value === undefined || value === null) return ''
+      if (value === undefined) return ''
       return value.toFixed(1)
     }
 
     const formatDistance = (feet: number | undefined): string => {
-      if (feet === undefined || feet === null) return ''
+      if (feet === undefined) return ''
       const nm = feet / 6076
       return nm.toFixed(1)
     }
@@ -1141,7 +1104,7 @@ function generateDeliveryTables(mission: Mission): unknown[] {
       offset: number | undefined,
       waypointAltitude: number | null,
     ): string => {
-      if (offset === undefined || offset === null) return ''
+      if (offset === undefined) return ''
       if (!waypointAltitude) return ''
       const msl = waypointAltitude + offset
       return Math.round(msl).toString()
@@ -1174,16 +1137,16 @@ function generateDeliveryTables(mission: Mission): unknown[] {
           [
             { text: 'BRNG', fillColor: '#DCDCDC', bold: true },
             { text: formatBearing(refPoint?.bearing), fillColor: '#EBF1FA', italics: true },
-            { text: formatBearing(ccip?.oa1?.bearing), fillColor: '#EBF1FA', italics: true },
-            { text: formatBearing(ccip?.oa2?.bearing), fillColor: '#EBF1FA', italics: true },
-            { text: formatBearing(ccip?.pup?.bearing), fillColor: '#EBF1FA', italics: true },
+            { text: formatBearing(ccip.oa1?.bearing), fillColor: '#EBF1FA', italics: true },
+            { text: formatBearing(ccip.oa2?.bearing), fillColor: '#EBF1FA', italics: true },
+            { text: formatBearing(ccip.pup?.bearing), fillColor: '#EBF1FA', italics: true },
           ],
           [
             { text: 'RNG', fillColor: '#DCDCDC', bold: true },
             { text: formatDistance(refPoint?.distance), fillColor: '#EBF1FA', italics: true },
-            { text: formatDistance(ccip?.oa1?.distance), fillColor: '#EBF1FA', italics: true },
-            { text: formatDistance(ccip?.oa2?.distance), fillColor: '#EBF1FA', italics: true },
-            { text: formatDistance(ccip?.pup?.distance), fillColor: '#EBF1FA', italics: true },
+            { text: formatDistance(ccip.oa1?.distance), fillColor: '#EBF1FA', italics: true },
+            { text: formatDistance(ccip.oa2?.distance), fillColor: '#EBF1FA', italics: true },
+            { text: formatDistance(ccip.pup?.distance), fillColor: '#EBF1FA', italics: true },
           ],
           [
             { text: 'ELEV', fillColor: '#DCDCDC', bold: true },
@@ -1193,17 +1156,17 @@ function generateDeliveryTables(mission: Mission): unknown[] {
               italics: true,
             },
             {
-              text: formatElevation(ccip?.oa1?.elevation, waypoint.altitude),
+              text: formatElevation(ccip.oa1?.elevation, waypoint.altitude),
               fillColor: '#EBF1FA',
               italics: true,
             },
             {
-              text: formatElevation(ccip?.oa2?.elevation, waypoint.altitude),
+              text: formatElevation(ccip.oa2?.elevation, waypoint.altitude),
               fillColor: '#EBF1FA',
               italics: true,
             },
             {
-              text: formatElevation(ccip?.pup?.elevation, waypoint.altitude),
+              text: formatElevation(ccip.pup?.elevation, waypoint.altitude),
               fillColor: '#EBF1FA',
               italics: true,
             },
@@ -1390,8 +1353,8 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
 
   // Determine if Page 2 has any content
   const deliveryTables = generateDeliveryTables(mission)
-  const hasPackageData = mission.packageMembers && mission.packageMembers.length > 0
-  const hasSupportAssetsData = mission.supportAssets && mission.supportAssets.length > 0
+  const hasPackageData = mission.packageMembers.length > 0
+  const hasSupportAssetsData = mission.supportAssets.length > 0
   const hasTarget = hasTargetData(mission)
   const hasPage2Content =
     hasTarget || deliveryTables.length > 0 || hasPackageData || hasSupportAssetsData

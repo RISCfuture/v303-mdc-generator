@@ -4,7 +4,7 @@ import { formatInteger, parseInteger, formatDecimal, parseDecimal } from '@/util
 import { useCCIPCalculations } from '@/composables/useCCIPCalculations'
 import type { CCIPReferencePoint } from '@/types'
 
-interface Props {
+type Props = {
   point: CCIPReferencePoint | null | undefined
   targetSteerpointAltitude: number | null
 }
@@ -24,7 +24,7 @@ const formatDecimal1 = (value: number | null) => formatDecimal(value, 1)
 
 // Format elevation with + sign for positive numbers
 const formatElevation = (value: number | null): string => {
-  if (value === null || value === undefined) return ''
+  if (value === null) return ''
   const formatted = formatInteger(value)
   if (value > 0) return `+${formatted}`
   return formatted

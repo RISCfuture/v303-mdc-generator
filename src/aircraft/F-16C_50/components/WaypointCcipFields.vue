@@ -4,7 +4,7 @@ import { NFormItem, NSelect, NCollapse, NCollapseItem } from 'naive-ui'
 import CCIPReferencePoint from '@/components/mission/notes-targets/CCIPReferencePoint.vue'
 import type { Waypoint, CCIPData, CCIPReferencePoint as CCIPRefPoint } from '@/types'
 
-interface Props {
+type Props = {
   waypoint: Waypoint
   isFirstTgt: boolean
 }
@@ -18,7 +18,7 @@ const emit = defineEmits<{
 
 // Helper to check if a reference point has been specified (has bearing AND distance)
 const hasReferencePoint = (point?: CCIPRefPoint): boolean => {
-  return point?.bearing !== undefined && point?.distance !== undefined
+  return point?.bearing !== undefined && point.distance !== undefined
 }
 
 // Computed title showing which offsets are specified
@@ -63,7 +63,7 @@ const pupLabel = computed(() => {
 
 // Helper to update CCIP field
 const updateCCIPField = (field: keyof CCIPData, value: CCIPData[keyof CCIPData]) => {
-  const ccip = props.waypoint.ccip || {}
+  const ccip = props.waypoint.ccip ?? {}
   emit('update-field', 'ccip', { ...ccip, [field]: value })
 }
 
@@ -73,8 +73,8 @@ const updateCCIPReferencePoint = (
   field: keyof CCIPRefPoint,
   value: CCIPRefPoint[keyof CCIPRefPoint],
 ) => {
-  const ccip = props.waypoint.ccip || {}
-  const point = (ccip[pointName] as CCIPRefPoint) || {}
+  const ccip = props.waypoint.ccip ?? {}
+  const point = (ccip[pointName] as CCIPRefPoint | undefined) ?? {}
   emit('update-field', 'ccip', { ...ccip, [pointName]: { ...point, [field]: value } })
 }
 </script>

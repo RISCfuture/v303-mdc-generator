@@ -9,7 +9,7 @@ import {
   calculateHeadwindComponent,
 } from '../takeoffDistanceCalculator'
 
-interface Props {
+type Props = {
   mission: Mission
   grossWeight: number
   runwayLength?: number | null
@@ -40,7 +40,7 @@ const takeoffParams = computed(() => {
 
   return {
     temperature,
-    thrustSetting: thrustSetting as 'MAX' | '3_BELOW_PTFS',
+    thrustSetting: thrustSetting,
     runwaySlope,
     fieldElevation,
     headwindComponent,

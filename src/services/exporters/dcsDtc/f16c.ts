@@ -5,9 +5,9 @@ import { getCrewMemberLink16Callsign } from '@/utils/callsignHelpers'
 import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DTCReferencePoint, DeepPartial } from '../helpers'
-import { truncateFrequency, convertCCIPToDTC, getRadioConfig } from '../helpers'
+import { truncateFrequency, convertCCIPToDTC, getRadioConfig, parseTACAN } from '../helpers'
 
-export interface DCSF16MDC {
+export type DCSF16MDC = {
   Aircraft: 'F16C'
   Upload: {
     Waypoints: boolean
@@ -21,7 +21,7 @@ export interface DCSF16MDC {
   }
   WaypointsCapture: null
   Waypoints: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -38,10 +38,10 @@ export interface DCSF16MDC {
       UseVRP: boolean
       TGTtoVRP: DTCReferencePoint | null
       TGTtoPUP: DTCReferencePoint | null
-    }>
+    }[]
   }
   CMS: {
-    Programs?: Array<{
+    Programs?: {
       Number: number
       FlareBurstQty: number
       FlareBurstInterval: number
@@ -52,28 +52,28 @@ export interface DCSF16MDC {
       ChaffSalvoQty: number
       ChaffSalvoInterval: number
       ToBeUpdated: boolean
-    }>
+    }[]
     ChaffBingo: number
     FlareBingo: number
   }
   Radios: {
     Radio1: {
-      Presets: Array<{
+      Presets: {
         Number: number
         Name: string
         Frequency: string
-      }>
+      }[]
       SelectedFrequency: string
       SelectedPreset: string | null
       EnableGuard: boolean
       Mode: number
     }
     Radio2: {
-      Presets: Array<{
+      Presets: {
         Number: number
         Name: string
         Frequency: string
-      }>
+      }[]
       SelectedFrequency: string
       SelectedPreset: string | null
       EnableGuard: boolean
@@ -81,7 +81,7 @@ export interface DCSF16MDC {
     }
   } | null
   MFD: {
-    Configurations: Array<{
+    Configurations: {
       Mode: number
       LeftMFD: {
         SelectedPage: number
@@ -104,14 +104,14 @@ export interface DCSF16MDC {
         FCRRange: number
       }
       ToBeUpdated: boolean
-    }>
+    }[]
   }
   HARM: {
-    Tables: Array<{
+    Tables: {
       TableNumber: number
       ToBeUpdated: boolean
       Emitters: number[]
-    }>
+    }[]
   } | null
   HTS: {
     ManualTableEnabled: boolean
@@ -162,7 +162,7 @@ export interface DCSF16MDC {
  */
 export function exportF16MDC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSF16MDC>,
 ): DCSF16MDC {
   // Convert waypoints to DCS format
@@ -170,8 +170,8 @@ export function exportF16MDC(
     // For blank steerpoints (all fields null), export as 0°N, 0°E
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
 
     const ccip = wp.ccip
@@ -194,32 +194,32 @@ export function exportF16MDC(
 
     return {
       Sequence: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Latitude: formatDDM(latitude, 'latitude'),
       Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
-      TimeOverSteerpoint: wp.timeOnTarget || null,
+      TimeOverSteerpoint: wp.timeOnTarget ?? null,
       Target: wp.type === 'TGT',
-      UseOA: !!(oa1 || oa2),
-      OffsetAimpoint1: oa1 || zeroPoint,
-      OffsetAimpoint2: oa2 || zeroPoint,
+      UseOA: !!(oa1 ?? oa2),
+      OffsetAimpoint1: oa1 ?? zeroPoint,
+      OffsetAimpoint2: oa2 ?? zeroPoint,
       UseVIP: useVIP,
-      VIPtoTGT: useVIP ? vipToTgt || zeroPoint : null,
-      VIPtoPUP: useVIP ? vipToPup || zeroPoint : null,
+      VIPtoTGT: useVIP ? vipToTgt : null,
+      VIPtoPUP: useVIP ? (vipToPup ?? zeroPoint) : null,
       UseVRP: useVRP,
-      TGTtoVRP: useVRP ? tgtToVrp || zeroPoint : null,
-      TGTtoPUP: useVRP ? tgtToPup || zeroPoint : null,
+      TGTtoVRP: useVRP ? tgtToVrp : null,
+      TGTtoPUP: useVRP ? (tgtToPup ?? zeroPoint) : null,
     }
   })
 
   // Get laser code and other data from selected crew member
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
+  const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = parseInt(selectedCrewMember.laser)
 
   // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
-  const tacanMatch = selectedCrewMember.aaTcn.match(/(\d+)([XY])/)!
-  const tacanChannel = parseInt(tacanMatch[1]!)
-  const tacanBand = tacanMatch[2] === 'Y' ? 1 : 0
+  const tacan = parseTACAN(selectedCrewMember.aaTcn)
+  const tacanChannel = tacan?.channel ?? 0
+  const tacanBand = tacan?.band === 'Y' ? 1 : 0
 
   // Calculate Link16 callsign (e.g., "BR12" for prefix "BR", flight "1", position 2)
   const ownCallsign = getCrewMemberLink16Callsign(mission, crewMemberIndex)
@@ -230,14 +230,9 @@ export function exportF16MDC(
   for (let i = 0; i < 8; i++) {
     if (i < mission.crew.length) {
       const crewMember = mission.crew[i]
-      if (crewMember) {
-        const stn = parseInt(crewMember.stn.replace(/\s/g, ''))
-        members.push(stn)
-        tdoaMembers.push(stn !== 0)
-      } else {
-        members.push(0)
-        tdoaMembers.push(false)
-      }
+      const stn = parseInt(crewMember.stn.replace(/\s/g, ''))
+      members.push(stn)
+      tdoaMembers.push(stn !== 0)
     } else {
       members.push(0)
       tdoaMembers.push(false)
@@ -250,24 +245,24 @@ export function exportF16MDC(
       Number: preset.number,
       Name: preset.description,
       Frequency: truncateFrequency(preset.frequency),
-    })) || []
+    })) ?? []
 
   const radio2Presets =
     mission.radioPresets[1]?.map((preset) => ({
       Number: preset.number,
       Name: preset.description,
       Frequency: truncateFrequency(preset.frequency),
-    })) || []
+    })) ?? []
 
   // Get radio configurations from comm ladders
   const radio1Config = getRadioConfig(mission, 0) // Radio 1 = UHF
   const radio2Config = getRadioConfig(mission, 1) // Radio 2 = VHF
 
   // Calculate MSL Floor and CARA ALOW from TOLD data (defaults to 500/5000 if not specified)
-  const minAgl = mission.told?.minAgl ?? 500
-  const minMsl = mission.told?.minMsl ?? 5000
-  const hasCaraAlowData = mission.told?.minAgl !== undefined
-  const hasMslFloorData = mission.told?.minMsl !== undefined
+  const minAgl = mission.told.minAgl ?? 500
+  const minMsl = mission.told.minMsl ?? 5000
+  const hasCaraAlowData = mission.told.minAgl !== undefined
+  const hasMslFloorData = mission.told.minMsl !== undefined
 
   // Get ILS data from recovery runway (defaults to 108.1 MHz / 0 degrees if not found)
   let ilsFrequency = 108.1
@@ -282,7 +277,7 @@ export function exportF16MDC(
       const recoveryRunway = recoveryAirport.runways.find(
         (rw) => rw.name === mission.departureRecovery.recoveryRunwayName,
       )
-      if (recoveryRunway && recoveryRunway.ils) {
+      if (recoveryRunway?.ils) {
         ilsFrequency = parseFloat(String(recoveryRunway.ils.frequency))
         ilsCourse = recoveryRunway.heading
         ilsFound = true
@@ -422,7 +417,7 @@ export function exportF16MDC(
       Radios: radio1Presets.length > 0 || radio2Presets.length > 0,
       MFDs: true,
       HARMHTS:
-        (mission.harmTables && mission.harmTables.length > 0) ||
+        (mission.harmTables !== undefined && mission.harmTables.length > 0) ||
         mission.htsThreatData !== undefined,
       Datalink: mission.crew.length > 0,
       Misc: true,
@@ -445,8 +440,8 @@ export function exportF16MDC(
         ChaffSalvoInterval: prog.chaffSalvoInterval,
         ToBeUpdated: true,
       })),
-      ChaffBingo: mission.ecmCmds.chaffBingo ?? 10,
-      FlareBingo: mission.ecmCmds.flareBingo ?? 10,
+      ChaffBingo: mission.ecmCmds.chaffBingo,
+      FlareBingo: mission.ecmCmds.flareBingo,
     },
     Radios:
       radio1Presets.length > 0 || radio2Presets.length > 0
@@ -505,8 +500,8 @@ export function exportF16MDC(
     Misc: {
       Bingo: mission.fuel.bingo,
       BingoToBeUpdated: true,
-      BullseyeToBeUpdated: mission.bullseye ? true : false,
-      BullseyeWP: mission.bullseye?.waypointNumber || 25,
+      BullseyeToBeUpdated: Boolean(mission.bullseye),
+      BullseyeWP: mission.bullseye?.waypointNumber ?? 25,
       CARAALOW: minAgl,
       CARAALOWToBeUpdated: hasCaraAlowData,
       MSLFloor: minMsl,

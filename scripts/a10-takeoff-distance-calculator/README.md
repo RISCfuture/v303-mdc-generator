@@ -5,6 +5,7 @@ This module calculates takeoff distance for the A-10C Thunderbolt II with TF34-G
 ## Overview
 
 The calculator provides functions to determine:
+
 - **Takeoff Index**: Based on temperature (°C) and pressure altitude
 - **Takeoff Ground Run**: From the takeoff index and gross weight (Flaps 0° or 7°)
 - **Critical Field Length**: For single-engine failure scenarios
@@ -13,19 +14,23 @@ The calculator provides functions to determine:
 ## Data Extraction Process
 
 ### 1. Chart Analysis and Digitization (`extract_regression.py`)
+
 - Manually sampled data points from performance charts
 - Fitted polynomial regression equations
 - Achieved R² > 0.98 for all curves
 - Generated coefficients saved in `regression_data.json`
 
 Charts digitized:
+
 - **Takeoff Index**: Temperature (°C), altitude → index
 - **Takeoff Run - Flaps 0°**: Index, weight → distance with wind/slope corrections
 - **Takeoff Run - Flaps 7°**: Index, weight → distance with wind/slope corrections
 - **Critical Field Length**: Index, weight → CFL with wind/slope/RCR corrections
 
 ### 2. TypeScript Calculator (`src/utils/a10TakeoffDistanceCalculator.ts`)
+
 Uses embedded polynomial regression equations to calculate takeoff distance:
+
 - **No external data files needed** - coefficients are embedded in code
 - Apply corrections for:
   - Flap setting (0° vs 7°)
@@ -55,13 +60,13 @@ console.log(`Takeoff Index: ${result.takeoffIndex.toFixed(2)}`)
 import { calculateTakeoffDistance } from '@/utils/a10TakeoffDistanceCalculator'
 
 const result = calculateTakeoffDistance({
-  grossWeight: 45000,           // lbs
-  temperatureC: 30,             // °C
-  pressureAltitude: 2000,       // ft
-  flapSetting: 7,               // 7 degrees
-  thrustSetting: 'MAX',         // or '3_BELOW_PTFS'
-  runwaySlope: 1,               // 1% uphill
-  headwindComponent: 15,        // 15 kt headwind
+  grossWeight: 45000, // lbs
+  temperatureC: 30, // °C
+  pressureAltitude: 2000, // ft
+  flapSetting: 7, // 7 degrees
+  thrustSetting: 'MAX', // or '3_BELOW_PTFS'
+  runwaySlope: 1, // 1% uphill
+  headwindComponent: 15, // 15 kt headwind
 })
 
 console.log(`Takeoff Distance: ${result.takeoffDistance} feet`)
@@ -75,13 +80,13 @@ console.log('Notes:', result.notes.join(', '))
 import { calculateCriticalFieldLength } from '@/utils/a10TakeoffDistanceCalculator'
 
 const result = calculateCriticalFieldLength({
-  grossWeight: 45000,           // lbs
-  temperatureC: 25,             // °C
-  pressureAltitude: 1000,       // ft
+  grossWeight: 45000, // lbs
+  temperatureC: 25, // °C
+  pressureAltitude: 1000, // ft
   thrustSetting: 'MAX',
   runwaySlope: 0,
   headwindComponent: 10,
-  rcr: 12,                      // Wet runway
+  rcr: 12, // Wet runway
 })
 
 console.log(`Critical Field Length: ${result.criticalFieldLength} feet`)
@@ -105,29 +110,34 @@ const directHeadwind = calculateHeadwindComponent(20, 360, 360)
 ## Calculation Method
 
 ### Takeoff Index
+
 ```
 index = 4.524 + 0.0405*temp_C + 0.597*alt_1000ft + 0.00621*temp_C*alt_1000ft
 ```
+
 - Add 0.4 for 3% Below PTFS thrust setting
 - Clamped to chart limits (4-11)
 
 ### Takeoff Ground Run
+
 ```
 distance_1000ft = c0 + c1*index + c2*index² + c3*weight_k + c4*weight_k² + c5*index*weight_k
 ```
+
 Different coefficients for Flaps 0° and Flaps 7°
 
 ### Corrections Applied
-| Correction | Formula | Notes |
-|------------|---------|-------|
-| Wind | Polynomial | Headwind decreases, tailwind increases |
-| Slope | ~7% per 1% slope | Uphill increases, downhill decreases |
-| RCR | Factor (1.0/1.2/1.5) | Only for critical field length |
+
+| Correction | Formula              | Notes                                  |
+| ---------- | -------------------- | -------------------------------------- |
+| Wind       | Polynomial           | Headwind decreases, tailwind increases |
+| Slope      | ~7% per 1% slope     | Uphill increases, downhill decreases   |
+| RCR        | Factor (1.0/1.2/1.5) | Only for critical field length         |
 
 ## Flap Settings
 
-| Setting | Use Case |
-|---------|----------|
+| Setting  | Use Case                         |
+| -------- | -------------------------------- |
 | Flaps 0° | Normal operations, lower weights |
 | Flaps 7° | High weight, hot/high conditions |
 
@@ -136,10 +146,10 @@ Flaps 7° provides approximately 10-15% reduction in takeoff distance.
 ## RCR (Runway Condition Reading)
 
 | RCR | Condition | CFL Multiplier |
-|-----|-----------|----------------|
-| 23 | Dry | 1.0 |
-| 12 | Wet | 1.2 (+20%) |
-| 5 | Icy | 1.5 (+50%) |
+| --- | --------- | -------------- |
+| 23  | Dry       | 1.0            |
+| 12  | Wet       | 1.2 (+20%)     |
+| 5   | Icy       | 1.5 (+50%)     |
 
 ## Weight Limits
 
@@ -150,6 +160,7 @@ Flaps 7° provides approximately 10-15% reduction in takeoff distance.
 ## Testing
 
 Run tests:
+
 ```bash
 yarn test:unit a10TakeoffDistanceCalculator
 ```
@@ -168,13 +179,13 @@ yarn test:unit a10TakeoffDistanceCalculator
 
 ## Differences from F-16 Calculator
 
-| Feature | A-10C | F-16C |
-|---------|-------|-------|
-| Temperature unit | Celsius | Fahrenheit |
+| Feature               | A-10C        | F-16C              |
+| --------------------- | ------------ | ------------------ |
+| Temperature unit      | Celsius      | Fahrenheit         |
 | Weight in calculation | Direct input | Via takeoff factor |
-| Flap settings | 0° / 7° | N/A |
-| Drag index | N/A | Cumulative |
-| CG correction | N/A | Yes |
-| Pitch correction | N/A | 8° vs 10° |
-| Critical field length | Yes | N/A |
-| RCR correction | Yes | N/A |
+| Flap settings         | 0° / 7°      | N/A                |
+| Drag index            | N/A          | Cumulative         |
+| CG correction         | N/A          | Yes                |
+| Pitch correction      | N/A          | 8° vs 10°          |
+| Critical field length | Yes          | N/A                |
+| RCR correction        | Yes          | N/A                |

@@ -13,17 +13,16 @@ const airfieldModules = import.meta.glob<Airfield[]>('./json/airfields/*.json', 
 // Build airfield database from dynamically imported JSON files
 // The keys are derived from the filename (without extension)
 // e.g., "./json/airfields/Caucasus.json" -> "Caucasus"
-const airfieldsDatabase: Record<string, Airfield[]> = Object.entries(airfieldModules).reduce(
-  (acc, [path, airfields]) => {
-    // Extract theater name from path: "./json/airfields/Caucasus.json" -> "Caucasus"
-    const theaterName = path.split('/').pop()?.replace('.json', '') ?? ''
-    if (theaterName) {
-      acc[theaterName] = airfields
-    }
-    return acc
-  },
-  {} as Record<string, Airfield[]>,
-)
+const airfieldsDatabase: Record<string, Airfield[]> = Object.entries(airfieldModules).reduce<
+  Record<string, Airfield[]>
+>((acc, [path, airfields]) => {
+  // Extract theater name from path: "./json/airfields/Caucasus.json" -> "Caucasus"
+  const theaterName = path.split('/').pop()?.replace('.json', '') ?? ''
+  if (theaterName) {
+    acc[theaterName] = airfields
+  }
+  return acc
+}, {})
 
 /**
  * Get airfields for a specific theater
@@ -31,7 +30,7 @@ const airfieldsDatabase: Record<string, Airfield[]> = Object.entries(airfieldMod
  * @returns Array of airfields for the theater, or empty array if not found
  */
 export function getAirfieldsForTheater(theater: string): Airfield[] {
-  return airfieldsDatabase[theater] || []
+  return airfieldsDatabase[theater] ?? []
 }
 
 /**

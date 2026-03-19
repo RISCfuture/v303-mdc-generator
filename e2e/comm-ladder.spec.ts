@@ -29,13 +29,13 @@ async function getDefaultModeSelector(page: Page) {
 }
 
 // Helper function to get the preset selector (when in preset mode)
-async function getPresetSelector(page: Page) {
+function getPresetSelector(page: Page) {
   const defaultFormItem = page.locator('.n-form-item', { hasText: 'Default' })
   return defaultFormItem.locator('.n-select').nth(1)
 }
 
 // Helper function to get the frequency input (when in manual mode)
-async function getFrequencyInput(page: Page) {
+function getFrequencyInput(page: Page) {
   const defaultFormItem = page.locator('.n-form-item', { hasText: 'Default' })
   return defaultFormItem.locator('.n-input-number input')
 }
@@ -44,11 +44,16 @@ test.describe('Comm Ladder and Radio Default Functionality', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/')
     // Clear localStorage before each test
-    await page.evaluate(() => localStorage.clear())
+    await page.evaluate(() => {
+      localStorage.clear()
+    })
     await page.reload()
 
     // Create a new F-16C mission
-    await page.getByRole('button', { name: /New Mission/ }).first().click()
+    await page
+      .getByRole('button', { name: /New Mission/ })
+      .first()
+      .click()
     await page.getByRole('button', { name: 'Create Mission' }).click()
     await page.waitForURL(/\/mission\/.+/)
 
@@ -76,7 +81,7 @@ test.describe('Comm Ladder and Radio Default Functionality', () => {
     await expect(modeSelector).toContainText('Preset')
 
     // The preset selector should be visible
-    const presetSelector = await getPresetSelector(page)
+    const presetSelector = getPresetSelector(page)
     await expect(presetSelector).toBeVisible()
 
     // Select preset 5
@@ -100,7 +105,7 @@ test.describe('Comm Ladder and Radio Default Functionality', () => {
     await expect(modeSelector).toContainText('Manual')
 
     // The frequency input should now be visible
-    const frequencyInput = await getFrequencyInput(page)
+    const frequencyInput = getFrequencyInput(page)
     await expect(frequencyInput).toBeVisible()
 
     // Enter a frequency
@@ -147,12 +152,12 @@ test.describe('Comm Ladder and Radio Default Functionality', () => {
     await page.locator('.n-base-select-menu').waitFor({ state: 'visible' })
     await page.locator('.n-base-select-option', { hasText: 'Manual' }).click()
 
-    const uhfFrequencyInput = await getFrequencyInput(page)
+    const uhfFrequencyInput = getFrequencyInput(page)
     await uhfFrequencyInput.fill('305.0')
 
     // Switch to VHF and set a different preset
     await switchToRadioTab(page, 'COMM 2 (VHF) AN/ARC-222')
-    const vhfPresetSelector = await getPresetSelector(page)
+    const vhfPresetSelector = getPresetSelector(page)
     await vhfPresetSelector.click()
     await page.locator('.n-base-select-menu').waitFor({ state: 'visible' })
     await page.locator('.n-base-select-option', { hasText: '10' }).click()
@@ -161,12 +166,12 @@ test.describe('Comm Ladder and Radio Default Functionality', () => {
     await switchToRadioTab(page, 'COMM 1 (UHF) AN/ARC-164')
     const uhfModeSelectorAgain = await getDefaultModeSelector(page)
     await expect(uhfModeSelectorAgain).toContainText('Manual')
-    const uhfFrequencyInputAgain = await getFrequencyInput(page)
+    const uhfFrequencyInputAgain = getFrequencyInput(page)
     await expect(uhfFrequencyInputAgain).toHaveValue('305.000')
 
     // Switch back to VHF - should still have preset 10
     await switchToRadioTab(page, 'COMM 2 (VHF) AN/ARC-222')
-    const vhfPresetSelectorAgain = await getPresetSelector(page)
+    const vhfPresetSelectorAgain = getPresetSelector(page)
     await expect(vhfPresetSelectorAgain).toContainText('10')
   })
 })

@@ -19,20 +19,24 @@ const emit = defineEmits<{
 }>()
 
 // Get airframe data based on airframe type
-const airframeData = computed(() => getAirframeData(props.airframe)!)
+const airframeData = computed(() => {
+  const data = getAirframeData(props.airframe)
+  if (!data) throw new Error(`Unknown airframe: ${props.airframe}`)
+  return data
+})
 
 // Build radio configuration dynamically
 const radios = computed(() => {
   return airframeData.value.radios.map((radioConfig, index) => {
     const label = radioConfig.description // Use only description as per requirement
     const presetCount = radioConfig.presetCount
-    const currentPresets = props.radioPresets[index] || []
+    const currentPresets = props.radioPresets[index] ?? []
 
     // Create slots for this radio
     const slots: RadioPreset[] = []
     for (let i = 0; i < presetCount; i++) {
       const existing = currentPresets.find((p) => p.number === i + 1)
-      slots.push(existing || { number: i + 1, frequency: '', description: '' })
+      slots.push(existing ?? { number: i + 1, frequency: '', description: '' })
     }
 
     return {
@@ -47,10 +51,7 @@ const radios = computed(() => {
 
 function updatePresetFrequency(radioIndex: number, slotNumber: number, value: number | null) {
   const radio = radios.value[radioIndex]
-  if (!radio) return
-
   const slot = radio.slots[slotNumber - 1]
-  if (!slot) return
 
   // Convert number to string for storage
   const frequencyString = value !== null ? value.toString() : ''
@@ -62,7 +63,7 @@ function updatePresetFrequency(radioIndex: number, slotNumber: number, value: nu
   }
 
   // Get current presets for this radio
-  const currentPresets = props.radioPresets[radioIndex] || []
+  const currentPresets = props.radioPresets[radioIndex] ?? []
 
   // Filter out empty presets and update/add the changed one
   const filteredPresets = currentPresets.filter((p) => p.number !== slotNumber)
@@ -83,10 +84,7 @@ function updatePresetFrequency(radioIndex: number, slotNumber: number, value: nu
 
 function updatePresetDescription(radioIndex: number, slotNumber: number, value: string) {
   const radio = radios.value[radioIndex]
-  if (!radio) return
-
   const slot = radio.slots[slotNumber - 1]
-  if (!slot) return
 
   // Create updated preset
   const updatedPreset: RadioPreset = {
@@ -95,7 +93,7 @@ function updatePresetDescription(radioIndex: number, slotNumber: number, value: 
   }
 
   // Get current presets for this radio
-  const currentPresets = props.radioPresets[radioIndex] || []
+  const currentPresets = props.radioPresets[radioIndex] ?? []
 
   // Filter out empty presets and update/add the changed one
   const filteredPresets = currentPresets.filter((p) => p.number !== slotNumber)
@@ -116,7 +114,7 @@ function updatePresetDescription(radioIndex: number, slotNumber: number, value: 
 
 // Comm ladder functions
 function updateCommLadder(radioIndex: number, value: string) {
-  const updatedLadders = [...(props.commLadders || [])]
+  const updatedLadders = [...(props.commLadders ?? [])]
   updatedLadders[radioIndex] = value
   emit('update:commLadders', updatedLadders)
 }
@@ -129,7 +127,6 @@ const modeOptions = [
 
 function getPresetOptions(radioIndex: number) {
   const radio = radios.value[radioIndex]
-  if (!radio) return []
 
   const options: { label: string; value: number }[] = []
   for (let i = 1; i <= radio.presetCount; i++) {
@@ -139,12 +136,12 @@ function getPresetOptions(radioIndex: number) {
 }
 
 function getRadioDefault(radioIndex: number): RadioDefault {
-  return props.radioDefaults?.[radioIndex] || { mode: 'preset', preset: 1 }
+  return props.radioDefaults?.[radioIndex] ?? { mode: 'preset', preset: 1 }
 }
 
 function updateRadioDefault(radioIndex: number, updates: Partial<RadioDefault>) {
-  const updatedDefaults = [...(props.radioDefaults || [])]
-  const current = updatedDefaults[radioIndex] || { mode: 'preset', preset: 1 }
+  const updatedDefaults = [...(props.radioDefaults ?? [])]
+  const current = updatedDefaults[radioIndex] ?? { mode: 'preset', preset: 1 }
   updatedDefaults[radioIndex] = { ...current, ...updates }
   emit('update:radioDefaults', updatedDefaults)
 }

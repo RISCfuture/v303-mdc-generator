@@ -33,7 +33,7 @@ export type CalculatorCapability =
 /**
  * Result from speed calculations (rotation and refusal speeds)
  */
-export interface SpeedCalculationResult {
+export type SpeedCalculationResult = {
   /** Rotation speed in KIAS */
   rotationSpeed: number
   /** Refusal speed in KIAS */
@@ -45,7 +45,7 @@ export interface SpeedCalculationResult {
 /**
  * Result from takeoff distance calculations
  */
-export interface TakeoffDistanceResult {
+export type TakeoffDistanceResult = {
   /** Base takeoff distance in feet (before corrections) */
   baseDistance: number
   /** Final takeoff distance in feet (after all corrections) */
@@ -59,7 +59,7 @@ export interface TakeoffDistanceResult {
 /**
  * Result from critical field length calculations (A-10 specific)
  */
-export interface CriticalFieldLengthResult {
+export type CriticalFieldLengthResult = {
   /** Base critical field length in feet (before corrections) */
   baseLength: number
   /** Final critical field length in feet (after all corrections) */
@@ -73,7 +73,7 @@ export interface CriticalFieldLengthResult {
 /**
  * Parameters for bingo fuel calculation
  */
-export interface BingoParams {
+export type BingoParams = {
   /** Number of pilots in the flight */
   numberOfPilots: number
   /** Recovery airport location (home plate) */
@@ -100,12 +100,12 @@ export interface BingoParams {
  * @typeParam TTakeoffParams - Parameters for takeoff distance calculations
  * @typeParam TTakeoffConfig - Configuration for takeoff distance calculations
  */
-export interface AircraftCalculator<
+export type AircraftCalculator<
   TSpeedParams = unknown,
   TSpeedConfig = unknown,
   TTakeoffParams = unknown,
   TTakeoffConfig = unknown,
-> {
+> = {
   /** Aircraft identifier (must match an Airframe type) */
   readonly airframe: Airframe
 
@@ -173,7 +173,7 @@ export interface AircraftCalculator<
 /**
  * Extended calculator interface for aircraft with bingo fuel capability (e.g., F-16)
  */
-export interface BingoCapableCalculator<TBingoConfig = unknown> {
+export type BingoCapableCalculator<TBingoConfig = unknown> = {
   /**
    * Calculate bingo fuel
    * @param params - Bingo calculation parameters
@@ -191,7 +191,7 @@ export interface BingoCapableCalculator<TBingoConfig = unknown> {
 /**
  * Extended calculator interface for aircraft with critical field length (e.g., A-10)
  */
-export interface CriticalFieldCapableCalculator<TParams = unknown, TConfig = unknown> {
+export type CriticalFieldCapableCalculator<TParams = unknown, TConfig = unknown> = {
   /**
    * Calculate critical field length (engine-out scenario)
    * @param params - Environment parameters
@@ -204,13 +204,13 @@ export interface CriticalFieldCapableCalculator<TParams = unknown, TConfig = unk
 /**
  * Extended calculator interface for aircraft with drag index calculation (e.g., F-16)
  */
-export interface DragIndexCapableCalculator {
+export type DragIndexCapableCalculator = {
   /**
    * Calculate total drag index from a loadout
    * @param stores - Array of store items with CLSIDs
    * @returns Total drag index
    */
-  calculateDragIndex(stores: Array<{ clsid: string; category?: string }>): number
+  calculateDragIndex(stores: { clsid: string; category?: string }[]): number
 
   /**
    * Get drag index for a single store

@@ -23,7 +23,7 @@ export type AltitudeProfile = 'medium' | 'low'
 /**
  * Input parameters for bingo fuel calculation
  */
-export interface BingoCalculationParams {
+export type BingoCalculationParams = {
   /** Whether aerial refueling is expected */
   aarExpected: boolean
   /** Approach type for recovery (VFR or IFR) */

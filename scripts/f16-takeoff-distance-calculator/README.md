@@ -5,6 +5,7 @@ This module calculates takeoff distance for the F-16C with F110-GE-129 engine ba
 ## Overview
 
 The calculator provides functions to determine:
+
 - **Takeoff Factor**: Based on temperature and pressure altitude
 - **Base Takeoff Distance**: From the takeoff factor
 - **Corrected Takeoff Distance**: Applying corrections for CG, drag index, slope, wind, and pitch attitude
@@ -12,18 +13,22 @@ The calculator provides functions to determine:
 ## Data Extraction Process
 
 ### 1. Chart Analysis and Digitization (`extract_regression.py`)
+
 - Manually sampled data points from performance charts (Figures B2-1 and B2-3)
 - Fitted polynomial regression equations
 - Achieved R² > 0.98 for all curves
 - Generated coefficients saved in `regression_data.json`
 
 Charts digitized:
+
 - **Figure B2-1**: Takeoff Factor (temperature, altitude → factor)
 - **Figure B2-3**: Takeoff Distance (factor + corrections → distance)
 - **Drag Index Tables**: Store drag indexes for CLSID mapping
 
 ### 2. TypeScript Calculator (`src/utils/f16TakeoffDistanceCalculator.ts`)
+
 Uses embedded polynomial regression equations to calculate takeoff distance:
+
 - **No external data files needed** - coefficients are embedded in code
 - Apply corrections for:
   - Power setting (MIL vs AB)
@@ -54,15 +59,15 @@ console.log(`Takeoff Factor: ${result.takeoffFactor.toFixed(2)}`)
 import { calculateTakeoffDistance } from '@/utils/f16TakeoffDistanceCalculator'
 
 const result = calculateTakeoffDistance({
-  grossWeight: 32500,           // lbs
-  temperatureF: 85,             // °F
-  pressureAltitude: 2000,       // ft
+  grossWeight: 32500, // lbs
+  temperatureF: 85, // °F
+  pressureAltitude: 2000, // ft
   powerSetting: 'AB',
-  cgPercent: 37,                // 37% MAC (forward of baseline)
-  dragIndex: 50,                // loaded with stores
-  runwaySlope: 0.5,             // 0.5% upslope
-  headwindComponent: 10,        // 10 kt headwind
-  pitchAttitude: 10,            // 10 degrees
+  cgPercent: 37, // 37% MAC (forward of baseline)
+  dragIndex: 50, // loaded with stores
+  runwaySlope: 0.5, // 0.5% upslope
+  headwindComponent: 10, // 10 kt headwind
+  pitchAttitude: 10, // 10 degrees
 })
 
 console.log(`Takeoff Distance: ${result.takeoffDistance} feet`)
@@ -76,7 +81,7 @@ console.log('Notes:', result.notes.join(', '))
 import { getDragIndex, calculateTotalDragIndex } from '@/utils/f16TakeoffDistanceCalculator'
 
 // Get drag index for a specific weapon
-const aim9DragIndex = getDragIndex('{AIM-9M}')  // returns 4
+const aim9DragIndex = getDragIndex('{AIM-9M}') // returns 4
 
 // Calculate total drag index for a loadout
 const totalDragIndex = calculateTotalDragIndex([
@@ -92,55 +97,61 @@ const totalDragIndex = calculateTotalDragIndex([
 ## Calculation Method
 
 ### Takeoff Factor (Figure B2-1)
+
 ```
 AB Factor = 1.110 + 0.00631*temp_F + 0.172*alt_1000ft + 0.000968*temp_F*alt_1000ft
 MIL Factor = AB Factor * 1.76  (from manual: 2.54/1.44)
 ```
 
 ### Base Takeoff Distance (Figure B2-3)
+
 ```
 Distance (1000 ft) = 0.141*factor² + 1.369*factor + 0.242
 ```
 
 ### Corrections Applied
-| Correction | Formula | Notes |
-|------------|---------|-------|
-| CG | 3% per 1% from 35% MAC | Forward increases distance |
-| Drag Index | Polynomial (0.0001*DI² + 0.07*DI) | From clean baseline |
-| Slope | 5% per 1% slope | Upslope increases distance |
-| Wind | Polynomial (asymmetric) | Headwind decreases distance |
-| Pitch | +18% for 8° vs 10° | 8° increases distance |
+
+| Correction | Formula                           | Notes                       |
+| ---------- | --------------------------------- | --------------------------- |
+| CG         | 3% per 1% from 35% MAC            | Forward increases distance  |
+| Drag Index | Polynomial (0.0001*DI² + 0.07*DI) | From clean baseline         |
+| Slope      | 5% per 1% slope                   | Upslope increases distance  |
+| Wind       | Polynomial (asymmetric)           | Headwind decreases distance |
+| Pitch      | +18% for 8° vs 10°                | 8° increases distance       |
 
 ## Drag Index Reference
 
 ### Clean Aircraft
+
 - Clean F-16C drag index: **7**
 
 ### Common Stores
-| Store | Drag Index |
-|-------|-----------|
-| AIM-9L/M/X | 4 |
-| AIM-120B | 0 |
-| AIM-120C | 4 |
-| AGM-65 Maverick | 13 |
-| AGM-88 HARM | 10 |
-| Mk-82 | 7 |
-| Mk-82 AIR | 11 |
-| Mk-84 | 10 |
-| GBU-12 | 5 |
-| GBU-10 | 15 |
-| GBU-24 | 17-20 |
-| GBU-31/38 JDAM | 8-12 |
-| CBU-87/97 | 18-20 |
-| LITENING/Sniper | 3 |
-| ALQ-184 ECM | 10-12 |
-| 300 gal tank (full) | 18 |
-| 370 gal tank | 27 |
-| 600 gal tank | 20 |
+
+| Store               | Drag Index |
+| ------------------- | ---------- |
+| AIM-9L/M/X          | 4          |
+| AIM-120B            | 0          |
+| AIM-120C            | 4          |
+| AGM-65 Maverick     | 13         |
+| AGM-88 HARM         | 10         |
+| Mk-82               | 7          |
+| Mk-82 AIR           | 11         |
+| Mk-84               | 10         |
+| GBU-12              | 5          |
+| GBU-10              | 15         |
+| GBU-24              | 17-20      |
+| GBU-31/38 JDAM      | 8-12       |
+| CBU-87/97           | 18-20      |
+| LITENING/Sniper     | 3          |
+| ALQ-184 ECM         | 10-12      |
+| 300 gal tank (full) | 18         |
+| 370 gal tank        | 27         |
+| 600 gal tank        | 20         |
 
 ## Testing
 
 Run tests:
+
 ```bash
 yarn test:unit f16TakeoffDistanceCalculator
 ```

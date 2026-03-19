@@ -2,7 +2,7 @@
 import MissionCard from '@/components/mission-list/MissionCard.vue'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   missions: Mission[]
 }
 

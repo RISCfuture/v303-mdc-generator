@@ -8,7 +8,7 @@ import type { Mission, CoordinateFormat } from '@/types'
 import MissionDepartureRecovery from './MissionDepartureRecovery.vue'
 import CoordinateField from '@/components/common/CoordinateField.vue'
 
-interface Props {
+type Props = {
   mission: Mission
   theaterData: { displayName: string; ifgUrl?: string } | null
   isFieldIncomplete?: (fieldName: string) => boolean
@@ -184,7 +184,7 @@ if (localeDateStr.startsWith('01')) {
     <MissionDepartureRecovery
       :mission="mission"
       :is-field-incomplete="isFieldIncomplete"
-      @update:nestedField="
+      @update:nested-field="
         (parent: string, field: string, value: string | number | undefined) =>
           emit('update:nestedField', parent as 'departureRecovery', field, value)
       "

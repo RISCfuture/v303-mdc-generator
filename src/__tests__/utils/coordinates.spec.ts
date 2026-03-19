@@ -12,8 +12,6 @@ import {
   ddmStringToDecimal,
   decimalToTrueDMSString,
   trueDmsStringToDecimal,
-  decimalToDMSString,
-  dmsStringToDecimal,
   isValidDecimal,
   type DMSCoordinate,
 } from '@/utils/coordinates'
@@ -110,36 +108,36 @@ describe('coordinates', () => {
   // Note: These old tests were for formatDMS/parseDMS which now test true DMS (with seconds)
   // For DDM (decimal minutes) testing, see formatDDM/parseDDM tests below
 
-  describe('decimalToDMSString', () => {
+  describe('decimalToDDMString (legacy)', () => {
     it('should convert decimal latitude to formatted string', () => {
-      const result = decimalToDMSString(36.2057583, 'latitude')
+      const result = decimalToDDMString(36.2057583, 'latitude')
       expect(result).toBe('N 36° 12.345′')
     })
 
     it('should convert decimal longitude to formatted string', () => {
-      const result = decimalToDMSString(65.8476583, 'longitude')
+      const result = decimalToDDMString(65.8476583, 'longitude')
       expect(result).toBe('E 065° 50.859′')
     })
 
     it('should handle negative values', () => {
-      const result = decimalToDMSString(-36.2057583, 'latitude')
+      const result = decimalToDDMString(-36.2057583, 'latitude')
       expect(result).toBe('S 36° 12.345′')
     })
   })
 
-  describe('dmsStringToDecimal', () => {
+  describe('ddmStringToDecimal (legacy)', () => {
     it('should convert formatted string to decimal', () => {
-      const result = dmsStringToDecimal('N 36° 12.346′')
+      const result = ddmStringToDecimal('N 36° 12.346′')
       expect(result).toBeCloseTo(36.2057667, 5)
     })
 
     it('should handle S/W hemispheres as negative', () => {
-      const result = dmsStringToDecimal('S 36° 12.346′')
+      const result = ddmStringToDecimal('S 36° 12.346′')
       expect(result).toBeCloseTo(-36.2057667, 5)
     })
 
     it('should return null for invalid format', () => {
-      expect(dmsStringToDecimal('Invalid')).toBeNull()
+      expect(ddmStringToDecimal('Invalid')).toBeNull()
     })
   })
 

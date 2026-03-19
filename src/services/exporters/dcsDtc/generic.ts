@@ -9,11 +9,11 @@ import { truncateFrequency, getRadioConfig } from '../helpers'
  * DCS-DTC format for simple airframes (A-10C, C-130J, CH-47F)
  * Simpler than F-16C DCS-DTC — no MFD/HARM/HTS/Datalink/CMS sections
  */
-export interface DCSGenericMDC {
+export type DCSGenericMDC = {
   Aircraft: string
   Upload: { Waypoints: boolean; Radios: boolean }
   Waypoints: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -21,18 +21,18 @@ export interface DCSGenericMDC {
       Elevation: number
       TimeOverSteerpoint: string | null
       Target: boolean
-    }>
+    }[]
   }
   Radios: {
     Radio1: {
-      Presets: Array<{ Number: number; Name: string | null; Frequency: string }>
+      Presets: { Number: number; Name: string | null; Frequency: string }[]
       SelectedFrequency: string
       SelectedPreset: string | null
       EnableGuard: boolean
       Mode: number
     }
     Radio2: {
-      Presets: Array<{ Number: number; Name: string | null; Frequency: string }> | null
+      Presets: { Number: number; Name: string | null; Frequency: string }[] | null
       SelectedFrequency: string | null
       SelectedPreset: string | null
       EnableGuard: boolean
@@ -62,17 +62,17 @@ export function exportGenericDCSDTC(
   const waypoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
 
     return {
       Sequence: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Latitude: formatDDM(latitude, 'latitude'),
       Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
-      TimeOverSteerpoint: wp.timeOnTarget || null,
+      TimeOverSteerpoint: wp.timeOnTarget ?? null,
       Target: wp.type === 'TGT',
     }
   })
@@ -83,14 +83,13 @@ export function exportGenericDCSDTC(
       Number: preset.number,
       Name: preset.description || null,
       Frequency: truncateFrequency(preset.frequency),
-    })) || []
+    })) ?? []
 
-  const radio2Presets =
-    mission.radioPresets[1]?.map((preset) => ({
-      Number: preset.number,
-      Name: preset.description || null,
-      Frequency: truncateFrequency(preset.frequency),
-    })) || null
+  const radio2Presets = (mission.radioPresets[1] ?? []).map((preset) => ({
+    Number: preset.number,
+    Name: preset.description || null,
+    Frequency: truncateFrequency(preset.frequency),
+  }))
 
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
@@ -102,13 +101,13 @@ export function exportGenericDCSDTC(
     Aircraft: aircraftId,
     Upload: {
       Waypoints: waypoints.length > 0,
-      Radios: radio1Presets.length > 0 || (radio2Presets !== null && radio2Presets.length > 0),
+      Radios: radio1Presets.length > 0 || radio2Presets.length > 0,
     },
     Waypoints: {
       Waypoints: waypoints,
     },
     Radios:
-      radio1Presets.length > 0 || (radio2Presets !== null && radio2Presets.length > 0)
+      radio1Presets.length > 0 || radio2Presets.length > 0
         ? {
             Radio1: {
               Presets: radio1Presets,

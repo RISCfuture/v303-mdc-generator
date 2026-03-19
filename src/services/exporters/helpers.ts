@@ -2,9 +2,28 @@
 import type { Mission, CCIPReferencePoint } from '@/types'
 
 /**
+ * Parse TACAN string (e.g. "10Y" or "73X") into channel and band components.
+ * Returns null if the string doesn't match the expected format.
+ */
+export function parseTACAN(aaTcn: string): { channel: number; band: 'X' | 'Y' } | null {
+  const match = /(\d+)([XY])/i.exec(aaTcn)
+  if (!match?.[1] || !match[2]) return null
+  return { channel: parseInt(match[1]), band: match[2].toUpperCase() as 'X' | 'Y' }
+}
+
+/**
+ * Parse TACAN or throw if invalid. Use when TACAN is required.
+ */
+export function parseTACANOrThrow(aaTcn: string): { channel: number; band: 'X' | 'Y' } {
+  const result = parseTACAN(aaTcn)
+  if (!result) throw new Error(`Invalid TACAN format: ${aaTcn}`)
+  return result
+}
+
+/**
  * DTC Reference Point structure (VIP, VRP, OA, PUP)
  */
-export interface DTCReferencePoint {
+export type DTCReferencePoint = {
   Range: number // feet
   Bearing: number // degrees
   Elevation: number // feet
@@ -35,9 +54,9 @@ export function truncateFrequency(freq: string | number): string {
  */
 export function convertCCIPToDTC(
   point: CCIPReferencePoint | undefined,
-  convertToNM: boolean = false,
+  convertToNM = false,
 ): DTCReferencePoint | null {
-  if (!point || point.bearing === undefined || point.distance === undefined) {
+  if (point?.bearing === undefined || point.distance === undefined) {
     return null
   }
 
@@ -94,13 +113,13 @@ export function getRadioConfig(
     return {
       mode: 1, // Preset mode
       selectedFrequency: defaultFrequency,
-      selectedPreset: radioDefault.preset?.toString() || '1',
+      selectedPreset: radioDefault.preset?.toString() ?? '1',
     }
   } else {
     // Manual mode
     return {
       mode: 2, // Manual/Frequency mode
-      selectedFrequency: radioDefault.frequency || defaultFrequency,
+      selectedFrequency: radioDefault.frequency ?? defaultFrequency,
       selectedPreset: '1',
     }
   }

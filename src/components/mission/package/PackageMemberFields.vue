@@ -5,7 +5,7 @@ import { FONT_SIZE } from '@/styles/design-tokens'
 import { formatSTN, parseSTN } from '@/utils/crewFormatting'
 import type { PackageMember } from '@/types'
 
-interface Props {
+type Props = {
   member: PackageMember
 }
 
@@ -16,10 +16,12 @@ const emit = defineEmits<{
 }>()
 
 // Build aircraft options from airframe database
-const aircraftOptions = Object.values(airframeDatabase).map((airframe) => ({
-  label: airframe.displayName,
-  value: airframe.aircraft,
-}))
+const aircraftOptions = Object.values(airframeDatabase)
+  .filter((airframe) => airframe != null)
+  .map((airframe) => ({
+    label: airframe.displayName,
+    value: airframe.aircraft,
+  }))
 </script>
 
 <template>

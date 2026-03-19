@@ -1,13 +1,13 @@
 import proj4 from 'proj4'
 
-interface TheaterProjection {
+type TheaterProjection = {
   centralMeridian: number
   falseEasting: number
   falseNorthing: number
   scaleFactor: number
 }
 
-const theaterProjections: Record<string, TheaterProjection> = {
+const theaterProjections: Record<string, TheaterProjection | undefined> = {
   // From pydcs/dcs (upstream)
   Caucasus: {
     centralMeridian: 33,

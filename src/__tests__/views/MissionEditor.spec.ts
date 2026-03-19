@@ -443,11 +443,7 @@ describe('MissionEditor - Auto-create Steerpoint 1', () => {
       })
 
       // Altitude should equal elevation (or 0 if elevation is undefined)
-      if (waypoint.elevation !== undefined) {
-        expect(waypoint.altitude).toBe(waypoint.elevation)
-      } else {
-        expect(waypoint.altitude).toBe(0)
-      }
+      expect(waypoint.altitude).toBe(waypoint.elevation ?? 0)
     })
 
     it('should set waypoint type to PARK', async () => {

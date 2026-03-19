@@ -13,7 +13,7 @@ import { getAircraftComponentLoader } from '@/aircraft'
 import WaypointFields from './WaypointFields.vue'
 import type { Waypoint, Airframe } from '@/types'
 
-interface Props {
+type Props = {
   waypoint: Waypoint
   index: number
   isFirst: boolean

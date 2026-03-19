@@ -50,13 +50,14 @@ describe('squadrons', () => {
     })
 
     it('should have valid defaultGunAmmo when present', () => {
-      Object.values(squadronDatabase).forEach((squadron) => {
-        if (squadron.defaultGunAmmo) {
-          expect(squadron.defaultGunAmmo).toHaveProperty('training')
-          expect(squadron.defaultGunAmmo).toHaveProperty('combat')
-          expect(typeof squadron.defaultGunAmmo.training).toBe('string')
-          expect(typeof squadron.defaultGunAmmo.combat).toBe('string')
-        }
+      const squadronsWithGunAmmo = Object.values(squadronDatabase).filter(
+        (s) => s.defaultGunAmmo !== undefined,
+      )
+      squadronsWithGunAmmo.forEach((squadron) => {
+        expect(squadron.defaultGunAmmo).toHaveProperty('training')
+        expect(squadron.defaultGunAmmo).toHaveProperty('combat')
+        expect(typeof squadron.defaultGunAmmo!.training).toBe('string')
+        expect(typeof squadron.defaultGunAmmo!.combat).toBe('string')
       })
     })
   })
@@ -64,11 +65,10 @@ describe('squadrons', () => {
   describe('getSquadronAirframe', () => {
     it('should return the correct airframe for a squadron', () => {
       const squadronIds = Object.keys(squadronDatabase) as SquadronId[]
-      if (squadronIds.length > 0) {
-        const squadronId = squadronIds[0]!
-        const airframe = getSquadronAirframe(squadronId)
-        expect(airframe).toBe(squadronDatabase[squadronId].aircraft)
-      }
+      expect(squadronIds.length).toBeGreaterThan(0)
+      const squadronId = squadronIds[0]
+      const airframe = getSquadronAirframe(squadronId)
+      expect(airframe).toBe(squadronDatabase[squadronId].aircraft)
     })
 
     it('should return non-empty airframe strings', () => {
@@ -80,39 +80,36 @@ describe('squadrons', () => {
       })
     })
 
-    it('should return A-10C variant for v303 FS if it exists', () => {
+    it('should return A-10C variant for v303 FS', () => {
       const v303Squadron = Object.entries(squadronDatabase).find(
-        ([_, squadron]) =>
+        ([, squadron]) =>
           squadron.name.includes('303') && squadron.name.toLowerCase().includes('fighter squadron'),
       )
 
-      if (v303Squadron) {
-        const airframe = getSquadronAirframe(v303Squadron[0] as SquadronId)
-        expect(airframe).toMatch(/A-10C/)
-      }
+      expect(v303Squadron).toBeDefined()
+      const airframe = getSquadronAirframe(v303Squadron![0] as SquadronId)
+      expect(airframe).toMatch(/A-10C/)
     })
 
-    it('should return F-16C variant for v93 FS if it exists', () => {
+    it('should return F-16C variant for v93 FS', () => {
       const v93Squadron = Object.entries(squadronDatabase).find(
-        ([_, squadron]) =>
+        ([, squadron]) =>
           squadron.name.includes('93') && squadron.name.toLowerCase().includes('fighter squadron'),
       )
 
-      if (v93Squadron) {
-        const airframe = getSquadronAirframe(v93Squadron[0] as SquadronId)
-        expect(airframe).toMatch(/F-16C/)
-      }
+      expect(v93Squadron).toBeDefined()
+      const airframe = getSquadronAirframe(v93Squadron![0] as SquadronId)
+      expect(airframe).toMatch(/F-16C/)
     })
   })
 
   describe('getSquadronDisplayName', () => {
     it('should return the correct display name for a squadron', () => {
       const squadronIds = Object.keys(squadronDatabase) as SquadronId[]
-      if (squadronIds.length > 0) {
-        const squadronId = squadronIds[0]!
-        const displayName = getSquadronDisplayName(squadronId)
-        expect(displayName).toBe(squadronDatabase[squadronId].displayName)
-      }
+      expect(squadronIds.length).toBeGreaterThan(0)
+      const squadronId = squadronIds[0]
+      const displayName = getSquadronDisplayName(squadronId)
+      expect(displayName).toBe(squadronDatabase[squadronId].displayName)
     })
 
     it('should return non-empty display names', () => {
@@ -147,7 +144,7 @@ describe('squadrons', () => {
     it('should have labels matching squadron display names', () => {
       const options = getSquadronOptions()
       options.forEach((option) => {
-        const squadron = squadronDatabase[option.value as SquadronId]
+        const squadron = squadronDatabase[option.value]
         expect(squadron).toBeDefined()
         expect(option.label).toBe(squadron.displayName)
       })

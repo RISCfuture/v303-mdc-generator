@@ -1,6 +1,7 @@
 # Navaid Database Pipeline
 
 Complete pipeline for building comprehensive navaid databases for DCS World theatres, combining data from three sources:
+
 1. **DCS World Beacons** (navigation beacons from game files)
 2. **DCS World Towns** (populated areas from game files)
 3. **v303 FG Website** (manually curated tactical navaids)
@@ -70,7 +71,7 @@ Creates one JSON file per terrain combining beacons and towns:
   {
     "name": "Berlin",
     "latitude": 52.517036,
-    "longitude": 13.388860,
+    "longitude": 13.38886,
     "elevation": null
   }
 ]
@@ -119,6 +120,7 @@ python load_beacons_towns.py --input-dir ./extracted --output-dir ./output
 ### Behavior
 
 For each theatre:
+
 1. Load extracted beacons/towns from input directory
 2. Deduplicate entries by name
 3. Fetch elevations using SRTM for entries with `elevation: null`
@@ -128,12 +130,12 @@ For each theatre:
 
 The script automatically maps DCS directory names to internal names:
 
-| Directory Name | Internal DCS Name |
-|---|---|
-| `GermanyColdWar` | `GermanyCW` |
-| `Sinai` | `SinaiMap` |
-| `MarianasWWII` | `MarianaIslandsWWII` |
-| All others | Same name |
+| Directory Name   | Internal DCS Name    |
+| ---------------- | -------------------- |
+| `GermanyColdWar` | `GermanyCW`          |
+| `Sinai`          | `SinaiMap`           |
+| `MarianasWWII`   | `MarianaIslandsWWII` |
+| All others       | Same name            |
 
 ---
 
@@ -163,6 +165,7 @@ python scrape_navaids.py --output-dir /path/to/output
 ### Merge Behavior
 
 For each theatre:
+
 1. Scrape tactical navaids from website
 2. Load existing navaid data (from Step 2)
 3. **Merge strategy**:
@@ -230,10 +233,10 @@ All output conforms to `src/data/json/schemas/navaids.schema.json`:
     "type": "object",
     "required": ["name", "latitude", "longitude", "elevation"],
     "properties": {
-      "name": {"type": "string"},
-      "latitude": {"type": "number", "minimum": -90, "maximum": 90},
-      "longitude": {"type": "number", "minimum": -180, "maximum": 180},
-      "elevation": {"type": "number"}
+      "name": { "type": "string" },
+      "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+      "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
+      "elevation": { "type": "number" }
     }
   }
 }

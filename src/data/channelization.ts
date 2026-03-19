@@ -4,11 +4,11 @@
 
 import type { RadioPreset, Theater, Airframe } from '@/types'
 
-export interface RadioChannelization {
+export type RadioChannelization = {
   presets: RadioPreset[]
 }
 
-export interface AircraftChannelization {
+export type AircraftChannelization = {
   radios: RadioChannelization[]
 }
 
@@ -24,28 +24,28 @@ const channelizationModules = import.meta.glob<AircraftChannelization>(
 
 // Build channelization database from dynamically imported JSON files
 // Structure: channelizationDatabase[theater][airframe] = { radios: [...] }
-const channelizationDatabase: Record<
-  string,
-  Record<string, AircraftChannelization>
-> = Object.entries(channelizationModules).reduce(
-  (acc, [path, config]) => {
+const channelizationDatabase: Record<string, Record<string, AircraftChannelization> | undefined> =
+  Object.entries(channelizationModules).reduce<
+    Record<string, Record<string, AircraftChannelization> | undefined>
+  >((acc, [path, config]) => {
     // Extract theater and airframe from path:
     // "./json/channelization/Afghanistan/A-10C_2.json" -> ["Afghanistan", "A-10C_2"]
     const pathParts = path.split('/')
     const theater = pathParts[pathParts.length - 2] // Second to last part
     const airframeWithExt = pathParts[pathParts.length - 1] // Last part
-    const airframe = airframeWithExt?.replace('.json', '') || '' // Remove .json extension
+    const airframe = airframeWithExt.replace('.json', '') // Remove .json extension
 
     if (theater && airframe) {
-      if (!acc[theater]) {
+      if (!(theater in acc)) {
         acc[theater] = {}
       }
-      acc[theater][airframe] = config
+      const theaterData = acc[theater]
+      if (theaterData) {
+        theaterData[airframe] = config
+      }
     }
     return acc
-  },
-  {} as Record<string, Record<string, AircraftChannelization>>,
-)
+  }, {})
 
 /**
  * Get default radio presets for a specific aircraft and radio in a theater
@@ -57,7 +57,7 @@ export function getDefaultRadioPresets(
 ): RadioPreset[] {
   const aircraftChannelization = channelizationDatabase[theater]?.[airframe]
 
-  if (!aircraftChannelization || !aircraftChannelization.radios[radioIndex]) {
+  if (!aircraftChannelization?.radios[radioIndex]) {
     return []
   }
 

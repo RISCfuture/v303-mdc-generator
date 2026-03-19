@@ -15,7 +15,7 @@ import {
   exceedsCrosswindLimitations,
 } from '../takeoffDistanceCalculator'
 
-interface Props {
+type Props = {
   grossWeight: number
   runwayLength?: number | null
   runwayWidth?: number | null
@@ -34,6 +34,9 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  runwayLength: undefined,
+  runwayWidth: undefined,
+  runwayName: undefined,
   initialFlapSetting: 7,
   initialSpeedBrake: 'open',
   initialThrustSetting: 'MAX',

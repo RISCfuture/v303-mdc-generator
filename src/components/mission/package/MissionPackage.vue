@@ -6,7 +6,7 @@ import PackageMemberCard from './PackageMemberCard.vue'
 import type { PackageMember } from '@/types'
 import type { DragAndDropReturn } from '@/utils/useDragAndDrop'
 
-interface Props {
+type Props = {
   packageMembers: PackageMember[]
   packageDragDrop: DragAndDropReturn<PackageMember>
 }

@@ -19,7 +19,7 @@ import type { LoadoutStation } from '@/types'
 import type { PrefabLoadout } from '@/data/loadouts'
 import type { StationData } from '@/data/airframes'
 
-interface Props {
+type Props = {
   airframe: string
   loadout: LoadoutStation[]
   airframeStations: StationData[]
@@ -56,13 +56,13 @@ function getMunitionOptionsForStation(stationNum: number | string) {
 // Get gun ammo options from airframe data
 const gunAmmoOptions = computed(() => {
   const airframeData = getAirframeData(props.airframe)
-  if (!airframeData || !airframeData.ammoTypes || airframeData.ammoTypes.length === 0) {
+  if (!airframeData?.ammoTypes || airframeData.ammoTypes.length === 0) {
     return null
   }
 
   return {
     label:
-      airframeData.guns && airframeData.guns.length === 1 && airframeData.guns[0]
+      airframeData.guns?.length === 1 && airframeData.guns[0]
         ? airframeData.guns[0].name
         : 'Gun Ammo',
     options: airframeData.ammoTypes.map((ammoType: string) => ({

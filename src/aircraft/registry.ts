@@ -151,7 +151,8 @@ class AircraftCalculatorRegistry {
     if (!this.componentLoaders.has(airframe)) {
       this.componentLoaders.set(airframe, new Map())
     }
-    this.componentLoaders.get(airframe)!.set(componentType, loader)
+    const loaders = this.componentLoaders.get(airframe)
+    loaders?.set(componentType, loader)
   }
 
   /**

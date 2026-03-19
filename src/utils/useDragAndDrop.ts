@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-export interface DragAndDropReturn<T> {
+export type DragAndDropReturn<T> = {
   draggedIndex: ReturnType<typeof ref<number | null>>
   handleDragStart: (index: number) => void
   handleDragOver: (event: DragEvent) => void
@@ -39,7 +39,7 @@ export function useDragAndDrop<T>(): DragAndDropReturn<T> {
     }
 
     const updatedItems = [...items]
-    const draggedItem = updatedItems[draggedIndex.value]!
+    const draggedItem = updatedItems[draggedIndex.value]
 
     // Remove dragged item
     updatedItems.splice(draggedIndex.value, 1)

@@ -134,6 +134,7 @@ describe('useMissionListExport', () => {
       const { exportMissionList } = useMissionListExport()
       await exportMissionList()
 
+      // eslint-disable-next-line @typescript-eslint/no-deprecated
       expect(document.createElement).toHaveBeenCalledWith('a')
       expect(mockLink.download).toMatch(/^v303-missions-backup-\d{4}-\d{2}-\d{2}\.json$/)
       expect(mockLink.click).toHaveBeenCalled()
@@ -428,11 +429,10 @@ describe('useMissionListExport', () => {
       const result = await parseImportFile(mockFile)
 
       expect('mission' in result).toBe(true)
-      if ('mission' in result) {
-        expect(result.mission).toEqual(mockSingleMissionData.mission)
-        expect(result.images).toEqual([])
-        expect(result.exportedAt).toBe('2024-01-15T12:00:00Z')
-      }
+      const singleResult = result as { mission: unknown; images: unknown[]; exportedAt: string }
+      expect(singleResult.mission).toEqual(mockSingleMissionData.mission)
+      expect(singleResult.images).toEqual([])
+      expect(singleResult.exportedAt).toBe('2024-01-15T12:00:00Z')
     })
 
     it('should reject invalid single mission structure', async () => {
@@ -623,7 +623,7 @@ describe('useMissionListExport', () => {
       }
 
       // Mock the ensureDb for direct IndexedDB access
-      interface MockRequest {
+      type MockRequest = {
         onsuccess: (() => void) | null
         onerror: ((error?: Error) => void) | null
       }
@@ -639,7 +639,7 @@ describe('useMissionListExport', () => {
       const mockDb = { transaction: mockTransaction }
 
       const { imageStorage } = await import('@/services/imageStorage')
-      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> })['ensureDb'] = vi
+      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> }).ensureDb = vi
         .fn()
         .mockResolvedValue(mockDb)
 
@@ -686,7 +686,7 @@ describe('useMissionListExport', () => {
       }
 
       // Mock the ensureDb for direct IndexedDB access (no images to add)
-      interface MockRequest {
+      type MockRequest = {
         onsuccess: (() => void) | null
         onerror: ((error?: Error) => void) | null
       }
@@ -704,7 +704,7 @@ describe('useMissionListExport', () => {
       }
 
       const { imageStorage } = await import('@/services/imageStorage')
-      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> })['ensureDb'] = vi
+      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> }).ensureDb = vi
         .fn()
         .mockResolvedValue(mockDb)
 
@@ -749,7 +749,7 @@ describe('useMissionListExport', () => {
       }
 
       // Mock the ensureDb to simulate an error during add
-      interface MockRequest {
+      type MockRequest = {
         onsuccess: (() => void) | null
         onerror: ((error?: Error) => void) | null
       }
@@ -766,7 +766,7 @@ describe('useMissionListExport', () => {
       }
 
       const { imageStorage } = await import('@/services/imageStorage')
-      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> })['ensureDb'] = vi
+      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> }).ensureDb = vi
         .fn()
         .mockResolvedValue(mockDb)
 
@@ -820,14 +820,14 @@ describe('useMissionListExport', () => {
       }
 
       // Mock the ensureDb for direct IndexedDB access
-      interface MockImage {
+      type MockImage = {
         missionId: string
         data: string
         purpose?: string
         type?: string
         [key: string]: unknown
       }
-      interface MockRequest {
+      type MockRequest = {
         onsuccess: (() => void) | null
         onerror: ((error?: Error) => void) | null
       }
@@ -846,7 +846,7 @@ describe('useMissionListExport', () => {
       }
 
       const { imageStorage } = await import('@/services/imageStorage')
-      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> })['ensureDb'] = vi
+      ;(imageStorage as unknown as { ensureDb: () => Promise<unknown> }).ensureDb = vi
         .fn()
         .mockResolvedValue(mockDb)
 

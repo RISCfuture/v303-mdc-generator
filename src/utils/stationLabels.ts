@@ -15,5 +15,5 @@ export function getShortStationLabel(airframe: Airframe, stationNumber: number):
   }
 
   const station = airframeData.stations.find((s) => s.station === stationNumber)
-  return station?.name || stationNumber.toString()
+  return station?.name ?? stationNumber.toString()
 }

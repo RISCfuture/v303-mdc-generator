@@ -5,7 +5,7 @@ import { FORM } from '@/styles/design-tokens'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import type { Mission, Airframe } from '@/types'
 
-interface Props {
+type Props = {
   mission: Mission
   airframe: Airframe
 }
@@ -25,7 +25,7 @@ const airframeData = computed(() => getAirframeData(props.airframe))
 
 // CMDS Profile options
 const cmdsProfileOptions = computed(() => {
-  if (!airframeData.value || !airframeData.value.cmdsProfiles) return []
+  if (!airframeData.value?.cmdsProfiles) return []
   return airframeData.value.cmdsProfiles.map((profile: string) => ({
     label: profile,
     value: profile,
@@ -34,13 +34,13 @@ const cmdsProfileOptions = computed(() => {
 
 // ECM Program options
 const ecmProgramOptions = computed(() => {
-  if (!airframeData.value || !airframeData.value.ecmPrograms) return []
+  if (!airframeData.value?.ecmPrograms) return []
   return airframeData.value.ecmPrograms
 })
 
 // HTS Threat Table options
 const htsThreatTableOptions = computed(() => {
-  if (!airframeData.value || !airframeData.value.htsThreatTables) return []
+  if (!airframeData.value?.htsThreatTables) return []
   return airframeData.value.htsThreatTables
 })
 
@@ -57,9 +57,9 @@ function updateHtsThreatTables(value: string[]) {
 }
 
 // Countermeasure management
-const cmdsCapacity = computed(() => airframeData.value?.cmdsCapacity || 0)
-const chaffIncrement = computed(() => airframeData.value?.chaffIncrement || 1)
-const flareIncrement = computed(() => airframeData.value?.flareIncrement || 1)
+const cmdsCapacity = computed(() => airframeData.value?.cmdsCapacity ?? 0)
+const chaffIncrement = computed(() => airframeData.value?.chaffIncrement ?? 1)
+const flareIncrement = computed(() => airframeData.value?.flareIncrement ?? 1)
 
 const chaffTotal = computed(() => props.mission.ecmCmds.chaffTotal ?? 0)
 const flareTotal = computed(() => props.mission.ecmCmds.flareTotal ?? 0)

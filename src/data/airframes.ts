@@ -13,29 +13,29 @@
 import type { Radio } from '@/types'
 import { applyOverrides } from './overrides'
 
-export interface StationData {
+export type StationData = {
   station: number | string
   name: string // Display name for the station (from DCS DisplayName)
   munitions: string[] // Flat list of all munition CLSIDs compatible with this station
 }
 
-export interface GunShellData {
+export type GunShellData = {
   name: string
   displayName: string
 }
 
-export interface GunMix {
+export type GunMix = {
   sequence: string[] // Array of shell names defining the mix pattern
 }
 
-export interface GunData {
+export type GunData = {
   name: string
   capacity: number
   shells: GunShellData[]
   mixes?: GunMix[]
 }
 
-export interface AirframeData {
+export type AirframeData = {
   aircraft: string
   displayName: string
   isHelicopter?: boolean // True for rotary-wing aircraft, false/undefined for fixed-wing
@@ -83,17 +83,16 @@ const airframeDataArray: AirframeData[] = Object.values(airframeModules)
 
 // Apply overrides to base airframe data
 // Overrides are matched by filename (e.g., A-10C_2.json overrides aircraft "A-10C_2")
-const overridesByAircraft = Object.entries(airframeOverrideModules).reduce(
-  (acc, [path, override]) => {
-    // Extract filename without extension from path like './json/airframe-overrides/A-10C_2.json'
-    const filename = path.split('/').pop()?.replace('.json', '')
-    if (filename) {
-      acc[filename] = override
-    }
-    return acc
-  },
-  {} as Record<string, Record<string, unknown>>,
-)
+const overridesByAircraft = Object.entries(airframeOverrideModules).reduce<
+  Record<string, Record<string, unknown> | undefined>
+>((acc, [path, override]) => {
+  // Extract filename without extension from path like './json/airframe-overrides/A-10C_2.json'
+  const filename = path.split('/').pop()?.replace('.json', '')
+  if (filename) {
+    acc[filename] = override
+  }
+  return acc
+}, {})
 
 // Merge overrides into base airframe data
 const mergedAirframeData = airframeDataArray.map((airframe) => {
@@ -105,12 +104,12 @@ const mergedAirframeData = airframeDataArray.map((airframe) => {
 })
 
 // Convert array to Record keyed by aircraft identifier
-export const airframeDatabase = mergedAirframeData.reduce(
+export const airframeDatabase = mergedAirframeData.reduce<Record<string, AirframeData | undefined>>(
   (acc, data) => {
     acc[data.aircraft] = data
     return acc
   },
-  {} as Record<string, AirframeData>,
+  {},
 )
 
 /**

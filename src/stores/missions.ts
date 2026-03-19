@@ -29,7 +29,7 @@ export const useMissionsStore = defineStore('missions', () => {
   // Computed
   const currentMission = computed(() => {
     if (!currentMissionId.value) return null
-    return missions.value.find((m) => m.id === currentMissionId.value) || null
+    return missions.value.find((m) => m.id === currentMissionId.value) ?? null
   })
 
   const missionsList = computed(() => {
@@ -53,17 +53,18 @@ export const useMissionsStore = defineStore('missions', () => {
         return
       }
 
-      const parsed = JSON.parse(stored)
+      const parsed: unknown = JSON.parse(stored)
 
       // Expect versioned storage format
       if (
-        parsed &&
+        parsed !== null &&
         typeof parsed === 'object' &&
         'version' in parsed &&
-        parsed.version === STORAGE_VERSION &&
-        Array.isArray(parsed.missions)
+        (parsed as Record<string, unknown>).version === STORAGE_VERSION &&
+        Array.isArray((parsed as Record<string, unknown>).missions)
       ) {
-        const serializedMissions = parsed.missions as SerializedMission[]
+        const serializedMissions = (parsed as Record<string, unknown>)
+          .missions as SerializedMission[]
         missions.value = serializedMissions.map(deserializeMission)
       } else {
         console.warn('Invalid or outdated storage format - clearing')
@@ -95,9 +96,11 @@ export const useMissionsStore = defineStore('missions', () => {
       if (error instanceof DOMException && error.name === 'QuotaExceededError') {
         console.error('LocalStorage quota exceeded. Mission data may not be saved properly.')
         // Re-throw so the component can catch and show a user-friendly message
-        throw new Error(
+        const quotaError = new Error(
           'Storage quota exceeded. Please reduce mission data or delete old missions.',
         )
+        ;(quotaError as unknown as { cause: unknown }).cause = error
+        throw quotaError
       } else {
         console.error('Failed to save missions to localStorage:', error)
         throw error
@@ -110,7 +113,7 @@ export const useMissionsStore = defineStore('missions', () => {
    */
   function createMission(squadron: Squadron, theater: Theater): Mission {
     const now = new Date().toISOString()
-    const id = `mission-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+    const id = `mission-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`
 
     const airframe = getSquadronAirframe(squadron)
     const airframeData = getAirframeData(airframe)
@@ -125,14 +128,16 @@ export const useMissionsStore = defineStore('missions', () => {
       callsign: '',
       flightCallsignOverride: '',
       link16PrefixOverride: '',
-      date: new Date().toISOString().split('T')[0] || '',
+      date: new Date().toISOString().split('T')[0] ?? '',
       missionNumber: '',
       type: '',
       squadron,
       theater,
       crew: [],
       packageMembers: [],
-      supportAssets: theaterDatabase[theater]?.defaultSupportAssets || [],
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      supportAssets: theaterDatabase[theater]?.defaultSupportAssets ?? [],
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       bullseye: theaterDatabase[theater]?.defaultBullseye,
       loadout: Array.from({ length: STATION_COUNTS[airframe] || 11 }, (_, i) => ({
         station: i + 1,
@@ -167,6 +172,7 @@ export const useMissionsStore = defineStore('missions', () => {
       })(),
       departureRecovery: (() => {
         const theaterData = theaterDatabase[theater]
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard: theater key may not exist in database
         const defaultAirfield = theaterData?.defaultAirfield
         if (defaultAirfield) {
           return {
@@ -179,6 +185,7 @@ export const useMissionsStore = defineStore('missions', () => {
       waypoints: (() => {
         // Auto-create steerpoint 1 from default airfield if set
         const theaterData = theaterDatabase[theater]
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard: theater key may not exist in database
         const defaultAirfield = theaterData?.defaultAirfield
         if (defaultAirfield) {
           const airfields = getAirfieldsForTheater(theater)
@@ -207,10 +214,12 @@ export const useMissionsStore = defineStore('missions', () => {
         fuelLoadPercentage: 100,
       },
       gunAmmoType: (() => {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         const squadronAmmo = squadronDatabase[squadron]?.defaultGunAmmo
         if (!squadronAmmo) return undefined
 
         // Check if theater is training to determine which ammo type to use
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         const isTraining = theaterDatabase[theater]?.isTraining ?? false
         return isTraining ? squadronAmmo.training : squadronAmmo.combat
       })(),
@@ -242,8 +251,9 @@ export const useMissionsStore = defineStore('missions', () => {
   function updateMission(id: string, updates: Partial<Omit<Mission, 'id' | 'createdAt'>>) {
     const index = missions.value.findIndex((m) => m.id === id)
     if (index !== -1) {
+      const originalMission = missions.value[index]
       const updatedMission = {
-        ...missions.value[index],
+        ...originalMission,
         ...updates,
         id, // Preserve the original ID
         updatedAt: new Date().toISOString(),
@@ -253,7 +263,7 @@ export const useMissionsStore = defineStore('missions', () => {
         saveToStorage()
       } catch (error) {
         // Revert the change if save fails
-        missions.value[index] = missions.value[index]
+        missions.value[index] = originalMission
         throw error
       }
     }
@@ -299,7 +309,7 @@ export const useMissionsStore = defineStore('missions', () => {
     if (!original) return null
 
     const now = new Date().toISOString()
-    const newId = `mission-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+    const newId = `mission-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`
 
     const duplicate: Mission = {
       ...original,
@@ -341,9 +351,9 @@ export const useMissionsStore = defineStore('missions', () => {
 
       // Collect all referenced image IDs from all markdown fields
       const referencedImageIds = new Set<string>([
-        ...(mission.details.imageIds || []),
-        ...(mission.details.primaryTarget?.imageIds || []),
-        ...(mission.details.secondaryTarget?.imageIds || []),
+        ...(mission.details.imageIds ?? []),
+        ...(mission.details.primaryTarget?.imageIds ?? []),
+        ...(mission.details.secondaryTarget?.imageIds ?? []),
       ])
 
       // Get all images for this mission from IndexedDB

@@ -17,40 +17,37 @@ describe('loadouts', () => {
     it('should return loadouts with required properties when data exists', () => {
       // Test with A-10C_2 which likely has loadouts
       const loadouts = getLoadoutsForAirframe('A-10C_2' as Airframe)
-      if (loadouts.length > 0) {
-        const loadout = loadouts[0]!
-        expect(loadout).toHaveProperty('name')
-        expect(loadout).toHaveProperty('description')
-        expect(loadout).toHaveProperty('stations')
+      expect(loadouts.length).toBeGreaterThan(0)
+      const loadout = loadouts[0]
+      expect(loadout).toHaveProperty('name')
+      expect(loadout).toHaveProperty('description')
+      expect(loadout).toHaveProperty('stations')
 
-        expect(typeof loadout.name).toBe('string')
-        expect(typeof loadout.description).toBe('string')
-        expect(Array.isArray(loadout.stations)).toBe(true)
-      }
+      expect(typeof loadout.name).toBe('string')
+      expect(typeof loadout.description).toBe('string')
+      expect(Array.isArray(loadout.stations)).toBe(true)
     })
 
     it('should have valid station data in loadouts', () => {
       const loadouts = getLoadoutsForAirframe('A-10C_2' as Airframe)
-      if (loadouts.length > 0) {
-        loadouts.forEach((loadout) => {
-          expect(Array.isArray(loadout.stations)).toBe(true)
-          loadout.stations.forEach((station) => {
-            expect(station).toHaveProperty('station')
-            // The property is 'item' not 'munition' in the JSON
-            expect(station).toHaveProperty('item')
-          })
+      expect(loadouts.length).toBeGreaterThan(0)
+      loadouts.forEach((loadout) => {
+        expect(Array.isArray(loadout.stations)).toBe(true)
+        loadout.stations.forEach((station) => {
+          expect(station).toHaveProperty('station')
+          // The property is 'item' not 'munition' in the JSON
+          expect(station).toHaveProperty('item')
         })
-      }
+      })
     })
 
     it('should have non-empty names and descriptions', () => {
       const loadouts = getLoadoutsForAirframe('A-10C_2' as Airframe)
-      if (loadouts.length > 0) {
-        loadouts.forEach((loadout) => {
-          expect(loadout.name.length).toBeGreaterThan(0)
-          expect(loadout.description.length).toBeGreaterThan(0)
-        })
-      }
+      expect(loadouts.length).toBeGreaterThan(0)
+      loadouts.forEach((loadout) => {
+        expect(loadout.name.length).toBeGreaterThan(0)
+        expect(loadout.description.length).toBeGreaterThan(0)
+      })
     })
 
     it('should handle F-16C loadouts if they exist', () => {
@@ -68,32 +65,30 @@ describe('loadouts', () => {
       const loadoutsA10 = getLoadoutsForAirframe('A-10C_2' as Airframe)
       const loadoutsF16 = getLoadoutsForAirframe('F-16C_50' as Airframe)
 
-      // If both have loadouts, they should be different
-      if (loadoutsA10.length > 0 && loadoutsF16.length > 0) {
-        expect(JSON.stringify(loadoutsA10)).not.toEqual(JSON.stringify(loadoutsF16))
-      }
+      // Both should have loadouts, and they should be different
+      expect(loadoutsA10.length).toBeGreaterThan(0)
+      expect(loadoutsF16.length).toBeGreaterThan(0)
+      expect(JSON.stringify(loadoutsA10)).not.toEqual(JSON.stringify(loadoutsF16))
     })
 
     it('should have unique loadout names within an airframe', () => {
       const loadouts = getLoadoutsForAirframe('A-10C_2' as Airframe)
-      if (loadouts.length > 1) {
-        const names = loadouts.map((l) => l.name)
-        const uniqueNames = new Set(names)
-        expect(uniqueNames.size).toBe(names.length)
-      }
+      expect(loadouts.length).toBeGreaterThan(1)
+      const names = loadouts.map((l) => l.name)
+      const uniqueNames = new Set(names)
+      expect(uniqueNames.size).toBe(names.length)
     })
 
     it('should have valid station numbers', () => {
       const loadouts = getLoadoutsForAirframe('A-10C_2' as Airframe)
-      if (loadouts.length > 0) {
-        loadouts.forEach((loadout) => {
-          loadout.stations.forEach((station) => {
-            expect(typeof station.station === 'number' || typeof station.station === 'string').toBe(
-              true,
-            )
-          })
+      expect(loadouts.length).toBeGreaterThan(0)
+      loadouts.forEach((loadout) => {
+        loadout.stations.forEach((station) => {
+          expect(typeof station.station === 'number' || typeof station.station === 'string').toBe(
+            true,
+          )
         })
-      }
+      })
     })
   })
 

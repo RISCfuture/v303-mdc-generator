@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest'
-import { validateMissionStorage } from '@/utils/validateMissionStorage'
+import { isMissionStorageComplete } from '@/utils/validateMissionStorage'
 import { serializeMission } from '@/utils/missionStorage'
 import type { Mission } from '@/types'
 
@@ -110,7 +110,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       if (!result.valid) {
         console.log('Validation errors:', JSON.stringify(result.errors, null, 2))
@@ -128,7 +128,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(false)
       expect(result.errors).toBeDefined()
@@ -140,7 +140,7 @@ describe('validateMissionStorage', () => {
         // Missing missions array
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(false)
       expect(result.errors).toBeDefined()
@@ -157,7 +157,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       // Schema doesn't enforce specific squadron values since they're dynamic
       expect(result.valid).toBe(true)
@@ -173,7 +173,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       // Schema doesn't enforce specific theater values since they're dynamic
       expect(result.valid).toBe(true)
@@ -182,14 +182,14 @@ describe('validateMissionStorage', () => {
     it('should reject waypoint with invalid latitude', () => {
       const mission = createValidMission()
       const serialized = serializeMission(mission)
-      serialized.wp[0]!.lat = 100 // Invalid latitude (> 90)
+      serialized.wp[0].lat = 100 // Invalid latitude (> 90)
 
       const storageData = {
         version: 2,
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(false)
       expect(result.errors).toBeDefined()
@@ -198,14 +198,14 @@ describe('validateMissionStorage', () => {
     it('should reject waypoint with invalid longitude', () => {
       const mission = createValidMission()
       const serialized = serializeMission(mission)
-      serialized.wp[0]!.lon = 200 // Invalid longitude (> 180)
+      serialized.wp[0].lon = 200 // Invalid longitude (> 180)
 
       const storageData = {
         version: 2,
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(false)
       expect(result.errors).toBeDefined()
@@ -236,7 +236,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(true)
     })
@@ -247,7 +247,7 @@ describe('validateMissionStorage', () => {
         missions: [],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(true)
     })
@@ -266,7 +266,7 @@ describe('validateMissionStorage', () => {
         missions: [serialized1, serialized2],
       }
 
-      const result = validateMissionStorage(storageData)
+      const result = isMissionStorageComplete(storageData)
 
       expect(result.valid).toBe(true)
     })
@@ -282,7 +282,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors).toBeDefined()
@@ -298,7 +298,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/cr'))).toBe(true)
@@ -314,7 +314,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/cs'))).toBe(true)
@@ -330,7 +330,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/l16'))).toBe(true)
@@ -346,7 +346,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/wp'))).toBe(true)
@@ -354,7 +354,7 @@ describe('validateMissionStorage', () => {
 
       it('should allow waypoint with empty name', () => {
         const mission = createValidMission()
-        mission.waypoints[0]!.name = ''
+        mission.waypoints[0].name = ''
         const serialized = serializeMission(mission)
 
         const storageData = {
@@ -362,14 +362,14 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(true)
       })
 
       it('should reject waypoint with null altitude', () => {
         const mission = createValidMission()
-        mission.waypoints[0]!.altitude = null
+        mission.waypoints[0].altitude = null
         const serialized = serializeMission(mission)
 
         const storageData = {
@@ -377,7 +377,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Schema requires non-null lat/lon/alt on all waypoints
         expect(result.valid).toBe(false)
@@ -400,7 +400,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Blank waypoints are no longer valid — all steerpoints must have coordinates
         expect(result.valid).toBe(false)
@@ -433,7 +433,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Blank waypoints are no longer valid
         expect(result.valid).toBe(false)
@@ -449,7 +449,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Schema allows empty loadout array (minItems: 0)
         // Serialization filters out EMPTY items, resulting in empty array
@@ -467,7 +467,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/tld'))).toBe(true)
@@ -483,7 +483,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/tld'))).toBe(true)
@@ -499,7 +499,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Empty string is now allowed (no defaults)
         expect(result.valid).toBe(true)
@@ -516,7 +516,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         // Empty string is now allowed (no defaults)
         expect(result.valid).toBe(true)
@@ -533,7 +533,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
         expect(result.errors?.some((e) => e.path.includes('/det'))).toBe(true)
@@ -555,7 +555,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(true)
       })
@@ -572,7 +572,7 @@ describe('validateMissionStorage', () => {
         const serialized = serializeMission(mission)
         // Manually override to test schema validation
         if (serialized.c1) {
-          serialized.c1[0]!.frequency = '251'
+          serialized.c1[0].frequency = '251'
         }
 
         const storageData = {
@@ -580,7 +580,7 @@ describe('validateMissionStorage', () => {
           missions: [serialized],
         }
 
-        const result = validateMissionStorage(storageData)
+        const result = isMissionStorageComplete(storageData)
 
         expect(result.valid).toBe(false)
       })

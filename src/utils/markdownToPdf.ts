@@ -12,7 +12,7 @@ const md = new MarkdownIt({
   linkify: true,
 })
 
-interface RenderOptions {
+type RenderOptions = {
   x: number
   y: number
   maxWidth: number
@@ -20,12 +20,12 @@ interface RenderOptions {
   lineHeight?: number
 }
 
-interface RenderResult {
+type RenderResult = {
   finalY: number
   pageAdded: boolean
 }
 
-interface ContentBlock {
+type ContentBlock = {
   type: 'paragraph' | 'heading' | 'list-item' | 'image'
   content: string
   level?: number // for headings
@@ -43,12 +43,11 @@ async function parseMarkdownToBlocks(markdown: string): Promise<ContentBlock[]> 
 
   for (let i = 0; i < tokens.length; i++) {
     const token = tokens[i]
-    if (!token) continue
 
     if (token.type === 'heading_open') {
       const level = parseInt(token.tag.substring(1))
       const inlineToken = tokens[i + 1]
-      if (inlineToken && inlineToken.type === 'inline') {
+      if (inlineToken.type === 'inline') {
         blocks.push({
           type: 'heading',
           content: inlineToken.content,
@@ -58,7 +57,7 @@ async function parseMarkdownToBlocks(markdown: string): Promise<ContentBlock[]> 
       i += 2
     } else if (token.type === 'paragraph_open') {
       const inlineToken = tokens[i + 1]
-      if (inlineToken && inlineToken.type === 'inline') {
+      if (inlineToken.type === 'inline') {
         // Check if paragraph contains an image
         const hasImage = inlineToken.children?.some((child) => child.type === 'image')
 
@@ -110,12 +109,12 @@ async function parseMarkdownToBlocks(markdown: string): Promise<ContentBlock[]> 
       let j = i + 1
       while (
         j < tokens.length &&
-        tokens[j]?.type !== 'bullet_list_close' &&
-        tokens[j]?.type !== 'ordered_list_close'
+        tokens[j].type !== 'bullet_list_close' &&
+        tokens[j].type !== 'ordered_list_close'
       ) {
-        if (tokens[j]?.type === 'list_item_open') {
+        if (tokens[j].type === 'list_item_open') {
           const paragraphToken = tokens[j + 2]
-          if (paragraphToken && paragraphToken.type === 'inline') {
+          if (paragraphToken.type === 'inline') {
             blocks.push({
               type: 'list-item',
               content: '• ' + paragraphToken.content,
@@ -145,8 +144,8 @@ export async function renderMarkdownToPdf(
 
   const { x, maxWidth } = options
   let { y } = options
-  const fontSize = options.fontSize || 8
-  const lineHeight = options.lineHeight || 0.15
+  const fontSize = options.fontSize ?? 8
+  const lineHeight = options.lineHeight ?? 0.15
 
   const pageHeight = doc.internal.pageSize.getHeight()
   const pageMargin = 0.5
@@ -159,7 +158,7 @@ export async function renderMarkdownToPdf(
   for (const block of blocks) {
     if (block.type === 'heading') {
       // Render heading
-      const headingSize = fontSize + (4 - (block.level || 1)) * 1.5
+      const headingSize = fontSize + (4 - (block.level ?? 1)) * 1.5
       doc.setFontSize(headingSize)
       doc.setFont('helvetica', 'bold')
 
@@ -179,7 +178,7 @@ export async function renderMarkdownToPdf(
       doc.setFontSize(fontSize)
       doc.setFont('helvetica', 'normal')
 
-      const lines = doc.splitTextToSize(block.content, maxWidth)
+      const lines = doc.splitTextToSize(block.content, maxWidth) as string[]
 
       for (const line of lines) {
         if (y > pageHeight - pageMargin) {
@@ -194,14 +193,19 @@ export async function renderMarkdownToPdf(
 
       // Add small gap after paragraphs
       y += 0.05
-    } else if (block.type === 'image' && block.imageData) {
+    } else if (block.imageData) {
       // Render image
       try {
         const img = new Image()
+        const imgData = block.imageData
         const imageLoaded = await new Promise<boolean>((resolve) => {
-          img.onload = () => resolve(true)
-          img.onerror = () => resolve(false)
-          img.src = block.imageData!
+          img.onload = () => {
+            resolve(true)
+          }
+          img.onerror = () => {
+            resolve(false)
+          }
+          img.src = imgData
         })
 
         if (!imageLoaded || img.width === 0 || img.height === 0) {

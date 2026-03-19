@@ -8,7 +8,7 @@ const DB_VERSION = 1
 const STORE_NAME = 'images'
 const MAX_IMAGE_SIZE = 2 * 1024 * 1024 // 2MB
 
-export interface StoredImage {
+export type StoredImage = {
   id: string
   data: string // base64 data URL
   missionId: string
@@ -26,7 +26,9 @@ class ImageStorageService {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION)
 
-      request.onerror = () => reject(request.error)
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
       request.onsuccess = () => {
         this.db = request.result
         resolve()
@@ -122,8 +124,12 @@ class ImageStorageService {
         tryCompress()
       }
 
-      img.onerror = () => reject(new Error('Failed to load image'))
-      reader.onerror = () => reject(new Error('Failed to read file'))
+      img.onerror = () => {
+        reject(new Error('Failed to load image'))
+      }
+      reader.onerror = () => {
+        reject(new Error('Failed to read file'))
+      }
 
       reader.readAsDataURL(file)
     })
@@ -135,8 +141,12 @@ class ImageStorageService {
   private async fileToDataUrl(file: File | Blob): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader()
-      reader.onload = () => resolve(reader.result as string)
-      reader.onerror = () => reject(reader.error)
+      reader.onload = () => {
+        resolve(reader.result as string)
+      }
+      reader.onerror = () => {
+        reject(reader.error ?? new Error('FileReader failed'))
+      }
       reader.readAsDataURL(file)
     })
   }
@@ -176,8 +186,12 @@ class ImageStorageService {
       const store = transaction.objectStore(STORE_NAME)
       const request = store.add(storedImage)
 
-      request.onsuccess = () => resolve(storedImage)
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve(storedImage)
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 
@@ -192,8 +206,12 @@ class ImageStorageService {
       const store = transaction.objectStore(STORE_NAME)
       const request = store.get(id)
 
-      request.onsuccess = () => resolve(request.result || null)
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve((request.result as StoredImage | null) ?? null)
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 
@@ -209,8 +227,12 @@ class ImageStorageService {
       const index = store.index('missionId')
       const request = index.getAll(missionId)
 
-      request.onsuccess = () => resolve(request.result || [])
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve(request.result as StoredImage[])
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 
@@ -225,8 +247,12 @@ class ImageStorageService {
       const store = transaction.objectStore(STORE_NAME)
       const request = store.delete(id)
 
-      request.onsuccess = () => resolve()
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve()
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 
@@ -249,8 +275,12 @@ class ImageStorageService {
       const store = transaction.objectStore(STORE_NAME)
       const request = store.getAll()
 
-      request.onsuccess = () => resolve(request.result || [])
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve(request.result as StoredImage[])
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 
@@ -285,8 +315,12 @@ class ImageStorageService {
       const store = transaction.objectStore(STORE_NAME)
       const request = store.clear()
 
-      request.onsuccess = () => resolve()
-      request.onerror = () => reject(request.error)
+      request.onsuccess = () => {
+        resolve()
+      }
+      request.onerror = () => {
+        reject(request.error ?? new Error('IndexedDB request failed'))
+      }
     })
   }
 }

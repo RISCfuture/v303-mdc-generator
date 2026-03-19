@@ -6,16 +6,16 @@ import { getSquadronDisplayName } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
 import { formatDate, formatDateTime } from '@/utils/formatting'
 import { serializeMission } from '@/utils/missionStorage'
-import { validateMissionStorage } from '@/utils/validateMissionStorage'
+import { isMissionStorageComplete } from '@/utils/validateMissionStorage'
 import type { Mission } from '@/types'
 
 /**
  * Check if a mission is complete (ready for export)
  */
-function isMissionComplete(mission: Mission): boolean {
+export function isMissionComplete(mission: Mission): boolean {
   try {
     const serialized = serializeMission(mission)
-    const result = validateMissionStorage({
+    const result = isMissionStorageComplete({
       version: 2,
       missions: [serialized],
     })
@@ -30,7 +30,7 @@ function isMissionComplete(mission: Mission): boolean {
     if (hasInvalidWaypoints) return false
 
     return true
-  } catch (_error) {
+  } catch {
     return false
   }
 }
@@ -85,7 +85,7 @@ export function createMissionTableColumns(
       title: 'Theater',
       key: 'theater',
       width: 140,
-      render: (row) => theaterDatabase[row.theater]?.displayName || row.theater,
+      render: (row) => theaterDatabase[row.theater].displayName,
     },
     {
       title: 'Type',
@@ -114,7 +114,9 @@ export function createMissionTableColumns(
                 NButton,
                 {
                   size: 'small',
-                  onClick: () => onEdit(row),
+                  onClick: () => {
+                    onEdit(row)
+                  },
                   quaternary: true,
                   circle: true,
                   'aria-label': 'Edit mission',
@@ -125,7 +127,9 @@ export function createMissionTableColumns(
                 NButton,
                 {
                   size: 'small',
-                  onClick: () => onDuplicate(row),
+                  onClick: () => {
+                    onDuplicate(row)
+                  },
                   quaternary: true,
                   circle: true,
                   'aria-label': 'Duplicate mission',
@@ -136,7 +140,9 @@ export function createMissionTableColumns(
                 NButton,
                 {
                   size: 'small',
-                  onClick: () => onExport(row),
+                  onClick: () => {
+                    onExport(row)
+                  },
                   quaternary: true,
                   circle: true,
                   'aria-label': 'Export mission',
@@ -148,7 +154,9 @@ export function createMissionTableColumns(
                 {
                   size: 'small',
                   type: 'error',
-                  onClick: () => onDelete(row),
+                  onClick: () => {
+                    onDelete(row)
+                  },
                   quaternary: true,
                   circle: true,
                   'aria-label': 'Delete mission',

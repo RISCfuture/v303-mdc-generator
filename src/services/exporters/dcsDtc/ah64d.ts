@@ -5,7 +5,7 @@ import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig } from '../helpers'
 
-export interface DCSAH64DMDC {
+export type DCSAH64DMDC = {
   Aircraft: 'AH64D'
   Upload: {
     Waypoints: boolean
@@ -27,7 +27,7 @@ export interface DCSAH64DMDC {
     TgtPointsRangeFrom: number
   }
   Waypoints: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -38,10 +38,10 @@ export interface DCSAH64DMDC {
       PointType: 'WP'
       Identifier: 'WP' | 'CC' | 'LZ' | 'PP' | 'RP' | 'SP'
       Free: string
-    }>
+    }[]
   }
   ControlMeasures: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -52,10 +52,10 @@ export interface DCSAH64DMDC {
       PointType: 'GC'
       Identifier: string
       Free: string
-    }>
+    }[]
   }
   Targets: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -66,17 +66,17 @@ export interface DCSAH64DMDC {
       PointType: 'TG'
       Identifier: 'TG'
       Free: string
-    }>
+    }[]
   }
   Routes: {
-    Routes: Array<{
+    Routes: {
       Code: number
       Mode: number
       Waypoints: number[] | null
       IncludeAllWaypoints: boolean
       IncludeAllHazards: boolean
       IncludeAllControlMeasures: boolean
-    }>
+    }[]
   }
   TSD: {
     ShowPresentPosition: boolean
@@ -123,17 +123,17 @@ export interface DCSAH64DMDC {
   }
   Radios: {
     Radio: {
-      Presets: Array<{
+      Presets: {
         Number: number
         Name: string
         Frequencies: string[]
-      }>
-      SelectedModes: Array<{
+      }[]
+      SelectedModes: {
         Number: number
         SelectedFrequency: string
         SelectedMode: number
         SelectedPreset: string
-      }>
+      }[]
     }
   }
   Version: number
@@ -164,15 +164,15 @@ function mapWaypointIdentifier(type: string | undefined): 'WP' | 'CC' | 'LZ' | '
  */
 export function exportAH64DDCSDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSAH64DMDC>,
 ): DCSAH64DMDC {
   // Convert waypoints to AH-64D DCS-DTC format
   const waypoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
 
     return {
@@ -181,7 +181,7 @@ export function exportAH64DDCSDTC(
       Latitude: formatDDM(latitude, 'latitude'),
       Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
-      TimeOverSteerpoint: wp.timeOnTarget || null,
+      TimeOverSteerpoint: wp.timeOnTarget ?? null,
       Target: wp.type === 'TGT',
       PointType: 'WP' as const,
       Identifier: mapWaypointIdentifier(wp.type),
@@ -193,8 +193,8 @@ export function exportAH64DDCSDTC(
   const targets = mission.waypoints
     .filter((wp) => wp.type === 'TGT')
     .map((wp, index) => {
-      const latitude = wp.latitude!
-      const longitude = wp.longitude!
+      const latitude = wp.latitude ?? 0
+      const longitude = wp.longitude ?? 0
       const elevation = wp.elevation ?? 0
 
       return {
@@ -203,7 +203,7 @@ export function exportAH64DDCSDTC(
         Latitude: formatDDM(latitude, 'latitude'),
         Longitude: formatDDM(longitude, 'longitude'),
         Elevation: elevation,
-        TimeOverSteerpoint: wp.timeOnTarget || null,
+        TimeOverSteerpoint: wp.timeOnTarget ?? null,
         Target: false,
         PointType: 'TG' as const,
         Identifier: 'TG' as const,
@@ -212,28 +212,28 @@ export function exportAH64DDCSDTC(
     })
 
   // Get laser code from selected crew member
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
+  const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = selectedCrewMember.laser
 
   // Build radio presets — transposed format
   // Mission stores [radio][preset], AH-64D needs [preset].Frequencies[radio]
   // AH-64D has 5 radios: COM1 (VHF), COM2 (HF), COM3 (UHF), COM4 (FM1), COM5 (FM2)
-  const presetCount = Math.max(...mission.radioPresets.map((r) => r?.length ?? 0), 0)
+  const presetCount = Math.max(...mission.radioPresets.map((r) => r.length), 0)
   const radioPresets: DCSAH64DMDC['Radios']['Radio']['Presets'] = []
 
   for (let p = 0; p < presetCount; p++) {
     const frequencies: string[] = []
     // 5 radios map to slots 0-4
     for (let r = 0; r < 5; r++) {
-      const preset = mission.radioPresets[r]?.[p]
-      frequencies.push(preset ? truncateFrequency(preset.frequency) : '0.000')
+      const preset = mission.radioPresets[r][p]
+      frequencies.push(truncateFrequency(preset.frequency))
     }
     // Slot 5 (6th) is always unused
     frequencies.push('0.000')
 
     radioPresets.push({
       Number: p + 1,
-      Name: mission.radioPresets[0]?.[p]?.description || '',
+      Name: mission.radioPresets[0]?.[p]?.description ?? '',
       Frequencies: frequencies,
     })
   }

@@ -19,8 +19,8 @@ export function getAirframeData(airframe: Airframe): AirframeData | undefined {
  * @param airframe - The aircraft identifier
  * @returns True if the airframe is a helicopter
  */
-export function isHelicopter(airframe: Airframe | string): boolean {
-  const data = getAirframeData(airframe as Airframe)
+export function isHelicopter(airframe: Airframe): boolean {
+  const data = getAirframeData(airframe)
   return data?.isHelicopter ?? false
 }
 
@@ -32,7 +32,7 @@ export function isHelicopter(airframe: Airframe | string): boolean {
  */
 export function getRadioCount(airframe: Airframe): number {
   const data = getAirframeData(airframe)
-  if (!data || !data.radios || data.radios.length === 0) {
+  if (!data?.radios || data.radios.length === 0) {
     throw new Error(`Incomplete aircraft data: ${airframe} has no radio configuration`)
   }
   return data.radios.length

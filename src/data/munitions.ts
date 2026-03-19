@@ -14,7 +14,7 @@ import munitionsOverridesJson from '@/data/json/munitions-overrides.json'
 import { airframeDatabase } from '@/data/airframes'
 import { applyOverrides } from './overrides'
 
-export interface MunitionData {
+export type MunitionData = {
   id: string // DCS weapon ID (e.g., "Mk_82", "AGM_65D")
   name: string // Full display name (e.g., "Mk-82", "AGM-65D")
   shortName?: string // Short display name (e.g., "Mk-82", "AGM-65")
@@ -24,14 +24,14 @@ export interface MunitionData {
 }
 
 // Load base munitions data
-const baseMunitionsDatabase: Record<string, MunitionData> = munitionsDataJson as Record<
+const baseMunitionsDatabase: Record<string, MunitionData | undefined> = munitionsDataJson as Record<
   string,
-  MunitionData
+  MunitionData | undefined
 >
 
 // Load and apply overrides using the generic override system
 const munitionsOverrides = munitionsOverridesJson as Record<string, unknown>
-const munitionsDatabase: Record<string, MunitionData> = applyOverrides(
+const munitionsDatabase: Record<string, MunitionData | undefined> = applyOverrides(
   baseMunitionsDatabase,
   munitionsOverrides,
 )
@@ -55,7 +55,7 @@ const munitionsDatabase: Record<string, MunitionData> = applyOverrides(
  */
 function parseLoadoutId(itemId: string): {
   totalWeight: number
-  components: Array<{ id: string; weight: number; quantity: number }>
+  components: { id: string; weight: number; quantity: number }[]
 } {
   if (itemId === 'EMPTY') {
     return { totalWeight: 0, components: [] }
@@ -88,9 +88,9 @@ function parseLoadoutId(itemId: string): {
 
   // Check for DCS composite format: RACK_QTY*MUNITION or RACK*MUNITION
   // Examples: "TER_9A_3*MK-82", "LAU-105_2*AIM-9L", "BRU-42_3*Mk-82AIR"
-  const compositeMatch = cleanId.match(/^([^*]+)_(\d+)([LR]?)\*(.+)$/)
+  const compositeMatch = /^([^*]+)_(\d+)([LR]?)\*(.+)$/.exec(cleanId)
 
-  if (compositeMatch && compositeMatch[1] && compositeMatch[2] && compositeMatch[4]) {
+  if (compositeMatch?.[1] && compositeMatch[2] && compositeMatch[4]) {
     const rackBase = compositeMatch[1]
     const qtyStr = compositeMatch[2]
     const lrSuffix = compositeMatch[3] || ''
@@ -104,7 +104,7 @@ function parseLoadoutId(itemId: string): {
     const rackWeight = getMunitionWeight(rackId)
     const munitionWeight = getMunitionWeight(`{${munitionId}}`) || getMunitionWeight(munitionId)
 
-    const components: Array<{ id: string; weight: number; quantity: number }> = [
+    const components: { id: string; weight: number; quantity: number }[] = [
       { id: rackId, weight: rackWeight, quantity: 1 },
       { id: munitionId, weight: munitionWeight, quantity: quantity },
     ]
@@ -116,9 +116,9 @@ function parseLoadoutId(itemId: string): {
 
   // Check for simple composite without quantity in name: "RACK*MUNITION"
   // Example: "BRU-42*Mk-82"
-  const simpleCompositeMatch = cleanId.match(/^([^*_\d]+)\*(.+)$/)
+  const simpleCompositeMatch = /^([^*_\d]+)\*(.+)$/.exec(cleanId)
 
-  if (simpleCompositeMatch && simpleCompositeMatch[1] && simpleCompositeMatch[2]) {
+  if (simpleCompositeMatch?.[1] && simpleCompositeMatch[2]) {
     const rackBase = simpleCompositeMatch[1]
     const munitionId = simpleCompositeMatch[2]
 
@@ -129,7 +129,7 @@ function parseLoadoutId(itemId: string): {
     const rackWeight = getMunitionWeight(rackId)
     const munitionWeight = getMunitionWeight(`{${munitionId}}`) || getMunitionWeight(munitionId)
 
-    const components: Array<{ id: string; weight: number; quantity: number }> = [
+    const components: { id: string; weight: number; quantity: number }[] = [
       { id: rackId, weight: rackWeight, quantity: 1 },
       { id: munitionId, weight: munitionWeight, quantity: quantity },
     ]
@@ -162,8 +162,9 @@ export function getMunitionShortName(itemId: string): string {
   if (itemId === 'EMPTY') return 'Empty'
 
   // Check if we have a shortname in the merged database
-  if (munitionsDatabase[itemId]?.shortName) {
-    return munitionsDatabase[itemId].shortName!
+  const munitionData = munitionsDatabase[itemId]
+  if (munitionData?.shortName) {
+    return munitionData.shortName
   }
 
   // Fall back to full display name
@@ -178,22 +179,25 @@ export function getMunitionDisplayName(itemId: string): string {
   if (itemId === 'EMPTY') return 'Empty'
 
   // Try direct database lookup first (handles both simple and composite CLSIDs)
-  if (munitionsDatabase[itemId]?.name) {
-    return munitionsDatabase[itemId].name
+  const directData = munitionsDatabase[itemId]
+  if (directData?.name) {
+    return directData.name
   }
 
   // Try with asterisk removed (airframe format -> DCS format)
   const cleanId = itemId.replace(/^{|}$/g, '')
   if (cleanId.includes('*')) {
     const dcsFormat = `{${cleanId.replace('*', '')}}`
-    if (munitionsDatabase[dcsFormat]?.name) {
-      return munitionsDatabase[dcsFormat].name
+    const dcsData = munitionsDatabase[dcsFormat]
+    if (dcsData?.name) {
+      return dcsData.name
     }
   }
 
   // Try without braces
-  if (munitionsDatabase[cleanId]?.name) {
-    return munitionsDatabase[cleanId].name
+  const cleanData = munitionsDatabase[cleanId]
+  if (cleanData?.name) {
+    return cleanData.name
   }
 
   // Parse the CLSID using the DCS format parser
@@ -204,27 +208,26 @@ export function getMunitionDisplayName(itemId: string): string {
     const rack = parsed.components[0]
     const munition = parsed.components[1]
 
-    if (rack && munition) {
-      // Try to get names from database
-      const rackData = munitionsDatabase[rack.id]
-      const munitionData = munitionsDatabase[munition.id] || munitionsDatabase[`{${munition.id}}`]
+    // Try to get names from database
+    const rackData = munitionsDatabase[rack.id]
 
-      if (rackData && munitionData) {
-        return `${rackData.name} w/ ${munition.quantity}× ${munitionData.name}`
-      } else if (rackData) {
-        // Have rack but not munition - try munition ID without braces
-        const munitionName = munitionData?.name ?? munition.id.replace(/^{|}$/g, '')
-        return `${rackData.name} w/ ${munition.quantity}× ${munitionName}`
-      } else if (munitionData) {
-        // Have munition but not rack
-        const rackName = rack.id.replace(/^{|}$/g, '')
-        return `${rackName} w/ ${munition.quantity}× ${munitionData.name}`
-      } else {
-        // Don't have either - use IDs
-        const rackName = rack.id.replace(/^{|}$/g, '')
-        const munitionName = munition.id.replace(/^{|}$/g, '')
-        return `${rackName} w/ ${munition.quantity}× ${munitionName}`
-      }
+    const munitionData = munitionsDatabase[munition.id] ?? munitionsDatabase[`{${munition.id}}`]
+
+    if (rackData && munitionData) {
+      return `${rackData.name} w/ ${munition.quantity}× ${munitionData.name}`
+    } else if (rackData) {
+      // Have rack but not munition - try munition ID without braces
+      const munitionName = munitionData?.name ?? munition.id.replace(/^{|}$/g, '')
+      return `${rackData.name} w/ ${munition.quantity}× ${munitionName}`
+    } else if (munitionData) {
+      // Have munition but not rack
+      const rackName = rack.id.replace(/^{|}$/g, '')
+      return `${rackName} w/ ${munition.quantity}× ${munitionData.name}`
+    } else {
+      // Don't have either - use IDs
+      const rackName = rack.id.replace(/^{|}$/g, '')
+      const munitionName = munition.id.replace(/^{|}$/g, '')
+      return `${rackName} w/ ${munition.quantity}× ${munitionName}`
     }
   }
 
@@ -258,15 +261,16 @@ export function getFuelCapacity(itemId: string): number {
 
   // Try with braces removed
   const cleanId = itemId.replace(/^{|}$/g, '')
-  const cleanData = munitionsDatabase[cleanId] || munitionsDatabase[`{${cleanId}}`]
+
+  const cleanData = munitionsDatabase[cleanId] ?? munitionsDatabase[`{${cleanId}}`]
   if (cleanData?.additionalFuel) {
     return cleanData.additionalFuel
   }
 
   // Fallback: Match patterns like "370 GAL", "{DFT-370gal}", "300 GAL", "600 GAL"
-  const galMatch = itemId.match(/(\d+)\s*GAL/i)
+  const galMatch = /(\d+)\s*GAL/i.exec(itemId)
   if (galMatch) {
-    const gallons = parseInt(galMatch[1]!, 10)
+    const gallons = parseInt(galMatch[1], 10)
     return gallons * 6.7 // lb/gal
   }
 
@@ -291,7 +295,8 @@ export function getLoadoutOnlyWeight(itemId: string): number {
 
   // Try with braces removed
   const cleanId = itemId.replace(/^{|}$/g, '')
-  const cleanData = munitionsDatabase[cleanId] || munitionsDatabase[`{${cleanId}}`]
+
+  const cleanData = munitionsDatabase[cleanId] ?? munitionsDatabase[`{${cleanId}}`]
   if (cleanData?.category === 'fuel' && cleanData.additionalFuel) {
     return totalWeight - cleanData.additionalFuel
   }
@@ -362,21 +367,21 @@ function inferCategoryFromName(name: string): string {
 export function buildStationLoadoutOptions(
   aircraft: string,
   stationNumber: number | string,
-): Array<{
+): {
   type: 'group'
   label: string
   key: string
-  children: Array<{ label: string; value: string }>
-}> {
+  children: { label: string; value: string }[]
+}[] {
   const airframeData = airframeDatabase[aircraft]
   if (!airframeData) return []
 
   // Find the station in the airframe data
   const station = airframeData.stations.find((s) => s.station === stationNumber)
-  if (!station || !station.munitions) return []
+  if (!station?.munitions) return []
 
   // Group munitions by category
-  const grouped = new Map<string, Array<{ label: string; value: string }>>()
+  const grouped = new Map<string, { label: string; value: string }[]>()
 
   // Always include EMPTY as the first option
   grouped.set('empty', [{ label: 'Empty', value: 'EMPTY' }])
@@ -385,7 +390,7 @@ export function buildStationLoadoutOptions(
     // Parse the CLSID to determine category
     const parsed = parseLoadoutId(clsid)
 
-    let category = 'rack' // Default for composites
+    let category: string
     const label = getMunitionDisplayName(clsid)
 
     // Check if this is a composite by looking at the parsed result
@@ -394,13 +399,11 @@ export function buildStationLoadoutOptions(
     if (isComposite) {
       // For composites, use the category of the last munition in the chain
       const lastComponent = parsed.components[parsed.components.length - 1]
-      if (lastComponent) {
-        const lastMunitionData =
-          munitionsDatabase[lastComponent.id] ||
-          munitionsDatabase[`{${lastComponent.id}}`] ||
-          munitionsDatabase[lastComponent.id.replace(/^{|}$/g, '')]
-        category = lastMunitionData?.category ?? 'rack'
-      }
+      const lastMunitionData =
+        munitionsDatabase[lastComponent.id] ??
+        munitionsDatabase[`{${lastComponent.id}}`] ??
+        munitionsDatabase[lastComponent.id.replace(/^{|}$/g, '')]
+      category = lastMunitionData?.category ?? 'rack'
     } else {
       // For simple munitions, use database category
       const cleanId = clsid.replace(/^{|}$/g, '')
@@ -409,9 +412,9 @@ export function buildStationLoadoutOptions(
       // For CLSIDs with asterisk, also try DCS format (asterisk removed)
       const dcsFormat = cleanId.includes('*') ? `{${cleanId.replace('*', '')}}` : null
       const munitionData =
-        munitionsDatabase[clsid] ||
-        (dcsFormat && munitionsDatabase[dcsFormat]) ||
-        munitionsDatabase[`{${cleanId}}`] ||
+        munitionsDatabase[clsid] ??
+        (dcsFormat ? munitionsDatabase[dcsFormat] : undefined) ??
+        munitionsDatabase[`{${cleanId}}`] ??
         munitionsDatabase[cleanId]
 
       // If the munition is categorized as 'rack' in the database, try to infer the actual category
@@ -421,11 +424,12 @@ export function buildStationLoadoutOptions(
         if (clsid.includes('*')) {
           const cleanClsid = clsid.replace(/^{|}$/g, '')
           // Match patterns like: BRU42LS_2*LAU68_HYDRA_70_MK1_L
-          const match = cleanClsid.match(/^([^*]+)\*(.+)$/)
-          if (match && match[2]) {
+          const match = /^([^*]+)\*(.+)$/.exec(cleanClsid)
+          if (match?.[2]) {
             const lastMunitionId = match[2]
+
             const lastMunitionData =
-              munitionsDatabase[`{${lastMunitionId}}`] || munitionsDatabase[lastMunitionId]
+              munitionsDatabase[`{${lastMunitionId}}`] ?? munitionsDatabase[lastMunitionId]
             if (lastMunitionData && lastMunitionData.category !== 'rack') {
               category = lastMunitionData.category
             } else {
@@ -444,10 +448,12 @@ export function buildStationLoadoutOptions(
       }
     }
 
-    if (!grouped.has(category)) {
-      grouped.set(category, [])
+    const existing = grouped.get(category)
+    if (existing) {
+      existing.push({ label, value: clsid })
+    } else {
+      grouped.set(category, [{ label, value: clsid }])
     }
-    grouped.get(category)!.push({ label, value: clsid })
   }
 
   // Convert to NSelect group format with proper ordering
@@ -462,12 +468,12 @@ export function buildStationLoadoutOptions(
     rack: 'Racks & Launchers',
   }
 
-  const result: Array<{
+  const result: {
     type: 'group'
     label: string
     key: string
-    children: Array<{ label: string; value: string }>
-  }> = []
+    children: { label: string; value: string }[]
+  }[] = []
 
   // Add categories in order
   for (const category of categoryOrder) {

@@ -41,6 +41,7 @@ export function useWaypointManagement(
   function addWaypoint() {
     // Get the coordinate format from the last waypoint, if any
     const lastWaypoint = waypoints.value[waypoints.value.length - 1]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard: array may be empty
     const coordinateFormat = lastWaypoint?.coordinateFormat
 
     // First steerpoint should default to PARK, all others to NAV
@@ -70,6 +71,7 @@ export function useWaypointManagement(
   }) {
     // Get the coordinate format from the last waypoint, if any
     const lastWaypoint = waypoints.value[waypoints.value.length - 1]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard: array may be empty
     const coordinateFormat = lastWaypoint?.coordinateFormat
 
     // First steerpoint should default to PARK, all others to NAV
@@ -113,6 +115,7 @@ export function useWaypointManagement(
     let updatedWaypoints = [...waypoints.value]
     const current = updatedWaypoints[index]
     const prev = updatedWaypoints[index - 1]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for out-of-bounds
     if (!current || !prev) return
     updatedWaypoints[index] = prev
     updatedWaypoints[index - 1] = current
@@ -127,6 +130,7 @@ export function useWaypointManagement(
     let updatedWaypoints = [...waypoints.value]
     const current = updatedWaypoints[index]
     const next = updatedWaypoints[index + 1]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for out-of-bounds
     if (!current || !next) return
     updatedWaypoints[index] = next
     updatedWaypoints[index + 1] = current

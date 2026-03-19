@@ -10,16 +10,19 @@ const __dirname = path.dirname(__filename)
  * Helper to create a mission with optional name
  */
 async function createMission(page: Page, name?: string) {
-  await page.getByRole('button', { name: /New Mission/ }).first().click()
+  await page
+    .getByRole('button', { name: /New Mission/ })
+    .first()
+    .click()
   // Wait for dialog to be visible before clicking Create Mission
   const dialog = page.locator('dialog, [role="dialog"]')
   await dialog.waitFor({ state: 'visible' })
 
   // Use JavaScript click to avoid WebKit click interception issues with overlay elements
   await page.evaluate(() => {
-    const btn = Array.from(document.querySelectorAll('button')).find(
-      (b) => b.textContent?.includes('Create Mission')
-    ) as HTMLButtonElement
+    const btn = Array.from(document.querySelectorAll('button')).find((b) =>
+      b.textContent.includes('Create Mission'),
+    )
     btn?.click()
   })
 
@@ -103,15 +106,13 @@ test.describe('Mission List Export/Import', () => {
 
     // Set up file input
     const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath!)
+    await fileInput.setInputFiles(downloadPath)
 
     // Wait for import modal to appear (use dialog role to be more specific)
     await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
 
     // Verify warning message
-    await expect(
-      page.getByText(/This will delete all existing missions/)
-    ).toBeVisible()
+    await expect(page.getByText(/This will delete all existing missions/)).toBeVisible()
 
     // Verify import details are shown
     await expect(page.getByText(/Missions to import:/i)).toBeVisible()
@@ -147,7 +148,7 @@ test.describe('Mission List Export/Import', () => {
 
     // Import the backup (which has 2 missions)
     const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath!)
+    await fileInput.setInputFiles(downloadPath)
 
     // Wait for confirmation modal
     await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
@@ -178,7 +179,7 @@ test.describe('Mission List Export/Import', () => {
 
     // Try to import
     const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath!)
+    await fileInput.setInputFiles(downloadPath)
 
     // Wait for confirmation modal
     await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
@@ -198,10 +199,7 @@ test.describe('Mission List Export/Import', () => {
 
     // Create an invalid backup file
     const invalidBackupPath = path.join(__dirname, 'invalid-backup.json')
-    fs.writeFileSync(
-      invalidBackupPath,
-      JSON.stringify({ invalid: 'data', version: 1 })
-    )
+    fs.writeFileSync(invalidBackupPath, JSON.stringify({ invalid: 'data', version: 1 }))
 
     // Try to import invalid file
     const fileInput = page.locator('input[type="file"]')
@@ -239,7 +237,7 @@ test.describe('Mission List Export/Import', () => {
 
     // Import
     const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath!)
+    await fileInput.setInputFiles(downloadPath)
 
     // Wait for import modal to appear
     await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()

@@ -229,7 +229,7 @@ describe('FlightMemberCard', () => {
 
       // Mobile controls exist but may not be visible in test
       // Just check that the event can be emitted
-      expect(wrapper.emitted('move-up') || true).toBeTruthy()
+      expect(wrapper.emitted('move-up') ?? true).toBeTruthy()
     })
 
     it('should emit move-down when down button is clicked', async () => {
@@ -248,7 +248,7 @@ describe('FlightMemberCard', () => {
       })
 
       // Mobile controls may not emit in test environment
-      expect(wrapper.emitted('move-down') || true).toBeTruthy()
+      expect(wrapper.emitted('move-down') ?? true).toBeTruthy()
     })
   })
 

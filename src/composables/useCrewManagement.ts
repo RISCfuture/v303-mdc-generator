@@ -7,7 +7,7 @@ import { airframeDatabase } from '@/data/airframes'
 import { getDatalinkType, getCrewMemberSTN, formatSTNForDatalink } from '@/utils/datalinkHelpers'
 import type { CrewMember } from '@/types'
 
-export interface CrewDatabaseEntry {
+export type CrewDatabaseEntry = {
   pilot: string
   callsign: string[]
   link16Prefix: string
@@ -75,7 +75,6 @@ export function useCrewManagement(
     if (crewList.length === 0) return
 
     const leadCrew = crewList[0]
-    if (!leadCrew) return
 
     // Get lead's original mode3 from database
     const leadPilot = availableCrew.value.find((p) => p.pilot === leadCrew.pilot)
@@ -203,7 +202,6 @@ export function useCrewManagement(
     const updatedCrew = [...crew.value]
     const current = updatedCrew[index]
     const prev = updatedCrew[index - 1]
-    if (!current || !prev) return
     updatedCrew[index] = prev
     updatedCrew[index - 1] = current
 
@@ -234,7 +232,6 @@ export function useCrewManagement(
     const updatedCrew = [...crew.value]
     const current = updatedCrew[index]
     const next = updatedCrew[index + 1]
-    if (!current || !next) return
     updatedCrew[index] = next
     updatedCrew[index + 1] = current
 

@@ -22,10 +22,10 @@ import type { ComponentPublicInstance } from 'vue'
  * await selectNSelectValue(wrapper, 'handleAirportChange', 'Kutaisi')
  * expect(wrapper.emitted('update:airportId')).toBeTruthy()
  */
-export async function selectNSelectValue<T>(
+export async function selectNSelectValue(
   wrapper: VueWrapper<ComponentPublicInstance>,
   handlerName: string,
-  value: T,
+  value: unknown,
 ): Promise<void> {
   const vm = wrapper.vm as ComponentPublicInstance & Record<string, unknown>
   if (typeof vm[handlerName] !== 'function') {
@@ -35,7 +35,7 @@ export async function selectNSelectValue<T>(
     )
   }
 
-  ;(vm[handlerName] as (value: T) => void)(value)
+  ;(vm[handlerName] as (value: unknown) => void)(value)
   await wrapper.vm.$nextTick()
 }
 
@@ -50,19 +50,19 @@ export async function selectNSelectValue<T>(
  * const wrapper = mount(MyComponent)
  * const pilotName = getNInputValue(wrapper, 'pilotName')
  */
-export function getNInputValue<T>(
+export function getNInputValue(
   wrapper: VueWrapper<ComponentPublicInstance>,
   refOrStateName: string,
-): T | undefined {
+): unknown {
   const vm = wrapper.vm as ComponentPublicInstance & Record<string, unknown>
   // Try direct property access
   if (vm[refOrStateName] !== undefined) {
-    const value = vm[refOrStateName] as { value?: T } | T
+    const value: unknown = vm[refOrStateName]
     // Handle Vue refs
     if (typeof value === 'object' && value !== null && 'value' in value) {
-      return value.value
+      return (value as { value: unknown }).value
     }
-    return value as T
+    return value
   }
 
   return undefined
@@ -80,10 +80,10 @@ export function getNInputValue<T>(
  * await setNInputValue(wrapper, 'update:pilotName', 'John Doe')
  * expect(wrapper.emitted('update:pilotName')?.[0]).toEqual(['John Doe'])
  */
-export async function setNInputValue<T>(
+export async function setNInputValue(
   wrapper: VueWrapper<ComponentPublicInstance>,
   updateEventName: string,
-  value: T,
+  value: unknown,
 ): Promise<void> {
   const vm = wrapper.vm as ComponentPublicInstance & Record<string, unknown>
   // Find the handler by convention (update:foo -> handleFooUpdate or onUpdateFoo)
@@ -98,7 +98,7 @@ export async function setNInputValue<T>(
   const handler = handlerNames.find((name) => typeof vm[name] === 'function')
 
   if (handler) {
-    ;(vm[handler] as (value: T) => void)(value)
+    ;(vm[handler] as (value: unknown) => void)(value)
   } else {
     // Fallback: just check if the component would emit
     console.warn(

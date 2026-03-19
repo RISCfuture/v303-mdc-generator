@@ -40,7 +40,7 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     if (!mission.value) return 0
     const airframe = getMissionAirframe(mission.value)
     const airframeData = getAirframeData(airframe)
-    const emptyWeight = airframeData?.emptyWeight || 0
+    const emptyWeight = airframeData?.emptyWeight ?? 0
     return emptyWeight + loadoutWeight.value + fuelWeight.value
   })
 
@@ -116,13 +116,9 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
 
     // Try to find recovery airport in waypoints
     const recoveryWaypoint = mission.value.waypoints.find(
-      (wp) => wp.name && wp.name.toLowerCase() === recoveryAirportId.toLowerCase(),
+      (wp) => wp.name.toLowerCase() === recoveryAirportId.toLowerCase(),
     )
-    if (
-      !recoveryWaypoint ||
-      recoveryWaypoint.latitude === null ||
-      recoveryWaypoint.longitude === null
-    ) {
+    if (recoveryWaypoint?.latitude == null || recoveryWaypoint.longitude == null) {
       return null
     }
     const recoveryLocation = {
@@ -132,7 +128,7 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
 
     // Get target waypoint location (waypoint with type === 'TGT')
     const targetWaypoint = mission.value.waypoints.find((wp) => wp.type === 'TGT')
-    if (!targetWaypoint || targetWaypoint.latitude === null || targetWaypoint.longitude === null) {
+    if (targetWaypoint?.latitude == null || targetWaypoint.longitude == null) {
       return null
     }
     const targetLocation = {
@@ -145,13 +141,9 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
     const alternateAirportId = mission.value.departureRecovery.alternateAirportId
     if (alternateAirportId) {
       const alternateWaypoint = mission.value.waypoints.find(
-        (wp) => wp.name && wp.name.toLowerCase() === alternateAirportId.toLowerCase(),
+        (wp) => wp.name.toLowerCase() === alternateAirportId.toLowerCase(),
       )
-      if (
-        alternateWaypoint &&
-        alternateWaypoint.latitude !== null &&
-        alternateWaypoint.longitude !== null
-      ) {
+      if (alternateWaypoint?.latitude != null && alternateWaypoint.longitude !== null) {
         alternateLocation = {
           latitude: alternateWaypoint.latitude,
           longitude: alternateWaypoint.longitude,
@@ -202,7 +194,7 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
 
     const airframe = getMissionAirframe(mission.value)
     const airframeData = getAirframeData(airframe)
-    return airframeData?.internalFuel || 0
+    return airframeData?.internalFuel ?? 0
   })
 
   return {

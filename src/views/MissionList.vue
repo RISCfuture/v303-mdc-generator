@@ -25,9 +25,8 @@ import CreateMissionModal from '@/components/mission-list/CreateMissionModal.vue
 import StorageWarning from '@/components/common/StorageWarning.vue'
 import { getSquadronOptions } from '@/data/squadrons'
 import { theaterDatabase } from '@/data/theaters'
-import { serializeMission } from '@/utils/missionStorage'
-import { validateMissionStorage } from '@/utils/validateMissionStorage'
 import { formatFileSize } from '@/utils/formatters'
+import { isMissionComplete } from '@/utils/missionTableColumns'
 import type { Squadron, Theater, Mission } from '@/types'
 
 const missionsStore = useMissionsStore()
@@ -54,28 +53,6 @@ const filterState = ref<'all' | 'ready' | 'draft'>('all')
 const filterName = ref('')
 const filterSquadron = ref<string>('all')
 const filterTheater = ref<string>('all')
-
-// Helper function to check if mission is complete (same logic as in missionTableColumns.ts)
-function isMissionComplete(mission: Mission): boolean {
-  try {
-    const serialized = serializeMission(mission)
-    const result = validateMissionStorage({
-      version: 2,
-      missions: [serialized],
-    })
-
-    if (!result.valid) return false
-
-    const hasInvalidWaypoints = mission.waypoints.some(
-      (wp) => wp.latitude === null || wp.longitude === null || wp.altitude === null,
-    )
-    if (hasInvalidWaypoints) return false
-
-    return true
-  } catch (_error) {
-    return false
-  }
-}
 
 // Filtered missions computed property
 const filteredMissions = computed(() => {
@@ -169,7 +146,7 @@ async function handleImportFile({ file }: { file: UploadFileInfo }) {
       return false
     } else {
       // Full backup import - show modal for confirmation
-      importPreview.value = result as ImportPreview
+      importPreview.value = result
       showImportModal.value = true
       // Clear the upload file list to reset the component
       await nextTick()
@@ -177,7 +154,7 @@ async function handleImportFile({ file }: { file: UploadFileInfo }) {
       return false
     }
   } catch (error) {
-    message.error(`Failed to parse backup file: ${error}`)
+    message.error(`Failed to parse backup file: ${String(error)}`)
     console.error('Import parse error:', error)
     // Clear the upload file list on error
     await nextTick()
@@ -207,7 +184,7 @@ function handleCancelImport() {
 }
 
 function handleExport(mission: Mission) {
-  exportSingleMission(mission)
+  void exportSingleMission(mission)
 }
 
 // Drag and drop handlers
@@ -257,7 +234,7 @@ async function handleDrop(e: DragEvent) {
 
   // Process only the first JSON file
   const file = files[0]
-  if (!file || !file.name.endsWith('.json')) {
+  if (!file.name.endsWith('.json')) {
     message.error('Please drop a JSON file')
     return
   }
@@ -272,11 +249,11 @@ async function handleDrop(e: DragEvent) {
       message.success('Mission imported successfully')
     } else {
       // Full backup import - show modal for confirmation
-      importPreview.value = result as ImportPreview
+      importPreview.value = result
       showImportModal.value = true
     }
   } catch (error) {
-    message.error(`Failed to import file: ${error}`)
+    message.error(`Failed to import file: ${String(error)}`)
     console.error('Drag and drop import error:', error)
   }
 }

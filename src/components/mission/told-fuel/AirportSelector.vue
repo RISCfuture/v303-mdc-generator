@@ -5,7 +5,7 @@ import { useAirportSelection } from '@/composables/useAirportSelection'
 import { formatInteger } from '@/utils/numberFormatting'
 import type { Theater } from '@/types'
 
-interface Props {
+type Props = {
   theater: Theater
   airportId?: string | null
   runwayName?: string | null

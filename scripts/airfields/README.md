@@ -5,6 +5,7 @@ This guide explains how to extract complete airfield data (runways, TACANs, ILS,
 ## Overview
 
 The extraction process has three main steps:
+
 1. **Generate extraction missions** - Creates `.miz` files that run export scripts
 2. **Run missions in DCS** - Executes the missions to export terrain data
 3. **Process exports** - Converts raw DCS data into schema-compliant JSON files
@@ -12,6 +13,7 @@ The extraction process has three main steps:
 ## Prerequisites
 
 ### Software Requirements
+
 - **DCS World** (any version)
 - **Python 3.8+** with required packages:
   ```bash
@@ -19,6 +21,7 @@ The extraction process has three main steps:
   ```
 
 ### DCS Configuration
+
 **IMPORTANT:** You must desanitize `MissionScripting.lua` to enable file I/O operations.
 
 1. Locate your DCS installation:
@@ -28,6 +31,7 @@ The extraction process has three main steps:
 2. Open `MissionScripting.lua` in a text editor (as Administrator)
 
 3. Comment out these lines by adding `--` at the beginning:
+
    ```lua
    --do
    --    sanitizeModule('io')
@@ -56,6 +60,7 @@ python generate_extraction_missions.py --terrain Caucasus
 ```
 
 ### Available Terrains
+
 - Afghanistan
 - Caucasus
 - Falklands
@@ -115,6 +120,7 @@ python process_terrain_exports.py --input-dir /path/to/exports
 ```
 
 This will:
+
 - Look for all `terrain_export_*.json` files in the specified input directory
 - Process each one and create corresponding JSON files in `../src/data/json/airfields/`
 
@@ -137,16 +143,20 @@ python process_terrain_exports.py \
 For each airfield, the following data is captured:
 
 ### Position
+
 - Latitude/longitude (decimal degrees)
 - Elevation (feet MSL)
 
 ### TACAN (if available)
+
 - Channel number (1-126)
 - Callsign (3 letters)
 - Band (X or Y)
 
 ### Runways
+
 Each runway end includes:
+
 - Name (e.g., "09", "27")
 - Magnetic heading (0-359°)
 - ILS data (if equipped):
@@ -156,6 +166,7 @@ Each runway end includes:
   - Transmitter position
 
 ### Radio
+
 - ATC frequencies (planned for future implementation)
 
 ## Data Format
@@ -207,6 +218,7 @@ The processor automatically validates all generated files against the schema at:
 `../src/data/json/schemas/airfields.schema.json`
 
 If validation fails, error messages will indicate:
+
 - Which terrain file has issues
 - What field caused the error
 - The expected format
@@ -214,22 +226,26 @@ If validation fails, error messages will indicate:
 ## Troubleshooting
 
 ### "No export files found"
+
 - Make sure you ran the missions in DCS
 - Verify the `--input-dir` path points to the directory containing the `terrain_export_*.json` files
 - Check `%USERPROFILE%\Saved Games\DCS\Logs\` for the exported files
 - Verify MissionScripting.lua is desanitized
 
 ### "Failed to get airbases" in DCS
+
 - The MOOSE framework may not have loaded
 - Check `dcs.log` for error messages
 - Ensure the mission file contains both `Moose.lua` and `export_terrain_data.lua`
 
 ### "beacons.lua not found" warning in DCS log
+
 - This is expected for WWII terrains (Normandy, TheChannel, MarianasWWII)
 - Modern terrains should find beacons automatically
 - Check that terrain name mapping is correct in `export_terrain_data.lua`
 
 ### Validation errors
+
 - The schema is very strict about data types
 - Common issues:
   - Headings must be integers (0-359)
@@ -254,23 +270,23 @@ scripts/
 
 As of the last extraction (October 2025):
 
-| Terrain | Airfields | TACANs | ILS |
-|---------|-----------|--------|-----|
-| Afghanistan | 28 | 9 | 2 |
-| Caucasus | 21 | 7 | 11 |
-| Falklands | 27 | 2 | 10 |
-| GermanyCW | 201 | 18 | 26 |
-| Iraq | 19 | 7 | 11 |
-| Kola | 33 | 4 | 16 |
-| MarianaIslands | 8 | 1 | 5 |
-| MarianaIslandsWWII | 11 | 0 | 0 |
-| Nevada | 17 | 3 | 11 |
-| Normandy | 82 | 0 | 0 |
-| PersianGulf | 30 | 8 | 14 |
-| SinaiMap | 56 | 4 | 56 |
-| Syria | 211 | 4 | 33 |
-| TheChannel | 12 | 0 | 0 |
-| **Total** | **756** | **67** | **195** |
+| Terrain            | Airfields | TACANs | ILS     |
+| ------------------ | --------- | ------ | ------- |
+| Afghanistan        | 28        | 9      | 2       |
+| Caucasus           | 21        | 7      | 11      |
+| Falklands          | 27        | 2      | 10      |
+| GermanyCW          | 201       | 18     | 26      |
+| Iraq               | 19        | 7      | 11      |
+| Kola               | 33        | 4      | 16      |
+| MarianaIslands     | 8         | 1      | 5       |
+| MarianaIslandsWWII | 11        | 0      | 0       |
+| Nevada             | 17        | 3      | 11      |
+| Normandy           | 82        | 0      | 0       |
+| PersianGulf        | 30        | 8      | 14      |
+| SinaiMap           | 56        | 4      | 56      |
+| Syria              | 211       | 4      | 33      |
+| TheChannel         | 12        | 0      | 0       |
+| **Total**          | **756**   | **67** | **195** |
 
 ## Notes
 

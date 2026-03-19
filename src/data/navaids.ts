@@ -13,17 +13,16 @@ const navaidModules = import.meta.glob<Navaid[]>('./json/navaids/*.json', {
 // Build navaid database from dynamically imported JSON files
 // The keys are derived from the filename (without extension)
 // e.g., "./json/navaids/Afghanistan.json" -> "Afghanistan"
-const navaidsDatabase: Record<string, Navaid[]> = Object.entries(navaidModules).reduce(
-  (acc, [path, navaids]) => {
-    // Extract theater name from path: "./json/navaids/Afghanistan.json" -> "Afghanistan"
-    const theaterName = path.split('/').pop()?.replace('.json', '') ?? ''
-    if (theaterName) {
-      acc[theaterName] = navaids
-    }
-    return acc
-  },
-  {} as Record<string, Navaid[]>,
-)
+const navaidsDatabase: Record<string, Navaid[] | undefined> = Object.entries(navaidModules).reduce<
+  Record<string, Navaid[] | undefined>
+>((acc, [path, navaids]) => {
+  // Extract theater name from path: "./json/navaids/Afghanistan.json" -> "Afghanistan"
+  const theaterName = path.split('/').pop()?.replace('.json', '') ?? ''
+  if (theaterName) {
+    acc[theaterName] = navaids
+  }
+  return acc
+}, {})
 
 /**
  * Get navaids for a specific theater
@@ -31,5 +30,5 @@ const navaidsDatabase: Record<string, Navaid[]> = Object.entries(navaidModules).
  * @returns Array of navaids for the theater, or empty array if not found
  */
 export function getNavaidsForTheater(theater: string): Navaid[] {
-  return navaidsDatabase[theater] || []
+  return navaidsDatabase[theater] ?? []
 }

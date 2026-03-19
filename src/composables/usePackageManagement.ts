@@ -40,9 +40,7 @@ export function usePackageManagement(
     value: PackageMember[K],
   ) {
     const updated = [...packageMembers.value]
-    const current = updated[index]
-    if (!current) return
-    updated[index] = { ...current, [field]: value }
+    updated[index] = { ...updated[index], [field]: value }
     missionsStore.updateMission(missionId.value, { packageMembers: updated })
   }
 
@@ -62,7 +60,6 @@ export function usePackageManagement(
     const updated = [...packageMembers.value]
     const current = updated[index]
     const prev = updated[index - 1]
-    if (!current || !prev) return
     updated[index] = prev
     updated[index - 1] = current
     missionsStore.updateMission(missionId.value, { packageMembers: updated })
@@ -73,7 +70,6 @@ export function usePackageManagement(
     const updated = [...packageMembers.value]
     const current = updated[index]
     const next = updated[index + 1]
-    if (!current || !next) return
     updated[index] = next
     updated[index + 1] = current
     missionsStore.updateMission(missionId.value, { packageMembers: updated })

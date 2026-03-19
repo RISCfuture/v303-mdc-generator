@@ -17,7 +17,7 @@ const themeOverrides = computed(() =>
 )
 
 // Listen for system theme changes
-let mediaQuery: MediaQueryList
+let mediaQuery: MediaQueryList | undefined
 const handleThemeChange = (e: MediaQueryListEvent) => {
   prefersDark.value = e.matches
 }

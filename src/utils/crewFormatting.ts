@@ -21,7 +21,7 @@ export function parseSTN(value: string | number): number | null {
   if (typeof value === 'number') return value
   if (!value || value === '') return null
 
-  const parsed = parseInt(value.toString().trim(), 10)
+  const parsed = parseInt(value.trim(), 10)
   return isNaN(parsed) ? null : parsed
 }
 
@@ -53,14 +53,12 @@ export function incrementMode3(mode3: number): number {
   let carry = 1
   for (let i = digits.length - 1; i >= 0 && carry > 0; i--) {
     const current = digits[i]
-    if (current !== undefined) {
-      digits[i] = current + carry
-      if (digits[i]! > 7) {
-        digits[i] = 0
-        carry = 1
-      } else {
-        carry = 0
-      }
+    digits[i] = current + carry
+    if (digits[i] > 7) {
+      digits[i] = 0
+      carry = 1
+    } else {
+      carry = 0
     }
   }
 

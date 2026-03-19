@@ -7,7 +7,7 @@ import squadronsData from '@/data/json/squadrons.json'
 
 export { type ExportFormat } from '@/data/exportFormats'
 
-export interface Squadron {
+export type Squadron = {
   id: string
   name: string
   displayName: string

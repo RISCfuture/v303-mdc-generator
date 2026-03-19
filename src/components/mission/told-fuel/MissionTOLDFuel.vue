@@ -13,7 +13,7 @@ import {
 } from '@/aircraft'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   mission: Mission
   grossWeight: number
   fuelWeight: number

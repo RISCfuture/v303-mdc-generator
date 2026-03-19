@@ -5,7 +5,7 @@ import { getAirfieldsForTheater } from '@/data/airfields'
 import { theaterDatabase } from '@/data/theaters'
 import { getLoadoutsForAirframe } from '@/data/loadouts'
 import { crewDatabase, crewBySquadron } from '@/data/crew'
-import { type SquadronId, getSquadronAirframe } from '@/data/squadrons'
+import { getSquadronAirframe } from '@/data/squadrons'
 import { getExportFormatsForAirframe, type ExportFormat } from '@/data/exportFormats'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import type { Mission, Navaid } from '@/types'
@@ -53,6 +53,7 @@ export function useMissionData(missionId: ComputedRef<string>) {
     // Filter crew database based on squadron
     // If squadron has no crew, fall back to combined crew list
     const squadronCrew = crewBySquadron[mission.value.squadron]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for unknown squadron keys
     return squadronCrew && squadronCrew.length > 0 ? squadronCrew : crewDatabase
   })
 
@@ -67,7 +68,7 @@ export function useMissionData(missionId: ComputedRef<string>) {
 
   const availableExportFormats = computed<ExportFormat[]>(() => {
     if (!mission.value) return []
-    const airframe = getSquadronAirframe(mission.value.squadron as SquadronId)
+    const airframe = getSquadronAirframe(mission.value.squadron)
     return getExportFormatsForAirframe(airframe)
   })
 
@@ -85,14 +86,9 @@ export function useMissionData(missionId: ComputedRef<string>) {
   ) {
     if (!mission.value) return
     const parentObj = mission.value[parent]
-    try {
-      missionsStore.updateMission(missionId.value, {
-        [parent]: { ...parentObj, [field]: value },
-      })
-    } catch (error) {
-      // Re-throw to let the component handle it
-      throw error
-    }
+    missionsStore.updateMission(missionId.value, {
+      [parent]: { ...parentObj, [field]: value },
+    })
   }
 
   return {

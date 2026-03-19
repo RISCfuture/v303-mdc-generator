@@ -14,7 +14,7 @@
  * Array operation for declarative overrides
  * Supports adding and removing items without duplicating entire arrays
  */
-export interface ArrayOperation<T> {
+export type ArrayOperation<T> = {
   add?: T[]
   remove?: T[]
 }
@@ -70,15 +70,16 @@ export function applyArrayOperation(
 
   // Apply remove first
   if (operations.remove && operations.remove.length > 0) {
+    const removeItems = operations.remove
     result = result.filter((item) => {
       // For objects, do deep equality check
       if (typeof item === 'object' && item !== null) {
-        return !operations.remove!.some(
+        return !removeItems.some(
           (removeItem) => JSON.stringify(item) === JSON.stringify(removeItem),
         )
       }
       // For primitives, do simple equality
-      return !operations.remove!.includes(item)
+      return !removeItems.includes(item)
     })
   }
 
@@ -96,7 +97,7 @@ export function applyArrayOperation(
  */
 export function applyPathOperation(base: unknown, path: string, value: unknown): unknown {
   // Deep clone to avoid mutations
-  const result = JSON.parse(JSON.stringify(base))
+  const result = JSON.parse(JSON.stringify(base)) as unknown
 
   const segments = parsePath(path)
   if (segments.length === 0) {
@@ -107,7 +108,7 @@ export function applyPathOperation(base: unknown, path: string, value: unknown):
   // Navigate to parent of target
   let current: Record<string | number, unknown> = result as Record<string | number, unknown>
   for (let i = 0; i < segments.length - 1; i++) {
-    const segment = segments[i]!
+    const segment = segments[i]
     if (current[segment] === undefined) {
       console.warn(`[Path Override] Path segment not found: ${segment} in path ${path}`)
       return result
@@ -116,7 +117,7 @@ export function applyPathOperation(base: unknown, path: string, value: unknown):
   }
 
   // Apply operation at target
-  const lastSegment = segments[segments.length - 1]!
+  const lastSegment = segments[segments.length - 1]
 
   if (isArrayOperation(value)) {
     // Array add/remove operation
@@ -126,7 +127,7 @@ export function applyPathOperation(base: unknown, path: string, value: unknown):
       return result
     }
 
-    current[lastSegment] = applyArrayOperation(targetArray, value as ArrayOperation<unknown>)
+    current[lastSegment] = applyArrayOperation(targetArray, value)
   } else {
     // Direct property set
     current[lastSegment] = value

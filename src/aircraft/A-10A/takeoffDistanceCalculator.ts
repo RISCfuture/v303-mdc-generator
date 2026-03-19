@@ -33,7 +33,7 @@ export type ThrustSetting = 'MAX' | '3_BELOW_PTFS'
 /**
  * Input parameters for takeoff distance calculation
  */
-export interface A10TakeoffDistanceParams {
+export type A10TakeoffDistanceParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Celsius */
@@ -53,7 +53,7 @@ export interface A10TakeoffDistanceParams {
 /**
  * Input parameters for critical field length calculation
  */
-export interface A10CriticalFieldLengthParams {
+export type A10CriticalFieldLengthParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Celsius */
@@ -73,7 +73,7 @@ export interface A10CriticalFieldLengthParams {
 /**
  * Takeoff distance calculation results
  */
-export interface A10TakeoffDistanceResult {
+export type A10TakeoffDistanceResult = {
   /** Takeoff index (intermediate calculation) */
   takeoffIndex: number
   /** Base takeoff distance in feet (before corrections) */
@@ -92,7 +92,7 @@ export interface A10TakeoffDistanceResult {
 /**
  * Critical field length calculation results
  */
-export interface A10CriticalFieldLengthResult {
+export type A10CriticalFieldLengthResult = {
   /** Takeoff index (intermediate calculation) */
   takeoffIndex: number
   /** Base critical field length in feet (before corrections) */

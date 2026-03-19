@@ -7,6 +7,7 @@ A web-based mission planning tool for the v303rd Fighter Group, enabling creatio
 The v303 MDC Generator is a comprehensive mission planning application designed for virtual fighter squadrons flying the A-10C and F-16C in DCS World. The application provides a complete workflow for creating detailed mission briefings and generating kneeboard-ready PDF briefing cards and DCS-compatible JSON MDC files.
 
 **Key Features:**
+
 - Complete mission planning interface with support for F-16C and A-10C airframes
 - Flight plan creation with waypoint/steerpoint management
 - Crew composition and package coordination
@@ -19,6 +20,7 @@ The v303 MDC Generator is a comprehensive mission planning application designed 
 - Export to JSON MDC files compatible with DCS World
 
 **Supported Organizations:**
+
 - v303rd Fighter Squadron (v303 FS) - A-10C Warthog
 - V93rd Fighter Squadron (v93 FS) - F-16C Viper
 
@@ -94,154 +96,154 @@ The application follows a **layered architecture**:
 
 ### Core Application
 
-| Module | Purpose | Location |
-|--------|---------|----------|
+| Module        | Purpose                                                      | Location                       |
+| ------------- | ------------------------------------------------------------ | ------------------------------ |
 | **App Entry** | Application bootstrap, Sentry initialization, theme provider | `/src/main.ts`, `/src/App.vue` |
-| **Router** | Page navigation (MissionList, MissionEditor) | `/src/router/index.ts` |
+| **Router**    | Page navigation (MissionList, MissionEditor)                 | `/src/router/index.ts`         |
 
 ### State Management
 
-| Module | Purpose | Location |
-|--------|---------|----------|
+| Module             | Purpose                                                                   | Location                  |
+| ------------------ | ------------------------------------------------------------------------- | ------------------------- |
 | **Missions Store** | Central state for all missions, localStorage persistence, CRUD operations | `/src/stores/missions.ts` |
 
 ### Type System
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Mission Types** | TypeScript definitions for missions, waypoints, crew, loadouts, targets, TOLD, etc. | `/src/types/mission.ts` |
-| **Airfield Types** | Airfield, runway, radio, ILS, TACAN definitions | `/src/types/airfield.ts` |
-| **Navaid Types** | Navigation aid type definitions | `/src/types/navaid.ts` |
+| Module             | Purpose                                                                             | Location                 |
+| ------------------ | ----------------------------------------------------------------------------------- | ------------------------ |
+| **Mission Types**  | TypeScript definitions for missions, waypoints, crew, loadouts, targets, TOLD, etc. | `/src/types/mission.ts`  |
+| **Airfield Types** | Airfield, runway, radio, ILS, TACAN definitions                                     | `/src/types/airfield.ts` |
+| **Navaid Types**   | Navigation aid type definitions                                                     | `/src/types/navaid.ts`   |
 
 ### Data Layer
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Airframe Database** | Aircraft definitions (F-16C, A-10C) with stations, radios, fuel, CMDS capacity | `/src/data/airframes.ts`, `/src/data/json/airframes/*.json` |
-| **Airfield Database** | Airfield data with runways, frequencies, TACAN, ILS by theater | `/src/data/json/airfields/` (16+ theater directories) |
-| **Navaid Database** | Navigation aids (VOR/DME, TACAN, NDB) by theater | `/src/data/json/navaids/` (16+ theater directories) |
-| **Squadron Database** | Squadron definitions and airframe assignments | `/src/data/squadrons.ts`, `/src/data/json/squadrons.json` |
-| **Theater Database** | Theater definitions with navaid/airfield data URLs | `/src/data/theaters.ts`, `/src/data/json/theaters.json` |
-| **Crew Database** | Pilot roster with squadron assignments | `/src/data/crew.ts`, `/src/data/json/crew.json` |
-| **Loadouts Database** | Pre-configured weapon loadouts by airframe | `/src/data/loadouts.ts`, `/src/data/json/loadouts.json` |
-| **Munitions Database** | Complete munitions catalog with CLSID mappings | `/src/data/munitions.ts`, `/src/data/json/munitions.json` (368KB+) |
-| **Channelization** | Default radio presets by theater, airframe, and radio | `/src/data/channelization.ts`, `/src/data/json/channelization/*.json` |
-| **Mission Types** | Mission type enumeration (CAS, DEAD/AI, SEAD, STRIKE, etc.) | `/src/data/constants.ts`, `/src/data/json/missionTypes.json` |
+| Module                 | Purpose                                                                        | Location                                                              |
+| ---------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| **Airframe Database**  | Aircraft definitions (F-16C, A-10C) with stations, radios, fuel, CMDS capacity | `/src/data/airframes.ts`, `/src/data/json/airframes/*.json`           |
+| **Airfield Database**  | Airfield data with runways, frequencies, TACAN, ILS by theater                 | `/src/data/json/airfields/` (16+ theater directories)                 |
+| **Navaid Database**    | Navigation aids (VOR/DME, TACAN, NDB) by theater                               | `/src/data/json/navaids/` (16+ theater directories)                   |
+| **Squadron Database**  | Squadron definitions and airframe assignments                                  | `/src/data/squadrons.ts`, `/src/data/json/squadrons.json`             |
+| **Theater Database**   | Theater definitions with navaid/airfield data URLs                             | `/src/data/theaters.ts`, `/src/data/json/theaters.json`               |
+| **Crew Database**      | Pilot roster with squadron assignments                                         | `/src/data/crew.ts`, `/src/data/json/crew.json`                       |
+| **Loadouts Database**  | Pre-configured weapon loadouts by airframe                                     | `/src/data/loadouts.ts`, `/src/data/json/loadouts.json`               |
+| **Munitions Database** | Complete munitions catalog with CLSID mappings                                 | `/src/data/munitions.ts`, `/src/data/json/munitions.json` (368KB+)    |
+| **Channelization**     | Default radio presets by theater, airframe, and radio                          | `/src/data/channelization.ts`, `/src/data/json/channelization/*.json` |
+| **Mission Types**      | Mission type enumeration (CAS, DEAD/AI, SEAD, STRIKE, etc.)                    | `/src/data/constants.ts`, `/src/data/json/missionTypes.json`          |
 
 ### Composables (Business Logic)
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **useMissionData** | Central mission data accessor, field updates | `/src/composables/useMissionData.ts` |
-| **useMissionActions** | High-level mission operations (create, edit, delete, duplicate) | `/src/composables/useMissionActions.ts` |
-| **useMissionValidation** | JSON Schema validation, export readiness checks | `/src/composables/useMissionValidation.ts` |
-| **useCrewManagement** | Crew member CRUD, STN/Mode3/laser code formatting | `/src/composables/useCrewManagement.ts` |
-| **useMissionCallsigns** | Flight callsign generation and overrides | `/src/composables/useMissionCallsigns.ts` |
-| **useWaypointManagement** | Waypoint CRUD, reordering, drag-and-drop | `/src/composables/useWaypointManagement.ts` |
-| **useWaypointCalculations** | Distance/bearing calculations, time on target | `/src/composables/useWaypointCalculations.ts` |
-| **useLoadoutManagement** | Loadout station management, munition assignment | `/src/composables/useLoadoutManagement.ts` |
-| **usePackageManagement** | Mission package member management | `/src/composables/usePackageManagement.ts` |
-| **useSupportAssetManagement** | Support asset management (tankers, AWACS, JSTARS) | `/src/composables/useSupportAssetManagement.ts` |
-| **useMissionWeights** | Weight and balance calculations for TOLD | `/src/composables/useMissionWeights.ts` |
-| **useCCIPCalculations** | CCIP reference point bearing/distance calculations | `/src/composables/useCCIPCalculations.ts` |
-| **useMissionExport** | Export handlers for PDF and JSON MDC | `/src/composables/useMissionExport.ts` |
-| **useStorageMonitor** | localStorage usage monitoring and quota warnings | `/src/composables/useStorageMonitor.ts` |
+| Module                        | Purpose                                                         | Location                                        |
+| ----------------------------- | --------------------------------------------------------------- | ----------------------------------------------- |
+| **useMissionData**            | Central mission data accessor, field updates                    | `/src/composables/useMissionData.ts`            |
+| **useMissionActions**         | High-level mission operations (create, edit, delete, duplicate) | `/src/composables/useMissionActions.ts`         |
+| **useMissionValidation**      | JSON Schema validation, export readiness checks                 | `/src/composables/useMissionValidation.ts`      |
+| **useCrewManagement**         | Crew member CRUD, STN/Mode3/laser code formatting               | `/src/composables/useCrewManagement.ts`         |
+| **useMissionCallsigns**       | Flight callsign generation and overrides                        | `/src/composables/useMissionCallsigns.ts`       |
+| **useWaypointManagement**     | Waypoint CRUD, reordering, drag-and-drop                        | `/src/composables/useWaypointManagement.ts`     |
+| **useWaypointCalculations**   | Distance/bearing calculations, time on target                   | `/src/composables/useWaypointCalculations.ts`   |
+| **useLoadoutManagement**      | Loadout station management, munition assignment                 | `/src/composables/useLoadoutManagement.ts`      |
+| **usePackageManagement**      | Mission package member management                               | `/src/composables/usePackageManagement.ts`      |
+| **useSupportAssetManagement** | Support asset management (tankers, AWACS, JSTARS)               | `/src/composables/useSupportAssetManagement.ts` |
+| **useMissionWeights**         | Weight and balance calculations for TOLD                        | `/src/composables/useMissionWeights.ts`         |
+| **useCCIPCalculations**       | CCIP reference point bearing/distance calculations              | `/src/composables/useCCIPCalculations.ts`       |
+| **useMissionExport**          | Export handlers for PDF and JSON MDC                            | `/src/composables/useMissionExport.ts`          |
+| **useStorageMonitor**         | localStorage usage monitoring and quota warnings                | `/src/composables/useStorageMonitor.ts`         |
 
 ### Services
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **PDF Generator** | Kneeboard-sized briefing card generation (3-page format) | `/src/services/pdfGenerator/index.ts` |
-| **PDF Page 1** | Mission info, flight composition, departure/recovery | `/src/services/pdfGenerator/pages/page1.ts` |
-| **PDF Page 2** | Flight plan with waypoints, TOLD/fuel data | `/src/services/pdfGenerator/pages/page2.ts` |
-| **PDF Page 3** | Targets and threats | `/src/services/pdfGenerator/pages/page3.ts` |
-| **PDF Sections** | Reusable sections (flight, loadout, radios, targets, etc.) | `/src/services/pdfGenerator/sections/*.ts` |
-| **PDF Utilities** | Formatting and layout helpers for PDF generation | `/src/services/pdfGenerator/utils/*.ts` |
-| **MDC Exporter** | DCS-compatible JSON MDC generation (F-16C, A-10C) | `/src/services/mdcExporter.ts` |
-| **Image Storage** | IndexedDB service for mission images (2MB per image) | `/src/services/imageStorage.ts` |
+| Module            | Purpose                                                    | Location                                    |
+| ----------------- | ---------------------------------------------------------- | ------------------------------------------- |
+| **PDF Generator** | Kneeboard-sized briefing card generation (3-page format)   | `/src/services/pdfGenerator/index.ts`       |
+| **PDF Page 1**    | Mission info, flight composition, departure/recovery       | `/src/services/pdfGenerator/pages/page1.ts` |
+| **PDF Page 2**    | Flight plan with waypoints, TOLD/fuel data                 | `/src/services/pdfGenerator/pages/page2.ts` |
+| **PDF Page 3**    | Targets and threats                                        | `/src/services/pdfGenerator/pages/page3.ts` |
+| **PDF Sections**  | Reusable sections (flight, loadout, radios, targets, etc.) | `/src/services/pdfGenerator/sections/*.ts`  |
+| **PDF Utilities** | Formatting and layout helpers for PDF generation           | `/src/services/pdfGenerator/utils/*.ts`     |
+| **MDC Exporter**  | DCS-compatible JSON MDC generation (F-16C, A-10C)          | `/src/services/mdcExporter.ts`              |
+| **Image Storage** | IndexedDB service for mission images (2MB per image)       | `/src/services/imageStorage.ts`             |
 
 ### Components
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Mission List View** | Mission browser with filtering, grid/table views | `/src/views/MissionList.vue` |
-| **Mission Editor View** | Tab-based mission editing interface | `/src/views/MissionEditor.vue` |
-| **Mission Table** | Tabular mission display | `/src/components/mission-list/MissionTable.vue` |
-| **Mission Card Grid** | Card-based mission display | `/src/components/mission-list/MissionCardGrid.vue` |
-| **Create Mission Modal** | New mission creation dialog | `/src/components/mission-list/CreateMissionModal.vue` |
-| **Basic Info Editor** | Mission name, date, callsign, mission type | `/src/components/mission/basic-info/MissionBasicInfo.vue` |
-| **Departure/Recovery Editor** | Departure/recovery procedures, airports, runways | `/src/components/mission/basic-info/MissionDepartureRecovery.vue` |
-| **Steerpoints Editor** | Flight plan management with drag-and-drop | `/src/components/mission/steerpoints/MissionSteerpoints.vue` |
-| **Waypoint Card** | Individual waypoint editor | `/src/components/mission/steerpoints/WaypointCard.vue` |
-| **Flight Members Editor** | Crew composition management | `/src/components/mission/flight-members/MissionFlightMembers.vue` |
-| **Loadout Editor** | Aircraft loadout with station-by-station munition assignment | `/src/components/mission/loadout/MissionLoadout.vue` |
-| **Radio Presets Editor** | Radio frequency management | `/src/components/mission/radios/RadioPresetsEditor.vue` |
-| **TOLD & Fuel Editor** | Takeoff/landing performance data, calculators | `/src/components/mission/told-fuel/MissionTOLDFuel.vue` |
-| **Speed Calculator** | Rotation/refusal speed calculator modal | `/src/components/mission/told-fuel/SpeedCalculatorModal.vue` |
-| **Bingo Calculator** | Bingo fuel calculator modal | `/src/components/mission/told-fuel/BingoCalculatorModal.vue` |
-| **Targets Editor** | Primary/secondary target management | `/src/components/mission/targets/MissionTargets.vue` |
-| **Package Editor** | Mission package members and support assets | `/src/components/mission/package/MissionPackage.vue` |
-| **ECM/CMDS Editor** | Electronic countermeasure settings | `/src/components/mission/ecm-cmds/MissionECMCMDS.vue` |
-| **Briefing Editor** | Markdown-based mission notes with image support | `/src/components/mission/briefing/MissionBriefing.vue` |
-| **Coordinate Input** | DMS coordinate input with decimal conversion | `/src/components/common/CoordinateInputField.vue` |
-| **Markdown Editor** | Markdown editor with preview | `/src/components/common/MarkdownEditor.vue` |
+| Module                        | Purpose                                                      | Location                                                          |
+| ----------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------- |
+| **Mission List View**         | Mission browser with filtering, grid/table views             | `/src/views/MissionList.vue`                                      |
+| **Mission Editor View**       | Tab-based mission editing interface                          | `/src/views/MissionEditor.vue`                                    |
+| **Mission Table**             | Tabular mission display                                      | `/src/components/mission-list/MissionTable.vue`                   |
+| **Mission Card Grid**         | Card-based mission display                                   | `/src/components/mission-list/MissionCardGrid.vue`                |
+| **Create Mission Modal**      | New mission creation dialog                                  | `/src/components/mission-list/CreateMissionModal.vue`             |
+| **Basic Info Editor**         | Mission name, date, callsign, mission type                   | `/src/components/mission/basic-info/MissionBasicInfo.vue`         |
+| **Departure/Recovery Editor** | Departure/recovery procedures, airports, runways             | `/src/components/mission/basic-info/MissionDepartureRecovery.vue` |
+| **Steerpoints Editor**        | Flight plan management with drag-and-drop                    | `/src/components/mission/steerpoints/MissionSteerpoints.vue`      |
+| **Waypoint Card**             | Individual waypoint editor                                   | `/src/components/mission/steerpoints/WaypointCard.vue`            |
+| **Flight Members Editor**     | Crew composition management                                  | `/src/components/mission/flight-members/MissionFlightMembers.vue` |
+| **Loadout Editor**            | Aircraft loadout with station-by-station munition assignment | `/src/components/mission/loadout/MissionLoadout.vue`              |
+| **Radio Presets Editor**      | Radio frequency management                                   | `/src/components/mission/radios/RadioPresetsEditor.vue`           |
+| **TOLD & Fuel Editor**        | Takeoff/landing performance data, calculators                | `/src/components/mission/told-fuel/MissionTOLDFuel.vue`           |
+| **Speed Calculator**          | Rotation/refusal speed calculator modal                      | `/src/components/mission/told-fuel/SpeedCalculatorModal.vue`      |
+| **Bingo Calculator**          | Bingo fuel calculator modal                                  | `/src/components/mission/told-fuel/BingoCalculatorModal.vue`      |
+| **Targets Editor**            | Primary/secondary target management                          | `/src/components/mission/targets/MissionTargets.vue`              |
+| **Package Editor**            | Mission package members and support assets                   | `/src/components/mission/package/MissionPackage.vue`              |
+| **ECM/CMDS Editor**           | Electronic countermeasure settings                           | `/src/components/mission/ecm-cmds/MissionECMCMDS.vue`             |
+| **Briefing Editor**           | Markdown-based mission notes with image support              | `/src/components/mission/briefing/MissionBriefing.vue`            |
+| **Coordinate Input**          | DMS coordinate input with decimal conversion                 | `/src/components/common/CoordinateInputField.vue`                 |
+| **Markdown Editor**           | Markdown editor with preview                                 | `/src/components/common/MarkdownEditor.vue`                       |
 
 ### Utilities
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Coordinate Utilities** | Decimal/DMS conversion, formatting, validation | `/src/utils/coordinates.ts` |
-| **MGRS Utilities** | MGRS coordinate support | `/src/utils/mgrs.ts` |
-| **Date/Time Formatting** | Date, time, number formatting helpers | `/src/utils/formatting.ts` |
-| **Crew Formatting** | STN, Mode3, laser code formatting | `/src/utils/crewFormatting.ts` |
-| **Mission Helpers** | Get airframe from mission, mission metadata | `/src/utils/missionHelpers.ts` |
-| **Mission Storage** | Serialize/deserialize missions (compact storage format) | `/src/utils/missionStorage.ts` |
-| **Storage Validation** | JSON Schema validation for mission storage | `/src/utils/validateMissionStorage.ts` |
-| **F-16 Rotation Calculator** | F-16C rotation speed calculations | `/src/utils/f16RotationCalculator.ts` |
-| **F-16 Bingo Calculator** | F-16C bingo fuel calculations | `/src/utils/f16BingoCalculator.ts` |
-| **A-10 Rotation Calculator** | A-10C rotation speed calculations | `/src/utils/a10RotationCalculator.ts` |
-| **Airframe Helpers** | Get stations, radios, munitions per airframe | `/src/utils/airframeHelpers.ts` |
-| **Station Labels** | Station name labels by airframe | `/src/utils/stationLabels.ts` |
-| **Drag and Drop** | Generic drag-and-drop composable for lists | `/src/utils/useDragAndDrop.ts` |
-| **Storage Analysis** | localStorage usage analysis and monitoring | `/src/utils/storageAnalysis.ts` |
+| Module                       | Purpose                                                 | Location                               |
+| ---------------------------- | ------------------------------------------------------- | -------------------------------------- |
+| **Coordinate Utilities**     | Decimal/DMS conversion, formatting, validation          | `/src/utils/coordinates.ts`            |
+| **MGRS Utilities**           | MGRS coordinate support                                 | `/src/utils/mgrs.ts`                   |
+| **Date/Time Formatting**     | Date, time, number formatting helpers                   | `/src/utils/formatting.ts`             |
+| **Crew Formatting**          | STN, Mode3, laser code formatting                       | `/src/utils/crewFormatting.ts`         |
+| **Mission Helpers**          | Get airframe from mission, mission metadata             | `/src/utils/missionHelpers.ts`         |
+| **Mission Storage**          | Serialize/deserialize missions (compact storage format) | `/src/utils/missionStorage.ts`         |
+| **Storage Validation**       | JSON Schema validation for mission storage              | `/src/utils/validateMissionStorage.ts` |
+| **F-16 Rotation Calculator** | F-16C rotation speed calculations                       | `/src/utils/f16RotationCalculator.ts`  |
+| **F-16 Bingo Calculator**    | F-16C bingo fuel calculations                           | `/src/utils/f16BingoCalculator.ts`     |
+| **A-10 Rotation Calculator** | A-10C rotation speed calculations                       | `/src/utils/a10RotationCalculator.ts`  |
+| **Airframe Helpers**         | Get stations, radios, munitions per airframe            | `/src/utils/airframeHelpers.ts`        |
+| **Station Labels**           | Station name labels by airframe                         | `/src/utils/stationLabels.ts`          |
+| **Drag and Drop**            | Generic drag-and-drop composable for lists              | `/src/utils/useDragAndDrop.ts`         |
+| **Storage Analysis**         | localStorage usage analysis and monitoring              | `/src/utils/storageAnalysis.ts`        |
 
 ### Schemas & Validation
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Mission Schema** | JSON Schema v7 definition for mission validation | `/src/schemas/mission.schema.json` |
-| **Data Schemas** | JSON Schema definitions for static data files | `/src/data/json/schemas/*.schema.json` |
+| Module             | Purpose                                          | Location                               |
+| ------------------ | ------------------------------------------------ | -------------------------------------- |
+| **Mission Schema** | JSON Schema v7 definition for mission validation | `/src/schemas/mission.schema.json`     |
+| **Data Schemas**   | JSON Schema definitions for static data files    | `/src/data/json/schemas/*.schema.json` |
 
 ### Testing
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Component Tests** | Unit tests for 19+ Vue components | `/src/__tests__/components/*.spec.ts` |
-| **Composable Tests** | Unit tests for business logic composables | `/src/__tests__/composables/*.spec.ts` |
-| **Service Tests** | Unit tests for export and storage services | `/src/__tests__/services/*.spec.ts` |
-| **Store Tests** | Unit tests for Pinia stores | `/src/__tests__/stores/*.spec.ts` |
-| **Utility Tests** | Unit tests for 14+ utility modules | `/src/__tests__/utils/*.spec.ts` |
-| **Test Helpers** | Reusable test utilities and mock factories | `/src/__tests__/helpers/*.ts` |
-| **E2E Tests** | End-to-end tests with Playwright | `/e2e/*.spec.ts` |
+| Module               | Purpose                                    | Location                               |
+| -------------------- | ------------------------------------------ | -------------------------------------- |
+| **Component Tests**  | Unit tests for 19+ Vue components          | `/src/__tests__/components/*.spec.ts`  |
+| **Composable Tests** | Unit tests for business logic composables  | `/src/__tests__/composables/*.spec.ts` |
+| **Service Tests**    | Unit tests for export and storage services | `/src/__tests__/services/*.spec.ts`    |
+| **Store Tests**      | Unit tests for Pinia stores                | `/src/__tests__/stores/*.spec.ts`      |
+| **Utility Tests**    | Unit tests for 14+ utility modules         | `/src/__tests__/utils/*.spec.ts`       |
+| **Test Helpers**     | Reusable test utilities and mock factories | `/src/__tests__/helpers/*.ts`          |
+| **E2E Tests**        | End-to-end tests with Playwright           | `/e2e/*.spec.ts`                       |
 
 ### Styling & Theme
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Design Tokens** | Design system constants (spacing, fonts, form dimensions) | `/src/styles/design-tokens.ts` |
-| **Theme Configuration** | Light/dark theme overrides for Naive UI | `/src/theme.ts` |
+| Module                  | Purpose                                                   | Location                       |
+| ----------------------- | --------------------------------------------------------- | ------------------------------ |
+| **Design Tokens**       | Design system constants (spacing, fonts, form dimensions) | `/src/styles/design-tokens.ts` |
+| **Theme Configuration** | Light/dark theme overrides for Naive UI                   | `/src/theme.ts`                |
 
 ### Configuration & Scripts
 
-| Module | Purpose | Location |
-|--------|---------|----------|
-| **Package Config** | Dependencies, scripts, lint-staged configuration | `/package.json` |
-| **Vite Config** | Build configuration with Vue plugin | `/vite.config.ts` |
-| **TypeScript Config** | TypeScript compiler settings (strict mode) | `/tsconfig.json` |
-| **Vitest Config** | Unit test framework configuration | `/vitest.config.ts` |
+| Module                | Purpose                                            | Location                |
+| --------------------- | -------------------------------------------------- | ----------------------- |
+| **Package Config**    | Dependencies, scripts, lint-staged configuration   | `/package.json`         |
+| **Vite Config**       | Build configuration with Vue plugin                | `/vite.config.ts`       |
+| **TypeScript Config** | TypeScript compiler settings (strict mode)         | `/tsconfig.json`        |
+| **Vitest Config**     | Unit test framework configuration                  | `/vitest.config.ts`     |
 | **Playwright Config** | E2E test configuration (Chromium, Firefox, WebKit) | `/playwright.config.ts` |
-| **ESLint Config** | Code style rules and linting configuration | `/eslint.config.js` |
-| **Husky Hooks** | Pre-commit hooks for linting and testing | `/.husky/` |
+| **ESLint Config**     | Code style rules and linting configuration         | `/eslint.config.js`     |
+| **Husky Hooks**       | Pre-commit hooks for linting and testing           | `/.husky/`              |
 
 ## Scripts
 
@@ -258,6 +260,7 @@ Validates all JSON data files against their corresponding JSON Schema definition
 **Technology**: TypeScript (run via jiti)
 
 **Usage**:
+
 ```sh
 yarn validate:schemas
 # or
@@ -265,6 +268,7 @@ jiti scripts/validate-schemas.ts
 ```
 
 **What it validates**:
+
 - Navaid data files against `navaids.schema.json`
 - Airfield data files against `airfields.schema.json`
 - Channelization files against `channelization.schema.json`
@@ -286,11 +290,13 @@ Generates DCS mission (.miz) files with embedded Lua scripts to extract airfield
 **Technology**: Python 3 (requires `pydcs` library)
 
 **Prerequisites**:
+
 ```sh
 pip install pydcs
 ```
 
 **Usage**:
+
 ```sh
 python scripts/airfields/generate_extraction_missions.py
 python scripts/airfields/generate_extraction_missions.py --terrain Caucasus
@@ -298,6 +304,7 @@ python scripts/airfields/generate_extraction_missions.py --output-dir ./missions
 ```
 
 **What it does**:
+
 - Creates .miz mission files for each DCS terrain (Caucasus, Nevada, Syria, etc.)
 - Embeds MOOSE framework and Lua export scripts
 - Uses DoScriptFile pattern for complex missions
@@ -314,6 +321,7 @@ Processes terrain data exported from DCS missions and merges with beacon/ILS/TAC
 **Technology**: Python 3
 
 **Usage**:
+
 ```sh
 python scripts/airfields/process_terrain_exports.py
 python scripts/airfields/process_terrain_exports.py --input-dir "/path/to/exports"
@@ -321,6 +329,7 @@ python scripts/airfields/process_terrain_exports.py --terrain Caucasus
 ```
 
 **What it does**:
+
 - Reads terrain export JSON files from DCS
 - Matches beacons to airfields by proximity
 - Merges runway, frequency, ILS, and TACAN data
@@ -337,6 +346,7 @@ Provides custom terrain classes for DCS terrains not included in the pydcs libra
 **Technology**: Python 3 module
 
 **Terrains supported**:
+
 - Afghanistan
 - Iraq
 - Kola
@@ -361,16 +371,19 @@ DCS hook script that runs at game launch and exports game memory data to JSON fi
 **Technology**: Lua (DCS Hook API)
 
 **Installation**:
+
 1. Copy `v303-datamine-hook.lua` to `DCS World\Scripts\Hooks\`
 2. Launch DCS World
 3. Find exports in `Saved Games\DCS\v303-datamine\`
 
 **What it exports**:
+
 - `launchers.json` - All weapon/munition definitions (CLSID, weight, display name)
 - `aircraft.json` - All flyable aircraft (weights, fuel, CMDS, radios, stations)
 - `version.txt` - DCS version marker for change detection
 
 **Features**:
+
 - Automatic version detection (only re-exports when DCS version changes)
 - Accesses `_G.launcher` and `_G.db.Units.Planes.Plane` tables
 - JSON output for easy processing
@@ -384,6 +397,7 @@ Processes exported JSON files and generates application-ready data files.
 **Technology**: Node.js/JavaScript
 
 **Usage**:
+
 ```sh
 node scripts/dcs-datamine/integrate-dcs-export.js <path-to-export-dir>
 # Example:
@@ -391,16 +405,19 @@ node scripts/dcs-datamine/integrate-dcs-export.js ~/Dropbox/DCS/v303-datamine
 ```
 
 **What it generates**:
+
 - `/src/data/json/munitions.json` - Complete munitions catalog with categories
 - `/src/data/json/airframes/*.json` - Individual airframe configuration files
 
 **Features**:
+
 - Weight conversion (kg to lbs)
 - Munition categorization (air-to-air, air-to-ground, fuel, pod, rack)
 - CLSID validation between munitions and aircraft
 - Applies existing override files (`munitions-overrides.json`, `airframe-overrides/*.json`)
 
 **Workflow**:
+
 1. **Windows**: Launch DCS (hook auto-exports on version change)
 2. **Transfer**: Copy `launchers.json` and `aircraft.json` to Mac
 3. **Mac**: Run integration script
@@ -419,18 +436,21 @@ Scrapes navigation aid data from v303rdfightergroup.com and enriches with elevat
 **Technology**: Python 3 (requires `requests`, `beautifulsoup4`, and either `srtm.py` or `elevation`)
 
 **Prerequisites**:
+
 ```sh
 pip install requests beautifulsoup4
 pip install srtm.py  # or: pip install elevation
 ```
 
 **Usage**:
+
 ```sh
 python scripts/navaids/scrape_navaids.py                    # Process all theaters
 python scripts/navaids/scrape_navaids.py --theatre Nevada   # Process specific theater
 ```
 
 **What it does**:
+
 - Scrapes navaid tables from v303rd FG website
 - Parses TACAN, VOR/DME, and NDB data
 - Fetches elevation data from SRTM (Shuttle Radar Topography Mission) DEM
@@ -440,6 +460,7 @@ python scripts/navaids/scrape_navaids.py --theatre Nevada   # Process specific t
 **Output**: JSON files in `/src/data/json/navaids/` directory
 
 **Theaters supported**:
+
 - Nevada
 - Mariana Islands
 - Syria
@@ -455,17 +476,20 @@ Merges extracted DCS beacon/town data with scraped navaid data and adds elevatio
 **Technology**: Python 3 (requires DEM library)
 
 **Prerequisites**:
+
 ```sh
 pip install srtm.py  # or: pip install elevation
 ```
 
 **Usage**:
+
 ```sh
 python scripts/navaids/merge_beacons_towns.py --input-dir ~/Dropbox
 python scripts/navaids/merge_beacons_towns.py --input-dir ./extracted_data --output-dir ./output
 ```
 
 **What it does**:
+
 - Reads DCS-exported beacon and town data
 - Merges with scraped navaid data
 - Adds elevation data from DEM sources
@@ -487,16 +511,19 @@ Extracts A-10C rotation speed chart data and fits polynomial regression curves.
 **Technology**: Python 3 (requires `numpy`, `matplotlib`, `pillow`)
 
 **Prerequisites**:
+
 ```sh
 pip install numpy matplotlib pillow
 ```
 
 **Usage**:
+
 ```sh
 python scripts/a10-rotation-calculator/extract_regression.py
 ```
 
 **What it does**:
+
 - Samples data points from A-10C TOLD charts (Figure A2-2)
 - Fits polynomial regression curves (degrees 1-3)
 - Calculates R² values to assess fit quality
@@ -516,16 +543,19 @@ Extracts F-16C rotation speed chart data and fits polynomial regression curves.
 **Technology**: Python 3 (requires `numpy`, `matplotlib`, `pillow`)
 
 **Prerequisites**:
+
 ```sh
 pip install numpy matplotlib pillow
 ```
 
 **Usage**:
+
 ```sh
 python scripts/f16-rotation-calculator/extract_regression.py
 ```
 
 **What it does**:
+
 - Samples data points from F-16C TOLD charts (Figure B2-2)
 - Fits polynomial regression to takeoff and refusal speed data
 - Tests polynomial degrees (1-3) for optimal fit
@@ -541,6 +571,7 @@ python scripts/f16-rotation-calculator/extract_regression.py
 ### Script Dependencies Summary
 
 **Python Scripts** (require Python 3.7+):
+
 - `airfields/generate_extraction_missions.py` → `pydcs`
 - `airfields/process_terrain_exports.py` → stdlib only
 - `airfields/custom_terrains.py` → `pydcs`
@@ -550,12 +581,15 @@ python scripts/f16-rotation-calculator/extract_regression.py
 - `f16-rotation-calculator/extract_regression.py` → `numpy`, `matplotlib`, `pillow`
 
 **Lua Scripts** (require DCS World):
+
 - `dcs-datamine/hooks/v303-datamine-hook.lua` → DCS Hook API
 
 **Node.js Scripts** (require Node.js 20+):
+
 - `dcs-datamine/integrate-dcs-export.js` → stdlib only
 
 **TypeScript Scripts** (run via jiti):
+
 - `validate-schemas.ts` → executed via `yarn validate:schemas`
 
 ## Recommended IDE Setup

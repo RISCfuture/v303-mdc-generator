@@ -54,12 +54,9 @@ describe('buildStationLoadoutOptions', () => {
       const unknown = options.find((g) => g.key === 'unknown')
 
       // If unknown exists, verify it doesn't contain BRU-42 composites
-      if (unknown) {
-        const bruComposites = unknown.children.filter(
-          (c) => c.value.includes('BRU') && c.value.includes('*'),
-        )
-        expect(bruComposites).toHaveLength(0)
-      }
+      const bruComposites =
+        unknown?.children.filter((c) => c.value.includes('BRU') && c.value.includes('*')) ?? []
+      expect(bruComposites).toHaveLength(0)
 
       // Verify that BRU-42 composites with rockets are in air-to-ground
       const airToGround = options.find((g) => g.key === 'air-to-ground')

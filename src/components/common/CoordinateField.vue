@@ -54,7 +54,7 @@ const placeholderText = computed(() => {
     case 'MGRS':
       return '11S PA 44000 84000'
     default:
-      return `Enter ${props.format} coordinate`
+      return `Enter ${String(props.format)} coordinate`
   }
 })
 
@@ -390,8 +390,8 @@ function formatMGRSInput(input: string): string {
   let remaining = cleaned.replace(/\s/g, '')
 
   // Grid zone (1-2 digits + 1 letter)
-  const gridZoneMatch = remaining.match(/^(\d{1,2}[A-Z])/)
-  if (gridZoneMatch && gridZoneMatch[1]) {
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(remaining)
+  if (gridZoneMatch?.[1]) {
     const gridZone = gridZoneMatch[1]
     formatted.push(gridZone)
     remaining = remaining.slice(gridZone.length)

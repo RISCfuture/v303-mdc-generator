@@ -29,7 +29,7 @@ export { exportF16DCSME } from './dcsME'
 import type { Mission } from '@/types'
 import type { ExportFormat } from '@/data/exportFormats'
 import { loadTemplateForFormat } from '../mdcTemplateService'
-import { getSquadronAirframe, type SquadronId } from '@/data/squadrons'
+import { getSquadronAirframe } from '@/data/squadrons'
 import type {
   DCSF16MDC,
   DCSGenericMDC,
@@ -58,16 +58,16 @@ import { exportF16DCSME } from './dcsME'
  */
 export function downloadMDC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   exportFormat: ExportFormat = 'DCS-DTC',
 ) {
   let json: string
   let filename: string
 
   // Get crew member pilot name for filename
-  const crewMember = mission.crew[crewMemberIndex]!
+  const crewMember = mission.crew[crewMemberIndex]
   const pilotSuffix = `_${crewMember.pilot.replace(/\s+/g, '_')}`
-  const airframe = getSquadronAirframe(mission.squadron as SquadronId)
+  const airframe = getSquadronAirframe(mission.squadron)
 
   switch (exportFormat) {
     case 'DCS-DTC': {
@@ -144,7 +144,7 @@ export function downloadMDC(
       break
     }
     default:
-      throw new Error(`Unknown export format: ${exportFormat}`)
+      throw new Error(`Unknown export format: ${String(exportFormat)}`)
   }
 
   const blob = new Blob([json], { type: 'application/json' })

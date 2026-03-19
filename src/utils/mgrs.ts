@@ -8,7 +8,7 @@ import * as mgrs from 'mgrs'
  * @param precision Number of digits (0-5, default 5 = 1m precision)
  * @returns MGRS string in spaced format (e.g., "38S MB 44000 84000")
  */
-export function latLonToMGRS(lat: number, lon: number, precision: number = 5): string {
+export function latLonToMGRS(lat: number, lon: number, precision = 5): string {
   try {
     // Validate inputs
     if (isNaN(lat) || isNaN(lon) || !isFinite(lat) || !isFinite(lon)) {
@@ -20,7 +20,7 @@ export function latLonToMGRS(lat: number, lon: number, precision: number = 5): s
 
     // Format with spaces: "38S MB 44000 84000"
     return formatMGRSWithSpaces(compact)
-  } catch (_error) {
+  } catch {
     // Silently handle invalid coordinates
     return ''
   }
@@ -40,9 +40,6 @@ export function mgrsToLatLon(mgrsString: string): { lat: number; lon: number } |
 
     // Use mgrs.inverse to convert to [lon, lat] array
     const coords = mgrs.inverse(compact)
-
-    if (!coords || coords.length < 2) return null
-
     const [lon, lat] = coords
 
     // Validate the results
@@ -56,7 +53,7 @@ export function mgrsToLatLon(mgrsString: string): { lat: number; lon: number } |
     }
 
     return { lat, lon }
-  } catch (_error) {
+  } catch {
     // Silently handle invalid MGRS input (common during user typing)
     return null
   }
@@ -74,15 +71,14 @@ export function parseMGRS(input: string): string | null {
 
     // Basic format validation
     // MGRS format: [1-2 digits][letter][2 letters][0-10 digits for coordinates]
-    const match = compact.match(/^(\d{1,2}[A-Z][A-Z]{2})(\d{0,10})$/)
+    const match = /^(\d{1,2}[A-Z][A-Z]{2})(\d{0,10})$/.exec(compact)
     if (!match) return null
 
     // Try to convert to lat/lon and back to validate it's a real MGRS coordinate
-    const coords = mgrs.inverse(compact)
-    if (!coords || coords.length < 2) return null
+    mgrs.inverse(compact)
 
     return compact
-  } catch (_error) {
+  } catch {
     return null
   }
 }
@@ -104,8 +100,8 @@ export function detectMGRSPrecision(mgrsString: string): number | null {
   if (!parsed) return null
 
   // Extract the coordinate portion (after grid zone and 100km square)
-  const gridZoneMatch = parsed.match(/^(\d{1,2}[A-Z])/)
-  if (!gridZoneMatch || !gridZoneMatch[1]) return null
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(parsed)
+  if (!gridZoneMatch?.[1]) return null
 
   const gridZone = gridZoneMatch[1]
   const rest = parsed.substring(gridZone.length)
@@ -137,8 +133,8 @@ export function formatMGRSWithSpaces(compact: string): string {
   // Northing: 84000 (variable length)
 
   // Find where the 100km square identifier ends (first 2 letters after grid zone)
-  const gridZoneMatch = compact.match(/^(\d{1,2}[A-Z])/)
-  if (!gridZoneMatch || !gridZoneMatch[1]) return compact
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(compact)
+  if (!gridZoneMatch?.[1]) return compact
 
   const gridZone = gridZoneMatch[1]
   const rest = compact.substring(gridZone.length)

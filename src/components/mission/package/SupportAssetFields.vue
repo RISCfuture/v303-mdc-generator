@@ -14,7 +14,7 @@ function parsePreset(value: string): number | null {
   return isNaN(parsed) ? null : parsed
 }
 
-interface Props {
+type Props = {
   asset: SupportAsset
 }
 

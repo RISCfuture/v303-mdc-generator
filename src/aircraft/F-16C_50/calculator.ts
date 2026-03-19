@@ -207,7 +207,7 @@ export class F16Calculator
   /**
    * Calculate total drag index from a loadout
    */
-  calculateDragIndex(stores: Array<{ clsid: string; category?: string }>): number {
+  calculateDragIndex(stores: { clsid: string; category?: string }[]): number {
     return calculateTotalDragIndex(stores)
   }
 

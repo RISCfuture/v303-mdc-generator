@@ -11,7 +11,7 @@ import type { Mission } from '@/types'
 export function calculateTakeoffFuel(mission: Mission): number {
   const airframe = getMissionAirframe(mission)
   const airframeData = getAirframeData(airframe)
-  const internalFuel = airframeData?.internalFuel || 0
+  const internalFuel = airframeData?.internalFuel ?? 0
 
   const externalFuel = mission.loadout.reduce((total, station) => {
     const fuelCapacity = getFuelCapacity(station.item)
@@ -28,7 +28,7 @@ export function calculateTakeoffFuel(mission: Mission): number {
 export function calculateMissionGrossWeight(mission: Mission): number {
   const airframe = getMissionAirframe(mission)
   const airframeData = getAirframeData(airframe)
-  const emptyWeight = airframeData?.emptyWeight || 0
+  const emptyWeight = airframeData?.emptyWeight ?? 0
 
   const loadoutWeight = mission.loadout.reduce((total, station) => {
     return total + getLoadoutOnlyWeight(station.item)

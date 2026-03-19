@@ -3,7 +3,7 @@ import { NCard, NForm, NFormItem, NA } from 'naive-ui'
 import MarkdownEditor from '@/components/common/MarkdownEditor.vue'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   mission: Mission
   isFieldIncomplete?: (fieldName: string) => boolean
 }

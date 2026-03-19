@@ -4,13 +4,13 @@ import { formatDDM } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
 
-export interface DCSAV8BMDC {
+export type DCSAV8BMDC = {
   Aircraft: 'AV8B'
   Upload: {
     Waypoints: boolean
   }
   Waypoints: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -18,7 +18,7 @@ export interface DCSAV8BMDC {
       Elevation: number
       TimeOverSteerpoint: string | null
       Target: boolean
-    }>
+    }[]
   }
   Version: number
   KneeboardNotes: null
@@ -30,7 +30,7 @@ export interface DCSAV8BMDC {
  */
 export function exportAV8BDCSDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSAV8BMDC>,
 ): DCSAV8BMDC {
   // Suppress unused variable warning
@@ -39,17 +39,17 @@ export function exportAV8BDCSDTC(
   const waypoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
 
     return {
       Sequence: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Latitude: formatDDM(latitude, 'latitude'),
       Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
-      TimeOverSteerpoint: wp.timeOnTarget || null,
+      TimeOverSteerpoint: wp.timeOnTarget ?? null,
       Target: wp.type === 'TGT',
     }
   })

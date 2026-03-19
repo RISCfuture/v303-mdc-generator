@@ -7,7 +7,7 @@ import type { DeepPartial } from '../helpers'
 /**
  * DCS Mission Editor format for F-16C (.dtc)
  */
-export interface DCSMissionEditorDTC {
+export type DCSMissionEditorDTC = {
   data: {
     COMM: {
       COMM1: Record<string, { freq: number; modulation: number }>
@@ -59,7 +59,7 @@ export interface DCSMissionEditorDTC {
         CMDSPrograms?: Record<string, unknown>
       }
       mirror_NAV_PTS: boolean
-      NAV_PTS: Array<{
+      NAV_PTS: {
         alt: number
         altitudeType: number
         FIX_Time: boolean
@@ -97,7 +97,7 @@ export interface DCSMissionEditorDTC {
         velocityType: number
         x: number
         y: number
-      }>
+      }[]
       terrain: string
     }
     name: string
@@ -113,10 +113,10 @@ export interface DCSMissionEditorDTC {
  */
 function tosToSeconds(tos: string | undefined): number {
   if (!tos) return -1
-  const parts = tos.match(/^(\d{1,2}):(\d{2}):?(\d{2})?/)
+  const parts = /^(\d{1,2}):(\d{2}):?(\d{2})?/.exec(tos)
   if (!parts) return -1
-  const hours = parseInt(parts[1]!)
-  const minutes = parseInt(parts[2]!)
+  const hours = parseInt(parts[1])
+  const minutes = parseInt(parts[2])
   const seconds = parseInt(parts[3] || '0')
   return hours * 3600 + minutes * 60 + seconds
 }
@@ -140,7 +140,7 @@ function mapWaypointType(type?: string): string {
  */
 export function exportF16DCSME(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSMissionEditorDTC>,
 ): DCSMissionEditorDTC {
   if (!isTheaterProjectionSupported(mission.theater)) {
@@ -171,20 +171,20 @@ export function exportF16DCSME(
   const navPts = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
     const altitude = isBlank ? 0 : (wp.altitude ?? 0)
 
-    const dcsCoords = latLonToDCS(latitude, longitude, mission.theater) || { x: 0, y: 0 }
+    const dcsCoords = latLonToDCS(latitude, longitude, mission.theater) ?? { x: 0, y: 0 }
     const tos = tosToSeconds(wp.timeOnTarget)
     const stptType = mapWaypointType(wp.type)
     const seq = wp.sequence
 
     // OAP data
     const ccip = wp.ccip
-    const hasOA1 = !!(ccip?.oa1?.bearing !== undefined && ccip?.oa1?.distance !== undefined)
-    const hasOA2 = !!(ccip?.oa2?.bearing !== undefined && ccip?.oa2?.distance !== undefined)
+    const hasOA1 = ccip?.oa1?.bearing !== undefined && ccip.oa1.distance !== undefined
+    const hasOA2 = ccip?.oa2?.bearing !== undefined && ccip.oa2.distance !== undefined
 
     // For OAP, calculate DCS x,y and deltas
     let oa1X = 0,
@@ -202,7 +202,7 @@ export function exportF16DCSME(
       oa2Bearing = 0,
       oa2Alt = 0
 
-    if (hasOA1 && ccip?.oa1) {
+    if (hasOA1 && ccip.oa1) {
       // Calculate OA point position from bearing/distance relative to steerpoint
       const bearingRad = ((ccip.oa1.bearing ?? 0) * Math.PI) / 180
       const distMeters = (ccip.oa1.distance ?? 0) * 0.3048 // feet to meters
@@ -214,7 +214,7 @@ export function exportF16DCSME(
       oa1Bearing = (ccip.oa1.bearing ?? 0) * (Math.PI / 180) // radians
       oa1Alt = elevation + (ccip.oa1.elevation ?? 0)
     }
-    if (hasOA2 && ccip?.oa2) {
+    if (hasOA2 && ccip.oa2) {
       const bearingRad = ((ccip.oa2.bearing ?? 0) * Math.PI) / 180
       const distMeters = (ccip.oa2.distance ?? 0) * 0.3048
       oa2DeltaX = distMeters * Math.cos(bearingRad)
@@ -238,7 +238,7 @@ export function exportF16DCSME(
       isOAP_1: hasOA1,
       isOAP_2: hasOA2,
       isTOSEnabled: tos >= 0,
-      note: wp.name ?? '',
+      note: wp.name,
       number: seq,
       OAP_1_Alt: oa1Alt,
       OAP_1_Bearing: oa1Bearing,
@@ -277,7 +277,7 @@ export function exportF16DCSME(
   }
   const programNames = ['MAN1', 'MAN2', 'MAN3', 'MAN4', 'MAN5', 'MAN6']
   for (const prog of mission.ecmCmds.cmdsPrograms) {
-    const progName = programNames[prog.number - 1] || `MAN${prog.number}`
+    const progName = programNames[prog.number - 1] ?? `MAN${prog.number}`
     cmdsPrograms[progName] = {
       Chaff: {
         BurstInterval: prog.chaffBurstInterval,

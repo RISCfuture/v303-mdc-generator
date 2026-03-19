@@ -294,18 +294,28 @@ function validateAllSchemas(): boolean {
   }
 
   // Validate channelization filenames
-  const channelizationAirframeErrors = validateChannelizationAirframeIds(channelizationFiles, knownAirframeIds)
+  const channelizationAirframeErrors = validateChannelizationAirframeIds(
+    channelizationFiles,
+    knownAirframeIds,
+  )
   if (channelizationAirframeErrors.length > 0) {
-    console.log(`  ✗ channelization/*.json (${channelizationAirframeErrors.length} unknown airframe IDs)`)
+    console.log(
+      `  ✗ channelization/*.json (${channelizationAirframeErrors.length} unknown airframe IDs)`,
+    )
     airframeIdErrors.push(...channelizationAirframeErrors)
   } else {
     console.log(`  ✓ channelization/*.json (${channelizationFiles.length} files)`)
   }
 
   // Validate airframe-overrides filenames
-  const overrideAirframeErrors = validateAirframeOverrideAirframeIds(airframeOverrideFiles, knownAirframeIds)
+  const overrideAirframeErrors = validateAirframeOverrideAirframeIds(
+    airframeOverrideFiles,
+    knownAirframeIds,
+  )
   if (overrideAirframeErrors.length > 0) {
-    console.log(`  ✗ airframe-overrides/*.json (${overrideAirframeErrors.length} unknown airframe IDs)`)
+    console.log(
+      `  ✗ airframe-overrides/*.json (${overrideAirframeErrors.length} unknown airframe IDs)`,
+    )
     airframeIdErrors.push(...overrideAirframeErrors)
   } else {
     console.log(`  ✓ airframe-overrides/*.json (${airframeOverrideFiles.length} files)`)
@@ -329,12 +339,17 @@ function validateAllSchemas(): boolean {
   }
 
   // Validate channelization directory names
-  const channelizationTheaterErrors = validateChannelizationTheaters(channelizationFiles, knownTheaters)
+  const channelizationTheaterErrors = validateChannelizationTheaters(
+    channelizationFiles,
+    knownTheaters,
+  )
   if (channelizationTheaterErrors.length > 0) {
     console.log(`  ✗ channelization/*/ (${channelizationTheaterErrors.length} unknown theaters)`)
     theaterErrors.push(...channelizationTheaterErrors)
   } else {
-    const theaterDirs = new Set(channelizationFiles.map(f => f.match(/^channelization\/([^/]+)\//)?.[1]).filter(Boolean))
+    const theaterDirs = new Set(
+      channelizationFiles.map((f) => f.match(/^channelization\/([^/]+)\//)?.[1]).filter(Boolean),
+    )
     console.log(`  ✓ channelization/*/ (${theaterDirs.size} theaters)`)
   }
 
@@ -405,7 +420,12 @@ function validateAllSchemas(): boolean {
     console.log()
   }
 
-  if (validationErrors.length > 0 || clsidErrors.length > 0 || airframeIdErrors.length > 0 || theaterErrors.length > 0) {
+  if (
+    validationErrors.length > 0 ||
+    clsidErrors.length > 0 ||
+    airframeIdErrors.length > 0 ||
+    theaterErrors.length > 0
+  ) {
     process.exit(1)
   }
 
@@ -449,7 +469,10 @@ function validateLoadoutsClsids(knownClsids: Set<string>): ClsidError[] {
     for (const [aircraft, loadouts] of Object.entries(data)) {
       if (!Array.isArray(loadouts)) continue
 
-      for (const loadout of loadouts as Array<{ name: string; stations: Array<{ station: number; item: string }> }>) {
+      for (const loadout of loadouts as Array<{
+        name: string
+        stations: Array<{ station: number; item: string }>
+      }>) {
         for (const stationConfig of loadout.stations || []) {
           if (!knownClsids.has(stationConfig.item)) {
             errors.push({

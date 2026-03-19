@@ -11,7 +11,7 @@ import type { Mission } from '@/types'
 
 function makeMission(overrides: {
   squadron?: string
-  loadout?: Array<{ station: number; item: string }>
+  loadout?: { station: number; item: string }[]
   fuelLoadPercentage?: number
 }): Mission {
   return {

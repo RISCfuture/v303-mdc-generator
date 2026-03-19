@@ -15,23 +15,22 @@ export function useMissionCallsigns(
   // Get effective flight callsign (now always uses the override field which is required)
   const effectiveFlightCallsign = computed(() => {
     if (!mission.value) return ''
-    return mission.value.flightCallsignOverride || ''
+    return mission.value.flightCallsignOverride ?? ''
   })
 
   // Get effective Link16 prefix (now always uses the override field which is required)
   const effectiveLink16Prefix = computed(() => {
     if (!mission.value) return ''
-    return mission.value.link16PrefixOverride || ''
+    return mission.value.link16PrefixOverride ?? ''
   })
 
   // Get available callsign options from flight lead
   const availableCallsignOptions = computed(() => {
-    if (!mission.value) return []
+    if (!mission.value || mission.value.crew.length === 0) return []
     const flightLead = mission.value.crew[0]
-    if (!flightLead) return []
 
     const pilot = crewDatabase.find((p) => p.pilot === flightLead.pilot)
-    if (!pilot || !pilot.callsign) return []
+    if (!pilot?.callsign) return []
 
     // Return callsign options as autocomplete options
     return pilot.callsign.map((cs) => ({ label: cs, value: cs }))

@@ -8,7 +8,7 @@ import {
   calculateHeadwindComponent,
 } from '../takeoffDistanceCalculator'
 
-interface Props {
+type Props = {
   mission: Mission
   grossWeight: number
   dragIndex?: number

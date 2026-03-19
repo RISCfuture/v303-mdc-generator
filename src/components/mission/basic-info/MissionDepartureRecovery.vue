@@ -6,7 +6,7 @@ import { useAirportSelection } from '@/composables/useAirportSelection'
 import { FORM } from '@/styles/design-tokens'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   mission: Mission
   isFieldIncomplete?: (fieldName: string) => boolean
 }
@@ -47,7 +47,7 @@ function updateRecoveryField(
 }
 
 function updateAlternateAirport(airportName: string | null) {
-  emit('update:nestedField', 'departureRecovery', 'alternateAirportId', airportName || undefined)
+  emit('update:nestedField', 'departureRecovery', 'alternateAirportId', airportName ?? undefined)
 }
 </script>
 

@@ -12,7 +12,7 @@ describe('airframes', () => {
       const airframeKeys = Object.keys(airframeDatabase)
       expect(airframeKeys.length).toBeGreaterThan(0)
 
-      const firstAirframe = airframeDatabase[airframeKeys[0]!]!
+      const firstAirframe = airframeDatabase[airframeKeys[0]]
       expect(firstAirframe).toHaveProperty('aircraft')
       expect(firstAirframe).toHaveProperty('displayName')
       expect(firstAirframe).toHaveProperty('emptyWeight')
@@ -81,12 +81,11 @@ describe('airframes', () => {
   describe('getAirframeDisplayName', () => {
     it('should return display name for valid airframe', () => {
       const airframeKeys = Object.keys(airframeDatabase)
-      if (airframeKeys.length > 0) {
-        const airframeKey = airframeKeys[0]!
-        const displayName = getAirframeDisplayName(airframeKey)
-        expect(displayName).toBeTruthy()
-        expect(displayName).toBe(airframeDatabase[airframeKey]!.displayName)
-      }
+      expect(airframeKeys.length).toBeGreaterThan(0)
+      const airframeKey = airframeKeys[0]
+      const displayName = getAirframeDisplayName(airframeKey)
+      expect(displayName).toBeTruthy()
+      expect(displayName).toBe(airframeDatabase[airframeKey].displayName)
     })
 
     it('should return the airframe key for invalid airframe', () => {
@@ -118,9 +117,7 @@ describe('airframes', () => {
         // Stations should be an array
         expect(Array.isArray(airframe.stations)).toBe(true)
         // If guns exist, should be an array
-        if (airframe.guns) {
-          expect(Array.isArray(airframe.guns)).toBe(true)
-        }
+        expect(!airframe.guns || Array.isArray(airframe.guns)).toBe(true)
       })
     })
 
@@ -179,10 +176,9 @@ describe('airframes', () => {
       const station1 = f16.stations.find((s) => s.station === 1)
 
       // Station 1 was not modified by override, so should not have GBU-39
-      if (station1) {
-        const hasGbu39 = station1.munitions.some((m) => m.includes('GBU-39'))
-        expect(hasGbu39).toBe(false)
-      }
+      expect(station1).toBeDefined()
+      const hasGbu39 = station1!.munitions.some((m) => m.includes('GBU-39'))
+      expect(hasGbu39).toBe(false)
     })
 
     it('should maintain station metadata during merge', () => {
@@ -198,30 +194,31 @@ describe('airframes', () => {
 
   describe('gun data', () => {
     it('should have valid gun data when present', () => {
-      Object.values(airframeDatabase).forEach((airframe) => {
-        if (airframe.guns && airframe.guns.length > 0) {
-          airframe.guns.forEach((gun) => {
-            expect(gun).toHaveProperty('name')
-            expect(gun).toHaveProperty('capacity')
-            expect(gun).toHaveProperty('shells')
-            expect(gun.capacity).toBeGreaterThan(0)
-            expect(Array.isArray(gun.shells)).toBe(true)
-            expect(gun.shells.length).toBeGreaterThan(0)
+      const airframesWithGuns = Object.values(airframeDatabase).filter(
+        (airframe) => airframe.guns && airframe.guns.length > 0,
+      )
+      expect(airframesWithGuns.length).toBeGreaterThan(0)
 
-            gun.shells.forEach((shell) => {
-              expect(shell).toHaveProperty('name')
-              expect(shell).toHaveProperty('displayName')
-            })
+      airframesWithGuns.forEach((airframe) => {
+        airframe.guns!.forEach((gun) => {
+          expect(gun).toHaveProperty('name')
+          expect(gun).toHaveProperty('capacity')
+          expect(gun).toHaveProperty('shells')
+          expect(gun.capacity).toBeGreaterThan(0)
+          expect(Array.isArray(gun.shells)).toBe(true)
+          expect(gun.shells.length).toBeGreaterThan(0)
 
-            if (gun.mixes) {
-              expect(Array.isArray(gun.mixes)).toBe(true)
-              gun.mixes.forEach((mix) => {
-                expect(mix).toHaveProperty('sequence')
-                expect(Array.isArray(mix.sequence)).toBe(true)
-              })
-            }
+          gun.shells.forEach((shell) => {
+            expect(shell).toHaveProperty('name')
+            expect(shell).toHaveProperty('displayName')
           })
-        }
+
+          expect(!gun.mixes || Array.isArray(gun.mixes)).toBe(true)
+          gun.mixes?.forEach((mix) => {
+            expect(mix).toHaveProperty('sequence')
+            expect(Array.isArray(mix.sequence)).toBe(true)
+          })
+        })
       })
     })
   })

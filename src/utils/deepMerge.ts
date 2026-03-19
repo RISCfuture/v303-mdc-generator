@@ -26,7 +26,7 @@ function isObject(item: unknown): item is Record<string, unknown> {
  * // Result: { a: 1, b: { c: 2, d: 4 }, e: 5 }
  * ```
  */
-export function deepMerge<T>(target: T, ...sources: Array<Partial<T>>): T {
+export function deepMerge<T>(target: T, ...sources: Partial<T>[]): T {
   if (!sources.length) return target
 
   const source = sources.shift()

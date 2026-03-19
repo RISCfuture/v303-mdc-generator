@@ -42,7 +42,7 @@ export type F16AltitudeProfile = 'medium' | 'low'
 /**
  * Parameters for F-16C speed calculations
  */
-export interface F16SpeedParams {
+export type F16SpeedParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Headwind component in knots (positive = headwind, negative = tailwind) */
@@ -54,7 +54,7 @@ export interface F16SpeedParams {
 /**
  * Configuration for F-16C speed calculations
  */
-export interface F16SpeedConfig {
+export type F16SpeedConfig = {
   /** Power setting (MIL or AB) */
   powerSetting: F16PowerSetting
   /** Runway condition */
@@ -68,7 +68,7 @@ export interface F16SpeedConfig {
 /**
  * Parameters for F-16C takeoff distance calculations
  */
-export interface F16TakeoffParams {
+export type F16TakeoffParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Celsius */
@@ -86,7 +86,7 @@ export interface F16TakeoffParams {
 /**
  * Configuration for F-16C takeoff distance calculations
  */
-export interface F16TakeoffConfig {
+export type F16TakeoffConfig = {
   /** Power setting (MIL or AB) */
   powerSetting: F16PowerSetting
   /** Center of gravity as percent MAC (default 35%) */
@@ -98,7 +98,7 @@ export interface F16TakeoffConfig {
 /**
  * Configuration for F-16C bingo fuel calculations
  */
-export interface F16BingoConfig {
+export type F16BingoConfig = {
   /** Whether aerial refueling is expected */
   aarExpected: boolean
   /** Approach type for recovery (VFR or IFR) */

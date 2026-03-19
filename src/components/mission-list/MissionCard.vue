@@ -6,7 +6,7 @@ import { theaterDatabase } from '@/data/theaters'
 import { formatDate, formatDateTime } from '@/utils/formatting'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   mission: Mission
 }
 

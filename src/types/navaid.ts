@@ -18,7 +18,7 @@ export type NavaidType =
   | 'WAYPOINT'
   | 'AIRFIELD'
 
-export interface Navaid {
+export type Navaid = {
   name: string
   type?: NavaidType // Optional for backwards compatibility during migration
   latitude: number // Decimal degrees (e.g., 31.52044167). Positive = N, Negative = S

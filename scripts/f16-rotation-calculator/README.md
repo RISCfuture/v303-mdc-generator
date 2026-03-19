@@ -5,19 +5,23 @@ This module calculates takeoff rotation speed and refusal speed for the F-16C wi
 ## Overview
 
 The calculator provides functions to determine:
+
 - **Rotation Speed**: The speed at which the pilot rotates the aircraft for liftoff
 - **Refusal Speed**: The maximum speed at which a takeoff can be safely aborted
 
 ## Data Extraction Process
 
 ### 1. Chart Analysis and Digitization (`extract_regression.py`)
+
 - Manually sampled data points from performance charts (pages 284-293)
 - Fitted polynomial regression equations (quadratic, degree 2)
 - Achieved R² > 0.999 for all curves
 - Generated coefficients saved in `regression_data.json`
 
 ### 2. TypeScript Calculator (`src/utils/f16RotationCalculator.ts`)
+
 Uses embedded polynomial regression equations to calculate speeds:
+
 - **No external data files needed** - coefficients are embedded in code
 - **Quadratic equations** capture the slight curvature of chart lines
 - Apply corrections for:
@@ -48,13 +52,13 @@ console.log(`Refusal Speed: ${result.refusalSpeed} KIAS`)
 import { calculateSpeeds } from '@/utils/f16RotationCalculator'
 
 const result = calculateSpeeds({
-  grossWeight: 32500,           // lbs
+  grossWeight: 32500, // lbs
   powerSetting: 'AB',
   runwayCondition: 'wet',
-  headwindComponent: 15,        // 15 kt headwind
-  runwaySlope: -0.5,            // 0.5% downslope
-  cgPercent: 37,                // 37% MAC
-  pitchAttitude: 10,            // 10 degrees
+  headwindComponent: 15, // 15 kt headwind
+  runwaySlope: -0.5, // 0.5% downslope
+  cgPercent: 37, // 37% MAC
+  pitchAttitude: 10, // 10 degrees
 })
 
 console.log(`Rotation Speed: ${result.rotationSpeed} KIAS`)
@@ -95,23 +99,27 @@ The `speed_data.json` file contains:
 ## Corrections Applied
 
 ### Rotation Speed Corrections
+
 - **Power Setting**: -10 KIAS for MIL, -15 KIAS for AB
 - **CG Position**: ±0.8 KIAS per 1% from 35% MAC
 - **Pitch Attitude**: +8% for 8° pitch (vs 10° baseline)
 
 ### Refusal Speed Corrections
+
 - **Wind**: ~-1 KIAS per 5 kt headwind, +1 KIAS per 3 kt tailwind
 - **Slope**: ~±4 KIAS per 1% slope
 
 ## Testing
 
 Comprehensive unit tests validate:
+
 - Correct speed calculations across weight range
 - Application of all corrections
 - Proper handling of different runway conditions
 - Edge cases and boundary conditions
 
 Run tests:
+
 ```bash
 yarn test:unit f16RotationCalculator
 ```

@@ -5,7 +5,7 @@ import squadronsData from '@/data/json/squadrons.json'
 import { theaterDatabase } from '@/data/theaters'
 import type { Theater, Squadron } from '@/types'
 
-interface Props {
+type Props = {
   show: boolean
 }
 

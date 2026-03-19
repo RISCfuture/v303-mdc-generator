@@ -36,13 +36,14 @@ export const STEERPOINT_TYPES = [
 
 // Airframe station counts - dynamically derived from airframe data
 // Calculated from the number of stations in each airframe's JSON file
-export const STATION_COUNTS: Record<string, number> = Object.entries(airframeDatabase).reduce(
-  (acc, [key, data]) => {
+export const STATION_COUNTS: Record<string, number> = Object.entries(airframeDatabase).reduce<
+  Record<string, number>
+>((acc, [key, data]) => {
+  if (data) {
     acc[key] = data.stations.length
-    return acc
-  },
-  {} as Record<string, number>,
-)
+  }
+  return acc
+}, {})
 
 export function getCrewPositionLabel(index: number): string {
   if (index === 0) return 'LEAD'

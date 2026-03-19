@@ -30,12 +30,12 @@ function getValidator(): ValidateFunction {
 /**
  * Validation result
  */
-export interface ValidationResult {
+export type ValidationResult = {
   valid: boolean
-  errors?: Array<{
+  errors?: {
     path: string
     message: string
-  }>
+  }[]
 }
 
 /**
@@ -58,9 +58,9 @@ export function isMissionStorageComplete(data: unknown): ValidationResult {
   }
 
   // Format validation errors for easier consumption
-  const errors = (validate.errors || []).map((error) => ({
+  const errors = (validate.errors ?? []).map((error) => ({
     path: error.instancePath || 'root',
-    message: error.message || 'Unknown validation error',
+    message: error.message ?? 'Unknown validation error',
   }))
 
   return {

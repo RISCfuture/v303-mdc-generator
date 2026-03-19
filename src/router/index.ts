@@ -7,6 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       component: MissionList,
     },
     {

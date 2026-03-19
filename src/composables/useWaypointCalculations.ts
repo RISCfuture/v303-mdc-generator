@@ -5,7 +5,7 @@ import type { Waypoint } from '@/types'
  * Composable for waypoint calculations (distance, time, TOT)
  */
 
-interface WaypointPair {
+type WaypointPair = {
   from: Waypoint
   to: Waypoint
   distance: number | null // nautical miles
@@ -53,8 +53,8 @@ export function parseTOT(tot: string | undefined): number | null {
   const cleaned = tot.trim().replace(/[zZ]$/i, '')
 
   // Try HH:MM format
-  const colonMatch = cleaned.match(/^(\d{1,2}):(\d{2})$/)
-  if (colonMatch && colonMatch[1] && colonMatch[2]) {
+  const colonMatch = /^(\d{1,2}):(\d{2})$/.exec(cleaned)
+  if (colonMatch?.[1] && colonMatch[2]) {
     const hours = parseInt(colonMatch[1], 10)
     const minutes = parseInt(colonMatch[2], 10)
     if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59) {
@@ -63,8 +63,8 @@ export function parseTOT(tot: string | undefined): number | null {
   }
 
   // Try HHMM format
-  const noColonMatch = cleaned.match(/^(\d{2})(\d{2})$/)
-  if (noColonMatch && noColonMatch[1] && noColonMatch[2]) {
+  const noColonMatch = /^(\d{2})(\d{2})$/.exec(cleaned)
+  if (noColonMatch?.[1] && noColonMatch[2]) {
     const hours = parseInt(noColonMatch[1], 10)
     const minutes = parseInt(noColonMatch[2], 10)
     if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59) {
@@ -101,7 +101,6 @@ export function calculateTOTPlaceholders(waypoints: Waypoint[]): string[] {
 
   for (let i = 0; i < waypoints.length; i++) {
     const currentWP = waypoints[i]
-    if (!currentWP) continue
 
     // If this waypoint has a TOT entered, use it as the new reference
     const enteredTOT = parseTOT(currentWP.timeOnTarget)
@@ -121,10 +120,6 @@ export function calculateTOTPlaceholders(waypoints: Waypoint[]): string[] {
       for (let j = lastKnownIndex; j < i; j++) {
         const fromWP = waypoints[j]
         const toWP = waypoints[j + 1]
-        if (!fromWP || !toWP) {
-          calculationFailed = true
-          break
-        }
 
         const distance = calculateDistance(fromWP, toWP)
         if (distance === null || !fromWP.speed) {
@@ -168,7 +163,6 @@ export function calculateWaypointPairs(waypoints: Waypoint[]): WaypointPair[] {
   for (let i = 0; i < waypoints.length - 1; i++) {
     const from = waypoints[i]
     const to = waypoints[i + 1]
-    if (!from || !to) continue
 
     const distance = calculateDistance(from, to)
     const time = distance && from.speed ? calculateTime(distance, from.speed) : null

@@ -7,14 +7,14 @@ const router = useRouter()
 
 const baseGitHubUrl = 'https://github.com/RISCfuture/v303-mdc-generator/blob/main/src/data/json'
 
-interface DataFile {
+type DataFile = {
   name: string
   path: string
   description: string
   note?: string
 }
 
-interface DataCategory {
+type DataCategory = {
   title: string
   files: DataFile[]
 }

@@ -4,9 +4,9 @@ import { formatDDM } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
-import { truncateFrequency, getRadioConfig } from '../helpers'
+import { truncateFrequency, getRadioConfig, parseTACANOrThrow } from '../helpers'
 
-export interface DCSF15EMDC {
+export type DCSF15EMDC = {
   Aircraft: 'F15E'
   Upload: {
     RouteA: boolean
@@ -15,7 +15,7 @@ export interface DCSF15EMDC {
     Kneeboard: boolean
   }
   RouteA: {
-    Waypoints: Array<{
+    Waypoints: {
       Sequence: number
       Name: string
       Latitude: string
@@ -23,18 +23,18 @@ export interface DCSF15EMDC {
       Elevation: number
       TimeOverSteerpoint: string | null
       Target: boolean
-    }>
+    }[]
   }
   Radios: {
     Radio1: {
-      Presets: Array<{ Number: number; Name: string; Frequency: string }>
+      Presets: { Number: number; Name: string; Frequency: string }[]
       SelectedFrequency: string
       SelectedPreset: string | null
       EnableGuard: boolean
       Mode: number
     }
     Radio2: {
-      Presets: Array<{ Number: number; Name: string; Frequency: string }>
+      Presets: { Number: number; Name: string; Frequency: string }[]
       SelectedFrequency: string
       SelectedPreset: string | null
       EnableGuard: boolean
@@ -66,36 +66,36 @@ export interface DCSF15EMDC {
  */
 export function exportF15EDCSDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSF15EMDC>,
 ): DCSF15EMDC {
   // Convert waypoints (RouteA)
   const waypoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
     const elevation = isBlank ? 0 : (wp.elevation ?? 0)
 
     return {
       Sequence: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Latitude: formatDDM(latitude, 'latitude'),
       Longitude: formatDDM(longitude, 'longitude'),
       Elevation: elevation,
-      TimeOverSteerpoint: wp.timeOnTarget || null,
+      TimeOverSteerpoint: wp.timeOnTarget ?? null,
       Target: wp.type === 'TGT',
     }
   })
 
   // Get crew member data
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
+  const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = parseInt(selectedCrewMember.laser)
 
   // Parse TACAN
-  const tacanMatch = selectedCrewMember.aaTcn.match(/(\d+)([XY])/)!
-  const tacanChannel = parseInt(tacanMatch[1]!)
-  const tacanBand = tacanMatch[2] === 'Y' ? 1 : 0
+  const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
+  const tacanChannel = tacan.channel
+  const tacanBand = tacan.band === 'Y' ? 1 : 0
 
   // Build radio presets
   const radio1Presets =
@@ -103,14 +103,14 @@ export function exportF15EDCSDTC(
       Number: preset.number,
       Name: preset.description,
       Frequency: truncateFrequency(preset.frequency),
-    })) || []
+    })) ?? []
 
   const radio2Presets =
     mission.radioPresets[1]?.map((preset) => ({
       Number: preset.number,
       Name: preset.description,
       Frequency: truncateFrequency(preset.frequency),
-    })) || []
+    })) ?? []
 
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
@@ -137,8 +137,8 @@ export function exportF15EDCSDTC(
   }
 
   // CARA ALOW from TOLD data
-  const minAgl = mission.told?.minAgl ?? 500
-  const hasCaraAlowData = mission.told?.minAgl !== undefined
+  const minAgl = mission.told.minAgl ?? 500
+  const hasCaraAlowData = mission.told.minAgl !== undefined
 
   const missionData: DCSF15EMDC = {
     Aircraft: 'F15E',

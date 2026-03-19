@@ -5,7 +5,7 @@ import MarkdownEditor from '@/components/common/MarkdownEditor.vue'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
 import type { TargetData, CoordinateFormat } from '@/types'
 
-interface Props {
+type Props = {
   target: TargetData | undefined
   missionId: string
 }

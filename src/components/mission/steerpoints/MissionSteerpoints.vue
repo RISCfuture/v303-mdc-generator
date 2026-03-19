@@ -12,7 +12,7 @@ import {
   calculateTOTPlaceholders,
 } from '@/composables/useWaypointCalculations'
 
-interface Props {
+type Props = {
   waypoints: Waypoint[]
   availableNavaids: Navaid[]
   waypointDragDrop: DragAndDropReturn<Waypoint>
@@ -72,12 +72,12 @@ const navaidDropdownOptions = computed(() => {
   // Count occurrences of each name
   const nameCounts = new Map<string, number>()
   for (const navaid of props.availableNavaids) {
-    nameCounts.set(navaid.name, (nameCounts.get(navaid.name) || 0) + 1)
+    nameCounts.set(navaid.name, (nameCounts.get(navaid.name) ?? 0) + 1)
   }
 
   // Generate options with type suffix for duplicates
   return props.availableNavaids.map((navaid, index) => {
-    const isDuplicate = (nameCounts.get(navaid.name) || 0) > 1
+    const isDuplicate = (nameCounts.get(navaid.name) ?? 0) > 1
     const label = isDuplicate ? `${navaid.name} (${formatNavaidType(navaid.type)})` : navaid.name
     return { label, value: index }
   })
@@ -87,9 +87,7 @@ const navaidDropdownOptions = computed(() => {
 function handleNavaidSelect(navaidIndex: number | null) {
   if (navaidIndex !== null && navaidIndex >= 0) {
     const navaid = props.availableNavaids[navaidIndex]
-    if (navaid) {
-      emit('add-waypoint-from-navaid', navaid)
-    }
+    emit('add-waypoint-from-navaid', navaid)
     selectedNavaid.value = null // Clear the dropdown after selection
   }
 }

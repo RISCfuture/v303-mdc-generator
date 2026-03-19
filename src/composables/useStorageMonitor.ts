@@ -54,7 +54,7 @@ export function useStorageMonitor() {
 
   // Auto-refresh on mount
   onMounted(() => {
-    refresh()
+    void refresh()
   })
 
   return {

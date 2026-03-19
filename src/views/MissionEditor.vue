@@ -120,25 +120,23 @@ function updateNestedField(
           } else {
             // Exactly one steerpoint: update it to match the departure airport
             const existingWaypoint = currentMission.waypoints[0]
-            if (existingWaypoint) {
-              const updatedWaypoint: Waypoint = {
-                sequence: existingWaypoint.sequence,
-                name: airfield.name,
-                latitude: airfield.position.latitude,
-                longitude: airfield.position.longitude,
-                elevation: airfield.position.elevation,
-                altitude: airfield.position.elevation ?? 0,
-                coordinateFormat: existingWaypoint.coordinateFormat,
-                speed: existingWaypoint.speed,
-                timeOnTarget: existingWaypoint.timeOnTarget,
-                type: existingWaypoint.type,
-                ccip: existingWaypoint.ccip,
-              }
-
-              missionsStore.updateMission(missionId.value, {
-                waypoints: [updatedWaypoint],
-              })
+            const updatedWaypoint: Waypoint = {
+              sequence: existingWaypoint.sequence,
+              name: airfield.name,
+              latitude: airfield.position.latitude,
+              longitude: airfield.position.longitude,
+              elevation: airfield.position.elevation,
+              altitude: airfield.position.elevation ?? 0,
+              coordinateFormat: existingWaypoint.coordinateFormat,
+              speed: existingWaypoint.speed,
+              timeOnTarget: existingWaypoint.timeOnTarget,
+              type: existingWaypoint.type,
+              ccip: existingWaypoint.ccip,
             }
+
+            missionsStore.updateMission(missionId.value, {
+              waypoints: [updatedWaypoint],
+            })
           }
         }
       }
@@ -148,11 +146,12 @@ function updateNestedField(
     // If imageIds were updated, schedule cleanup of unused images (debounced)
     if (field === 'imageIds' && parent === 'details') {
       if (cleanupTimer) clearTimeout(cleanupTimer)
-      cleanupTimer = setTimeout(async () => {
-        const deletedCount = await missionsStore.cleanupUnusedImagesForMission(missionId.value)
-        if (deletedCount > 0) {
-          console.log(`Cleaned up ${deletedCount} unused images`)
-        }
+      cleanupTimer = setTimeout(() => {
+        void missionsStore.cleanupUnusedImagesForMission(missionId.value).then((deletedCount) => {
+          if (deletedCount > 0) {
+            console.log(`Cleaned up ${deletedCount} unused images`)
+          }
+        })
       }, 2000) // Wait 2 seconds after last change before cleaning up
     }
   } catch (error) {
@@ -162,7 +161,7 @@ function updateNestedField(
         { duration: 10000 },
       )
     } else {
-      message.error(`Failed to save changes: ${error}`)
+      message.error(`Failed to save changes: ${String(error)}`)
     }
   }
 }
@@ -225,7 +224,7 @@ const { isComplete, isWaypointFieldIncomplete, isFieldIncomplete, fieldErrors } 
   useMissionValidation(mission)
 
 // Waypoint management
-const waypoints = computed(() => mission.value?.waypoints || [])
+const waypoints = computed(() => mission.value?.waypoints ?? [])
 const {
   waypointDragDrop,
   addWaypoint,
@@ -246,7 +245,7 @@ const ecmCmdsComponent = computed<Component | null>(() => {
 })
 
 // Crew management
-const crew = computed(() => mission.value?.crew || [])
+const crew = computed(() => mission.value?.crew ?? [])
 const {
   crewDragDrop,
   addCrewMember,
@@ -257,12 +256,12 @@ const {
 } = useCrewManagement(missionId, crew, availableCrew, airframe)
 
 // Loadout management
-const loadout = computed(() => mission.value?.loadout || [])
+const loadout = computed(() => mission.value?.loadout ?? [])
 const { selectedSCL, airframeStations, loadPrefabLoadout, clearAllLoadout, updateLoadoutStation } =
   useLoadoutManagement(missionId, airframe, loadout, availableLoadouts)
 
 // Package management
-const packageMembers = computed(() => mission.value?.packageMembers || [])
+const packageMembers = computed(() => mission.value?.packageMembers ?? [])
 const {
   packageDragDrop,
   addPackageMember,
@@ -274,7 +273,7 @@ const {
 } = usePackageManagement(missionId, packageMembers)
 
 // Support asset management
-const supportAssets = computed(() => mission.value?.supportAssets || [])
+const supportAssets = computed(() => mission.value?.supportAssets ?? [])
 const {
   supportAssetDragDrop,
   addSupportAsset,
@@ -288,7 +287,7 @@ const {
 // Check if mission exists
 if (!mission.value) {
   message.error('Mission not found')
-  router.push('/')
+  void router.push('/')
 }
 
 // Speed calculator modal state
@@ -352,7 +351,7 @@ watch(
 )
 
 function goBack() {
-  router.push('/')
+  void router.push('/')
 }
 
 function handleAddWaypointFromNavaid(navaid: Navaid) {
@@ -365,7 +364,7 @@ function updateTargetField(
   value: TargetData[keyof TargetData],
 ) {
   if (!mission.value) return
-  const target = mission.value.details[targetType] || {}
+  const target = mission.value.details[targetType] ?? {}
   missionsStore.updateMission(missionId.value, {
     details: {
       ...mission.value.details,
@@ -376,11 +375,12 @@ function updateTargetField(
   // If imageIds were updated for a target, schedule cleanup
   if (field === 'imageIds') {
     if (cleanupTimer) clearTimeout(cleanupTimer)
-    cleanupTimer = setTimeout(async () => {
-      const deletedCount = await missionsStore.cleanupUnusedImagesForMission(missionId.value)
-      if (deletedCount > 0) {
-        console.log(`Cleaned up ${deletedCount} unused images`)
-      }
+    cleanupTimer = setTimeout(() => {
+      void missionsStore.cleanupUnusedImagesForMission(missionId.value).then((deletedCount) => {
+        if (deletedCount > 0) {
+          console.log(`Cleaned up ${deletedCount} unused images`)
+        }
+      })
     }, 2000)
   }
 }
@@ -448,7 +448,7 @@ function getMdcExportOptions() {
 function handleSelectMDCExport(key: string) {
   if (!mission.value) return
   const [indexStr, ...formatParts] = key.split(':')
-  const crewMemberIndex = parseInt(indexStr!)
+  const crewMemberIndex = parseInt(indexStr)
   const format = formatParts.join(':') as ExportFormat
   handleExportMDC(mission.value, crewMemberIndex, format)
 }
@@ -524,7 +524,7 @@ function handleSelectMDCExport(key: string) {
               :theater-data="theaterData"
               :is-field-incomplete="isFieldIncomplete"
               @update:field="updateField"
-              @update:nestedField="updateNestedField"
+              @update:nested-field="updateNestedField"
             />
           </NTabPane>
 

@@ -24,14 +24,14 @@ export function useMissionExport() {
       })
     } catch (error) {
       loadingBar.error()
-      message.error(`Failed to generate PDF: ${error}`)
+      message.error(`Failed to generate PDF: ${String(error)}`)
       console.error(error)
     }
   }
 
   function handleExportMDC(
     mission: Mission,
-    crewMemberIndex: number = 0,
+    crewMemberIndex = 0,
     format: ExportFormat = 'DCS-DTC',
   ) {
     try {
@@ -41,7 +41,7 @@ export function useMissionExport() {
         attributes: { type: 'mdc', format, squadron: mission.squadron },
       })
     } catch (error) {
-      message.error(`Failed to export MDC: ${error}`)
+      message.error(`Failed to export MDC: ${String(error)}`)
       console.error(error)
     }
   }

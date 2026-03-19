@@ -27,7 +27,7 @@ export function useLoadoutManagement(
   // Get actual station definitions from airframe data
   const airframeStations = computed(() => {
     const airframeData = getAirframeData(airframe.value)
-    return airframeData?.stations || []
+    return airframeData?.stations ?? []
   })
 
   // Build station-specific munition options that vary by aircraft and station

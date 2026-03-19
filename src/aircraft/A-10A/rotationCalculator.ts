@@ -77,7 +77,7 @@ export type A10RunwayCondition = 'dry' | 'wet' | 'icy'
 /**
  * Input parameters for speed calculations
  */
-export interface A10SpeedCalculationParams {
+export type A10SpeedCalculationParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Flap setting (0° or 7°) */
@@ -91,7 +91,7 @@ export interface A10SpeedCalculationParams {
 /**
  * Calculation results
  */
-export interface A10SpeedCalculationResult {
+export type A10SpeedCalculationResult = {
   /** Rotation speed in KIAS */
   rotationSpeed: number
   /** Refusal speed in KIAS */
@@ -184,8 +184,8 @@ export function calculateRefusalSpeed(params: A10SpeedCalculationParams): number
   const rcr = getRcrForCondition(runwayCondition)
 
   // Determine which two weight tables bracket our weight
-  let lowerGw = 30
-  let upperGw = 45
+  let lowerGw: number
+  let upperGw: number
 
   if (gwThousands >= 30 && gwThousands <= 35) {
     lowerGw = 30

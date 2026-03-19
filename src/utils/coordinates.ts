@@ -5,12 +5,12 @@
 
 export type CoordinateType = 'latitude' | 'longitude'
 
-export interface DecimalCoordinate {
+export type DecimalCoordinate = {
   /** Decimal degrees. Positive = N/E, Negative = S/W */
   value: number
 }
 
-export interface DMSCoordinate {
+export type DMSCoordinate = {
   hemisphere: 'N' | 'S' | 'E' | 'W'
   degrees: number
   minutes: number
@@ -78,7 +78,7 @@ export function formatDD(lat: number, lon: number): string {
  * Returns null if invalid format
  */
 export function parseDD(input: string): { lat: number; lon: number } | null {
-  const match = input.match(/^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/)
+  const match = /^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/.exec(input)
   if (!match) return null
 
   const [, latStr, lonStr] = match
@@ -141,7 +141,7 @@ export function formatDMS(dms: DMSCoordinate, type: CoordinateType): string {
  */
 export function parseDDM(input: string): DMSCoordinate | null {
   // Format: N 36° 12.345′ or N 36° 12′ or N 36° (degrees only)
-  const match = input.match(/^([NSEW])\s+(\d+)°(?:\s+(\d+(?:\.\d+)?)′)?$/)
+  const match = /^([NSEW])\s+(\d+)°(?:\s+(\d+(?:\.\d+)?)′)?$/.exec(input)
   if (!match) return null
 
   const [, hemisphere, degreesStr, minutesStr] = match
@@ -166,7 +166,7 @@ export function parseDDM(input: string): DMSCoordinate | null {
  */
 export function parseDMS(input: string): DMSCoordinate | null {
   // Format: N 36° 12′ 21″ or N 36° 12′ 21.5″
-  const match = input.match(/^([NSEW])\s+(\d+)°\s+(\d+)′\s+(\d+(?:\.\d+)?)″$/)
+  const match = /^([NSEW])\s+(\d+)°\s+(\d+)′\s+(\d+(?:\.\d+)?)″$/.exec(input)
   if (!match) return null
 
   const [, hemisphere, degreesStr, minutesStr, secondsStr] = match

@@ -3,7 +3,6 @@ import { setActivePinia, createPinia } from 'pinia'
 import { computed } from 'vue'
 import { useWaypointManagement } from '@/composables/useWaypointManagement'
 import { useMissionsStore } from '@/stores/missions'
-import type { Waypoint } from '@/types'
 
 describe('useWaypointManagement', () => {
   beforeEach(() => {
@@ -16,7 +15,7 @@ describe('useWaypointManagement', () => {
     const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
-    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])
+    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints ?? [])
 
     const { addWaypoint } = useWaypointManagement(missionId, waypoints)
 
@@ -42,7 +41,7 @@ describe('useWaypointManagement', () => {
     const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
-    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])
+    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints ?? [])
 
     const { addWaypointFromNavaid } = useWaypointManagement(missionId, waypoints)
 
@@ -74,7 +73,7 @@ describe('useWaypointManagement', () => {
     const mission = missionsStore.createMission('v93', 'Nevada')
 
     const missionId = computed(() => mission.id)
-    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints || [])
+    const waypoints = computed(() => missionsStore.getMission(mission.id)?.waypoints ?? [])
 
     const { addWaypoint } = useWaypointManagement(missionId, waypoints)
 
@@ -83,13 +82,13 @@ describe('useWaypointManagement', () => {
     addWaypoint()
 
     const updatedMission = missionsStore.getMission(mission.id)
-    const wps = updatedMission?.waypoints || []
+    const wps = updatedMission?.waypoints ?? []
 
     // Import the calculation function
     const { calculateDistance } = await import('@/composables/useWaypointCalculations')
 
     // Distance should be null when coordinates are null
-    const distance = calculateDistance(wps[0] as Waypoint, wps[1] as Waypoint)
+    const distance = calculateDistance(wps[0], wps[1])
     expect(distance).toBe(null)
   })
 })

@@ -5,28 +5,28 @@ import { getCrewMemberLink16Callsign } from '@/utils/callsignHelpers'
 import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
-import { truncateFrequency, getRadioConfig } from '../helpers'
+import { truncateFrequency, getRadioConfig, parseTACAN } from '../helpers'
 
 /**
  * JAFDTC format for F-16C
  */
-export interface JAFDTCF16MDC {
+export type JAFDTCF16MDC = {
   CMDS: {
-    Programs: Array<{
+    Programs: {
       Number: number
       Chaff: { BQ: string; BI: string; SQ: string; SI: string }
       Flare: { BQ: string; BI: string; SQ: string; SI: string }
-    }>
+    }[]
     BingoChaff: string
     BingoFlare: string
   }
   DLNK: {
     Ownship: string
-    TeamMembers: Array<{
+    TeamMembers: {
       TDOA: boolean
       TNDL: string
       DriverUID: string
-    }>
+    }[]
     IsLinkedMission: boolean
     IsOwnshipLead: boolean
     OwnshipCallsign: string
@@ -35,20 +35,20 @@ export interface JAFDTCF16MDC {
     FillEmptyTNDL: string
   } | null
   HARM: {
-    Tables: Array<{
+    Tables: {
       Number: number
-      Table: Array<{ Code: string }>
-    }>
+      Table: { Code: string }[]
+    }[]
   } | null
   HTS: {
-    MANTable: Array<{ Code: string }>
+    MANTable: { Code: string }[]
     EnabledThreats: boolean[]
   } | null
   MFD: {
-    ModeConfigs: Array<{
+    ModeConfigs: {
       LeftMFD: { OSB14: string; OSB13: string; OSB12: string; SelectedOSB: string }
       RightMFD: { OSB14: string; OSB13: string; OSB12: string; SelectedOSB: string }
-    }>
+    }[]
   }
   Misc: {
     Bingo: string
@@ -75,27 +75,25 @@ export interface JAFDTCF16MDC {
     COMM1DefaultTuning: string
     COMM2DefaultTuning: string
     IsDefault: boolean
-    Presets: Array<
-      Array<{
-        Preset: number
-        Frequency: string
-        Modulation: string
-        Description: string
-      }>
-    >
+    Presets: {
+      Preset: number
+      Frequency: string
+      Modulation: string
+      Description: string
+    }[][]
   }
   SMS?: Record<string, unknown>
   STPT: {
-    Points: Array<{
-      OAP: Array<{ Type: number; Range: string; Brng: string; Elev: string }>
-      VxP: Array<{ Type: number; Range: string; Brng: string; Elev: string }>
+    Points: {
+      OAP: { Type: number; Range: string; Brng: string; Elev: string }[]
+      VxP: { Type: number; Range: string; Brng: string; Elev: string }[]
       Alt: string
       TOS: string
       Number: number
       Name: string
       Lat: string
       Lon: string
-    }>
+    }[]
   }
   DTE: Record<string, unknown>
   Kboard: Record<string, unknown>
@@ -104,8 +102,8 @@ export interface JAFDTCF16MDC {
     Callsign: string
     Ships: number
     Tasking: string
-    PilotUIDs: Array<string | null>
-    Loadouts: Array<string | null>
+    PilotUIDs: (string | null)[]
+    Loadouts: (string | null)[]
     Threats: unknown[]
   }
   Version: string
@@ -122,7 +120,7 @@ export interface JAFDTCF16MDC {
  * Summarize loadout as a compact string (e.g., "2xGBU-12 1xAIM-9X")
  */
 function summarizeLoadout(
-  loadout: Array<{ station: number | string; item: string; quantity?: number }>,
+  loadout: { station: number | string; item: string; quantity?: number }[],
 ): string {
   const counts = new Map<string, number>()
   for (const s of loadout) {
@@ -139,16 +137,16 @@ function summarizeLoadout(
  */
 export function exportF16JAFDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<JAFDTCF16MDC>,
 ): JAFDTCF16MDC {
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
+  const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = selectedCrewMember.laser.replace(/\s/g, '')
 
   // Parse TACAN
-  const tacanMatch = selectedCrewMember.aaTcn.match(/(\d+)([XY])/)!
-  const tacanChannel = tacanMatch[1]!
-  const tacanBand = tacanMatch[2] === 'Y' ? '' : 'X' // JAFDTC: empty = Y, "X" = X
+  const tacan = parseTACAN(selectedCrewMember.aaTcn)
+  const tacanChannel = String(tacan?.channel ?? 0)
+  const tacanBand = tacan?.band === 'X' ? 'X' : '' // JAFDTC: empty = Y, "X" = X
 
   // Build CMDS programs — JAFDTC expects exactly 6 entries (MAN1-4, PANIC, BYPASS)
   const defaultCmdsEntry = {
@@ -186,7 +184,7 @@ export function exportF16JAFDTC(
   // Build datalink
   const ownCallsign = getCrewMemberLink16Callsign(mission, crewMemberIndex)
   // Extract 2-letter prefix and FE number from callsign like "VR11" -> prefix "VR", FE "11"
-  const callsignPrefix = mission.link16PrefixOverride || ''
+  const callsignPrefix = mission.link16PrefixOverride ?? ''
   const feNumber = ownCallsign.slice(callsignPrefix.length)
 
   let dlnk: JAFDTCF16MDC['DLNK'] = null
@@ -194,7 +192,7 @@ export function exportF16JAFDTC(
     const teamMembers = []
     for (let i = 0; i < 8; i++) {
       if (i < mission.crew.length) {
-        const crew = mission.crew[i]!
+        const crew = mission.crew[i]
         const stn = crew.stn.replace(/\s/g, '')
         teamMembers.push({
           TDOA: stn !== '' && stn !== '0',
@@ -241,9 +239,9 @@ export function exportF16JAFDTC(
   const stptPoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
-    const altitude = isBlank ? 0 : wp.altitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
+    const altitude = isBlank ? 0 : (wp.altitude ?? 0)
 
     const ccip = wp.ccip
     // Build OAP array (2 entries)
@@ -299,18 +297,21 @@ export function exportF16JAFDTC(
       OAP: oap,
       VxP: vxp,
       Alt: altitude.toString(),
-      TOS: wp.timeOnTarget || '',
+      TOS: wp.timeOnTarget ?? '',
       Number: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Lat: formatDecimalDegrees(latitude),
       Lon: formatDecimalDegrees(longitude),
     }
   })
 
   // Build radio presets (2 radios for F-16C)
-  const radioPresets: Array<
-    Array<{ Preset: number; Frequency: string; Modulation: string; Description: string }>
-  > = []
+  const radioPresets: {
+    Preset: number
+    Frequency: string
+    Modulation: string
+    Description: string
+  }[][] = []
 
   // Radio 1 (UHF COM1)
   radioPresets.push(
@@ -319,7 +320,7 @@ export function exportF16JAFDTC(
       Frequency: truncateFrequency(preset.frequency),
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })) ?? [],
   )
 
   // Radio 2 (VHF COM2)
@@ -329,7 +330,7 @@ export function exportF16JAFDTC(
       Frequency: truncateFrequency(preset.frequency),
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })) ?? [],
   )
 
   const radio1Config = getRadioConfig(mission, 0)
@@ -354,8 +355,8 @@ export function exportF16JAFDTC(
     }
   }
 
-  const minAgl = mission.told?.minAgl ?? 500
-  const minMsl = mission.told?.minMsl ?? 5000
+  const minAgl = mission.told.minAgl ?? 500
+  const minMsl = mission.told.minMsl ?? 5000
 
   const uid = crypto.randomUUID()
   const filename = mission.name
@@ -398,7 +399,7 @@ export function exportF16JAFDTC(
     },
     Misc: {
       Bingo: mission.fuel.bingo.toString(),
-      BullseyeWP: (mission.bullseye?.waypointNumber || 25).toString(),
+      BullseyeWP: (mission.bullseye?.waypointNumber ?? 25).toString(),
       BullseyeMode: mission.bullseye ? 'True' : 'False',
       ALOWCARAALOW: minAgl.toString(),
       ALOWMSLFloor: minMsl.toString(),
@@ -440,13 +441,13 @@ export function exportF16JAFDTC(
     },
     Mission: {
       Name: mission.name,
-      Callsign: mission.flightCallsignOverride || mission.callsign,
+      Callsign: mission.flightCallsignOverride ?? mission.callsign,
       Ships: mission.crew.length,
       Tasking: mission.type,
       PilotUIDs: [null, null, null, null],
       Loadouts: (() => {
         const summary = summarizeLoadout(mission.loadout)
-        const loadouts: Array<string | null> = []
+        const loadouts: (string | null)[] = []
         for (let i = 0; i < 4; i++) {
           loadouts.push(i < mission.crew.length ? summary : null)
         }

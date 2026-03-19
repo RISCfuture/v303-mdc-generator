@@ -5,7 +5,7 @@ import 'md-editor-v3/lib/style.css'
 import { imageStorage, MAX_IMAGE_SIZE } from '@/services/imageStorage'
 import { useMessage } from 'naive-ui'
 
-interface Props {
+type Props = {
   modelValue?: string
   missionId: string
   placeholder?: string
@@ -47,13 +47,16 @@ const extractImageIdsFromMarkdown = (markdown: string): Set<string> => {
  * Convert markdown with image IDs to markdown with base64 data URLs for display
  */
 const replaceImageIdsWithData = (markdown: string): string => {
-  return markdown.replace(/!\[(.*?)\]\((img_\d+_[a-z0-9]+)\)/g, (match, alt, imageId) => {
-    const dataUrl = imageDataMap.value.get(imageId)
-    if (dataUrl) {
-      return `![${alt}](${dataUrl})`
-    }
-    return match // Keep original if data not found
-  })
+  return markdown.replace(
+    /!\[(.*?)\]\((img_\d+_[a-z0-9]+)\)/g,
+    (match, alt: string, imageId: string) => {
+      const dataUrl = imageDataMap.value.get(imageId)
+      if (dataUrl) {
+        return `![${alt}](${dataUrl})`
+      }
+      return match // Keep original if data not found
+    },
+  )
 }
 
 /**
@@ -162,7 +165,7 @@ const processFiles = async (files: File[]): Promise<string[]> => {
             `Compressed to ${(imageFile.size / 1024 / 1024).toFixed(1)}MB (${((compressed.size / file.size) * 100).toFixed(0)}% of original)`,
           )
         } catch (error) {
-          message.error(`Failed to compress ${file.name}: ${error}`)
+          message.error(`Failed to compress ${file.name}: ${String(error)}`)
           return null
         }
       }
@@ -179,14 +182,14 @@ const processFiles = async (files: File[]): Promise<string[]> => {
         // (it will be converted to an image ID reference when saved)
         return storedImage.data
       } catch (error) {
-        message.error(`Failed to save ${file.name}: ${error}`)
+        message.error(`Failed to save ${file.name}: ${String(error)}`)
         return null
       }
     }),
   )
 
   // Filter out failed uploads
-  return uploadedImages.filter((url) => url !== null) as string[]
+  return uploadedImages.filter((url) => url !== null)
 }
 
 // Handle image upload from toolbar button
@@ -199,7 +202,7 @@ const handleUploadImg = async (files: File[], callback: (urls: string[]) => void
       emit('update:imageIds', Array.from(imageIds.value))
     }
   } catch (error) {
-    message.error(`Image upload failed: ${error}`)
+    message.error(`Image upload failed: ${String(error)}`)
     callback([])
   }
 }
@@ -208,7 +211,7 @@ const handleUploadImg = async (files: File[], callback: (urls: string[]) => void
 const handleDrop = async (event: DragEvent) => {
   event.preventDefault()
 
-  const files = Array.from(event.dataTransfer?.files || [])
+  const files = Array.from(event.dataTransfer?.files ?? [])
   if (files.length === 0) return
 
   try {
@@ -225,7 +228,7 @@ const handleDrop = async (event: DragEvent) => {
       emit('update:imageIds', Array.from(imageIds.value))
     }
   } catch (error) {
-    message.error(`Image upload failed: ${error}`)
+    message.error(`Image upload failed: ${String(error)}`)
   }
 }
 
@@ -255,12 +258,12 @@ const editorHeight = ref(`${props.rows * 24 + 50}px`)
         'preview',
       ]"
       :placeholder="placeholder"
-      @onChange="handleChange"
-      @onUploadImg="handleUploadImg"
+      @on-change="handleChange"
+      @on-upload-img="handleUploadImg"
       @drop.prevent="handleDrop"
       @dragover.prevent
       :style="{ height: editorHeight }"
-      :showCodeRowNumber="true"
+      :show-code-row-number="true"
     />
   </div>
 </template>

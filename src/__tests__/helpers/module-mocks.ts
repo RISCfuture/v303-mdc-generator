@@ -27,7 +27,7 @@ import type { Airfield } from '@/types/airfield'
  */
 export async function mockAirfieldsModule(airfields?: Airfield[]) {
   const airfieldsModule = await import('@/data/airfields')
-  const mockAirfields = airfields || createMockAirfields()
+  const mockAirfields = airfields ?? createMockAirfields()
 
   vi.spyOn(airfieldsModule, 'getAirfieldsForTheater').mockReturnValue(mockAirfields)
 
@@ -92,9 +92,9 @@ export function mockMdEditor() {
  *   crewDatabase: mockCrewDatabase(),
  * }))
  */
-export function mockCrewDatabase(customCrew?: Array<Record<string, unknown>>) {
+export function mockCrewDatabase(customCrew?: Record<string, unknown>[]) {
   return (
-    customCrew || [
+    customCrew ?? [
       {
         pilot: 'John Doe',
         callsign: ['VIPER', 'SNAKE'],
@@ -140,7 +140,7 @@ export async function mockF16Calculator(customReturnValues?: {
   const f16Calculator = await import('@/aircraft/F-16C_50')
 
   const calculateSpeedsMock = vi.spyOn(f16Calculator, 'calculateSpeeds').mockReturnValue(
-    customReturnValues?.speeds || {
+    customReturnValues?.speeds ?? {
       rotationSpeed: 165,
       refusalSpeed: 145,
     },
@@ -148,11 +148,11 @@ export async function mockF16Calculator(customReturnValues?: {
 
   const calculateHeadwindMock = vi
     .spyOn(f16Calculator, 'calculateHeadwindComponent')
-    .mockReturnValue(customReturnValues?.headwind || 10)
+    .mockReturnValue(customReturnValues?.headwind ?? 10)
 
   const calculateCrosswindMock = vi
     .spyOn(f16Calculator, 'calculateCrosswindComponent')
-    .mockReturnValue(customReturnValues?.crosswind || 5)
+    .mockReturnValue(customReturnValues?.crosswind ?? 5)
 
   return {
     calculateSpeeds: calculateSpeedsMock,
@@ -180,7 +180,7 @@ export async function mockA10Calculator(customReturnValues?: {
   const a10Calculator = await import('@/aircraft/A-10A')
 
   const calculateSpeedsMock = vi.spyOn(a10Calculator, 'calculateSpeeds').mockReturnValue(
-    customReturnValues?.speeds || {
+    customReturnValues?.speeds ?? {
       rotationSpeed: 125,
       refusalSpeed: 105,
     },
@@ -188,11 +188,11 @@ export async function mockA10Calculator(customReturnValues?: {
 
   const calculateHeadwindMock = vi
     .spyOn(a10Calculator, 'calculateHeadwindComponent')
-    .mockReturnValue(customReturnValues?.headwind || 10)
+    .mockReturnValue(customReturnValues?.headwind ?? 10)
 
   const calculateCrosswindMock = vi
     .spyOn(a10Calculator, 'calculateCrosswindComponent')
-    .mockReturnValue(customReturnValues?.crosswind || 5)
+    .mockReturnValue(customReturnValues?.crosswind ?? 5)
 
   return {
     calculateSpeeds: calculateSpeedsMock,
@@ -219,7 +219,7 @@ export async function mockImageStorage(customReturnValues?: {
   const imageStorage = await import('@/services/imageStorage')
 
   const saveImageMock = vi.spyOn(imageStorage.imageStorage, 'saveImage').mockResolvedValue(
-    customReturnValues?.saveImage || {
+    customReturnValues?.saveImage ?? {
       id: 'img-123',
       data: 'data:image/png;base64,abc123',
       missionId: 'test-mission',
@@ -231,7 +231,7 @@ export async function mockImageStorage(customReturnValues?: {
   const compressImageMock = vi
     .spyOn(imageStorage.imageStorage, 'compressImage')
     .mockResolvedValue(
-      customReturnValues?.compressImage || new Blob(['compressed'], { type: 'image/png' }),
+      customReturnValues?.compressImage ?? new Blob(['compressed'], { type: 'image/png' }),
     )
 
   return {
@@ -260,7 +260,7 @@ export function mockWaypointCalculations(customReturnValue?: (tot: string) => nu
   const defaultParseTOT = vi.fn((tot: string) => {
     if (!tot) return null
     const cleanTot = tot.toUpperCase().replace(/[^0-9:]/g, '')
-    const match = cleanTot.match(/^(\d{1,2}):?(\d{2})$/)
+    const match = /^(\d{1,2}):?(\d{2})$/.exec(cleanTot)
     if (!match) return null
     const hours = parseInt(match[1])
     const minutes = parseInt(match[2])

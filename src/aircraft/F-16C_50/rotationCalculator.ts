@@ -72,7 +72,7 @@ export type PowerSetting = 'MIL' | 'AB'
 /**
  * Input parameters for speed calculations
  */
-export interface SpeedCalculationParams {
+export type SpeedCalculationParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Celsius (optional, for future expansion) */
@@ -96,7 +96,7 @@ export interface SpeedCalculationParams {
 /**
  * Calculation results
  */
-export interface SpeedCalculationResult {
+export type SpeedCalculationResult = {
   /** Rotation speed in KIAS */
   rotationSpeed: number
   /** Refusal speed in KIAS */
@@ -125,14 +125,14 @@ const TAKEOFF_SPEED_COEFFS: [number, number, number] = [
 const REFUSAL_SPEED_COEFFS = {
   nonAB: {
     dry: [-0.02095238095238096, 3.5571428571428565, 41.80952380952382] as [number, number, number],
-    wet: [-0.02476190476190477, 4.0857142857142865, 49.76190476190476] as [number, number, number],
+    wet: [-0.02476190476190477, 4.085714285714286, 49.76190476190476] as [number, number, number],
     snow: [-0.03523809523809524, 5.071428571428571, 72.38095238095238] as [number, number, number],
     ice: [-0.04238095238095238, 5.721428571428571, 89.5952380952381] as [number, number, number],
   },
   AB: {
     dry: [-0.021428571428571432, 3.307142857142857, 30.357142857142858] as [number, number, number],
     wet: [-0.02476190476190477, 3.685714285714286, 38.76190476190476] as [number, number, number],
-    snow: [-0.030476190476190477, 4.528571428571429, 59.333333333333336] as [
+    snow: [-0.030476190476190476, 4.528571428571429, 59.333333333333336] as [
       number,
       number,
       number,

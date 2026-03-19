@@ -55,7 +55,7 @@ describe('exportFormats', () => {
 
     it('has correct label values', () => {
       expect(exportFormatLabels['DCS-DTC']).toBe('DCS-DTC')
-      expect(exportFormatLabels['JAFDTC']).toBe('JAFDTC')
+      expect(exportFormatLabels.JAFDTC).toBe('JAFDTC')
       expect(exportFormatLabels['DCS-ME']).toBe('DCS Mission Editor')
     })
   })

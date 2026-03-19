@@ -269,9 +269,9 @@ describe('RadioPresetsEditor', () => {
       wrapper.vm.updateDefaultMode(0, 'manual')
 
       expect(wrapper.emitted('update:radioDefaults')).toBeTruthy()
-      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as Array<{
+      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as {
         mode: string
-      }>
+      }[]
       expect(emittedDefaults[0].mode).toBe('manual')
     })
 
@@ -287,9 +287,9 @@ describe('RadioPresetsEditor', () => {
       wrapper.vm.updateRadioDefault(0, { preset: 5 })
 
       expect(wrapper.emitted('update:radioDefaults')).toBeTruthy()
-      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as Array<{
+      const emittedDefaults = wrapper.emitted('update:radioDefaults')?.[0]?.[0] as {
         preset: number
-      }>
+      }[]
       expect(emittedDefaults[0].preset).toBe(5)
     })
 

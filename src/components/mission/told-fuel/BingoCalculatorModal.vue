@@ -17,7 +17,7 @@ import { calculateBingoFuel } from '@/aircraft/F-16C_50'
 import { calculateDistance } from '@/composables/useWaypointCalculations'
 import type { Waypoint } from '@/types'
 
-interface Props {
+type Props = {
   show: boolean
   mission: Mission
   numberOfPilots: number
@@ -43,9 +43,9 @@ const recoveryLocation = computed(() => {
   // We'll need to look up the airport coordinates from the airports database
   // For now, we'll try to find it in waypoints as a fallback
   const waypoint = props.mission.waypoints.find(
-    (wp) => wp.name && wp.name.toLowerCase() === recoveryAirportId.toLowerCase(),
+    (wp) => wp.name.toLowerCase() === recoveryAirportId.toLowerCase(),
   )
-  if (waypoint && waypoint.latitude !== null && waypoint.longitude !== null) {
+  if (waypoint?.latitude != null && waypoint.longitude !== null) {
     return { latitude: waypoint.latitude, longitude: waypoint.longitude }
   }
 
@@ -55,7 +55,7 @@ const recoveryLocation = computed(() => {
 // Get target waypoint location (waypoint with type === 'TGT')
 const targetLocation = computed(() => {
   const targetWaypoint = props.mission.waypoints.find((wp) => wp.type === 'TGT')
-  if (!targetWaypoint || targetWaypoint.latitude === null || targetWaypoint.longitude === null) {
+  if (targetWaypoint?.latitude == null || targetWaypoint.longitude === null) {
     return null
   }
   return { latitude: targetWaypoint.latitude, longitude: targetWaypoint.longitude }
@@ -68,9 +68,9 @@ const alternateLocation = computed(() => {
 
   // Similar to recovery location, try to find in waypoints
   const waypoint = props.mission.waypoints.find(
-    (wp) => wp.name && wp.name.toLowerCase() === alternateAirportId.toLowerCase(),
+    (wp) => wp.name.toLowerCase() === alternateAirportId.toLowerCase(),
   )
-  if (waypoint && waypoint.latitude !== null && waypoint.longitude !== null) {
+  if (waypoint?.latitude != null && waypoint.longitude !== null) {
     return { latitude: waypoint.latitude, longitude: waypoint.longitude }
   }
 

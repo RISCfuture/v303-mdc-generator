@@ -1293,7 +1293,9 @@ describe('MDC Exporter', () => {
         squadron: 'test-unsupported' as Mission['squadron'],
       }
 
-      expect(() => downloadMDC(unsupportedMission)).toThrow()
+      expect(() => {
+        downloadMDC(unsupportedMission)
+      }).toThrow()
     })
   })
 })

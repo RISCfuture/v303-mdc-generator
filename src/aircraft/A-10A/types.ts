@@ -42,7 +42,7 @@ export type A10RCR = 23 | 12 | 5
 /**
  * Parameters for A-10C speed calculations
  */
-export interface A10SpeedParams {
+export type A10SpeedParams = {
   /** Gross weight in pounds */
   grossWeight: number
 }
@@ -50,7 +50,7 @@ export interface A10SpeedParams {
 /**
  * Configuration for A-10C speed calculations
  */
-export interface A10SpeedConfig {
+export type A10SpeedConfig = {
   /** Flap setting (0° or 7°) */
   flapSetting: A10FlapSetting
   /** Speed brake configuration */
@@ -62,7 +62,7 @@ export interface A10SpeedConfig {
 /**
  * Parameters for A-10C takeoff distance calculations
  */
-export interface A10TakeoffParams {
+export type A10TakeoffParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Celsius */
@@ -78,7 +78,7 @@ export interface A10TakeoffParams {
 /**
  * Configuration for A-10C takeoff distance calculations
  */
-export interface A10TakeoffConfig {
+export type A10TakeoffConfig = {
   /** Flap setting (0° or 7°) */
   flapSetting: A10FlapSetting
   /** Thrust setting (MAX or 3% Below PTFS) */
@@ -88,7 +88,7 @@ export interface A10TakeoffConfig {
 /**
  * Configuration for A-10C critical field length calculations
  */
-export interface A10CriticalFieldConfig {
+export type A10CriticalFieldConfig = {
   /** Thrust setting (MAX or 3% Below PTFS) */
   thrustSetting: A10ThrustSetting
   /** Runway Condition Reading */

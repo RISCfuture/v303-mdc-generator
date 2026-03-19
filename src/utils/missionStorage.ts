@@ -30,7 +30,7 @@ import { getSquadronAirframe } from '@/data/squadrons'
  * Serialized waypoint - stores all user-editable fields
  * Must store all coordinates since waypoints can be custom or edited
  */
-interface SerializedWaypoint {
+type SerializedWaypoint = {
   seq: number
   name: string
   lat: number | null // Can be null during editing or for blank steerpoints
@@ -56,7 +56,7 @@ interface SerializedWaypoint {
  * Serialized mission format for storage
  * Only stores essential, non-derivable data
  */
-export interface SerializedMission {
+export type SerializedMission = {
   id: string
   n: string // name
   cs: string // callsign (required for export)
@@ -82,7 +82,7 @@ export interface SerializedMission {
   } // bullseye
 
   // Loadout - only non-empty stations
-  ld: Array<[number | string, string]> // [station, item]
+  ld: [number | string, string][] // [station, item]
 
   // CMDS - only if different from defaults
   cmds?: {
@@ -142,17 +142,17 @@ export interface SerializedMission {
   htsp: string[] // htsThreatTables - required, defaults to empty array
 
   // HARM tables and HTS threat data (F-16C only)
-  harm?: Array<{ tn: number; em: number[] }> // harmTables: tableNumber + emitters
+  harm?: { tn: number; em: number[] }[] // harmTables: tableNumber + emitters
   hts?: { me: boolean; em: number[]; ec: boolean[] } // htsThreatData: manualEnabled, emitters, enabledClasses
 
   // Comm ladder - required, defaults to empty array
   cl: string[] // commLadders (freeform text per radio)
 
   // Radio defaults - optional
-  rd?: Array<{ m: 'p' | 'm'; p?: number; f?: string }> // radioDefaults
+  rd?: { m: 'p' | 'm'; p?: number; f?: string }[] // radioDefaults
 
   // Package and Support - required, defaults to empty arrays
-  pm: Array<{
+  pm: {
     // packageMembers
     callsign: string
     aircraft: string
@@ -161,8 +161,8 @@ export interface SerializedMission {
     stn: number | null
     aaTacan: string
     task: string
-  }>
-  sa: Array<{
+  }[]
+  sa: {
     // supportAssets
     callsign: string
     role: string
@@ -171,7 +171,7 @@ export interface SerializedMission {
     aaTacan: string
     location: string
     altitude: number | null
-  }>
+  }[]
 
   // Details - required for export (at least remarks)
   det: {
@@ -221,9 +221,9 @@ function presetsMatchDefaults(presets: RadioPreset[], defaults: RadioPreset[]): 
   if (presets.length !== defaults.length) return false
   return presets.every((p, i) => {
     const d = defaults[i]
-    return (
-      d && p.number === d.number && p.frequency === d.frequency && p.description === d.description
-    )
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for test data
+    if (!d) return false
+    return p.number === d.number && p.frequency === d.frequency && p.description === d.description
   })
 }
 
@@ -305,6 +305,7 @@ export function serializeMission(mission: Mission): SerializedMission {
 
     // Departure/Recovery - required for export
     // Use placeholder values for schema validation when fields are undefined
+    /* eslint-disable @typescript-eslint/no-unnecessary-condition */
     dr: {
       depProc: mission.departureRecovery?.departureProcedure,
       depApt: mission.departureRecovery?.departureAirportId,
@@ -318,6 +319,7 @@ export function serializeMission(mission: Mission): SerializedMission {
       recFldElev: mission.departureRecovery?.recoveryFieldElevation,
       altApt: mission.departureRecovery?.alternateAirportId,
     },
+    /* eslint-enable @typescript-eslint/no-unnecessary-condition */
 
     // TOLD - required for export
     // Use placeholder values for schema validation when fields are undefined
@@ -341,7 +343,7 @@ export function serializeMission(mission: Mission): SerializedMission {
     det: {
       rem: mission.details.remarks,
       tot: mission.details.timeOnTarget,
-      imgIds: mission.details.imageIds || [], // Required field, defaults to empty array
+      imgIds: mission.details.imageIds ?? [], // Required field, defaults to empty array
     },
 
     // Metadata
@@ -360,11 +362,7 @@ export function serializeMission(mission: Mission): SerializedMission {
   if (mission.flightCallsignOverride) serialized.fco = mission.flightCallsignOverride
   if (mission.missionNumber) serialized.mn = mission.missionNumber
   // Only include bullseye if it has valid coordinates
-  if (
-    mission.bullseye &&
-    mission.bullseye.latitude !== null &&
-    mission.bullseye.longitude !== null
-  ) {
+  if (mission.bullseye?.latitude != null && mission.bullseye.longitude != null) {
     serialized.be = {
       lat: mission.bullseye.latitude,
       lon: mission.bullseye.longitude,
@@ -375,6 +373,7 @@ export function serializeMission(mission: Mission): SerializedMission {
   }
 
   // CMDS - only if non-default
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (mission.ecmCmds) {
     const hasNonDefaultCmds =
       mission.ecmCmds.chaffBingo !== 10 ||
@@ -395,6 +394,7 @@ export function serializeMission(mission: Mission): SerializedMission {
   }
 
   // Radio presets - only if different from defaults
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (mission.radioPresets && mission.radioPresets.length > 0) {
     try {
       const airframe = getMissionAirframe(mission)
@@ -407,10 +407,11 @@ export function serializeMission(mission: Mission): SerializedMission {
           else if (radioIndex === 2) serialized.c3 = presets
         }
       })
-    } catch (_e) {
+    } catch {
       // If getMissionAirframe fails (invalid squadron), skip radio preset comparison
       // and store all presets
       mission.radioPresets.forEach((presets, radioIndex) => {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         if (presets && presets.length > 0) {
           if (radioIndex === 0) serialized.c1 = presets
           else if (radioIndex === 1) serialized.c2 = presets
@@ -469,35 +470,36 @@ export function serializeMission(mission: Mission): SerializedMission {
   }
 
   // Package members - required field, defaults to empty array
-  serialized.pm =
-    mission.packageMembers && mission.packageMembers.length > 0
-      ? mission.packageMembers.map((pm) => ({
-          callsign: pm.callsign,
-          aircraft: pm.aircraft,
-          time: pm.time,
-          comms: pm.comms,
-          stn: pm.stn,
-          aaTacan: pm.aaTacan,
-          task: pm.task,
-        }))
-      : []
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for test data
+  if (mission.packageMembers && mission.packageMembers.length > 0) {
+    serialized.pm = mission.packageMembers.map((pm) => ({
+      callsign: pm.callsign,
+      aircraft: pm.aircraft,
+      time: pm.time,
+      comms: pm.comms,
+      stn: pm.stn,
+      aaTacan: pm.aaTacan,
+      task: pm.task,
+    }))
+  }
 
   // Support assets - required field, defaults to empty array
-  serialized.sa =
-    mission.supportAssets && mission.supportAssets.length > 0
-      ? mission.supportAssets.map((sa) => ({
-          callsign: sa.callsign,
-          role: sa.role,
-          frequency: sa.frequency,
-          preset: sa.preset,
-          aaTacan: sa.aaTacan,
-          location: sa.location,
-          altitude: sa.altitude,
-        }))
-      : []
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for test data
+  if (mission.supportAssets && mission.supportAssets.length > 0) {
+    serialized.sa = mission.supportAssets.map((sa) => ({
+      callsign: sa.callsign,
+      role: sa.role,
+      frequency: sa.frequency,
+      preset: sa.preset,
+      aaTacan: sa.aaTacan,
+      location: sa.location,
+      altitude: sa.altitude,
+    }))
+  }
 
   // Target details (optional)
   if (mission.details.primaryTarget) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!serialized.det) serialized.det = {}
     serialized.det.pt = {}
     const pt = mission.details.primaryTarget
@@ -514,6 +516,7 @@ export function serializeMission(mission: Mission): SerializedMission {
   }
 
   if (mission.details.secondaryTarget) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!serialized.det) serialized.det = {}
     serialized.det.st = {}
     const st = mission.details.secondaryTarget
@@ -640,12 +643,12 @@ export function deserializeMission(serialized: SerializedMission): Mission {
   const stationCount = STATION_COUNTS[airframe] ?? 9
   const loadout = Array.from({ length: stationCount }, (_, i) => ({
     station: i + 1,
-    item: loadoutMap.get(i + 1) || 'EMPTY',
+    item: loadoutMap.get(i + 1) ?? 'EMPTY',
   }))
 
   // Reconstruct CMDS
   const ecmCmds: ECMCMDSProfiles = {
-    cmdsPrograms: serialized.cmds?.prg || [
+    cmdsPrograms: serialized.cmds?.prg ?? [
       {
         number: 1,
         flareBurstQty: 6,
@@ -667,12 +670,12 @@ export function deserializeMission(serialized: SerializedMission): Mission {
   const mission: Mission = {
     id: serialized.id,
     name: serialized.n,
-    callsign: serialized.cs || '',
-    flightCallsignOverride: serialized.fco || '',
-    link16PrefixOverride: serialized.l16 || '',
+    callsign: serialized.cs,
+    flightCallsignOverride: serialized.fco ?? '',
+    link16PrefixOverride: serialized.l16 ?? '',
     date: serialized.d,
-    missionNumber: serialized.mn || '',
-    type: serialized.t || '',
+    missionNumber: serialized.mn ?? '',
+    type: serialized.t,
     squadron: serialized.sq as Squadron,
     theater: serialized.th as Theater,
     crew,
@@ -706,8 +709,10 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       preset: rd.p,
       frequency: rd.f,
     })) as import('@/types').RadioDefault[] | undefined,
-    packageMembers: serialized.pm || [],
-    supportAssets: serialized.sa || [],
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    packageMembers: serialized.pm ?? [],
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    supportAssets: serialized.sa ?? [],
     radioPresets: (() => {
       // Determine number of radios for this airframe
       const radioCount = getRadioCount(airframe)
@@ -717,11 +722,11 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       for (let i = 0; i < radioCount; i++) {
         // Use stored radio presets if available, otherwise use defaults
         if (i === 0) {
-          radios[0] = serialized.c1 || getDefaultRadioPresets(theater, airframe, 0)
+          radios[0] = serialized.c1 ?? getDefaultRadioPresets(theater, airframe, 0)
         } else if (i === 1) {
-          radios[1] = serialized.c2 || getDefaultRadioPresets(theater, airframe, 1)
+          radios[1] = serialized.c2 ?? getDefaultRadioPresets(theater, airframe, 1)
         } else if (i === 2) {
-          radios[2] = serialized.c3 || getDefaultRadioPresets(theater, airframe, 2)
+          radios[2] = serialized.c3 ?? getDefaultRadioPresets(theater, airframe, 2)
         } else {
           // Fallback for any additional radios
           radios[i] = getDefaultRadioPresets(theater, airframe, i)
@@ -729,6 +734,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       }
       return radios
     })(),
+    /* eslint-disable @typescript-eslint/no-unnecessary-condition */
     departureRecovery: {
       departureProcedure: serialized.dr?.depProc,
       departureAirportId: serialized.dr?.depApt,
@@ -742,6 +748,8 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       recoveryFieldElevation: serialized.dr?.recFldElev,
       alternateAirportId: serialized.dr?.altApt,
     },
+    /* eslint-enable @typescript-eslint/no-unnecessary-condition */
+    /* eslint-disable @typescript-eslint/no-unnecessary-condition */
     told: {
       rotation: serialized.tld?.rot,
       refusal: serialized.tld?.ref,
@@ -749,13 +757,15 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       minMsl: serialized.tld?.minMsl,
       calculatorParams: serialized.tld?.cp as F16CalculatorParams | A10CalculatorParams | undefined,
     },
+    /* eslint-enable @typescript-eslint/no-unnecessary-condition */
     fuel: {
       takeoff: serialized.f.to,
       joker: serialized.f.j,
       bingo: serialized.f.b,
       fuelLoadPercentage: serialized.f.flp ?? 100,
     },
-    weather: serialized.wx || '',
+    weather: serialized.wx ?? '',
+    /* eslint-disable @typescript-eslint/no-unnecessary-condition */
     details: {
       remarks: serialized.det?.rem,
       timeOnTarget: serialized.det?.tot,
@@ -789,6 +799,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
           }
         : undefined,
     },
+    /* eslint-enable @typescript-eslint/no-unnecessary-condition */
     createdAt: serialized.ca,
     updatedAt: serialized.ua,
   }

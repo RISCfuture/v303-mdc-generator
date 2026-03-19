@@ -12,7 +12,7 @@ vi.mock('@/composables/useWaypointCalculations', async () => {
     parseTOT: vi.fn((tot: string) => {
       if (!tot) return null
       const cleanTot = tot.toUpperCase().replace(/[^0-9:]/g, '')
-      const match = cleanTot.match(/^(\d{1,2}):?(\d{2})$/)
+      const match = /^(\d{1,2}):?(\d{2})$/.exec(cleanTot)
       if (!match) return null
       const hours = parseInt(match[1])
       const minutes = parseInt(match[2])

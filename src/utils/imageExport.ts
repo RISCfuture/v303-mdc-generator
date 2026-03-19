@@ -23,10 +23,7 @@ export async function exportAllImages(): Promise<StoredImage[]> {
  * @param images - Array of images to import
  */
 export async function importAllImages(images: StoredImage[]): Promise<void> {
-  if (!images || !Array.isArray(images)) {
-    throw new Error('Invalid images data')
-  }
-
+  // eslint-disable-next-line @typescript-eslint/dot-notation
   const db = await imageStorage['ensureDb']()
 
   return new Promise((resolve, reject) => {
@@ -87,16 +84,16 @@ export function validateImagesData(images: unknown): images is StoredImage[] {
     return false
   }
 
-  return images.every((img) => {
+  return images.every((img: unknown) => {
+    if (typeof img !== 'object' || img === null) return false
+    const record = img as Record<string, unknown>
     return (
-      typeof img === 'object' &&
-      img !== null &&
-      typeof img.id === 'string' &&
-      typeof img.data === 'string' &&
-      typeof img.missionId === 'string' &&
-      typeof img.createdAt === 'number' &&
-      typeof img.size === 'number' &&
-      img.data.startsWith('data:')
+      typeof record.id === 'string' &&
+      typeof record.data === 'string' &&
+      typeof record.missionId === 'string' &&
+      typeof record.createdAt === 'number' &&
+      typeof record.size === 'number' &&
+      record.data.startsWith('data:')
     )
   })
 }

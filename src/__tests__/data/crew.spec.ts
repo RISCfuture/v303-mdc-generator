@@ -46,17 +46,11 @@ describe('crew', () => {
           expect(typeof pilot.freq).toBe('string')
           expect(typeof pilot.aaTacan).toBe('number')
           // mode3 is optional (number, null, or undefined)
-          if (pilot.mode3 != null) {
-            expect(typeof pilot.mode3).toBe('number')
-          }
+          expect(pilot.mode3 == null || typeof pilot.mode3 === 'number').toBe(true)
           // laserCode is optional (number, null, or undefined)
-          if (pilot.laserCode != null) {
-            expect(typeof pilot.laserCode).toBe('number')
-          }
+          expect(pilot.laserCode == null || typeof pilot.laserCode === 'number').toBe(true)
           // tailNumber is optional
-          if (pilot.tailNumber !== undefined) {
-            expect(typeof pilot.tailNumber).toBe('string')
-          }
+          expect(pilot.tailNumber === undefined || typeof pilot.tailNumber === 'string').toBe(true)
         })
       })
     })
@@ -73,11 +67,10 @@ describe('crew', () => {
 
     it('should have valid Mode 3 values (octal 0000-7777) when present', () => {
       Object.values(crewBySquadron).forEach((pilots) => {
-        pilots.forEach((pilot) => {
-          if (pilot.mode3 != null) {
-            expect(pilot.mode3).toBeGreaterThanOrEqual(0)
-            expect(pilot.mode3).toBeLessThanOrEqual(parseInt('7777', 8))
-          }
+        const pilotsWithMode3 = pilots.filter((p) => p.mode3 != null)
+        pilotsWithMode3.forEach((pilot) => {
+          expect(pilot.mode3).toBeGreaterThanOrEqual(0)
+          expect(pilot.mode3!).toBeLessThanOrEqual(parseInt('7777', 8))
         })
       })
     })
@@ -93,13 +86,12 @@ describe('crew', () => {
 
     it('should have valid laser codes when present', () => {
       Object.values(crewBySquadron).forEach((pilots) => {
-        pilots.forEach((pilot) => {
+        const pilotsWithLaser = pilots.filter((p) => p.laserCode != null)
+        pilotsWithLaser.forEach((pilot) => {
           // Laser codes are optional but when present should be positive numbers
           // They are stored as decimal representations of octal values (e.g., 383 decimal)
-          if (pilot.laserCode != null) {
-            expect(pilot.laserCode).toBeGreaterThan(0)
-            expect(pilot.laserCode).toBeLessThanOrEqual(10000) // Reasonable upper bound
-          }
+          expect(pilot.laserCode).toBeGreaterThan(0)
+          expect(pilot.laserCode!).toBeLessThanOrEqual(10000) // Reasonable upper bound
         })
       })
     })
@@ -172,11 +164,11 @@ describe('crew', () => {
     })
 
     it('should have valid laser codes among pilots that have them', () => {
-      crewDatabase.forEach((pilot) => {
-        if (pilot.laserCode != null) {
-          expect(pilot.laserCode).toBeGreaterThanOrEqual(0)
-          expect(pilot.laserCode).toBeLessThanOrEqual(383)
-        }
+      const pilotsWithLaser = crewDatabase.filter((p) => p.laserCode != null)
+      expect(pilotsWithLaser.length).toBeGreaterThan(0)
+      pilotsWithLaser.forEach((pilot) => {
+        expect(pilot.laserCode).toBeGreaterThanOrEqual(0)
+        expect(pilot.laserCode!).toBeLessThanOrEqual(383)
       })
     })
   })

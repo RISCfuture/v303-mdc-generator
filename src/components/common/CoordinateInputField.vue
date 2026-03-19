@@ -2,8 +2,8 @@
 import { ref, watch } from 'vue'
 import { NInput } from 'naive-ui'
 import {
-  decimalToDMSString,
-  dmsStringToDecimal,
+  decimalToDDMString,
+  ddmStringToDecimal,
   isValidDecimal,
   type CoordinateType,
 } from '@/utils/coordinates'
@@ -104,7 +104,7 @@ function handleInput(value: string) {
   displayValue.value = formatted
 
   // Try to convert to decimal degrees
-  const decimal = dmsStringToDecimal(formatted)
+  const decimal = ddmStringToDecimal(formatted)
   if (decimal !== null) {
     isValid.value = isValidDecimal(decimal, props.type)
     emit('update:modelValue', decimal)
@@ -118,7 +118,7 @@ function handleInput(value: string) {
 // Handle blur event
 function handleBlur() {
   // Try to parse and validate final value
-  const decimal = dmsStringToDecimal(displayValue.value)
+  const decimal = ddmStringToDecimal(displayValue.value)
   if (decimal !== null) {
     isValid.value = isValidDecimal(decimal, props.type)
   } else {
@@ -131,8 +131,8 @@ function handleBlur() {
 watch(
   () => props.modelValue,
   (newValue) => {
-    if (newValue !== null && newValue !== undefined) {
-      const dmsString = decimalToDMSString(newValue, props.type)
+    if (newValue !== null) {
+      const dmsString = decimalToDDMString(newValue, props.type)
       if (dmsString !== displayValue.value) {
         displayValue.value = dmsString
         isValid.value = isValidDecimal(newValue, props.type)

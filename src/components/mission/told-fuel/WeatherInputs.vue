@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NCard, NInputNumber, NInput, NText, NGrid, NGridItem, NSpace } from 'naive-ui'
 
-interface Props {
+type Props = {
   temperature: number
   windDirection: number
   windSpeed: number
@@ -20,7 +20,7 @@ const emit = defineEmits<{
 }>()
 
 // Format decimal with Intl.NumberFormat
-const formatDecimal = (value: number, decimals: number = 1) => {
+const formatDecimal = (value: number, decimals = 1) => {
   return new Intl.NumberFormat('en-US', {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,

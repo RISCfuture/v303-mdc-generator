@@ -3,9 +3,9 @@ import type { Mission } from '@/types'
 import { formatDecimalDegrees } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
-import { getRadioConfig } from '../helpers'
+import { getRadioConfig, parseTACANOrThrow } from '../helpers'
 
-export interface JAFDTCA10MDC {
+export type JAFDTCA10MDC = {
   DSMS: {
     LaserCode: string
     ProfileOrder?: null | number[]
@@ -28,14 +28,12 @@ export interface JAFDTCA10MDC {
     IsPresetMode: boolean[]
     DefaultSetting: string[]
     IsDefault: boolean
-    Presets: Array<
-      Array<{
-        Preset: number
-        Frequency: string
-        Modulation: string
-        Description: string
-      }>
-    >
+    Presets: {
+      Preset: number
+      Frequency: string
+      Modulation: string
+      Description: string
+    }[][]
     [key: string]: unknown
   }
   TAD: {
@@ -49,13 +47,13 @@ export interface JAFDTCA10MDC {
     [key: string]: unknown
   }
   WYPT: {
-    Points: Array<{
+    Points: {
       Alt: string
       Number: number
       Name: string
       Lat: string
       Lon: string
-    }>
+    }[]
   }
   Version: string
   Airframe: number
@@ -75,70 +73,73 @@ export interface JAFDTCA10MDC {
  */
 export function exportA10MDC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<JAFDTCA10MDC>,
 ): JAFDTCA10MDC {
   // Get selected crew member data
-  const selectedCrewMember = mission.crew[crewMemberIndex]!
+  const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = selectedCrewMember.laser.replace(/\s/g, '')
   const mode3Code = selectedCrewMember.mode3.replace(/\s/g, '')
 
   // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
-  const tacanMatch = selectedCrewMember.aaTcn.match(/(\d+)([XY])/)!
-  const tacanChannel = tacanMatch[1]!
-  const tacanBand = tacanMatch[2] === 'Y' ? '1' : '0'
+  const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
+  const tacanChannel = String(tacan.channel)
+  const tacanBand = tacan.band === 'Y' ? '1' : '0'
 
   // Convert waypoints to JAFDTC format
   const waypoints = mission.waypoints.map((wp) => {
     // For blank steerpoints (all fields null), export as 0°N, 0°E
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
-    const altitude = isBlank ? 0 : wp.altitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
+    const altitude = isBlank ? 0 : (wp.altitude ?? 0)
 
     return {
       Alt: altitude.toString(),
       Number: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Lat: formatDecimalDegrees(latitude),
       Lon: formatDecimalDegrees(longitude),
     }
   })
 
   // Build radio presets for 3 radios (VHF AM, UHF, VHF FM)
-  const radioPresets: Array<
-    Array<{ Preset: number; Frequency: string; Modulation: string; Description: string }>
-  > = []
+  const radioPresets: {
+    Preset: number
+    Frequency: string
+    Modulation: string
+    Description: string
+  }[][] = []
 
   // Radio 1 (VHF AM) - Modulation "0" = FM
   radioPresets.push(
-    mission.radioPresets[0]?.map((preset) => ({
+    (mission.radioPresets[0] ?? []).map((preset) => ({
       Preset: preset.number,
       Frequency: preset.frequency,
       Modulation: '0',
       Description: preset.description,
-    })) || [],
+    })),
   )
 
   // Radio 2 (UHF) - No modulation field
   radioPresets.push(
-    mission.radioPresets[1]?.map((preset) => ({
+    (mission.radioPresets[1] ?? []).map((preset) => ({
       Preset: preset.number,
       Frequency: preset.frequency,
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })),
   )
 
   // Radio 3 (VHF FM) - No modulation field
   radioPresets.push(
-    mission.radioPresets[2]?.map((preset) => ({
+    (mission.radioPresets[2] ?? []).map((preset) => ({
       Preset: preset.number,
       Frequency: preset.frequency,
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })),
   )
 
   // Generate UUID v4
@@ -180,13 +181,13 @@ export function exportA10MDC(
       IFFMasterMode: '1', // STBY
       IFFMode3Code: mode3Code,
       IFFMode4On: 'True',
-      MSLFloor: (mission.told?.minMsl ?? 0).toString(),
-      AGLFloor: (mission.told?.minAgl ?? 500).toString(),
+      MSLFloor: (mission.told.minMsl ?? 0).toString(),
+      AGLFloor: (mission.told.minAgl ?? 500).toString(),
     },
     TAD: {
       OwnID: selectedCrewMember.own,
       // A-10C CDU callsign is exactly 4 characters; truncate/pad to fit
-      Callsign: (mission.flightCallsignOverride || mission.callsign).slice(0, 4).padEnd(4, ' '),
+      Callsign: (mission.flightCallsignOverride ?? mission.callsign).slice(0, 4).padEnd(4, ' '),
     },
     Radio: {
       IsPresetMode: isPresetMode,

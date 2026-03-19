@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { useDragAndDrop } from '@/utils/useDragAndDrop'
 
-interface TestItem {
+type TestItem = {
   id: number
   name: string
   sequence?: number
@@ -106,7 +106,14 @@ describe('useDragAndDrop', () => {
     handleDragStart(0)
     expect(draggedIndex.value).toBe(0)
 
-    handleDrop(1, items, () => {}, false)
+    handleDrop(
+      1,
+      items,
+      () => {
+        /* noop */
+      },
+      false,
+    )
     expect(draggedIndex.value).toBeNull()
   })
 

@@ -10,7 +10,7 @@ import { SPACING } from '@/styles/design-tokens'
 import SupportAssetFields from './SupportAssetFields.vue'
 import type { SupportAsset } from '@/types'
 
-interface Props {
+type Props = {
   asset: SupportAsset
   index: number
   isFirst: boolean

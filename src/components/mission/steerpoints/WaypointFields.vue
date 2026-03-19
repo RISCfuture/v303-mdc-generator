@@ -7,7 +7,7 @@ import { HEIGHT } from '@/styles/design-tokens'
 import { STEERPOINT_TYPES } from '@/data/constants'
 import type { Waypoint, CoordinateFormat } from '@/types'
 
-interface Props {
+type Props = {
   waypoint: Waypoint
   totPlaceholder: string
   isWaypointFieldIncomplete?: (

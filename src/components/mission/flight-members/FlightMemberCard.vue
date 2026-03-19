@@ -14,7 +14,7 @@ import { getDatalinkType, getDatalinkLabel, shouldShowSTN } from '@/utils/datali
 import { FONT_SIZE, SPACING } from '@/styles/design-tokens'
 import type { CrewMember } from '@/types'
 
-interface Props {
+type Props = {
   member: CrewMember
   index: number
   isFirst: boolean

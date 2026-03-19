@@ -9,7 +9,7 @@ import type { CrewMember } from '@/types'
 import type { DragAndDropReturn } from '@/utils/useDragAndDrop'
 import type { CrewDatabaseEntry } from '@/composables/useCrewManagement'
 
-interface Props {
+type Props = {
   crew: CrewMember[]
   availableCrewForDropdown: CrewDatabaseEntry[]
   crewDragDrop: DragAndDropReturn<CrewMember>

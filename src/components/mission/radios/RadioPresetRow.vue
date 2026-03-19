@@ -2,7 +2,7 @@
 import { NInputNumber, NInput } from 'naive-ui'
 import type { Radio } from '@/types'
 
-interface Props {
+type Props = {
   presetNumber: number
   frequency: string
   description: string

@@ -2,7 +2,7 @@
 // Virtual 303rd Fighter Group pilot roster with assigned codes and identifiers
 import crewDataJson from '@/data/json/crew.json'
 
-export interface PilotData {
+export type PilotData = {
   pilot: string
   callsign: string[] // Array of callsign options
   link16Prefix: string // Link16 prefix (2-letter code, e.g., "FN", "BR")

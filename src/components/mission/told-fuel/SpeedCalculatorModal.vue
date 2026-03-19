@@ -10,7 +10,7 @@ import {
   isCalculatorSupported,
 } from '@/aircraft'
 
-interface Props {
+type Props = {
   show: boolean
   mission: Mission
   airframe: Airframe

@@ -37,8 +37,8 @@ describe('dcsProjection', () => {
       ]
 
       for (let i = 0; i < theaters.length; i++) {
-        const theater = theaters[i]!
-        const coords = testCoords[i]!
+        const theater = theaters[i]
+        const coords = testCoords[i]
 
         const dcs = latLonToDCS(coords.lat, coords.lon, theater)
         expect(dcs).not.toBeNull()

@@ -1,0 +1,7 @@
+dist
+node_modules
+.yarn
+playwright-report
+test-results
+coverage
+*.pdf

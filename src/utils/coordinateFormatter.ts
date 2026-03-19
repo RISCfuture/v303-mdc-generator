@@ -35,7 +35,7 @@ export function formatCoordinate(
   lat: number | null,
   lon: number | null,
   format: CoordinateFormat = 'DDM',
-  mgrsPrecision: number = 5,
+  mgrsPrecision = 5,
 ): string {
   // Handle null/undefined coordinates
   if (lat === null || lon === null || isNaN(lat) || isNaN(lon)) {
@@ -80,7 +80,7 @@ export function parseCoordinate(
   input: string,
   format: CoordinateFormat,
 ): { lat: number; lon: number } | null {
-  if (!input || !input.trim()) return null
+  if (!input.trim()) return null
 
   switch (format) {
     case 'DD':
@@ -128,7 +128,7 @@ export function convertCoordinate(
   input: string,
   fromFormat: CoordinateFormat,
   toFormat: CoordinateFormat,
-  mgrsPrecision: number = 5,
+  mgrsPrecision = 5,
 ): string {
   // Parse input to decimal degrees
   const coords = parseCoordinate(input, fromFormat)

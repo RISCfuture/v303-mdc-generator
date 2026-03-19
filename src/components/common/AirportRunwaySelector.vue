@@ -4,7 +4,7 @@ import { NFormItem, NSelect, NInput } from 'naive-ui'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { Theater } from '@/types'
 
-interface Props {
+type Props = {
   theater: Theater
   airportId?: string
   runwayName?: string
@@ -22,6 +22,10 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  airportId: undefined,
+  runwayName: undefined,
+  procedure: undefined,
+  fieldElevation: undefined,
   airportLabel: 'Airport',
   runwayLabel: 'Runway',
   procedureLabel: 'Procedure',
@@ -55,7 +59,7 @@ const airfieldOptions = computed(() =>
 // Currently selected airfield
 const selectedAirfield = computed(() => {
   if (!props.airportId) return null
-  return airfields.value.find((af) => af.name === props.airportId) || null
+  return airfields.value.find((af) => af.name === props.airportId) ?? null
 })
 
 // Runway dropdown options (based on selected airfield)
@@ -70,7 +74,7 @@ const runwayOptions = computed(() => {
 // Currently selected runway
 const selectedRunway = computed(() => {
   if (!props.runwayName || !selectedAirfield.value) return null
-  return selectedAirfield.value.runways.find((rw) => rw.name === props.runwayName) || null
+  return selectedAirfield.value.runways.find((rw) => rw.name === props.runwayName) ?? null
 })
 
 // Expose for testing
@@ -85,23 +89,23 @@ defineExpose({
 
 // Handle airport selection
 function handleAirportChange(value: string | null) {
-  emit('update:airportId', value || undefined)
+  emit('update:airportId', value ?? undefined)
   emit('update:runwayName', undefined)
   emit('update:runwayHeading', undefined)
   // Get the selected airfield and emit its elevation
   const airfield = value ? airfields.value.find((af) => af.name === value) : null
-  emit('update:fieldElevation', airfield?.position?.elevation || undefined)
+  emit('update:fieldElevation', airfield?.position.elevation ?? undefined)
 }
 
 // Handle runway selection
 function handleRunwayChange(value: string | null) {
-  emit('update:runwayName', value || undefined)
+  emit('update:runwayName', value ?? undefined)
   // Get the selected runway and emit its heading
   const runway =
     value && selectedAirfield.value
       ? selectedAirfield.value.runways.find((rw) => rw.name === value)
       : null
-  emit('update:runwayHeading', runway?.heading || undefined)
+  emit('update:runwayHeading', runway?.heading ?? undefined)
 }
 </script>
 

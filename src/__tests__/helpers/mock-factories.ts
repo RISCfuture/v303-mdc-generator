@@ -357,7 +357,7 @@ export async function createMockStorageMonitor(overrides: Record<string, unknown
 
   // Create base stats ref
   const statsRef =
-    statsOverride ||
+    statsOverride ??
     ref<StorageStats>({
       totalBytes: 5000000,
       remainingBytes: 2500000,
@@ -371,15 +371,15 @@ export async function createMockStorageMonitor(overrides: Record<string, unknown
     stats: statsRef,
     status: ref(null),
     isLoading: ref(false),
-    shouldShowWarning: shouldShowWarningOverride || computed(() => false),
-    warningLevel: warningLevelOverride || computed(() => 'ok' as const),
-    warningMessage: warningMessageOverride || computed(() => ''),
-    percentUsed: percentUsedOverride || computed(() => statsRef.value?.percentUsed ?? 0.5),
-    missionCount: missionCountOverride || computed(() => statsRef.value?.missionCount ?? 10),
+    shouldShowWarning: shouldShowWarningOverride ?? computed(() => false),
+    warningLevel: warningLevelOverride ?? computed(() => 'ok' as const),
+    warningMessage: warningMessageOverride ?? computed(() => ''),
+    percentUsed: percentUsedOverride ?? computed(() => statsRef.value?.percentUsed ?? 0.5),
+    missionCount: missionCountOverride ?? computed(() => statsRef.value?.missionCount ?? 10),
     estimatedRemaining:
-      estimatedRemainingOverride || computed(() => statsRef.value?.estimatedMissionsRemaining ?? 5),
-    formattedUsage: formattedUsageOverride || computed(() => '5.0 MB'),
-    formattedRemaining: formattedRemainingOverride || computed(() => '2.5 MB'),
+      estimatedRemainingOverride ?? computed(() => statsRef.value?.estimatedMissionsRemaining ?? 5),
+    formattedUsage: formattedUsageOverride ?? computed(() => '5.0 MB'),
+    formattedRemaining: formattedRemainingOverride ?? computed(() => '2.5 MB'),
     refresh: () => Promise.resolve(),
   }
 }

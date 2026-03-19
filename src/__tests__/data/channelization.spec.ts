@@ -35,11 +35,10 @@ describe('channelization', () => {
 
     it('should return radio presets with valid structure when data exists', () => {
       const presets = getDefaultRadioPresets('Afghanistan' as Theater, 'A-10C_2' as Airframe, 0)
-      if (presets.length > 0) {
-        const preset = presets[0]!
-        expect(preset).toHaveProperty('frequency')
-        expect(typeof preset.frequency).toBe('string')
-      }
+      expect(presets.length).toBeGreaterThan(0)
+      const preset = presets[0]
+      expect(preset).toHaveProperty('frequency')
+      expect(typeof preset.frequency).toBe('string')
     })
 
     it('should handle negative radio indices', () => {
@@ -51,10 +50,10 @@ describe('channelization', () => {
       const presets0 = getDefaultRadioPresets('Afghanistan' as Theater, 'A-10C_2' as Airframe, 0)
       const presets1 = getDefaultRadioPresets('Afghanistan' as Theater, 'A-10C_2' as Airframe, 1)
 
-      // If both have data, they should be different
-      if (presets0.length > 0 && presets1.length > 0) {
-        expect(JSON.stringify(presets0)).not.toEqual(JSON.stringify(presets1))
-      }
+      // Both should have data, and they should be different
+      expect(presets0.length).toBeGreaterThan(0)
+      expect(presets1.length).toBeGreaterThan(0)
+      expect(JSON.stringify(presets0)).not.toEqual(JSON.stringify(presets1))
     })
 
     it('should return different presets for different theaters with same airframe', () => {
@@ -70,12 +69,9 @@ describe('channelization', () => {
         0,
       )
 
-      // If both have data, they might be different (theater-specific channelization)
-      if (presetsAfghan.length > 0 && presetsCaucasus.length > 0) {
-        // They could be the same or different - just verify structure
-        expect(Array.isArray(presetsAfghan)).toBe(true)
-        expect(Array.isArray(presetsCaucasus)).toBe(true)
-      }
+      // Both should return arrays (theater-specific channelization)
+      expect(Array.isArray(presetsAfghan)).toBe(true)
+      expect(Array.isArray(presetsCaucasus)).toBe(true)
     })
 
     it('should handle edge case of radio index 0', () => {
@@ -98,11 +94,10 @@ describe('channelization', () => {
     it('should have consistent data structure across all entries', () => {
       // This is an indirect test - if getDefaultRadioPresets works, the structure is correct
       const presets = getDefaultRadioPresets('Afghanistan' as Theater, 'A-10C_2' as Airframe, 0)
-      if (presets.length > 0) {
-        presets.forEach((preset) => {
-          expect(preset).toHaveProperty('frequency')
-        })
-      }
+      expect(presets.length).toBeGreaterThan(0)
+      presets.forEach((preset) => {
+        expect(preset).toHaveProperty('frequency')
+      })
     })
   })
 })

@@ -5,10 +5,11 @@ import * as Sentry from '@sentry/vue'
 import App from '@/App.vue'
 import router from '@/router'
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const app = createApp(App)
 
 // Only initialize Sentry in production, but not during E2E tests
-const sentryDSN = import.meta.env.VITE_SENTRY_DSN
+const sentryDSN = import.meta.env.VITE_SENTRY_DSN as string | undefined
 if (import.meta.env.PROD && !import.meta.env.VITE_DISABLE_SENTRY && sentryDSN) {
   Sentry.init({
     app,

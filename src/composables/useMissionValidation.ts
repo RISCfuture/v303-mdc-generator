@@ -14,7 +14,7 @@ import type { Mission } from '@/types'
 import { serializeMission } from '@/utils/missionStorage'
 import { isMissionStorageComplete, type ValidationResult } from '@/utils/validateMissionStorage'
 
-export interface FieldValidationError {
+export type FieldValidationError = {
   field: string
   message: string
 }
@@ -137,8 +137,8 @@ export function useMissionValidation(
       else if (path.endsWith('/cr') || path.includes('/cr/')) errorMap.set('crew', message)
       else if (path.includes('/wp/') || path.includes('/wp')) {
         // For waypoint errors, include the waypoint index if available
-        const wpMatch = path.match(/\/wp\/(\d+)/)
-        if (wpMatch && wpMatch[1]) {
+        const wpMatch = /\/wp\/(\d+)/.exec(path)
+        if (wpMatch?.[1]) {
           const wpIndex = parseInt(wpMatch[1], 10)
           const wpNumber = wpIndex + 1 // Convert to 1-based for display
           const existing = errorMap.get('waypoints')
@@ -237,10 +237,8 @@ export function useMissionValidation(
       return !mission.value.link16PrefixOverride || mission.value.link16PrefixOverride.trim() === ''
 
     // Check TOLD fields
-    if (fieldName === 'rotation')
-      return mission.value.told.rotation === undefined || mission.value.told.rotation === null
-    if (fieldName === 'refusal')
-      return mission.value.told.refusal === undefined || mission.value.told.refusal === null
+    if (fieldName === 'rotation') return mission.value.told.rotation === undefined
+    if (fieldName === 'refusal') return mission.value.told.refusal === undefined
 
     // Check departure/recovery airport/runway fields (procedures are optional)
     if (fieldName === 'departureAirport')
@@ -265,12 +263,7 @@ export function useMissionValidation(
       )
 
     // Check fuel
-    if (fieldName === 'bingo')
-      return (
-        mission.value.fuel.bingo === undefined ||
-        mission.value.fuel.bingo === null ||
-        mission.value.fuel.bingo === 0
-      )
+    if (fieldName === 'bingo') return mission.value.fuel.bingo === 0
 
     // Check remarks
     if (fieldName === 'remarks')

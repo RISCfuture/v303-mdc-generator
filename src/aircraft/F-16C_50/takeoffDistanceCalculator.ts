@@ -26,7 +26,7 @@ export type PowerSetting = 'MIL' | 'AB'
 /**
  * Input parameters for takeoff distance calculation
  */
-export interface TakeoffDistanceParams {
+export type TakeoffDistanceParams = {
   /** Gross weight in pounds */
   grossWeight: number
   /** Outside air temperature in Fahrenheit */
@@ -50,7 +50,7 @@ export interface TakeoffDistanceParams {
 /**
  * Takeoff distance calculation results
  */
-export interface TakeoffDistanceResult {
+export type TakeoffDistanceResult = {
   /** Takeoff factor (intermediate calculation) */
   takeoffFactor: number
   /** Base takeoff distance in feet (before corrections) */
@@ -463,7 +463,7 @@ const CATEGORY_DEFAULTS: Record<string, number> = {
  */
 export function getDragIndex(clsid: string, category?: string): number {
   // Try direct lookup
-  if (DRAG_INDEX_LOOKUP[clsid] !== undefined) {
+  if (clsid in DRAG_INDEX_LOOKUP) {
     return DRAG_INDEX_LOOKUP[clsid]
   }
 
@@ -471,10 +471,10 @@ export function getDragIndex(clsid: string, category?: string): number {
   const withBraces = clsid.startsWith('{') ? clsid : `{${clsid}}`
   const withoutBraces = clsid.replace(/^{|}$/g, '')
 
-  if (DRAG_INDEX_LOOKUP[withBraces] !== undefined) {
+  if (withBraces in DRAG_INDEX_LOOKUP) {
     return DRAG_INDEX_LOOKUP[withBraces]
   }
-  if (DRAG_INDEX_LOOKUP[withoutBraces] !== undefined) {
+  if (withoutBraces in DRAG_INDEX_LOOKUP) {
     return DRAG_INDEX_LOOKUP[withoutBraces]
   }
 
@@ -512,12 +512,12 @@ export function getDragIndex(clsid: string, category?: string): number {
   if (upperClsid.includes('600') && upperClsid.includes('GAL')) return 20
 
   // Fall back to category default
-  if (category && CATEGORY_DEFAULTS[category] !== undefined) {
-    return CATEGORY_DEFAULTS[category]!
+  if (category && category in CATEGORY_DEFAULTS) {
+    return CATEGORY_DEFAULTS[category]
   }
 
   // Ultimate fallback
-  return CATEGORY_DEFAULTS.unknown ?? 10
+  return CATEGORY_DEFAULTS.unknown
 }
 
 /**
@@ -527,7 +527,7 @@ export function getDragIndex(clsid: string, category?: string): number {
  * @returns Total drag index
  */
 export function calculateTotalDragIndex(
-  storeClsids: Array<{ clsid: string; category?: string }>,
+  storeClsids: { clsid: string; category?: string }[],
 ): number {
   // Start with clean aircraft baseline
   let totalDragIndex = CLEAN_AIRCRAFT_DRAG_INDEX

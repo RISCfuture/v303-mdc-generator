@@ -29,7 +29,7 @@ export function useAirportSelection(theater: Ref<Theater>) {
   // Currently selected airfield
   const selectedAirfield = computed<Airfield | null>(() => {
     if (!selectedAirfieldName.value) return null
-    return airfields.value.find((af) => af.name === selectedAirfieldName.value) || null
+    return airfields.value.find((af) => af.name === selectedAirfieldName.value) ?? null
   })
 
   // Dropdown options for runway selection (based on selected airfield)
@@ -44,7 +44,7 @@ export function useAirportSelection(theater: Ref<Theater>) {
   // Currently selected runway
   const selectedRunway = computed<Runway | null>(() => {
     if (!selectedAirfield.value || !selectedRunwayName.value) return null
-    return selectedAirfield.value.runways.find((rw) => rw.name === selectedRunwayName.value) || null
+    return selectedAirfield.value.runways.find((rw) => rw.name === selectedRunwayName.value) ?? null
   })
 
   // Selected runway length in feet (if available)
@@ -59,7 +59,7 @@ export function useAirportSelection(theater: Ref<Theater>) {
 
   // Auto-fill field elevation when airfield changes
   watch(selectedAirfield, (airfield) => {
-    if (airfield?.position?.elevation) {
+    if (airfield?.position.elevation) {
       fieldElevation.value = airfield.position.elevation
     } else {
       fieldElevation.value = null

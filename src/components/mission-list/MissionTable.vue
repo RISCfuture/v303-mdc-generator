@@ -4,7 +4,7 @@ import { NDataTable } from 'naive-ui'
 import { createMissionTableColumns } from '@/utils/missionTableColumns'
 import type { Mission } from '@/types'
 
-interface Props {
+type Props = {
   missions: Mission[]
 }
 
@@ -19,10 +19,18 @@ const emit = defineEmits<{
 
 const columns = computed(() =>
   createMissionTableColumns(
-    (mission) => emit('edit', mission),
-    (mission) => emit('duplicate', mission),
-    (mission) => emit('delete', mission),
-    (mission) => emit('export', mission),
+    (mission) => {
+      emit('edit', mission)
+    },
+    (mission) => {
+      emit('duplicate', mission)
+    },
+    (mission) => {
+      emit('delete', mission)
+    },
+    (mission) => {
+      emit('export', mission)
+    },
   ),
 )
 </script>

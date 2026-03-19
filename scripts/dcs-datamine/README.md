@@ -21,6 +21,7 @@ The datamine system consists of two components:
    ```
 
    The typical path is:
+
    ```
    C:\Program Files\Eagle Dynamics\DCS World\Scripts\Hooks\
    ```
@@ -32,6 +33,7 @@ The datamine system consists of two components:
    - DCS version changes (after updates)
 
 4. Find exported files at:
+
    ```
    %USERPROFILE%\Saved Games\DCS\v303-datamine\
    ```
@@ -53,6 +55,7 @@ The datamine system consists of two components:
    ```
 
    For example:
+
    ```bash
    node scripts/dcs-datamine/integrate-dcs-export.js ~/Dropbox/DCS/v303-datamine
    ```
@@ -72,6 +75,7 @@ The datamine system consists of two components:
 2. **Transfer Files**: Copy the `v303-datamine` folder (or sync via Dropbox/etc.)
 
 3. **Mac**: Run the integration script with the path to the exported data
+
    ```bash
    node scripts/dcs-datamine/integrate-dcs-export.js /path/to/v303-datamine
    ```

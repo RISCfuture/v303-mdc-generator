@@ -6,7 +6,7 @@ import SupportAssetCard from './SupportAssetCard.vue'
 import type { SupportAsset } from '@/types'
 import type { DragAndDropReturn } from '@/utils/useDragAndDrop'
 
-interface Props {
+type Props = {
   supportAssets: SupportAsset[]
   supportAssetDragDrop: DragAndDropReturn<SupportAsset>
 }

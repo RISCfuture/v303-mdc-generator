@@ -56,7 +56,7 @@ export function expectEmittedWith(
   wrapper: VueWrapper<ComponentPublicInstance>,
   eventName: string,
   expectedArgs: unknown[],
-  emissionIndex: number = 0,
+  emissionIndex = 0,
 ): void {
   const emitted = wrapper.emitted(eventName)
   expect(emitted).toBeTruthy()
@@ -93,7 +93,7 @@ export function expectEmittedTimes(
  * @example
  * expectCloseTo(31.5057667, 31.50577, 4)
  */
-export function expectCloseTo(actual: number, expected: number, precision: number = 5): void {
+export function expectCloseTo(actual: number, expected: number, precision = 5): void {
   expect(actual).toBeCloseTo(expected, precision)
 }
 
@@ -137,7 +137,7 @@ export function expectArrayToContain<T>(arr: T[], expectedElements: T[]): void {
  * @example
  * expectArrayLength(waypoints, 5)
  */
-export function expectArrayLength<T>(arr: T[], expectedLength: number): void {
+export function expectArrayLength(arr: unknown[], expectedLength: number): void {
   expect(arr).toHaveLength(expectedLength)
 }
 
@@ -272,7 +272,7 @@ export function expectPropToMatch(
 export function expectCalledWith(
   mockFn: { mock: { calls: unknown[][] }; [key: string]: unknown },
   expectedArgs: unknown[],
-  callIndex: number = 0,
+  callIndex = 0,
 ): void {
   expect(mockFn).toHaveBeenCalled()
   expect(mockFn.mock.calls[callIndex]).toEqual(expectedArgs)

@@ -10,7 +10,7 @@ import { SPACING } from '@/styles/design-tokens'
 import PackageMemberFields from './PackageMemberFields.vue'
 import type { PackageMember } from '@/types'
 
-interface Props {
+type Props = {
   member: PackageMember
   index: number
   isFirst: boolean

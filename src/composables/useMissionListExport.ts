@@ -14,7 +14,7 @@ const STORAGE_VERSION = 2
 /**
  * Export file format for full backup
  */
-export interface MissionListBackup {
+export type MissionListBackup = {
   version: number
   missions: SerializedMission[]
   images: StoredImage[]
@@ -24,7 +24,7 @@ export interface MissionListBackup {
 /**
  * Export file format for single mission
  */
-export interface SingleMissionExport {
+export type SingleMissionExport = {
   version: number
   mission: SerializedMission
   images: StoredImage[]
@@ -34,7 +34,7 @@ export interface SingleMissionExport {
 /**
  * Parsed import result with metadata for confirmation
  */
-export interface ImportPreview {
+export type ImportPreview = {
   missionCount: number
   imageCount: number
   totalSize: number
@@ -71,18 +71,21 @@ export function useMissionListExport() {
         return
       }
 
-      const parsed = JSON.parse(stored)
+      const parsed: unknown = JSON.parse(stored)
 
       // Validate storage format
       if (
         !parsed ||
         typeof parsed !== 'object' ||
         !('version' in parsed) ||
-        parsed.version !== STORAGE_VERSION ||
-        !Array.isArray(parsed.missions)
+        (parsed as { version: unknown }).version !== STORAGE_VERSION ||
+        !('missions' in parsed) ||
+        !Array.isArray((parsed as { missions: unknown }).missions)
       ) {
         throw new Error('Invalid storage format')
       }
+
+      const validParsed = parsed as { version: number; missions: SerializedMission[] }
 
       // Get all images from IndexedDB
       const images = await exportAllImages()
@@ -90,7 +93,7 @@ export function useMissionListExport() {
       // Create backup object
       const backup: MissionListBackup = {
         version: STORAGE_VERSION,
-        missions: parsed.missions,
+        missions: validParsed.missions,
         images,
         exportedAt: new Date().toISOString(),
       }
@@ -113,14 +116,14 @@ export function useMissionListExport() {
 
       loadingBar.finish()
       message.success(
-        `Exported ${parsed.missions.length} mission${parsed.missions.length !== 1 ? 's' : ''} and ${images.length} image${images.length !== 1 ? 's' : ''}`,
+        `Exported ${validParsed.missions.length} mission${validParsed.missions.length !== 1 ? 's' : ''} and ${images.length} image${images.length !== 1 ? 's' : ''}`,
       )
       Sentry.metrics.count('mission.exported', 1, {
         attributes: { type: 'backup' },
       })
     } catch (error) {
       loadingBar.error()
-      message.error(`Failed to export missions: ${error}`)
+      message.error(`Failed to export missions: ${String(error)}`)
       console.error('Export error:', error)
     }
   }
@@ -172,7 +175,7 @@ export function useMissionListExport() {
       })
     } catch (error) {
       loadingBar.error()
-      message.error(`Failed to export mission: ${error}`)
+      message.error(`Failed to export mission: ${String(error)}`)
       console.error('Export error:', error)
     }
   }
@@ -189,20 +192,20 @@ export function useMissionListExport() {
       reader.onload = (e) => {
         try {
           const content = e.target?.result as string
-          const data = JSON.parse(content)
+          const data: unknown = JSON.parse(content)
 
           // Check if it's a single mission (has 'mission' property) or full backup (has 'missions' array)
           if (
             data &&
             typeof data === 'object' &&
             'mission' in data &&
-            !Array.isArray(data.missions)
+            !('missions' in data && Array.isArray((data as { missions: unknown }).missions))
           ) {
             // Single mission import
             if (!validateSingleMissionData(data)) {
               throw new Error('Invalid single mission file format.')
             }
-            resolve(data as SingleMissionExport)
+            resolve(data)
           } else {
             // Full backup import
             if (!validateBackupData(data)) {
@@ -225,11 +228,13 @@ export function useMissionListExport() {
             resolve(preview)
           }
         } catch (error) {
-          reject(error)
+          reject(error instanceof Error ? error : new Error(String(error)))
         }
       }
 
-      reader.onerror = () => reject(new Error('Failed to read file'))
+      reader.onerror = () => {
+        reject(new Error('Failed to read file'))
+      }
       reader.readAsText(file)
     })
   }
@@ -289,14 +294,14 @@ export function useMissionListExport() {
       return false
     }
 
-    // Validate missions array (basic check)
+    // Validate missions array (basic shape check for user-provided JSON)
     if (
       !backup.missions.every(
-        (m) =>
+        (m: unknown) =>
           typeof m === 'object' &&
           m !== null &&
-          typeof m.id === 'string' &&
-          typeof m.n === 'string',
+          typeof (m as Record<string, unknown>).id === 'string' &&
+          typeof (m as Record<string, unknown>).n === 'string',
       )
     ) {
       return false
@@ -331,7 +336,7 @@ export function useMissionListExport() {
       // Update image references to new mission ID and generate new image IDs
       const updatedImages = singleExport.images.map((img) => ({
         ...img,
-        id: `img_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`, // Generate new ID to avoid conflicts
+        id: `img_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`, // Generate new ID to avoid conflicts
         missionId: newMissionId,
       }))
 
@@ -340,10 +345,10 @@ export function useMissionListExport() {
       // we need to directly add to IndexedDB
       if (updatedImages.length > 0) {
         // Cast to access private method - this is a workaround for the limitation
-        interface ImageStorageWithEnsureDb {
+        type ImageStorageWithEnsureDb = {
           ensureDb(): Promise<IDBDatabase>
         }
-        const db = await (imageStorage as unknown as ImageStorageWithEnsureDb)['ensureDb']()
+        const db = await (imageStorage as unknown as ImageStorageWithEnsureDb).ensureDb()
 
         await new Promise<void>((resolve, reject) => {
           const transaction = db.transaction(['images'], 'readwrite')
@@ -353,10 +358,10 @@ export function useMissionListExport() {
           const total = updatedImages.length
 
           updatedImages.forEach((image) => {
-            interface ExtendedImage extends StoredImage {
+            type ExtendedImage = {
               purpose?: string
               type?: string
-            }
+            } & StoredImage
             const extImage = image as ExtendedImage
             const cleanImage = {
               id: image.id,
@@ -378,11 +383,12 @@ export function useMissionListExport() {
             }
 
             addRequest.onerror = (event) => {
+              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard: event.target can be null in test environments
               const error = (event.target as IDBRequest)?.error
               console.error('Failed to import image:', image.id, error)
               reject(
                 new Error(
-                  `Failed to import image ${image.id}: ${error?.message || 'Unknown error'}`,
+                  `Failed to import image ${image.id}: ${error?.message ?? 'Unknown error'}`,
                 ),
               )
             }
@@ -398,9 +404,16 @@ export function useMissionListExport() {
       }
 
       if (stored) {
-        const parsed = JSON.parse(stored)
-        if (parsed && parsed.version === STORAGE_VERSION && Array.isArray(parsed.missions)) {
-          storageData = parsed
+        const parsed: unknown = JSON.parse(stored)
+        if (
+          parsed &&
+          typeof parsed === 'object' &&
+          'version' in parsed &&
+          (parsed as { version: unknown }).version === STORAGE_VERSION &&
+          'missions' in parsed &&
+          Array.isArray((parsed as { missions: unknown }).missions)
+        ) {
+          storageData = parsed as { version: number; missions: SerializedMission[] }
         }
       }
 
@@ -418,7 +431,7 @@ export function useMissionListExport() {
       message.success(`Imported mission "${missionName}"`)
     } catch (error) {
       loadingBar.error()
-      message.error(`Failed to import mission: ${error}`)
+      message.error(`Failed to import mission: ${String(error)}`)
       console.error('Import error:', error)
       throw error
     }
@@ -452,7 +465,7 @@ export function useMissionListExport() {
       )
     } catch (error) {
       loadingBar.error()
-      message.error(`Failed to import missions: ${error}`)
+      message.error(`Failed to import missions: ${String(error)}`)
       console.error('Import error:', error)
       throw error
     }

@@ -5,36 +5,34 @@ import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig } from '../helpers'
 
-export interface JAFDTCFA18CMDC {
+export type JAFDTCFA18CMDC = {
   WYPT: {
-    Points: Array<{
+    Points: {
       Alt: string
       Number: number
       Name: string
       Lat: string
       Lon: string
-    }>
+    }[]
   }
   Radio: {
     IsCOMM1MonitorGuard: boolean
     COMM1DefaultTuning: string
     COMM2DefaultTuning: string
     IsDefault: boolean
-    Presets: Array<
-      Array<{
-        Preset: number
-        Frequency: string
-        Modulation: string
-        Description: string
-      }>
-    >
+    Presets: {
+      Preset: number
+      Frequency: string
+      Modulation: string
+      Description: string
+    }[][]
   }
   CMS: {
-    Programs: Array<{
+    Programs: {
       Number: number
       Chaff: { BQ: string; BI: string; SQ: string; SI: string }
       Flare: { BQ: string; BI: string; SQ: string; SI: string }
-    }>
+    }[]
     BingoChaff: string
     BingoFlare: string
   }
@@ -53,7 +51,7 @@ export interface JAFDTCFA18CMDC {
  */
 export function exportFA18CJAFDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<JAFDTCFA18CMDC>,
 ): JAFDTCFA18CMDC {
   // Suppress unused variable warning
@@ -63,42 +61,45 @@ export function exportFA18CJAFDTC(
   const waypoints = mission.waypoints.map((wp) => {
     const isBlank =
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
-    const latitude = isBlank ? 0 : wp.latitude!
-    const longitude = isBlank ? 0 : wp.longitude!
-    const altitude = isBlank ? 0 : wp.altitude!
+    const latitude = isBlank ? 0 : (wp.latitude ?? 0)
+    const longitude = isBlank ? 0 : (wp.longitude ?? 0)
+    const altitude = isBlank ? 0 : (wp.altitude ?? 0)
 
     return {
       Alt: altitude.toString(),
       Number: wp.sequence,
-      Name: wp.name!,
+      Name: wp.name,
       Lat: formatDecimalDegrees(latitude),
       Lon: formatDecimalDegrees(longitude),
     }
   })
 
   // Build radio presets (2 radios)
-  const radioPresets: Array<
-    Array<{ Preset: number; Frequency: string; Modulation: string; Description: string }>
-  > = []
+  const radioPresets: {
+    Preset: number
+    Frequency: string
+    Modulation: string
+    Description: string
+  }[][] = []
 
   // Radio 1 (COMM1)
   radioPresets.push(
-    mission.radioPresets[0]?.map((preset) => ({
+    mission.radioPresets[0].map((preset) => ({
       Preset: preset.number,
       Frequency: truncateFrequency(preset.frequency),
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })),
   )
 
   // Radio 2 (COMM2)
   radioPresets.push(
-    mission.radioPresets[1]?.map((preset) => ({
+    mission.radioPresets[1].map((preset) => ({
       Preset: preset.number,
       Frequency: truncateFrequency(preset.frequency),
       Modulation: '',
       Description: preset.description,
-    })) || [],
+    })),
   )
 
   const radio1Config = getRadioConfig(mission, 0)

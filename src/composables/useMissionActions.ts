@@ -19,12 +19,12 @@ export function useMissionActions() {
     Sentry.metrics.count('mission.created', 1, {
       attributes: { squadron },
     })
-    router.push(`/mission/${mission.id}`)
+    void router.push(`/mission/${mission.id}`)
     return mission
   }
 
   function handleEdit(mission: Mission) {
-    router.push(`/mission/${mission.id}`)
+    void router.push(`/mission/${mission.id}`)
   }
 
   function handleDelete(mission: Mission) {
@@ -34,7 +34,7 @@ export function useMissionActions() {
       positiveText: 'Delete',
       negativeText: 'Cancel',
       onPositiveClick: () => {
-        missionsStore.deleteMission(mission.id)
+        void missionsStore.deleteMission(mission.id)
         message.success('Mission deleted')
       },
     })

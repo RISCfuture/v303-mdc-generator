@@ -50,15 +50,16 @@ describe('theaters', () => {
     })
 
     it('should have valid URLs for ifgUrl when present', () => {
-      Object.values(theaterDatabase).forEach((theater) => {
-        if (theater.ifgUrl) {
-          expect(
-            theater.ifgUrl.startsWith('http://') ||
-              theater.ifgUrl.startsWith('https://') ||
-              theater.ifgUrl.startsWith('/') ||
-              theater.ifgUrl.startsWith('./'),
-          ).toBe(true)
-        }
+      const theatersWithIfg = Object.values(theaterDatabase).filter(
+        (theater) => theater.ifgUrl !== undefined,
+      )
+      theatersWithIfg.forEach((theater) => {
+        expect(
+          theater.ifgUrl!.startsWith('http://') ||
+            theater.ifgUrl!.startsWith('https://') ||
+            theater.ifgUrl!.startsWith('/') ||
+            theater.ifgUrl!.startsWith('./'),
+        ).toBe(true)
       })
     })
 
@@ -72,7 +73,7 @@ describe('theaters', () => {
 
     it('should have at least one training theater', () => {
       const hasTrainingTheater = Object.values(theaterDatabase).some(
-        (theater) => theater.isTraining === true,
+        (theater) => theater.isTraining,
       )
       // This might not always be true, but it's a good structural check
       // If it fails, it's worth investigating
@@ -81,23 +82,25 @@ describe('theaters', () => {
 
     it('should allow null defaultAirfield', () => {
       Object.values(theaterDatabase).forEach((theater) => {
-        if (theater.defaultAirfield !== undefined) {
-          expect(
-            theater.defaultAirfield === null || typeof theater.defaultAirfield === 'string',
-          ).toBe(true)
-        }
+        // defaultAirfield should be either undefined, null, or a string
+        expect(
+          theater.defaultAirfield === undefined ||
+            theater.defaultAirfield === null ||
+            typeof theater.defaultAirfield === 'string',
+        ).toBe(true)
       })
     })
 
     it('should have valid defaultSupportAssets when present', () => {
-      Object.values(theaterDatabase).forEach((theater) => {
-        if (theater.defaultSupportAssets) {
-          expect(Array.isArray(theater.defaultSupportAssets)).toBe(true)
-          theater.defaultSupportAssets.forEach((asset) => {
-            // Support assets should have some basic structure
-            expect(typeof asset).toBe('object')
-          })
-        }
+      const theatersWithAssets = Object.values(theaterDatabase).filter(
+        (theater) => theater.defaultSupportAssets !== undefined,
+      )
+      theatersWithAssets.forEach((theater) => {
+        expect(Array.isArray(theater.defaultSupportAssets)).toBe(true)
+        theater.defaultSupportAssets!.forEach((asset) => {
+          // Support assets should have some basic structure
+          expect(typeof asset).toBe('object')
+        })
       })
     })
 
@@ -117,12 +120,11 @@ describe('theaters', () => {
   describe('theater lookup by key', () => {
     it('should allow access to theater data by key', () => {
       const theaterKeys = Object.keys(theaterDatabase) as Theater[]
-      if (theaterKeys.length > 0) {
-        const firstKey = theaterKeys[0]!
-        const theater = theaterDatabase[firstKey]
-        expect(theater).toBeDefined()
-        expect(theater.name).toBe(firstKey)
-      }
+      expect(theaterKeys.length).toBeGreaterThan(0)
+      const firstKey = theaterKeys[0]
+      const theater = theaterDatabase[firstKey]
+      expect(theater).toBeDefined()
+      expect(theater.name).toBe(firstKey)
     })
 
     it('should have consistent data structure across all theaters', () => {

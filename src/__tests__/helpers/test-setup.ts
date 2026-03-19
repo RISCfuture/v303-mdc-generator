@@ -36,14 +36,15 @@ export function setupLocalStorage() {
   let store: Record<string, string> = {}
 
   return {
-    getItem: (key: string) => store[key] || null,
+    getItem: (key: string) => store[key] ?? null,
     setItem: (key: string, value: string) => {
-      store[key] = value.toString()
+      store[key] = value
     },
     clear: () => {
       store = {}
     },
     removeItem: (key: string) => {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete store[key]
     },
     get length() {
@@ -51,7 +52,7 @@ export function setupLocalStorage() {
     },
     key: (index: number) => {
       const keys = Object.keys(store)
-      return keys[index] || null
+      return keys[index] ?? null
     },
   }
 }
@@ -66,7 +67,7 @@ export function setupLocalStorage() {
  *   setupMatchMedia(false) // Simulate light mode
  * })
  */
-export function setupMatchMedia(isDarkMode: boolean = false): void {
+export function setupMatchMedia(isDarkMode = false): void {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
     value: vi.fn().mockImplementation((query: string) => ({

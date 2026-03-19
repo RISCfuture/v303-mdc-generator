@@ -15,7 +15,7 @@
  * formatFileSize(1536000) // "1.5 MB"
  * formatFileSize(500) // "500 bytes"
  */
-export function formatFileSize(bytes: number, locale: string = 'en-US'): string {
+export function formatFileSize(bytes: number, locale = 'en-US'): string {
   const absBytes = Math.abs(bytes)
 
   // Bytes (< 1 KB)

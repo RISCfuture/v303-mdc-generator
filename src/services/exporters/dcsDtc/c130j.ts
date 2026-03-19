@@ -9,7 +9,7 @@ import { exportGenericDCSDTC } from './generic'
  */
 export function exportC130DCSDTC(
   mission: Mission,
-  crewMemberIndex: number = 0,
+  crewMemberIndex = 0,
   template?: DeepPartial<DCSGenericMDC>,
 ): DCSGenericMDC {
   return exportGenericDCSDTC(mission, crewMemberIndex, 'C130', template)

@@ -4,7 +4,7 @@ import {
   calculateDistance,
   calculateTime,
   parseTOT,
-  formatTOT,
+  formatZuluTime,
   calculateTOTPlaceholders,
   calculateWaypointPairs,
 } from '@/composables/useWaypointCalculations'
@@ -108,16 +108,16 @@ describe('useWaypointCalculations', () => {
     })
   })
 
-  describe('formatTOT', () => {
+  describe('formatZuluTime', () => {
     it('should format minutes since midnight to HHMMz (with z)', () => {
-      expect(formatTOT(750)).toBe('1230z') // 12:30
-      expect(formatTOT(1080)).toBe('1800z') // 18:00
-      expect(formatTOT(0)).toBe('0000z') // 00:00
+      expect(formatZuluTime(750)).toBe('1230z') // 12:30
+      expect(formatZuluTime(1080)).toBe('1800z') // 18:00
+      expect(formatZuluTime(0)).toBe('0000z') // 00:00
     })
 
     it('should handle times that wrap past midnight', () => {
-      expect(formatTOT(1440)).toBe('0000z') // 24:00 = 00:00
-      expect(formatTOT(1500)).toBe('0100z') // 25:00 = 01:00
+      expect(formatZuluTime(1440)).toBe('0000z') // 24:00 = 00:00
+      expect(formatZuluTime(1500)).toBe('0100z') // 25:00 = 01:00
     })
   })
 

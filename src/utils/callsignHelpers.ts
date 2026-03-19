@@ -10,8 +10,8 @@ import type { Mission } from '@/types'
  */
 export function getFlightNumber(flightCallsign: string): string {
   if (!flightCallsign) return '1'
-  const match = flightCallsign.match(/(\d)$/)
-  return match && match[1] ? match[1] : '1'
+  const match = /(\d)$/.exec(flightCallsign)
+  return match?.[1] ?? '1'
 }
 
 /**
@@ -22,8 +22,8 @@ export function getFlightNumber(flightCallsign: string): string {
  * getCrewMemberLink16Callsign(mission, 1) => "BR12" (for BASHER1 flight, position 2)
  */
 export function getCrewMemberLink16Callsign(mission: Mission, crewMemberIndex: number): string {
-  const link16Prefix = mission.link16PrefixOverride!
-  const flightCallsign = mission.flightCallsignOverride!
+  const link16Prefix = mission.link16PrefixOverride ?? ''
+  const flightCallsign = mission.flightCallsignOverride ?? ''
   const flightNumber = getFlightNumber(flightCallsign)
   return `${link16Prefix}${flightNumber}${crewMemberIndex + 1}`
 }

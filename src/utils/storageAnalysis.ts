@@ -20,7 +20,7 @@ export const STORAGE_LIMITS = {
   CRITICAL_THRESHOLD: 0.9, // Critical warning at 90% capacity
 }
 
-export interface StorageStats {
+export type StorageStats = {
   totalBytes: number
   missionCount: number
   averageMissionSize: number
@@ -33,7 +33,7 @@ export interface StorageStats {
   totalStorageBytes?: number // Combined localStorage + IndexedDB
 }
 
-export interface StorageStatus {
+export type StorageStatus = {
   stats: StorageStats
   level: 'ok' | 'warning' | 'critical' | 'full'
   message: string
@@ -75,8 +75,8 @@ export async function calculateStorageStats(): Promise<StorageStats> {
 
   if (stored) {
     try {
-      const parsed = JSON.parse(stored)
-      if (parsed && Array.isArray(parsed.missions)) {
+      const parsed = JSON.parse(stored) as { missions?: unknown[] }
+      if (Array.isArray(parsed.missions)) {
         missionCount = parsed.missions.length
         if (missionCount > 0) {
           averageMissionSize = totalBytes / missionCount
@@ -100,7 +100,7 @@ export async function calculateStorageStats(): Promise<StorageStats> {
 
   // Try to get actual quota from browser
   const quotaAvailable = await getStorageQuota()
-  const effectiveLimit = quotaAvailable || STORAGE_LIMITS.CONSERVATIVE_LIMIT
+  const effectiveLimit = quotaAvailable ?? STORAGE_LIMITS.CONSERVATIVE_LIMIT
 
   const totalStorageBytes = totalBytes + imageStorageBytes
   const percentUsed = totalStorageBytes / effectiveLimit
@@ -177,5 +177,7 @@ export function formatBytes(bytes: number): string {
   const k = 1024
   const sizes = ['Bytes', 'KB', 'MB']
   const i = Math.floor(Math.log(bytes) / Math.log(k))
-  return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i]
+  const value = Math.round((bytes / Math.pow(k, i)) * 100) / 100
+  const unit = sizes[i] ?? 'Bytes'
+  return `${value} ${unit}`
 }

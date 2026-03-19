@@ -16,7 +16,7 @@ export type Squadron = SquadronId
 // Coordinate display format
 export type CoordinateFormat = 'DMS' | 'DD' | 'DDM' | 'MGRS'
 
-export interface Waypoint {
+export type Waypoint = {
   sequence: number
   name: string
   latitude: number | null // Decimal degrees (e.g., 36.2057583). Positive = N, Negative = S. Null for blank steerpoints.
@@ -30,7 +30,7 @@ export interface Waypoint {
   ccip?: CCIPData // CCIP delivery data (only used for TGT type steerpoints)
 }
 
-export interface CrewMember {
+export type CrewMember = {
   position: string // "LEAD", "WING", "EL LEAD", "EL WING"
   pilot: string
   callsign: string
@@ -43,13 +43,13 @@ export interface CrewMember {
   tailNumber?: string // Aircraft tail number (e.g., "86-0267")
 }
 
-export interface LoadoutStation {
+export type LoadoutStation = {
   station: number | string // 1-9 for F-16C, or "5L", "5R" for special stations
   item: string
   quantity?: number
 }
 
-export interface CMDSProgram {
+export type CMDSProgram = {
   number: number
   flareBurstQty: number
   flareBurstInterval: number
@@ -61,7 +61,7 @@ export interface CMDSProgram {
   chaffSalvoInterval: number
 }
 
-export interface ECMCMDSProfiles {
+export type ECMCMDSProfiles = {
   cmdsPrograms: CMDSProgram[]
   chaffBingo: number
   flareBingo: number
@@ -69,19 +69,19 @@ export interface ECMCMDSProfiles {
   flareTotal?: number
 }
 
-export interface RadioPreset {
+export type RadioPreset = {
   number: number
   frequency: string
   description: string
 }
 
-export interface RadioDefault {
+export type RadioDefault = {
   mode: 'preset' | 'manual'
   preset?: number // When mode='preset', which preset number (1-N)
   frequency?: string // When mode='manual', the frequency value
 }
 
-export interface Radio {
+export type Radio = {
   name: string
   description: string
   presetCount: number
@@ -90,7 +90,7 @@ export interface Radio {
   step: number // Frequency step size in MHz (0.025 for airband, 1 for others)
 }
 
-export interface F16CalculatorParams {
+export type F16CalculatorParams = {
   windDirection?: number // magnetic degrees (0-359)
   windSpeed?: number // knots
   temperature?: number // °C
@@ -101,7 +101,7 @@ export interface F16CalculatorParams {
   runwaySlope?: number // percent
 }
 
-export interface A10CalculatorParams {
+export type A10CalculatorParams = {
   windDirection?: number // magnetic degrees (0-359)
   windSpeed?: number // knots
   temperature?: number // °C
@@ -112,13 +112,13 @@ export interface A10CalculatorParams {
   runwaySlope?: number // percent (positive = uphill)
 }
 
-export interface F16BingoCalculatorParams {
+export type F16BingoCalculatorParams = {
   aarExpected: boolean // Whether aerial refueling is expected
   approachType: 'VFR' | 'IFR' // Approach type for recovery
   altitudeProfile: 'medium' | 'low' // Mission altitude profile
 }
 
-export interface DepartureRecoveryData {
+export type DepartureRecoveryData = {
   departureProcedure?: string // Departure procedure (e.g., "Unrestricted Climb")
   departureAirportId?: string // Departure airport identifier
   departureRunwayName?: string // Departure runway name
@@ -132,7 +132,7 @@ export interface DepartureRecoveryData {
   alternateAirportId?: string // Alternate airport identifier
 }
 
-export interface TOLDData {
+export type TOLDData = {
   grossWeight?: number
   rotation?: number // knots
   refusal?: number // knots
@@ -142,7 +142,7 @@ export interface TOLDData {
   // WIP: Rotation/refusal calculations need complete munitions database
 }
 
-export interface FuelData {
+export type FuelData = {
   takeoff: number // pounds
   joker: number // pounds
   bingo: number // pounds
@@ -150,7 +150,7 @@ export interface FuelData {
   bingoCalculatorParams?: F16BingoCalculatorParams
 }
 
-export interface Bullseye {
+export type Bullseye = {
   latitude: number | null // Decimal degrees
   longitude: number | null // Decimal degrees
   coordinateFormat?: CoordinateFormat // Display format for this coordinate (defaults to DDM)
@@ -158,7 +158,7 @@ export interface Bullseye {
   description?: string
 }
 
-export interface PackageMember {
+export type PackageMember = {
   callsign: string
   aircraft: Airframe
   time: string // Time in Zulu format (e.g., "1530z")
@@ -168,7 +168,7 @@ export interface PackageMember {
   task: string
 }
 
-export interface SupportAsset {
+export type SupportAsset = {
   callsign: string
   role: string // Common roles: 'TANKER', 'JSTARS', 'AWACS', but allows custom values
   frequency: string // UHF frequency (e.g., "305.5")
@@ -178,13 +178,13 @@ export interface SupportAsset {
   altitude: number | null // feet
 }
 
-export interface CCIPReferencePoint {
+export type CCIPReferencePoint = {
   bearing?: number // degrees (0.1 precision)
   distance?: number // feet
   elevation?: number // feet (can be negative, offset from target altitude)
 }
 
-export interface CCIPData {
+export type CCIPData = {
   referencePointType?: 'VIP' | 'VRP' | 'None' // determines which reference point to use
   vip?: CCIPReferencePoint // Visual Initial Point
   vrp?: CCIPReferencePoint // Visual Reference Point
@@ -193,18 +193,18 @@ export interface CCIPData {
   pup?: CCIPReferencePoint // Pull-up Point
 }
 
-export interface HARMTable {
+export type HARMTable = {
   tableNumber: number // 1-3
   emitters: number[] // Array of emitter codes (e.g., [110, 104, 103, 115, 107])
 }
 
-export interface HTSThreatData {
+export type HTSThreatData = {
   manualTableEnabled: boolean // Whether manual threat table is enabled
   manualEmitters: number[] // Array of manually entered emitter codes
   enabledClasses: boolean[] // 11-element array of threat class enable flags
 }
 
-export interface TargetData {
+export type TargetData = {
   name?: string
   dmpi?: string
   latitude?: number | null // Decimal degrees
@@ -217,7 +217,7 @@ export interface TargetData {
   imageIds?: string[] // Image IDs referenced in remarks
 }
 
-export interface MissionDetails {
+export type MissionDetails = {
   remarks?: string // Markdown formatted text
   primaryTarget?: TargetData
   secondaryTarget?: TargetData
@@ -225,7 +225,7 @@ export interface MissionDetails {
   imageIds?: string[] // Image IDs referenced in remarks field
 }
 
-export interface Mission {
+export type Mission = {
   id: string
   name: string
   callsign: string
