@@ -3,7 +3,9 @@
  * New implementation to replace jsPDF-based generator
  */
 import pdfMake from 'pdfmake/build/pdfmake'
-import 'pdfmake/build/vfs_fonts'
+import pdfFonts from 'pdfmake/build/vfs_fonts'
+
+pdfMake.addVirtualFileSystem(pdfFonts)
 import type { TDocumentDefinitions, Content } from 'pdfmake/interfaces'
 import { mdpdfmake } from 'mdpdfmake'
 import { imageStorage } from '@/services/imageStorage'
