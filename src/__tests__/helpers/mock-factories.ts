@@ -358,7 +358,7 @@ export async function createMockStorageMonitor(overrides: Record<string, unknown
   // Create base stats ref
   const statsRef =
     statsOverride ??
-    ref<StorageStats>({
+    ref({
       totalBytes: 5000000,
       remainingBytes: 2500000,
       percentUsed: 0.5,

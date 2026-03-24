@@ -59,9 +59,9 @@ const emit = defineEmits<{
 
 // Configuration state
 const powerSetting = ref<PowerSetting>(props.initialPowerSetting)
-const cgPercent = ref<number>(props.initialCgPercent)
-const pitchAttitude = ref<number>(props.initialPitchAttitude)
-const runwaySlope = ref<number>(props.initialRunwaySlope)
+const cgPercent = ref(props.initialCgPercent)
+const pitchAttitude = ref(props.initialPitchAttitude)
+const runwaySlope = ref(props.initialRunwaySlope)
 const runwayCondition = ref<'dry' | 'wet' | 'snow' | 'ice'>(props.initialRunwayCondition)
 
 // Computed wind components

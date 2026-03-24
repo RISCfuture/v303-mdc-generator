@@ -31,7 +31,7 @@ const emit = defineEmits<{
 }>()
 
 // Calculator parameters
-const aarExpected = ref<boolean>(false)
+const aarExpected = ref(false)
 const approachType = ref<'VFR' | 'IFR'>('VFR')
 const altitudeProfile = ref<'medium' | 'low'>('medium')
 

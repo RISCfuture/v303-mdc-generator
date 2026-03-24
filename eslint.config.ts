@@ -6,7 +6,16 @@ import pluginPlaywright from 'eslint-plugin-playwright'
 
 export default tseslint.config(
   {
-    ignores: ['dist', 'dist-ssr', 'node_modules', '.yarn', 'coverage', 'scripts', '.pnp.cjs', '.pnp.loader.mjs'],
+    ignores: [
+      'dist',
+      'dist-ssr',
+      'node_modules',
+      '.yarn',
+      'coverage',
+      'scripts',
+      '.pnp.cjs',
+      '.pnp.loader.mjs',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.strictTypeChecked,

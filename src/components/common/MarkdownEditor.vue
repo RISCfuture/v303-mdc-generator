@@ -25,8 +25,8 @@ const emit = defineEmits<{
 
 const message = useMessage()
 const editorText = ref('') // Will be populated after loading images
-const imageIds = ref<Set<string>>(new Set())
-const imageDataMap = ref<Map<string, string>>(new Map()) // Map of imageId -> base64 data URL
+const imageIds = ref(new Set<string>())
+const imageDataMap = ref(new Map<string, string>()) // Map of imageId -> base64 data URL
 
 /**
  * Extract image IDs from markdown text

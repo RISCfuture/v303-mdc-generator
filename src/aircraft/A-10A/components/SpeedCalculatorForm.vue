@@ -61,7 +61,7 @@ const emit = defineEmits<{
 const flapSetting = ref<FlapSetting>(props.initialFlapSetting)
 const speedBrake = ref<SpeedBrakeSetting>(props.initialSpeedBrake)
 const thrustSetting = ref<ThrustSetting>(props.initialThrustSetting)
-const runwaySlope = ref<number>(props.initialRunwaySlope)
+const runwaySlope = ref(props.initialRunwaySlope)
 const runwayCondition = ref<'dry' | 'wet' | 'icy'>(props.initialRunwayCondition)
 
 // Computed wind components

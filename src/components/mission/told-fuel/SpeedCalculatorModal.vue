@@ -44,9 +44,9 @@ const selectedRunwayHeading = ref<number | undefined>(undefined)
 const fieldElevation = ref<number | null>(null)
 
 // Common weather parameters
-const windDirection = ref<number>(0)
-const windSpeed = ref<number>(0)
-const temperature = ref<number>(15)
+const windDirection = ref(0)
+const windSpeed = ref(0)
+const temperature = ref(15)
 
 // Aircraft-specific form component reference
 const formRef = shallowRef<{

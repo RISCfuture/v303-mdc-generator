@@ -51,8 +51,8 @@ const dragCounter = ref(0)
 // Filter state
 const filterState = ref<'all' | 'ready' | 'draft'>('all')
 const filterName = ref('')
-const filterSquadron = ref<string>('all')
-const filterTheater = ref<string>('all')
+const filterSquadron = ref('all')
+const filterTheater = ref('all')
 
 // Filtered missions computed property
 const filteredMissions = computed(() => {

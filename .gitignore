@@ -36,5 +36,9 @@ playwright-report/
 __pycache__/
 *.pyc
 
+# Yarn
+.yarn/*
+!.yarn/patches
+
 # Script-generated files
 scripts/airfields/extraction_missions/

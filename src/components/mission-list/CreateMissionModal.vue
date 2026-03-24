@@ -16,7 +16,7 @@ const emit = defineEmits<{
   create: [squadron: Squadron, theater: Theater]
 }>()
 
-const selectedSquadron = ref<string>('v93')
+const selectedSquadron = ref('v93')
 const selectedTheater = ref<Theater>('Afghanistan')
 
 const squadronOptions = Object.values(squadronsData).map((sq) => ({
