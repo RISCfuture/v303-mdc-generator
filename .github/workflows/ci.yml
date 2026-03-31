@@ -48,9 +48,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Install Playwright system dependencies
+        run: yarn playwright install-deps chromium firefox webkit
+        timeout-minutes: 10
+
       - name: Install Playwright browsers
-        run: yarn playwright install --with-deps
-        timeout-minutes: 5
+        run: yarn playwright install chromium firefox webkit
+        timeout-minutes: 3
 
       - name: Run E2E tests
         run: yarn test:e2e:headless
