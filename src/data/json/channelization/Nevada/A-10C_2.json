@@ -70,7 +70,7 @@
         {
           "number": 14,
           "frequency": "225.45",
-          "description": "ARCO 1 44X (AR231V)"
+          "description": "ARCO 1 44Y (AR231V)"
         },
         {
           "number": 15,
@@ -109,7 +109,7 @@
         },
         {
           "number": 22,
-          "frequency": "256.6",
+          "frequency": "263",
           "description": "MAGIC"
         },
         {
@@ -199,7 +199,7 @@
         {
           "number": 14,
           "frequency": "225.45",
-          "description": "ARCO 1 44X (AR231V)"
+          "description": "ARCO 1 44Y (AR231V)"
         },
         {
           "number": 15,
@@ -223,7 +223,7 @@
         },
         {
           "number": 19,
-          "frequency": "256.6",
+          "frequency": "263",
           "description": "MAGIC"
         },
         {

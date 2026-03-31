@@ -151,7 +151,80 @@
     "ifgUrl": "https://www.v303rdfightergroup.com/index.php?pubs/v303-fg-nttr-in-flight-guide.28/download",
     "defaultAirfield": null,
     "isTraining": true,
-    "defaultSupportAssets": []
+    "defaultSupportAssets": [
+      {
+        "callsign": "MAGIC",
+        "role": "AWACS",
+        "location": "North",
+        "altitude": 32000,
+        "frequency": "263",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "TEXACO2",
+        "role": "AAR",
+        "location": "AR641A",
+        "altitude": 15000,
+        "frequency": "295.4",
+        "preset": null,
+        "aaTacan": "31X"
+      },
+      {
+        "callsign": "TEXACO1",
+        "role": "AAR",
+        "location": "AR641A",
+        "altitude": 24000,
+        "frequency": "295.5",
+        "preset": null,
+        "aaTacan": "32X"
+      },
+      {
+        "callsign": "ARCO2",
+        "role": "AAR",
+        "location": "AR231V",
+        "altitude": 15000,
+        "frequency": "225.45",
+        "preset": null,
+        "aaTacan": "44X"
+      },
+      {
+        "callsign": "ARCO1",
+        "role": "AAR",
+        "location": "AR231V",
+        "altitude": 24000,
+        "frequency": "225.5",
+        "preset": null,
+        "aaTacan": "45X"
+      },
+      {
+        "callsign": "ARCO3",
+        "role": "AAR",
+        "location": "Isabella",
+        "altitude": 28000,
+        "frequency": "225.575",
+        "preset": null,
+        "aaTacan": "46Y"
+      },
+      {
+        "callsign": "FORTE",
+        "role": "ISR",
+        "location": "LionO",
+        "altitude": null,
+        "frequency": "251.1",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "SKYNET",
+        "role": "ISR",
+        "location": "Snarf",
+        "altitude": null,
+        "frequency": "251.4",
+        "preset": null,
+        "aaTacan": ""
+      }
+    ]
   },
   "Syria": {
     "name": "Syria",
