@@ -86,7 +86,7 @@ function isValidStep(frequency: number, min: number, step: number): boolean {
   }
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   .preset-row {
     grid-template-columns: 1fr;

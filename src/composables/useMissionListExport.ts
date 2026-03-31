@@ -45,7 +45,6 @@ export type ImportPreview = {
 /**
  * Import data can be either a full backup or a single mission
  */
-export type ImportData = MissionListBackup | SingleMissionExport
 
 /**
  * Composable for exporting and importing the complete mission list

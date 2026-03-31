@@ -5,11 +5,6 @@
 
 export type CoordinateType = 'latitude' | 'longitude'
 
-export type DecimalCoordinate = {
-  /** Decimal degrees. Positive = N/E, Negative = S/W */
-  value: number
-}
-
 export type DMSCoordinate = {
   hemisphere: 'N' | 'S' | 'E' | 'W'
   degrees: number
@@ -218,28 +213,6 @@ export function trueDmsStringToDecimal(input: string): number | null {
   const dms = parseDMS(input)
   if (!dms) return null
   return dmsToDecimal(dms)
-}
-
-// ============================================================================
-// BACKWARD COMPATIBILITY ALIASES
-// ============================================================================
-// The following aliases maintain backward compatibility with existing code.
-// The old "DMS" functions actually formatted as DDM (decimal minutes, no seconds).
-
-/**
- * @deprecated Use decimalToDDMString instead for clarity
- * Legacy function that formats as DDM (not true DMS)
- */
-export function decimalToDMSString(decimal: number, type: CoordinateType): string {
-  return decimalToDDMString(decimal, type)
-}
-
-/**
- * @deprecated Use ddmStringToDecimal instead for clarity
- * Legacy function that parses DDM format (not true DMS)
- */
-export function dmsStringToDecimal(input: string): number | null {
-  return ddmStringToDecimal(input)
 }
 
 /**

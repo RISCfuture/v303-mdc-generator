@@ -85,11 +85,6 @@ export function formatZuluTime(minutesSinceMidnight: number): string {
 }
 
 /**
- * @deprecated Use formatZuluTime instead
- */
-export const formatTOT = formatZuluTime
-
-/**
  * Calculate TOT placeholders for all waypoints
  * Returns an array where each element is the calculated TOT for that waypoint
  * Returns "----" if TOT cannot be calculated

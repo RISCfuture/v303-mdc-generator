@@ -254,17 +254,3 @@ export function getAircraftComponentLoader(
 ): ComponentLoader | undefined {
   return calculatorRegistry.getComponentLoader(airframe, componentType)
 }
-
-/**
- * Check if a component is registered for an airframe.
- *
- * @param airframe - The airframe identifier (DCS clsid)
- * @param componentType - The type of component
- * @returns true if the component is registered
- */
-export function hasAircraftComponent(
-  airframe: Airframe,
-  componentType: AircraftComponentType,
-): boolean {
-  return calculatorRegistry.hasComponent(airframe, componentType)
-}

@@ -94,19 +94,3 @@ export type A10CriticalFieldConfig = {
   /** Runway Condition Reading */
   rcr: A10RCR
 }
-
-// ============================================================================
-// RCR Mapping
-// ============================================================================
-
-/**
- * Map A-10 runway condition to RCR value
- */
-export function a10RunwayConditionToRCR(condition: A10RunwayCondition): A10RCR {
-  const rcrMap: Record<A10RunwayCondition, A10RCR> = {
-    dry: 23,
-    wet: 12,
-    icy: 5,
-  }
-  return rcrMap[condition]
-}

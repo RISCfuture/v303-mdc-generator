@@ -14,11 +14,6 @@ import type { Mission } from '@/types'
 import { serializeMission } from '@/utils/missionStorage'
 import { isMissionStorageComplete, type ValidationResult } from '@/utils/validateMissionStorage'
 
-export type FieldValidationError = {
-  field: string
-  message: string
-}
-
 export function useMissionValidation(
   mission: Ref<Mission | null> | ComputedRef<Mission | null | undefined>,
 ) {

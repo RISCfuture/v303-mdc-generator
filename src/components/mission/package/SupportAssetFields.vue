@@ -133,7 +133,7 @@ const roleOptions = ['AAR', 'JSTARS', 'AWACS']
   flex: 1 1 200px;
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   .field {
     width: 100% !important;

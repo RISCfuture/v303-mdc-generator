@@ -68,11 +68,3 @@ export function isMissionStorageComplete(data: unknown): ValidationResult {
     errors,
   }
 }
-
-/**
- * @deprecated Use isMissionStorageComplete() instead for clarity.
- * This function checks COMPLETENESS (export-readiness), not just validity.
- */
-export function validateMissionStorage(data: unknown): ValidationResult {
-  return isMissionStorageComplete(data)
-}

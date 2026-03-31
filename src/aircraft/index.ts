@@ -46,9 +46,6 @@ export type {
   TakeoffDistanceResult,
 } from './types'
 
-// Export type guards
-export { isBingoCapable, isCriticalFieldCapable, isDragIndexCapable } from './types'
-
 // Export registry and convenience functions
 export {
   calculatorRegistry,
@@ -56,7 +53,6 @@ export {
   hasCalculatorCapability,
   isCalculatorSupported,
   getAircraftComponentLoader,
-  hasAircraftComponent,
 } from './registry'
 
 // Export component type

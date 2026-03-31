@@ -51,9 +51,6 @@ export type {
   A10ThrustSetting,
 } from './types'
 
-// Export utility functions from types
-export { a10RunwayConditionToRCR } from './types'
-
 // Re-export calculation functions for backward compatibility and direct use
 export {
   calculateHeadwindComponent,

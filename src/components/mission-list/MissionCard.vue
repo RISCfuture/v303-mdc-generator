@@ -101,7 +101,7 @@ const emit = defineEmits<{
   font-size: 14px;
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   .mission-actions {
     flex-direction: column;

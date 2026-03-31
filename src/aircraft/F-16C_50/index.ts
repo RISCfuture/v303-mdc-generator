@@ -91,7 +91,6 @@ export {
   getDragIndex,
   calculateTotalDragIndex,
   celsiusToFahrenheit,
-  fahrenheitToCelsius,
   getCrosswindLimit,
   exceedsCrosswindLimitations,
 } from './takeoffDistanceCalculator'

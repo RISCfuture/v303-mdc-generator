@@ -37,7 +37,7 @@ const emit = defineEmits<{
   gap: 16px;
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   .missions-grid {
     grid-template-columns: 1fr;

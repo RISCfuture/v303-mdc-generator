@@ -20,7 +20,7 @@ import { getFlightNumber } from '@/utils/callsignHelpers'
 import { formatSTN } from '@/utils/crewFormatting'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import { formatCoordinate } from '@/utils/coordinateFormatter'
-import { COLORS } from './constants'
+import { COLORS, FONT_SIZES } from './constants'
 import { SQUADRON_LOGOS } from './squadronAssets'
 
 // Type for table cells - use pdfMake's type but allow flexibility for our use case
@@ -279,7 +279,7 @@ function generateHeaderBanner(mission: Mission): unknown {
             fillColor: backgroundColor,
             color: '#FFFFFF',
             bold: true,
-            fontSize: 16,
+            fontSize: FONT_SIZES.header,
             alignment: 'center',
             border: [false, false, false, false],
             margin: [0, 8, 0, 0], // Top margin to vertically center text
@@ -1005,7 +1005,7 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
     const primaryRemarksContent: TableCell = primaryRemarks
       ? {
           ...((await markdownToPdfMake(primaryRemarks, {
-            fontSize: 10,
+            fontSize: FONT_SIZES.content,
             maxImageWidth: maxImageWidthForColumn,
           })) as object),
           fillColor: '#EBF1FA',
@@ -1015,7 +1015,7 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
     const secondaryRemarksContent: TableCell = secondaryRemarks
       ? {
           ...((await markdownToPdfMake(secondaryRemarks, {
-            fontSize: 10,
+            fontSize: FONT_SIZES.content,
             maxImageWidth: maxImageWidthForColumn,
           })) as object),
           fillColor: '#EBF1FA',
@@ -1301,7 +1301,7 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
 
   // Mission remarks use full page width (~555pt after margins)
   const remarksContent = await markdownToPdfMake(mission.details.remarks, {
-    fontSize: 10,
+    fontSize: FONT_SIZES.content,
     maxImageWidth: 500,
   })
 
@@ -1310,7 +1310,7 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
     generateHeaderBanner(mission),
     {
       text: 'Notes / Images / SLEDs',
-      fontSize: 10,
+      fontSize: FONT_SIZES.content,
       bold: true,
       margin: [0, 0, 0, 4],
     },
@@ -1391,13 +1391,13 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
     pageSize: 'LETTER',
     pageMargins: [36, 36, 36, 36],
     defaultStyle: {
-      fontSize: 9,
+      fontSize: FONT_SIZES.default,
     },
     footer: (currentPage, pageCount) => {
       return {
         text: `Page ${currentPage} of ${pageCount}`,
         alignment: 'center',
-        fontSize: 7,
+        fontSize: FONT_SIZES.footer,
         margin: [0, 0, 0, 20],
       }
     },

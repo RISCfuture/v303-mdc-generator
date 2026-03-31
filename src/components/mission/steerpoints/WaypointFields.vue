@@ -182,7 +182,7 @@ const totValidationRule = {
   display: none;
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   .waypoint-field,
   .waypoint-field-small,

@@ -11,39 +11,10 @@ export const COLORS = {
   v303Red: [210, 9, 32] as [number, number, number], // v303 FS header background (#d20920)
 }
 
-// Page dimensions and margins
-export const PAGE_CONFIG = {
-  width: 8.5, // inches (letter size)
-  height: 11, // inches (letter size)
-  margin: 0.1, // inches
-  headerHeight: 0.5, // inches
-}
-
-// Font sizes - simple and consistent
+// Font sizes (pdfMake points)
 export const FONT_SIZES = {
   header: 16,
-  sectionTitle: 9,
-  tableHeader: 7,
-  tableBody: 7,
-  small: 6,
+  content: 10,
+  default: 9,
   footer: 7,
-}
-
-// Table styling - unified simple defaults
-export const TABLE_STYLES = {
-  cellPadding: 0.02,
-  outerLineWidth: 0.02, // 2px bold outer border
-  innerLineWidth: 0.01, // 1px inner borders
-  fontSize: 9,
-}
-
-// F-16C specific constants
-export const F16_STATIONS = ['1', '2', '3', '4', '5L', '5', '5R', '6', '7', '8', '9']
-
-// Default values
-export const DEFAULTS = {
-  maxFlightMembers: 4,
-  maxWaypointsPage1: 15,
-  maxWaypointsPage2: 10,
-  maxRadioPresets: 20,
 }

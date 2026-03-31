@@ -569,7 +569,7 @@ async function handleDrop(e: DragEvent) {
   }
 }
 
-/* Mobile responsive styles */
+/* Note: 768px matches BREAKPOINT.mobile from design-tokens.ts */
 @media (width <= 768px) {
   /* Hide desktop table, show mobile grid */
   .desktop-view {

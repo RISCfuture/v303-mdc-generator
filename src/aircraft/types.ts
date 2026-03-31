@@ -220,34 +220,3 @@ export type DragIndexCapableCalculator = {
    */
   getDragIndex(clsid: string, category?: string): number
 }
-
-// ============================================================================
-// Type Guards
-// ============================================================================
-
-/**
- * Type guard to check if a calculator supports bingo calculation
- */
-export function isBingoCapable(
-  calculator: AircraftCalculator,
-): calculator is AircraftCalculator & BingoCapableCalculator {
-  return calculator.hasCapability('bingo')
-}
-
-/**
- * Type guard to check if a calculator supports critical field length
- */
-export function isCriticalFieldCapable(
-  calculator: AircraftCalculator,
-): calculator is AircraftCalculator & CriticalFieldCapableCalculator {
-  return calculator.hasCapability('criticalField')
-}
-
-/**
- * Type guard to check if a calculator supports drag index
- */
-export function isDragIndexCapable(
-  calculator: AircraftCalculator,
-): calculator is AircraftCalculator & DragIndexCapableCalculator {
-  return calculator.hasCapability('dragIndex')
-}

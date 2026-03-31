@@ -97,13 +97,6 @@ export const HEIGHT = {
 } as const
 
 // Responsive breakpoints
-export const BREAKPOINT = {
-  /** 768px - Mobile breakpoint */
-  mobile: '768px',
-} as const
-
-// Border radius
-export const BORDER_RADIUS = {
-  /** 0.25rem = 4px */
-  sm: `${BASE_UNIT * 0.25}rem`,
-} as const
+// Mobile breakpoint: 768px
+// Note: CSS media queries can't reference JS constants, so components
+// hardcode these values with cross-reference comments.
