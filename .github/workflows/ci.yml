@@ -50,6 +50,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps
+        timeout-minutes: 5
 
       - name: Run E2E tests
         run: yarn test:e2e:headless
