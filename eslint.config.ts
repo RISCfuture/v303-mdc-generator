@@ -135,6 +135,11 @@ export default tseslint.config(
     rules: {
       'playwright/no-wait-for-timeout': 'off',
       'playwright/no-wait-for-selector': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
     },
   },
 )
