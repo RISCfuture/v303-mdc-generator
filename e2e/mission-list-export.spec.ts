@@ -1,231 +1,168 @@
-import { test, expect, Page } from '@playwright/test'
 import * as fs from 'fs'
 import * as path from 'path'
 import { fileURLToPath } from 'url'
+import { test, expect } from './fixtures/fixtures'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-/**
- * Helper to create a mission with optional name
- */
-async function createMission(page: Page, name?: string) {
-  await page
-    .getByRole('button', { name: /New Mission/ })
-    .first()
-    .click()
-  // Wait for dialog to be visible before clicking Create Mission
-  const dialog = page.locator('dialog, [role="dialog"]')
-  await dialog.waitFor({ state: 'visible' })
-
-  // Use JavaScript click to avoid WebKit click interception issues with overlay elements
-  await page.evaluate(() => {
-    const btn = Array.from(document.querySelectorAll('button')).find((b) =>
-      b.textContent.includes('Create Mission'),
-    )
-    btn?.click()
-  })
-
-  // Wait for mission editor to load - more reliable than URL check for SPA navigation
-  await page.getByText('Basic Info', { exact: true }).waitFor({ state: 'visible' })
-
-  if (name) {
-    const nameInput = page.locator('[aria-label="Mission Name"] input')
-    await nameInput.fill(name)
-  }
-}
-
-/**
- * Helper to navigate back to mission list
- */
-async function goBackToMissionList(page: Page) {
-  await page.locator('.n-page-header__back').click()
-  await page.getByRole('table').waitFor({ state: 'visible' })
-}
-
 test.describe('Mission List Export/Import', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/')
-    // Clear localStorage and IndexedDB before each test
-    await page.evaluate(() => {
-      localStorage.clear()
-      indexedDB.deleteDatabase('v303-mdc-images')
-    })
-    await page.reload()
-    // Disable smooth scrolling and animations - fixes WebKit flaky click issues
-    await page.addStyleTag({
-      content: `
-        *, *::before, *::after {
-          scroll-behavior: auto !important;
-          transition: none !important;
-          animation: none !important;
-        }
-      `,
-    })
+  test.beforeEach(async ({ missionListPage }) => {
+    await missionListPage.goto()
+    await missionListPage.clearAllStorageAndReload()
+    await missionListPage.disableAnimations()
   })
 
-  test('should export missions and download JSON file', async ({ page }) => {
-    await page.goto('/')
+  test('should export missions and download JSON file', async ({ missionListPage }) => {
+    await missionListPage.goto()
 
     // Create two missions
     for (let i = 0; i < 2; i++) {
-      await createMission(page)
-      await goBackToMissionList(page)
+      await missionListPage.createMission()
+      await missionListPage.goBackToMissionList()
     }
 
-    // Setup download listener
-    const downloadPromise = page.waitForEvent('download')
-
-    // Click export button
-    await page.getByRole('button', { name: /Export Missions/ }).click()
-
-    // Wait for download
-    const download = await downloadPromise
-
-    // Verify filename matches pattern
+    // Export and verify download
+    const download = await missionListPage.exportMissions()
     const filename = download.suggestedFilename()
     expect(filename).toMatch(/^v303-missions-backup-\d{4}-\d{2}-\d{2}\.json$/)
   })
 
-  test('should show import confirmation modal when importing valid backup', async ({ page }) => {
-    await page.goto('/')
+  test('should show import confirmation modal when importing valid backup', async ({
+    missionListPage,
+  }) => {
+    await missionListPage.goto()
 
     // Create a test mission first to export
-    await createMission(page, 'Test Mission for Export')
-    await goBackToMissionList(page)
+    await missionListPage.createMission('Test Mission for Export')
+    await missionListPage.goBackToMissionList()
 
     // Export the mission
-    const downloadPromise = page.waitForEvent('download')
-    await page.getByRole('button', { name: /Export Missions/ }).click()
-    const download = await downloadPromise
+    const download = await missionListPage.exportMissions()
     const downloadPath = await download.path()
 
-    // Now import the file
-    const importButton = page.getByRole('button', { name: /Import Missions/ })
-    await expect(importButton).toBeVisible()
+    // Import the file
+    await expect(missionListPage.importMissionsButton).toBeVisible()
+    await missionListPage.importMissionsFromFile(downloadPath!)
 
-    // Set up file input
-    const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath)
-
-    // Wait for import modal to appear (use dialog role to be more specific)
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
+    // Wait for import modal to appear
+    await expect(missionListPage.importDialogTitle).toBeVisible()
 
     // Verify warning message
-    await expect(page.getByText(/This will delete all existing missions/)).toBeVisible()
+    await expect(
+      missionListPage.page.getByText(/This will delete all existing missions/),
+    ).toBeVisible()
 
     // Verify import details are shown
-    await expect(page.getByText(/Missions to import:/i)).toBeVisible()
-    await expect(page.getByText(/Exported:/i)).toBeVisible()
-    await expect(page.getByText(/File size:/i)).toBeVisible()
+    await expect(missionListPage.page.getByText(/Missions to import:/i)).toBeVisible()
+    await expect(missionListPage.page.getByText(/Exported:/i)).toBeVisible()
+    await expect(missionListPage.page.getByText(/File size:/i)).toBeVisible()
   })
 
-  test('should successfully import missions and replace existing ones', async ({ page }) => {
-    await page.goto('/')
+  test('should successfully import missions and replace existing ones', async ({
+    missionListPage,
+  }) => {
+    await missionListPage.goto()
 
     // Create two original missions
     for (let i = 0; i < 2; i++) {
-      await createMission(page, `Original Mission ${i + 1}`)
-      await goBackToMissionList(page)
+      await missionListPage.createMission(`Original Mission ${i + 1}`)
+      await missionListPage.goBackToMissionList()
     }
 
     // Verify original missions exist
-    await expect(page.getByRole('table').getByText('Original Mission 1')).toBeVisible()
-    await expect(page.getByRole('table').getByText('Original Mission 2')).toBeVisible()
+    await expect(missionListPage.missionTable.getByText('Original Mission 1')).toBeVisible()
+    await expect(missionListPage.missionTable.getByText('Original Mission 2')).toBeVisible()
 
     // Export missions
-    const downloadPromise = page.waitForEvent('download')
-    await page.getByRole('button', { name: /Export Missions/ }).click()
-    const download = await downloadPromise
+    const download = await missionListPage.exportMissions()
     const downloadPath = await download.path()
 
     // Create a different mission
-    await createMission(page, 'New Mission to be Replaced')
-    await goBackToMissionList(page)
+    await missionListPage.createMission('New Mission to be Replaced')
+    await missionListPage.goBackToMissionList()
 
-    // Verify we now have 3 missions (use table selector to avoid strict mode violation)
-    await expect(page.getByRole('table').getByText('New Mission to be Replaced')).toBeVisible()
+    // Verify we now have 3 missions
+    await expect(missionListPage.missionTable.getByText('New Mission to be Replaced')).toBeVisible()
 
     // Import the backup (which has 2 missions)
-    const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath)
+    await missionListPage.importMissionsFromFile(downloadPath!)
 
     // Wait for confirmation modal
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
+    await expect(missionListPage.importDialogTitle).toBeVisible()
 
     // Confirm import
-    await page.getByRole('button', { name: /Replace All Missions/i }).click()
+    await missionListPage.confirmImport()
 
     // Wait for modal to close
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).not.toBeVisible()
+    await expect(missionListPage.importDialogTitle).not.toBeVisible()
 
-    // Verify we're back to the original 2 missions (use table selector to avoid strict mode violation)
-    await expect(page.getByRole('table').getByText('Original Mission 1')).toBeVisible()
-    await expect(page.getByRole('table').getByText('Original Mission 2')).toBeVisible()
-    await expect(page.getByRole('table').getByText('New Mission to be Replaced')).not.toBeVisible()
+    // Verify we're back to the original 2 missions
+    await expect(missionListPage.missionTable.getByText('Original Mission 1')).toBeVisible()
+    await expect(missionListPage.missionTable.getByText('Original Mission 2')).toBeVisible()
+    await expect(
+      missionListPage.missionTable.getByText('New Mission to be Replaced'),
+    ).not.toBeVisible()
   })
 
-  test('should cancel import when cancel button is clicked', async ({ page }) => {
-    await page.goto('/')
+  test('should cancel import when cancel button is clicked', async ({ missionListPage }) => {
+    await missionListPage.goto()
 
     // Create a mission and export it
-    await createMission(page)
-    await goBackToMissionList(page)
+    await missionListPage.createMission()
+    await missionListPage.goBackToMissionList()
 
-    const downloadPromise = page.waitForEvent('download')
-    await page.getByRole('button', { name: /Export Missions/ }).click()
-    const download = await downloadPromise
+    const download = await missionListPage.exportMissions()
     const downloadPath = await download.path()
 
     // Try to import
-    const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath)
+    await missionListPage.importMissionsFromFile(downloadPath!)
 
     // Wait for confirmation modal
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
+    await expect(missionListPage.importDialogTitle).toBeVisible()
 
     // Click cancel
-    await page.getByRole('button', { name: /Cancel/i }).click()
+    await missionListPage.cancelImport()
 
     // Modal should close
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).not.toBeVisible()
+    await expect(missionListPage.importDialogTitle).not.toBeVisible()
 
     // Original mission should still exist
-    await expect(page.getByRole('table')).toBeVisible()
+    await expect(missionListPage.missionTable).toBeVisible()
   })
 
-  test('should show error message for invalid backup file', async ({ page }) => {
-    await page.goto('/')
+  test('should show error message for invalid backup file', async ({ missionListPage }) => {
+    await missionListPage.goto()
 
     // Create an invalid backup file
     const invalidBackupPath = path.join(__dirname, 'invalid-backup.json')
     fs.writeFileSync(invalidBackupPath, JSON.stringify({ invalid: 'data', version: 1 }))
 
     // Try to import invalid file
-    const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(invalidBackupPath)
+    await missionListPage.importMissionsFromFile(invalidBackupPath)
 
-    // Should see error message (Naive UI shows error messages as notifications)
-    await expect(page.getByText(/Failed to parse backup file/i)).toBeVisible()
+    // Should see error message
+    await expect(missionListPage.page.getByText(/Failed to parse backup file/i)).toBeVisible()
 
     // Clean up
     fs.unlinkSync(invalidBackupPath)
   })
 
-  test('should handle multiple missions and images in export', async ({ page }) => {
-    await page.goto('/')
+  test('should handle multiple missions and images in export', async ({
+    page,
+    missionListPage,
+  }) => {
+    await missionListPage.goto()
 
     // Create 3 missions with different names
     const missionNames = ['SEAD Mission', 'CAS Mission', 'CAP Mission']
     for (const name of missionNames) {
-      await createMission(page, name)
-      await goBackToMissionList(page)
+      await missionListPage.createMission(name)
+      await missionListPage.goBackToMissionList()
     }
 
     // Export
-    const downloadPromise = page.waitForEvent('download')
-    await page.getByRole('button', { name: /Export Missions/ }).click()
-    const download = await downloadPromise
+    const download = await missionListPage.exportMissions()
     const downloadPath = await download.path()
 
     // Clear everything and import
@@ -236,20 +173,19 @@ test.describe('Mission List Export/Import', () => {
     await page.reload()
 
     // Import
-    const fileInput = page.locator('input[type="file"]')
-    await fileInput.setInputFiles(downloadPath)
+    await missionListPage.importMissionsFromFile(downloadPath!)
 
     // Wait for import modal to appear
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).toBeVisible()
+    await expect(missionListPage.importDialogTitle).toBeVisible()
 
-    await page.getByRole('button', { name: /Replace All Missions/i }).click()
+    await missionListPage.confirmImport()
 
     // Wait for modal to close
-    await expect(page.locator('.n-dialog__title', { hasText: 'Import Missions' })).not.toBeVisible()
+    await expect(missionListPage.importDialogTitle).not.toBeVisible()
 
-    // Verify all missions are restored (use table selector to avoid strict mode violation)
+    // Verify all missions are restored
     for (const name of missionNames) {
-      await expect(page.getByRole('table').getByText(name)).toBeVisible()
+      await expect(missionListPage.missionTable.getByText(name)).toBeVisible()
     }
   })
 })
