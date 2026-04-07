@@ -53,7 +53,7 @@
       "freq": "56.5",
       "aaTacan": 14,
       "laserCode": 379,
-      "tailNumber": "88-0405"
+      "tailNumber": "88-0406"
     },
     {
       "pilot": "Recon",
@@ -145,33 +145,36 @@
     },
     {
       "pilot": "Specky",
-      "callsign": ["PUP 1", "RATTLER1"],
-      "link16Prefix": "PP",
+      "callsign": ["ILLINI", "VIPER14"],
+      "link16Prefix": "II",
       "stn": 3625,
       "mode3": 713,
       "freq": "57.9",
       "aaTacan": 22,
-      "laserCode": 368
+      "laserCode": 368,
+      "tailNumber": "87-0296"
     },
     {
       "pilot": "Skilty",
-      "callsign": ["PUP 2", "RATTLER2"],
-      "link16Prefix": "PP",
+      "callsign": ["PHOENIX", "VIPER15"],
+      "link16Prefix": "PX",
       "stn": 3626,
       "mode3": 705,
       "freq": "58.0",
       "aaTacan": 23,
-      "laserCode": 369
+      "laserCode": 369,
+      "tailNumber": "86-0318"
     },
     {
       "pilot": "Bombay",
-      "callsign": ["PUP 4", "RATTLER4"],
-      "link16Prefix": "PP",
+      "callsign": ["STINGER", "VIPER16"],
+      "link16Prefix": "SR",
       "stn": 3628,
       "mode3": 721,
       "freq": "58.2",
       "aaTacan": 25,
-      "laserCode": 371
+      "laserCode": 371,
+      "tailNumber": "82-0267"
     }
   ],
   "v303": [
