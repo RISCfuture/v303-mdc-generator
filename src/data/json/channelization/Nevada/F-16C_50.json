@@ -99,8 +99,8 @@
         },
         {
           "number": 20,
-          "frequency": "300.05",
-          "description": ""
+          "frequency": "263.5",
+          "description": "WIZARD"
         }
       ]
     },
@@ -108,7 +108,7 @@
       "presets": [
         {
           "number": 1,
-          "frequency": "138.3",
+          "frequency": "138.25",
           "description": "v93 FS"
         },
         {

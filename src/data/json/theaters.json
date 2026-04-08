@@ -162,6 +162,24 @@
         "aaTacan": ""
       },
       {
+        "callsign": "WIZARD",
+        "role": "AWACS",
+        "location": "North",
+        "altitude": 32000,
+        "frequency": "263.5",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "OVERLORD",
+        "role": "AWACS",
+        "location": "North",
+        "altitude": 32000,
+        "frequency": "263.525",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
         "callsign": "TEXACO2",
         "role": "AAR",
         "location": "AR641A",

@@ -114,13 +114,13 @@
         },
         {
           "number": 23,
-          "frequency": "309.2",
-          "description": ""
+          "frequency": "263.5",
+          "description": "WIZARD"
         },
         {
           "number": 24,
-          "frequency": "266.4",
-          "description": ""
+          "frequency": "263.525",
+          "description": "OVERLORD"
         },
         {
           "number": 25,
@@ -228,8 +228,8 @@
         },
         {
           "number": 20,
-          "frequency": "300.05",
-          "description": ""
+          "frequency": "263.5",
+          "description": "WIZARD"
         }
       ]
     },

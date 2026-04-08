@@ -640,7 +640,11 @@
       "longitude": -116.77330290767,
       "elevation": 5534
     },
-    "tacan": null,
+    "tacan": {
+      "channel": 77,
+      "callsign": "TNX",
+      "band": "X"
+    },
     "runways": [
       {
         "name": "32",
