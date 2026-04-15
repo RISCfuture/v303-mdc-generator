@@ -3,7 +3,10 @@
   "project": ["src/**/*.{ts,vue}"],
   "entry": ["src/**/__tests__/**/*.{ts,spec.ts}", "src/**/*.spec.ts"],
   "ignore": ["src/utils/markdownToPdf.ts"],
+  "vite": false,
   "ignoreDependencies": [
+    "vite",
+    "vite-plugin-csp-guard",
     "@types/dompurify",
     "@types/markdown-it",
     "@vue/compiler-dom",
