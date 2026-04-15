@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    />
 
     <!-- Primary Meta Tags -->
     <title>v303rd FG MDC Generator</title>
@@ -16,6 +22,12 @@
       content="v303rd Fighter Group, DCS World, MDC, Mission Data Card, A-10C, F-16C, flight simulation"
     />
     <meta name="author" content="v303rd Fighter Group" />
+    <link rel="canonical" href="https://riscfuture.github.io/v303-mdc-generator/" />
+
+    <!-- Apple Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="v303 MDC" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -45,6 +57,25 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a0a5a" />
     <meta name="theme-color" content="#0a0a5a" />
     <meta name="msapplication-TileColor" content="#0a0a5a" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "v303rd FG MDC Generator",
+        "description": "Mission Data Card generator for the v303rd Fighter Group - Generate MDCs for A-10C and F-16C missions in DCS World.",
+        "url": "https://riscfuture.github.io/v303-mdc-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and a modern browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

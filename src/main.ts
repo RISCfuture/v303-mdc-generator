@@ -30,6 +30,12 @@ if (import.meta.env.PROD && !import.meta.env.VITE_DISABLE_SENTRY && sentryDSN) {
   })
 }
 
+// Global Vue error handler — forward to Sentry (no-op in dev/test if Sentry isn't initialized)
+app.config.errorHandler = (err, _instance, info) => {
+  Sentry.captureException(err, { extra: { info } })
+  console.error('[Vue error]', info, err)
+}
+
 app.use(createPinia())
 app.use(router)
 

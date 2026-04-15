@@ -1,19 +1,25 @@
 {
   "name": "v303rd Fighter Group MDC Generator",
   "short_name": "v303 MDC",
+  "description": "Mission Data Card generator for the v303rd Fighter Group - Generate MDCs for A-10C and F-16C missions in DCS World.",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/v303-mdc-generator/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/v303-mdc-generator/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#0a0a5a",
   "background_color": "#0a0a5a",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/v303-mdc-generator/",
+  "scope": "/v303-mdc-generator/",
+  "categories": ["productivity", "utilities"]
 }

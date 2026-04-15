@@ -39,8 +39,11 @@ onUnmounted(() => {
     <NLoadingBarProvider>
       <NMessageProvider>
         <NDialogProvider>
+          <a href="#main-content" class="skip-to-content">Skip to main content</a>
           <div class="app-container">
-            <RouterView />
+            <main id="main-content">
+              <RouterView />
+            </main>
           </div>
         </NDialogProvider>
       </NMessageProvider>
@@ -83,5 +86,34 @@ body {
 .app-container {
   padding: 16px;
   min-height: 100vh;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 9999;
+  padding: 8px 16px;
+  background-color: #0a0a5a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 4px;
+}
+
+.skip-to-content:focus-visible {
+  top: 0;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>

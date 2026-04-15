@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://riscfuture.github.io/v303-mdc-generator/sitemap.xml
