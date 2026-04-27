@@ -1,5 +1,9 @@
-// Crew database from v303-crew.tsv
-// Virtual 303rd Fighter Group pilot roster with assigned codes and identifiers
+// Crew database. Source of truth: v303 FG Network/Radio/Laser Standards
+// Google Sheet — https://docs.google.com/spreadsheets/d/1sFs9AAEHIKj-DZ0Yyy-6nqSdPD8b8mxoXSeQZDxs3I0/preview#gid=232335311
+// (embedded in forum thread 2055). Refresh all three squadron arrays in
+// src/data/json/crew.json from the sheet's "DATALINK AND OTHER ASSIGNMENTS"
+// tab on each update; remove pilots that aren't on the sheet; for impossible
+// octal Mode 3 codes (digits 8 or 9) store `mode3: null` and flag in the PR.
 import crewDataJson from '@/data/json/crew.json'
 
 export type PilotData = {
