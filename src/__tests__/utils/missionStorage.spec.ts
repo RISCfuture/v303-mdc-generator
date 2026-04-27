@@ -302,6 +302,34 @@ describe('missionStorage', () => {
       expect(deserialized.loadout.length).toBe(original.loadout.length)
     })
 
+    it('should preserve custom bingoCalculatorParams across serialize/deserialize', () => {
+      const original = createTestMission()
+      original.fuel.bingoCalculatorParams = {
+        aarExpected: true,
+        approachType: 'IFR',
+        altitudeProfile: 'low',
+      }
+
+      const serialized = serializeMission(original)
+      expect(serialized.f.bcp).toEqual({
+        aarExpected: true,
+        approachType: 'IFR',
+        altitudeProfile: 'low',
+      })
+
+      const deserialized = deserializeMission(serialized)
+      expect(deserialized.fuel.bingoCalculatorParams).toEqual(original.fuel.bingoCalculatorParams)
+    })
+
+    it('should leave bingoCalculatorParams undefined when not set', () => {
+      const original = createTestMission()
+      const serialized = serializeMission(original)
+      expect(serialized.f.bcp).toBeUndefined()
+
+      const deserialized = deserializeMission(serialized)
+      expect(deserialized.fuel.bingoCalculatorParams).toBeUndefined()
+    })
+
     it('should significantly reduce storage size', () => {
       const original = createTestMission()
       const serialized = serializeMission(original)
