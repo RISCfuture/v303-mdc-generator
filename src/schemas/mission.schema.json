@@ -573,6 +573,16 @@
           "type": "number",
           "minimum": 0,
           "description": "Bingo fuel in pounds"
+        },
+        "flp": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Fuel load percentage (0-100, defaults to 100)"
+        },
+        "bcp": {
+          "type": "object",
+          "description": "Bingo calculator parameters (F16BingoCalculatorParams; F-16 only)"
         }
       }
     },
