@@ -45,6 +45,13 @@ describe('mdcTemplateService', () => {
 
       // @ts-expect-error - accessing nested property for test
       expect(template.Misc?.LaserStartTime).toBe(8)
+      // Squadron-default ToBeUpdated flags (Skilty's feedback, forum 5420#13293).
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Misc?.LaserSettingsToBeUpdated).toBe(false)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Misc?.TACANToBeUpdated).toBe(false)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Misc?.ILSToBeUpdated).toBe(false)
 
       // Mission-specific fields should NOT be in template (calculated by exporter)
       // @ts-expect-error - accessing nested property for test
@@ -55,6 +62,34 @@ describe('mdcTemplateService', () => {
       expect(template.Misc?.ILSFrequency).toBeUndefined()
       // @ts-expect-error - accessing nested property for test
       expect(template.Misc?.ILSCourse).toBeUndefined()
+    })
+
+    it('should have squadron-default Upload flags for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
+
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.Waypoints).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.CMS).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.Radios).toBe(false)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.MFDs).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.Datalink).toBe(false)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.Misc).toBe(true)
+      // @ts-expect-error - accessing nested property for test
+      expect(template.Upload?.Kneeboard).toBe(false)
+    })
+
+    it('should set MSL master-mode FCR to TWS for v93 DCS-DTC', () => {
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
+
+      // @ts-expect-error - accessing nested property for test
+      const mslConfig = template.MFD?.Configurations.find((c) => c.Mode === 5)
+      // FCRMode 3 = TWS per F16_DCS_DTC_FCR_MODE
+      expect(mslConfig?.LeftMFD.FCRMode).toBe(3)
     })
 
     it('should have correct datalink settings for v93 DCS-DTC', () => {
