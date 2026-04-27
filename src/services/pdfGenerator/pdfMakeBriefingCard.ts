@@ -923,8 +923,10 @@ function hasTargetData(mission: Mission): boolean {
 /**
  * Generate target/tasking table
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
+ *
+ * Exported for unit testing.
  */
-async function generateTargetTable(mission: Mission): Promise<unknown> {
+export async function generateTargetTable(mission: Mission): Promise<unknown> {
   const primaryTarget = mission.details.primaryTarget
   const primaryName = primaryTarget?.name ?? ''
   const primaryDmpi = primaryTarget?.dmpi ?? ''
@@ -938,14 +940,23 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
       : ''
   const primaryRemarks = primaryTarget?.remarks ?? ''
 
-  const secondaryName = mission.details.secondaryTarget?.name ?? ''
-  const secondaryDmpi = mission.details.secondaryTarget?.dmpi ?? ''
-  const secondaryRemarks = mission.details.secondaryTarget?.remarks ?? ''
+  const secondaryTarget = mission.details.secondaryTarget
+  const secondaryName = secondaryTarget?.name ?? ''
+  const secondaryDmpi = secondaryTarget?.dmpi ?? ''
+  const secondaryCoords =
+    secondaryTarget?.latitude != null && secondaryTarget.longitude != null
+      ? formatCoordinate(
+          secondaryTarget.latitude,
+          secondaryTarget.longitude,
+          secondaryTarget.coordinateFormat ?? 'DDM',
+        )
+      : ''
+  const secondaryRemarks = secondaryTarget?.remarks ?? ''
 
-  const primaryAttackHdg = mission.details.primaryTarget?.attackHeading
-  const primaryIngressAlt = mission.details.primaryTarget?.ingressAltitude
-  const secondaryAttackHdg = mission.details.secondaryTarget?.attackHeading
-  const secondaryIngressAlt = mission.details.secondaryTarget?.ingressAltitude
+  const primaryAttackHdg = primaryTarget?.attackHeading
+  const primaryIngressAlt = primaryTarget?.ingressAltitude
+  const secondaryAttackHdg = secondaryTarget?.attackHeading
+  const secondaryIngressAlt = secondaryTarget?.ingressAltitude
 
   const rows: TableRow[] = [
     [
@@ -964,7 +975,7 @@ async function generateTargetTable(mission: Mission): Promise<unknown> {
       { text: 'Coords', fillColor: '#DCDCDC', bold: true },
       { text: primaryCoords, fillColor: '#EBF1FA', italics: true },
       { text: 'Coords', fillColor: '#DCDCDC', bold: true },
-      { text: '', fillColor: '#EBF1FA', italics: true },
+      { text: secondaryCoords, fillColor: '#EBF1FA', italics: true },
     ],
     [
       { text: 'Attack Hdg', fillColor: '#DCDCDC', bold: true },
