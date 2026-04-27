@@ -104,7 +104,7 @@
           "Page1": 2,
           "Page2": 5,
           "Page3": 1,
-          "FCRMode": 1,
+          "FCRMode": 3,
           "FCRAzimuth": 6,
           "FCRBars": 4,
           "FCRRange": 40
@@ -123,8 +123,20 @@
       }
     ]
   },
+  "Upload": {
+    "Waypoints": true,
+    "CMS": true,
+    "Radios": false,
+    "MFDs": true,
+    "Datalink": false,
+    "Misc": true,
+    "Kneeboard": false
+  },
   "Misc": {
-    "LaserStartTime": 8
+    "LaserStartTime": 8,
+    "LaserSettingsToBeUpdated": false,
+    "TACANToBeUpdated": false,
+    "ILSToBeUpdated": false
   },
   "Radios": {
     "Radio1": {

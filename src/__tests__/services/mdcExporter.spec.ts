@@ -422,15 +422,53 @@ describe('MDC Exporter', () => {
       expect(lat.codePointAt(lat.length - 1)).toBe(0x2019)
     })
 
-    it('defaults Upload.Radios and Upload.Datalink to false', () => {
+    it('uses TWS FCR mode in MSL master mode (v93 squadron standard)', () => {
       const result = exportF16MDC(mockMissionF16)
+
+      // Mode 5 = MSL; LeftMFD FCRMode = 3 (TWS) per v93 standard.
+      const mslConfig = result.MFD.Configurations.find((c) => c.Mode === 5)
+      expect(mslConfig?.LeftMFD.FCRMode).toBe(3)
+    })
+
+    it('omits Upload.Radios and Upload.Datalink so the squadron template provides them', () => {
+      const result = exportF16MDC(mockMissionF16)
+
+      // Without a template, exporter omits these so the v93 template can
+      // declare them as the canonical squadron defaults (both false).
+      expect(result.Upload.Radios).toBeUndefined()
+      expect(result.Upload.Datalink).toBeUndefined()
+    })
+
+    it('lets v93 template default Upload.Radios and Upload.Datalink to false', () => {
+      const template = {
+        Upload: {
+          Radios: false,
+          Datalink: false,
+        },
+      }
+      const result = exportF16MDC(mockMissionF16, 0, template)
 
       expect(result.Upload.Radios).toBe(false)
       expect(result.Upload.Datalink).toBe(false)
     })
 
-    it('defaults Misc Laser/TACAN/ILS ToBeUpdated flags to false', () => {
+    it('omits Misc Laser/TACAN/ILS ToBeUpdated flags so the squadron template provides them', () => {
       const result = exportF16MDC(mockMissionF16)
+
+      expect(result.Misc.LaserSettingsToBeUpdated).toBeUndefined()
+      expect(result.Misc.TACANToBeUpdated).toBeUndefined()
+      expect(result.Misc.ILSToBeUpdated).toBeUndefined()
+    })
+
+    it('lets v93 template default Misc Laser/TACAN/ILS ToBeUpdated flags to false', () => {
+      const template = {
+        Misc: {
+          LaserSettingsToBeUpdated: false,
+          TACANToBeUpdated: false,
+          ILSToBeUpdated: false,
+        },
+      }
+      const result = exportF16MDC(mockMissionF16, 0, template)
 
       expect(result.Misc.LaserSettingsToBeUpdated).toBe(false)
       expect(result.Misc.TACANToBeUpdated).toBe(false)
