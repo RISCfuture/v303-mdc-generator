@@ -245,10 +245,10 @@ describe('MDC Exporter', () => {
       // We'll test this indirectly through the export
       const result = exportF16MDC(mockMissionF16)
 
-      expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 12°34.567'")
-      expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 123°45.678'")
-      expect(result.Waypoints.Waypoints[1].Latitude).toBe("N 31°51.326'")
-      expect(result.Waypoints.Waypoints[1].Longitude).toBe("E 064°12.792'")
+      expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 12°34.567’')
+      expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 123°45.678’')
+      expect(result.Waypoints.Waypoints[1].Latitude).toBe('N 31°51.326’')
+      expect(result.Waypoints.Waypoints[1].Longitude).toBe('E 064°12.792’')
     })
 
     it('should extract TACAN from crew lead correctly', () => {
@@ -282,7 +282,7 @@ describe('MDC Exporter', () => {
       expect(result.Radios).not.toBeNull()
       expect(result.Radios?.Radio1.Presets).toHaveLength(2)
       expect(result.Radios?.Radio1.Presets[0].Frequency).toBe('300.00')
-      expect(result.Radios?.Radio1.Mode).toBe(1) // Preset mode
+      expect(result.Radios?.Radio1.Mode).toBe(2) // Preset (RadioMode.Preset = 2)
       expect(result.Radios?.Radio1.SelectedPreset).toBe('1')
     })
 
@@ -411,6 +411,44 @@ describe('MDC Exporter', () => {
       const result = exportF16MDC(mockMissionF16)
 
       expect(result.HTS).toBeNull()
+    })
+
+    it('emits coordinates with U+2019 right-single-quote (DCS-DTC strips only U+2019)', () => {
+      const result = exportF16MDC(mockMissionF16)
+
+      const lat = result.Waypoints.Waypoints[0].Latitude
+      expect(lat.endsWith('’')).toBe(true)
+      expect(lat.includes("'")).toBe(false)
+      expect(lat.codePointAt(lat.length - 1)).toBe(0x2019)
+    })
+
+    it('defaults Upload.Radios and Upload.Datalink to false', () => {
+      const result = exportF16MDC(mockMissionF16)
+
+      expect(result.Upload.Radios).toBe(false)
+      expect(result.Upload.Datalink).toBe(false)
+    })
+
+    it('defaults Misc Laser/TACAN/ILS ToBeUpdated flags to false', () => {
+      const result = exportF16MDC(mockMissionF16)
+
+      expect(result.Misc.LaserSettingsToBeUpdated).toBe(false)
+      expect(result.Misc.TACANToBeUpdated).toBe(false)
+      expect(result.Misc.ILSToBeUpdated).toBe(false)
+    })
+
+    it('pads CMS to 6 programs (1-based Number) with ToBeUpdated false for fillers', () => {
+      const result = exportF16MDC(mockMissionF16)
+
+      expect(result.CMS.Programs).toHaveLength(6)
+      expect(result.CMS.Programs?.[0].Number).toBe(1)
+      expect(result.CMS.Programs?.[0].ToBeUpdated).toBe(true)
+      for (let i = 1; i < 6; i++) {
+        expect(result.CMS.Programs?.[i].Number).toBe(i + 1)
+        expect(result.CMS.Programs?.[i].ToBeUpdated).toBe(false)
+        expect(result.CMS.Programs?.[i].ChaffBurstQty).toBe(0)
+        expect(result.CMS.Programs?.[i].FlareBurstQty).toBe(0)
+      }
     })
 
     describe('CCIP Reference Points Export', () => {

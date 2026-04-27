@@ -5,6 +5,16 @@ import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig, parseTACANOrThrow } from '../helpers'
+import {
+  DEFAULT_BULLSEYE_WAYPOINT,
+  DEFAULT_MIN_AGL_FEET,
+  DEFAULT_MIN_MSL_FEET,
+  FA18C_ILS_BASE_FREQUENCY_MHZ,
+  FA18C_ILS_MAX_CHANNEL,
+  FA18C_ILS_MIN_CHANNEL,
+  FA18C_ILS_STEP_MHZ,
+  TACAN_BAND_DCS_DTC,
+} from '../constants'
 
 export type DCSFA18CMDC = {
   Aircraft: 'FA18C'
@@ -29,18 +39,12 @@ export type DCSFA18CMDC = {
   CMS: {
     Programs: {
       Number: number
-      FlareBurstQty: number
-      FlareBurstInterval: number
-      FlareSalvoQty: number
-      FlareSalvoInterval: number
-      ChaffBurstQty: number
-      ChaffBurstInterval: number
-      ChaffSalvoQty: number
-      ChaffSalvoInterval: number
+      FlareQty: number
+      ChaffQty: number
+      Interval: number
+      Repeat: number
       ToBeUpdated: boolean
     }[]
-    ChaffBingo: number
-    FlareBingo: number
   }
   Radios: {
     Radio1: {
@@ -66,17 +70,15 @@ export type DCSFA18CMDC = {
     TACANChannel: number
     TACANBand: number
     TACANToBeUpdated: boolean
-    ILSFrequency: number
-    ILSCourse: number
+    ILSChannel: number
     ILSToBeUpdated: boolean
     LaserSettingsToBeUpdated: boolean
     TGPCode: number
     LSTCode: number
-    LaserStartTime: number
     BaroWarn: number
-    BaroWarnToBeUpdated: boolean
+    BaroToBeUpdated: boolean
     RadarWarn: number
-    RadarWarnToBeUpdated: boolean
+    RadarToBeUpdated: boolean
   }
   Version: number
   KneeboardNotes: null
@@ -116,7 +118,7 @@ export function exportFA18CDCSDTC(
   // Parse TACAN
   const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
   const tacanChannel = tacan.channel
-  const tacanBand = tacan.band === 'Y' ? 1 : 0
+  const tacanBand = TACAN_BAND_DCS_DTC[tacan.band]
 
   // Build radio presets
   const radio1Presets =
@@ -136,9 +138,9 @@ export function exportFA18CDCSDTC(
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
 
-  // Get ILS data from recovery runway
-  let ilsFrequency = 108.1
-  let ilsCourse = 0
+  // F/A-18 dials a 1–20 approach channel (FA18C_ILS_BASE_FREQUENCY_MHZ +
+  // n·FA18C_ILS_STEP_MHZ), not a frequency. Out-of-range frequencies map to 0.
+  let ilsChannel = 0
   let ilsFound = false
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
     const airfields = getAirfieldsForTheater(mission.theater)
@@ -150,16 +152,18 @@ export function exportFA18CDCSDTC(
         (rw) => rw.name === mission.departureRecovery.recoveryRunwayName,
       )
       if (recoveryRunway?.ils) {
-        ilsFrequency = parseFloat(String(recoveryRunway.ils.frequency))
-        ilsCourse = recoveryRunway.heading
-        ilsFound = true
+        const freq = parseFloat(String(recoveryRunway.ils.frequency))
+        ilsChannel =
+          Math.round((freq - FA18C_ILS_BASE_FREQUENCY_MHZ) / FA18C_ILS_STEP_MHZ) +
+          FA18C_ILS_MIN_CHANNEL
+        ilsFound = ilsChannel >= FA18C_ILS_MIN_CHANNEL && ilsChannel <= FA18C_ILS_MAX_CHANNEL
+        if (!ilsFound) ilsChannel = 0
       }
     }
   }
 
-  // Altitude warnings from TOLD data
-  const minAgl = mission.told.minAgl ?? 500
-  const minMsl = mission.told.minMsl ?? 5000
+  const minAgl = mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET
+  const minMsl = mission.told.minMsl ?? DEFAULT_MIN_MSL_FEET
   const hasBaroWarnData = mission.told.minMsl !== undefined
   const hasRadarWarnData = mission.told.minAgl !== undefined
 
@@ -176,20 +180,17 @@ export function exportFA18CDCSDTC(
       Waypoints: waypoints,
     },
     CMS: {
+      // F/A-18 CMS uses a flat qty/interval/repeat model rather than the
+      // F-16 burst/salvo split; map burst qty → per-release qty,
+      // salvo qty → repeats, salvo interval → seconds between releases.
       Programs: mission.ecmCmds.cmdsPrograms.map((prog) => ({
         Number: prog.number,
-        FlareBurstQty: prog.flareBurstQty,
-        FlareBurstInterval: prog.flareBurstInterval,
-        FlareSalvoQty: prog.flareSalvoQty,
-        FlareSalvoInterval: prog.flareSalvoInterval,
-        ChaffBurstQty: prog.chaffBurstQty,
-        ChaffBurstInterval: prog.chaffBurstInterval,
-        ChaffSalvoQty: prog.chaffSalvoQty,
-        ChaffSalvoInterval: prog.chaffSalvoInterval,
+        ChaffQty: prog.chaffBurstQty,
+        FlareQty: prog.flareBurstQty,
+        Interval: prog.chaffSalvoInterval,
+        Repeat: prog.chaffSalvoQty,
         ToBeUpdated: true,
       })),
-      ChaffBingo: mission.ecmCmds.chaffBingo,
-      FlareBingo: mission.ecmCmds.flareBingo,
     },
     Radios:
       radio1Presets.length > 0 || radio2Presets.length > 0
@@ -214,21 +215,19 @@ export function exportFA18CDCSDTC(
       Bingo: mission.fuel.bingo,
       BingoToBeUpdated: true,
       BullseyeToBeUpdated: !!mission.bullseye,
-      BullseyeWP: mission.bullseye?.waypointNumber ?? 25,
+      BullseyeWP: mission.bullseye?.waypointNumber ?? DEFAULT_BULLSEYE_WAYPOINT,
       TACANChannel: tacanChannel,
       TACANBand: tacanBand,
       TACANToBeUpdated: true,
-      ILSFrequency: ilsFrequency,
-      ILSCourse: ilsCourse,
+      ILSChannel: ilsChannel,
       ILSToBeUpdated: ilsFound,
       LaserSettingsToBeUpdated: true,
       TGPCode: laserCode,
       LSTCode: laserCode,
-      LaserStartTime: 8,
       BaroWarn: minMsl,
-      BaroWarnToBeUpdated: hasBaroWarnData,
+      BaroToBeUpdated: hasBaroWarnData,
       RadarWarn: minAgl,
-      RadarWarnToBeUpdated: hasRadarWarnData,
+      RadarToBeUpdated: hasRadarWarnData,
     },
     Version: 2,
     KneeboardNotes: null,

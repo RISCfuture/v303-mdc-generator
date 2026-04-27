@@ -3,6 +3,12 @@ import type { Mission } from '@/types'
 import { deepMerge } from '@/utils/deepMerge'
 import { latLonToDCS, isTheaterProjectionSupported } from '@/utils/dcsProjection'
 import type { DeepPartial } from '../helpers'
+import {
+  DCSME_RADIO_MODULATION,
+  DCSME_WAYPOINT_ALTITUDE_TYPE_BARO,
+  DCSME_WAYPOINT_VELOCITY_TYPE,
+  METERS_PER_FOOT,
+} from '../constants'
 
 /**
  * DCS Mission Editor format for F-16C (.dtc)
@@ -155,7 +161,7 @@ export function exportF16DCSME(
   mission.radioPresets[0]?.forEach((preset) => {
     comm1[`Channel_${preset.number}`] = {
       freq: parseFloat(preset.frequency),
-      modulation: 1, // AM
+      modulation: DCSME_RADIO_MODULATION.AM,
     }
   })
 
@@ -163,7 +169,7 @@ export function exportF16DCSME(
   mission.radioPresets[1]?.forEach((preset) => {
     comm2[`Channel_${preset.number}`] = {
       freq: parseFloat(preset.frequency),
-      modulation: 1, // AM
+      modulation: DCSME_RADIO_MODULATION.AM,
     }
   })
 
@@ -203,32 +209,31 @@ export function exportF16DCSME(
       oa2Alt = 0
 
     if (hasOA1 && ccip.oa1) {
-      // Calculate OA point position from bearing/distance relative to steerpoint
       const bearingRad = ((ccip.oa1.bearing ?? 0) * Math.PI) / 180
-      const distMeters = (ccip.oa1.distance ?? 0) * 0.3048 // feet to meters
+      const distMeters = (ccip.oa1.distance ?? 0) * METERS_PER_FOOT
       oa1DeltaX = distMeters * Math.cos(bearingRad)
       oa1DeltaY = distMeters * Math.sin(bearingRad)
       oa1X = dcsCoords.x + oa1DeltaX
       oa1Y = dcsCoords.y + oa1DeltaY
       oa1Range = distMeters
-      oa1Bearing = (ccip.oa1.bearing ?? 0) * (Math.PI / 180) // radians
+      oa1Bearing = bearingRad
       oa1Alt = elevation + (ccip.oa1.elevation ?? 0)
     }
     if (hasOA2 && ccip.oa2) {
       const bearingRad = ((ccip.oa2.bearing ?? 0) * Math.PI) / 180
-      const distMeters = (ccip.oa2.distance ?? 0) * 0.3048
+      const distMeters = (ccip.oa2.distance ?? 0) * METERS_PER_FOOT
       oa2DeltaX = distMeters * Math.cos(bearingRad)
       oa2DeltaY = distMeters * Math.sin(bearingRad)
       oa2X = dcsCoords.x + oa2DeltaX
       oa2Y = dcsCoords.y + oa2DeltaY
       oa2Range = distMeters
-      oa2Bearing = (ccip.oa2.bearing ?? 0) * (Math.PI / 180)
+      oa2Bearing = bearingRad
       oa2Alt = elevation + (ccip.oa2.elevation ?? 0)
     }
 
     return {
       alt: elevation,
-      altitudeType: 1,
+      altitudeType: DCSME_WAYPOINT_ALTITUDE_TYPE_BARO,
       FIX_Time: tos >= 0,
       id: `STPT${seq}`,
       idOA1: `OA1${seq}`,
@@ -261,7 +266,7 @@ export function exportF16DCSME(
       speed: wp.speed ?? 0,
       TOS: tos,
       type: stptType,
-      velocityType: 3,
+      velocityType: DCSME_WAYPOINT_VELOCITY_TYPE,
       x: dcsCoords.x,
       y: dcsCoords.y,
     }

@@ -3,7 +3,8 @@ import type { Mission } from '@/types'
 import { formatDecimalDegrees } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
-import { truncateFrequency, getRadioConfig } from '../helpers'
+import { truncateFrequency, getRadioConfig, pickDefaultTuning } from '../helpers'
+import { FA18C_JAFDTC_CMS_PROGRAM_COUNT, JAFDTC_AIRFRAME } from '../constants'
 
 export type JAFDTCFA18CMDC = {
   WYPT: {
@@ -16,7 +17,6 @@ export type JAFDTCFA18CMDC = {
     }[]
   }
   Radio: {
-    IsCOMM1MonitorGuard: boolean
     COMM1DefaultTuning: string
     COMM2DefaultTuning: string
     IsDefault: boolean
@@ -30,11 +30,11 @@ export type JAFDTCFA18CMDC = {
   CMS: {
     Programs: {
       Number: number
-      Chaff: { BQ: string; BI: string; SQ: string; SI: string }
-      Flare: { BQ: string; BI: string; SQ: string; SI: string }
+      ChaffQ: string
+      FlareQ: string
+      SQ: string
+      SI: string
     }[]
-    BingoChaff: string
-    BingoFlare: string
   }
   Version: string
   Airframe: number
@@ -105,22 +105,22 @@ export function exportFA18CJAFDTC(
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
 
-  // Build CMS programs
-  const cmdsPrograms = mission.ecmCmds.cmdsPrograms.map((prog) => ({
-    Number: prog.number - 1, // JAFDTC uses 0-based indexing
-    Chaff: {
-      BQ: prog.chaffBurstQty.toString(),
-      BI: prog.chaffBurstInterval.toFixed(3),
-      SQ: prog.chaffSalvoQty.toString(),
-      SI: prog.chaffSalvoInterval.toFixed(2),
-    },
-    Flare: {
-      BQ: prog.flareBurstQty.toString(),
-      BI: prog.flareBurstInterval.toFixed(3),
-      SQ: prog.flareSalvoQty.toString(),
-      SI: prog.flareSalvoInterval.toFixed(2),
-    },
-  }))
+  // FA18C_JAFDTC_CMS_PROGRAM_COUNT entries: PROG1-5 (0-based) with flat string
+  // fields. SQ/SI are shared between chaff and flare on the Hornet, so we use
+  // the chaff salvo values.
+  const cmdsPrograms = Array.from({ length: FA18C_JAFDTC_CMS_PROGRAM_COUNT }, (_, i) => {
+    const prog = mission.ecmCmds.cmdsPrograms.find((p) => p.number - 1 === i)
+    if (prog) {
+      return {
+        Number: i,
+        ChaffQ: prog.chaffBurstQty.toString(),
+        FlareQ: prog.flareBurstQty.toString(),
+        SQ: prog.chaffSalvoQty.toString(),
+        SI: prog.chaffSalvoInterval.toFixed(2),
+      }
+    }
+    return { Number: i, ChaffQ: '', FlareQ: '', SQ: '', SI: '' }
+  })
 
   const uid = crypto.randomUUID()
   const filename = mission.name
@@ -133,20 +133,16 @@ export function exportFA18CJAFDTC(
       Points: waypoints,
     },
     Radio: {
-      IsCOMM1MonitorGuard: true,
       COMM1DefaultTuning: radio1Config.selectedFrequency,
-      COMM2DefaultTuning:
-        radio2Config.mode === 1 ? radio2Config.selectedPreset : radio2Config.selectedFrequency,
+      COMM2DefaultTuning: pickDefaultTuning(radio2Config),
       IsDefault: false,
       Presets: radioPresets,
     },
     CMS: {
       Programs: cmdsPrograms,
-      BingoChaff: mission.ecmCmds.chaffBingo.toString(),
-      BingoFlare: mission.ecmCmds.flareBingo.toString(),
     },
     Version: 'FA18C-1.0',
-    Airframe: 6,
+    Airframe: JAFDTC_AIRFRAME.FA18C,
     UID: uid,
     Filename: filename,
     LinkedSysMap: {},

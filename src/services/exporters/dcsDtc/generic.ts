@@ -4,6 +4,7 @@ import { formatDDM } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig } from '../helpers'
+import { DCS_DTC_STEERPOINT_CAPTURE_MODE } from '../constants'
 
 /**
  * DCS-DTC format for simple airframes (A-10C, C-130J, CH-47F)
@@ -126,8 +127,8 @@ export function exportGenericDCSDTC(
           }
         : null,
     WaypointsCapture: {
-      NavPointsMode: 0,
-      TgtPointsMode: 0,
+      NavPointsMode: DCS_DTC_STEERPOINT_CAPTURE_MODE.ADD_TO_END_OF_LIST,
+      TgtPointsMode: DCS_DTC_STEERPOINT_CAPTURE_MODE.ADD_TO_END_OF_LIST,
       NavPointsRangeFrom: 1,
       TgtPointsRangeFrom: 1,
     },

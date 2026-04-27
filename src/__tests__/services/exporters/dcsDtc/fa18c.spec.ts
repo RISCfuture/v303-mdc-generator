@@ -110,8 +110,8 @@ describe('F/A-18C DCS-DTC Exporter', () => {
 
   it('should format coordinates as DDM', () => {
     const result = exportFA18CDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 12°34.567'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 123°45.678'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 12°34.567’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 123°45.678’')
   })
 
   it('should set Target flag for TGT waypoints', () => {
@@ -123,9 +123,10 @@ describe('F/A-18C DCS-DTC Exporter', () => {
   it('should export CMS programs', () => {
     const result = exportFA18CDCSDTC(mockMission)
     expect(result.CMS.Programs).toHaveLength(1)
-    expect(result.CMS.Programs[0].ChaffBurstQty).toBe(1)
-    expect(result.CMS.ChaffBingo).toBe(10)
-    expect(result.CMS.FlareBingo).toBe(10)
+    expect(result.CMS.Programs[0].ChaffQty).toBe(1)
+    expect(result.CMS.Programs[0].FlareQty).toBe(1)
+    expect(result.CMS.Programs[0].Interval).toBe(1.0)
+    expect(result.CMS.Programs[0].Repeat).toBe(10)
   })
 
   it('should export radio presets for 2 radios', () => {
@@ -150,15 +151,14 @@ describe('F/A-18C DCS-DTC Exporter', () => {
     expect(result.Misc.BingoToBeUpdated).toBe(true)
     expect(result.Misc.TGPCode).toBe(1688)
     expect(result.Misc.LSTCode).toBe(1688)
-    expect(result.Misc.LaserStartTime).toBe(8)
   })
 
   it('should export altitude warnings from TOLD data', () => {
     const result = exportFA18CDCSDTC(mockMission)
     expect(result.Misc.BaroWarn).toBe(4000)
-    expect(result.Misc.BaroWarnToBeUpdated).toBe(true)
+    expect(result.Misc.BaroToBeUpdated).toBe(true)
     expect(result.Misc.RadarWarn).toBe(300)
-    expect(result.Misc.RadarWarnToBeUpdated).toBe(true)
+    expect(result.Misc.RadarToBeUpdated).toBe(true)
   })
 
   it('should set bullseye from mission data', () => {
@@ -199,8 +199,8 @@ describe('F/A-18C DCS-DTC Exporter', () => {
       },
     ]
     const result = exportFA18CDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 00°00.000'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 000°00.000'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 00°00.000’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 000°00.000’')
     expect(result.Waypoints.Waypoints[0].Elevation).toBe(0)
   })
 })

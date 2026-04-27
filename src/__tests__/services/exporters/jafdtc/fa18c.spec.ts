@@ -132,13 +132,22 @@ describe('F/A-18C JAFDTC Exporter', () => {
     expect(result.Radio.Presets[0][0].Frequency).toBe('305.00')
   })
 
-  it('should export CMS programs with 0-based indexing', () => {
+  it('should export 5 CMS programs with flat 0-based shape, padding missing slots', () => {
     const result = exportFA18CJAFDTC(mockMission)
-    expect(result.CMS.Programs).toHaveLength(1)
+    expect(result.CMS.Programs).toHaveLength(5)
     expect(result.CMS.Programs[0].Number).toBe(0) // 0-based
-    expect(result.CMS.Programs[0].Chaff.BQ).toBe('2')
-    expect(result.CMS.BingoChaff).toBe('10')
-    expect(result.CMS.BingoFlare).toBe('10')
+    expect(result.CMS.Programs[0].ChaffQ).toBe('2')
+    expect(result.CMS.Programs[0].FlareQ).toBe('1')
+    expect(result.CMS.Programs[0].SQ).toBe('8')
+    expect(result.CMS.Programs[0].SI).toBe('1.50')
+    // Programs 2-5 are not defined in the mission and should be empty defaults
+    expect(result.CMS.Programs[1]).toEqual({
+      Number: 1,
+      ChaffQ: '',
+      FlareQ: '',
+      SQ: '',
+      SI: '',
+    })
   })
 
   it('should set UID and metadata', () => {
@@ -151,9 +160,9 @@ describe('F/A-18C JAFDTC Exporter', () => {
   })
 
   it('should merge template data', () => {
-    const template = { Radio: { IsCOMM1MonitorGuard: false } }
+    const template = { Radio: { IsDefault: true } }
     const result = exportFA18CJAFDTC(mockMission, 0, template)
-    expect(result.Radio.IsCOMM1MonitorGuard).toBe(true) // mission overwrites
+    expect(result.Radio.IsDefault).toBe(false) // mission overwrites
     expect(result.Version).toBe('FA18C-1.0')
   })
 })

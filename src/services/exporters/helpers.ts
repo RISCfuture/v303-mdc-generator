@@ -1,5 +1,6 @@
 // Shared helpers for MDC exporters
 import type { Mission, CCIPReferencePoint } from '@/types'
+import { FEET_PER_NAUTICAL_MILE, RADIO_MODE } from './constants'
 
 /**
  * Parse TACAN string (e.g. "10Y" or "73X") into channel and band components.
@@ -60,10 +61,9 @@ export function convertCCIPToDTC(
     return null
   }
 
-  // Convert range: if NM, divide by 6076.12 and round to 0.1; otherwise keep in feet
   const range = convertToNM
-    ? Math.round((point.distance / 6076.12) * 10) / 10 // Round to 0.1 NM
-    : point.distance // Keep in feet
+    ? Math.round((point.distance / FEET_PER_NAUTICAL_MILE) * 10) / 10
+    : point.distance
 
   return {
     Range: range,
@@ -73,10 +73,13 @@ export function convertCCIPToDTC(
 }
 
 /**
- * Build radio configuration from mission radio defaults
+ * Build radio configuration from mission radio defaults.
+ *
+ * Mode values are `RADIO_MODE.FREQUENCY` / `RADIO_MODE.PRESET` (see ./constants),
+ * matching DCS-DTC's RadioMode enum (Base/Systems/RadioSystem.cs).
+ *
  * @param mission - The mission object containing radio defaults
  * @param radioIndex - Radio index (0 for Radio1, 1 for Radio2, 2 for Radio3 if A-10C)
- * @returns Radio mode (1=Preset, 2=Manual), selected frequency, and selected preset
  */
 export function getRadioConfig(
   mission: Mission,
@@ -101,9 +104,8 @@ export function getRadioConfig(
   const radioDefault = mission.radioDefaults?.[radioIndex]
 
   if (!radioDefault) {
-    // No radio default - default to preset mode with preset 1
     return {
-      mode: 1, // Preset mode
+      mode: RADIO_MODE.PRESET,
       selectedFrequency: defaultFrequency,
       selectedPreset: '1',
     }
@@ -111,16 +113,27 @@ export function getRadioConfig(
 
   if (radioDefault.mode === 'preset') {
     return {
-      mode: 1, // Preset mode
+      mode: RADIO_MODE.PRESET,
       selectedFrequency: defaultFrequency,
       selectedPreset: radioDefault.preset?.toString() ?? '1',
     }
   } else {
-    // Manual mode
     return {
-      mode: 2, // Manual/Frequency mode
+      mode: RADIO_MODE.FREQUENCY,
       selectedFrequency: radioDefault.frequency ?? defaultFrequency,
       selectedPreset: '1',
     }
   }
+}
+
+/**
+ * Pick the JAFDTC `*DefaultTuning` value for a radio: the preset number when
+ * in preset mode, the frequency string otherwise.
+ */
+export function pickDefaultTuning(config: {
+  mode: number
+  selectedFrequency: string
+  selectedPreset: string
+}): string {
+  return config.mode === RADIO_MODE.PRESET ? config.selectedPreset : config.selectedFrequency
 }

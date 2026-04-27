@@ -5,6 +5,13 @@ import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig, parseTACANOrThrow } from '../helpers'
+import {
+  DEFAULT_ILS_COURSE_DEG,
+  DEFAULT_ILS_FREQUENCY_MHZ,
+  DEFAULT_MIN_AGL_FEET,
+  LASER_START_TIME_SEC,
+  TACAN_BAND_DCS_DTC,
+} from '../constants'
 
 export type DCSF15EMDC = {
   Aircraft: 'F15E'
@@ -95,7 +102,7 @@ export function exportF15EDCSDTC(
   // Parse TACAN
   const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
   const tacanChannel = tacan.channel
-  const tacanBand = tacan.band === 'Y' ? 1 : 0
+  const tacanBand = TACAN_BAND_DCS_DTC[tacan.band]
 
   // Build radio presets
   const radio1Presets =
@@ -115,9 +122,8 @@ export function exportF15EDCSDTC(
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
 
-  // Get ILS data from recovery runway
-  let ilsFrequency = 108.1
-  let ilsCourse = 0
+  let ilsFrequency = DEFAULT_ILS_FREQUENCY_MHZ
+  let ilsCourse = DEFAULT_ILS_COURSE_DEG
   let ilsFound = false
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
     const airfields = getAirfieldsForTheater(mission.theater)
@@ -136,8 +142,7 @@ export function exportF15EDCSDTC(
     }
   }
 
-  // CARA ALOW from TOLD data
-  const minAgl = mission.told.minAgl ?? 500
+  const minAgl = mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET
   const hasCaraAlowData = mission.told.minAgl !== undefined
 
   const missionData: DCSF15EMDC = {
@@ -184,7 +189,7 @@ export function exportF15EDCSDTC(
       LaserSettingsToBeUpdated: true,
       TGPCode: laserCode,
       LSTCode: laserCode,
-      LaserStartTime: 8,
+      LaserStartTime: LASER_START_TIME_SEC,
     },
     Version: 2,
     KneeboardNotes: null,
