@@ -17,6 +17,7 @@ import type {
   Squadron,
   F16CalculatorParams,
   A10CalculatorParams,
+  F16BingoCalculatorParams,
 } from '@/types'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { crewDatabase } from '@/data/crew'
@@ -128,6 +129,7 @@ export type SerializedMission = {
     j: number // joker
     b: number // bingo
     flp?: number // fuelLoadPercentage (defaults to 100)
+    bcp?: object // bingoCalculatorParams (F16BingoCalculatorParams; F-16 only)
   }
 
   // Weather
@@ -337,6 +339,7 @@ export function serializeMission(mission: Mission): SerializedMission {
       j: mission.fuel.joker,
       b: mission.fuel.bingo,
       flp: mission.fuel.fuelLoadPercentage,
+      bcp: mission.fuel.bingoCalculatorParams,
     },
 
     // Details - required for export (at least remarks)
@@ -763,6 +766,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       joker: serialized.f.j,
       bingo: serialized.f.b,
       fuelLoadPercentage: serialized.f.flp ?? 100,
+      bingoCalculatorParams: serialized.f.bcp as F16BingoCalculatorParams | undefined,
     },
     weather: serialized.wx ?? '',
     /* eslint-disable @typescript-eslint/no-unnecessary-condition */
