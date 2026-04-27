@@ -95,8 +95,8 @@ describe('F-15E DCS-DTC Exporter', () => {
 
   it('should format coordinates as DDM', () => {
     const result = exportF15EDCSDTC(mockMission)
-    expect(result.RouteA.Waypoints[0].Latitude).toBe("N 31°51.326'")
-    expect(result.RouteA.Waypoints[0].Longitude).toBe("E 064°12.792'")
+    expect(result.RouteA.Waypoints[0].Latitude).toBe('N 31°51.326’')
+    expect(result.RouteA.Waypoints[0].Longitude).toBe('E 064°12.792’')
   })
 
   it('should use RouteA for waypoints', () => {

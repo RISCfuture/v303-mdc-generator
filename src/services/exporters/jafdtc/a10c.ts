@@ -3,7 +3,15 @@ import type { Mission } from '@/types'
 import { formatDecimalDegrees } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
-import { getRadioConfig, parseTACANOrThrow } from '../helpers'
+import { getRadioConfig, parseTACANOrThrow, pickDefaultTuning } from '../helpers'
+import {
+  DEFAULT_MIN_AGL_FEET,
+  IFF_MASTER_MODE_JAFDTC_A10,
+  JAFDTC_AIRFRAME,
+  RADIO_MODE,
+  TACAN_BAND_JAFDTC_A10,
+  TACAN_MODE_JAFDTC_A10,
+} from '../constants'
 
 export type JAFDTCA10MDC = {
   DSMS: {
@@ -84,7 +92,7 @@ export function exportA10MDC(
   // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
   const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
   const tacanChannel = String(tacan.channel)
-  const tacanBand = tacan.band === 'Y' ? '1' : '0'
+  const tacanBand = TACAN_BAND_JAFDTC_A10[tacan.band]
 
   // Convert waypoints to JAFDTC format
   const waypoints = mission.waypoints.map((wp) => {
@@ -157,32 +165,24 @@ export function exportA10MDC(
   const radio2Config = getRadioConfig(mission, 1) // Radio 2 = UHF
   const radio3Config = getRadioConfig(mission, 2) // Radio 3 = VHF FM
 
-  // Build IsPresetMode and DefaultSetting arrays based on comm ladder state
-  const isPresetMode = [
-    radio1Config.mode === 1, // true if preset mode, false if frequency mode
-    radio2Config.mode === 1,
-    radio3Config.mode === 1,
-  ]
-
-  const defaultSetting = [
-    radio1Config.mode === 1 ? radio1Config.selectedPreset : radio1Config.selectedFrequency,
-    radio2Config.mode === 1 ? radio2Config.selectedPreset : radio2Config.selectedFrequency,
-    radio3Config.mode === 1 ? radio3Config.selectedPreset : radio3Config.selectedFrequency,
-  ]
+  // Build IsPresetMode and DefaultSetting from comm-ladder state.
+  const radioConfigs = [radio1Config, radio2Config, radio3Config]
+  const isPresetMode = radioConfigs.map((cfg) => cfg.mode === RADIO_MODE.PRESET)
+  const defaultSetting = radioConfigs.map(pickDefaultTuning)
 
   const missionData: JAFDTCA10MDC = {
     DSMS: {
       LaserCode: laserCode,
     },
     Misc: {
-      TACANMode: '4', // A/A TR
+      TACANMode: TACAN_MODE_JAFDTC_A10.AA_TR,
       TACANBand: tacanBand,
       TACANChannel: tacanChannel,
-      IFFMasterMode: '1', // STBY
+      IFFMasterMode: IFF_MASTER_MODE_JAFDTC_A10.STBY,
       IFFMode3Code: mode3Code,
       IFFMode4On: 'True',
       MSLFloor: (mission.told.minMsl ?? 0).toString(),
-      AGLFloor: (mission.told.minAgl ?? 500).toString(),
+      AGLFloor: (mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET).toString(),
     },
     TAD: {
       OwnID: selectedCrewMember.own,
@@ -203,7 +203,7 @@ export function exportA10MDC(
       Points: waypoints,
     },
     Version: 'A10C-1.0',
-    Airframe: 1,
+    Airframe: JAFDTC_AIRFRAME.A10C,
     UID: uid,
     Filename: filename,
     LinkedSysMap: {},

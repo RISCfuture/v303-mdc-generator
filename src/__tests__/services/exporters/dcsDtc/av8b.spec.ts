@@ -86,8 +86,8 @@ describe('AV-8B DCS-DTC Exporter', () => {
 
   it('should format coordinates as DDM', () => {
     const result = exportAV8BDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 25°30.000'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 055°30.000'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 25°30.000’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 055°30.000’')
   })
 
   it('should export only waypoints (no radios, CMS, or misc)', () => {
@@ -124,8 +124,8 @@ describe('AV-8B DCS-DTC Exporter', () => {
       },
     ]
     const result = exportAV8BDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 00°00.000'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 000°00.000'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 00°00.000’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 000°00.000’')
   })
 
   it('should merge template data', () => {

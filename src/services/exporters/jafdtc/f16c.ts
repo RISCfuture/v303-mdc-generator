@@ -5,7 +5,22 @@ import { getCrewMemberLink16Callsign } from '@/utils/callsignHelpers'
 import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
-import { truncateFrequency, getRadioConfig, parseTACAN } from '../helpers'
+import { truncateFrequency, getRadioConfig, parseTACAN, pickDefaultTuning } from '../helpers'
+import {
+  DEFAULT_BULLSEYE_WAYPOINT,
+  DEFAULT_ILS_FREQUENCY_MHZ,
+  DEFAULT_MIN_AGL_FEET,
+  DEFAULT_MIN_MSL_FEET,
+  F16_DATALINK_TEAM_SIZE,
+  F16_JAFDTC_CMDS_PROGRAM_COUNT,
+  F16_JAFDTC_MISSION_SLOT_COUNT,
+  FEET_PER_NAUTICAL_MILE,
+  JAFDTC_AIRFRAME,
+  JAFDTC_VXP_TYPE,
+  LASER_START_TIME_SEC,
+  TACAN_BAND_JAFDTC_AIRCRAFT,
+  TACAN_MODE_JAFDTC_F16,
+} from '../constants'
 
 /**
  * JAFDTC format for F-16C
@@ -146,16 +161,16 @@ export function exportF16JAFDTC(
   // Parse TACAN
   const tacan = parseTACAN(selectedCrewMember.aaTcn)
   const tacanChannel = String(tacan?.channel ?? 0)
-  const tacanBand = tacan?.band === 'X' ? 'X' : '' // JAFDTC: empty = Y, "X" = X
+  const tacanBand = tacan ? TACAN_BAND_JAFDTC_AIRCRAFT[tacan.band] : TACAN_BAND_JAFDTC_AIRCRAFT.Y
 
-  // Build CMDS programs — JAFDTC expects exactly 6 entries (MAN1-4, PANIC, BYPASS)
+  // F16_JAFDTC_CMDS_PROGRAM_COUNT entries: MAN1-4, PANIC, BYPASS.
   const defaultCmdsEntry = {
     BQ: '1',
     BI: '0.020',
     SQ: '1',
     SI: '0.50',
   }
-  const cmdsPrograms = Array.from({ length: 6 }, (_, i) => {
+  const cmdsPrograms = Array.from({ length: F16_JAFDTC_CMDS_PROGRAM_COUNT }, (_, i) => {
     const prog = mission.ecmCmds.cmdsPrograms.find((p) => p.number - 1 === i)
     if (prog) {
       return {
@@ -190,7 +205,7 @@ export function exportF16JAFDTC(
   let dlnk: JAFDTCF16MDC['DLNK'] = null
   if (mission.crew.length > 0) {
     const teamMembers = []
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < F16_DATALINK_TEAM_SIZE; i++) {
       if (i < mission.crew.length) {
         const crew = mission.crew[i]
         const stn = crew.stn.replace(/\s/g, '')
@@ -248,25 +263,29 @@ export function exportF16JAFDTC(
     const oap = [
       ccip?.oa1
         ? {
-            Type: 1,
+            Type: JAFDTC_VXP_TYPE.OAP,
             Range: (ccip.oa1.distance ?? 0).toString(),
             Brng: (ccip.oa1.bearing ?? 0).toFixed(1),
             Elev: (ccip.oa1.elevation ?? 0).toString(),
           }
-        : { Type: 0, Range: '', Brng: '', Elev: '' },
+        : { Type: JAFDTC_VXP_TYPE.NONE, Range: '', Brng: '', Elev: '' },
       ccip?.oa2
         ? {
-            Type: 1,
+            Type: JAFDTC_VXP_TYPE.OAP,
             Range: (ccip.oa2.distance ?? 0).toString(),
             Brng: (ccip.oa2.bearing ?? 0).toFixed(1),
             Elev: (ccip.oa2.elevation ?? 0).toString(),
           }
-        : { Type: 0, Range: '', Brng: '', Elev: '' },
+        : { Type: JAFDTC_VXP_TYPE.NONE, Range: '', Brng: '', Elev: '' },
     ]
 
-    // Build VxP array (2 entries: VIP/VRP + PUP)
+    // VxP array: VIP→TGT/PUP or TGT→VRP/PUP, depending on reference type.
     const refType = ccip?.referencePointType
-    const vxpType = refType === 'VIP' ? 2 : refType === 'VRP' ? 3 : 0
+    const vxpTypeByRef: Record<string, number> = {
+      VIP: JAFDTC_VXP_TYPE.VIP,
+      VRP: JAFDTC_VXP_TYPE.VRP,
+    }
+    const vxpType = (refType && vxpTypeByRef[refType]) ?? JAFDTC_VXP_TYPE.NONE
     const mainRef = refType === 'VIP' ? ccip?.vip : refType === 'VRP' ? ccip?.vrp : undefined
     const vxp = [
       mainRef
@@ -274,23 +293,27 @@ export function exportF16JAFDTC(
             Type: vxpType,
             Range:
               refType === 'VIP'
-                ? (Math.round(((mainRef.distance ?? 0) / 6076.12) * 10) / 10).toFixed(1)
+                ? (
+                    Math.round(((mainRef.distance ?? 0) / FEET_PER_NAUTICAL_MILE) * 10) / 10
+                  ).toFixed(1)
                 : (mainRef.distance ?? 0).toString(),
             Brng: (mainRef.bearing ?? 0).toFixed(1),
             Elev: (mainRef.elevation ?? 0).toString(),
           }
-        : { Type: 0, Range: '', Brng: '', Elev: '' },
+        : { Type: JAFDTC_VXP_TYPE.NONE, Range: '', Brng: '', Elev: '' },
       ccip?.pup
         ? {
             Type: vxpType,
             Range:
               refType === 'VIP'
-                ? (Math.round(((ccip.pup.distance ?? 0) / 6076.12) * 10) / 10).toFixed(1)
+                ? (
+                    Math.round(((ccip.pup.distance ?? 0) / FEET_PER_NAUTICAL_MILE) * 10) / 10
+                  ).toFixed(1)
                 : (ccip.pup.distance ?? 0).toString(),
             Brng: (ccip.pup.bearing ?? 0).toFixed(1),
             Elev: (ccip.pup.elevation ?? 0).toString(),
           }
-        : { Type: 0, Range: '', Brng: '', Elev: '' },
+        : { Type: JAFDTC_VXP_TYPE.NONE, Range: '', Brng: '', Elev: '' },
     ]
 
     return {
@@ -336,8 +359,7 @@ export function exportF16JAFDTC(
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
 
-  // Get ILS data
-  let ilsFrequency = '108.10'
+  let ilsFrequency = DEFAULT_ILS_FREQUENCY_MHZ.toFixed(2)
   let ilsCourse = '0'
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
     const airfields = getAirfieldsForTheater(mission.theater)
@@ -355,8 +377,8 @@ export function exportF16JAFDTC(
     }
   }
 
-  const minAgl = mission.told.minAgl ?? 500
-  const minMsl = mission.told.minMsl ?? 5000
+  const minAgl = mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET
+  const minMsl = mission.told.minMsl ?? DEFAULT_MIN_MSL_FEET
 
   const uid = crypto.randomUUID()
   const filename = mission.name
@@ -399,25 +421,23 @@ export function exportF16JAFDTC(
     },
     Misc: {
       Bingo: mission.fuel.bingo.toString(),
-      BullseyeWP: (mission.bullseye?.waypointNumber ?? 25).toString(),
+      BullseyeWP: (mission.bullseye?.waypointNumber ?? DEFAULT_BULLSEYE_WAYPOINT).toString(),
       BullseyeMode: mission.bullseye ? 'True' : 'False',
       ALOWCARAALOW: minAgl.toString(),
       ALOWMSLFloor: minMsl.toString(),
       LaserTGPCode: laserCode,
       LaserLSTCode: laserCode,
-      LaserStartTime: '8',
+      LaserStartTime: LASER_START_TIME_SEC.toString(),
       TACANChannel: tacanChannel,
       TACANBand: tacanBand,
-      TACANMode: '1',
+      TACANMode: TACAN_MODE_JAFDTC_F16.TR,
       ILSFrequency: ilsFrequency,
       ILSCourse: ilsCourse,
     },
     Radio: {
       IsCOMM1MonitorGuard: true,
-      COMM1DefaultTuning:
-        radio1Config.mode === 1 ? radio1Config.selectedFrequency : radio1Config.selectedFrequency,
-      COMM2DefaultTuning:
-        radio2Config.mode === 1 ? radio2Config.selectedPreset : radio2Config.selectedFrequency,
+      COMM1DefaultTuning: pickDefaultTuning(radio1Config),
+      COMM2DefaultTuning: pickDefaultTuning(radio2Config),
       IsDefault: false,
       Presets: radioPresets,
     },
@@ -444,19 +464,17 @@ export function exportF16JAFDTC(
       Callsign: mission.flightCallsignOverride ?? mission.callsign,
       Ships: mission.crew.length,
       Tasking: mission.type,
-      PilotUIDs: [null, null, null, null],
+      PilotUIDs: Array.from({ length: F16_JAFDTC_MISSION_SLOT_COUNT }, () => null),
       Loadouts: (() => {
         const summary = summarizeLoadout(mission.loadout)
-        const loadouts: (string | null)[] = []
-        for (let i = 0; i < 4; i++) {
-          loadouts.push(i < mission.crew.length ? summary : null)
-        }
-        return loadouts
+        return Array.from({ length: F16_JAFDTC_MISSION_SLOT_COUNT }, (_, i) =>
+          i < mission.crew.length ? summary : null,
+        )
       })(),
       Threats: [],
     },
     Version: 'F16C-1.1',
-    Airframe: 5,
+    Airframe: JAFDTC_AIRFRAME.F16C,
     UID: uid,
     Filename: filename,
     LinkedSysMap: {},

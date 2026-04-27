@@ -136,7 +136,7 @@
             "SelectedFrequency": { "type": "string" },
             "SelectedPreset": { "type": ["string", "null"] },
             "EnableGuard": { "type": "boolean" },
-            "Mode": { "type": "integer", "enum": [0, 1] }
+            "Mode": { "type": "integer", "enum": [1, 2] }
           }
         },
         "Radio2": {
@@ -156,7 +156,7 @@
             "SelectedFrequency": { "type": "string" },
             "SelectedPreset": { "type": ["string", "null"] },
             "EnableGuard": { "type": "boolean" },
-            "Mode": { "type": "integer", "enum": [0, 1] }
+            "Mode": { "type": "integer", "enum": [1, 2] }
           }
         }
       }
@@ -190,7 +190,7 @@
           "minItems": 8,
           "maxItems": 8
         },
-        "DatalinkMode": { "type": "integer", "enum": [0, 1] }
+        "DatalinkMode": { "type": "integer", "enum": [0, 1, 2] }
       }
     },
     "Misc": {

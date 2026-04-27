@@ -91,8 +91,8 @@ describe('CH-47F DCS-DTC Exporter', () => {
 
   it('should format coordinates as DDM', () => {
     const result = exportCH47FDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 26°00.000'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 056°00.000'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 26°00.000’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 056°00.000’')
   })
 
   it('should export waypoints and radios', () => {

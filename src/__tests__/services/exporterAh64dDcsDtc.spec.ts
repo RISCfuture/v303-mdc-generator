@@ -152,8 +152,8 @@ describe('AH-64D DCS-DTC Exporter', () => {
 
   it('should format coordinates as DDM', () => {
     const result = exportAH64DDCSDTC(mockMission)
-    expect(result.Waypoints.Waypoints[0].Latitude).toBe("N 12°34.567'")
-    expect(result.Waypoints.Waypoints[0].Longitude).toBe("E 123°45.678'")
+    expect(result.Waypoints.Waypoints[0].Latitude).toBe('N 12°34.567’')
+    expect(result.Waypoints.Waypoints[0].Longitude).toBe('E 123°45.678’')
   })
 
   describe('waypoint identifier mapping', () => {

@@ -4,6 +4,51 @@ import { formatDDM } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import type { DeepPartial } from '../helpers'
 import { truncateFrequency, getRadioConfig } from '../helpers'
+import {
+  AH64D_DEFAULT_LASER_CODE,
+  AH64D_RADIO_COUNT,
+  DCS_DTC_STEERPOINT_CAPTURE_MODE,
+} from '../constants'
+
+// AH-64D DCS-DTC enums (source: the-paid-actor/dcs-dtc, AH64D/Systems/{TSDSystem,RouteSystem}.cs)
+
+const MAP_TYPE = {
+  CHART: 0,
+  ELEVATION: 1,
+  SATELLITE: 2,
+  STICK: 3,
+} as const
+
+const MAP_ORIENTATION = {
+  HEADING_UP: 0,
+  TRACK_UP: 1,
+  NORTH_UP: 2,
+} as const
+
+const COLOR_BAND = {
+  NONE: 0,
+  AIRCRAFT: 1,
+  ELEVATION: 2,
+} as const
+
+const ROUTE_MODE = {
+  USE_ALL: 1,
+  USE_RANGE: 2,
+  USE_SPECIFIC: 3,
+} as const
+
+const ROUTE_CODE = {
+  ALPHA: 0,
+  BRAVO: 1,
+  DELTA: 2,
+  ECHO: 3,
+  HOTEL: 4,
+  INDIA: 5,
+  LIMA: 6,
+  OSCAR: 7,
+  ROMEO: 8,
+  TANGO: 9,
+} as const
 
 export type DCSAH64DMDC = {
   Aircraft: 'AH64D'
@@ -215,21 +260,18 @@ export function exportAH64DDCSDTC(
   const selectedCrewMember = mission.crew[crewMemberIndex]
   const laserCode = selectedCrewMember.laser
 
-  // Build radio presets — transposed format
-  // Mission stores [radio][preset], AH-64D needs [preset].Frequencies[radio]
-  // AH-64D has 5 radios: COM1 (VHF), COM2 (HF), COM3 (UHF), COM4 (FM1), COM5 (FM2)
+  // Mission stores [radio][preset]; AH-64D wants [preset].Frequencies[radio]
+  // for AH64D_RADIO_COUNT radios plus an unused 6th slot ('0.000').
   const presetCount = Math.max(...mission.radioPresets.map((r) => r.length), 0)
   const radioPresets: DCSAH64DMDC['Radios']['Radio']['Presets'] = []
 
   for (let p = 0; p < presetCount; p++) {
     const frequencies: string[] = []
-    // 5 radios map to slots 0-4
-    for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < AH64D_RADIO_COUNT; r++) {
       const preset = mission.radioPresets[r][p]
       frequencies.push(truncateFrequency(preset.frequency))
     }
-    // Slot 5 (6th) is always unused
-    frequencies.push('0.000')
+    frequencies.push('0.000') // unused 6th slot
 
     radioPresets.push({
       Number: p + 1,
@@ -238,9 +280,8 @@ export function exportAH64DDCSDTC(
     })
   }
 
-  // Build SelectedModes for each of the 5 radios
   const selectedModes: DCSAH64DMDC['Radios']['Radio']['SelectedModes'] = []
-  for (let r = 0; r < 5; r++) {
+  for (let r = 0; r < AH64D_RADIO_COUNT; r++) {
     const config = getRadioConfig(mission, r)
     selectedModes.push({
       Number: r + 1,
@@ -255,14 +296,14 @@ export function exportAH64DDCSDTC(
   const hasRadios = presetCount > 0
   const hasLaser = !!laserCode
 
-  // Default TSD settings (sensible combat ops defaults)
+  // Squadron-default TSD settings for combat ops.
   const defaultTSD: DCSAH64DMDC['TSD'] = {
     ShowPresentPosition: true,
     ShowCentered: false,
-    MapType: 1,
-    MapOrientation: 2,
+    MapType: MAP_TYPE.ELEVATION,
+    MapOrientation: MAP_ORIENTATION.NORTH_UP,
     MapShowGrid: true,
-    MapElevationColorBand: 1,
+    MapElevationColorBand: COLOR_BAND.AIRCRAFT,
     MapElevationGray: true,
     NavPhaseShowWptData: false,
     NavPhaseShowInactiveZones: false,
@@ -309,8 +350,8 @@ export function exportAH64DDCSDTC(
       Radios: hasRadios,
     },
     WaypointsCapture: {
-      NavPointsMode: 0,
-      TgtPointsMode: 0,
+      NavPointsMode: DCS_DTC_STEERPOINT_CAPTURE_MODE.ADD_TO_END_OF_LIST,
+      TgtPointsMode: DCS_DTC_STEERPOINT_CAPTURE_MODE.ADD_TO_END_OF_LIST,
       NavPointsRangeFrom: 1,
       TgtPointsRangeFrom: 1,
     },
@@ -326,8 +367,8 @@ export function exportAH64DDCSDTC(
     Routes: {
       Routes: [
         {
-          Code: 0,
-          Mode: 1,
+          Code: ROUTE_CODE.ALPHA,
+          Mode: ROUTE_MODE.USE_ALL,
           Waypoints: null,
           IncludeAllWaypoints: true,
           IncludeAllHazards: true,
@@ -338,9 +379,9 @@ export function exportAH64DDCSDTC(
     TSD: defaultTSD,
     LaserCodes: {
       A: laserCode,
-      B: '1688',
-      C: '1688',
-      D: '1688',
+      B: AH64D_DEFAULT_LASER_CODE,
+      C: AH64D_DEFAULT_LASER_CODE,
+      D: AH64D_DEFAULT_LASER_CODE,
       R: laserCode,
     },
     Radios: {

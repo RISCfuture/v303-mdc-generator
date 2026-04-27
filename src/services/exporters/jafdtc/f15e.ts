@@ -4,7 +4,14 @@ import { formatDecimalDegrees } from './coordinates'
 import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DeepPartial } from '../helpers'
-import { truncateFrequency, getRadioConfig, parseTACAN } from '../helpers'
+import { truncateFrequency, getRadioConfig, parseTACAN, pickDefaultTuning } from '../helpers'
+import {
+  DEFAULT_ILS_FREQUENCY_MHZ,
+  DEFAULT_MIN_AGL_FEET,
+  JAFDTC_AIRFRAME,
+  TACAN_BAND_JAFDTC_AIRCRAFT,
+  TACAN_MODE_JAFDTC_F15E,
+} from '../constants'
 
 export type JAFDTCF15EMDC = {
   STPT: {
@@ -20,6 +27,7 @@ export type JAFDTCF15EMDC = {
   }
   Radio: {
     IsCOMM1MonitorGuard: boolean
+    IsCOMM2MonitorGuard: boolean
     COMM1DefaultTuning: string
     COMM2DefaultTuning: string
     IsDefault: boolean
@@ -65,7 +73,7 @@ export function exportF15EJAFDTC(
   // Parse TACAN
   const tacan = parseTACAN(selectedCrewMember.aaTcn)
   const tacanChannel = String(tacan?.channel ?? '')
-  const tacanBand = tacan?.band === 'X' ? 'X' : '' // JAFDTC: empty = Y, "X" = X
+  const tacanBand = tacan ? TACAN_BAND_JAFDTC_AIRCRAFT[tacan.band] : TACAN_BAND_JAFDTC_AIRCRAFT.Y
 
   // Convert waypoints (Route A)
   const stptPoints = mission.waypoints.map((wp) => {
@@ -117,8 +125,7 @@ export function exportF15EJAFDTC(
   const radio1Config = getRadioConfig(mission, 0)
   const radio2Config = getRadioConfig(mission, 1)
 
-  // Get ILS data from recovery runway
-  let ilsFrequency = '108.10'
+  let ilsFrequency = DEFAULT_ILS_FREQUENCY_MHZ.toFixed(2)
   let ilsCourse = '0'
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
     const airfields = getAirfieldsForTheater(mission.theater)
@@ -136,7 +143,7 @@ export function exportF15EJAFDTC(
     }
   }
 
-  const minAgl = mission.told.minAgl ?? 500
+  const minAgl = mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET
 
   const uid = crypto.randomUUID()
   const filename = mission.name
@@ -150,16 +157,16 @@ export function exportF15EJAFDTC(
     },
     Radio: {
       IsCOMM1MonitorGuard: true,
+      IsCOMM2MonitorGuard: false,
       COMM1DefaultTuning: radio1Config.selectedFrequency,
-      COMM2DefaultTuning:
-        radio2Config.mode === 1 ? radio2Config.selectedPreset : radio2Config.selectedFrequency,
+      COMM2DefaultTuning: pickDefaultTuning(radio2Config),
       IsDefault: false,
       Presets: radioPresets,
     },
     UFC: {
       TACANChannel: tacanChannel,
       TACANBand: tacanBand,
-      TACANMode: '1',
+      TACANMode: TACAN_MODE_JAFDTC_F15E.TR,
       ILSFrequency: ilsFrequency,
       ILSCourse: ilsCourse,
       LowAltWarn: minAgl.toString(),
@@ -168,7 +175,7 @@ export function exportF15EJAFDTC(
       Bingo: mission.fuel.bingo.toString(),
     },
     Version: 'F15E-1.0',
-    Airframe: 4,
+    Airframe: JAFDTC_AIRFRAME.F15E,
     UID: uid,
     Filename: filename,
     LinkedSysMap: {},

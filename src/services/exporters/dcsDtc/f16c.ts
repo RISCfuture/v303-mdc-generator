@@ -6,6 +6,21 @@ import { deepMerge } from '@/utils/deepMerge'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type { DTCReferencePoint, DeepPartial } from '../helpers'
 import { truncateFrequency, convertCCIPToDTC, getRadioConfig, parseTACAN } from '../helpers'
+import {
+  DEFAULT_BULLSEYE_WAYPOINT,
+  DEFAULT_ILS_COURSE_DEG,
+  DEFAULT_ILS_FREQUENCY_MHZ,
+  DEFAULT_MIN_AGL_FEET,
+  DEFAULT_MIN_MSL_FEET,
+  F16_DATALINK_MODE,
+  F16_DATALINK_TEAM_SIZE,
+  F16_DCS_DTC_CMS_PROGRAM_COUNT,
+  F16_DCS_DTC_FCR_MODE,
+  F16_DCS_DTC_MASTER_MODE,
+  F16_DCS_DTC_MFD_PAGE,
+  LASER_START_TIME_SEC,
+  TACAN_BAND_DCS_DTC,
+} from '../constants'
 
 export type DCSF16MDC = {
   Aircraft: 'F16C'
@@ -219,15 +234,15 @@ export function exportF16MDC(
   // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
   const tacan = parseTACAN(selectedCrewMember.aaTcn)
   const tacanChannel = tacan?.channel ?? 0
-  const tacanBand = tacan?.band === 'Y' ? 1 : 0
+  const tacanBand = tacan ? TACAN_BAND_DCS_DTC[tacan.band] : TACAN_BAND_DCS_DTC.X
 
   // Calculate Link16 callsign (e.g., "BR12" for prefix "BR", flight "1", position 2)
   const ownCallsign = getCrewMemberLink16Callsign(mission, crewMemberIndex)
 
-  // Build datalink members array (up to 8 crew members)
+  // Build datalink members array, padded to the F-16 DLNK team size.
   const members: number[] = []
   const tdoaMembers: boolean[] = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < F16_DATALINK_TEAM_SIZE; i++) {
     if (i < mission.crew.length) {
       const crewMember = mission.crew[i]
       const stn = parseInt(crewMember.stn.replace(/\s/g, ''))
@@ -258,16 +273,16 @@ export function exportF16MDC(
   const radio1Config = getRadioConfig(mission, 0) // Radio 1 = UHF
   const radio2Config = getRadioConfig(mission, 1) // Radio 2 = VHF
 
-  // Calculate MSL Floor and CARA ALOW from TOLD data (defaults to 500/5000 if not specified)
-  const minAgl = mission.told.minAgl ?? 500
-  const minMsl = mission.told.minMsl ?? 5000
+  // CARA ALOW / MSL Floor from TOLD data, falling back to squadron defaults.
+  const minAgl = mission.told.minAgl ?? DEFAULT_MIN_AGL_FEET
+  const minMsl = mission.told.minMsl ?? DEFAULT_MIN_MSL_FEET
   const hasCaraAlowData = mission.told.minAgl !== undefined
   const hasMslFloorData = mission.told.minMsl !== undefined
 
-  // Get ILS data from recovery runway (defaults to 108.1 MHz / 0 degrees if not found)
-  let ilsFrequency = 108.1
-  let ilsCourse = 0
-  let ilsFound = false
+  // ILS data from the recovery runway; defaults to 108.10 / 0° when missing.
+  // ILSToBeUpdated is hardcoded false below, so this is informational only.
+  let ilsFrequency = DEFAULT_ILS_FREQUENCY_MHZ
+  let ilsCourse = DEFAULT_ILS_COURSE_DEG
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
     const airfields = getAirfieldsForTheater(mission.theater)
     const recoveryAirport = airfields.find(
@@ -280,30 +295,31 @@ export function exportF16MDC(
       if (recoveryRunway?.ils) {
         ilsFrequency = parseFloat(String(recoveryRunway.ils.frequency))
         ilsCourse = recoveryRunway.heading
-        ilsFound = true
       }
     }
   }
 
-  // Default MFD configurations (can be expanded later)
+  // Squadron-default MFD layout per F-16 master mode.
+  // FCRAzimuth/FCRBars/FCRRange are the radar's scan width / bar count / NM
+  // range when FCRMode is set; null FCRMode disables radar config for that MFD.
   const mfdConfigurations = [
     {
-      Mode: 1,
+      Mode: F16_DCS_DTC_MASTER_MODE.NAV,
       LeftMFD: {
         SelectedPage: 1,
-        Page1: 2,
-        Page2: 1,
-        Page3: 1,
-        FCRMode: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.FCR,
+        Page2: F16_DCS_DTC_MFD_PAGE.BLANK,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
+        FCRMode: F16_DCS_DTC_FCR_MODE.RWS,
         FCRAzimuth: 6,
         FCRBars: 4,
         FCRRange: 40,
       },
       RightMFD: {
         SelectedPage: 2,
-        Page1: 4,
-        Page2: 3,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.SMS,
+        Page2: F16_DCS_DTC_MFD_PAGE.HSD,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -312,22 +328,22 @@ export function exportF16MDC(
       ToBeUpdated: true,
     },
     {
-      Mode: 2,
+      Mode: F16_DCS_DTC_MASTER_MODE.AA,
       LeftMFD: {
         SelectedPage: 1,
-        Page1: 2,
-        Page2: 5,
-        Page3: 1,
-        FCRMode: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.FCR,
+        Page2: F16_DCS_DTC_MFD_PAGE.TGP,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
+        FCRMode: F16_DCS_DTC_FCR_MODE.RWS,
         FCRAzimuth: 6,
         FCRBars: 2,
         FCRRange: 80,
       },
       RightMFD: {
         SelectedPage: 2,
-        Page1: 4,
-        Page2: 3,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.SMS,
+        Page2: F16_DCS_DTC_MFD_PAGE.HSD,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -336,12 +352,12 @@ export function exportF16MDC(
       ToBeUpdated: true,
     },
     {
-      Mode: 3,
+      Mode: F16_DCS_DTC_MASTER_MODE.AG,
       LeftMFD: {
         SelectedPage: 1,
-        Page1: 5,
-        Page2: 6,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.TGP,
+        Page2: F16_DCS_DTC_MFD_PAGE.WPN,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -349,9 +365,9 @@ export function exportF16MDC(
       },
       RightMFD: {
         SelectedPage: 2,
-        Page1: 4,
-        Page2: 3,
-        Page3: 7,
+        Page1: F16_DCS_DTC_MFD_PAGE.SMS,
+        Page2: F16_DCS_DTC_MFD_PAGE.HSD,
+        Page3: F16_DCS_DTC_MFD_PAGE.HAD,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -360,12 +376,12 @@ export function exportF16MDC(
       ToBeUpdated: true,
     },
     {
-      Mode: 4,
+      Mode: F16_DCS_DTC_MASTER_MODE.DGFT,
       LeftMFD: {
         SelectedPage: 1,
-        Page1: 2,
-        Page2: 5,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.FCR,
+        Page2: F16_DCS_DTC_MFD_PAGE.TGP,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -373,9 +389,9 @@ export function exportF16MDC(
       },
       RightMFD: {
         SelectedPage: 2,
-        Page1: 4,
-        Page2: 3,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.SMS,
+        Page2: F16_DCS_DTC_MFD_PAGE.HSD,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -384,22 +400,22 @@ export function exportF16MDC(
       ToBeUpdated: true,
     },
     {
-      Mode: 5,
+      Mode: F16_DCS_DTC_MASTER_MODE.MSL,
       LeftMFD: {
         SelectedPage: 1,
-        Page1: 2,
-        Page2: 5,
-        Page3: 1,
-        FCRMode: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.FCR,
+        Page2: F16_DCS_DTC_MFD_PAGE.TGP,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
+        FCRMode: F16_DCS_DTC_FCR_MODE.RWS,
         FCRAzimuth: 6,
         FCRBars: 4,
         FCRRange: 40,
       },
       RightMFD: {
         SelectedPage: 2,
-        Page1: 4,
-        Page2: 3,
-        Page3: 1,
+        Page1: F16_DCS_DTC_MFD_PAGE.SMS,
+        Page2: F16_DCS_DTC_MFD_PAGE.HSD,
+        Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
         FCRMode: null,
         FCRAzimuth: 6,
         FCRBars: 4,
@@ -414,12 +430,15 @@ export function exportF16MDC(
     Upload: {
       Waypoints: true,
       CMS: true,
-      Radios: radio1Presets.length > 0 || radio2Presets.length > 0,
+      // Radios/Datalink default OFF: squadron pulls preset frequencies from
+      // the server miz and sets DLNK STNs manually. The user can re-check
+      // these in DCS-DTC if they actually want them uploaded.
+      Radios: false,
       MFDs: true,
       HARMHTS:
         (mission.harmTables !== undefined && mission.harmTables.length > 0) ||
         mission.htsThreatData !== undefined,
-      Datalink: mission.crew.length > 0,
+      Datalink: false,
       Misc: true,
       Kneeboard: false,
     },
@@ -427,19 +446,39 @@ export function exportF16MDC(
     Waypoints: {
       Waypoints: waypoints,
     },
+    // Always emit all 6 programs (MAN1-4, PANIC, BYPASS). Upstream
+    // CMSSystem.AfterLoadFromJson only resizes 5→6, so a shorter array
+    // leaves PROG2-N hidden in the GUI and untouched on upload.
     CMS: {
-      Programs: mission.ecmCmds.cmdsPrograms.map((prog) => ({
-        Number: prog.number - 1,
-        FlareBurstQty: prog.flareBurstQty,
-        FlareBurstInterval: prog.flareBurstInterval,
-        FlareSalvoQty: prog.flareSalvoQty,
-        FlareSalvoInterval: prog.flareSalvoInterval,
-        ChaffBurstQty: prog.chaffBurstQty,
-        ChaffBurstInterval: prog.chaffBurstInterval,
-        ChaffSalvoQty: prog.chaffSalvoQty,
-        ChaffSalvoInterval: prog.chaffSalvoInterval,
-        ToBeUpdated: true,
-      })),
+      Programs: Array.from({ length: F16_DCS_DTC_CMS_PROGRAM_COUNT }, (_, i) => {
+        const prog = mission.ecmCmds.cmdsPrograms.find((p) => p.number - 1 === i)
+        if (prog) {
+          return {
+            Number: prog.number,
+            FlareBurstQty: prog.flareBurstQty,
+            FlareBurstInterval: prog.flareBurstInterval,
+            FlareSalvoQty: prog.flareSalvoQty,
+            FlareSalvoInterval: prog.flareSalvoInterval,
+            ChaffBurstQty: prog.chaffBurstQty,
+            ChaffBurstInterval: prog.chaffBurstInterval,
+            ChaffSalvoQty: prog.chaffSalvoQty,
+            ChaffSalvoInterval: prog.chaffSalvoInterval,
+            ToBeUpdated: true,
+          }
+        }
+        return {
+          Number: i + 1,
+          FlareBurstQty: 0,
+          FlareBurstInterval: 0,
+          FlareSalvoQty: 0,
+          FlareSalvoInterval: 0,
+          ChaffBurstQty: 0,
+          ChaffBurstInterval: 0,
+          ChaffSalvoQty: 0,
+          ChaffSalvoInterval: 0,
+          ToBeUpdated: false,
+        }
+      }),
       ChaffBingo: mission.ecmCmds.chaffBingo,
       FlareBingo: mission.ecmCmds.flareBingo,
     },
@@ -494,28 +533,31 @@ export function exportF16MDC(
             OwnshipIndex: crewMemberIndex + 1,
             Members: members,
             TDOAMembers: tdoaMembers,
-            DatalinkMode: 1, // TNDL
+            DatalinkMode: F16_DATALINK_MODE.TNDL,
           }
         : null,
     Misc: {
       Bingo: mission.fuel.bingo,
       BingoToBeUpdated: true,
       BullseyeToBeUpdated: Boolean(mission.bullseye),
-      BullseyeWP: mission.bullseye?.waypointNumber ?? 25,
+      BullseyeWP: mission.bullseye?.waypointNumber ?? DEFAULT_BULLSEYE_WAYPOINT,
       CARAALOW: minAgl,
       CARAALOWToBeUpdated: hasCaraAlowData,
       MSLFloor: minMsl,
       MSLFloorToBeUpdated: hasMslFloorData,
-      LaserSettingsToBeUpdated: true,
+      // Laser/TACAN/ILS default OFF: squadron either sets these in the miz
+      // or doesn't want DCS-DTC overwriting jet state. The user can re-check
+      // any of these in DCS-DTC's Misc page if they want them uploaded.
+      LaserSettingsToBeUpdated: false,
       TGPCode: laserCode,
       LSTCode: laserCode,
-      LaserStartTime: 8,
+      LaserStartTime: LASER_START_TIME_SEC,
       TACANChannel: tacanChannel,
       TACANBand: tacanBand,
-      TACANToBeUpdated: true,
+      TACANToBeUpdated: false,
       ILSFrequency: ilsFrequency,
       ILSCourse: ilsCourse,
-      ILSToBeUpdated: ilsFound,
+      ILSToBeUpdated: false,
     },
     Version: 2,
     KneeboardNotes: null,
