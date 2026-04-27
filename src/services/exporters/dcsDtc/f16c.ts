@@ -27,10 +27,12 @@ export type DCSF16MDC = {
   Upload: {
     Waypoints: boolean
     CMS: boolean
-    Radios: boolean
+    // Radios/Datalink are squadron-template-owned (v93-dcsdtc.json); optional
+    // so the exporter can omit them and let the template merge fill them in.
+    Radios?: boolean
     MFDs: boolean
     HARMHTS: boolean
-    Datalink: boolean
+    Datalink?: boolean
     Misc: boolean
     Kneeboard: boolean
   }
@@ -154,16 +156,18 @@ export type DCSF16MDC = {
     CARAALOWToBeUpdated: boolean
     MSLFloor: number
     MSLFloorToBeUpdated: boolean
-    LaserSettingsToBeUpdated: boolean
+    // Laser/TACAN/ILS *ToBeUpdated are squadron-template-owned; optional so
+    // the exporter can omit them and let the template merge fill them in.
+    LaserSettingsToBeUpdated?: boolean
     TGPCode: number
     LSTCode: number
     LaserStartTime: number
     TACANChannel: number
     TACANBand: number
-    TACANToBeUpdated: boolean
+    TACANToBeUpdated?: boolean
     ILSFrequency: number
     ILSCourse: number
-    ILSToBeUpdated: boolean
+    ILSToBeUpdated?: boolean
   }
   Version: number
   KneeboardNotes: null
@@ -280,7 +284,8 @@ export function exportF16MDC(
   const hasMslFloorData = mission.told.minMsl !== undefined
 
   // ILS data from the recovery runway; defaults to 108.10 / 0° when missing.
-  // ILSToBeUpdated is hardcoded false below, so this is informational only.
+  // For v93, ILSToBeUpdated is set false in the template, so this is
+  // informational only unless another squadron's template overrides.
   let ilsFrequency = DEFAULT_ILS_FREQUENCY_MHZ
   let ilsCourse = DEFAULT_ILS_COURSE_DEG
   if (mission.departureRecovery.recoveryAirportId && mission.departureRecovery.recoveryRunwayName) {
@@ -406,7 +411,11 @@ export function exportF16MDC(
         Page1: F16_DCS_DTC_MFD_PAGE.FCR,
         Page2: F16_DCS_DTC_MFD_PAGE.TGP,
         Page3: F16_DCS_DTC_MFD_PAGE.BLANK,
-        FCRMode: F16_DCS_DTC_FCR_MODE.RWS,
+        // v93 standard: TWS in MSL master mode (forum 5420#13293).
+        // v93-dcsdtc.json mirrors this as the canonical squadron declaration;
+        // deepMerge replaces MFD.Configurations wholesale, so this code value
+        // is what actually flows to the exported DTC.
+        FCRMode: F16_DCS_DTC_FCR_MODE.TWS,
         FCRAzimuth: 6,
         FCRBars: 4,
         FCRRange: 40,
@@ -430,15 +439,13 @@ export function exportF16MDC(
     Upload: {
       Waypoints: true,
       CMS: true,
-      // Radios/Datalink default OFF: squadron pulls preset frequencies from
-      // the server miz and sets DLNK STNs manually. The user can re-check
-      // these in DCS-DTC if they actually want them uploaded.
-      Radios: false,
+      // Radios/Datalink are owned by the squadron template (v93-dcsdtc.json
+      // sets both false: squadron pulls preset frequencies from the server
+      // miz and sets DLNK STNs manually).
       MFDs: true,
       HARMHTS:
         (mission.harmTables !== undefined && mission.harmTables.length > 0) ||
         mission.htsThreatData !== undefined,
-      Datalink: false,
       Misc: true,
       Kneeboard: false,
     },
@@ -545,19 +552,16 @@ export function exportF16MDC(
       CARAALOWToBeUpdated: hasCaraAlowData,
       MSLFloor: minMsl,
       MSLFloorToBeUpdated: hasMslFloorData,
-      // Laser/TACAN/ILS default OFF: squadron either sets these in the miz
-      // or doesn't want DCS-DTC overwriting jet state. The user can re-check
-      // any of these in DCS-DTC's Misc page if they want them uploaded.
-      LaserSettingsToBeUpdated: false,
+      // Laser/TACAN/ILS *ToBeUpdated are owned by the squadron template
+      // (v93-dcsdtc.json sets all three false: squadron either sets these in
+      // the miz or doesn't want DCS-DTC overwriting jet state).
       TGPCode: laserCode,
       LSTCode: laserCode,
       LaserStartTime: LASER_START_TIME_SEC,
       TACANChannel: tacanChannel,
       TACANBand: tacanBand,
-      TACANToBeUpdated: false,
       ILSFrequency: ilsFrequency,
       ILSCourse: ilsCourse,
-      ILSToBeUpdated: false,
     },
     Version: 2,
     KneeboardNotes: null,
