@@ -181,10 +181,10 @@
       "callsign": ["FREEDOM", "VIPER17"],
       "link16Prefix": "FM",
       "stn": 3700,
-      "mode3": null,
+      "mode3": 705,
       "freq": "57.8",
       "aaTacan": 26,
-      "laserCode": null,
+      "laserCode": 367,
       "tailNumber": "88-0410"
     },
     {
@@ -192,40 +192,40 @@
       "callsign": ["PUP 1", "VIPER18"],
       "link16Prefix": "PP",
       "stn": 3701,
-      "mode3": null,
+      "mode3": 713,
       "freq": "57.9",
       "aaTacan": 22,
-      "laserCode": 368
+      "laserCode": 366
     },
     {
       "pilot": "Fatboy",
       "callsign": ["PUP 2", "VIPER19"],
       "link16Prefix": "PP",
       "stn": 3702,
-      "mode3": 705,
+      "mode3": 721,
       "freq": "58.0",
       "aaTacan": 23,
-      "laserCode": 369
+      "laserCode": 364
     },
     {
       "pilot": "Klyde",
       "callsign": ["PUP 3", "VIPER20"],
       "link16Prefix": "PP",
       "stn": 3703,
-      "mode3": 713,
+      "mode3": 729,
       "freq": "58.1",
       "aaTacan": 24,
-      "laserCode": 370
+      "laserCode": 363
     },
     {
       "pilot": "Slax",
       "callsign": ["PUP 5", "VIPER22"],
       "link16Prefix": "PP",
       "stn": 3705,
-      "mode3": 729,
+      "mode3": 745,
       "freq": "58.3",
       "aaTacan": 26,
-      "laserCode": 372
+      "laserCode": 361
     }
   ],
   "v303": [
@@ -443,15 +443,6 @@
       "freq": "17.5790",
       "aaTacan": 61,
       "tailNumber": "20-5991"
-    },
-    {
-      "pilot": "Saintiron",
-      "callsign": ["KITTEN 1"],
-      "link16Prefix": "KN",
-      "stn": 2121,
-      "mode3": null,
-      "freq": "17.5800",
-      "aaTacan": 61
     },
     {
       "pilot": "Shoeshine",
