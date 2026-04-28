@@ -29,8 +29,13 @@ export class BriefingPanel {
     const imageButton = this.page.getByRole('button', { name: 'image' }).first()
     await imageButton.click()
 
+    // Wait for the dropdown menu to be fully rendered before clicking — Firefox
+    // can otherwise miss the click while Naive UI's open animation is in flight.
+    const uploadMenuItem = this.page.getByRole('menuitem', { name: 'Upload Images' })
+    await uploadMenuItem.waitFor({ state: 'visible' })
+
     const fileChooserPromise = this.page.waitForEvent('filechooser')
-    await this.page.getByRole('menuitem', { name: 'Upload Images' }).click({ force: true })
+    await uploadMenuItem.click({ force: true })
 
     const fileChooser = await fileChooserPromise
     await fileChooser.setFiles({ name: fileName, mimeType, buffer })
