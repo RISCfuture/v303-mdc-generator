@@ -489,6 +489,31 @@ describe('MDC Exporter', () => {
       }
     })
 
+    it('exports steerpoint Elevation as planned MSL altitude (not terrain)', () => {
+      // mockMissionF16 waypoint 0 has elevation=1000 and altitude=15000 — the
+      // exported steerpoint Elevation should be the planned altitude.
+      const result = exportF16MDC(mockMissionF16)
+
+      expect(result.Waypoints.Waypoints[0].Elevation).toBe(15000)
+      expect(result.Waypoints.Waypoints[1].Elevation).toBe(20000)
+    })
+
+    it('falls back to terrain elevation when planned altitude is null', () => {
+      const missionWithoutAltitude = {
+        ...mockMissionF16,
+        waypoints: [
+          {
+            ...mockMissionF16.waypoints[0],
+            altitude: null,
+            elevation: 1234,
+          },
+        ],
+      }
+      const result = exportF16MDC(missionWithoutAltitude)
+
+      expect(result.Waypoints.Waypoints[0].Elevation).toBe(1234)
+    })
+
     it('falls back to template CMS programs for slots the user has not set', () => {
       const template = {
         CMS: {

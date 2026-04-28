@@ -191,7 +191,11 @@ export function exportF16MDC(
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
     const latitude = isBlank ? 0 : (wp.latitude ?? 0)
     const longitude = isBlank ? 0 : (wp.longitude ?? 0)
-    const elevation = isBlank ? 0 : (wp.elevation ?? 0)
+    // F-16 DTC steerpoint Elevation = planned MSL altitude (what the user
+    // typed in the generator), not the database terrain elevation. Skilty
+    // forum thread 5420 post 13303. Fall back to terrain elevation when the
+    // user left altitude blank, then 0.
+    const elevation = isBlank ? 0 : (wp.altitude ?? wp.elevation ?? 0)
 
     const ccip = wp.ccip
     const refPointType = ccip?.referencePointType ?? 'None'

@@ -98,7 +98,8 @@ export function exportFA18CDCSDTC(
       wp.latitude === null && wp.longitude === null && wp.altitude === null && !wp.speed
     const latitude = isBlank ? 0 : (wp.latitude ?? 0)
     const longitude = isBlank ? 0 : (wp.longitude ?? 0)
-    const elevation = isBlank ? 0 : (wp.elevation ?? 0)
+    // Steerpoint Elevation = planned MSL altitude, falling back to terrain.
+    const elevation = isBlank ? 0 : (wp.altitude ?? wp.elevation ?? 0)
 
     return {
       Sequence: wp.sequence,
