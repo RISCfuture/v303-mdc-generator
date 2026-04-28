@@ -489,6 +489,45 @@ describe('MDC Exporter', () => {
       }
     })
 
+    it('falls back to template CMS programs for slots the user has not set', () => {
+      const template = {
+        CMS: {
+          Programs: [
+            {
+              Number: 2,
+              FlareBurstQty: 2,
+              FlareBurstInterval: 0.02,
+              FlareSalvoQty: 3,
+              FlareSalvoInterval: 0.5,
+              ChaffBurstQty: 6,
+              ChaffBurstInterval: 0.075,
+              ChaffSalvoQty: 1,
+              ChaffSalvoInterval: 0.5,
+              ToBeUpdated: true,
+            },
+          ],
+        },
+      }
+      const result = exportF16MDC(mockMissionF16, 0, template)
+
+      // User-set program 1 still wins over template
+      expect(result.CMS.Programs?.[0].Number).toBe(1)
+      expect(result.CMS.Programs?.[0].ToBeUpdated).toBe(true)
+      expect(result.CMS.Programs?.[0].FlareBurstQty).toBe(
+        mockMissionF16.ecmCmds.cmdsPrograms[0].flareBurstQty,
+      )
+      // Template fills program 2 (mission has no entry for it)
+      expect(result.CMS.Programs?.[1].Number).toBe(2)
+      expect(result.CMS.Programs?.[1].ToBeUpdated).toBe(true)
+      expect(result.CMS.Programs?.[1].ChaffBurstQty).toBe(6)
+      expect(result.CMS.Programs?.[1].ChaffBurstInterval).toBe(0.075)
+      // Programs 3-6 still zero-fill (no template entry, no user data)
+      for (let i = 2; i < 6; i++) {
+        expect(result.CMS.Programs?.[i].ToBeUpdated).toBe(false)
+        expect(result.CMS.Programs?.[i].ChaffBurstQty).toBe(0)
+      }
+    })
+
     describe('CCIP Reference Points Export', () => {
       it('should export VIP reference point correctly', () => {
         const missionWithVIP = {

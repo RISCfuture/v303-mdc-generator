@@ -1,4 +1,80 @@
 {
+  "CMS": {
+    "Programs": [
+      {
+        "Number": 1,
+        "FlareBurstQty": 6,
+        "FlareBurstInterval": 0.075,
+        "FlareSalvoQty": 1,
+        "FlareSalvoInterval": 0.5,
+        "ChaffBurstQty": 3,
+        "ChaffBurstInterval": 0.3,
+        "ChaffSalvoQty": 1,
+        "ChaffSalvoInterval": 0.75,
+        "ToBeUpdated": true
+      },
+      {
+        "Number": 2,
+        "FlareBurstQty": 2,
+        "FlareBurstInterval": 0.02,
+        "FlareSalvoQty": 3,
+        "FlareSalvoInterval": 0.5,
+        "ChaffBurstQty": 6,
+        "ChaffBurstInterval": 0.075,
+        "ChaffSalvoQty": 1,
+        "ChaffSalvoInterval": 0.5,
+        "ToBeUpdated": true
+      },
+      {
+        "Number": 3,
+        "FlareBurstQty": 2,
+        "FlareBurstInterval": 0.1,
+        "FlareSalvoQty": 10,
+        "FlareSalvoInterval": 0.75,
+        "ChaffBurstQty": 2,
+        "ChaffBurstInterval": 0.1,
+        "ChaffSalvoQty": 10,
+        "ChaffSalvoInterval": 0.75,
+        "ToBeUpdated": true
+      },
+      {
+        "Number": 4,
+        "FlareBurstQty": 0,
+        "FlareBurstInterval": 0.1,
+        "FlareSalvoQty": 5,
+        "FlareSalvoInterval": 0.5,
+        "ChaffBurstQty": 2,
+        "ChaffBurstInterval": 0.3,
+        "ChaffSalvoQty": 5,
+        "ChaffSalvoInterval": 0.5,
+        "ToBeUpdated": true
+      },
+      {
+        "Number": 5,
+        "FlareBurstQty": 2,
+        "FlareBurstInterval": 0.05,
+        "FlareSalvoQty": 20,
+        "FlareSalvoInterval": 0.75,
+        "ChaffBurstQty": 2,
+        "ChaffBurstInterval": 0.05,
+        "ChaffSalvoQty": 20,
+        "ChaffSalvoInterval": 0.75,
+        "ToBeUpdated": true
+      },
+      {
+        "Number": 6,
+        "FlareBurstQty": 5,
+        "FlareBurstInterval": 0.075,
+        "FlareSalvoQty": 2,
+        "FlareSalvoInterval": 0.5,
+        "ChaffBurstQty": 5,
+        "ChaffBurstInterval": 0.075,
+        "ChaffSalvoQty": 2,
+        "ChaffSalvoInterval": 0.5,
+        "ToBeUpdated": true
+      }
+    ]
+  },
   "MFD": {
     "Configurations": [
       {

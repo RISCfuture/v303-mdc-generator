@@ -456,6 +456,9 @@ export function exportF16MDC(
     // Always emit all 6 programs (MAN1-4, PANIC, BYPASS). Upstream
     // CMSSystem.AfterLoadFromJson only resizes 5→6, so a shorter array
     // leaves PROG2-N hidden in the GUI and untouched on upload.
+    // For slots the user hasn't set, fall back to the squadron template's
+    // program (e.g. v93-dcsdtc.json provides v93-standard PROG1-6); deepMerge
+    // replaces CMS.Programs wholesale, so the fallback has to happen here.
     CMS: {
       Programs: Array.from({ length: F16_DCS_DTC_CMS_PROGRAM_COUNT }, (_, i) => {
         const prog = mission.ecmCmds.cmdsPrograms.find((p) => p.number - 1 === i)
@@ -471,6 +474,21 @@ export function exportF16MDC(
             ChaffSalvoQty: prog.chaffSalvoQty,
             ChaffSalvoInterval: prog.chaffSalvoInterval,
             ToBeUpdated: true,
+          }
+        }
+        const templateProg = template?.CMS?.Programs?.find((p) => p.Number === i + 1)
+        if (templateProg) {
+          return {
+            Number: i + 1,
+            FlareBurstQty: templateProg.FlareBurstQty,
+            FlareBurstInterval: templateProg.FlareBurstInterval,
+            FlareSalvoQty: templateProg.FlareSalvoQty,
+            FlareSalvoInterval: templateProg.FlareSalvoInterval,
+            ChaffBurstQty: templateProg.ChaffBurstQty,
+            ChaffBurstInterval: templateProg.ChaffBurstInterval,
+            ChaffSalvoQty: templateProg.ChaffSalvoQty,
+            ChaffSalvoInterval: templateProg.ChaffSalvoInterval,
+            ToBeUpdated: templateProg.ToBeUpdated,
           }
         }
         return {

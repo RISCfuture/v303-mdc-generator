@@ -99,6 +99,30 @@ describe('mdcTemplateService', () => {
       expect(template.Datalink?.DatalinkMode).toBe(1) // TNDL
     })
 
+    it('should have v93-standard CMS programs 1-6 for v93 DCS-DTC', () => {
+      // Authoritative values from v93FS Loadout Reference Listing thread
+      // (post #11868 by Guts, attachment v93rd_cmds.json).
+      const template = loadTemplateForFormat('DCS-DTC', 'v93')
+
+      // @ts-expect-error - accessing nested property for test
+      const programs = template.CMS?.Programs as
+        | {
+            Number: number
+            FlareBurstQty: number
+            ChaffBurstQty: number
+            ToBeUpdated: boolean
+          }[]
+        | undefined
+      expect(programs).toHaveLength(6)
+      programs?.forEach((p, i) => {
+        expect(p.Number).toBe(i + 1)
+        expect(p.ToBeUpdated).toBe(true)
+      })
+      // Spot-check Program 4: chaff-only notch (FlareBurstQty=0).
+      expect(programs?.[3].FlareBurstQty).toBe(0)
+      expect(programs?.[3].ChaffBurstQty).toBe(2)
+    })
+
     // v93 JAFDTC template
     it('should load v93 JAFDTC template', () => {
       const template = loadTemplateForFormat('JAFDTC', 'v93')
