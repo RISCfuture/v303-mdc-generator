@@ -1,0 +1,52 @@
+diff --git a/dist/index.js b/dist/index.js
+index 0a365647d585b6c4818d78feb48f3fdaf5e23f3b..4f3f38f8eb50d9a0d13892f0eec407872a334f91 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -39749,7 +39749,7 @@
+         }
+         function handleCompositionEnd() {
+           isComposingRef.value = false;
+-          if (props.ignoreComposition) {
++          if (props.ignoreComposition && cachedInputEvent !== null) {
+             doPatternInput(cachedInputEvent);
+           }
+           cachedInputEvent = null;
+diff --git a/dist/index.mjs b/dist/index.mjs
+index bd3d1eb43077269e74cfbc713dfca3df530c77de..4be8b4c054019225dbb700a2942b2f5924629215 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -39745,7 +39745,7 @@ var NInternalSelection = defineComponent({
+     }
+     function handleCompositionEnd() {
+       isComposingRef.value = false;
+-      if (props.ignoreComposition) {
++      if (props.ignoreComposition && cachedInputEvent !== null) {
+         doPatternInput(cachedInputEvent);
+       }
+       cachedInputEvent = null;
+diff --git a/es/_internal/selection/src/Selection.mjs b/es/_internal/selection/src/Selection.mjs
+index cde4b296b0a96e3239100952facb12bbbd100e79..11259afa9686bffe7b9cb70f426c2bd0f28329bd 100644
+--- a/es/_internal/selection/src/Selection.mjs
++++ b/es/_internal/selection/src/Selection.mjs
+@@ -257,7 +257,7 @@ export default defineComponent({
+     }
+     function handleCompositionEnd() {
+       isComposingRef.value = false;
+-      if (props.ignoreComposition) {
++      if (props.ignoreComposition && cachedInputEvent !== null) {
+         doPatternInput(cachedInputEvent);
+       }
+       cachedInputEvent = null;
+diff --git a/lib/_internal/selection/src/Selection.js b/lib/_internal/selection/src/Selection.js
+index d7af6c7a5ec1a17b78d9d0156707d4e8009895c1..37243780cf3c29ca432f62ca69d3474d1684e5ed 100644
+--- a/lib/_internal/selection/src/Selection.js
++++ b/lib/_internal/selection/src/Selection.js
+@@ -216,7 +216,7 @@ exports.default = (0, vue_1.defineComponent)({
+         }
+         function handleCompositionEnd() {
+             isComposingRef.value = false;
+-            if (props.ignoreComposition) {
++            if (props.ignoreComposition && cachedInputEvent !== null) {
+                 doPatternInput(cachedInputEvent);
+             }
+             cachedInputEvent = null;

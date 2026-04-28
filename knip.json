@@ -7,6 +7,7 @@
   "ignoreDependencies": [
     "vite",
     "vite-plugin-csp-guard",
+    "vite-plugin-pwa",
     "@types/dompurify",
     "@types/markdown-it",
     "@vue/compiler-dom",

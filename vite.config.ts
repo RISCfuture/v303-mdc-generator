@@ -3,10 +3,32 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, type PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import csp from 'vite-plugin-csp-guard'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig(async ({ command, mode }) => {
-  const plugins: PluginOption[] = [vue()]
+  const plugins: PluginOption[] = [
+    vue(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      // Keep the existing public/site.webmanifest as-is; the plugin only
+      // generates a service worker and registration shim.
+      manifest: false,
+      // Separate registerSW.js script avoids needing 'unsafe-inline' in CSP.
+      injectRegister: 'script',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest,woff,woff2}'],
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/api/, /\.map$/],
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+        // The MissionEditor chunk is large (md-editor-v3 + ajv + naive-ui).
+        // Raise from the 2 MiB default so the whole app shell precaches.
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+      },
+    }),
+  ]
 
   // Only add Vue DevTools in development
   if (mode === 'development') {
