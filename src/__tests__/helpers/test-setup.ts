@@ -115,7 +115,15 @@ export function setupCommonMocks(
   }
 
   if (setupLocalStorageMock) {
-    global.localStorage = setupLocalStorage() as Storage
+    const mock = setupLocalStorage() as Storage
+    global.localStorage = mock
+    if (typeof window !== 'undefined') {
+      Object.defineProperty(window, 'localStorage', {
+        value: mock,
+        writable: true,
+        configurable: true,
+      })
+    }
   }
 }
 
@@ -157,7 +165,15 @@ export function setupTestEnvironment(
     }
 
     if (localStorageSetup) {
-      global.localStorage = setupLocalStorage() as Storage
+      const mock = setupLocalStorage() as Storage
+      global.localStorage = mock
+      if (typeof window !== 'undefined') {
+        Object.defineProperty(window, 'localStorage', {
+          value: mock,
+          writable: true,
+          configurable: true,
+        })
+      }
     }
 
     if (matchMediaSetup) {

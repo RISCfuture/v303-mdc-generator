@@ -27,6 +27,7 @@
   "dependencies": {
     "@sentry/vue": "^10.45.0",
     "@vicons/ionicons5": "^0.13.0",
+    "@vueuse/core": "^14.3.0",
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "dompurify": "^3.3.3",

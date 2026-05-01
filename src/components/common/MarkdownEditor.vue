@@ -2,6 +2,7 @@
 import { ref, watch, computed, onMounted } from 'vue'
 import { MdEditor } from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
+import { usePreferredDark } from '@vueuse/core'
 import { imageStorage, MAX_IMAGE_SIZE } from '@/services/imageStorage'
 import { useMessage } from 'naive-ui'
 
@@ -100,15 +101,8 @@ onMounted(async () => {
   }
 })
 
-// Detect system theme preference
-const isDarkMode = ref(window.matchMedia('(prefers-color-scheme: dark)').matches)
+const isDarkMode = usePreferredDark()
 const editorTheme = computed(() => (isDarkMode.value ? 'dark' : 'light'))
-
-// Watch for theme changes
-const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-darkModeMediaQuery.addEventListener('change', (e) => {
-  isDarkMode.value = e.matches
-})
 
 // Watch for external changes to modelValue
 watch(

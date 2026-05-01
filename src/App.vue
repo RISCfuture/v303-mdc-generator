@@ -6,32 +6,15 @@ import {
   NLoadingBarProvider,
   darkTheme,
 } from 'naive-ui'
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
+import { usePreferredDark } from '@vueuse/core'
 import { lightThemeOverrides, darkThemeOverrides } from '@/theme'
 
-// Use dark theme preference from system with reactive updates
-const prefersDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matches)
+const prefersDark = usePreferredDark()
 const theme = computed(() => (prefersDark.value ? darkTheme : undefined))
 const themeOverrides = computed(() =>
   prefersDark.value ? darkThemeOverrides : lightThemeOverrides,
 )
-
-// Listen for system theme changes
-let mediaQuery: MediaQueryList | undefined
-const handleThemeChange = (e: MediaQueryListEvent) => {
-  prefersDark.value = e.matches
-}
-
-onMounted(() => {
-  mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-  mediaQuery.addEventListener('change', handleThemeChange)
-})
-
-onUnmounted(() => {
-  if (mediaQuery) {
-    mediaQuery.removeEventListener('change', handleThemeChange)
-  }
-})
 </script>
 
 <template>

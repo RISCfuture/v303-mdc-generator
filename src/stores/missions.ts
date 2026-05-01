@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
 import type { Mission, Squadron, Theater, Waypoint } from '@/types'
 import { getDefaultRadioPresets } from '@/data/channelization'
 import {
@@ -14,14 +15,60 @@ import { imageStorage } from '@/services/imageStorage'
 import { theaterDatabase } from '@/data/theaters'
 import { getAirfieldsForTheater } from '@/data/airfields'
 
-const STORAGE_KEY = 'v303-missions'
-const STORAGE_VERSION = 2
+export const STORAGE_KEY = 'v303-missions'
+export const STORAGE_VERSION = 2
+
+export type MissionsStorageData = {
+  version: number
+  missions: SerializedMission[]
+}
+
+const defaultStorageData = (): MissionsStorageData => ({
+  version: STORAGE_VERSION,
+  missions: [],
+})
 
 /**
- * Missions store with automatic LocalStorage persistence
- * All state changes are automatically synced to LocalStorage via Pinia's $subscribe hook
+ * Missions store with LocalStorage persistence via VueUse's useLocalStorage.
+ * Mutating actions call saveToStorage() to push the serialized envelope through the storage ref.
  */
 export const useMissionsStore = defineStore('missions', () => {
+  // Persistent versioned storage backed by useLocalStorage. The serializer preserves
+  // the {version, missions} envelope and discards data with an unexpected version.
+  const storageRef = useLocalStorage(STORAGE_KEY, defaultStorageData(), {
+    flush: 'sync',
+    listenToStorageChanges: false,
+    serializer: {
+      read: (raw: string): MissionsStorageData => {
+        try {
+          const parsed: unknown = JSON.parse(raw)
+          if (
+            parsed !== null &&
+            typeof parsed === 'object' &&
+            'version' in parsed &&
+            (parsed as Record<string, unknown>).version === STORAGE_VERSION &&
+            Array.isArray((parsed as Record<string, unknown>).missions)
+          ) {
+            return parsed as MissionsStorageData
+          }
+          console.warn('Invalid or outdated storage format - clearing')
+          return defaultStorageData()
+        } catch (error) {
+          console.error('Failed to parse missions from localStorage:', error)
+          return defaultStorageData()
+        }
+      },
+      write: (value: MissionsStorageData): string => JSON.stringify(value),
+    },
+    onError: (error) => {
+      if (error instanceof DOMException && error.name === 'QuotaExceededError') {
+        console.error('LocalStorage quota exceeded. Mission data may not be saved properly.')
+      } else {
+        console.error('Mission storage error:', error)
+      }
+    },
+  })
+
   // State
   const missions = ref<Mission[]>([])
   const currentMissionId = ref<string | null>(null)
@@ -41,70 +88,38 @@ export const useMissionsStore = defineStore('missions', () => {
   // Actions
 
   /**
-   * Load missions from LocalStorage
-   * Note: No schema validation here - missions can be incomplete and still editable.
-   * Use isMissionComplete() to check export-readiness.
+   * Reload missions from LocalStorage into the in-memory state.
    */
   function loadFromStorage() {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY)
-      if (!stored) {
-        missions.value = []
-        return
-      }
-
-      const parsed: unknown = JSON.parse(stored)
-
-      // Expect versioned storage format
-      if (
-        parsed !== null &&
-        typeof parsed === 'object' &&
-        'version' in parsed &&
-        (parsed as Record<string, unknown>).version === STORAGE_VERSION &&
-        Array.isArray((parsed as Record<string, unknown>).missions)
-      ) {
-        const serializedMissions = (parsed as Record<string, unknown>)
-          .missions as SerializedMission[]
-        missions.value = serializedMissions.map(deserializeMission)
-      } else {
-        console.warn('Invalid or outdated storage format - clearing')
-        missions.value = []
-      }
+      missions.value = storageRef.value.missions.map(deserializeMission)
     } catch (error) {
-      console.error('Failed to load missions from localStorage:', error)
+      console.error('Failed to deserialize missions from storage:', error)
       missions.value = []
     }
   }
 
+  loadFromStorage()
+
   /**
-   * Save missions to LocalStorage
+   * Persist missions to LocalStorage. Throws on QuotaExceededError so callers
+   * (e.g. updateMission) can revert their optimistic mutation.
    */
   function saveToStorage() {
     try {
-      // Serialize missions for storage
-      const serializedMissions = missions.value.map(serializeMission)
-
-      // Store with version
-      const storageData = {
+      storageRef.value = {
         version: STORAGE_VERSION,
-        missions: serializedMissions,
+        missions: missions.value.map(serializeMission),
       }
-
-      const serialized = JSON.stringify(storageData)
-      localStorage.setItem(STORAGE_KEY, serialized)
     } catch (error) {
       if (error instanceof DOMException && error.name === 'QuotaExceededError') {
-        console.error('LocalStorage quota exceeded. Mission data may not be saved properly.')
-        // Re-throw so the component can catch and show a user-friendly message
         const quotaError = new Error(
           'Storage quota exceeded. Please reduce mission data or delete old missions.',
         )
         ;(quotaError as unknown as { cause: unknown }).cause = error
         throw quotaError
-      } else {
-        console.error('Failed to save missions to localStorage:', error)
-        throw error
       }
+      throw error
     }
   }
 
@@ -378,13 +393,11 @@ export const useMissionsStore = defineStore('missions', () => {
     }
   }
 
-  // Initialize store by loading from localStorage
-  loadFromStorage()
-
   return {
     // State
     missions,
     currentMissionId,
+    storageRef,
 
     // Computed
     currentMission,

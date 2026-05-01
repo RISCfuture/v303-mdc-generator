@@ -1,15 +1,12 @@
 import { useMessage, useLoadingBar } from 'naive-ui'
 import * as Sentry from '@sentry/vue'
 import { exportAllImages, importAllImages, validateImagesData } from '@/utils/imageExport'
-import { useMissionsStore } from '@/stores/missions'
+import { useMissionsStore, STORAGE_VERSION } from '@/stores/missions'
 import { serializeMission } from '@/utils/missionStorage'
 import { imageStorage } from '@/services/imageStorage'
 import type { SerializedMission } from '@/utils/missionStorage'
 import type { StoredImage } from '@/services/imageStorage'
 import type { Mission } from '@/types'
-
-const STORAGE_KEY = 'v303-missions'
-const STORAGE_VERSION = 2
 
 /**
  * Export file format for full backup
@@ -62,29 +59,16 @@ export function useMissionListExport() {
     try {
       message.info('Exporting missions...')
 
-      // Get missions from localStorage
-      const stored = localStorage.getItem(STORAGE_KEY)
-      if (!stored) {
+      // Read missions via the shared store storage ref
+      const storageData = missionsStore.storageRef
+      if (storageData.missions.length === 0) {
         message.warning('No missions to export')
         loadingBar.finish()
         return
       }
-
-      const parsed: unknown = JSON.parse(stored)
-
-      // Validate storage format
-      if (
-        !parsed ||
-        typeof parsed !== 'object' ||
-        !('version' in parsed) ||
-        (parsed as { version: unknown }).version !== STORAGE_VERSION ||
-        !('missions' in parsed) ||
-        !Array.isArray((parsed as { missions: unknown }).missions)
-      ) {
+      if (storageData.version !== STORAGE_VERSION) {
         throw new Error('Invalid storage format')
       }
-
-      const validParsed = parsed as { version: number; missions: SerializedMission[] }
 
       // Get all images from IndexedDB
       const images = await exportAllImages()
@@ -92,7 +76,7 @@ export function useMissionListExport() {
       // Create backup object
       const backup: MissionListBackup = {
         version: STORAGE_VERSION,
-        missions: validParsed.missions,
+        missions: storageData.missions,
         images,
         exportedAt: new Date().toISOString(),
       }
@@ -115,7 +99,7 @@ export function useMissionListExport() {
 
       loadingBar.finish()
       message.success(
-        `Exported ${validParsed.missions.length} mission${validParsed.missions.length !== 1 ? 's' : ''} and ${images.length} image${images.length !== 1 ? 's' : ''}`,
+        `Exported ${storageData.missions.length} mission${storageData.missions.length !== 1 ? 's' : ''} and ${images.length} image${images.length !== 1 ? 's' : ''}`,
       )
       Sentry.metrics.count('mission.exported', 1, {
         attributes: { type: 'backup' },
@@ -395,34 +379,17 @@ export function useMissionListExport() {
         })
       }
 
-      // Get current missions from localStorage
-      const stored = localStorage.getItem(STORAGE_KEY)
-      let storageData = {
+      // Append to the shared store storage ref (writes through to localStorage)
+      const current = missionsStore.storageRef
+      missionsStore.storageRef = {
         version: STORAGE_VERSION,
-        missions: [] as SerializedMission[],
+        missions: [
+          ...(current.version === STORAGE_VERSION ? current.missions : []),
+          updatedMission,
+        ],
       }
 
-      if (stored) {
-        const parsed: unknown = JSON.parse(stored)
-        if (
-          parsed &&
-          typeof parsed === 'object' &&
-          'version' in parsed &&
-          (parsed as { version: unknown }).version === STORAGE_VERSION &&
-          'missions' in parsed &&
-          Array.isArray((parsed as { missions: unknown }).missions)
-        ) {
-          storageData = parsed as { version: number; missions: SerializedMission[] }
-        }
-      }
-
-      // Append the new mission
-      storageData.missions.push(updatedMission)
-
-      // Save back to localStorage
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData))
-
-      // Reload the missions store from the updated localStorage data
+      // Reload the missions store from the updated storage data
       missionsStore.loadFromStorage()
 
       loadingBar.finish()
@@ -448,14 +415,13 @@ export function useMissionListExport() {
       // Import images to IndexedDB
       await importAllImages(backup.images)
 
-      // Replace localStorage with imported missions
-      const storageData = {
+      // Replace storage with imported missions via the shared store ref
+      missionsStore.storageRef = {
         version: backup.version,
         missions: backup.missions,
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData))
 
-      // Reload the missions store from the new localStorage data
+      // Reload the missions store from the new storage data
       missionsStore.loadFromStorage()
 
       loadingBar.finish()
