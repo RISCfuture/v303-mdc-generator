@@ -34,8 +34,8 @@ Object.defineProperty(global, 'localStorage', {
 
 // Mock Blob for byte size calculation
 global.Blob = class Blob {
-  size: number
-  constructor(parts: unknown[]) {
+  public size: number
+  public constructor(parts: unknown[]) {
     // Simple approximation: count characters (will be UTF-16)
     const str = parts.join('')
     this.size = str.length * 2 // UTF-16 uses 2 bytes per character (simplified)

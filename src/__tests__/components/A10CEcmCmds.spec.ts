@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import A10CEcmCmds from '@/aircraft/A-10C/components/EcmCmds.vue'
-import type { Mission, Airframe } from '@/types'
+import type { Mission } from '@/types'
 
 const createMockMission = (overrides = {}): Partial<Mission> => ({
   cmdsProfile: 'PRGM A',
@@ -24,7 +24,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -37,7 +37,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -53,7 +53,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -70,7 +70,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -83,7 +83,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -109,7 +109,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -123,7 +123,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -139,7 +139,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -155,7 +155,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -179,7 +179,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -206,7 +206,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 
@@ -227,7 +227,7 @@ describe('A10CEcmCmds', () => {
       const wrapper = mount(A10CEcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
         },
       })
 

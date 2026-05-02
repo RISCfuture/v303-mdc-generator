@@ -10,7 +10,7 @@ export type DatalinkType = 'link16' | 'sadl' | null
  */
 export function getDatalinkType(aircraft: AirframeData | undefined): DatalinkType {
   if (!aircraft) return null
-  return (aircraft.datalinkType ?? null) as DatalinkType
+  return aircraft.datalinkType ?? null
 }
 
 /**

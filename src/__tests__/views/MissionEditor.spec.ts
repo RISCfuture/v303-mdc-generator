@@ -4,7 +4,7 @@ import { createTestingPinia } from '@pinia/testing'
 import { useRoute, useRouter } from 'vue-router'
 import MissionEditor from '@/views/MissionEditor.vue'
 import { useMissionsStore } from '@/stores/missions'
-import type { Mission, Theater, SquadronId } from '@/types'
+import type { Mission } from '@/types'
 
 // Mock vue-router
 vi.mock('vue-router', () => ({
@@ -54,8 +54,8 @@ describe('MissionEditor - Auto-create Steerpoint 1', () => {
     type: 'CAS',
     date: '2024-01-15',
     missionNumber: 'M-001',
-    squadron: 'v303' as SquadronId,
-    theater: 'Afghanistan' as Theater,
+    squadron: 'v303',
+    theater: 'Afghanistan',
     crew: [],
     packageMembers: [],
     supportAssets: [],

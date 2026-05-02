@@ -106,7 +106,7 @@ function parseLoadoutId(itemId: string): {
 
     const components: { id: string; weight: number; quantity: number }[] = [
       { id: rackId, weight: rackWeight, quantity: 1 },
-      { id: munitionId, weight: munitionWeight, quantity: quantity },
+      { id: munitionId, weight: munitionWeight, quantity },
     ]
 
     const totalWeight = rackWeight + munitionWeight * quantity
@@ -131,7 +131,7 @@ function parseLoadoutId(itemId: string): {
 
     const components: { id: string; weight: number; quantity: number }[] = [
       { id: rackId, weight: rackWeight, quantity: 1 },
-      { id: munitionId, weight: munitionWeight, quantity: quantity },
+      { id: munitionId, weight: munitionWeight, quantity },
     ]
 
     const totalWeight = rackWeight + munitionWeight * quantity
@@ -213,22 +213,9 @@ export function getMunitionDisplayName(itemId: string): string {
 
     const munitionData = munitionsDatabase[munition.id] ?? munitionsDatabase[`{${munition.id}}`]
 
-    if (rackData && munitionData) {
-      return `${rackData.name} w/ ${munition.quantity}× ${munitionData.name}`
-    } else if (rackData) {
-      // Have rack but not munition - try munition ID without braces
-      const munitionName = munitionData?.name ?? munition.id.replace(/^{|}$/g, '')
-      return `${rackData.name} w/ ${munition.quantity}× ${munitionName}`
-    } else if (munitionData) {
-      // Have munition but not rack
-      const rackName = rack.id.replace(/^{|}$/g, '')
-      return `${rackName} w/ ${munition.quantity}× ${munitionData.name}`
-    } else {
-      // Don't have either - use IDs
-      const rackName = rack.id.replace(/^{|}$/g, '')
-      const munitionName = munition.id.replace(/^{|}$/g, '')
-      return `${rackName} w/ ${munition.quantity}× ${munitionName}`
-    }
+    const rackName = rackData?.name ?? rack.id.replace(/^{|}$/g, '')
+    const munitionName = munitionData?.name ?? munition.id.replace(/^{|}$/g, '')
+    return `${rackName} w/ ${munition.quantity}× ${munitionName}`
   }
 
   // Fallback - return the CLSID itself

@@ -75,7 +75,7 @@ export function useMissionWeights(mission: ComputedRef<Mission | undefined>) {
           cgPercent: calculatorParams.cgPercent,
           pitchAttitude: calculatorParams.pitchAttitude,
           runwayCondition: calculatorParams.runwayCondition,
-          headwindComponent: headwindComponent,
+          headwindComponent,
           runwaySlope: calculatorParams.runwaySlope,
         })
       } else {

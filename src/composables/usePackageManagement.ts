@@ -1,7 +1,7 @@
 import { type ComputedRef } from 'vue'
 import { useMissionsStore } from '@/stores/missions'
 import { useDragAndDrop } from '@/utils/useDragAndDrop'
-import type { PackageMember, Airframe } from '@/types'
+import type { PackageMember } from '@/types'
 
 /**
  * Composable for managing package members (CRUD + reordering)
@@ -16,7 +16,7 @@ export function usePackageManagement(
   function addPackageMember() {
     const newMember: PackageMember = {
       callsign: '',
-      aircraft: 'F-16C_50' as Airframe, // Default aircraft
+      aircraft: 'F-16C_50', // Default aircraft
       time: '',
       comms: '',
       stn: null,

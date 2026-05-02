@@ -63,21 +63,21 @@ export class A10Calculator
     AircraftCalculator<A10SpeedParams, A10SpeedConfig, A10TakeoffParams, A10TakeoffConfig>,
     CriticalFieldCapableCalculator<A10TakeoffParams, A10CriticalFieldConfig>
 {
-  readonly airframe = 'A-10A' as const
-  readonly displayName = 'A-10A'
-  readonly capabilities = A10_CAPABILITIES
+  public readonly airframe = 'A-10A' as const
+  public readonly displayName = 'A-10A'
+  public readonly capabilities = A10_CAPABILITIES
 
   /**
    * Check if this calculator supports a specific capability
    */
-  hasCapability(capability: CalculatorCapability): boolean {
+  public hasCapability(capability: CalculatorCapability): boolean {
     return this.capabilities.includes(capability)
   }
 
   /**
    * Get default speed calculation configuration
    */
-  getDefaultSpeedConfig(): A10SpeedConfig {
+  public getDefaultSpeedConfig(): A10SpeedConfig {
     return {
       flapSetting: 0,
       speedBrake: 'open',
@@ -88,7 +88,7 @@ export class A10Calculator
   /**
    * Get default takeoff distance configuration
    */
-  getDefaultTakeoffConfig(): A10TakeoffConfig {
+  public getDefaultTakeoffConfig(): A10TakeoffConfig {
     return {
       flapSetting: 0,
       thrustSetting: 'MAX',
@@ -98,7 +98,7 @@ export class A10Calculator
   /**
    * Get default critical field length configuration
    */
-  getDefaultCriticalFieldConfig(): A10CriticalFieldConfig {
+  public getDefaultCriticalFieldConfig(): A10CriticalFieldConfig {
     return {
       thrustSetting: 'MAX',
       rcr: 23, // Dry
@@ -108,7 +108,7 @@ export class A10Calculator
   /**
    * Calculate rotation and refusal speeds
    */
-  calculateSpeeds(params: A10SpeedParams, config: A10SpeedConfig): SpeedCalculationResult {
+  public calculateSpeeds(params: A10SpeedParams, config: A10SpeedConfig): SpeedCalculationResult {
     return calculateSpeeds({
       grossWeight: params.grossWeight,
       flapSetting: config.flapSetting,
@@ -120,7 +120,7 @@ export class A10Calculator
   /**
    * Calculate takeoff distance
    */
-  calculateTakeoffDistance(
+  public calculateTakeoffDistance(
     params: A10TakeoffParams,
     config: A10TakeoffConfig,
   ): TakeoffDistanceResult {
@@ -145,7 +145,7 @@ export class A10Calculator
   /**
    * Calculate critical field length (engine-out scenario)
    */
-  calculateCriticalFieldLength(
+  public calculateCriticalFieldLength(
     params: A10TakeoffParams,
     config: A10CriticalFieldConfig,
   ): CriticalFieldLengthResult {
@@ -171,14 +171,14 @@ export class A10Calculator
    * Get crosswind limit
    * A-10A has a constant 35 knot crosswind limit regardless of conditions
    */
-  getCrosswindLimit(_config: A10TakeoffConfig): number {
+  public getCrosswindLimit(_config: A10TakeoffConfig): number {
     return A10_CROSSWIND_LIMIT
   }
 
   /**
    * Check if crosswind exceeds limitations
    */
-  exceedsCrosswindLimit(crosswindKnots: number, _config: A10TakeoffConfig): boolean {
+  public exceedsCrosswindLimit(crosswindKnots: number, _config: A10TakeoffConfig): boolean {
     return exceedsA10CrosswindLimit(crosswindKnots)
   }
 }

@@ -11,6 +11,12 @@ export default {
     {
       files: ['**/*.vue'],
       customSyntax: 'postcss-html',
+      rules: {
+        // postcss-html misparses inline `style="..."` attributes as nested
+        // rules, causing false-positive `no-invalid-position-declaration`
+        // errors across template attributes. Disable in .vue files.
+        'no-invalid-position-declaration': null,
+      },
     },
   ],
 }

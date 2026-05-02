@@ -89,13 +89,11 @@ watch(
     if (!oldValues) {
       // Initial mount - just format if we have valid coordinates
       if (lat !== null && lon !== null && !isNaN(lat) && !isNaN(lon)) {
-        const formatted = formatCoordinate(lat, lon, format, mgrsPrecision.value)
-        displayValue.value = formatted
-        isValid.value = true
+        displayValue.value = formatCoordinate(lat, lon, format, mgrsPrecision.value)
       } else {
         displayValue.value = ''
-        isValid.value = true
       }
+      isValid.value = true
       return
     }
 

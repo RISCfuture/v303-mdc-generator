@@ -40,7 +40,7 @@ const takeoffParams = computed(() => {
 
   return {
     temperature,
-    thrustSetting: thrustSetting,
+    thrustSetting,
     runwaySlope,
     fieldElevation,
     headwindComponent,

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import MissionLoadout from '@/components/mission/loadout/MissionLoadout.vue'
-import type { LoadoutStation, Airframe } from '@/types'
+import type { LoadoutStation } from '@/types'
 import type { PrefabLoadout } from '@/data/loadouts'
 import type { StationData } from '@/data/airframes'
 
@@ -32,7 +32,7 @@ describe('MissionLoadout', () => {
     it('should render loadout card with title', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -56,7 +56,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: stations,
           availableLoadouts: [],
@@ -81,7 +81,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: loadouts,
@@ -100,7 +100,7 @@ describe('MissionLoadout', () => {
     it('should emit load-prefab-loadout when SCL is selected', async () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [createMockPrefabLoadout()],
@@ -120,7 +120,7 @@ describe('MissionLoadout', () => {
     it('should clear selectedSCL when loading prefab', async () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [createMockPrefabLoadout()],
@@ -142,7 +142,7 @@ describe('MissionLoadout', () => {
     it('should emit clear-all-loadout when clear button is clicked', async () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [createMockLoadoutStation()],
           airframeStations: [createMockStationData()],
           availableLoadouts: [],
@@ -167,7 +167,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout,
           airframeStations: stations,
           availableLoadouts: [],
@@ -186,7 +186,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: stations,
           availableLoadouts: [],
@@ -206,7 +206,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: stations,
           availableLoadouts: [],
@@ -225,7 +225,7 @@ describe('MissionLoadout', () => {
     it('should get munition options for each station', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -246,7 +246,7 @@ describe('MissionLoadout', () => {
     it('should display gun ammunition options for airframes with ammoTypes', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -265,7 +265,7 @@ describe('MissionLoadout', () => {
     it('should show gun name as label for single-gun aircraft', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -283,7 +283,7 @@ describe('MissionLoadout', () => {
     it('should emit update:gun-ammo-type when ammo type changes', async () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -307,7 +307,7 @@ describe('MissionLoadout', () => {
     it('should handle clearing gun ammo type', async () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -330,7 +330,7 @@ describe('MissionLoadout', () => {
     it('should display loadout weight', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -348,7 +348,7 @@ describe('MissionLoadout', () => {
     it('should display fuel weight', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -366,7 +366,7 @@ describe('MissionLoadout', () => {
     it('should display gross weight', () => {
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: [],
           availableLoadouts: [],
@@ -387,7 +387,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout,
           airframeStations: stations,
           availableLoadouts: [],
@@ -412,7 +412,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: stations,
           availableLoadouts: [],
@@ -434,7 +434,7 @@ describe('MissionLoadout', () => {
 
       const wrapper = mount(MissionLoadout, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           loadout: [],
           airframeStations: stations,
           availableLoadouts: [],

@@ -12,7 +12,6 @@ import type {
   CMDSProgram,
   ECMCMDSProfiles,
   HARMTable,
-  HTSThreatData,
   Theater,
   Squadron,
   F16CalculatorParams,
@@ -699,11 +698,11 @@ export function deserializeMission(serialized: SerializedMission): Mission {
     htsThreatTables: serialized.htsp,
     harmTables: serialized.harm?.map((t): HARMTable => ({ tableNumber: t.tn, emitters: t.em })),
     htsThreatData: serialized.hts
-      ? ({
+      ? {
           manualTableEnabled: serialized.hts.me,
           manualEmitters: serialized.hts.em,
           enabledClasses: serialized.hts.ec,
-        } as HTSThreatData)
+        }
       : undefined,
     ecmCmds,
     commLadders: serialized.cl,
@@ -711,7 +710,7 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       mode: rd.m === 'p' ? 'preset' : 'manual',
       preset: rd.p,
       frequency: rd.f,
-    })) as import('@/types').RadioDefault[] | undefined,
+    })),
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     packageMembers: serialized.pm ?? [],
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

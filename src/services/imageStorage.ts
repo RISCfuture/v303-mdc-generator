@@ -22,7 +22,7 @@ class ImageStorageService {
   /**
    * Initialize the IndexedDB database
    */
-  async init(): Promise<void> {
+  public async init(): Promise<void> {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION)
 
@@ -63,7 +63,7 @@ class ImageStorageService {
   /**
    * Compress an image if it exceeds the size limit
    */
-  async compressImage(file: File, maxSize: number = MAX_IMAGE_SIZE): Promise<Blob> {
+  public async compressImage(file: File, maxSize: number = MAX_IMAGE_SIZE): Promise<Blob> {
     return new Promise((resolve, reject) => {
       const img = new Image()
       const reader = new FileReader()
@@ -161,7 +161,7 @@ class ImageStorageService {
   /**
    * Save an image to IndexedDB
    */
-  async saveImage(file: File, missionId: string): Promise<StoredImage> {
+  public async saveImage(file: File, missionId: string): Promise<StoredImage> {
     const db = await this.ensureDb()
 
     // Check if compression is needed
@@ -198,7 +198,7 @@ class ImageStorageService {
   /**
    * Get an image by ID
    */
-  async getImage(id: string): Promise<StoredImage | null> {
+  public async getImage(id: string): Promise<StoredImage | null> {
     const db = await this.ensureDb()
 
     return new Promise((resolve, reject) => {
@@ -218,7 +218,7 @@ class ImageStorageService {
   /**
    * Get all images for a mission
    */
-  async getImagesByMission(missionId: string): Promise<StoredImage[]> {
+  public async getImagesByMission(missionId: string): Promise<StoredImage[]> {
     const db = await this.ensureDb()
 
     return new Promise((resolve, reject) => {
@@ -239,7 +239,7 @@ class ImageStorageService {
   /**
    * Delete an image by ID
    */
-  async deleteImage(id: string): Promise<void> {
+  public async deleteImage(id: string): Promise<void> {
     const db = await this.ensureDb()
 
     return new Promise((resolve, reject) => {
@@ -259,7 +259,7 @@ class ImageStorageService {
   /**
    * Delete all images for a mission
    */
-  async deleteImagesByMission(missionId: string): Promise<void> {
+  public async deleteImagesByMission(missionId: string): Promise<void> {
     const images = await this.getImagesByMission(missionId)
     await Promise.all(images.map((img) => this.deleteImage(img.id)))
   }
@@ -267,7 +267,7 @@ class ImageStorageService {
   /**
    * Get all images in the database
    */
-  async getAllImages(): Promise<StoredImage[]> {
+  public async getAllImages(): Promise<StoredImage[]> {
     const db = await this.ensureDb()
 
     return new Promise((resolve, reject) => {
@@ -287,7 +287,7 @@ class ImageStorageService {
   /**
    * Get total storage size used by images
    */
-  async getStorageSize(): Promise<number> {
+  public async getStorageSize(): Promise<number> {
     const images = await this.getAllImages()
     return images.reduce((total, img) => total + img.size, 0)
   }
@@ -295,7 +295,7 @@ class ImageStorageService {
   /**
    * Clean up orphaned images (images not referenced by any mission)
    */
-  async cleanupOrphanedImages(validMissionIds: string[]): Promise<number> {
+  public async cleanupOrphanedImages(validMissionIds: string[]): Promise<number> {
     const allImages = await this.getAllImages()
     const orphaned = allImages.filter((img) => !validMissionIds.includes(img.missionId))
 
@@ -307,7 +307,7 @@ class ImageStorageService {
   /**
    * Clear all images (use with caution!)
    */
-  async clearAll(): Promise<void> {
+  public async clearAll(): Promise<void> {
     const db = await this.ensureDb()
 
     return new Promise((resolve, reject) => {

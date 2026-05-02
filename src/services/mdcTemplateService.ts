@@ -28,7 +28,7 @@ export function loadTemplateForFormat<T>(format: ExportFormat, squadronId: strin
   const key = `${format}:${squadronId}`
   const template = templateMap[key]
   if (template) {
-    return template as DeepPartial<T>
+    return template
   }
-  return {} as DeepPartial<T>
+  return {}
 }

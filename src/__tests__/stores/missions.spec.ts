@@ -3,7 +3,7 @@ import { setActivePinia, createPinia } from 'pinia'
 import { useMissionsStore } from '@/stores/missions'
 import { setupTestEnvironment, setupLocalStorage } from '@/__tests__/helpers'
 
-global.localStorage = setupLocalStorage() as Storage
+global.localStorage = setupLocalStorage()
 
 describe('Missions Store', () => {
   setupTestEnvironment({ pinia: true, localStorage: true })

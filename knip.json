@@ -12,7 +12,6 @@
     "@types/markdown-it",
     "@vue/compiler-dom",
     "@vue/server-renderer",
-    "fake-indexeddb",
     "dompurify",
     "html2canvas",
     "jspdf",

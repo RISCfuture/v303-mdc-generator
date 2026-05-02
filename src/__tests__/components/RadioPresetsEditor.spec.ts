@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import RadioPresetsEditor from '@/components/mission/radios/RadioPresetsEditor.vue'
-import type { RadioPreset, Airframe } from '@/types'
+import type { RadioPreset } from '@/types'
 
 const createMockPreset = (overrides = {}): RadioPreset => ({
   number: 1,
@@ -15,7 +15,7 @@ describe('RadioPresetsEditor', () => {
     it('should have two radios configured for F-16', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -26,7 +26,7 @@ describe('RadioPresetsEditor', () => {
     it('should have radio labels for F-16', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -40,7 +40,7 @@ describe('RadioPresetsEditor', () => {
     it('should have three radios configured for A-10', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           radioPresets: [[], [], []],
         },
       })
@@ -51,7 +51,7 @@ describe('RadioPresetsEditor', () => {
     it('should have radio labels for A-10', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'A-10C_2' as Airframe,
+          airframe: 'A-10C_2',
           radioPresets: [[], [], []],
         },
       })
@@ -67,7 +67,7 @@ describe('RadioPresetsEditor', () => {
     it('should render RadioPresetRow for each preset slot', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -79,7 +79,7 @@ describe('RadioPresetsEditor', () => {
     it('should handle empty presets array', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [],
         },
       })
@@ -95,7 +95,7 @@ describe('RadioPresetsEditor', () => {
 
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [presets, []],
         },
       })
@@ -109,7 +109,7 @@ describe('RadioPresetsEditor', () => {
     it('should emit update:radioPresets when frequency is changed', async () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -123,7 +123,7 @@ describe('RadioPresetsEditor', () => {
     it('should emit update:radioPresets when description is changed', async () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -139,7 +139,7 @@ describe('RadioPresetsEditor', () => {
 
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [presets, []],
         },
       })
@@ -155,7 +155,7 @@ describe('RadioPresetsEditor', () => {
     it('should keep preset with only description filled', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -172,7 +172,7 @@ describe('RadioPresetsEditor', () => {
     it('should display comm ladder input for each radio', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -186,7 +186,7 @@ describe('RadioPresetsEditor', () => {
     it('should emit update:commLadders when ladder text is changed', async () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
           commLadders: ['', ''],
         },
@@ -202,7 +202,7 @@ describe('RadioPresetsEditor', () => {
     it('should handle empty comm ladder value', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
           commLadders: ['test', ''],
         },
@@ -217,7 +217,7 @@ describe('RadioPresetsEditor', () => {
     it('should support freeform text in comm ladder', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
           commLadders: ['', ''],
         },
@@ -235,7 +235,7 @@ describe('RadioPresetsEditor', () => {
     it('should display default selector for each radio', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -247,7 +247,7 @@ describe('RadioPresetsEditor', () => {
     it('should return default radio config when radioDefaults is undefined', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -260,7 +260,7 @@ describe('RadioPresetsEditor', () => {
     it('should emit update:radioDefaults when mode is changed', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
           radioDefaults: [{ mode: 'preset', preset: 1 }],
         },
@@ -278,7 +278,7 @@ describe('RadioPresetsEditor', () => {
     it('should emit update:radioDefaults when preset is changed', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
           radioDefaults: [{ mode: 'preset', preset: 1 }],
         },
@@ -296,7 +296,7 @@ describe('RadioPresetsEditor', () => {
     it('should have dynamic preset options based on radio preset count', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -313,7 +313,7 @@ describe('RadioPresetsEditor', () => {
     it('should create correct number of preset slots per radio', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -326,7 +326,7 @@ describe('RadioPresetsEditor', () => {
     it('should maintain preset numbers in order', () => {
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [[], []],
         },
       })
@@ -348,7 +348,7 @@ describe('RadioPresetsEditor', () => {
 
       const wrapper = mount(RadioPresetsEditor, {
         props: {
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
           radioPresets: [presets, []],
         },
       })

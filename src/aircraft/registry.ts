@@ -56,7 +56,7 @@ class AircraftCalculatorRegistry {
    * @param airframe - The airframe identifier
    * @param factory - Factory function to create the calculator
    */
-  register(airframe: Airframe, factory: CalculatorFactory): void {
+  public register(airframe: Airframe, factory: CalculatorFactory): void {
     this.factories.set(airframe, factory)
     // Clear cached instance if re-registering (useful for testing)
     this.instances.delete(airframe)
@@ -68,7 +68,7 @@ class AircraftCalculatorRegistry {
    * @param airframe - The airframe identifier
    * @returns The calculator instance, or undefined if not registered
    */
-  get(airframe: Airframe): AircraftCalculator | undefined {
+  public get(airframe: Airframe): AircraftCalculator | undefined {
     // Return cached instance if available
     if (this.instances.has(airframe)) {
       return this.instances.get(airframe)
@@ -92,7 +92,7 @@ class AircraftCalculatorRegistry {
    * @param capability - The capability to check
    * @returns true if the airframe supports the capability
    */
-  hasCapability(airframe: Airframe, capability: CalculatorCapability): boolean {
+  public hasCapability(airframe: Airframe, capability: CalculatorCapability): boolean {
     const calculator = this.get(airframe)
     return calculator?.hasCapability(capability) ?? false
   }
@@ -102,7 +102,7 @@ class AircraftCalculatorRegistry {
    *
    * @returns Array of registered airframe identifiers
    */
-  getRegisteredAirframes(): Airframe[] {
+  public getRegisteredAirframes(): Airframe[] {
     return Array.from(this.factories.keys())
   }
 
@@ -112,7 +112,7 @@ class AircraftCalculatorRegistry {
    * @param capability - The capability to filter by
    * @returns Array of airframe identifiers supporting the capability
    */
-  getAirframesWithCapability(capability: CalculatorCapability): Airframe[] {
+  public getAirframesWithCapability(capability: CalculatorCapability): Airframe[] {
     const result: Airframe[] = []
     for (const airframe of this.factories.keys()) {
       if (this.hasCapability(airframe, capability)) {
@@ -128,7 +128,7 @@ class AircraftCalculatorRegistry {
    * @param airframe - The airframe identifier
    * @returns true if a calculator is registered
    */
-  isSupported(airframe: Airframe): boolean {
+  public isSupported(airframe: Airframe): boolean {
     return this.factories.has(airframe)
   }
 
@@ -143,7 +143,7 @@ class AircraftCalculatorRegistry {
    * @param componentType - The type of component
    * @param loader - Async component loader function
    */
-  registerComponent(
+  public registerComponent(
     airframe: Airframe,
     componentType: AircraftComponentType,
     loader: ComponentLoader,
@@ -162,7 +162,7 @@ class AircraftCalculatorRegistry {
    * @param componentType - The type of component
    * @returns The component loader, or undefined if not registered
    */
-  getComponentLoader(
+  public getComponentLoader(
     airframe: Airframe,
     componentType: AircraftComponentType,
   ): ComponentLoader | undefined {
@@ -176,21 +176,21 @@ class AircraftCalculatorRegistry {
    * @param componentType - The type of component
    * @returns true if the component is registered
    */
-  hasComponent(airframe: Airframe, componentType: AircraftComponentType): boolean {
+  public hasComponent(airframe: Airframe, componentType: AircraftComponentType): boolean {
     return this.componentLoaders.get(airframe)?.has(componentType) ?? false
   }
 
   /**
    * Clear all cached instances (useful for testing).
    */
-  clearCache(): void {
+  public clearCache(): void {
     this.instances.clear()
   }
 
   /**
    * Clear all registrations and cache (useful for testing).
    */
-  reset(): void {
+  public reset(): void {
     this.factories.clear()
     this.instances.clear()
     this.componentLoaders.clear()

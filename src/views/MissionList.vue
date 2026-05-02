@@ -140,19 +140,15 @@ async function handleImportFile({ file }: { file: UploadFileInfo }) {
     if ('mission' in result) {
       // Single mission import - apply immediately without modal
       await applySingleMissionImport(result)
-      // Clear the upload file list to reset the component
-      await nextTick()
-      uploadFileList.value = []
-      return false
     } else {
       // Full backup import - show modal for confirmation
       importPreview.value = result
       showImportModal.value = true
-      // Clear the upload file list to reset the component
-      await nextTick()
-      uploadFileList.value = []
-      return false
     }
+    // Clear the upload file list to reset the component
+    await nextTick()
+    uploadFileList.value = []
+    return false
   } catch (error) {
     message.error(`Failed to parse backup file: ${String(error)}`)
     console.error('Import parse error:', error)

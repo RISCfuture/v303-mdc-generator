@@ -272,7 +272,7 @@ export const useMissionsStore = defineStore('missions', () => {
         ...updates,
         id, // Preserve the original ID
         updatedAt: new Date().toISOString(),
-      } as Mission
+      }
       missions.value[index] = updatedMission
       try {
         saveToStorage()

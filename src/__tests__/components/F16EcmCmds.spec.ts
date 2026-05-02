@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import F16EcmCmds from '@/aircraft/F-16C_50/components/EcmCmds.vue'
-import type { Mission, Airframe } from '@/types'
+import type { Mission } from '@/types'
 
 const createMockMission = (overrides = {}): Partial<Mission> => ({
   cmdsProfile: 'PRGM 1',
@@ -25,7 +25,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -38,7 +38,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -54,7 +54,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -71,7 +71,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -84,7 +84,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -102,7 +102,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -116,7 +116,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -142,7 +142,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -156,7 +156,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -172,7 +172,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -188,7 +188,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -212,7 +212,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -239,7 +239,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 
@@ -260,7 +260,7 @@ describe('F16EcmCmds', () => {
       const wrapper = mount(F16EcmCmds, {
         props: {
           mission: mission as Mission,
-          airframe: 'F-16C_50' as Airframe,
+          airframe: 'F-16C_50',
         },
       })
 

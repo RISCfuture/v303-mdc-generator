@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import MissionBasicInfo from '@/components/mission/basic-info/MissionBasicInfo.vue'
-import type { Mission, SquadronId } from '@/types'
+import type { Mission } from '@/types'
 
 const createMockMission = (overrides = {}): Partial<Mission> => ({
   name: 'Test Mission',
@@ -9,7 +9,7 @@ const createMockMission = (overrides = {}): Partial<Mission> => ({
   date: new Date('2024-01-15'),
   weather: 'Clear',
   missionNumber: 'M-001',
-  squadron: 'v303' as SquadronId,
+  squadron: 'v303',
   departureRecovery: {
     departureAirportId: 'OAKN',
     departureRunwayName: '03',

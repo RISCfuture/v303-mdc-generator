@@ -60,7 +60,7 @@ export function getNInputValue(
     const value: unknown = vm[refOrStateName]
     // Handle Vue refs
     if (typeof value === 'object' && value !== null && 'value' in value) {
-      return (value as { value: unknown }).value
+      return value.value
     }
     return value
   }

@@ -63,21 +63,21 @@ export class F16Calculator
     BingoCapableCalculator<F16BingoConfig>,
     DragIndexCapableCalculator
 {
-  readonly airframe = 'F-16C_50' as const
-  readonly displayName = 'F-16C'
-  readonly capabilities = F16_CAPABILITIES
+  public readonly airframe = 'F-16C_50' as const
+  public readonly displayName = 'F-16C'
+  public readonly capabilities = F16_CAPABILITIES
 
   /**
    * Check if this calculator supports a specific capability
    */
-  hasCapability(capability: CalculatorCapability): boolean {
+  public hasCapability(capability: CalculatorCapability): boolean {
     return this.capabilities.includes(capability)
   }
 
   /**
    * Get default speed calculation configuration
    */
-  getDefaultSpeedConfig(): F16SpeedConfig {
+  public getDefaultSpeedConfig(): F16SpeedConfig {
     return {
       powerSetting: 'AB',
       runwayCondition: 'dry',
@@ -89,7 +89,7 @@ export class F16Calculator
   /**
    * Get default takeoff distance configuration
    */
-  getDefaultTakeoffConfig(): F16TakeoffConfig {
+  public getDefaultTakeoffConfig(): F16TakeoffConfig {
     return {
       powerSetting: 'AB',
       cgPercent: 35,
@@ -100,7 +100,7 @@ export class F16Calculator
   /**
    * Get default bingo calculator configuration
    */
-  getDefaultBingoConfig(): F16BingoConfig {
+  public getDefaultBingoConfig(): F16BingoConfig {
     return {
       aarExpected: false,
       approachType: 'VFR',
@@ -111,7 +111,7 @@ export class F16Calculator
   /**
    * Calculate rotation and refusal speeds
    */
-  calculateSpeeds(params: F16SpeedParams, config: F16SpeedConfig): SpeedCalculationResult {
+  public calculateSpeeds(params: F16SpeedParams, config: F16SpeedConfig): SpeedCalculationResult {
     return calculateSpeeds({
       grossWeight: params.grossWeight,
       powerSetting: config.powerSetting,
@@ -126,7 +126,7 @@ export class F16Calculator
   /**
    * Calculate takeoff distance
    */
-  calculateTakeoffDistance(
+  public calculateTakeoffDistance(
     params: F16TakeoffParams,
     config: F16TakeoffConfig,
   ): TakeoffDistanceResult {
@@ -154,7 +154,7 @@ export class F16Calculator
    * Get crosswind limit for given configuration
    * F-16 crosswind limit varies by RCR (20-25 knots)
    */
-  getCrosswindLimit(_config: F16TakeoffConfig): number {
+  public getCrosswindLimit(_config: F16TakeoffConfig): number {
     // F-16 crosswind limit depends on runway condition
     // Since F16TakeoffConfig doesn't include runway condition,
     // we need to accept it through a different mechanism
@@ -165,7 +165,7 @@ export class F16Calculator
   /**
    * Get crosswind limit for a specific runway condition
    */
-  getCrosswindLimitForCondition(runwayCondition: F16SpeedConfig['runwayCondition']): number {
+  public getCrosswindLimitForCondition(runwayCondition: F16SpeedConfig['runwayCondition']): number {
     const rcr = f16RunwayConditionToRCR(runwayCondition)
     return getF16CrosswindLimit(rcr)
   }
@@ -173,7 +173,7 @@ export class F16Calculator
   /**
    * Check if crosswind exceeds limitations
    */
-  exceedsCrosswindLimit(crosswindKnots: number, _config: F16TakeoffConfig): boolean {
+  public exceedsCrosswindLimit(crosswindKnots: number, _config: F16TakeoffConfig): boolean {
     // Use dry runway (most permissive) as default
     return exceedsF16CrosswindLimit(crosswindKnots, 23)
   }
@@ -181,7 +181,7 @@ export class F16Calculator
   /**
    * Check if crosswind exceeds limitations for a specific runway condition
    */
-  exceedsCrosswindLimitForCondition(
+  public exceedsCrosswindLimitForCondition(
     crosswindKnots: number,
     runwayCondition: F16SpeedConfig['runwayCondition'],
   ): boolean {
@@ -192,7 +192,7 @@ export class F16Calculator
   /**
    * Calculate bingo fuel
    */
-  calculateBingo(params: BingoParams, config: F16BingoConfig): number {
+  public calculateBingo(params: BingoParams, config: F16BingoConfig): number {
     return calculateBingoFuel({
       aarExpected: config.aarExpected,
       approachType: config.approachType,
@@ -207,14 +207,14 @@ export class F16Calculator
   /**
    * Calculate total drag index from a loadout
    */
-  calculateDragIndex(stores: { clsid: string; category?: string }[]): number {
+  public calculateDragIndex(stores: { clsid: string; category?: string }[]): number {
     return calculateTotalDragIndex(stores)
   }
 
   /**
    * Get drag index for a single store
    */
-  getDragIndex(clsid: string, category?: string): number {
+  public getDragIndex(clsid: string, category?: string): number {
     return getDragIndexLookup(clsid, category)
   }
 }

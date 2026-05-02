@@ -23,7 +23,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -41,7 +41,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 4,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -59,7 +59,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -83,14 +83,14 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
       const withIFRandAlternate: BingoCalculationParams = {
         ...baseParams,
         approachType: 'IFR',
-        alternateLocation: alternateLocation,
+        alternateLocation,
       }
 
       const bingo1 = calculateBingoFuel(baseParams)
@@ -109,7 +109,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2, // Should be ignored for non-AAR
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -127,7 +127,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -150,13 +150,13 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
       const withAlternate: BingoCalculationParams = {
         ...noAlternate,
-        alternateLocation: alternateLocation,
+        alternateLocation,
       }
 
       const bingoNoAlt = calculateBingoFuel(noAlternate)
@@ -174,7 +174,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -198,7 +198,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -223,7 +223,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: null,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -257,7 +257,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 1,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       }
 
@@ -280,7 +280,7 @@ describe('f16BingoCalculator', () => {
         altitudeProfile: 'medium',
         numberOfPilots: 2,
         recoveryLocation: homeLocation,
-        targetLocation: targetLocation,
+        targetLocation,
         alternateLocation: null,
       })
 
