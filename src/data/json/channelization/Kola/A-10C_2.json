@@ -1,0 +1,81 @@
+{
+  "radios": [
+    {
+      "presets": [
+        { "number": 1, "frequency": "143.600", "description": "v303d FS" },
+        { "number": 2, "frequency": "118.525", "description": "ROVANIEMI (EFRO) GROUND" },
+        { "number": 3, "frequency": "118.700", "description": "ROVANIEMI (EFRO) TOWER" },
+        { "number": 4, "frequency": "133.700", "description": "ROVANIEMI (EFRO) DATIS" },
+        { "number": 5, "frequency": "263.000", "description": "MAGIC 1-1" },
+        { "number": 6, "frequency": "121.500", "description": "KEMI TORNIO (EFKE) TOWER" },
+        { "number": 7, "frequency": "124.400", "description": "KEMI TORNIO (EFKE) DATIS" },
+        { "number": 8, "frequency": "128.225", "description": "KALLAX (ESPA) GRND" },
+        { "number": 9, "frequency": "128.200", "description": "KALLAX (ESPA) TOWER" },
+        { "number": 10, "frequency": "127.200", "description": "KALLAX (ESPA) DATIS" },
+        { "number": 11, "frequency": "295.400", "description": "TEXACO1 31Y (RAGNAR TRACK)" },
+        { "number": 12, "frequency": "225.450", "description": "ARCO1 44X (LAGERTHA TRACK)" },
+        { "number": 13, "frequency": "303.025", "description": "OOF TACTICAL -- VALHALLA" },
+        { "number": 14, "frequency": "243.000", "description": "SKYNET (LOKI AO ISR)" },
+        { "number": 15, "frequency": "244.000", "description": "FORTE (THOR AO ISR)" },
+        { "number": 16, "frequency": "245.000", "description": "TRITON (LADY SIF AO ISR)" },
+        { "number": 17, "frequency": "246.000", "description": "SCORE (FRIGG AO ISR)" },
+        { "number": 18, "frequency": "247.000", "description": "COLT (BALDR AO ISR)" },
+        { "number": 19, "frequency": "47.600", "description": "v303D FS" },
+        { "number": 20, "frequency": "303.100", "description": "v303d FS" },
+        { "number": 21, "frequency": "118.000", "description": "EVANS (ENEV) TOWER" },
+        { "number": 22, "frequency": "126.025", "description": "EVANS (ENEV) DATIS" },
+        { "number": 23, "frequency": "309.200", "description": "" },
+        { "number": 24, "frequency": "266.352", "description": "" },
+        { "number": 25, "frequency": "271.525", "description": "" }
+      ]
+    },
+    {
+      "presets": [
+        { "number": 1, "frequency": "303.100", "description": "v303d FS" },
+        { "number": 2, "frequency": "303.025", "description": "OOF TACTICAL -- VALHALLA" },
+        { "number": 3, "frequency": "263.000", "description": "MAGIC 1-1" },
+        { "number": 4, "frequency": "295.400", "description": "TEXACO1 31Y (RAGNAR TRACK)" },
+        { "number": 5, "frequency": "225.450", "description": "ARCO1 44X (LAGERTHA TRACK)" },
+        { "number": 6, "frequency": "243.000", "description": "SKYNET (LOKI AO ISR)" },
+        { "number": 7, "frequency": "244.000", "description": "FORTE (THOR AO ISR)" },
+        { "number": 8, "frequency": "245.000", "description": "TRITON (LADY SIF AO ISR)" },
+        { "number": 9, "frequency": "246.000", "description": "SCORE (FRIGG AO ISR)" },
+        { "number": 10, "frequency": "247.000", "description": "COLT (BALDR AO ISR)" },
+        { "number": 11, "frequency": "361.600", "description": "" },
+        { "number": 12, "frequency": "288.800", "description": "" },
+        { "number": 13, "frequency": "251.550", "description": "" },
+        { "number": 14, "frequency": "251.650", "description": "" },
+        { "number": 15, "frequency": "257.950", "description": "" },
+        { "number": 16, "frequency": "354.300", "description": "" },
+        { "number": 17, "frequency": "348.700", "description": "" },
+        { "number": 18, "frequency": "257.950", "description": "" },
+        { "number": 19, "frequency": "354.300", "description": "" },
+        { "number": 20, "frequency": "300.050", "description": "" }
+      ]
+    },
+    {
+      "presets": [
+        { "number": 1, "frequency": "47.600", "description": "v303D FS" },
+        { "number": 2, "frequency": "30.300", "description": "" },
+        { "number": 3, "frequency": "31.300", "description": "" },
+        { "number": 4, "frequency": "32.300", "description": "" },
+        { "number": 5, "frequency": "33.300", "description": "" },
+        { "number": 6, "frequency": "34.300", "description": "" },
+        { "number": 7, "frequency": "35.300", "description": "" },
+        { "number": 8, "frequency": "36.300", "description": "" },
+        { "number": 9, "frequency": "37.300", "description": "" },
+        { "number": 10, "frequency": "38.300", "description": "" },
+        { "number": 11, "frequency": "39.300", "description": "" },
+        { "number": 12, "frequency": "40.300", "description": "" },
+        { "number": 13, "frequency": "41.300", "description": "" },
+        { "number": 14, "frequency": "42.300", "description": "" },
+        { "number": 15, "frequency": "43.300", "description": "" },
+        { "number": 16, "frequency": "44.300", "description": "" },
+        { "number": 17, "frequency": "45.300", "description": "" },
+        { "number": 18, "frequency": "46.300", "description": "" },
+        { "number": 19, "frequency": "47.300", "description": "" },
+        { "number": 20, "frequency": "49.600", "description": "" }
+      ]
+    }
+  ]
+}

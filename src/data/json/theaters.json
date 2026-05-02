@@ -67,6 +67,92 @@
       }
     ]
   },
+  "Kola": {
+    "name": "Kola",
+    "displayName": "Kola",
+    "navaidsUrl": "https://www.v303rdfightergroup.com/index.php?pages/kola_navaids/",
+    "ifgUrl": "https://v303rdfightergroup.com/index.php?pubs/operation-odins-fury-in-flight-guide.405/download",
+    "defaultAirfield": "Rovaniemi",
+    "defaultBullseye": {
+      "latitude": 68.1066,
+      "longitude": 26.56788
+    },
+    "isTraining": false,
+    "defaultSupportAssets": [
+      {
+        "callsign": "MAGIC",
+        "role": "AWACS",
+        "location": null,
+        "altitude": 30000,
+        "frequency": "263.000",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "TEXACO",
+        "role": "AAR",
+        "location": "Ragnar",
+        "altitude": 24000,
+        "frequency": "294.500",
+        "preset": null,
+        "aaTacan": "31Y"
+      },
+      {
+        "callsign": "ARCO",
+        "role": "AAR",
+        "location": "Lagertha",
+        "altitude": 24000,
+        "frequency": "225.450",
+        "preset": null,
+        "aaTacan": "44X"
+      },
+      {
+        "callsign": "SKYNET",
+        "role": "ISR",
+        "location": "Loki",
+        "altitude": 60000,
+        "frequency": "243.000",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "FORTE",
+        "role": "ISR",
+        "location": "Thor",
+        "altitude": 60000,
+        "frequency": "244.000",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "TRITON",
+        "role": "ISR",
+        "location": "Sif",
+        "altitude": 60000,
+        "frequency": "245.000",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "SCORE",
+        "role": "ISR",
+        "location": "Frigg",
+        "altitude": 60000,
+        "frequency": "246.000",
+        "preset": null,
+        "aaTacan": ""
+      },
+      {
+        "callsign": "COLT",
+        "role": "ISR",
+        "location": "Baldr",
+        "altitude": 29000,
+        "frequency": "247.000",
+        "preset": null,
+        "aaTacan": ""
+      }
+    ]
+  },
   "GermanyCW": {
     "name": "GermanyCW",
     "displayName": "Cold War Germany",

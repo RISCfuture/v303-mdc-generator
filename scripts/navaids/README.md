@@ -160,7 +160,7 @@ python scrape_navaids.py --output-dir /path/to/output
 
 ### Available Theatres
 
-`Nevada`, `MarianaIslands`, `Syria`, `Afghanistan`, `GermanyCW`
+`Nevada`, `MarianaIslands`, `Syria`, `Afghanistan`, `GermanyCW`, `Kola`
 
 ### Merge Behavior
 

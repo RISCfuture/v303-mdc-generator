@@ -44,6 +44,7 @@ THEATRES = {
     'Syria': 'syria_navaids',
     'Afghanistan': 'afghanistan_navaids',
     'GermanyCW': 'germany_navaids',
+    'Kola': 'kola_navaids',
 }
 
 BASE_URL = 'https://www.v303rdfightergroup.com/index.php?pages/'
@@ -180,9 +181,10 @@ class NavaidScraper:
         """
         navaids = []
 
-        # Pattern to match JavaScript objects with navaid data
+        # Pattern to match JavaScript objects with navaid data.
+        # Tolerates optional whitespace after each colon (e.g., `n: "X"` as well as `n:"X"`).
         pattern = re.compile(
-            r'\{\s*n:"([^"]+)"\s*,\s*m:"[^"]+"\s*,\s*lat:"([^"]+)"\s*,\s*lon:"([^"]+)"\s*\}'
+            r'\{\s*n:\s*"([^"]+)"\s*,\s*m:\s*"[^"]+"\s*,\s*lat:\s*"([^"]+)"\s*,\s*lon:\s*"([^"]+)"\s*\}'
         )
 
         for match in pattern.finditer(html_text):
@@ -452,7 +454,7 @@ Examples:
   python scrape_navaids.py --theatre Nevada   # Process specific theatre
 
 Theatres:
-  Nevada, MarianaIslands, Syria, Afghanistan, GermanyCW
+  Nevada, MarianaIslands, Syria, Afghanistan, GermanyCW, Kola
         """
     )
 
