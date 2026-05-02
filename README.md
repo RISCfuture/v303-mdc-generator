@@ -1,5 +1,10 @@
 # v303 MDC Generator
 
+[![CI](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/ci.yml)
+[![Lint](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/lint.yml/badge.svg)](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/lint.yml)
+[![Deploy](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/deploy.yml/badge.svg)](https://github.com/RISCfuture/v303-mdc-generator/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A web-based mission planning tool for the v303rd Fighter Group, enabling creation, editing, and export of mission data cards (MDCs) for DCS World flight simulation missions.
 
 ## Overview
