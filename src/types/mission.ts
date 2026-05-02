@@ -174,7 +174,7 @@ export type SupportAsset = {
   frequency: string // UHF frequency (e.g., "305.5")
   preset: number | null
   aaTacan: string // Format like "5Y"
-  location: string
+  location: string | null
   altitude: number | null // feet
 }
 

@@ -170,7 +170,7 @@ export type SerializedMission = {
     frequency: string
     preset: number | null
     aaTacan: string
-    location: string
+    location: string | null
     altitude: number | null
   }[]
 

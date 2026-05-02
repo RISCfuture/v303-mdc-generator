@@ -1258,7 +1258,7 @@ function generateSupportAssetsTable(mission: Mission): unknown {
       italics: true,
     },
     { text: asset.aaTacan || '', fillColor: '#EBF1FA', italics: true },
-    { text: asset.location || '', fillColor: '#EBF1FA', italics: true },
+    { text: asset.location ?? '', fillColor: '#EBF1FA', italics: true },
     {
       text: asset.altitude ? formatNumber(asset.altitude) : '',
       fillColor: '#EBF1FA',
