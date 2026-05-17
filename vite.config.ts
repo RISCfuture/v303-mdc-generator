@@ -21,8 +21,25 @@ export default defineConfig(async ({ command, mode }) => {
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api/, /\.map$/],
         cleanupOutdatedCaches: true,
-        clientsClaim: true,
-        skipWaiting: true,
+        // Root cause of V303-8 / V303-9 in SW-enabled browsers: with
+        // skipWaiting + clientsClaim, a newly deployed service worker would
+        // activate and swap the precache mid-session, 404-ing the in-flight
+        // lazy chunks of the page the user was already running. We deliberately
+        // OMIT skipWaiting/clientsClaim so the new SW stays in `waiting` and
+        // only activates once every old client (tab) is gone -> the running
+        // session keeps a stable set of assets; the update applies on the next
+        // full load. registerType:'autoUpdate' still auto-reloads clients when
+        // that new SW eventually activates (vite-plugin-pwa's build register
+        // script reloads on the workbox `activated` isUpdate/isExternal event;
+        // this is independent of skipWaiting). NOTE: vite-plugin-pwa only
+        // force-sets skipWaiting/clientsClaim for autoUpdate when injectRegister
+        // is 'auto'/null; this project uses injectRegister:'script', so omitting
+        // them here genuinely takes effect. The src/router/index.ts
+        // chunk-reload handler remains the backstop for the residual window
+        // (e.g. an update that lands between activation and reload) and for
+        // non-SW contexts (e.g. Firefox private mode).
+        clientsClaim: false,
+        skipWaiting: false,
         // The MissionEditor chunk is large (md-editor-v3 + ajv + naive-ui).
         // Raise from the 2 MiB default so the whole app shell precaches.
         maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,

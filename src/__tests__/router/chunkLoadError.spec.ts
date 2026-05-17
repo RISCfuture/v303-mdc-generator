@@ -5,7 +5,6 @@ import {
   CHUNK_RELOAD_KEY,
   handleChunkLoadError,
   handlePreloadError,
-  isChunkLoadError,
 } from '@/router'
 
 const fakeRoute = (fullPath = '/mission/abc'): RouteLocationNormalized =>
@@ -23,58 +22,21 @@ afterEach(() => {
   }
 })
 
-describe('isChunkLoadError', () => {
-  it('matches Vite/Chromium dynamic import failure', () => {
-    expect(
-      isChunkLoadError(new TypeError('Failed to fetch dynamically imported module: foo.js')),
-    ).toBe(true)
-  })
-
-  it('matches Safari dynamic import failure', () => {
-    expect(isChunkLoadError(new TypeError('Importing a module script failed.'))).toBe(true)
-  })
-
-  it('matches Firefox dynamic import failure', () => {
-    expect(
-      isChunkLoadError(
-        new TypeError(
-          'error loading dynamically imported module: https://x/assets/Foo-abc.js',
-        ),
-      ),
-    ).toBe(true)
-  })
-
-  it('matches Vite CSS preload failure', () => {
-    expect(
-      isChunkLoadError(new Error('Unable to preload CSS for /assets/Foo-abc.css')),
-    ).toBe(true)
-  })
-
-  it('matches Vite module preload failure', () => {
-    expect(
-      isChunkLoadError(new Error('Unable to preload module https://x/assets/Foo-abc.js')),
-    ).toBe(true)
-  })
-
-  it('rejects unrelated errors', () => {
-    expect(isChunkLoadError(new Error('something else'))).toBe(false)
-    expect(isChunkLoadError('not an error')).toBe(false)
-    expect(isChunkLoadError(null)).toBe(false)
-  })
-})
-
 describe('handleChunkLoadError', () => {
   let replaceSpy: ReturnType<typeof vi.fn>
+  let reloadSpy: ReturnType<typeof vi.fn>
 
   beforeEach(() => {
     sessionStorage.clear()
     replaceSpy = vi.fn()
+    reloadSpy = vi.fn()
     Object.defineProperty(window, 'location', {
       configurable: true,
       value: {
         pathname: '/v303-mdc-generator/',
         search: '',
         replace: replaceSpy,
+        reload: reloadSpy,
       },
     })
   })
@@ -87,6 +49,9 @@ describe('handleChunkLoadError', () => {
 
     expect(handled).toBe(true)
     expect(replaceSpy).toHaveBeenCalledWith('/v303-mdc-generator/#/mission/42')
+    // Hash-only replace() does not reload; an explicit reload() forces the
+    // document to re-fetch the fresh hashed chunks.
+    expect(reloadSpy).toHaveBeenCalled()
     expect(sessionStorage.getItem(CHUNK_RELOAD_KEY)).not.toBeNull()
   })
 
@@ -118,11 +83,19 @@ describe('handleChunkLoadError', () => {
 
     expect(handled).toBe(true)
     expect(replaceSpy).toHaveBeenCalled()
+    expect(reloadSpy).toHaveBeenCalled()
+  })
+
+  it('handleChunkLoadError ignores non-Error values', () => {
+    expect(handleChunkLoadError('not an error', fakeRoute())).toBe(false)
+    expect(handleChunkLoadError(null, fakeRoute())).toBe(false)
+    expect(replaceSpy).not.toHaveBeenCalled()
   })
 })
 
 describe('handlePreloadError (vite:preloadError listener)', () => {
   let replaceSpy: ReturnType<typeof vi.fn>
+  let reloadSpy: ReturnType<typeof vi.fn>
   const currentHref = '/v303-mdc-generator/#/mission/abc'
 
   const preloadErrorEvent = () => new Event('vite:preloadError', { cancelable: true })
@@ -130,6 +103,7 @@ describe('handlePreloadError (vite:preloadError listener)', () => {
   beforeEach(() => {
     sessionStorage.clear()
     replaceSpy = vi.fn()
+    reloadSpy = vi.fn()
     Object.defineProperty(window, 'location', {
       configurable: true,
       value: {
@@ -137,6 +111,7 @@ describe('handlePreloadError (vite:preloadError listener)', () => {
         search: '',
         href: currentHref,
         replace: replaceSpy,
+        reload: reloadSpy,
       },
     })
   })
@@ -150,6 +125,7 @@ describe('handlePreloadError (vite:preloadError listener)', () => {
     expect(handled).toBe(true)
     expect(preventDefaultSpy).toHaveBeenCalled()
     expect(replaceSpy).toHaveBeenCalledWith(currentHref)
+    expect(reloadSpy).toHaveBeenCalled()
     expect(sessionStorage.getItem(CHUNK_RELOAD_KEY)).not.toBeNull()
   })
 
@@ -177,5 +153,6 @@ describe('handlePreloadError (vite:preloadError listener)', () => {
     expect(handled).toBe(true)
     expect(preventDefaultSpy).toHaveBeenCalled()
     expect(replaceSpy).toHaveBeenCalledWith(currentHref)
+    expect(reloadSpy).toHaveBeenCalled()
   })
 })

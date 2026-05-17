@@ -37,13 +37,26 @@ export const isChunkLoadError = (error: unknown): boolean =>
     error.message,
   )
 
-/** Reload to `target` once per cooldown window. Returns true if a reload was initiated. */
+/**
+ * Reload to `target` once per cooldown window. Returns true if a reload was
+ * initiated.
+ *
+ * `target` is built from the current pathname (the SPA route lives in the URL
+ * fragment because of createWebHashHistory). `location.replace()` to a URL that
+ * differs from the current one only in its fragment does NOT reload the
+ * document per the HTML spec — so on its own it would update the hash without
+ * ever re-fetching the purged chunk. We therefore explicitly call
+ * `location.reload()` afterwards to force a full document load that pulls the
+ * fresh hashed assets. `replace()` first ensures we land on the intended route
+ * (and keeps it out of history) before the reload.
+ */
 const reloadOnce = (target: string): boolean => {
   const lastReload = Number(sessionStorage.getItem(CHUNK_RELOAD_KEY) ?? '0')
   if (Date.now() - lastReload < CHUNK_RELOAD_COOLDOWN_MS) return false
 
   sessionStorage.setItem(CHUNK_RELOAD_KEY, String(Date.now()))
   window.location.replace(target)
+  window.location.reload()
   return true
 }
 
