@@ -6,7 +6,6 @@ export type { DeepPartial } from './helpers'
 export type {
   DCSF16MDC,
   DCSGenericMDC,
-  DCSAH64DMDC,
   DCSFA18CMDC,
   DCSF15EMDC,
   DCSAV8BMDC,
@@ -17,7 +16,6 @@ export {
   exportF16MDC,
   exportA10DCSDTC,
   exportC130DCSDTC,
-  exportAH64DDCSDTC,
   exportFA18CDCSDTC,
   exportF15EDCSDTC,
   exportAV8BDCSDTC,
@@ -33,7 +31,6 @@ import { getSquadronAirframe } from '@/data/squadrons'
 import type {
   DCSF16MDC,
   DCSGenericMDC,
-  DCSAH64DMDC,
   DCSFA18CMDC,
   DCSF15EMDC,
   DCSAV8BMDC,
@@ -44,7 +41,6 @@ import {
   exportF16MDC,
   exportA10DCSDTC,
   exportC130DCSDTC,
-  exportAH64DDCSDTC,
   exportFA18CDCSDTC,
   exportF15EDCSDTC,
   exportAV8BDCSDTC,
@@ -82,10 +78,6 @@ export function downloadMDC(
       } else if (airframe === 'C-130J-30') {
         const template = loadTemplateForFormat<DCSGenericMDC>(exportFormat, mission.squadron)
         const mdc = exportC130DCSDTC(mission, crewMemberIndex, template)
-        json = JSON.stringify(mdc, null, 2)
-      } else if (airframe === 'AH-64D_BLK_II') {
-        const template = loadTemplateForFormat<DCSAH64DMDC>(exportFormat, mission.squadron)
-        const mdc = exportAH64DDCSDTC(mission, crewMemberIndex, template)
         json = JSON.stringify(mdc, null, 2)
       } else if (airframe === 'FA-18C_hornet') {
         const template = loadTemplateForFormat<DCSFA18CMDC>(exportFormat, mission.squadron)

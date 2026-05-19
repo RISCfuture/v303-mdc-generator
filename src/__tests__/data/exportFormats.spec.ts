@@ -19,10 +19,6 @@ describe('exportFormats', () => {
       expect(getExportFormatsForAirframe('C-130J-30')).toEqual(['DCS-DTC'])
     })
 
-    it('returns DCS-DTC only for AH-64D_BLK_II', () => {
-      expect(getExportFormatsForAirframe('AH-64D_BLK_II')).toEqual(['DCS-DTC'])
-    })
-
     it('returns DCS-DTC and JAFDTC for FA-18C_hornet', () => {
       expect(getExportFormatsForAirframe('FA-18C_hornet')).toEqual(['DCS-DTC', 'JAFDTC'])
     })

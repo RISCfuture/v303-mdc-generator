@@ -5,7 +5,6 @@ import v93JafdtcTemplate from '@/data/json/dtc/v93-jafdtc.json'
 import v93DcsMeTemplate from '@/data/json/dtc/v93-dcsme.json'
 import v303JafdtcTemplate from '@/data/json/dtc/v303-jafdtc.json'
 import v303DcsDtcTemplate from '@/data/json/dtc/v303-dcsdtc.json'
-import v1151DcsDtcTemplate from '@/data/json/dtc/v1-151-dcsdtc.json'
 
 const templateMap: Record<string, unknown> = {
   'DCS-DTC:v93': v93DcsDtcTemplate,
@@ -13,7 +12,6 @@ const templateMap: Record<string, unknown> = {
   'DCS-ME:v93': v93DcsMeTemplate,
   'JAFDTC:v303': v303JafdtcTemplate,
   'DCS-DTC:v303': v303DcsDtcTemplate,
-  'DCS-DTC:v1-151': v1151DcsDtcTemplate,
 }
 
 /**

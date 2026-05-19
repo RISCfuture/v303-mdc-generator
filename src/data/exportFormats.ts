@@ -10,7 +10,6 @@ export const airframeExportFormats: Record<string, ExportFormat[]> = {
   'F-16C_50': ['DCS-DTC', 'JAFDTC', 'DCS-ME'],
   'A-10C_2': ['DCS-DTC', 'JAFDTC'],
   'C-130J-30': ['DCS-DTC'],
-  'AH-64D_BLK_II': ['DCS-DTC'],
   'FA-18C_hornet': ['DCS-DTC', 'JAFDTC'],
   'F-15ESE': ['DCS-DTC', 'JAFDTC'],
   AV8BNA: ['DCS-DTC'],

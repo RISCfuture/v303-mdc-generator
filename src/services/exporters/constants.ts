@@ -20,9 +20,6 @@ export const DEFAULT_ILS_COURSE_DEG = 0
 /** Seconds the F-16 / F-15E laser fires before weapon impact (squadron default). */
 export const LASER_START_TIME_SEC = 8
 
-/** AH-64D fallback laser code for the four channels that are not pilot-set. */
-export const AH64D_DEFAULT_LASER_CODE = '1688'
-
 // --- 2. Unit conversions ----------------------------------------------------
 
 /** International nautical mile in feet (exact: 1852 m / 0.3048). */
@@ -201,6 +198,3 @@ export const F16_JAFDTC_MISSION_SLOT_COUNT = 4
 
 /** F/A-18C JAFDTC requires exactly 5 CMS programs: PROG1-5. */
 export const FA18C_JAFDTC_CMS_PROGRAM_COUNT = 5
-
-/** AH-64D has 5 radios: COM1 (VHF), COM2 (HF), COM3 (UHF), COM4/5 (FM). */
-export const AH64D_RADIO_COUNT = 5

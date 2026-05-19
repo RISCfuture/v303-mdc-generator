@@ -9,16 +9,6 @@
       "combat": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)"
     }
   },
-  "v1-151": {
-    "id": "v1-151",
-    "name": "v1-151st Attack Reconnaissance Battalion",
-    "displayName": "v1-151 ARB",
-    "aircraft": "AH-64D_BLK_II",
-    "defaultGunAmmo": {
-      "training": "M788 TP",
-      "combat": "M789 HEDP"
-    }
-  },
   "v303": {
     "id": "v303",
     "name": "v303rd Fighter Squadron",

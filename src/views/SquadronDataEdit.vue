@@ -89,12 +89,6 @@ const dataCategories: DataCategory[] = [
         description: 'Default A-10C DCS-DTC configuration for v303 FS',
         note: 'Should be exported from DCS-DTC, not edited directly',
       },
-      {
-        name: 'dtc/v1-151-dcsdtc.json',
-        path: 'dtc/v1-151-dcsdtc.json',
-        description: 'Default AH-64D DCS-DTC configuration for v1-151 ARB',
-        note: 'Should be exported from DCS-DTC, not edited directly',
-      },
     ],
   },
   {

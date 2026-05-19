@@ -234,35 +234,6 @@ describe('mdcTemplateService', () => {
       expect(template.Radios?.Radio2).toHaveProperty('Mode', 0)
     })
 
-    // v1-151 DCS-DTC template (AH-64D)
-    it('should load v1-151 DCS-DTC template', () => {
-      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
-
-      expect(template).toBeDefined()
-      expect(template).toHaveProperty('TSD')
-      expect(template).toHaveProperty('Upload')
-    })
-
-    it('should have TSD display settings for v1-151 DCS-DTC', () => {
-      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
-
-      // @ts-expect-error - accessing nested property for test
-      expect(template.TSD?.ShowPresentPosition).toBe(true)
-      // @ts-expect-error - accessing nested property for test
-      expect(template.TSD?.ShowASEThreats).toBe(true)
-      // @ts-expect-error - accessing nested property for test
-      expect(template.TSD?.ShowThreatRings).toBe(true)
-      // @ts-expect-error - accessing nested property for test
-      expect(template.TSD?.MapShowGrid).toBe(true)
-    })
-
-    it('should enable TSD upload for v1-151 DCS-DTC', () => {
-      const template = loadTemplateForFormat('DCS-DTC', 'v1-151')
-
-      // @ts-expect-error - accessing nested property for test
-      expect(template.Upload?.TSD).toBe(true)
-    })
-
     // Unknown/missing templates
     it('should return empty object for unknown squadron', () => {
       const template = loadTemplateForFormat('DCS-DTC', 'unknown')
