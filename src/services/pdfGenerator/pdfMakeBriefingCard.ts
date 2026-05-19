@@ -590,15 +590,9 @@ function generateLoadoutTable(mission: Mission): unknown {
     ])
   }
 
-  // If no guns, still add the first CM data row
-  if (guns.length === 0) {
-    rows.push([
-      { text: '', fillColor: '#DCDCDC', bold: true },
-      { text: '', fillColor: '#EBF1FA', italics: true },
-      { text: '', fillColor: '#EBF1FA', italics: true },
-      cmData[0] ?? { text: '', fillColor: '#EBF1FA', italics: true },
-    ])
-  }
+  // Airframes without guns: no gun row at all. The CM data simply starts on
+  // the first station row (cmIndex below), so we omit the empty placeholder
+  // cells entirely instead of rendering near-zero-width blanks.
 
   // Add station rows using airframe station data
   const stations = airframeData?.stations ?? []
@@ -1159,7 +1153,7 @@ function generateDeliveryTables(mission: Mission): unknown[] {
             {},
           ],
           [
-            { text: '', fillColor: '#EBF1FA', italics: true },
+            { text: '', fillColor: '#DCDCDC', bold: true },
             { text: refPointType, fillColor: '#DCDCDC', bold: true },
             { text: 'OA1', fillColor: '#DCDCDC', bold: true },
             { text: 'OA2', fillColor: '#DCDCDC', bold: true },

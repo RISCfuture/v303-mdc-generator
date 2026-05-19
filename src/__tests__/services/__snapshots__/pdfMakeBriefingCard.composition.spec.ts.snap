@@ -6161,28 +6161,6 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
                   {
                     "bold": true,
                     "fillColor": "#DCDCDC",
-                    "text": "",
-                  },
-                  {
-                    "fillColor": "#EBF1FA",
-                    "italics": true,
-                    "text": "",
-                  },
-                  {
-                    "fillColor": "#EBF1FA",
-                    "italics": true,
-                    "text": "",
-                  },
-                  {
-                    "bold": true,
-                    "fillColor": "#DCDCDC",
-                    "text": "CHAFF",
-                  },
-                ],
-                [
-                  {
-                    "bold": true,
-                    "fillColor": "#DCDCDC",
                     "text": "Left Inner",
                   },
                   {
@@ -7788,28 +7766,6 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
                   {},
                   {},
                   {},
-                ],
-                [
-                  {
-                    "bold": true,
-                    "fillColor": "#DCDCDC",
-                    "text": "",
-                  },
-                  {
-                    "fillColor": "#EBF1FA",
-                    "italics": true,
-                    "text": "",
-                  },
-                  {
-                    "fillColor": "#EBF1FA",
-                    "italics": true,
-                    "text": "",
-                  },
-                  {
-                    "bold": true,
-                    "fillColor": "#DCDCDC",
-                    "text": "CHAFF",
-                  },
                 ],
                 [
                   {
