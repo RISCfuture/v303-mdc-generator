@@ -20,8 +20,16 @@ import { getFlightNumber } from '@/utils/callsignHelpers'
 import { formatSTN } from '@/utils/crewFormatting'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import { formatCoordinate } from '@/utils/coordinateFormatter'
-import { COLORS, FONT_SIZES } from './constants'
+import { FONT_SIZES } from './constants'
 import { SQUADRON_LOGOS } from './squadronAssets'
+import {
+  resolveSquadronFormat,
+  type SquadronFormat,
+  type SectionId,
+  type SectionBuilder,
+  type SectionEntry,
+  type CompositionContext,
+} from './squadronFormats'
 
 // Type for table cells - use pdfMake's type but allow flexibility for our use case
 // pdfMake's TableCell type is complex and strict, so we use a simplified version
@@ -248,19 +256,21 @@ function calculateGrossWeight(mission: Mission): number {
  * Generate header banner
  * Returns unknown to be cast as Content when used (pdfMake types are complex)
  */
-function generateHeaderBanner(mission: Mission): unknown {
-  // Determine squadron-specific properties
-  const isV93 = mission.squadron === 'v93'
+/** Substitute `{name}`/`{date}` placeholders in a format template string. */
+function applyTemplate(template: string, mission: Mission): string {
+  return template.replace('{name}', mission.name).replace('{date}', mission.date)
+}
 
-  // Convert RGB array to hex color string
-  const rgbToHex = (rgb: [number, number, number]): string => {
-    return '#' + rgb.map((c) => c.toString(16).padStart(2, '0')).join('')
-  }
+/** Convert an RGB tuple to a `#rrggbb` hex string. */
+function rgbToHex(rgb: [number, number, number]): string {
+  return '#' + rgb.map((c) => c.toString(16).padStart(2, '0')).join('')
+}
 
-  const backgroundColor = isV93
-    ? rgbToHex(COLORS.v93Blue) // v93 FS blue
-    : rgbToHex(COLORS.v303Red) // v303 FS red
-  const squadronLogo = isV93 ? SQUADRON_LOGOS.v93FS : SQUADRON_LOGOS.v303FS
+function generateHeaderBanner(
+  mission: Mission,
+  format: SquadronFormat = resolveSquadronFormat(mission.squadron),
+): unknown {
+  const backgroundColor = rgbToHex(format.theme.headerBackground)
 
   return {
     table: {
@@ -268,14 +278,14 @@ function generateHeaderBanner(mission: Mission): unknown {
       body: [
         [
           {
-            image: SQUADRON_LOGOS.v303FG,
+            image: SQUADRON_LOGOS[format.logos.left],
             width: 30,
             fillColor: backgroundColor,
             border: [false, false, false, false],
             margin: [3, 3, 3, 3],
           },
           {
-            text: `v303rd FG Mission Data Card - ${mission.name}`,
+            text: applyTemplate(format.theme.headerTitleTemplate, mission),
             fillColor: backgroundColor,
             color: '#FFFFFF',
             bold: true,
@@ -285,7 +295,7 @@ function generateHeaderBanner(mission: Mission): unknown {
             margin: [0, 8, 0, 0], // Top margin to vertically center text
           },
           {
-            image: squadronLogo,
+            image: SQUADRON_LOGOS[format.logos.right],
             width: 30,
             fillColor: backgroundColor,
             border: [false, false, false, false],
@@ -1333,72 +1343,91 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
 }
 
 /**
- * Generate PDF briefing card
+ * Build the id -> builder map for a given squadron format. `header` closes
+ * over the format; every other builder takes only the mission.
  */
-export async function generatePdfMakeBriefingCard(mission: Mission): Promise<void> {
-  const content: unknown[] = [
-    // Page 1 - Full width sections
-    generateHeaderBanner(mission),
-    generateMissionInfoTable(mission),
-    generateFlightTable(mission),
+function buildSectionBuilders(format: SquadronFormat): Record<SectionId, SectionBuilder> {
+  return {
+    header: (m) => generateHeaderBanner(m, format),
+    missionInfo: generateMissionInfoTable,
+    flight: generateFlightTable,
+    radios: generateRadiosTable,
+    presets: generatePresetsTable,
+    weatherBullseye: generateWeatherBullseyeTable,
+    loadout: generateLoadoutTable,
+    told: generateToldTable,
+    departureRecovery: generateDepartureRecoveryTable,
+    flightPlan: generateFlightPlanTable,
+    target: generateTargetTable,
+    // 'delivery' is precomputed once (also a page-2 gate input) and reused.
+    delivery: generateDeliveryTables,
+    package: generatePackageTable,
+    supportAssets: generateSupportAssetsTable,
+    notes: generateNotesPage,
+  }
+}
 
-    // Two-column section: Radios, Presets, Weather/Bullseye, Loadout
-    // Left and right columns flow independently without trying to align horizontally
-    {
-      columns: [
-        {
-          width: '*',
-          stack: [generateRadiosTable(mission), generatePresetsTable(mission)],
-        },
-        {
-          width: '*',
-          stack: [generateWeatherBullseyeTable(mission), generateLoadoutTable(mission)],
-        },
-      ],
-      columnGap: 2,
-    },
+/** Resolve a single entry to a flat list of pdfMake nodes (or [] if gated). */
+async function collectEntry(
+  entry: SectionEntry,
+  ctx: CompositionContext,
+  builders: Record<SectionId, SectionBuilder>,
+  deliveryTables: unknown[],
+): Promise<unknown[]> {
+  if (entry.when && !entry.when(ctx)) return []
 
-    // Back to full width sections
-    generateToldTable(mission),
-    generateDepartureRecoveryTable(mission),
-    generateFlightPlanTable(mission),
-  ]
+  if (entry.kind === 'columns') {
+    const columns = []
+    for (const col of entry.columns) {
+      const stack: unknown[] = []
+      for (const sub of col.stack) {
+        stack.push(...(await collectEntry(sub, ctx, builders, deliveryTables)))
+      }
+      columns.push({ width: col.width, stack })
+    }
+    return [{ columns, columnGap: entry.columnGap }]
+  }
 
-  // Determine if Page 2 has any content
+  // 'delivery' is precomputed once and reused (also a page-2 gate input).
+  if (entry.section === 'delivery') return deliveryTables
+
+  const raw: unknown = await builders[entry.section](ctx.mission)
+  return Array.isArray(raw) ? (raw as unknown[]) : [raw]
+}
+
+/**
+ * Assemble the pdfMake document definition for a mission, driven by the
+ * resolved per-squadron format. Pure (no download) so it is unit-testable.
+ */
+export async function buildDocDefinition(mission: Mission): Promise<TDocumentDefinitions> {
+  const format = resolveSquadronFormat(mission.squadron)
+  const builders = buildSectionBuilders(format)
+
+  // Precompute predicates once (generateDeliveryTables called exactly once,
+  // as before — it feeds both the page-2 gate and the 'delivery' section).
   const deliveryTables = generateDeliveryTables(mission)
-  const hasPackageData = mission.packageMembers.length > 0
-  const hasSupportAssetsData = mission.supportAssets.length > 0
-  const hasTarget = hasTargetData(mission)
-  const hasPage2Content =
-    hasTarget || deliveryTables.length > 0 || hasPackageData || hasSupportAssetsData
+  const ctx: CompositionContext = {
+    mission,
+    hasTarget: hasTargetData(mission),
+    hasPackage: mission.packageMembers.length > 0,
+    hasSupportAssets: mission.supportAssets.length > 0,
+    hasDeliveryTables: deliveryTables.length > 0,
+    hasPage2Content: false,
+  }
+  ctx.hasPage2Content =
+    ctx.hasTarget || ctx.hasDeliveryTables || ctx.hasPackage || ctx.hasSupportAssets
 
-  // Only include Page 2 if there is any content
-  if (hasPage2Content) {
-    content.push({ text: '', pageBreak: 'after' })
-    content.push(generateHeaderBanner(mission))
-
-    // Only include Target/Tasking table if there is data
-    if (hasTarget) {
-      content.push(await generateTargetTable(mission))
-    }
-
-    content.push(...deliveryTables)
-
-    // Only include Package table if there are package members
-    if (hasPackageData) {
-      content.push(generatePackageTable(mission))
-    }
-
-    // Only include Support Assets table if there are support assets
-    if (hasSupportAssetsData) {
-      content.push(generateSupportAssetsTable(mission))
+  const content: unknown[] = []
+  for (const page of format.pages) {
+    if (page.when && !page.when(ctx)) continue
+    if (page.pageBreakBefore) content.push({ text: '', pageBreak: 'after' })
+    for (const entry of page.entries) {
+      content.push(...(await collectEntry(entry, ctx, builders, deliveryTables)))
     }
   }
 
-  // Page 3 (if remarks exist)
-  const notesContent = await generateNotesPage(mission)
-  content.push(...notesContent)
-  const docDefinition: TDocumentDefinitions = {
+  const footerTemplate = format.theme.footerTemplate
+  return {
     pageSize: 'LETTER',
     pageMargins: [36, 36, 36, 36],
     defaultStyle: {
@@ -1406,7 +1435,10 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
     },
     footer: (currentPage, pageCount) => {
       return {
-        text: `Page ${currentPage} of ${pageCount}`,
+        text:
+          footerTemplate == null
+            ? `Page ${currentPage} of ${pageCount}`
+            : applyTemplate(footerTemplate, mission),
         alignment: 'center',
         fontSize: FONT_SIZES.footer,
         margin: [0, 0, 0, 20],
@@ -1414,6 +1446,12 @@ export async function generatePdfMakeBriefingCard(mission: Mission): Promise<voi
     },
     content: content as Content,
   }
+}
 
+/**
+ * Generate and download the PDF briefing card.
+ */
+export async function generatePdfMakeBriefingCard(mission: Mission): Promise<void> {
+  const docDefinition = await buildDocDefinition(mission)
   await pdfMake.createPdf(docDefinition).download(`${mission.name}.pdf`)
 }

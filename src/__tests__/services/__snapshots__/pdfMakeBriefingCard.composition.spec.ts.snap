@@ -1,0 +1,8027 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — full (page 2 + notes) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#0f8df2",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v93FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 2",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1 Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "M-61",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "510",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "1",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "60 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "2",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "3",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "60 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "4",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CMDS",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "PRGM 1",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "6",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "ECM",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "7",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "8",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "9",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5L",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5R",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "SMK",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "27,062 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "7,163 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DEP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "PARK",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "3",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#0f8df2",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v93FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "Target / Tasking",
+          },
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Primary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Primary",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Secondary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DMPI-1",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 06′, E 042° 12′",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "270°",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15000 ft",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Package",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/C",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Time (Z)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Comms",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Task",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "HAWK 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "F-16CM bl.50",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1530z",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.0",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAP",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 6,
+            "fillColor": "#DCDCDC",
+            "text": "Support Assets",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Role",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Freq (Preset)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Location",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "SHELL 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TANKER",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "305.5 (10)",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Point Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "20,000",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "*",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#0f8df2",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v93FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "text": "Notes / Images / SLEDs",
+  },
+  {
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "stack": [
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Characterization remarks line one.",
+          },
+        ],
+      },
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Line two.",
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — full (page 2 + notes) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — full (page 2 + notes) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — minimal (page 1 only) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#0f8df2",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#0f8df2",
+            "image": "<LOGO:v93FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 2",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1 Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "M-61",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "510",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "1",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "60 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "2",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "3",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "60 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "4",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CMDS",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "PRGM 1",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "6",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "ECM",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "7",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "8",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "9",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5L",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5R",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "SMK",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "27,062 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "7,163 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — minimal (page 1 only) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93 — minimal (page 1 only) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — full (page 2 + notes) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FRONT",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "MID",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "AFT",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "FRONT Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "GAU-8",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "HEI - High Explosive Incendiary",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "1150",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "1",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "240 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "2",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "3",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "240 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "4",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CMDS",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "PRGM 1",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "6",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "ECM",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "7",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "8",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "9",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "10",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "11",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "36,716 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "11,087 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DEP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "PARK",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "3",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "Target / Tasking",
+          },
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Primary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Primary",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Secondary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DMPI-1",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 06′, E 042° 12′",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "270°",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15000 ft",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Package",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/C",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Time (Z)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Comms",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Task",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "HAWK 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "F-16CM bl.50",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1530z",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.0",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAP",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 6,
+            "fillColor": "#DCDCDC",
+            "text": "Support Assets",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Role",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Freq (Preset)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Location",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "SHELL 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TANKER",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "305.5 (10)",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Point Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "20,000",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "*",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "text": "Notes / Images / SLEDs",
+  },
+  {
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "stack": [
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Characterization remarks line one.",
+          },
+        ],
+      },
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Line two.",
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — full (page 2 + notes) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — full (page 2 + notes) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — minimal (page 1 only) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FRONT",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "MID",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "AFT",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "FRONT Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "GAU-8",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "HEI - High Explosive Incendiary",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "1150",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "1",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "240 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "2",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "3",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "240 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "4",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CMDS",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "5",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "PRGM 1",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "6",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "ECM",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "7",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "8",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "9",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "10",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "11",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "36,716 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "11,087 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — minimal (page 1 only) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v303 — minimal (page 1 only) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — full (page 2 + notes) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 2",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1 Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Left Inner",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Right Inner",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "220 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Rear",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "129,613 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "43,413 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DEP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "PARK",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "IP",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "3",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TGT",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 00′, E 042° 00′",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15,000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "350",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "Target / Tasking",
+          },
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Primary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Primary",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Secondary",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "DMPI-1",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "DMPI",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "N 42° 06′, E 042° 12′",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "270°",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Attack Hdg",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "15000 ft",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Ingress Alt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Package",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/C",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Time (Z)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Comms",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Task",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "HAWK 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "F-16CM bl.50",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1530z",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.0",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAP",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 6,
+            "fillColor": "#DCDCDC",
+            "text": "Support Assets",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Role",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Freq (Preset)",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Location",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+        ],
+        [
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "SHELL 1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "TANKER",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "305.5 (10)",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Point Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "20,000",
+          },
+        ],
+      ],
+      "widths": [
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "*",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "text": "Notes / Images / SLEDs",
+  },
+  {
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "stack": [
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Characterization remarks line one.",
+          },
+        ],
+      },
+      {
+        "fontSize": 10,
+        "margin": [
+          0,
+          5,
+          0,
+          5,
+        ],
+        "text": [
+          {
+            "text": "Line two.",
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — full (page 2 + notes) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — full (page 2 + notes) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — minimal (page 1 only) docDefinition is stable > content 1`] = `
+[
+  {
+    "layout": "noBorders",
+    "margin": [
+      0,
+      0,
+      0,
+      5,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FG>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+          {
+            "alignment": "center",
+            "bold": true,
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "color": "#FFFFFF",
+            "fillColor": "#d20920",
+            "fontSize": 16,
+            "margin": [
+              0,
+              8,
+              0,
+              0,
+            ],
+            "text": "v303rd FG Mission Data Card - Characterization Mission",
+          },
+          {
+            "border": [
+              false,
+              false,
+              false,
+              false,
+            ],
+            "fillColor": "#d20920",
+            "image": "<LOGO:v303FS>",
+            "margin": [
+              3,
+              3,
+              3,
+              3,
+            ],
+            "width": 30,
+          },
+        ],
+      ],
+      "widths": [
+        40,
+        "*",
+        40,
+      ],
+    },
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Callsign",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Date",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2026-05-19",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission#",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "001",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "CAS",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 9,
+            "fillColor": "#DCDCDC",
+            "text": "Flight",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "#",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "POSITION",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "CALLSIGN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "STN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "MODE 3",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "A/A TCN",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "INTRAFLIGHT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "LASER",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-1",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "LEAD",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Alpha",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "5Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "-2",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "WING",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "Bravo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "12345",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1234",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "68Y",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "251.000",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "1688",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "columnGap": 2,
+    "columns": [
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 2,
+                    "fillColor": "#DCDCDC",
+                    "text": "Radios",
+                  },
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 2",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "COM 1 Presets",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+          },
+        ],
+        "width": "*",
+      },
+      {
+        "stack": [
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Weather",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Bullseye",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+          {
+            "layout": {},
+            "margin": [
+              0,
+              0,
+              0,
+              2,
+            ],
+            "table": {
+              "body": [
+                [
+                  {
+                    "alignment": "center",
+                    "bold": true,
+                    "colSpan": 4,
+                    "fillColor": "#DCDCDC",
+                    "text": "LOADOUT",
+                  },
+                  {},
+                  {},
+                  {},
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Left Inner",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "CHAFF",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Right Inner",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "220 / Bingo 10",
+                  },
+                ],
+                [
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "Rear",
+                  },
+                  {
+                    "colSpan": 2,
+                    "fillColor": "#EBF1FA",
+                    "italics": true,
+                    "text": "",
+                  },
+                  {},
+                  {
+                    "bold": true,
+                    "fillColor": "#DCDCDC",
+                    "text": "FLARE",
+                  },
+                ],
+              ],
+              "widths": [
+                "auto",
+                "*",
+                "auto",
+                "auto",
+              ],
+            },
+            "unbreakable": true,
+            "width": "*",
+          },
+        ],
+        "width": "*",
+      },
+    ],
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 4,
+            "fillColor": "#DCDCDC",
+            "text": "TOLD",
+          },
+          {},
+          {},
+          {},
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 2,
+            "fillColor": "#DCDCDC",
+            "text": "Fuel",
+          },
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Gross Wt",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "129,613 lbs",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Rotation",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "0 kts",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TO",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "43,413 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min AGL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Refusal",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Joker",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "3,000 lbs",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Min MSL",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Bingo",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "2,000 lbs",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "*",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Departure",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Arrival",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alternate",
+          },
+          {
+            "colSpan": 2,
+            "fillColor": "#EBF1FA",
+            "italics": true,
+            "text": "",
+          },
+          {},
+        ],
+      ],
+      "widths": [
+        "auto",
+        "auto",
+        "*",
+      ],
+    },
+    "unbreakable": true,
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      2,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "alignment": "center",
+            "bold": true,
+            "colSpan": 7,
+            "fillColor": "#DCDCDC",
+            "text": "Flight Plan",
+          },
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "WPT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Name",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Type",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Coords",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Alt",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "IAS",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "TOT",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+        "auto",
+      ],
+    },
+    "unbreakable": true,
+  },
+]
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — minimal (page 1 only) docDefinition is stable > docMeta 1`] = `
+{
+  "defaultStyle": {
+    "fontSize": 9,
+  },
+  "pageMargins": [
+    36,
+    36,
+    36,
+    36,
+  ],
+  "pageSize": "LETTER",
+}
+`;
+
+exports[`pdfMakeBriefingCard — per-squadron composition characterization > v757 — minimal (page 1 only) docDefinition is stable > footer 1`] = `
+{
+  "alignment": "center",
+  "fontSize": 7,
+  "margin": [
+    0,
+    0,
+    0,
+    20,
+  ],
+  "text": "Page 2 of 5",
+}
+`;
