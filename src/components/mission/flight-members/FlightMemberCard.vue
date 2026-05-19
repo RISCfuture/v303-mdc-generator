@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NButton, NCard, NIcon, NText } from 'naive-ui'
+import { NButton, NCard, NIcon, NText, NInput } from 'naive-ui'
+import { isC130 } from '@/utils/airframeHelpers'
 import {
   TrashOutline,
   ReorderThreeOutline,
@@ -33,7 +34,11 @@ const emit = defineEmits<{
   dragstart: []
   dragover: [event: DragEvent]
   drop: []
+  'update-member': [patch: Partial<CrewMember>]
 }>()
+
+// Two-crew airframes (C-130J) carry a copilot per position.
+const isTwoCrew = computed(() => isC130(props.airframe))
 
 /**
  * Extract flight number from flight callsign
@@ -98,6 +103,28 @@ const showSTN = computed(() => shouldShowSTN(datalinkType.value))
           ></template>
         </NButton>
       </div>
+      <div v-if="isTwoCrew" class="copilot-row">
+        <div class="copilot-field">
+          <label>Copilot</label>
+          <NInput
+            :value="member.copilot ?? ''"
+            @update:value="(v: string) => emit('update-member', { copilot: v })"
+            size="small"
+            autocorrect="off"
+            placeholder="Copilot pilot"
+          />
+        </div>
+        <div class="copilot-field">
+          <label>Copilot Callsign</label>
+          <NInput
+            :value="member.copilotCallsign ?? ''"
+            @update:value="(v: string) => emit('update-member', { copilotCallsign: v })"
+            size="small"
+            autocorrect="off"
+            placeholder="Copilot callsign"
+          />
+        </div>
+      </div>
     </NCard>
   </div>
 </template>
@@ -152,6 +179,25 @@ const showSTN = computed(() => shouldShowSTN(datalinkType.value))
 
 .crew-details {
   font-size: v-bind('FONT_SIZE.sm');
+}
+
+.copilot-row {
+  display: flex;
+  gap: v-bind('SPACING.md');
+  margin-top: v-bind('SPACING.sm');
+}
+
+.copilot-field {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.copilot-field label {
+  font-size: v-bind('FONT_SIZE.xs');
+  font-weight: 500;
+  color: #666;
 }
 
 /* Mobile responsive styles */

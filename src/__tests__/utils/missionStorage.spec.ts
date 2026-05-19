@@ -347,4 +347,66 @@ describe('missionStorage', () => {
       )
     })
   })
+
+  describe('aircraft-capability fields (airframe-scoped, optional)', () => {
+    it('omits new fields from storage when unset', () => {
+      const serialized = serializeMission(createTestMission())
+      expect(serialized.wpr).toBeUndefined()
+      expect(serialized.mt).toBeUndefined()
+      expect(serialized.dz).toBeUndefined()
+      expect(serialized.co).toBeUndefined()
+    })
+
+    it('legacy missions (no new fields) deserialize with them undefined', () => {
+      const deserialized = deserializeMission(serializeMission(createTestMission()))
+      expect(deserialized.weaponProfiles).toBeUndefined()
+      expect(deserialized.missionTiming).toBeUndefined()
+      expect(deserialized.dropZone).toBeUndefined()
+      expect(deserialized.crew[0]?.copilot).toBeUndefined()
+    })
+
+    it('round-trips weapon profiles, mission timing and drop zone', () => {
+      const original = createTestMission()
+      original.weaponProfiles = [
+        { label: 'PROFILE 1', weapon: 'GBU-12', releaseType: 'CCIP', spacing: 175, releaseAngle: 45 },
+      ]
+      original.missionTiming = { step: '1200', taxi: '1210', takeoff: '1220', vulTot: '1300' }
+      original.dropZone = { dzName: 'DZ ALPHA', runInCourse: 270, loadType: 'CDS', chuteCount: 4 }
+
+      const result = deserializeMission(serializeMission(original))
+      expect(result.weaponProfiles).toEqual(original.weaponProfiles)
+      expect(result.missionTiming).toEqual(original.missionTiming)
+      expect(result.dropZone).toEqual(original.dropZone)
+    })
+
+    it('round-trips copilot data index-aligned with crew', () => {
+      const original = createTestMission()
+      original.crew = [
+        { ...original.crew[0], copilot: 'Jane "Apex" Doe', copilotCallsign: 'APEX' },
+      ]
+      const result = deserializeMission(serializeMission(original))
+      expect(result.crew[0]?.copilot).toBe('Jane "Apex" Doe')
+      expect(result.crew[0]?.copilotCallsign).toBe('APEX')
+    })
+
+    it('round-trips extended support-asset fields', () => {
+      const original = createTestMission()
+      original.supportAssets = [
+        {
+          callsign: 'SHELL',
+          role: 'TANKER',
+          frequency: '305.5',
+          preset: 12,
+          aaTacan: '5Y',
+          location: 'TRACK A',
+          altitude: 22000,
+          uhf: '251.0',
+          notes: 'AR window 1300-1330',
+          assetKind: 'TANKER',
+        },
+      ]
+      const result = deserializeMission(serializeMission(original))
+      expect(result.supportAssets[0]).toEqual(original.supportAssets[0])
+    })
+  })
 })

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NAutoComplete, NInput, NInputNumber, NFlex } from 'naive-ui'
+import { NAutoComplete, NInput, NInputNumber, NSelect, NFlex } from 'naive-ui'
 import { FONT_SIZE } from '@/styles/design-tokens'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
 import type { SupportAsset } from '@/types'
@@ -26,6 +26,14 @@ const emit = defineEmits<{
 
 // Role options - common presets that users can select or override
 const roleOptions = ['AAR', 'JSTARS', 'AWACS']
+
+// Structured grouping used by the F-16 support layout (optional)
+const assetKindOptions = [
+  { label: 'Tanker', value: 'TANKER' },
+  { label: 'AWACS', value: 'AWACS' },
+  { label: 'ISR', value: 'ISR' },
+  { label: 'Other', value: 'OTHER' },
+]
 </script>
 
 <template>
@@ -103,6 +111,35 @@ const roleOptions = ['AAR', 'JSTARS', 'AWACS']
       >
         <template #suffix>ft</template>
       </NInputNumber>
+    </div>
+    <div class="field field-small">
+      <label>Kind</label>
+      <NSelect
+        :value="asset.assetKind ?? null"
+        @update:value="(v: 'TANKER' | 'AWACS' | 'ISR' | 'OTHER') => emit('update-field', 'assetKind', v)"
+        :options="assetKindOptions"
+        size="small"
+        clearable
+        placeholder=""
+      />
+    </div>
+    <div class="field field-small">
+      <label>UHF</label>
+      <NInput
+        :value="asset.uhf ?? ''"
+        @update:value="(v: string) => emit('update-field', 'uhf', v)"
+        size="small"
+        autocorrect="off"
+      />
+    </div>
+    <div class="field field-expand">
+      <label>Notes</label>
+      <NInput
+        :value="asset.notes ?? ''"
+        @update:value="(v: string) => emit('update-field', 'notes', v)"
+        size="small"
+        autocorrect="off"
+      />
     </div>
   </NFlex>
 </template>

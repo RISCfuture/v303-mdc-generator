@@ -41,6 +41,8 @@ export type CrewMember = {
   intraflight: string
   laser: string
   tailNumber?: string // Aircraft tail number (e.g., "86-0267")
+  copilot?: string // Two-crew airframes (C-130J): copilot pilot name
+  copilotCallsign?: string // Two-crew airframes (C-130J): copilot callsign / Link16
 }
 
 export type LoadoutStation = {
@@ -176,6 +178,9 @@ export type SupportAsset = {
   aaTacan: string // Format like "5Y"
   location: string | null
   altitude: number | null // feet
+  uhf?: string // Explicit UHF when distinct from `frequency` (F-16 structured layout)
+  notes?: string // Free-text notes column (F-16 tanker/AWACS/ISR layout)
+  assetKind?: 'TANKER' | 'AWACS' | 'ISR' | 'OTHER' // Structured grouping for F-16 layout
 }
 
 export type CCIPReferencePoint = {
@@ -202,6 +207,68 @@ export type HTSThreatData = {
   manualTableEnabled: boolean // Whether manual threat table is enabled
   manualEmitters: number[] // Array of manually entered emitter codes
   enabledClasses: boolean[] // 11-element array of threat class enable flags
+}
+
+// --- Aircraft-capability data (airframe-scoped, not squadron-scoped) ---------
+
+/**
+ * F-16 A/G weapon delivery profile ("PROFILE 1" / "PROFILE 2").
+ * VRP/OA1/OA2/PUP reference points continue to come from Waypoint.ccip.
+ */
+export type WeaponProfile = {
+  label?: string // e.g. "PROFILE 1"
+  weapon?: string // weapon / B.CODE
+  fuze?: 'NOSE' | 'TAIL' | 'NSTL'
+  releaseType?: 'CCIP' | 'CCRP' | 'DTOS' | 'LADD' | 'MAN'
+  spacing?: number // feet
+  releaseAngle?: number // degrees
+  quantity?: number
+  // Ballistic block
+  ballisticBearing?: number // TBRG, degrees
+  ballisticRange?: number // RNG, feet
+  ballisticElevation?: number // ELV, feet
+  releaseSpeed?: number // knots
+  releaseHeight?: number // feet AGL
+  attackHeading?: number // degrees
+  targetSteerpoint?: number // tgt-stpt sequence
+}
+
+/** F-16 mission timing block (STEP / TAXI / T-O / PUSH / VUL-TOT / RTB). */
+export type MissionTiming = {
+  step?: string
+  taxi?: string
+  takeoff?: string // T-O
+  push?: string
+  vulTot?: string // VUL-TOT
+  rtb?: string
+}
+
+/** C-130J drop zone / CARP airdrop data. */
+export type DropZoneData = {
+  dzName?: string
+  piLatitude?: number | null
+  piLongitude?: number | null
+  piCoordinateFormat?: CoordinateFormat
+  tot?: string
+  runInCourse?: number // degrees
+  carpLeTe?: number // CARP LE-TE distance, feet
+  carpLePi?: number // CARP LE-PI distance, feet
+  carpSd?: number // stopping distance
+  carpTp?: number // transition point
+  loadType?: string // e.g. "CDS"
+  fuselageStation?: string // fus sta
+  stage?: string
+  releaseSystem?: string // release sys (e.g. "CRS")
+  chuteCount?: number // chute #
+  dropPayload?: string
+  altWind?: string // alt W/V
+  altTemp?: number
+  surfaceWind?: string // sfc W/V
+  surfaceTemp?: number
+  requiredClearanceHeight?: number // rqd clnc ht
+  obstructionElevation?: number // obstr elev
+  minDropHeight?: number // min drop ht
+  dzElevation?: number // DZ elev
 }
 
 export type TargetData = {
@@ -279,6 +346,14 @@ export type Mission = {
 
   // Mission details
   details: MissionDetails
+
+  // Aircraft-capability data (airframe-scoped; optional/additive)
+  weaponProfiles?: WeaponProfile[] // F-16 A/G delivery profiles
+  missionTiming?: MissionTiming // F-16 timing block
+  // F-16 DEP/APR/DIVERT nav table is derived in the PDF builder from
+  // departureRecovery.{departure,recovery,alternate}AirportId via the theater
+  // airfield database — no dedicated stored field.
+  dropZone?: DropZoneData // C-130J airdrop CARP/DZ
 
   // Metadata
   createdAt: string

@@ -88,6 +88,7 @@
   "{AIS_ASQ_T50}.shortName": "AN/ASQ-T50",
   "{AN_AAQ_33}.shortName": "AN/AAQ-33",
   "{AN_ASQ_213}.shortName": "AN/ASQ-213",
+  "{AN_ASQ_213}.category": "pod",
   "{B06DD79A-F21E-4EB9-BD9D-AB3844618C93}.shortName": "AGM-88C",
   "{BCE4E030-38E9-423E-98ED-24BE3DA87C32}.shortName": "Mk.82",
   "{BDU-50HD}.shortName": "BDU-50HD",

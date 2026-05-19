@@ -342,6 +342,56 @@ function inferCategoryFromName(name: string): string {
 }
 
 /**
+ * Resolve a loadout item to its underlying payload munition entry, looking
+ * through composite rack+payload CLSIDs to the last component. Returns the
+ * `MunitionData` straight from the JSON (with overrides applied) — categories
+ * etc. are read directly off it, no name-based inference. `undefined` for
+ * EMPTY or any CLSID that doesn't resolve to a known munition.
+ */
+function resolvePayloadMunition(itemId: string): MunitionData | undefined {
+  if (itemId === 'EMPTY') return undefined
+  const parsed = parseLoadoutId(itemId)
+  // Composite (rack + payload): the payload is the last component.
+  const payloadId =
+    parsed.components.length > 1
+      ? parsed.components[parsed.components.length - 1].id
+      : itemId
+  const cleanId = payloadId.replace(/^{|}$/g, '')
+  const dcsFormat = cleanId.includes('*') ? `{${cleanId.replace('*', '')}}` : null
+  return (
+    munitionsDatabase[payloadId] ??
+    (dcsFormat ? munitionsDatabase[dcsFormat] : undefined) ??
+    munitionsDatabase[`{${cleanId}}`] ??
+    munitionsDatabase[cleanId]
+  )
+}
+
+/**
+ * From a mission loadout, derive de-duplicated air-to-ground weapon options
+ * for the F-16 weapon delivery profile selector. For composite loadouts
+ * (e.g. TER w/ 3× Mk-82), the option represents the underlying munition, not
+ * the rack — weapon profiles describe what's being released, not what carries
+ * it. Categories come straight from the munitions JSON; no inference.
+ * Returns `{ label, value }` where both are the payload's short display name
+ * (weapon profiles store a free-text weapon string, not a CLSID).
+ */
+export function getLoadedAirToGroundWeapons(
+  loadout: readonly { item: string }[],
+): { label: string; value: string }[] {
+  const seen = new Set<string>()
+  const out: { label: string; value: string }[] = []
+  for (const station of loadout) {
+    const payload = resolvePayloadMunition(station.item)
+    if (payload?.category !== 'air-to-ground') continue
+    const name = payload.shortName ?? payload.name
+    if (!name || seen.has(name)) continue
+    seen.add(name)
+    out.push({ label: name, value: name })
+  }
+  return out
+}
+
+/**
  * Build dropdown options for a specific station on an aircraft
  * Returns munitions grouped by category (air-to-air, air-to-ground, fuel, pod, etc.)
  *

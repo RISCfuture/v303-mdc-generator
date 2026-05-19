@@ -25,6 +25,24 @@ export function isHelicopter(airframe: Airframe): boolean {
 }
 
 /**
+ * Whether the airframe is an F-16 variant. F-16s carry the A/G weapon
+ * delivery profiles, mission timing, and airbase-nav capabilities.
+ * @param airframe - The aircraft identifier
+ */
+export function isF16(airframe: string): boolean {
+  return airframe.startsWith('F-16')
+}
+
+/**
+ * Whether the airframe is a C-130 variant. C-130s carry the airdrop
+ * (drop zone / CARP) and two-crew (pilot + copilot) capabilities.
+ * @param airframe - The aircraft identifier
+ */
+export function isC130(airframe: string): boolean {
+  return airframe.startsWith('C-130')
+}
+
+/**
  * Get the number of radios for an aircraft
  * @param airframe - The aircraft identifier
  * @returns The number of radios

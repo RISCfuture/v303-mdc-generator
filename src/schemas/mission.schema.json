@@ -239,6 +239,30 @@
             "type": "string"
           },
           "description": "Image IDs referenced in remarks/threats"
+        },
+        "co": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "p": { "type": "string" },
+              "cs": { "type": "string" }
+            }
+          },
+          "description": "Copilot per crew index (two-crew airframes), parallel to cr"
+        },
+        "wpr": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/WeaponProfile" },
+          "description": "F-16 A/G weapon delivery profiles"
+        },
+        "mt": {
+          "$ref": "#/definitions/MissionTiming",
+          "description": "F-16 mission timing block"
+        },
+        "dz": {
+          "$ref": "#/definitions/DropZoneData",
+          "description": "C-130J airdrop CARP/DZ data"
         }
       }
     },
@@ -749,6 +773,68 @@
         }
       }
     },
+    "WeaponProfile": {
+      "type": "object",
+      "description": "F-16 A/G weapon delivery profile (all fields optional)",
+      "properties": {
+        "label": { "type": "string" },
+        "weapon": { "type": "string" },
+        "fuze": { "type": "string", "enum": ["NOSE", "TAIL", "NSTL"] },
+        "releaseType": { "type": "string", "enum": ["CCIP", "CCRP", "DTOS", "LADD", "MAN"] },
+        "spacing": { "type": "number" },
+        "releaseAngle": { "type": "number" },
+        "quantity": { "type": "number" },
+        "ballisticBearing": { "type": "number" },
+        "ballisticRange": { "type": "number" },
+        "ballisticElevation": { "type": "number" },
+        "releaseSpeed": { "type": "number" },
+        "releaseHeight": { "type": "number" },
+        "attackHeading": { "type": "number" },
+        "targetSteerpoint": { "type": "number" }
+      }
+    },
+    "MissionTiming": {
+      "type": "object",
+      "description": "F-16 mission timing block (all fields optional)",
+      "properties": {
+        "step": { "type": "string" },
+        "taxi": { "type": "string" },
+        "takeoff": { "type": "string" },
+        "push": { "type": "string" },
+        "vulTot": { "type": "string" },
+        "rtb": { "type": "string" }
+      }
+    },
+    "DropZoneData": {
+      "type": "object",
+      "description": "C-130J airdrop CARP/DZ data (all fields optional)",
+      "properties": {
+        "dzName": { "type": "string" },
+        "piLatitude": { "type": ["number", "null"] },
+        "piLongitude": { "type": ["number", "null"] },
+        "piCoordinateFormat": { "type": "string", "enum": ["DMS", "DD", "DDM", "MGRS"] },
+        "tot": { "type": "string" },
+        "runInCourse": { "type": "number" },
+        "carpLeTe": { "type": "number" },
+        "carpLePi": { "type": "number" },
+        "carpSd": { "type": "number" },
+        "carpTp": { "type": "number" },
+        "loadType": { "type": "string" },
+        "fuselageStation": { "type": "string" },
+        "stage": { "type": "string" },
+        "releaseSystem": { "type": "string" },
+        "chuteCount": { "type": "number" },
+        "dropPayload": { "type": "string" },
+        "altWind": { "type": "string" },
+        "altTemp": { "type": "number" },
+        "surfaceWind": { "type": "string" },
+        "surfaceTemp": { "type": "number" },
+        "requiredClearanceHeight": { "type": "number" },
+        "obstructionElevation": { "type": "number" },
+        "minDropHeight": { "type": "number" },
+        "dzElevation": { "type": "number" }
+      }
+    },
     "SupportAsset": {
       "type": "object",
       "required": ["callsign", "role", "frequency", "preset", "aaTacan", "location", "altitude"],
@@ -780,6 +866,19 @@
         "altitude": {
           "type": ["number", "null"],
           "description": "Altitude in feet"
+        },
+        "uhf": {
+          "type": "string",
+          "description": "Explicit UHF when distinct from frequency (F-16 layout)"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-text notes column (F-16 tanker/AWACS/ISR layout)"
+        },
+        "assetKind": {
+          "type": "string",
+          "enum": ["TANKER", "AWACS", "ISR", "OTHER"],
+          "description": "Structured grouping for F-16 support layout"
         }
       }
     }

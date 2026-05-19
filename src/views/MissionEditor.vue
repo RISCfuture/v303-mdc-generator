@@ -18,6 +18,7 @@ import { getAircraftComponentLoader } from '@/aircraft'
 import { getSquadronDisplayName } from '@/data/squadrons'
 import { exportFormatLabels, type ExportFormat } from '@/data/exportFormats'
 import { getMissionAirframe } from '@/utils/missionHelpers'
+import { isF16, isC130 } from '@/utils/airframeHelpers'
 import { getCrewPositionShort } from '@/data/constants'
 import { getAirfieldsForTheater } from '@/data/airfields'
 import type {
@@ -56,6 +57,9 @@ import SpeedCalculatorModal from '@/components/mission/told-fuel/SpeedCalculator
 import BingoCalculatorModal from '@/components/mission/told-fuel/BingoCalculatorModal.vue'
 import MissionPackage from '@/components/mission/package/MissionPackage.vue'
 import MissionSupportAssets from '@/components/mission/package/MissionSupportAssets.vue'
+import MissionWeaponProfiles from '@/components/mission/aircraft-formats/MissionWeaponProfiles.vue'
+import MissionTiming from '@/components/mission/aircraft-formats/MissionTiming.vue'
+import MissionDropZone from '@/components/mission/aircraft-formats/MissionDropZone.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -244,6 +248,14 @@ const ecmCmdsComponent = computed<Component | null>(() => {
   return loader ? defineAsyncComponent(loader) : null
 })
 
+// Airframe-scoped capability tabs (weapon profiles / timing are F-16;
+// drop zone is C-130J). Squadron drives MDC format, airframe drives which
+// data capabilities exist. DEP/APR/DIVERT nav data is derived from the
+// Basic Info airport selections + the theater airfield database, so it
+// has no dedicated editor tab.
+const showF16Sections = computed(() => isF16(airframe.value))
+const showC130Sections = computed(() => isC130(airframe.value))
+
 // Crew management
 const crew = computed(() => mission.value?.crew ?? [])
 const {
@@ -253,6 +265,7 @@ const {
   handleCrewDrop,
   moveCrewMemberUp,
   moveCrewMemberDown,
+  updateCrewMember,
 } = useCrewManagement(missionId, crew, availableCrew, airframe)
 
 // Loadout management
@@ -545,6 +558,7 @@ function handleSelectMDCExport(key: string) {
               @crew-drop="handleCrewDrop"
               @move-crew-up="moveCrewMemberUp"
               @move-crew-down="moveCrewMemberDown"
+              @update-crew-member="updateCrewMember"
               @update:flight-callsign="updateFlightCallsign"
               @update:link16-prefix="(v: string) => updateField('link16PrefixOverride', v)"
             />
@@ -670,6 +684,21 @@ function handleSelectMDCExport(key: string) {
           <!-- Targets Tab -->
           <NTabPane name="targets" tab="Targets">
             <MissionTargets :mission="mission" @update:target-field="updateTargetField" />
+          </NTabPane>
+
+          <!-- F-16 weapon delivery profiles -->
+          <NTabPane v-if="showF16Sections" name="weaponProfiles" tab="Weapon Profiles">
+            <MissionWeaponProfiles :mission="mission" @update:field="updateField" />
+          </NTabPane>
+
+          <!-- F-16 mission timing -->
+          <NTabPane v-if="showF16Sections" name="timing" tab="Timing">
+            <MissionTiming :mission="mission" @update:field="updateField" />
+          </NTabPane>
+
+          <!-- C-130J drop zone / CARP -->
+          <NTabPane v-if="showC130Sections" name="dropzone" tab="Drop Zone">
+            <MissionDropZone :mission="mission" @update:field="updateField" />
           </NTabPane>
 
           <!-- Briefing Tab -->

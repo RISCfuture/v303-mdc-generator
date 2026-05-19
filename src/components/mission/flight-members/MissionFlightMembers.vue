@@ -29,6 +29,7 @@ const emit = defineEmits<{
   'crew-drop': [index: number]
   'move-crew-up': [index: number]
   'move-crew-down': [index: number]
+  'update-crew-member': [index: number, patch: Partial<CrewMember>]
   'update:flight-callsign': [value: string]
   'update:link16-prefix': [value: string]
 }>()
@@ -67,6 +68,7 @@ const showDatalinkPrefix = computed(() => datalinkType.value !== null)
           @dragstart="crewDragDrop.handleDragStart(index)"
           @dragover="crewDragDrop.handleDragOver"
           @drop="emit('crew-drop', index)"
+          @update-member="(patch) => emit('update-crew-member', index, patch)"
         />
       </div>
 

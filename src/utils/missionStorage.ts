@@ -17,6 +17,9 @@ import type {
   F16CalculatorParams,
   A10CalculatorParams,
   F16BingoCalculatorParams,
+  WeaponProfile,
+  MissionTiming,
+  DropZoneData,
 } from '@/types'
 import { getMissionAirframe } from '@/utils/missionHelpers'
 import { crewDatabase } from '@/data/crew'
@@ -172,6 +175,9 @@ export type SerializedMission = {
     aaTacan: string
     location: string | null
     altitude: number | null
+    uhf?: string
+    notes?: string
+    assetKind?: 'TANKER' | 'AWACS' | 'ISR' | 'OTHER'
   }[]
 
   // Details - required for export (at least remarks)
@@ -213,6 +219,12 @@ export type SerializedMission = {
 
   // Image IDs - required, defaults to empty array
   imgIds: string[] // Top-level image IDs for the mission
+
+  // Aircraft-capability data (airframe-scoped; optional/additive)
+  co?: { p?: string; cs?: string }[] // copilot per crew index (parallel to cr)
+  wpr?: WeaponProfile[] // weaponProfiles (F-16)
+  mt?: MissionTiming // missionTiming (F-16)
+  dz?: DropZoneData // dropZone (C-130J)
 }
 
 /**
@@ -226,6 +238,14 @@ function presetsMatchDefaults(presets: RadioPreset[], defaults: RadioPreset[]): 
     if (!d) return false
     return p.number === d.number && p.frequency === d.frequency && p.description === d.description
   })
+}
+
+/**
+ * Whether an object has at least one defined, non-empty value (used to omit
+ * sparse optional structures from storage).
+ */
+function hasAnyValue(obj: object): boolean {
+  return Object.values(obj).some((v) => v !== undefined && v !== null && v !== '')
 }
 
 /**
@@ -488,15 +508,21 @@ export function serializeMission(mission: Mission): SerializedMission {
   // Support assets - required field, defaults to empty array
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- runtime guard for test data
   if (mission.supportAssets && mission.supportAssets.length > 0) {
-    serialized.sa = mission.supportAssets.map((sa) => ({
-      callsign: sa.callsign,
-      role: sa.role,
-      frequency: sa.frequency,
-      preset: sa.preset,
-      aaTacan: sa.aaTacan,
-      location: sa.location,
-      altitude: sa.altitude,
-    }))
+    serialized.sa = mission.supportAssets.map((sa) => {
+      const out: SerializedMission['sa'][number] = {
+        callsign: sa.callsign,
+        role: sa.role,
+        frequency: sa.frequency,
+        preset: sa.preset,
+        aaTacan: sa.aaTacan,
+        location: sa.location,
+        altitude: sa.altitude,
+      }
+      if (sa.uhf !== undefined) out.uhf = sa.uhf
+      if (sa.notes !== undefined) out.notes = sa.notes
+      if (sa.assetKind !== undefined) out.assetKind = sa.assetKind
+      return out
+    })
   }
 
   // Target details (optional)
@@ -532,6 +558,23 @@ export function serializeMission(mission: Mission): SerializedMission {
     if (st.ingressAltitude !== undefined) serialized.det.st.ia = st.ingressAltitude
     if (st.remarks) serialized.det.st.rem = st.remarks
     if (st.imageIds) serialized.det.st.imgIds = st.imageIds
+  }
+
+  // Crew copilot (two-crew airframes) - index-aligned with cr; only when used
+  const copilots = mission.crew.map((c) => ({ p: c.copilot, cs: c.copilotCallsign }))
+  if (copilots.some((c) => c.p !== undefined || c.cs !== undefined)) {
+    serialized.co = copilots
+  }
+
+  // Aircraft-capability data (airframe-scoped; only when populated)
+  if (mission.weaponProfiles && mission.weaponProfiles.length > 0) {
+    serialized.wpr = mission.weaponProfiles
+  }
+  if (mission.missionTiming && hasAnyValue(mission.missionTiming)) {
+    serialized.mt = mission.missionTiming
+  }
+  if (mission.dropZone && hasAnyValue(mission.dropZone)) {
+    serialized.dz = mission.dropZone
   }
 
   return serialized
@@ -577,6 +620,17 @@ export function deserializeMission(serialized: SerializedMission): Mission {
       tailNumber: pilot.tailNumber,
     }
   })
+
+  // Apply copilot data (two-crew airframes), index-aligned with crew
+  const copilotData = serialized.co
+  if (copilotData) {
+    for (let i = 0; i < Math.min(crew.length, copilotData.length); i++) {
+      const member = crew[i]
+      const c = copilotData[i]
+      if (c.p !== undefined) member.copilot = c.p
+      if (c.cs !== undefined) member.copilotCallsign = c.cs
+    }
+  }
 
   // Reconstruct waypoints
   const waypoints: Waypoint[] = serialized.wp.map((swp) => {
@@ -803,6 +857,9 @@ export function deserializeMission(serialized: SerializedMission): Mission {
         : undefined,
     },
     /* eslint-enable @typescript-eslint/no-unnecessary-condition */
+    weaponProfiles: serialized.wpr,
+    missionTiming: serialized.mt,
+    dropZone: serialized.dz,
     createdAt: serialized.ca,
     updatedAt: serialized.ua,
   }

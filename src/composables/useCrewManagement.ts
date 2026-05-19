@@ -257,6 +257,17 @@ export function useCrewManagement(
     missionsStore.updateMission(missionId.value, { crew: updatedCrew })
   }
 
+  /**
+   * Update editable (non-database-derived) fields on a single crew member,
+   * e.g. copilot / copilotCallsign for two-crew airframes.
+   */
+  function updateCrewMember(index: number, patch: Partial<CrewMember>) {
+    const updatedCrew = crew.value.map((member, i) =>
+      i === index ? { ...member, ...patch } : member,
+    )
+    missionsStore.updateMission(missionId.value, { crew: updatedCrew })
+  }
+
   return {
     crewDragDrop,
     addCrewMember,
@@ -264,5 +275,6 @@ export function useCrewManagement(
     handleCrewDrop,
     moveCrewMemberUp,
     moveCrewMemberDown,
+    updateCrewMember,
   }
 }
