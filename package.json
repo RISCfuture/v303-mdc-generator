@@ -22,6 +22,7 @@
     "lint": "yarn lint:eslint && yarn lint:stylelint && yarn lint:oxlint && yarn lint:knip",
     "format": "prettier --write .",
     "validate:schemas": "jiti scripts/validate-schemas.ts",
+    "generate:samples": "GEN_SAMPLES=1 vitest run src/__tests__/tools/generateSampleMdcs.spec.ts",
     "prepare": "husky"
   },
   "dependencies": {

@@ -114,19 +114,19 @@ describe('pdfMakeBriefingCard — per-squadron composition characterization', ()
 
   it('structural invariants per squadron', async () => {
     for (const squadron of SQUADRONS) {
-      // minimal: single page, no page break
+      // minimal: page 1 + the static definitions page (one page break)
       await generatePdfMakeBriefingCard(makeMission(squadron, false))
       const minimal = JSON.stringify(captured!.content)
-      expect(minimal.match(/"pageBreak":"after"/g) ?? []).toHaveLength(0)
+      expect(minimal.match(/"pageBreak":"after"/g) ?? []).toHaveLength(1)
 
-      // full: exactly one page break before page 2 (notes self-gates its own)
+      // full: page 2 + notes + definitions => multiple page breaks
       await generatePdfMakeBriefingCard(makeMission(squadron, true))
       const fullStr = JSON.stringify(captured!.content)
       const breaks = (fullStr.match(/"pageBreak":"after"/g) ?? []).length
-      expect(breaks).toBeGreaterThanOrEqual(1)
+      expect(breaks).toBeGreaterThanOrEqual(2)
 
-      // header background hex: v93 blue, v303/v757 red
-      const expectedHex = squadron === 'v93' ? '#0f8df2' : '#d20920'
+      // header background hex: v303 red, v93/v757 blue
+      const expectedHex = squadron === 'v303' ? '#d20920' : '#0f8df2'
       expect(fullStr).toContain(`"fillColor":"${expectedHex}"`)
     }
 

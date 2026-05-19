@@ -7,7 +7,8 @@
     "defaultGunAmmo": {
       "training": "TP (Target Practice-Tracer PGU)",
       "combat": "SAPHEI (Semi-Armor Piercing, HE, Incendiary)"
-    }
+    },
+    "radioRoles": ["airToGround", "airToAir"]
   },
   "v303": {
     "id": "v303",
@@ -17,12 +18,14 @@
     "defaultGunAmmo": {
       "training": "TP - Target Practice",
       "combat": "HEI - High Explosive Incendiary"
-    }
+    },
+    "radioRoles": ["airToAir", "airToGround", "support"]
   },
   "v757": {
     "id": "v757",
     "name": "v757th Airlift Squadron",
     "displayName": "v757 AS",
-    "aircraft": "C-130J-30"
+    "aircraft": "C-130J-30",
+    "radioRoles": ["airToGround", "airToAir"]
   }
 }

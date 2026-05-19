@@ -211,16 +211,18 @@ export function createMockTACAN(overrides: Partial<TACAN> = {}): TACAN {
 }
 
 /**
- * Creates a mock AirfieldRadio
+ * Creates a mock AirfieldRadio with a single ATC channel serving
+ * ground/tower/approach in both UHF and VHF-AM (the common DCS shape).
  */
 export function createMockAirfieldRadio(overrides: Partial<AirfieldRadio> = {}): AirfieldRadio {
+  const facilityFreqs = { uhf: 251.0, vhfAm: 131.4 }
   return {
-    roles: ['ground', 'tower', 'approach'],
     callsign: 'Kutaisi',
-    frequencies: [
-      { band: 'UHF', modulation: 'AM', frequency: 251.0 },
-      { band: 'VHF_HI', modulation: 'AM', frequency: 131.4 },
-    ],
+    frequencies: {
+      ground: { ...facilityFreqs },
+      tower: { ...facilityFreqs },
+      approach: { ...facilityFreqs },
+    },
     ...overrides,
   }
 }
@@ -277,7 +279,11 @@ export function createMockAirfields(): Airfield[] {
       ],
       radio: createMockAirfieldRadio({
         callsign: 'Batumi',
-        frequencies: [{ band: 'UHF', modulation: 'AM', frequency: 131.0 }],
+        frequencies: {
+          ground: { uhf: 260.0, vhfAm: 131.0 },
+          tower: { uhf: 260.0, vhfAm: 131.0 },
+          approach: { uhf: 260.0, vhfAm: 131.0 },
+        },
       }),
     }),
   ]

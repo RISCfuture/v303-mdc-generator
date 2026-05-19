@@ -12,8 +12,8 @@ import { imageStorage } from '@/services/imageStorage'
 import type { Mission } from '@/types'
 import { formatNumber } from '@/utils/formatting'
 import { getMunitionShortName } from '@/data/munitions'
-import { getAirframeData, isHelicopter } from '@/utils/airframeHelpers'
-import { getSquadronAirframe } from '@/data/squadrons'
+import { getAirframeData, isHelicopter, isF16, isC130, atcFrequency } from '@/utils/airframeHelpers'
+import { getSquadronAirframe, squadronDatabase } from '@/data/squadrons'
 import { calculateTakeoffFuel, calculateMissionGrossWeight } from '@/utils/fuelCalculations'
 import { getAirframeDisplayName } from '@/data/airframes'
 import { getFlightNumber } from '@/utils/callsignHelpers'
@@ -347,6 +347,8 @@ function generateFlightTable(mission: Mission): unknown {
   const leadIntraflight = flightLead.intraflight
   const leadAaTcn = flightLead.aaTcn
   const reciprocalTacan = calculateReciprocalTacan(leadAaTcn)
+  // Two-crew airframes (C-130J) carry a copilot column.
+  const twoCrew = isC130(getSquadronAirframe(mission.squadron))
 
   const rows = []
   // Only show rows for crew members that are assigned
@@ -362,6 +364,9 @@ function generateFlightTable(mission: Mission): unknown {
       { text: `-${i + 1}`, fillColor: '#DCDCDC', bold: true },
       { text: member.position, fillColor: '#EBF1FA', italics: true },
       { text: member.pilot, fillColor: '#EBF1FA', italics: true },
+      ...(twoCrew
+        ? [{ text: member.copilot ?? '', fillColor: '#EBF1FA', italics: true }]
+        : []),
       { text: callsignDisplay, fillColor: '#EBF1FA', italics: true },
       { text: member.stn || '', fillColor: '#EBF1FA', italics: true },
       { text: member.mode3 || '', fillColor: '#EBF1FA', italics: true },
@@ -371,32 +376,35 @@ function generateFlightTable(mission: Mission): unknown {
     ])
   }
 
+  const headerLabels = [
+    '#',
+    'POSITION',
+    'PILOT',
+    ...(twoCrew ? ['COPILOT'] : []),
+    'CALLSIGN',
+    'STN',
+    'MODE 3',
+    'A/A TCN',
+    'INTRAFLIGHT',
+    'LASER',
+  ]
+  const colCount = headerLabels.length
+
   return {
     table: {
-      widths: ['auto', 'auto', '*', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
+      widths: ['auto', 'auto', '*', ...(twoCrew ? ['*'] : []), 'auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
       body: [
         [
-          { text: 'Flight', fillColor: '#DCDCDC', bold: true, colSpan: 9, alignment: 'center' },
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
+          {
+            text: 'Flight',
+            fillColor: '#DCDCDC',
+            bold: true,
+            colSpan: colCount,
+            alignment: 'center',
+          },
+          ...Array.from({ length: colCount - 1 }, () => ({})),
         ],
-        [
-          { text: '#', fillColor: '#DCDCDC', bold: true },
-          { text: 'POSITION', fillColor: '#DCDCDC', bold: true },
-          { text: 'PILOT', fillColor: '#DCDCDC', bold: true },
-          { text: 'CALLSIGN', fillColor: '#DCDCDC', bold: true },
-          { text: 'STN', fillColor: '#DCDCDC', bold: true },
-          { text: 'MODE 3', fillColor: '#DCDCDC', bold: true },
-          { text: 'A/A TCN', fillColor: '#DCDCDC', bold: true },
-          { text: 'INTRAFLIGHT', fillColor: '#DCDCDC', bold: true },
-          { text: 'LASER', fillColor: '#DCDCDC', bold: true },
-        ],
+        headerLabels.map((label) => ({ text: label, fillColor: '#DCDCDC', bold: true })),
         ...rows,
       ],
     },
@@ -1343,6 +1351,349 @@ async function generateNotesPage(mission: Mission): Promise<unknown[]> {
 }
 
 /**
+ * Generate F-16 mission timing table (STEP / TAXI / T-O / PUSH / VUL-TOT / RTB).
+ * Returns [] when there is no timing data so it can be composed unconditionally.
+ */
+function generateMissionTimingTable(mission: Mission): unknown[] {
+  const t = mission.missionTiming
+  if (!t || !Object.values(t).some(Boolean)) return []
+  const cols: [string, string][] = [
+    ['STEP', t.step ?? ''],
+    ['TAXI', t.taxi ?? ''],
+    ['T-O', t.takeoff ?? ''],
+    ['PUSH', t.push ?? ''],
+    ['VUL/TOT', t.vulTot ?? ''],
+    ['RTB', t.rtb ?? ''],
+  ]
+  return [
+    {
+      table: {
+        widths: cols.map(() => '*'),
+        body: [
+          [
+            {
+              text: 'Mission Timing',
+              fillColor: '#DCDCDC',
+              bold: true,
+              colSpan: cols.length,
+              alignment: 'center',
+            },
+            ...cols.slice(1).map(() => ({})),
+          ],
+          cols.map(([label]) => ({ text: label, fillColor: '#DCDCDC', bold: true })),
+          cols.map(([, value]) => ({ text: value, fillColor: '#EBF1FA', italics: true })),
+        ],
+      },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 2],
+      unbreakable: true,
+    },
+  ]
+}
+
+/**
+ * Generate F-16 airbase nav table (DEP / APR / DIVERT rows).
+ *
+ * Rows are derived from the Basic Info airport selections
+ * (`departureRecovery.{departure,recovery,alternate}AirportId`) and the
+ * theater airfield database — there is no separate stored airbaseNav field.
+ * Returns [] for non-F-16 airframes or when no airbases are selected.
+ *
+ * - TCN: `<channel><band>` from the airfield's TACAN (e.g. "16X")
+ * - ELV: airfield position elevation (feet MSL)
+ * - RWY / ILS: from the selected runway (DEP=departureRunwayName,
+ *   APR=recoveryRunwayName, DIVERT has no runway selection so left blank)
+ * - ATC: facility frequency from the airfield's ATC radio matrix, sourced via
+ *   the squadron's airToGround radio slot (UHF first, then VHF-AM, etc.).
+ *   Blank when the airfield has no Radio.lua entry.
+ */
+function generateAirbaseNavTable(mission: Mission): unknown[] {
+  if (!isF16(getSquadronAirframe(mission.squadron))) return []
+
+  const airfields = getAirfieldsForTheater(mission.theater)
+  const findAf = (id?: string) => (id ? (airfields.find((af) => af.name === id) ?? null) : null)
+  const squadron = squadronDatabase[mission.squadron]
+  const airframe = getSquadronAirframe(mission.squadron)
+
+  type RowKey = 'DEP' | 'APR' | 'DIVERT'
+  type Row = { role: RowKey; airportId?: string; runwayName?: string; facility: 'tower' | 'approach' }
+  const sources: Row[] = [
+    {
+      role: 'DEP',
+      airportId: mission.departureRecovery.departureAirportId,
+      runwayName: mission.departureRecovery.departureRunwayName,
+      facility: 'tower',
+    },
+    {
+      role: 'APR',
+      airportId: mission.departureRecovery.recoveryAirportId,
+      runwayName: mission.departureRecovery.recoveryRunwayName,
+      facility: 'approach',
+    },
+    {
+      role: 'DIVERT',
+      airportId: mission.departureRecovery.alternateAirportId,
+      facility: 'tower',
+    },
+  ]
+
+  const rows = sources
+    .map((src) => {
+      const af = findAf(src.airportId)
+      if (!af) return null
+      const tcn = af.tacan
+        ? // Runtime TACAN shape has a `band` (e.g. "X"/"Y") even though the
+          // type advertises `frequency`; reach through `unknown` to read both.
+          (() => {
+            const t = af.tacan as unknown as {
+              channel?: number
+              band?: string
+              frequency?: number
+            }
+            return t.channel != null && t.band ? `${t.channel}${t.band}` : (t.channel?.toString() ?? '')
+          })()
+        : ''
+      const runway = src.runwayName
+        ? (af.runways.find((rw) => rw.name === src.runwayName) ?? null)
+        : null
+      const ils = runway?.ils ? `${runway.ils.name} ${runway.ils.frequency}`.trim() : ''
+      // Pick the ATC frequency the squadron's airToGround radio would tune.
+      // Fall back from approach->tower for APR rows so we always show something
+      // when the airfield only published a single channel for all facilities.
+      let atc = atcFrequency({
+        airfield: af,
+        squadron,
+        airframe,
+        facility: src.facility,
+      })
+      if (atc == null && src.facility === 'approach') {
+        atc = atcFrequency({ airfield: af, squadron, airframe, facility: 'tower' })
+      }
+      return {
+        role: src.role,
+        airportName: af.name,
+        tcn,
+        elevation: af.position.elevation,
+        runwayName: runway?.name ?? src.runwayName ?? '',
+        ils,
+        atc: atc != null ? atc.toFixed(3).replace(/\.?0+$/, '') : '',
+      }
+    })
+    .filter((r): r is NonNullable<typeof r> => r !== null)
+
+  if (rows.length === 0) return []
+
+  const headers = ['AIRBASE', 'Airport', 'TCN', 'ATC', 'ELV', 'RWY', 'ILS']
+  return [
+    {
+      table: {
+        widths: ['auto', '*', 'auto', 'auto', 'auto', 'auto', 'auto'],
+        body: [
+          headers.map((h) => ({ text: h, fillColor: '#DCDCDC', bold: true })),
+          ...rows.map((r) => [
+            { text: r.role, fillColor: '#DCDCDC', bold: true },
+            { text: r.airportName, fillColor: '#EBF1FA', italics: true },
+            { text: r.tcn, fillColor: '#EBF1FA', italics: true },
+            { text: r.atc, fillColor: '#EBF1FA', italics: true },
+            {
+              text: r.elevation != null ? formatNumber(r.elevation) : '',
+              fillColor: '#EBF1FA',
+              italics: true,
+            },
+            { text: r.runwayName, fillColor: '#EBF1FA', italics: true },
+            { text: r.ils, fillColor: '#EBF1FA', italics: true },
+          ]),
+        ],
+      },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 2],
+      unbreakable: true,
+    },
+  ]
+}
+
+/**
+ * Generate F-16 weapon delivery profile tables (Profile 1 / Profile 2 ...).
+ * Returns [] when there are no profiles.
+ */
+/**
+ * Compact F-16 weapon delivery profile table, modeled on the BMS WDP card:
+ * each profile is its own small label/value/label/value grid so the values
+ * (mostly short numbers) don't drive an oversized table. Designed to sit in
+ * a column next to the CCIP delivery tables — see `v93Pages` page 2.
+ */
+function generateWeaponProfilesTable(mission: Mission): unknown[] {
+  const profiles = mission.weaponProfiles ?? []
+  if (profiles.length === 0) return []
+  return profiles.map((p, i) => {
+    // Pair order keeps related fields aligned across the two value columns:
+    // identity left, geometry/ballistics right.
+    const pairs: [string, string][] = [
+      ['Weapon', p.weapon ?? ''],
+      ['Rel Angle', p.releaseAngle != null ? `${p.releaseAngle}` : ''],
+      ['Fuze', p.fuze ?? ''],
+      ['Spacing', p.spacing != null ? formatNumber(p.spacing) : ''],
+      ['Release', p.releaseType ?? ''],
+      ['Qty', p.quantity != null ? `${p.quantity}` : ''],
+      ['TBRG', p.ballisticBearing != null ? `${p.ballisticBearing}` : ''],
+      ['Rel Spd', p.releaseSpeed != null ? `${p.releaseSpeed}` : ''],
+      ['RNG', p.ballisticRange != null ? formatNumber(p.ballisticRange) : ''],
+      ['Rel Ht', p.releaseHeight != null ? formatNumber(p.releaseHeight) : ''],
+      ['ELV', p.ballisticElevation != null ? formatNumber(p.ballisticElevation) : ''],
+      ['Attack Hdg', p.attackHeading != null ? `${p.attackHeading}` : ''],
+      ['TGT STPT', p.targetSteerpoint != null ? `${p.targetSteerpoint}` : ''],
+    ]
+    const body: unknown[][] = [
+      [
+        {
+          text: p.label ?? `Weapon Delivery Profile ${i + 1}`,
+          fillColor: '#DCDCDC',
+          bold: true,
+          colSpan: 4,
+          alignment: 'center',
+        },
+        {},
+        {},
+        {},
+      ],
+    ]
+    for (let j = 0; j < pairs.length; j += 2) {
+      const left = pairs[j]
+      const right = j + 1 < pairs.length ? pairs[j + 1] : undefined
+      body.push([
+        { text: left[0], fillColor: '#DCDCDC', bold: true },
+        { text: left[1], fillColor: '#EBF1FA', italics: true },
+        right
+          ? { text: right[0], fillColor: '#DCDCDC', bold: true }
+          : { text: '', fillColor: '#EBF1FA' },
+        right
+          ? { text: right[1], fillColor: '#EBF1FA', italics: true }
+          : { text: '', fillColor: '#EBF1FA' },
+      ])
+    }
+    return {
+      table: { widths: ['auto', '*', 'auto', '*'], body },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 2],
+      unbreakable: true,
+    }
+  })
+}
+
+/**
+ * Generate C-130J drop zone / CARP table. Returns [] for non-C-130 airframes
+ * or when there is no drop zone data.
+ */
+function generateDropZoneTable(mission: Mission): unknown[] {
+  if (!isC130(getSquadronAirframe(mission.squadron))) return []
+  const dz = mission.dropZone
+  if (!dz || !Object.values(dz).some(Boolean)) return []
+  const piCoords =
+    dz.piLatitude != null && dz.piLongitude != null
+      ? formatCoordinate(dz.piLatitude, dz.piLongitude, dz.piCoordinateFormat ?? 'DDM')
+      : ''
+  const pairs: [string, string][] = [
+    ['DZ Name', dz.dzName ?? ''],
+    ['PI Coords', piCoords],
+    ['TOT', dz.tot ?? ''],
+    ['Run-In Course', dz.runInCourse != null ? `${dz.runInCourse}` : ''],
+    ['CARP LE-TE', dz.carpLeTe != null ? formatNumber(dz.carpLeTe) : ''],
+    ['CARP LE-PI', dz.carpLePi != null ? formatNumber(dz.carpLePi) : ''],
+    ['SD Distance', dz.carpSd != null ? formatNumber(dz.carpSd) : ''],
+    ['TP Distance', dz.carpTp != null ? formatNumber(dz.carpTp) : ''],
+    ['Load Type', dz.loadType ?? ''],
+    ['Fus Sta', dz.fuselageStation ?? ''],
+    ['Stage', dz.stage ?? ''],
+    ['Release Sys', dz.releaseSystem ?? ''],
+    ['Chute #', dz.chuteCount != null ? `${dz.chuteCount}` : ''],
+    ['Drop Payload', dz.dropPayload ?? ''],
+    ['ALT W/V', dz.altWind ?? ''],
+    ['ALT Temp', dz.altTemp != null ? `${dz.altTemp}` : ''],
+    ['SFC W/V', dz.surfaceWind ?? ''],
+    ['SFC Temp', dz.surfaceTemp != null ? `${dz.surfaceTemp}` : ''],
+    ['Rqd Clnc Ht', dz.requiredClearanceHeight != null ? formatNumber(dz.requiredClearanceHeight) : ''],
+    ['Obstr Elev', dz.obstructionElevation != null ? formatNumber(dz.obstructionElevation) : ''],
+    ['Min Drop Ht', dz.minDropHeight != null ? formatNumber(dz.minDropHeight) : ''],
+    ['DZ Elev', dz.dzElevation != null ? formatNumber(dz.dzElevation) : ''],
+  ]
+  const body: unknown[][] = [
+    [
+      {
+        text: 'Drop Zone / CARP',
+        fillColor: '#DCDCDC',
+        bold: true,
+        colSpan: 4,
+        alignment: 'center',
+      },
+      {},
+      {},
+      {},
+    ],
+  ]
+  for (let i = 0; i < pairs.length; i += 2) {
+    const left = pairs[i]
+    const right = i + 1 < pairs.length ? pairs[i + 1] : undefined
+    body.push([
+      { text: left[0], fillColor: '#DCDCDC', bold: true },
+      { text: left[1], fillColor: '#EBF1FA', italics: true },
+      right
+        ? { text: right[0], fillColor: '#DCDCDC', bold: true }
+        : { text: '', fillColor: '#EBF1FA' },
+      right
+        ? { text: right[1], fillColor: '#EBF1FA', italics: true }
+        : { text: '', fillColor: '#EBF1FA' },
+    ])
+  }
+  return [
+    {
+      table: { widths: ['auto', '*', 'auto', '*'], body },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 2],
+      unbreakable: true,
+    },
+  ]
+}
+
+/**
+ * Static "Mission Type / Waypoint Type Definitions" reference block, kept from
+ * the source MDC formats. Transport airframes use airdrop-specific terms.
+ */
+function generateDefinitionsBlock(mission: Mission): unknown[] {
+  const transport = isC130(getSquadronAirframe(mission.squadron))
+  const missionTypes = transport
+    ? 'AIRDROP – Air Drop  |  AIRLAND – Air Land  |  CSAR – Combat Search & Rescue  |  EQUIPTRANS – Equipment Transport  |  PARADROP – Paradrop  |  TROOPTRANS – Troop Transport'
+    : 'AI – Air Interdiction  |  CAS – Close Air Support  |  CSAR – Combat Search & Rescue  |  FAC(A) – Forward Air Controller (Airborne)  |  SCAR – Strike Coordination & Recon  |  TRNC – Training'
+  const waypointTypes = transport
+    ? 'PARK – Parking  |  PI – Point of Impact  |  HOLD – Hold  |  FAF – Final Approach Fix  |  TRN – Turn  |  DZ – Drop Zone  |  IAF – Initial Approach Fix  |  LDG – Landing'
+    : 'CP – Contact Point  |  FAF – Final Approach Fix  |  IAF – Initial Approach Fix  |  LDG – Landing  |  PARK – Parking  |  TGT – Target  |  TRN – Turn'
+  return [
+    {
+      text: 'Definitions',
+      fontSize: FONT_SIZES.content,
+      bold: true,
+      margin: [0, 6, 0, 4],
+    },
+    {
+      table: {
+        widths: ['auto', '*'],
+        body: [
+          [
+            { text: 'Mission Types', fillColor: '#DCDCDC', bold: true },
+            { text: missionTypes, fillColor: '#EBF1FA' },
+          ],
+          [
+            { text: 'Waypoint Types', fillColor: '#DCDCDC', bold: true },
+            { text: waypointTypes, fillColor: '#EBF1FA' },
+          ],
+        ],
+      },
+      layout: defaultTableLayout,
+      margin: [0, 0, 0, 4],
+    },
+  ]
+}
+
+/**
  * Build the id -> builder map for a given squadron format. `header` closes
  * over the format; every other builder takes only the mission.
  */
@@ -1364,6 +1715,11 @@ function buildSectionBuilders(format: SquadronFormat): Record<SectionId, Section
     package: generatePackageTable,
     supportAssets: generateSupportAssetsTable,
     notes: generateNotesPage,
+    missionTiming: generateMissionTimingTable,
+    airbaseNav: generateAirbaseNavTable,
+    weaponProfiles: generateWeaponProfilesTable,
+    dropZone: generateDropZoneTable,
+    definitions: generateDefinitionsBlock,
   }
 }
 

@@ -7,6 +7,22 @@ import squadronsData from '@/data/json/squadrons.json'
 
 export { type ExportFormat } from '@/data/exportFormats'
 
+/**
+ * Procedural role each radio carries in a squadron's SOP. The array is
+ * parallel-indexed to the airframe's `radios[]`: `radioRoles[i]` is the role
+ * of radio slot `i`. Used by the MDC builder (e.g. ATC band selection) and
+ * for future per-radio UI labeling. Strings are open-ended placeholders; the
+ * common ones for now are airToGround / airToAir / support.
+ */
+export type RadioRole =
+  | 'airToGround'
+  | 'airToAir'
+  | 'aux'
+  | 'package'
+  | 'support'
+  | 'gci'
+  | 'alo'
+
 export type Squadron = {
   id: string
   name: string
@@ -16,6 +32,11 @@ export type Squadron = {
     training: string
     combat: string
   } // Default gun ammo types for training and combat missions (must match airframe's ammoTypes)
+  /** Procedural role per radio slot, parallel-indexed to the airframe's
+   *  `radios[]`. e.g. v93's `["airToGround","airToAir"]` means COM 1 carries
+   *  A/G traffic and COM 2 carries A/A. Optional - squadrons without an
+   *  explicit assignment fall back to slot 0 for any role lookup. */
+  radioRoles?: RadioRole[]
 }
 
 // Derive Squadron ID type dynamically from squadrons.json

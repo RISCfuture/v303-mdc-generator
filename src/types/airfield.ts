@@ -26,16 +26,34 @@ export type Runway = {
   width?: number // Runway width in feet
 }
 
-export type Frequency = {
-  band: 'UHF' | 'HF' | 'VHF_HI' | 'VHF_LOW' // Radio band
-  modulation: 'AM' | 'FM' // Modulation type
-  frequency: number // Frequency in MHz
-}
+/** ATC band (matches keys in BandFrequencies). */
+export type RadioBand = 'uhf' | 'vhfAm' | 'vhfFm' | 'hf'
 
+/** Frequencies in MHz keyed by radio band. Bands the facility does not
+ *  broadcast on are simply absent (no nulls). */
+export type BandFrequencies = Partial<Record<RadioBand, number>>
+
+/** ATC facility role published by DCS `Radio.lua`. Open-ended because some
+ *  terrains add roles like "departure" or "atis"; the named literals are the
+ *  common ones our PDF builder consumes. The `(string & {})` keeps the union
+ *  open while preserving autocomplete on the literals. */
+export type RadioFacility =
+  | 'ground'
+  | 'tower'
+  | 'approach'
+  | 'departure'
+  | 'atis'
+  | (string & {})
+
+/** Facility-by-band ATC frequency matrix. Same channel typically appears
+ *  under multiple facilities because DCS usually models one ATC frequency
+ *  serving ground+tower+approach. Denormalized in storage by design - keeps
+ *  the lookup `radio.frequencies[facility]?.[band]` a single hop. */
 export type AirfieldRadio = {
-  roles: ('ground' | 'tower' | 'approach')[] // ATC roles available
-  callsign: string | null // Radio callsign (e.g., "Anapa", "Kobuleti")
-  frequencies: Frequency[] // Available frequencies
+  /** Localized ATC callsign from DCS Radio.lua (e.g. "Anapa", "Kobuleti"). */
+  callsign?: string
+  /** Outer key = facility, inner key = band, value = MHz. */
+  frequencies: Partial<Record<RadioFacility, BandFrequencies>>
 }
 
 export type Airfield = {
@@ -43,5 +61,8 @@ export type Airfield = {
   position: Position // Airfield reference position
   tacan: TACAN | null // TACAN navigation aid (null if not available)
   runways: Runway[] // Available runways (empty array if none)
-  radio: AirfieldRadio // Radio frequencies and callsigns
+  /** ATC radio matrix extracted from `Mods/terrains/<map>/Radio.lua`. `null`
+   *  when the terrain file lacks an entry for this airbase (or has empty
+   *  `frequency = {}`, which happens for a handful of airfields). */
+  radio: AirfieldRadio | null
 }

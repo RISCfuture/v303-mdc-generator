@@ -48,7 +48,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v93 FS Mission Datacard - Characterization Mission",
           },
           {
             "border": [
@@ -900,73 +900,6 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
       "body": [
         [
           {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Departure",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-        ],
-        [
-          {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Arrival",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-        ],
-        [
-          {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Alternate",
-          },
-          {
-            "colSpan": 2,
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {},
-        ],
-      ],
-      "widths": [
-        "auto",
-        "auto",
-        "*",
-      ],
-    },
-    "unbreakable": true,
-  },
-  {
-    "layout": {},
-    "margin": [
-      0,
-      0,
-      0,
-      2,
-    ],
-    "table": {
-      "body": [
-        [
-          {
             "alignment": "center",
             "bold": true,
             "colSpan": 7,
@@ -1191,7 +1124,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v93 FS Mission Datacard - Characterization Mission",
           },
           {
             "border": [
@@ -1623,7 +1556,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v93 FS Mission Datacard - Characterization Mission",
           },
           {
             "border": [
@@ -1699,6 +1632,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
         ],
       },
     ],
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AI – Air Interdiction  |  CAS – Close Air Support  |  CSAR – Combat Search & Rescue  |  FAC(A) – Forward Air Controller (Airborne)  |  SCAR – Strike Coordination & Recon  |  TRNC – Training",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "CP – Contact Point  |  FAF – Final Approach Fix  |  IAF – Initial Approach Fix  |  LDG – Landing  |  PARK – Parking  |  TGT – Target  |  TRN – Turn",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
   },
 ]
 `;
@@ -1780,7 +1767,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v93 FS Mission Datacard - Characterization Mission",
           },
           {
             "border": [
@@ -2632,73 +2619,6 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
       "body": [
         [
           {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Departure",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-        ],
-        [
-          {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Arrival",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-        ],
-        [
-          {
-            "bold": true,
-            "fillColor": "#DCDCDC",
-            "text": "Alternate",
-          },
-          {
-            "colSpan": 2,
-            "fillColor": "#EBF1FA",
-            "italics": true,
-            "text": "",
-          },
-          {},
-        ],
-      ],
-      "widths": [
-        "auto",
-        "auto",
-        "*",
-      ],
-    },
-    "unbreakable": true,
-  },
-  {
-    "layout": {},
-    "margin": [
-      0,
-      0,
-      0,
-      2,
-    ],
-    "table": {
-      "body": [
-        [
-          {
             "alignment": "center",
             "bold": true,
             "colSpan": 7,
@@ -2761,6 +2681,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v93
       ],
     },
     "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AI – Air Interdiction  |  CAS – Close Air Support  |  CSAR – Combat Search & Rescue  |  FAC(A) – Forward Air Controller (Airborne)  |  SCAR – Strike Coordination & Recon  |  TRNC – Training",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "CP – Contact Point  |  FAF – Final Approach Fix  |  IAF – Initial Approach Fix  |  LDG – Landing  |  PARK – Parking  |  TGT – Target  |  TRN – Turn",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
   },
 ]
 `;
@@ -2842,7 +2816,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v303 FS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -3978,7 +3952,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v303 FS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -4410,7 +4384,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v303 FS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -4486,6 +4460,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
         ],
       },
     ],
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AI – Air Interdiction  |  CAS – Close Air Support  |  CSAR – Combat Search & Rescue  |  FAC(A) – Forward Air Controller (Airborne)  |  SCAR – Strike Coordination & Recon  |  TRNC – Training",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "CP – Contact Point  |  FAF – Final Approach Fix  |  IAF – Initial Approach Fix  |  LDG – Landing  |  PARK – Parking  |  TGT – Target  |  TRN – Turn",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
   },
 ]
 `;
@@ -4567,7 +4595,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v303 FS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -5542,6 +5570,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
     },
     "unbreakable": true,
   },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AI – Air Interdiction  |  CAS – Close Air Support  |  CSAR – Combat Search & Rescue  |  FAC(A) – Forward Air Controller (Airborne)  |  SCAR – Strike Coordination & Recon  |  TRNC – Training",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "CP – Contact Point  |  FAF – Final Approach Fix  |  IAF – Initial Approach Fix  |  LDG – Landing  |  PARK – Parking  |  TGT – Target  |  TRN – Turn",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
+  },
 ]
 `;
 
@@ -5594,7 +5676,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FG>",
             "margin": [
               3,
@@ -5614,7 +5696,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
             ],
             "color": "#FFFFFF",
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "fontSize": 16,
             "margin": [
               0,
@@ -5622,7 +5704,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v757 AS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -5631,7 +5713,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FS>",
             "margin": [
               3,
@@ -5730,10 +5812,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "alignment": "center",
             "bold": true,
-            "colSpan": 9,
+            "colSpan": 10,
             "fillColor": "#DCDCDC",
             "text": "Flight",
           },
+          {},
           {},
           {},
           {},
@@ -5758,6 +5841,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
             "bold": true,
             "fillColor": "#DCDCDC",
             "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "COPILOT",
           },
           {
             "bold": true,
@@ -5814,6 +5902,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "fillColor": "#EBF1FA",
             "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
             "text": "12345",
           },
           {
@@ -5861,6 +5954,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "fillColor": "#EBF1FA",
             "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
             "text": "12345",
           },
           {
@@ -5888,6 +5986,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
       "widths": [
         "auto",
         "auto",
+        "*",
         "*",
         "auto",
         "auto",
@@ -6566,7 +6665,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FG>",
             "margin": [
               3,
@@ -6586,7 +6685,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
             ],
             "color": "#FFFFFF",
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "fontSize": 16,
             "margin": [
               0,
@@ -6594,7 +6693,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v757 AS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -6603,7 +6702,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FS>",
             "margin": [
               3,
@@ -6998,7 +7097,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FG>",
             "margin": [
               3,
@@ -7018,7 +7117,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
             ],
             "color": "#FFFFFF",
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "fontSize": 16,
             "margin": [
               0,
@@ -7026,7 +7125,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v757 AS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -7035,7 +7134,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FS>",
             "margin": [
               3,
@@ -7103,6 +7202,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
       },
     ],
   },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AIRDROP – Air Drop  |  AIRLAND – Air Land  |  CSAR – Combat Search & Rescue  |  EQUIPTRANS – Equipment Transport  |  PARADROP – Paradrop  |  TROOPTRANS – Troop Transport",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "PARK – Parking  |  PI – Point of Impact  |  HOLD – Hold  |  FAF – Final Approach Fix  |  TRN – Turn  |  DZ – Drop Zone  |  IAF – Initial Approach Fix  |  LDG – Landing",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
+  },
 ]
 `;
 
@@ -7155,7 +7308,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FG>",
             "margin": [
               3,
@@ -7175,7 +7328,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
             ],
             "color": "#FFFFFF",
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "fontSize": 16,
             "margin": [
               0,
@@ -7183,7 +7336,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               0,
               0,
             ],
-            "text": "v303rd FG Mission Data Card - Characterization Mission",
+            "text": "v757 AS Mission Data Card - Characterization Mission",
           },
           {
             "border": [
@@ -7192,7 +7345,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
               false,
               false,
             ],
-            "fillColor": "#d20920",
+            "fillColor": "#0f8df2",
             "image": "<LOGO:v303FS>",
             "margin": [
               3,
@@ -7291,10 +7444,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "alignment": "center",
             "bold": true,
-            "colSpan": 9,
+            "colSpan": 10,
             "fillColor": "#DCDCDC",
             "text": "Flight",
           },
+          {},
           {},
           {},
           {},
@@ -7319,6 +7473,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
             "bold": true,
             "fillColor": "#DCDCDC",
             "text": "PILOT",
+          },
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "COPILOT",
           },
           {
             "bold": true,
@@ -7375,6 +7534,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "fillColor": "#EBF1FA",
             "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
             "text": "12345",
           },
           {
@@ -7422,6 +7586,11 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
           {
             "fillColor": "#EBF1FA",
             "italics": true,
+            "text": "",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "italics": true,
             "text": "12345",
           },
           {
@@ -7449,6 +7618,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
       "widths": [
         "auto",
         "auto",
+        "*",
         "*",
         "auto",
         "auto",
@@ -7993,6 +8163,60 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
       ],
     },
     "unbreakable": true,
+  },
+  {
+    "pageBreak": "after",
+    "text": "",
+  },
+  {
+    "bold": true,
+    "fontSize": 10,
+    "margin": [
+      0,
+      6,
+      0,
+      4,
+    ],
+    "text": "Definitions",
+  },
+  {
+    "layout": {},
+    "margin": [
+      0,
+      0,
+      0,
+      4,
+    ],
+    "table": {
+      "body": [
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Mission Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "AIRDROP – Air Drop  |  AIRLAND – Air Land  |  CSAR – Combat Search & Rescue  |  EQUIPTRANS – Equipment Transport  |  PARADROP – Paradrop  |  TROOPTRANS – Troop Transport",
+          },
+        ],
+        [
+          {
+            "bold": true,
+            "fillColor": "#DCDCDC",
+            "text": "Waypoint Types",
+          },
+          {
+            "fillColor": "#EBF1FA",
+            "text": "PARK – Parking  |  PI – Point of Impact  |  HOLD – Hold  |  FAF – Final Approach Fix  |  TRN – Turn  |  DZ – Drop Zone  |  IAF – Initial Approach Fix  |  LDG – Landing",
+          },
+        ],
+      ],
+      "widths": [
+        "auto",
+        "*",
+      ],
+    },
   },
 ]
 `;
