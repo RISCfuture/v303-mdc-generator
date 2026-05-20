@@ -88,7 +88,7 @@ const profiles = computed<WeaponProfile[]>(() => {
   const existing = props.mission.weaponProfiles ?? []
   return Array.from({ length: PROFILE_COUNT }, (_, i) => ({
     label: `PROFILE ${i + 1}`,
-    ...(existing[i] ?? {}),
+    ...existing[i],
   }))
 })
 
@@ -126,7 +126,11 @@ watch(
 )
 
 function update(index: number, patch: Partial<WeaponProfile>) {
-  const next = profiles.value.map((p, i) => (i === index ? { ...p, ...patch } : p))
+  // Copy-then-replace at `index` avoids `map`-with-spread (which oxc flags as
+  // a per-iteration allocation pattern even when only one slot actually
+  // changes).
+  const next = profiles.value.slice()
+  next[index] = { ...next[index], ...patch }
   emit('update:field', 'weaponProfiles', next)
 }
 

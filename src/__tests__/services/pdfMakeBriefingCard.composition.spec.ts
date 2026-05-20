@@ -93,6 +93,10 @@ describe('pdfMakeBriefingCard — per-squadron composition characterization', ()
     for (const full of [false, true]) {
       const label = full ? 'full (page 2 + notes)' : 'minimal (page 1 only)'
 
+      // `no-loop-func` fires here even though `squadron`/`full`/`label` are
+      // block-scoped (`for…of` and `const`); the warning is the classic
+      // `var`-closure footgun, which doesn't apply.
+      // oxlint-disable-next-line no-loop-func
       it(`${squadron} — ${label} docDefinition is stable`, async () => {
         await generatePdfMakeBriefingCard(makeMission(squadron, full))
         expect(captured).toBeDefined()

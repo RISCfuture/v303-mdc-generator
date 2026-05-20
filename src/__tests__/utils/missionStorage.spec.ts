@@ -368,7 +368,13 @@ describe('missionStorage', () => {
     it('round-trips weapon profiles, mission timing and drop zone', () => {
       const original = createTestMission()
       original.weaponProfiles = [
-        { label: 'PROFILE 1', weapon: 'GBU-12', releaseType: 'CCIP', spacing: 175, releaseAngle: 45 },
+        {
+          label: 'PROFILE 1',
+          weapon: 'GBU-12',
+          releaseType: 'CCIP',
+          spacing: 175,
+          releaseAngle: 45,
+        },
       ]
       original.missionTiming = { step: '1200', taxi: '1210', takeoff: '1220', vulTot: '1300' }
       original.dropZone = { dzName: 'DZ ALPHA', runInCourse: 270, loadType: 'CDS', chuteCount: 4 }
@@ -381,9 +387,7 @@ describe('missionStorage', () => {
 
     it('round-trips copilot data index-aligned with crew', () => {
       const original = createTestMission()
-      original.crew = [
-        { ...original.crew[0], copilot: 'Jane "Apex" Doe', copilotCallsign: 'APEX' },
-      ]
+      original.crew = [{ ...original.crew[0], copilot: 'Jane "Apex" Doe', copilotCallsign: 'APEX' }]
       const result = deserializeMission(serializeMission(original))
       expect(result.crew[0]?.copilot).toBe('Jane "Apex" Doe')
       expect(result.crew[0]?.copilotCallsign).toBe('APEX')

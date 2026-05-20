@@ -364,9 +364,7 @@ function generateFlightTable(mission: Mission): unknown {
       { text: `-${i + 1}`, fillColor: '#DCDCDC', bold: true },
       { text: member.position, fillColor: '#EBF1FA', italics: true },
       { text: member.pilot, fillColor: '#EBF1FA', italics: true },
-      ...(twoCrew
-        ? [{ text: member.copilot ?? '', fillColor: '#EBF1FA', italics: true }]
-        : []),
+      ...(twoCrew ? [{ text: member.copilot ?? '', fillColor: '#EBF1FA', italics: true }] : []),
       { text: callsignDisplay, fillColor: '#EBF1FA', italics: true },
       { text: member.stn || '', fillColor: '#EBF1FA', italics: true },
       { text: member.mode3 || '', fillColor: '#EBF1FA', italics: true },
@@ -392,7 +390,18 @@ function generateFlightTable(mission: Mission): unknown {
 
   return {
     table: {
-      widths: ['auto', 'auto', '*', ...(twoCrew ? ['*'] : []), 'auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
+      widths: [
+        'auto',
+        'auto',
+        '*',
+        ...(twoCrew ? ['*'] : []),
+        'auto',
+        'auto',
+        'auto',
+        'auto',
+        'auto',
+        'auto',
+      ],
       body: [
         [
           {
@@ -1410,7 +1419,12 @@ function generateAirbaseNavTable(mission: Mission): unknown[] {
   const airframe = getSquadronAirframe(mission.squadron)
 
   type RowKey = 'DEP' | 'APR' | 'DIVERT'
-  type Row = { role: RowKey; airportId?: string; runwayName?: string; facility: 'tower' | 'approach' }
+  type Row = {
+    role: RowKey
+    airportId?: string
+    runwayName?: string
+    facility: 'tower' | 'approach'
+  }
   const sources: Row[] = [
     {
       role: 'DEP',
@@ -1444,7 +1458,9 @@ function generateAirbaseNavTable(mission: Mission): unknown[] {
               band?: string
               frequency?: number
             }
-            return t.channel != null && t.band ? `${t.channel}${t.band}` : (t.channel?.toString() ?? '')
+            return t.channel != null && t.band
+              ? `${t.channel}${t.band}`
+              : (t.channel?.toString() ?? '')
           })()
         : ''
       const runway = src.runwayName
@@ -1605,7 +1621,10 @@ function generateDropZoneTable(mission: Mission): unknown[] {
     ['ALT Temp', dz.altTemp != null ? `${dz.altTemp}` : ''],
     ['SFC W/V', dz.surfaceWind ?? ''],
     ['SFC Temp', dz.surfaceTemp != null ? `${dz.surfaceTemp}` : ''],
-    ['Rqd Clnc Ht', dz.requiredClearanceHeight != null ? formatNumber(dz.requiredClearanceHeight) : ''],
+    [
+      'Rqd Clnc Ht',
+      dz.requiredClearanceHeight != null ? formatNumber(dz.requiredClearanceHeight) : '',
+    ],
     ['Obstr Elev', dz.obstructionElevation != null ? formatNumber(dz.obstructionElevation) : ''],
     ['Min Drop Ht', dz.minDropHeight != null ? formatNumber(dz.minDropHeight) : ''],
     ['DZ Elev', dz.dzElevation != null ? formatNumber(dz.dzElevation) : ''],

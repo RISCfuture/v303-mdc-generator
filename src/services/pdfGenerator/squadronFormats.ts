@@ -124,7 +124,7 @@ export type SquadronFormat = {
 
 // --- Section-entry shortcuts -------------------------------------------------
 
-function S(section: SectionId, when?: (ctx: CompositionContext) => boolean): SectionEntry {
+function s(section: SectionId, when?: (ctx: CompositionContext) => boolean): SectionEntry {
   return when ? { kind: 'section', section, when } : { kind: 'section', section }
 }
 
@@ -134,11 +134,11 @@ const TWO_COLUMN_BLOCK: SectionEntry = {
   columns: [
     {
       width: '*',
-      stack: [S('radios'), S('presets')],
+      stack: [s('radios'), s('presets')],
     },
     {
       width: '*',
-      stack: [S('weatherBullseye'), S('loadout')],
+      stack: [s('weatherBullseye'), s('loadout')],
     },
   ],
 }
@@ -148,9 +148,9 @@ const hasDropZone = (m: Mission): boolean =>
   m.dropZone != null && Object.values(m.dropZone).some((v) => v != null && v !== '')
 
 /** Notes self-gates (returns [] when no remarks) and bakes its own page break. */
-const NOTES_PAGE: PageSpec = { pageBreakBefore: false, entries: [S('notes')] }
+const NOTES_PAGE: PageSpec = { pageBreakBefore: false, entries: [s('notes')] }
 /** Static definitions reference, kept from the source MDC formats. */
-const DEFINITIONS_PAGE: PageSpec = { pageBreakBefore: true, entries: [S('definitions')] }
+const DEFINITIONS_PAGE: PageSpec = { pageBreakBefore: true, entries: [s('definitions')] }
 
 // --- Per-squadron page composition ------------------------------------------
 
@@ -160,24 +160,24 @@ function v303Pages(): PageSpec[] {
     {
       pageBreakBefore: false,
       entries: [
-        S('header'),
-        S('missionInfo'),
-        S('flight'),
+        s('header'),
+        s('missionInfo'),
+        s('flight'),
         TWO_COLUMN_BLOCK,
-        S('told'),
-        S('departureRecovery'),
-        S('flightPlan'),
+        s('told'),
+        s('departureRecovery'),
+        s('flightPlan'),
       ],
     },
     {
       pageBreakBefore: true,
       when: (c) => c.hasPage2Content,
       entries: [
-        S('header'),
-        S('target', (c) => c.hasTarget),
-        S('delivery'),
-        S('package', (c) => c.hasPackage),
-        S('supportAssets', (c) => c.hasSupportAssets),
+        s('header'),
+        s('target', (c) => c.hasTarget),
+        s('delivery'),
+        s('package', (c) => c.hasPackage),
+        s('supportAssets', (c) => c.hasSupportAssets),
       ],
     },
     NOTES_PAGE,
@@ -191,22 +191,22 @@ function v93Pages(): PageSpec[] {
     {
       pageBreakBefore: false,
       entries: [
-        S('header'),
-        S('missionInfo'),
-        S('airbaseNav'),
-        S('flight'),
+        s('header'),
+        s('missionInfo'),
+        s('airbaseNav'),
+        s('flight'),
         TWO_COLUMN_BLOCK,
-        S('missionTiming'),
-        S('told'),
-        S('flightPlan'),
+        s('missionTiming'),
+        s('told'),
+        s('flightPlan'),
       ],
     },
     {
       pageBreakBefore: true,
       when: (c) => c.hasPage2Content || hasWeaponProfiles(c.mission),
       entries: [
-        S('header'),
-        S('target', (c) => c.hasTarget),
+        s('header'),
+        s('target', (c) => c.hasTarget),
         // CCIP tables left, compact weapon delivery profiles right. Gated so
         // an empty pair doesn't emit an empty columns node (which would be a
         // page-2 layout diff for missions with no profiles and no CCIP data).
@@ -215,12 +215,12 @@ function v93Pages(): PageSpec[] {
           columnGap: 2,
           when: (c) => c.hasDeliveryTables || hasWeaponProfiles(c.mission),
           columns: [
-            { width: '*', stack: [S('delivery')] },
-            { width: '*', stack: [S('weaponProfiles')] },
+            { width: '*', stack: [s('delivery')] },
+            { width: '*', stack: [s('weaponProfiles')] },
           ],
         },
-        S('package', (c) => c.hasPackage),
-        S('supportAssets', (c) => c.hasSupportAssets),
+        s('package', (c) => c.hasPackage),
+        s('supportAssets', (c) => c.hasSupportAssets),
       ],
     },
     NOTES_PAGE,
@@ -234,25 +234,25 @@ function v757Pages(): PageSpec[] {
     {
       pageBreakBefore: false,
       entries: [
-        S('header'),
-        S('missionInfo'),
-        S('flight'),
+        s('header'),
+        s('missionInfo'),
+        s('flight'),
         TWO_COLUMN_BLOCK,
-        S('told'),
-        S('departureRecovery'),
-        S('flightPlan'),
+        s('told'),
+        s('departureRecovery'),
+        s('flightPlan'),
       ],
     },
     {
       pageBreakBefore: true,
       when: (c) => c.hasPage2Content || hasDropZone(c.mission),
       entries: [
-        S('header'),
-        S('dropZone'),
-        S('target', (c) => c.hasTarget),
-        S('delivery'),
-        S('package', (c) => c.hasPackage),
-        S('supportAssets', (c) => c.hasSupportAssets),
+        s('header'),
+        s('dropZone'),
+        s('target', (c) => c.hasTarget),
+        s('delivery'),
+        s('package', (c) => c.hasPackage),
+        s('supportAssets', (c) => c.hasSupportAssets),
       ],
     },
     NOTES_PAGE,

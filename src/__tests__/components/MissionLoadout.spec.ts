@@ -39,6 +39,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -63,6 +65,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -88,6 +92,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -107,6 +113,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -127,6 +135,8 @@ describe('MissionLoadout', () => {
           selectedSCL: 'A-A',
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -149,6 +159,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -174,6 +186,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -193,6 +207,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -213,6 +229,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -232,6 +250,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -253,6 +273,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -272,6 +294,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -290,6 +314,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
           gunAmmoType: 'CM - Combat Mix',
         },
@@ -314,6 +340,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
           gunAmmoType: 'CM - Combat Mix',
         },
@@ -337,6 +365,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 5000,
           fuelWeight: 8000,
+          maxFuelCapacity: 7000,
+          fuelLoadPercentage: 100,
           grossWeight: 35000,
         },
       })
@@ -355,6 +385,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 5000,
           fuelWeight: 8000,
+          maxFuelCapacity: 7000,
+          fuelLoadPercentage: 100,
           grossWeight: 35000,
         },
       })
@@ -373,6 +405,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 5000,
           fuelWeight: 8000,
+          maxFuelCapacity: 7000,
+          fuelLoadPercentage: 100,
           grossWeight: 35000,
         },
       })
@@ -394,6 +428,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -419,6 +455,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })
@@ -441,6 +479,8 @@ describe('MissionLoadout', () => {
           selectedSCL: null,
           loadoutWeight: 0,
           fuelWeight: 0,
+          maxFuelCapacity: 0,
+          fuelLoadPercentage: 0,
           grossWeight: 0,
         },
       })

@@ -60,9 +60,7 @@ const realDocumentLoads = async (page: Page) => {
   for (let attempt = 0; attempt < 5; attempt++) {
     await page.waitForLoadState('domcontentloaded')
     try {
-      return await page.evaluate(() =>
-        Number(sessionStorage.getItem('__e2e_doc_loads') ?? '0'),
-      )
+      return await page.evaluate(() => Number(sessionStorage.getItem('__e2e_doc_loads') ?? '0'))
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       if (!/Execution context was destroyed|frame got detached|Target closed/i.test(msg)) {
@@ -142,7 +140,10 @@ test.describe('Chunk-load error recovery (V303-8 / V303-9)', () => {
     await resetLoadCounter(page)
 
     // Navigate to the lazy /mission/:id route -> chunk 404 -> recovery reload.
-    await page.getByRole('button', { name: /New Mission/ }).first().click()
+    await page
+      .getByRole('button', { name: /New Mission/ })
+      .first()
+      .click()
     await page.getByRole('button', { name: 'Create Mission' }).click()
 
     // THE V303-8/9 ASSERTION: the recovery reload lands on the mission route
@@ -161,9 +162,7 @@ test.describe('Chunk-load error recovery (V303-8 / V303-9)', () => {
     // bump can race the post-`toHaveURL` `domcontentloaded` settle on slow
     // workers (esp. webkit); the synchronous form occasionally read 0
     // before the bump had flushed.
-    await expect
-      .poll(() => realDocumentLoads(page), { timeout: 5_000 })
-      .toBe(1)
+    await expect.poll(() => realDocumentLoads(page), { timeout: 5_000 }).toBe(1)
 
     // Let any (incorrectly-)looping reload manifest, then confirm we are still
     // stably on the target route and still at exactly one reload. Use the
@@ -171,9 +170,7 @@ test.describe('Chunk-load error recovery (V303-8 / V303-9)', () => {
     // can race a tail-end navigation on slower workers.
     await page.waitForTimeout(2_000)
     await expect(page).toHaveURL(/#\/mission\/.+/)
-    await expect
-      .poll(() => realDocumentLoads(page), { timeout: 5_000 })
-      .toBe(1)
+    await expect.poll(() => realDocumentLoads(page), { timeout: 5_000 }).toBe(1)
   })
 
   test('a fresh load with assets reachable renders the mission editor (genuine end-to-end recovery)', async ({

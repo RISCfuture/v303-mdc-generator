@@ -110,10 +110,58 @@ function fullyPopulate(squadron: Squadron): Mission {
   m.weather = '24007KT 9999 FEW250 28/12 Q1013'
 
   m.crew = [
-    createMockCrewMember({ position: 'LEAD', pilot: 'Alpha "Viper" Jones', callsign: 'VN1', own: '1', stn: '00101', mode3: '5101', aaTcn: '37Y', laser: '1511', tailNumber: '90-0833', copilot: 'Echo "Spear" Lee', copilotCallsign: 'VN1B' }),
-    createMockCrewMember({ position: 'WING', pilot: 'Bravo "Hawk" Diaz', callsign: 'VN2', own: '2', stn: '00102', mode3: '5102', aaTcn: '100Y', laser: '1512', tailNumber: '90-0841', copilot: 'Foxtrot "Mule" Ng', copilotCallsign: 'VN2B' }),
-    createMockCrewMember({ position: 'EL LEAD', pilot: 'Charlie "Ace" Park', callsign: 'VN3', own: '3', stn: '00103', mode3: '5103', aaTcn: '38Y', laser: '1513', tailNumber: '90-0850', copilot: 'Golf "Bolt" Roy', copilotCallsign: 'VN3B' }),
-    createMockCrewMember({ position: 'EL WING', pilot: 'Delta "Nomad" Cole', callsign: 'VN4', own: '4', stn: '00104', mode3: '5104', aaTcn: '101Y', laser: '1514', tailNumber: '90-0863', copilot: 'Hotel "Tex" Vo', copilotCallsign: 'VN4B' }),
+    createMockCrewMember({
+      position: 'LEAD',
+      pilot: 'Alpha "Viper" Jones',
+      callsign: 'VN1',
+      own: '1',
+      stn: '00101',
+      mode3: '5101',
+      aaTcn: '37Y',
+      laser: '1511',
+      tailNumber: '90-0833',
+      copilot: 'Echo "Spear" Lee',
+      copilotCallsign: 'VN1B',
+    }),
+    createMockCrewMember({
+      position: 'WING',
+      pilot: 'Bravo "Hawk" Diaz',
+      callsign: 'VN2',
+      own: '2',
+      stn: '00102',
+      mode3: '5102',
+      aaTcn: '100Y',
+      laser: '1512',
+      tailNumber: '90-0841',
+      copilot: 'Foxtrot "Mule" Ng',
+      copilotCallsign: 'VN2B',
+    }),
+    createMockCrewMember({
+      position: 'EL LEAD',
+      pilot: 'Charlie "Ace" Park',
+      callsign: 'VN3',
+      own: '3',
+      stn: '00103',
+      mode3: '5103',
+      aaTcn: '38Y',
+      laser: '1513',
+      tailNumber: '90-0850',
+      copilot: 'Golf "Bolt" Roy',
+      copilotCallsign: 'VN3B',
+    }),
+    createMockCrewMember({
+      position: 'EL WING',
+      pilot: 'Delta "Nomad" Cole',
+      callsign: 'VN4',
+      own: '4',
+      stn: '00104',
+      mode3: '5104',
+      aaTcn: '101Y',
+      laser: '1514',
+      tailNumber: '90-0863',
+      copilot: 'Hotel "Tex" Vo',
+      copilotCallsign: 'VN4B',
+    }),
   ]
 
   // Loadout: use the airframe's first prefab if available (real CLSIDs render
@@ -127,9 +175,7 @@ function fullyPopulate(squadron: Squadron): Mission {
   m.ecmProgram = 'XMIT 1'
 
   m.radioPresets = radioPresets(m.radioPresets.length)
-  m.commLadders = m.radioPresets.map(
-    (_, i) => `R${i + 1}: 1 GND - 2 TWR - 3 DEP - 4 TAC - 5 AWACS`,
-  )
+  m.commLadders = m.radioPresets.map((_, i) => `R${i + 1}: 1 GND - 2 TWR - 3 DEP - 4 TAC - 5 AWACS`)
 
   m.bullseye = {
     latitude: 42.5,
@@ -174,19 +220,68 @@ function fullyPopulate(squadron: Squadron): Mission {
     wp(3, 'IP', 'IP', 42.65, 41.62, { altitude: 15000, speed: 450, timeOnTarget: '1248z' }),
     wp(4, 'TGT', 'TGT', 42.51, 41.55, { altitude: 12000, speed: 480, timeOnTarget: '1300z', ccip }),
     wp(5, 'EGRESS', 'TRN', 42.9, 41.9, { altitude: 16000, speed: 450, timeOnTarget: '1312z' }),
-    wp(6, 'FAF', 'FAF', 42.25, 42.40, { altitude: 3000, speed: 250, timeOnTarget: '1330z' }),
+    wp(6, 'FAF', 'FAF', 42.25, 42.4, { altitude: 3000, speed: 250, timeOnTarget: '1330z' }),
     wp(7, 'KUTAISI', 'LDG', 42.176, 42.482, { altitude: 148, speed: 0, timeOnTarget: '1335z' }),
   ]
 
   m.packageMembers = [
     createMockPackageMember({ callsign: 'VENOM', task: 'CAS' }),
-    createMockPackageMember({ callsign: 'HOG 1', aircraft: 'A-10C_2', task: 'CAS', stn: 23001, aaTacan: '52Y', time: '1255z', comms: '252.0' }),
-    createMockPackageMember({ callsign: 'CHIEF 1', aircraft: 'F-16C_50', task: 'SEAD', stn: 24001, aaTacan: '53Y', time: '1250z', comms: '253.0' }),
+    createMockPackageMember({
+      callsign: 'HOG 1',
+      aircraft: 'A-10C_2',
+      task: 'CAS',
+      stn: 23001,
+      aaTacan: '52Y',
+      time: '1255z',
+      comms: '252.0',
+    }),
+    createMockPackageMember({
+      callsign: 'CHIEF 1',
+      aircraft: 'F-16C_50',
+      task: 'SEAD',
+      stn: 24001,
+      aaTacan: '53Y',
+      time: '1250z',
+      comms: '253.0',
+    }),
   ]
   m.supportAssets = [
-    createMockSupportAsset({ callsign: 'SHELL 71', role: 'TANKER', assetKind: 'TANKER', frequency: '305.5', uhf: '251.0', preset: 12, aaTacan: '5Y', location: 'AR TRACK ALPHA', altitude: 22000, notes: 'AR window 1300-1330' }),
-    createMockSupportAsset({ callsign: 'MAGIC 1', role: 'AWACS', assetKind: 'AWACS', frequency: '276.0', uhf: '276.0', preset: 13, aaTacan: '6Y', location: 'ORBIT BRAVO', altitude: 30000, notes: 'GCI/AEW' }),
-    createMockSupportAsset({ callsign: 'REAPER 1', role: 'ISR', assetKind: 'ISR', frequency: '288.0', uhf: '288.0', preset: 14, aaTacan: '7Y', location: 'AO CHARLIE', altitude: 25000, notes: 'FMV downlink' }),
+    createMockSupportAsset({
+      callsign: 'SHELL 71',
+      role: 'TANKER',
+      assetKind: 'TANKER',
+      frequency: '305.5',
+      uhf: '251.0',
+      preset: 12,
+      aaTacan: '5Y',
+      location: 'AR TRACK ALPHA',
+      altitude: 22000,
+      notes: 'AR window 1300-1330',
+    }),
+    createMockSupportAsset({
+      callsign: 'MAGIC 1',
+      role: 'AWACS',
+      assetKind: 'AWACS',
+      frequency: '276.0',
+      uhf: '276.0',
+      preset: 13,
+      aaTacan: '6Y',
+      location: 'ORBIT BRAVO',
+      altitude: 30000,
+      notes: 'GCI/AEW',
+    }),
+    createMockSupportAsset({
+      callsign: 'REAPER 1',
+      role: 'ISR',
+      assetKind: 'ISR',
+      frequency: '288.0',
+      uhf: '288.0',
+      preset: 14,
+      aaTacan: '7Y',
+      location: 'AO CHARLIE',
+      altitude: 25000,
+      notes: 'FMV downlink',
+    }),
   ]
   m.details = {
     remarks:

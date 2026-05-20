@@ -43,11 +43,7 @@ describe('deriveRadioBands', () => {
   })
 
   it('classifies the A-10 ARC-210 multi-band radio', () => {
-    expect(deriveRadioBands({ min: 30, max: 399.975 })).toEqual([
-      'uhf',
-      'vhfAm',
-      'vhfFm',
-    ])
+    expect(deriveRadioBands({ min: 30, max: 399.975 })).toEqual(['uhf', 'vhfAm', 'vhfFm'])
   })
 
   it('classifies the C-130 VHF radio (30–200 MHz)', () => {
@@ -100,7 +96,11 @@ describe('atcFrequency', () => {
   })
 
   it('returns the VHF-AM freq when the A/G radio is VHF-only', () => {
-    const vhfOnly: Squadron = { ...v93, aircraft: 'F-16C_50', radioRoles: ['airToAir', 'airToGround'] }
+    const vhfOnly: Squadron = {
+      ...v93,
+      aircraft: 'F-16C_50',
+      radioRoles: ['airToAir', 'airToGround'],
+    }
     // Slot 1 (COM 2) is the F-16 VHF radio (30-173.975 MHz, no UHF support).
     expect(
       atcFrequency({

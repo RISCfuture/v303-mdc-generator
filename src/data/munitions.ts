@@ -353,9 +353,7 @@ function resolvePayloadMunition(itemId: string): MunitionData | undefined {
   const parsed = parseLoadoutId(itemId)
   // Composite (rack + payload): the payload is the last component.
   const payloadId =
-    parsed.components.length > 1
-      ? parsed.components[parsed.components.length - 1].id
-      : itemId
+    parsed.components.length > 1 ? parsed.components[parsed.components.length - 1].id : itemId
   const cleanId = payloadId.replace(/^{|}$/g, '')
   const dcsFormat = cleanId.includes('*') ? `{${cleanId.replace('*', '')}}` : null
   return (

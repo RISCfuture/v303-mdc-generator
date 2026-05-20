@@ -37,13 +37,8 @@ export type BandFrequencies = Partial<Record<RadioBand, number>>
  *  terrains add roles like "departure" or "atis"; the named literals are the
  *  common ones our PDF builder consumes. The `(string & {})` keeps the union
  *  open while preserving autocomplete on the literals. */
-export type RadioFacility =
-  | 'ground'
-  | 'tower'
-  | 'approach'
-  | 'departure'
-  | 'atis'
-  | (string & {})
+// oxlint-disable-next-line typescript-eslint/ban-types -- intentional: `(string & {})` is the canonical autocomplete-preserving open-string-union trick
+export type RadioFacility = 'ground' | 'tower' | 'approach' | 'departure' | 'atis' | (string & {})
 
 /** Facility-by-band ATC frequency matrix. Same channel typically appears
  *  under multiple facilities because DCS usually models one ATC frequency

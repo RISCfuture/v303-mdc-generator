@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import { NCard, NForm, NFormItem, NInput, NInputNumber, NSelect, NGrid, NGi, NDivider } from 'naive-ui'
+import {
+  NCard,
+  NForm,
+  NFormItem,
+  NInput,
+  NInputNumber,
+  NSelect,
+  NGrid,
+  NGi,
+  NDivider,
+} from 'naive-ui'
 import { formatInteger, parseInteger } from '@/utils/numberFormatting'
 import { parseTOT } from '@/composables/useWaypointCalculations'
 import { FORM } from '@/styles/design-tokens'
@@ -123,7 +133,12 @@ const SECTIONS: Section[] = [
       ],
       [
         { key: 'obstructionElevation', label: 'Obstruction Elevation', kind: 'int', suffix: 'ft' },
-        { key: 'requiredClearanceHeight', label: 'Required Clearance Height', kind: 'int', suffix: 'ft' },
+        {
+          key: 'requiredClearanceHeight',
+          label: 'Required Clearance Height',
+          kind: 'int',
+          suffix: 'ft',
+        },
         { key: 'minDropHeight', label: 'Minimum Drop Height', kind: 'int', suffix: 'ft' },
       ],
     ],

@@ -14,14 +14,7 @@ export { type ExportFormat } from '@/data/exportFormats'
  * for future per-radio UI labeling. Strings are open-ended placeholders; the
  * common ones for now are airToGround / airToAir / support.
  */
-export type RadioRole =
-  | 'airToGround'
-  | 'airToAir'
-  | 'aux'
-  | 'package'
-  | 'support'
-  | 'gci'
-  | 'alo'
+export type RadioRole = 'airToGround' | 'airToAir' | 'aux' | 'package' | 'support' | 'gci' | 'alo'
 
 export type Squadron = {
   id: string

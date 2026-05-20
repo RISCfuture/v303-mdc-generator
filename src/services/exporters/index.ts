@@ -3,13 +3,7 @@
 //
 // Re-export all types and functions from sub-modules
 export type { DeepPartial } from './helpers'
-export type {
-  DCSF16MDC,
-  DCSGenericMDC,
-  DCSFA18CMDC,
-  DCSF15EMDC,
-  DCSAV8BMDC,
-} from './dcsDtc'
+export type { DCSF16MDC, DCSGenericMDC, DCSFA18CMDC, DCSF15EMDC, DCSAV8BMDC } from './dcsDtc'
 export type { JAFDTCA10MDC, JAFDTCF16MDC, JAFDTCFA18CMDC, JAFDTCF15EMDC } from './jafdtc'
 export type { DCSMissionEditorDTC } from './dcsME'
 export {
@@ -28,13 +22,7 @@ import type { Mission } from '@/types'
 import type { ExportFormat } from '@/data/exportFormats'
 import { loadTemplateForFormat } from '../mdcTemplateService'
 import { getSquadronAirframe } from '@/data/squadrons'
-import type {
-  DCSF16MDC,
-  DCSGenericMDC,
-  DCSFA18CMDC,
-  DCSF15EMDC,
-  DCSAV8BMDC,
-} from './dcsDtc'
+import type { DCSF16MDC, DCSGenericMDC, DCSFA18CMDC, DCSF15EMDC, DCSAV8BMDC } from './dcsDtc'
 import type { JAFDTCA10MDC, JAFDTCF16MDC, JAFDTCFA18CMDC, JAFDTCF15EMDC } from './jafdtc'
 import type { DCSMissionEditorDTC } from './dcsME'
 import {

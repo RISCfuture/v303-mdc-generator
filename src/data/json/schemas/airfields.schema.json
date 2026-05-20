@@ -154,11 +154,11 @@
                 "type": "object",
                 "description": "Facility-by-band ATC frequency matrix. Outer key = facility (ground/tower/approach/atis/etc.), inner key = band (uhf/vhfAm/vhfFm/hf). The same channel often appears under multiple facilities because DCS typically models one ATC channel covering ground+tower+approach.",
                 "properties": {
-                  "ground":    { "$ref": "#/definitions/bandFrequencies" },
-                  "tower":     { "$ref": "#/definitions/bandFrequencies" },
-                  "approach":  { "$ref": "#/definitions/bandFrequencies" },
+                  "ground": { "$ref": "#/definitions/bandFrequencies" },
+                  "tower": { "$ref": "#/definitions/bandFrequencies" },
+                  "approach": { "$ref": "#/definitions/bandFrequencies" },
                   "departure": { "$ref": "#/definitions/bandFrequencies" },
-                  "atis":      { "$ref": "#/definitions/bandFrequencies" }
+                  "atis": { "$ref": "#/definitions/bandFrequencies" }
                 },
                 "additionalProperties": { "$ref": "#/definitions/bandFrequencies" }
               }
@@ -175,10 +175,26 @@
       "type": "object",
       "description": "Frequencies in MHz keyed by radio band",
       "properties": {
-        "uhf":   { "type": "number", "minimum": 0, "description": "UHF AM frequency in MHz (225-400 MHz band)" },
-        "vhfAm": { "type": "number", "minimum": 0, "description": "VHF AM frequency in MHz (~108-174 MHz band)" },
-        "vhfFm": { "type": "number", "minimum": 0, "description": "VHF FM frequency in MHz (30-88 MHz band)" },
-        "hf":    { "type": "number", "minimum": 0, "description": "HF AM frequency in MHz (2-30 MHz band)" }
+        "uhf": {
+          "type": "number",
+          "minimum": 0,
+          "description": "UHF AM frequency in MHz (225-400 MHz band)"
+        },
+        "vhfAm": {
+          "type": "number",
+          "minimum": 0,
+          "description": "VHF AM frequency in MHz (~108-174 MHz band)"
+        },
+        "vhfFm": {
+          "type": "number",
+          "minimum": 0,
+          "description": "VHF FM frequency in MHz (30-88 MHz band)"
+        },
+        "hf": {
+          "type": "number",
+          "minimum": 0,
+          "description": "HF AM frequency in MHz (2-30 MHz band)"
+        }
       },
       "additionalProperties": false
     }

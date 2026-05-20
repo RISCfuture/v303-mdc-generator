@@ -116,7 +116,9 @@ const assetKindOptions = [
       <label>Kind</label>
       <NSelect
         :value="asset.assetKind ?? null"
-        @update:value="(v: 'TANKER' | 'AWACS' | 'ISR' | 'OTHER') => emit('update-field', 'assetKind', v)"
+        @update:value="
+          (v: 'TANKER' | 'AWACS' | 'ISR' | 'OTHER') => emit('update-field', 'assetKind', v)
+        "
         :options="assetKindOptions"
         size="small"
         clearable

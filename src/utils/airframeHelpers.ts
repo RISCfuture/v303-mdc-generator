@@ -2,12 +2,7 @@
 // This module provides type-safe access to airframe data without hard-coding aircraft types
 
 import type { Airframe } from '@/types'
-import type {
-  AirfieldRadio,
-  BandFrequencies,
-  RadioBand,
-  RadioFacility,
-} from '@/types/airfield'
+import type { AirfieldRadio, BandFrequencies, RadioBand, RadioFacility } from '@/types/airfield'
 import type { RadioRole, Squadron } from '@/data/squadrons'
 import { airframeDatabase } from '@/data/airframes'
 import type { AirframeData } from '@/data/airframes'
@@ -89,10 +84,7 @@ const BAND_PREFERENCE: readonly RadioBand[] = ['uhf', 'vhfAm', 'vhfFm', 'hf']
  * spuriously classify into the adjacent band: a radio with `min=30` (typical
  * VHF-FM lower bound) is VHF-FM only, not HF.
  */
-export function deriveRadioBands(radio: {
-  min?: number | null
-  max?: number | null
-}): RadioBand[] {
+export function deriveRadioBands(radio: { min?: number | null; max?: number | null }): RadioBand[] {
   const { min, max } = radio
   if (min == null || max == null) return []
   return BAND_PREFERENCE.filter((band) => {

@@ -222,8 +222,8 @@ The output JSON follows this schema:
     "radio": {
       "callsign": "Batumi",
       "frequencies": {
-        "ground":   { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
-        "tower":    { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
+        "ground": { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
+        "tower": { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
         "approach": { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 }
       }
     }

@@ -109,14 +109,13 @@ describe('aircraft-format editor sections', () => {
     })
     // NInputNumber composes an NInput internally, so locate the dzName field
     // by its rendered value rather than render order.
-    const nameInput = wrapper
-      .findAllComponents(NInput)
-      .find((c) => c.props('value') === 'ALPHA')
+    const nameInput = wrapper.findAllComponents(NInput).find((c) => c.props('value') === 'ALPHA')
     if (!nameInput) throw new Error('dzName input not found')
 
     nameInput.vm.$emit('update:value', 'BRAVO')
     const ev = wrapper.emitted('update:field')
     expect(ev?.[0]?.[0]).toBe('dropZone')
-    expect((ev?.[0]?.[1] as { dzName?: string }).dzName).toBe('BRAVO')
+    const payload = ev?.[0]?.[1] as { dzName?: string } | undefined
+    expect(payload?.dzName).toBe('BRAVO')
   })
 })
