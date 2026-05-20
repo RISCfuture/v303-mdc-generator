@@ -167,7 +167,19 @@ Each runway end includes:
 
 ### Radio
 
-- ATC frequencies (planned for future implementation)
+ATC frequencies extracted from `Mods/terrains/<map>/Radio.lua` and emitted as a
+facility-by-band matrix per airfield:
+
+- **Facilities**: `ground`, `tower`, `approach`, `departure`, `atis`, or any
+  other role string the terrain file declares
+- **Bands**: `uhf` (225–400 MHz), `vhfAm` (108–174 MHz), `vhfFm` (30–88 MHz),
+  `hf` (2–30 MHz) — classified by frequency range, robust to whichever band
+  constants the source file uses
+- **Callsign**: localized ATC callsign from Radio.lua (`callsign` field)
+
+Airfields whose Radio.lua entry is missing or has an empty `frequency = {}`
+come through as `radio: null` (this happens for a small number of airfields,
+notably Bandar-e-Jask on Persian Gulf).
 
 ## Data Format
 
@@ -207,7 +219,14 @@ The output JSON follows this schema:
         "ils": null
       }
     ],
-    "radio": null
+    "radio": {
+      "callsign": "Batumi",
+      "frequencies": {
+        "ground":   { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
+        "tower":    { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 },
+        "approach": { "uhf": 260.0, "vhfAm": 131.0, "vhfFm": 40.4, "hf": 4.25 }
+      }
+    }
   }
 ]
 ```

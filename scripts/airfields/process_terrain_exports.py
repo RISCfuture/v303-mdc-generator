@@ -259,8 +259,11 @@ class TerrainDataProcessor:
             airfield['runways'] = runways
             print(f"    Runways: {len(runways)}")
 
-            # Radio - for now set to None (could add ATC frequencies later)
-            airfield['radio'] = None
+            # ATC radio matrix sourced from Mods/terrains/<map>/Radio.lua in
+            # the DCS extraction step. Shape is { callsign?, frequencies:
+            # { facility: { band: mhz } } }. Airfields missing from Radio.lua
+            # (or where it has empty frequency = {}) come through as None.
+            airfield['radio'] = dcs_airfield.get('radio')
 
             processed_airfields.append(airfield)
 
