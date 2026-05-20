@@ -56,13 +56,6 @@
     "elevation": 5659
   },
   {
-    "name": "ALBATROSS.",
-    "type": "WAYPOINT",
-    "latitude": 37.64999183333333,
-    "longitude": -113.90000483333333,
-    "elevation": 6273
-  },
-  {
     "name": "ALBATROSS.1",
     "type": "WAYPOINT",
     "latitude": 37.11665033333333,
@@ -105,13 +98,6 @@
     "elevation": 2192
   },
   {
-    "name": "AR230V.",
-    "type": "WAYPOINT",
-    "latitude": 37.321630666666664,
-    "longitude": -113.8302375,
-    "elevation": 4593
-  },
-  {
     "name": "AR230V.1",
     "type": "WAYPOINT",
     "latitude": 36.874515833333334,
@@ -131,13 +117,6 @@
     "latitude": 36.78169533333333,
     "longitude": -114.22846516666667,
     "elevation": 1883
-  },
-  {
-    "name": "AR231V.",
-    "type": "WAYPOINT",
-    "latitude": 36.80274633333333,
-    "longitude": -116.837891,
-    "elevation": 3241
   },
   {
     "name": "AR231V.1",
@@ -161,13 +140,6 @@
     "elevation": 3448
   },
   {
-    "name": "AR624.",
-    "type": "WAYPOINT",
-    "latitude": 35.93333533333333,
-    "longitude": -112.6166675,
-    "elevation": 5679
-  },
-  {
     "name": "AR624.1",
     "type": "WAYPOINT",
     "latitude": 36.76664983333333,
@@ -182,13 +154,6 @@
     "elevation": 5679
   },
   {
-    "name": "AR625.",
-    "type": "WAYPOINT",
-    "latitude": 37.4833305,
-    "longitude": -117.599999,
-    "elevation": 7835
-  },
-  {
     "name": "AR625.1",
     "type": "WAYPOINT",
     "latitude": 37.4833305,
@@ -201,13 +166,6 @@
     "latitude": 38.316666,
     "longitude": -117.59999666666667,
     "elevation": 5407
-  },
-  {
-    "name": "AR635.",
-    "type": "WAYPOINT",
-    "latitude": 38.50000266666667,
-    "longitude": -115.29999233333334,
-    "elevation": 6522
   },
   {
     "name": "AR635.1",
@@ -229,13 +187,6 @@
     "latitude": 38.5016285,
     "longitude": -115.34619016666667,
     "elevation": 6683
-  },
-  {
-    "name": "AR641A.",
-    "type": "WAYPOINT",
-    "latitude": 37.60000466666666,
-    "longitude": -114.04999133333334,
-    "elevation": 6194
   },
   {
     "name": "AR641A.1",
@@ -406,13 +357,6 @@
     "elevation": 4117
   },
   {
-    "name": "BLACK",
-    "type": "WAYPOINT",
-    "latitude": 37.95080333333333,
-    "longitude": -116.416684,
-    "elevation": 7379
-  },
-  {
     "name": "BLACK 1",
     "type": "WAYPOINT",
     "latitude": 36.23583716666667,
@@ -572,13 +516,6 @@
     "latitude": 35.99597633333333,
     "longitude": -114.86401433333333,
     "elevation": 3573
-  },
-  {
-    "name": "BLUE",
-    "type": "WAYPOINT",
-    "latitude": 37.63584083333333,
-    "longitude": -116.76063633333334,
-    "elevation": 6667
   },
   {
     "name": "BLUE 1",
@@ -1015,13 +952,6 @@
     "elevation": 1545
   },
   {
-    "name": "CAHAR.",
-    "type": "WAYPOINT",
-    "latitude": 37.399992166666664,
-    "longitude": -115.49999716666666,
-    "elevation": 4334
-  },
-  {
     "name": "CAHAR.1",
     "type": "WAYPOINT",
     "latitude": 37.399992166666664,
@@ -1202,13 +1132,6 @@
     "latitude": 37.62499533333333,
     "longitude": -115.63332266666667,
     "elevation": 7874
-  },
-  {
-    "name": "CP",
-    "type": "WAYPOINT",
-    "latitude": 37.5686655,
-    "longitude": -116.07083083333333,
-    "elevation": 7336
   },
   {
     "name": "CP1",
@@ -1965,13 +1888,6 @@
     "latitude": 37.23177533333333,
     "longitude": -115.80264266666667,
     "elevation": 4475
-  },
-  {
-    "name": "GRN",
-    "type": "WAYPOINT",
-    "latitude": 37.549630666666665,
-    "longitude": -115.6087205,
-    "elevation": 5098
   },
   {
     "name": "GRN 10",
@@ -3036,13 +2952,6 @@
     "latitude": 36.33333316666667,
     "longitude": -114.0000045,
     "elevation": 1703
-  },
-  {
-    "name": "LATNW",
-    "type": "WAYPOINT",
-    "latitude": 36.533318666666666,
-    "longitude": -116.0000025,
-    "elevation": 4698
   },
   {
     "name": "LATNW1",
@@ -5262,13 +5171,6 @@
     "latitude": 36.6140475,
     "longitude": -115.52322516666666,
     "elevation": 3048
-  },
-  {
-    "name": "T64.",
-    "type": "WAYPOINT",
-    "latitude": 36.917969166666666,
-    "longitude": -115.637783,
-    "elevation": 3488
   },
   {
     "name": "T64.05",

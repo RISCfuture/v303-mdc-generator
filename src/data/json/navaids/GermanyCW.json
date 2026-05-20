@@ -56,6 +56,13 @@
     "elevation": 177
   },
   {
+    "name": "AUTOBAHN6",
+    "type": "WAYPOINT",
+    "latitude": 49.45526666666667,
+    "longitude": 7.8411333333333335,
+    "elevation": 1056
+  },
+  {
     "name": "Anklam",
     "type": "TOWN",
     "latitude": 53.856053,
@@ -68,48 +75,6 @@
     "latitude": 51.755955,
     "longitude": 11.462133,
     "elevation": 374
-  },
-  {
-    "name": "B NCIRCLE",
-    "type": "WAYPOINT",
-    "latitude": 49.6559445,
-    "longitude": 7.3728225,
-    "elevation": 1860
-  },
-  {
-    "name": "B SCIRCLE",
-    "type": "WAYPOINT",
-    "latitude": 49.653868833333334,
-    "longitude": 7.376644833333334,
-    "elevation": 1847
-  },
-  {
-    "name": "B TOWER",
-    "type": "WAYPOINT",
-    "latitude": 49.64921,
-    "longitude": 7.375559666666667,
-    "elevation": 1739
-  },
-  {
-    "name": "B TTS1",
-    "type": "WAYPOINT",
-    "latitude": 49.647145,
-    "longitude": 7.373402666666666,
-    "elevation": 1647
-  },
-  {
-    "name": "B TTS2",
-    "type": "WAYPOINT",
-    "latitude": 49.65085283333333,
-    "longitude": 7.371186833333334,
-    "elevation": 1690
-  },
-  {
-    "name": "B WSTRAFE",
-    "type": "WAYPOINT",
-    "latitude": 49.655237,
-    "longitude": 7.376206,
-    "elevation": 1883
   },
   {
     "name": "BADLI",
@@ -798,62 +763,6 @@
     "elevation": 56
   },
   {
-    "name": "H CCIRCLE",
-    "type": "WAYPOINT",
-    "latitude": 50.070985,
-    "longitude": 9.846221833333333,
-    "elevation": 876
-  },
-  {
-    "name": "H ECIRCLE",
-    "type": "WAYPOINT",
-    "latitude": 50.072390166666665,
-    "longitude": 9.848861666666666,
-    "elevation": 896
-  },
-  {
-    "name": "H ESTRAFE",
-    "type": "WAYPOINT",
-    "latitude": 50.06644983333333,
-    "longitude": 9.8416845,
-    "elevation": 912
-  },
-  {
-    "name": "H TOWER",
-    "type": "WAYPOINT",
-    "latitude": 50.071902,
-    "longitude": 9.840264666666666,
-    "elevation": 912
-  },
-  {
-    "name": "H TTS1",
-    "type": "WAYPOINT",
-    "latitude": 50.06639366666667,
-    "longitude": 9.836596,
-    "elevation": 919
-  },
-  {
-    "name": "H TTS2",
-    "type": "WAYPOINT",
-    "latitude": 50.064556833333334,
-    "longitude": 9.836990833333333,
-    "elevation": 935
-  },
-  {
-    "name": "H WCIRCLE",
-    "type": "WAYPOINT",
-    "latitude": 50.0697965,
-    "longitude": 9.843881833333333,
-    "elevation": 922
-  },
-  {
-    "name": "H WSTRAFE",
-    "type": "WAYPOINT",
-    "latitude": 50.06635516666667,
-    "longitude": 9.839137833333334,
-    "elevation": 892
-  },
-  {
     "name": "HAD",
     "type": "DME",
     "latitude": 52.46188,
@@ -873,6 +782,27 @@
     "latitude": 53.685493,
     "longitude": 10.205137,
     "elevation": 131
+  },
+  {
+    "name": "HAMM H.RP",
+    "type": "WAYPOINT",
+    "latitude": 49.983583333333335,
+    "longitude": 10.002433333333334,
+    "elevation": 935
+  },
+  {
+    "name": "HAMM IL.RP",
+    "type": "WAYPOINT",
+    "latitude": 50.01586666666667,
+    "longitude": 9.994983333333334,
+    "elevation": 896
+  },
+  {
+    "name": "HAMM T.RP",
+    "type": "WAYPOINT",
+    "latitude": 49.99988333333334,
+    "longitude": 9.998633333333334,
+    "elevation": 922
   },
   {
     "name": "HLZ",
@@ -1617,6 +1547,27 @@
     "elevation": 571
   },
   {
+    "name": "R205 H.RP",
+    "type": "WAYPOINT",
+    "latitude": 49.076883333333335,
+    "longitude": 8.0674,
+    "elevation": 515
+  },
+  {
+    "name": "R205 IL.RP",
+    "type": "WAYPOINT",
+    "latitude": 49.108916666666666,
+    "longitude": 8.058916666666667,
+    "elevation": 545
+  },
+  {
+    "name": "R205 T.RP",
+    "type": "WAYPOINT",
+    "latitude": 49.092933333333335,
+    "longitude": 8.063133333333333,
+    "elevation": 512
+  },
+  {
     "name": "R32B NCIRCLE",
     "type": "WAYPOINT",
     "latitude": 49.6559445,
@@ -1993,188 +1944,6 @@
     "latitude": 53.431799,
     "longitude": 14.526161,
     "elevation": 82
-  },
-  {
-    "name": "T32.01",
-    "type": "WAYPOINT",
-    "latitude": 49.596702,
-    "longitude": 7.1990285,
-    "elevation": 1532
-  },
-  {
-    "name": "T32.02",
-    "type": "WAYPOINT",
-    "latitude": 49.5648925,
-    "longitude": 7.3012508333333335,
-    "elevation": 1706
-  },
-  {
-    "name": "T32.03",
-    "type": "WAYPOINT",
-    "latitude": 49.6442935,
-    "longitude": 7.336694166666667,
-    "elevation": 1617
-  },
-  {
-    "name": "T32.04",
-    "type": "WAYPOINT",
-    "latitude": 49.6350525,
-    "longitude": 7.350552833333333,
-    "elevation": 1637
-  },
-  {
-    "name": "T32.05",
-    "type": "WAYPOINT",
-    "latitude": 49.64558016666667,
-    "longitude": 7.3446195,
-    "elevation": 1621
-  },
-  {
-    "name": "T32.06",
-    "type": "WAYPOINT",
-    "latitude": 49.63772633333333,
-    "longitude": 7.361001,
-    "elevation": 1483
-  },
-  {
-    "name": "T32.07",
-    "type": "WAYPOINT",
-    "latitude": 49.64929216666667,
-    "longitude": 7.408990666666667,
-    "elevation": 1404
-  },
-  {
-    "name": "T32.08",
-    "type": "WAYPOINT",
-    "latitude": 49.6588185,
-    "longitude": 7.415491,
-    "elevation": 1394
-  },
-  {
-    "name": "T32.09",
-    "type": "WAYPOINT",
-    "latitude": 49.649017666666666,
-    "longitude": 7.455915,
-    "elevation": 1539
-  },
-  {
-    "name": "T32.31",
-    "type": "WAYPOINT",
-    "latitude": 50.038776666666664,
-    "longitude": 9.8478455,
-    "elevation": 958
-  },
-  {
-    "name": "T32.32",
-    "type": "WAYPOINT",
-    "latitude": 50.0560625,
-    "longitude": 9.8710305,
-    "elevation": 912
-  },
-  {
-    "name": "T32.33",
-    "type": "WAYPOINT",
-    "latitude": 50.078213,
-    "longitude": 9.867739166666667,
-    "elevation": 1017
-  },
-  {
-    "name": "T32.34",
-    "type": "WAYPOINT",
-    "latitude": 50.0810795,
-    "longitude": 9.866939,
-    "elevation": 1076
-  },
-  {
-    "name": "T32.35",
-    "type": "WAYPOINT",
-    "latitude": 50.088644,
-    "longitude": 9.874594833333333,
-    "elevation": 1109
-  },
-  {
-    "name": "T32.36",
-    "type": "WAYPOINT",
-    "latitude": 50.07401266666667,
-    "longitude": 9.907588666666667,
-    "elevation": 951
-  },
-  {
-    "name": "T33.01",
-    "type": "WAYPOINT",
-    "latitude": 50.982154333333334,
-    "longitude": 12.506408,
-    "elevation": 614
-  },
-  {
-    "name": "T33.HQ17A",
-    "type": "WAYPOINT",
-    "latitude": 50.9536955,
-    "longitude": 12.518194333333334,
-    "elevation": 755
-  },
-  {
-    "name": "T33.HQ22",
-    "type": "WAYPOINT",
-    "latitude": 50.93777133333333,
-    "longitude": 12.504987333333334,
-    "elevation": 807
-  },
-  {
-    "name": "T33.PGL625",
-    "type": "WAYPOINT",
-    "latitude": 50.95027316666667,
-    "longitude": 12.540031,
-    "elevation": 784
-  },
-  {
-    "name": "T33.SA11",
-    "type": "WAYPOINT",
-    "latitude": 50.942331333333335,
-    "longitude": 12.555075,
-    "elevation": 745
-  },
-  {
-    "name": "T33.SA15",
-    "type": "WAYPOINT",
-    "latitude": 50.92837516666667,
-    "longitude": 12.558397833333334,
-    "elevation": 801
-  },
-  {
-    "name": "T33.SA18",
-    "type": "WAYPOINT",
-    "latitude": 50.95010833333333,
-    "longitude": 12.59395,
-    "elevation": 761
-  },
-  {
-    "name": "T33.SA2",
-    "type": "WAYPOINT",
-    "latitude": 50.933398833333335,
-    "longitude": 12.530839833333333,
-    "elevation": 830
-  },
-  {
-    "name": "T33.SA3",
-    "type": "WAYPOINT",
-    "latitude": 50.94676366666667,
-    "longitude": 12.577635333333333,
-    "elevation": 686
-  },
-  {
-    "name": "T33.SA6",
-    "type": "WAYPOINT",
-    "latitude": 50.957294833333336,
-    "longitude": 12.5561385,
-    "elevation": 774
-  },
-  {
-    "name": "T33.SA8",
-    "type": "WAYPOINT",
-    "latitude": 50.96053716666667,
-    "longitude": 12.592515,
-    "elevation": 663
   },
   {
     "name": "TARTE",

@@ -446,15 +446,7 @@
       {
         "name": "23",
         "heading": 234,
-        "ils": {
-          "name": "OKN",
-          "frequency": "108.55",
-          "channel": null,
-          "position": {
-            "latitude": 31.4975,
-            "longitude": 65.834167
-          }
-        },
+        "ils": null,
         "length": 9780,
         "width": 197
       },
@@ -484,15 +476,7 @@
       {
         "name": "23",
         "heading": 234,
-        "ils": {
-          "name": "OKN",
-          "frequency": "108.55",
-          "channel": null,
-          "position": {
-            "latitude": 31.4975,
-            "longitude": 65.834167
-          }
-        },
+        "ils": null,
         "length": 718,
         "width": 148
       },

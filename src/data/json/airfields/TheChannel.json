@@ -37,7 +37,14 @@
         "width": 164
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Abelville"
+    }
   },
   {
     "name": "Biggin Hill",
@@ -91,7 +98,14 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "ĲBigginHill"
+    }
   },
   {
     "name": "Detling",
@@ -117,7 +131,14 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Detling"
+    }
   },
   {
     "name": "Dunkirk Mardyck",
@@ -143,7 +164,14 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Dunkirk"
+    }
   },
   {
     "name": "Eastchurch",
@@ -183,7 +211,14 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "ĲEastchurch"
+    }
   },
   {
     "name": "Hawkinge",
@@ -223,7 +258,14 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Hawkinge"
+    }
   },
   {
     "name": "Headcorn",
@@ -263,7 +305,14 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Headcorn"
+    }
   },
   {
     "name": "High Halden",
@@ -303,7 +352,14 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "High Halden"
+    }
   },
   {
     "name": "Lympne",
@@ -329,7 +385,14 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Lympne"
+    }
   },
   {
     "name": "Manston",
@@ -383,7 +446,14 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Manston"
+    }
   },
   {
     "name": "Merville Calonne",
@@ -423,7 +493,14 @@
         "width": 164
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "ĲMervilleCalonne"
+    }
   },
   {
     "name": "Saint Omer Longuenesse",
@@ -449,6 +526,13 @@
         "width": 148
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "SaintOmer"
+    }
   }
 ]

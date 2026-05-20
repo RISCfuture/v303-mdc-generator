@@ -350,6 +350,13 @@
     "elevation": 220
   },
   {
+    "name": "Bird Island",
+    "type": "TOWN",
+    "latitude": 15.257401,
+    "longitude": 145.813291,
+    "elevation": 0
+  },
+  {
     "name": "CADUK",
     "type": "WAYPOINT",
     "latitude": 13.7241195,
@@ -635,20 +642,6 @@
     "latitude": 13.526543,
     "longitude": 144.845629,
     "elevation": 371
-  },
-  {
-    "name": "ECHO",
-    "type": "WAYPOINT",
-    "latitude": 13.849719333333333,
-    "longitude": 145.56663183333333,
-    "elevation": 0
-  },
-  {
-    "name": "EDIAZ",
-    "type": "WAYPOINT",
-    "latitude": 13.849719333333333,
-    "longitude": 145.56663183333333,
-    "elevation": 0
   },
   {
     "name": "ELOXE",
@@ -2095,9 +2088,9 @@
   {
     "name": "SULUE",
     "type": "WAYPOINT",
-    "latitude": 13.571877833333334,
-    "longitude": 144.9086445,
-    "elevation": 528
+    "latitude": 13.526611166666667,
+    "longitude": 144.88836383333333,
+    "elevation": 433
   },
   {
     "name": "Saipan",
@@ -2473,16 +2466,16 @@
   {
     "name": "WUVEN",
     "type": "WAYPOINT",
-    "latitude": 16.01619833333333,
-    "longitude": 146.0574935,
-    "elevation": 200
+    "latitude": 14.056186166666667,
+    "longitude": 144.43264166666665,
+    "elevation": 0
   },
   {
     "name": "YAMMA",
     "type": "WAYPOINT",
-    "latitude": 16.008260166666666,
-    "longitude": 146.05298866666666,
-    "elevation": 56
+    "latitude": 15.036611166666667,
+    "longitude": 145.51988883333334,
+    "elevation": 0
   },
   {
     "name": "Yigo",
@@ -2501,43 +2494,43 @@
   {
     "name": "ZADEK",
     "type": "WAYPOINT",
-    "latitude": 10.999721,
-    "longitude": 145.49995783333333,
-    "elevation": 0
+    "latitude": 13.4730055,
+    "longitude": 144.7717,
+    "elevation": 161
   },
   {
     "name": "ZAXUS",
     "type": "WAYPOINT",
-    "latitude": 11.999730833333333,
-    "longitude": 145.2499435,
-    "elevation": 0
+    "latitude": 13.451797166666667,
+    "longitude": 144.72935833333332,
+    "elevation": 587
   },
   {
     "name": "ZEEKE",
     "type": "WAYPOINT",
-    "latitude": 13.693004833333333,
-    "longitude": 145.173621,
-    "elevation": 0
+    "latitude": 13.338625,
+    "longitude": 144.75231666666667,
+    "elevation": 36
   },
   {
     "name": "ZEKUR",
     "type": "WAYPOINT",
-    "latitude": 13.3144755,
-    "longitude": 144.72199266666667,
-    "elevation": 335
+    "latitude": 15.142808333333333,
+    "longitude": 145.78935,
+    "elevation": 0
   },
   {
     "name": "ZILUK",
     "type": "WAYPOINT",
-    "latitude": 15.1349,
-    "longitude": 145.7695,
+    "latitude": 15.1349055,
+    "longitude": 145.7694945,
     "elevation": 0
   },
   {
     "name": "ZUKIE",
     "type": "WAYPOINT",
-    "latitude": 13.6958,
-    "longitude": 145.1034,
+    "latitude": 13.696083333333334,
+    "longitude": 145.1034195,
     "elevation": 0
   }
 ]

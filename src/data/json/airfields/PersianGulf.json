@@ -51,7 +51,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 119.2
+        },
+        "ground": {
+          "vhfAm": 119.2
+        },
+        "tower": {
+          "vhfAm": 119.2
+        }
+      },
+      "callsign": "OMAA"
+    }
   },
   {
     "name": "Abu Musa Island",
@@ -77,7 +90,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 122.9
+        },
+        "ground": {
+          "vhfAm": 122.9
+        },
+        "tower": {
+          "vhfAm": 122.9
+        }
+      },
+      "callsign": "OIBA"
+    }
   },
   {
     "name": "Al Ain Intl",
@@ -103,7 +129,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 119.85
+        },
+        "ground": {
+          "vhfAm": 119.85
+        },
+        "tower": {
+          "vhfAm": 119.85
+        }
+      },
+      "callsign": "OMAL"
+    }
   },
   {
     "name": "Al Dhafra AFB",
@@ -159,7 +198,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 126.5
+        },
+        "ground": {
+          "vhfAm": 126.5
+        },
+        "tower": {
+          "vhfAm": 126.5
+        }
+      },
+      "callsign": "OMAM"
+    }
   },
   {
     "name": "Al Maktoum Intl",
@@ -193,7 +245,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.6
+        },
+        "ground": {
+          "vhfAm": 118.6
+        },
+        "tower": {
+          "vhfAm": 118.6
+        }
+      },
+      "callsign": "OMDW"
+    }
   },
   {
     "name": "Al Minhad AFB",
@@ -231,7 +296,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.55
+        },
+        "ground": {
+          "vhfAm": 118.55
+        },
+        "tower": {
+          "vhfAm": 118.55
+        }
+      },
+      "callsign": "OMDM"
+    }
   },
   {
     "name": "Al-Bateen",
@@ -257,7 +335,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 119.9
+        },
+        "ground": {
+          "vhfAm": 119.9
+        },
+        "tower": {
+          "vhfAm": 119.9
+        }
+      },
+      "callsign": "OMAD"
+    }
   },
   {
     "name": "Bandar Abbas Intl",
@@ -295,7 +386,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.1
+        },
+        "ground": {
+          "vhfAm": 118.1
+        },
+        "tower": {
+          "vhfAm": 118.1
+        }
+      },
+      "callsign": "OIKB"
+    }
   },
   {
     "name": "Bandar Lengeh",
@@ -321,7 +425,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 121.7
+        },
+        "ground": {
+          "vhfAm": 121.7
+        },
+        "tower": {
+          "vhfAm": 121.7
+        }
+      },
+      "callsign": "OIBL"
+    }
   },
   {
     "name": "Bandar-e-Jask",
@@ -351,7 +468,14 @@
         "width": 98
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {},
+        "ground": {},
+        "tower": {}
+      },
+      "callsign": "Jask"
+    }
   },
   {
     "name": "Dubai Intl",
@@ -407,7 +531,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.75
+        },
+        "ground": {
+          "vhfAm": 118.75
+        },
+        "tower": {
+          "vhfAm": 118.75
+        }
+      },
+      "callsign": "OMDB"
+    }
   },
   {
     "name": "Fujairah Intl",
@@ -441,7 +578,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 124.6
+        },
+        "ground": {
+          "vhfAm": 124.6
+        },
+        "tower": {
+          "vhfAm": 124.6
+        }
+      },
+      "callsign": "OMFJ"
+    }
   },
   {
     "name": "Havadarya",
@@ -479,7 +629,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 123.15
+        },
+        "ground": {
+          "vhfAm": 123.15
+        },
+        "tower": {
+          "vhfAm": 123.15
+        }
+      },
+      "callsign": "Havadarya"
+    }
   },
   {
     "name": "Jiroft",
@@ -505,7 +668,20 @@
         "width": 98
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 136
+        },
+        "ground": {
+          "vhfAm": 136
+        },
+        "tower": {
+          "vhfAm": 136
+        }
+      },
+      "callsign": "OIKJ"
+    }
   },
   {
     "name": "Kerman",
@@ -535,7 +711,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.25
+        },
+        "ground": {
+          "vhfAm": 118.25
+        },
+        "tower": {
+          "vhfAm": 118.25
+        }
+      },
+      "callsign": "KERMAN"
+    }
   },
   {
     "name": "Khasab",
@@ -569,7 +758,20 @@
         "width": 66
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 124.35
+        },
+        "ground": {
+          "vhfAm": 124.35
+        },
+        "tower": {
+          "vhfAm": 124.35
+        }
+      },
+      "callsign": "Khasab"
+    }
   },
   {
     "name": "Kish Intl",
@@ -613,7 +815,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 121.65
+        },
+        "ground": {
+          "vhfAm": 121.65
+        },
+        "tower": {
+          "vhfAm": 121.65
+        }
+      },
+      "callsign": "Kish"
+    }
   },
   {
     "name": "Lar",
@@ -639,7 +854,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 127.35
+        },
+        "ground": {
+          "vhfAm": 127.35
+        },
+        "tower": {
+          "vhfAm": 127.35
+        }
+      },
+      "callsign": "OISL"
+    }
   },
   {
     "name": "Lavan Island",
@@ -665,7 +893,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 128.55
+        },
+        "ground": {
+          "vhfAm": 128.55
+        },
+        "tower": {
+          "vhfAm": 128.55
+        }
+      },
+      "callsign": "LVA"
+    }
   },
   {
     "name": "Liwa AFB",
@@ -691,7 +932,20 @@
         "width": 98
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 119.3
+        },
+        "ground": {
+          "vhfAm": 119.3
+        },
+        "tower": {
+          "vhfAm": 119.3
+        }
+      },
+      "callsign": "OMLW"
+    }
   },
   {
     "name": "Qeshm Island",
@@ -717,7 +971,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.05
+        },
+        "ground": {
+          "vhfAm": 118.05
+        },
+        "tower": {
+          "vhfAm": 118.05
+        }
+      },
+      "callsign": "Qeshm Island"
+    }
   },
   {
     "name": "Quasoura_airport",
@@ -769,7 +1036,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 121.6
+        },
+        "ground": {
+          "vhfAm": 121.6
+        },
+        "tower": {
+          "vhfAm": 121.6
+        }
+      },
+      "callsign": "OMRK"
+    }
   },
   {
     "name": "Sas Al Nakheel",
@@ -795,7 +1075,20 @@
         "width": 98
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 128.9
+        },
+        "ground": {
+          "vhfAm": 128.9
+        },
+        "tower": {
+          "vhfAm": 128.9
+        }
+      },
+      "callsign": "OMNK"
+    }
   },
   {
     "name": "Sharjah Intl",
@@ -851,7 +1144,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 118.6
+        },
+        "ground": {
+          "vhfAm": 118.6
+        },
+        "tower": {
+          "vhfAm": 118.6
+        }
+      },
+      "callsign": "SharjahIntl"
+    }
   },
   {
     "name": "Shiraz Intl",
@@ -911,7 +1217,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 121.9
+        },
+        "ground": {
+          "vhfAm": 121.9
+        },
+        "tower": {
+          "vhfAm": 121.9
+        }
+      },
+      "callsign": "SHIRAZ"
+    }
   },
   {
     "name": "Sir Abu Nuayr",
@@ -937,7 +1256,20 @@
         "width": 66
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "uhf": 250.8
+        },
+        "ground": {
+          "uhf": 250.8
+        },
+        "tower": {
+          "uhf": 250.8
+        }
+      },
+      "callsign": "OMSN"
+    }
   },
   {
     "name": "Sirri Island",
@@ -963,7 +1295,20 @@
         "width": 197
       }
     ],
-    "radio": null
+    "radio": {
+      "frequencies": {
+        "approach": {
+          "vhfAm": 135.05
+        },
+        "ground": {
+          "vhfAm": 135.05
+        },
+        "tower": {
+          "vhfAm": 135.05
+        }
+      },
+      "callsign": "OIBS"
+    }
   },
   {
     "name": "Tunb Island AFB",
