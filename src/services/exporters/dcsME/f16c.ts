@@ -314,9 +314,9 @@ export function exportF16DCSME(
         CMDS: {
           CMDSBingoSettings: {
             BINGO: true,
-            ChaffNum: mission.ecmCmds.chaffBingo,
+            ChaffNum: mission.ecmCmds.chaffBingo ?? 10,
             FDBK: true,
-            FlaresNum: mission.ecmCmds.flareBingo,
+            FlaresNum: mission.ecmCmds.flareBingo ?? 10,
             Other1Num: 1,
             Other2Num: 1,
             REQCTR: false,

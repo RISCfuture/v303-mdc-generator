@@ -8,7 +8,7 @@ import {
   deserializeMission,
   type SerializedMission,
 } from '@/utils/missionStorage'
-import { getAirframeData, getRadioCount } from '@/utils/airframeHelpers'
+import { getAirframeData, getRadioCount, isF16 } from '@/utils/airframeHelpers'
 import { getSquadronAirframe, squadronDatabase } from '@/data/squadrons'
 import { STATION_COUNTS } from '@/data/constants'
 import { imageStorage } from '@/services/imageStorage'
@@ -172,8 +172,9 @@ export const useMissionsStore = defineStore('missions', () => {
             chaffSalvoInterval: 0.75,
           },
         ],
-        chaffBingo: 10,
-        flareBingo: 10,
+        // Chaff/flare bingo thresholds are an F-16 CMDS BIT capability only;
+        // the A-10 (and other airframes) have no DTC slot for them.
+        ...(isF16(airframe) ? { chaffBingo: 10, flareBingo: 10 } : {}),
         chaffTotal: airframeData.defaultChaff,
         flareTotal: airframeData.defaultFlare,
       },

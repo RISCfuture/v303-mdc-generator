@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { NCard, NForm, NFormItem, NSelect, NSlider, NSpace, NFlex } from 'naive-ui'
+import { NCard, NForm, NFormItem, NInputNumber, NSelect, NSlider, NSpace, NFlex } from 'naive-ui'
 import { FORM } from '@/styles/design-tokens'
 import { getAirframeData } from '@/utils/airframeHelpers'
 import type { Mission, Airframe } from '@/types'
@@ -18,6 +18,8 @@ const emit = defineEmits<{
   'update:hts-threat-tables': [value: string[]]
   'update:chaff-total': [value: number]
   'update:flare-total': [value: number]
+  'update:chaff-bingo': [value: number]
+  'update:flare-bingo': [value: number]
 }>()
 
 // Get airframe data to determine available profiles and programs
@@ -63,6 +65,19 @@ const flareIncrement = computed(() => airframeData.value?.flareIncrement ?? 1)
 
 const chaffTotal = computed(() => props.mission.ecmCmds.chaffTotal ?? 0)
 const flareTotal = computed(() => props.mission.ecmCmds.flareTotal ?? 0)
+
+// Chaff/flare bingo thresholds (F-16 CMDS BIT page). Default to 10 when
+// unset so the editor always shows a sensible value.
+const chaffBingo = computed(() => props.mission.ecmCmds.chaffBingo ?? 10)
+const flareBingo = computed(() => props.mission.ecmCmds.flareBingo ?? 10)
+
+function updateChaffBingo(value: number | null) {
+  emit('update:chaff-bingo', value ?? 0)
+}
+
+function updateFlareBingo(value: number | null) {
+  emit('update:flare-bingo', value ?? 0)
+}
 
 function updateChaffTotal(value: number | null) {
   const newChaff = value ?? 0
@@ -147,6 +162,30 @@ function updateFlareTotal(value: number | null) {
             </div>
             <span style="min-width: 40px; text-align: right">{{ flareTotal }}</span>
           </NFlex>
+        </NFormItem>
+
+        <!-- Chaff Bingo -->
+        <NFormItem label="Chaff Bingo">
+          <NInputNumber
+            :value="chaffBingo"
+            @update:value="updateChaffBingo"
+            :min="0"
+            :max="cmdsCapacity"
+            :step="1"
+            style="width: 120px"
+          />
+        </NFormItem>
+
+        <!-- Flare Bingo -->
+        <NFormItem label="Flare Bingo">
+          <NInputNumber
+            :value="flareBingo"
+            @update:value="updateFlareBingo"
+            :min="0"
+            :max="cmdsCapacity"
+            :step="1"
+            style="width: 120px"
+          />
         </NFormItem>
       </NForm>
     </NCard>

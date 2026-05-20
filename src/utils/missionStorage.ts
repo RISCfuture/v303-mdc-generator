@@ -26,7 +26,7 @@ import { crewDatabase } from '@/data/crew'
 import { getDefaultRadioPresets } from '@/data/channelization'
 import { formatSTN, formatMode3, formatLaserCode } from '@/utils/crewFormatting'
 import { STATION_COUNTS } from '@/data/constants'
-import { getRadioCount } from '@/utils/airframeHelpers'
+import { getRadioCount, isF16 } from '@/utils/airframeHelpers'
 import { getSquadronAirframe } from '@/data/squadrons'
 
 /**
@@ -394,20 +394,25 @@ export function serializeMission(mission: Mission): SerializedMission {
     if (mission.bullseye.coordinateFormat) serialized.be.fmt = mission.bullseye.coordinateFormat
   }
 
-  // CMDS - only if non-default
+  // CMDS - only if non-default. Chaff/flare bingo is F-16-only; for other
+  // airframes the fields are undefined and never written.
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (mission.ecmCmds) {
+    const chaffBingoSet =
+      mission.ecmCmds.chaffBingo !== undefined && mission.ecmCmds.chaffBingo !== 10
+    const flareBingoSet =
+      mission.ecmCmds.flareBingo !== undefined && mission.ecmCmds.flareBingo !== 10
     const hasNonDefaultCmds =
-      mission.ecmCmds.chaffBingo !== 10 ||
-      mission.ecmCmds.flareBingo !== 10 ||
+      chaffBingoSet ||
+      flareBingoSet ||
       mission.ecmCmds.chaffTotal !== undefined ||
       mission.ecmCmds.flareTotal !== undefined ||
       mission.ecmCmds.cmdsPrograms.length !== 1
 
     if (hasNonDefaultCmds) {
       serialized.cmds = {}
-      if (mission.ecmCmds.chaffBingo !== 10) serialized.cmds.cb = mission.ecmCmds.chaffBingo
-      if (mission.ecmCmds.flareBingo !== 10) serialized.cmds.fb = mission.ecmCmds.flareBingo
+      if (chaffBingoSet) serialized.cmds.cb = mission.ecmCmds.chaffBingo
+      if (flareBingoSet) serialized.cmds.fb = mission.ecmCmds.flareBingo
       if (mission.ecmCmds.chaffTotal !== undefined) serialized.cmds.ct = mission.ecmCmds.chaffTotal
       if (mission.ecmCmds.flareTotal !== undefined) serialized.cmds.ft = mission.ecmCmds.flareTotal
       if (mission.ecmCmds.cmdsPrograms.length !== 1)
@@ -702,7 +707,9 @@ export function deserializeMission(serialized: SerializedMission): Mission {
     item: loadoutMap.get(i + 1) ?? 'EMPTY',
   }))
 
-  // Reconstruct CMDS
+  // Reconstruct CMDS. Chaff/flare bingo is an F-16 CMDS BIT capability only;
+  // non-F-16 airframes never have these fields in storage and stay undefined.
+  const supportsBingo = isF16(airframe)
   const ecmCmds: ECMCMDSProfiles = {
     cmdsPrograms: serialized.cmds?.prg ?? [
       {
@@ -717,8 +724,12 @@ export function deserializeMission(serialized: SerializedMission): Mission {
         chaffSalvoInterval: 0.75,
       },
     ],
-    chaffBingo: serialized.cmds?.cb ?? 10,
-    flareBingo: serialized.cmds?.fb ?? 10,
+    ...(supportsBingo
+      ? {
+          chaffBingo: serialized.cmds?.cb ?? 10,
+          flareBingo: serialized.cmds?.fb ?? 10,
+        }
+      : {}),
     chaffTotal: serialized.cmds?.ct,
     flareTotal: serialized.cmds?.ft,
   }

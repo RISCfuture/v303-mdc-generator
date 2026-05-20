@@ -678,6 +678,8 @@ function handleSelectMDCExport(key: string) {
               @update:hts-threat-tables="(v: string[]) => updateField('htsThreatTables', v)"
               @update:chaff-total="(v: number) => updateNestedField('ecmCmds', 'chaffTotal', v)"
               @update:flare-total="(v: number) => updateNestedField('ecmCmds', 'flareTotal', v)"
+              @update:chaff-bingo="(v: number) => updateNestedField('ecmCmds', 'chaffBingo', v)"
+              @update:flare-bingo="(v: number) => updateNestedField('ecmCmds', 'flareBingo', v)"
             />
           </NTabPane>
 

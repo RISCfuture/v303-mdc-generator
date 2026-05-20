@@ -564,16 +564,22 @@ function generateLoadoutTable(mission: Mission): unknown {
 
   const chaffTotal = mission.ecmCmds.chaffTotal ?? 0
   const flareTotal = mission.ecmCmds.flareTotal ?? 0
+  // Bingo is F-16-only; for other airframes the field is undefined and we
+  // print just the count.
   const chaffBingo = mission.ecmCmds.chaffBingo
   const flareBingo = mission.ecmCmds.flareBingo
+  const chaffCell =
+    chaffBingo !== undefined ? `${chaffTotal} / Bingo ${chaffBingo}` : `${chaffTotal}`
+  const flareCell =
+    flareBingo !== undefined ? `${flareTotal} / Bingo ${flareBingo}` : `${flareTotal}`
   const cmdsProfile = mission.cmdsProfile ?? 'PRGM 1'
   const ecmPrograms = mission.ecmProgram ?? ''
 
   const cmData = [
     { text: 'CHAFF', fillColor: '#DCDCDC', bold: true },
-    { text: `${chaffTotal} / Bingo ${chaffBingo}`, fillColor: '#EBF1FA', italics: true },
+    { text: chaffCell, fillColor: '#EBF1FA', italics: true },
     { text: 'FLARE', fillColor: '#DCDCDC', bold: true },
-    { text: `${flareTotal} / Bingo ${flareBingo}`, fillColor: '#EBF1FA', italics: true },
+    { text: flareCell, fillColor: '#EBF1FA', italics: true },
     { text: 'CMDS', fillColor: '#DCDCDC', bold: true },
     { text: cmdsProfile, fillColor: '#EBF1FA', italics: true },
     { text: 'ECM', fillColor: '#DCDCDC', bold: true },

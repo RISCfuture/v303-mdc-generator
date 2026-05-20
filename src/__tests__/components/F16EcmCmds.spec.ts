@@ -253,6 +253,80 @@ describe('F16EcmCmds', () => {
     })
   })
 
+  describe('Countermeasures - Chaff/Flare Bingo', () => {
+    it('should expose chaff/flare bingo defaulting to 10 when the mission has none set', () => {
+      const mission = createMockMission({
+        ecmCmds: {
+          cmdsPrograms: [],
+          chaffTotal: 60,
+          flareTotal: 60,
+        },
+      })
+
+      const wrapper = mount(F16EcmCmds, {
+        props: { mission: mission as Mission, airframe: 'F-16C_50' },
+      })
+
+      expect(wrapper.vm.chaffBingo).toBe(10)
+      expect(wrapper.vm.flareBingo).toBe(10)
+    })
+
+    it('should reflect explicit bingo values from the mission', () => {
+      const mission = createMockMission({
+        ecmCmds: {
+          cmdsPrograms: [],
+          chaffBingo: 25,
+          flareBingo: 15,
+          chaffTotal: 60,
+          flareTotal: 60,
+        },
+      })
+
+      const wrapper = mount(F16EcmCmds, {
+        props: { mission: mission as Mission, airframe: 'F-16C_50' },
+      })
+
+      expect(wrapper.vm.chaffBingo).toBe(25)
+      expect(wrapper.vm.flareBingo).toBe(15)
+    })
+
+    it('should emit update:chaff-bingo when the input changes', () => {
+      const mission = createMockMission()
+
+      const wrapper = mount(F16EcmCmds, {
+        props: { mission: mission as Mission, airframe: 'F-16C_50' },
+      })
+
+      wrapper.vm.updateChaffBingo(20)
+
+      expect(wrapper.emitted('update:chaff-bingo')?.[0]).toEqual([20])
+    })
+
+    it('should emit update:flare-bingo when the input changes', () => {
+      const mission = createMockMission()
+
+      const wrapper = mount(F16EcmCmds, {
+        props: { mission: mission as Mission, airframe: 'F-16C_50' },
+      })
+
+      wrapper.vm.updateFlareBingo(20)
+
+      expect(wrapper.emitted('update:flare-bingo')?.[0]).toEqual([20])
+    })
+
+    it('should coerce a null input back to 0 on clear', () => {
+      const mission = createMockMission()
+
+      const wrapper = mount(F16EcmCmds, {
+        props: { mission: mission as Mission, airframe: 'F-16C_50' },
+      })
+
+      wrapper.vm.updateChaffBingo(null)
+
+      expect(wrapper.emitted('update:chaff-bingo')?.[0]).toEqual([0])
+    })
+  })
+
   describe('Form layout', () => {
     it('should render with Countermeasures and ECM cards', () => {
       const mission = createMockMission()

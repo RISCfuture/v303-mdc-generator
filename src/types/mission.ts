@@ -65,8 +65,10 @@ export type CMDSProgram = {
 
 export type ECMCMDSProfiles = {
   cmdsPrograms: CMDSProgram[]
-  chaffBingo: number
-  flareBingo: number
+  /** Chaff bingo threshold — F-16 capability only (see `isF16`). */
+  chaffBingo?: number
+  /** Flare bingo threshold — F-16 capability only (see `isF16`). */
+  flareBingo?: number
   chaffTotal?: number
   flareTotal?: number
 }

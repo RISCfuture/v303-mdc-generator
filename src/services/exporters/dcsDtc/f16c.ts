@@ -508,8 +508,8 @@ export function exportF16MDC(
           ToBeUpdated: false,
         }
       }),
-      ChaffBingo: mission.ecmCmds.chaffBingo,
-      FlareBingo: mission.ecmCmds.flareBingo,
+      ChaffBingo: mission.ecmCmds.chaffBingo ?? 10,
+      FlareBingo: mission.ecmCmds.flareBingo ?? 10,
     },
     Radios:
       radio1Presets.length > 0 || radio2Presets.length > 0

@@ -3302,7 +3302,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "240 / Bingo 10",
+                    "text": "240",
                   },
                 ],
                 [
@@ -3340,7 +3340,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "240 / Bingo 10",
+                    "text": "240",
                   },
                 ],
                 [
@@ -5081,7 +5081,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "240 / Bingo 10",
+                    "text": "240",
                   },
                 ],
                 [
@@ -5119,7 +5119,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v30
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "240 / Bingo 10",
+                    "text": "240",
                   },
                 ],
                 [
@@ -6192,7 +6192,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "220 / Bingo 10",
+                    "text": "220",
                   },
                 ],
                 [
@@ -7802,7 +7802,7 @@ exports[`pdfMakeBriefingCard — per-squadron composition characterization > v75
                   {
                     "fillColor": "#EBF1FA",
                     "italics": true,
-                    "text": "220 / Bingo 10",
+                    "text": "220",
                   },
                 ],
                 [

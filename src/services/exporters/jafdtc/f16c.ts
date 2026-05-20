@@ -389,8 +389,8 @@ export function exportF16JAFDTC(
   const missionData: JAFDTCF16MDC = {
     CMDS: {
       Programs: cmdsPrograms,
-      BingoChaff: mission.ecmCmds.chaffBingo.toString(),
-      BingoFlare: mission.ecmCmds.flareBingo.toString(),
+      BingoChaff: (mission.ecmCmds.chaffBingo ?? 10).toString(),
+      BingoFlare: (mission.ecmCmds.flareBingo ?? 10).toString(),
     },
     DLNK: dlnk,
     HARM: harm,
