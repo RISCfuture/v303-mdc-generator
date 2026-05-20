@@ -114,9 +114,16 @@ class TerrainDataProcessor:
 
         print(f"\nProcessing {terrain_name}...")
 
-        # Load DCS export data
+        # Load DCS export data. DCS writes the exporter JSON using the
+        # Windows ANSI code page (cp1252), not UTF-8, so airfield names with
+        # non-ASCII characters (e.g. "Boulder City" landing as "Boulder\xf1ity"
+        # on the Nevada map) trip strict UTF-8 decoding. Try UTF-8 first,
+        # then fall back to cp1252.
         try:
             with open(export_file, 'r', encoding='utf-8') as f:
+                dcs_data = json.load(f)
+        except UnicodeDecodeError:
+            with open(export_file, 'r', encoding='cp1252') as f:
                 dcs_data = json.load(f)
         except Exception as e:
             print(f"  Error loading export file: {e}")
@@ -330,7 +337,7 @@ This script:
     parser.add_argument(
         '--output-dir',
         type=Path,
-        default=Path(__file__).parent.parent / 'src' / 'data' / 'json' / 'airfields',
+        default=Path(__file__).parent.parent.parent / 'src' / 'data' / 'json' / 'airfields',
         help='Output directory for processed JSON files'
     )
 
