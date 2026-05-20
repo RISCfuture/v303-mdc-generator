@@ -52,7 +52,26 @@ const MISSION_EDITOR_CHUNK = /\/(assets\/MissionEditor-[^/]+\.js|src\/views\/Mis
 
 const realDocumentLoads = async (page: Page) => {
   // The recovery reload may still be navigating; wait for the document to be
-  // stable so page.evaluate doesn't race a destroyed execution context.
+  // stable so page.evaluate doesn't race a destroyed execution context. Even
+  // after `domcontentloaded` resolves, a subsequent navigation (e.g. the
+  // recovery reload's replace+reload settling) can tear down the execution
+  // context mid-`evaluate`. Retry transparently on that specific Playwright
+  // error so callers see a stable counter value.
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await page.waitForLoadState('domcontentloaded')
+    try {
+      return await page.evaluate(() =>
+        Number(sessionStorage.getItem('__e2e_doc_loads') ?? '0'),
+      )
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      if (!/Execution context was destroyed|frame got detached|Target closed/i.test(msg)) {
+        throw err
+      }
+      await page.waitForTimeout(100)
+    }
+  }
+  // Final attempt — let the original error escape if it persists.
   await page.waitForLoadState('domcontentloaded')
   return page.evaluate(() => Number(sessionStorage.getItem('__e2e_doc_loads') ?? '0'))
 }
@@ -138,13 +157,23 @@ test.describe('Chunk-load error recovery (V303-8 / V303-9)', () => {
     expect(chunkRequestCount).toBeGreaterThanOrEqual(1)
 
     // Cooldown backstop: exactly ONE recovery document load — no reload loop.
-    expect(await realDocumentLoads(page)).toBe(1)
+    // Use `expect.poll` because the recovery reload's init-script counter
+    // bump can race the post-`toHaveURL` `domcontentloaded` settle on slow
+    // workers (esp. webkit); the synchronous form occasionally read 0
+    // before the bump had flushed.
+    await expect
+      .poll(() => realDocumentLoads(page), { timeout: 5_000 })
+      .toBe(1)
 
     // Let any (incorrectly-)looping reload manifest, then confirm we are still
-    // stably on the target route and still at exactly one reload.
+    // stably on the target route and still at exactly one reload. Use the
+    // polling form again — even after a 2 s settle, the reload counter check
+    // can race a tail-end navigation on slower workers.
     await page.waitForTimeout(2_000)
     await expect(page).toHaveURL(/#\/mission\/.+/)
-    expect(await realDocumentLoads(page)).toBe(1)
+    await expect
+      .poll(() => realDocumentLoads(page), { timeout: 5_000 })
+      .toBe(1)
   })
 
   test('a fresh load with assets reachable renders the mission editor (genuine end-to-end recovery)', async ({
