@@ -86,8 +86,8 @@ export function exportA10MDC(
 ): JAFDTCA10MDC {
   // Get selected crew member data
   const selectedCrewMember = mission.crew[crewMemberIndex]
-  const laserCode = selectedCrewMember.laser.replace(/\s/g, '')
-  const mode3Code = selectedCrewMember.mode3.replace(/\s/g, '')
+  const laserCode = selectedCrewMember.laser.replace(/\s/gu, '')
+  const mode3Code = selectedCrewMember.mode3.replace(/\s/gu, '')
 
   // Parse TACAN from selected crew member's aaTcn (format: "10Y / 73Y")
   const tacan = parseTACANOrThrow(selectedCrewMember.aaTcn)
@@ -156,8 +156,8 @@ export function exportA10MDC(
   // Generate filename and name from mission.name (dasherize and underscore)
   const filename = mission.name
     .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_-]/g, '')
+    .replace(/\s+/gu, '_')
+    .replace(/[^a-z0-9_-]/gu, '')
   const name = mission.name
 
   // Get radio configurations from comm ladders for all 3 radios

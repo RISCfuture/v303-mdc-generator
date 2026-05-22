@@ -44,7 +44,7 @@ function formatCoordinateInput(input: string): string {
   const validHemispheres = getHemispheres()
 
   // First pass: remove all non-alphanumeric characters except dots and hemisphere letters
-  const cleaned = input.toUpperCase().replace(/[^\dNSEW.]/g, '')
+  const cleaned = input.toUpperCase().replace(/[^\dNSEW.]/gu, '')
 
   // Extract components
   let hemisphere = ''
@@ -59,7 +59,7 @@ function formatCoordinateInput(input: string): string {
 
   // Remove ALL hemisphere letters from the numbers portion (they should only be at the start)
   // Also remove invalid hemisphere letters from anywhere
-  numbers = numbers.replace(/[NSEW]/g, '')
+  numbers = numbers.replace(/[NSEW]/gu, '')
 
   // Split numbers by dots to handle decimal points
   const parts = numbers.split('.')

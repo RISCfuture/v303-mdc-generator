@@ -259,8 +259,8 @@ export async function mockImageStorage(customReturnValues?: {
 export function mockWaypointCalculations(customReturnValue?: (tot: string) => number | null) {
   const defaultParseTOT = vi.fn((tot: string) => {
     if (!tot) return null
-    const cleanTot = tot.toUpperCase().replace(/[^0-9:]/g, '')
-    const match = /^(\d{1,2}):?(\d{2})$/.exec(cleanTot)
+    const cleanTot = tot.toUpperCase().replace(/[^0-9:]/gu, '')
+    const match = /^(\d{1,2}):?(\d{2})$/u.exec(cleanTot)
     if (!match) return null
     const hours = parseInt(match[1])
     const minutes = parseInt(match[2])

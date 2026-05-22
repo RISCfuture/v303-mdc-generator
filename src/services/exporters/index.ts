@@ -50,7 +50,7 @@ export function downloadMDC(
 
   // Get crew member pilot name for filename
   const crewMember = mission.crew[crewMemberIndex]
-  const pilotSuffix = `_${crewMember.pilot.replace(/\s+/g, '_')}`
+  const pilotSuffix = `_${crewMember.pilot.replace(/\s+/gu, '_')}`
   const airframe = getSquadronAirframe(mission.squadron)
 
   switch (exportFormat) {

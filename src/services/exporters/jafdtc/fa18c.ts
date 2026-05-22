@@ -125,8 +125,8 @@ export function exportFA18CJAFDTC(
   const uid = crypto.randomUUID()
   const filename = mission.name
     .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_-]/g, '')
+    .replace(/\s+/gu, '_')
+    .replace(/[^a-z0-9_-]/gu, '')
 
   const missionData: JAFDTCFA18CMDC = {
     WYPT: {

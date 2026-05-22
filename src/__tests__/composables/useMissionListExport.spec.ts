@@ -136,7 +136,7 @@ describe('useMissionListExport', () => {
 
       // eslint-disable-next-line @typescript-eslint/no-deprecated
       expect(document.createElement).toHaveBeenCalledWith('a')
-      expect(mockLink.download).toMatch(/^v303-missions-backup-\d{4}-\d{2}-\d{2}\.json$/)
+      expect(mockLink.download).toMatch(/^v303-missions-backup-\d{4}-\d{2}-\d{2}\.json$/u)
       expect(mockLink.click).toHaveBeenCalled()
     })
   })
@@ -233,7 +233,7 @@ describe('useMissionListExport', () => {
       const { exportSingleMission } = useMissionListExport()
       await exportSingleMission(mockMission)
 
-      expect(mockLink.download).toMatch(/^untitled-mission-\d{4}-\d{2}-\d{2}\.json$/)
+      expect(mockLink.download).toMatch(/^untitled-mission-\d{4}-\d{2}-\d{2}\.json$/u)
       expect(mockMessage.success).toHaveBeenCalledWith('Exported mission "Untitled Mission"')
     })
 
@@ -277,7 +277,7 @@ describe('useMissionListExport', () => {
       await exportSingleMission(mockMission)
 
       expect(mockLink.download).toMatch(
-        /^test-mission-with-special-characters--\d{4}-\d{2}-\d{2}\.json$/,
+        /^test-mission-with-special-characters--\d{4}-\d{2}-\d{2}\.json$/u,
       )
     })
 

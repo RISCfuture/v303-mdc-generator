@@ -153,13 +153,13 @@ function formatInputByType(input: string, format: CoordinateFormat): string {
 // Format DD input (e.g., "36.2057583, -115.1234567")
 function formatDDInput(input: string): string {
   // Allow digits, dots, minus signs, commas, and spaces
-  let cleaned = input.replace(/[^\d.,-\s]/g, '')
+  let cleaned = input.replace(/[^\d.,\s-]/gu, '')
 
   // Ensure only one comma
   const parts = cleaned.split(',')
   if (parts.length > 2) {
     // Join extra parts without commas, but preserve one space after comma
-    const remaining = parts.slice(1).join('').replace(/\s/g, '')
+    const remaining = parts.slice(1).join('').replace(/\s/gu, '')
     cleaned = parts[0] + ', ' + remaining
   }
 
@@ -169,17 +169,17 @@ function formatDDInput(input: string): string {
 // Format DDM input (e.g., "N 36° 12.345′, W 115° 07.407′")
 function formatDDMInput(input: string): string {
   // Capitalize and remove invalid characters
-  let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′]/g, '')
+  let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′]/gu, '')
 
   // Remove leading digits before any hemisphere letter (must start with hemisphere)
-  cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/, '$1')
+  cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/u, '$1')
 
   // Auto-insert comma when transitioning from lat hemisphere (N/S) to lon hemisphere (E/W)
   // Match: hemisphere + digits (with optional symbols) + another hemisphere
   // This catches: "N3622354W" or "N 36° 12.354′ W" etc.
-  cleaned = cleaned.replace(/([NS][\d°′.\s]+)([EW])/g, '$1, $2')
+  cleaned = cleaned.replace(/([NS][\d°′.\s]+)([EW])/gu, '$1, $2')
   // Also handle the reverse: lon to lat
-  cleaned = cleaned.replace(/([EW][\d°′.\s]+)([NS])/g, '$1, $2')
+  cleaned = cleaned.replace(/([EW][\d°′.\s]+)([NS])/gu, '$1, $2')
 
   // Split by comma to handle lat and lon separately
   const parts = cleaned.split(',')
@@ -192,7 +192,7 @@ function formatDDMInput(input: string): string {
     if (!trimmedPart) continue
 
     // Extract components: hemisphere, degrees, minutes
-    const numbers = trimmedPart.replace(/[NSEW°′\s]/g, '')
+    const numbers = trimmedPart.replace(/[NSEW°′\s]/gu, '')
     let hemisphere = ''
 
     // Find hemisphere letter
@@ -271,15 +271,15 @@ function formatDDMInput(input: string): string {
 // Format DMS input (e.g., "N 36° 12′ 21″, W 115° 07′ 24″")
 function formatDMSInput(input: string): string {
   // Capitalize and remove invalid characters
-  let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′″]/g, '')
+  let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′″]/gu, '')
 
   // Remove leading digits before any hemisphere letter (must start with hemisphere)
-  cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/, '$1')
+  cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/u, '$1')
 
   // Auto-insert comma when transitioning from lat hemisphere (N/S) to lon hemisphere (E/W)
-  cleaned = cleaned.replace(/([NS][\d°′″.\s]+)([EW])/g, '$1, $2')
+  cleaned = cleaned.replace(/([NS][\d°′″.\s]+)([EW])/gu, '$1, $2')
   // Also handle the reverse: lon to lat
-  cleaned = cleaned.replace(/([EW][\d°′″.\s]+)([NS])/g, '$1, $2')
+  cleaned = cleaned.replace(/([EW][\d°′″.\s]+)([NS])/gu, '$1, $2')
 
   // Split by comma to handle lat and lon separately
   const parts = cleaned.split(',')
@@ -292,7 +292,7 @@ function formatDMSInput(input: string): string {
     if (!trimmedPart) continue
 
     // Extract components
-    const numbers = trimmedPart.replace(/[NSEW°′″\s]/g, '')
+    const numbers = trimmedPart.replace(/[NSEW°′″\s]/gu, '')
     let hemisphere = ''
 
     const firstChar = trimmedPart[0]
@@ -372,10 +372,10 @@ function formatDMSInput(input: string): string {
 // Format MGRS input (e.g., "11S PA 44000 84000")
 function formatMGRSInput(input: string): string {
   // Uppercase and remove invalid characters (allow only digits, letters, spaces)
-  let cleaned = input.toUpperCase().replace(/[^A-Z0-9\s]/g, '')
+  let cleaned = input.toUpperCase().replace(/[^A-Z0-9\s]/gu, '')
 
   // Remove extra spaces
-  cleaned = cleaned.replace(/\s+/g, ' ').trim()
+  cleaned = cleaned.replace(/\s+/gu, ' ').trim()
 
   // MGRS format: [Grid Zone 2-3 chars][100km Square 2 chars][Easting digits][Northing digits]
   // Example: 11S PA 44000 84000
@@ -385,10 +385,10 @@ function formatMGRSInput(input: string): string {
   if (parts.length === 0) return cleaned
 
   const formatted: string[] = []
-  let remaining = cleaned.replace(/\s/g, '')
+  let remaining = cleaned.replace(/\s/gu, '')
 
   // Grid zone (1-2 digits + 1 letter)
-  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(remaining)
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/u.exec(remaining)
   if (gridZoneMatch?.[1]) {
     const gridZone = gridZoneMatch[1]
     formatted.push(gridZone)
@@ -434,23 +434,23 @@ function handleInput(value: string) {
   switch (props.format) {
     case 'DD':
       // Allow digits, dots, minus, comma, spaces
-      cleaned = value.replace(/[^\d.,-\s]/g, '')
+      cleaned = value.replace(/[^\d.,\s-]/gu, '')
       break
     case 'DDM':
       // Allow hemisphere letters, digits, comma, spaces, and coordinate symbols
-      cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′]/g, '')
+      cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′]/gu, '')
       // Don't allow leading digits before first hemisphere
-      cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/, '$1')
+      cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/u, '$1')
       break
     case 'DMS':
       // Allow hemisphere letters, digits, comma, spaces, and coordinate symbols
-      cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′″]/g, '')
+      cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′″]/gu, '')
       // Don't allow leading digits before first hemisphere
-      cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/, '$1')
+      cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/u, '$1')
       break
     case 'MGRS':
       // Allow uppercase letters, digits, spaces
-      cleaned = value.toUpperCase().replace(/[^A-Z0-9\s]/g, '')
+      cleaned = value.toUpperCase().replace(/[^A-Z0-9\s]/gu, '')
       break
   }
 
@@ -530,9 +530,9 @@ function handleBlur() {
       // This allows formatting of partial but structurally valid input like "N 36" or compact "N32E121"
       const hasValidStructure =
         ((props.format === 'DDM' || props.format === 'DMS') &&
-          /^[NSEW][\d°′″.\s]+/.test(displayValue.value.trim())) ||
-        (props.format === 'MGRS' && /^\d{1,2}[A-Z]/.test(displayValue.value.trim())) ||
-        (props.format === 'DD' && /^-?\d/.test(displayValue.value.trim()))
+          /^[NSEW][\d°′″.\s]+/u.test(displayValue.value.trim())) ||
+        (props.format === 'MGRS' && /^\d{1,2}[A-Z]/u.test(displayValue.value.trim())) ||
+        (props.format === 'DD' && /^-?\d/u.test(displayValue.value.trim()))
 
       if (hasValidStructure && formatted !== displayValue.value) {
         // Has valid structure but incomplete - apply formatting

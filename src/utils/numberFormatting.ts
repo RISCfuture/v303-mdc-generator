@@ -35,10 +35,10 @@ function createNumberParser() {
       let normalized: string
       if (decimalSeparator === '.') {
         // en-US style: 1,234.56 -> 1234.56
-        normalized = strValue.replace(/,/g, '')
+        normalized = strValue.replace(/,/gu, '')
       } else {
         // de-DE style: 1.234,56 -> 1234.56
-        normalized = strValue.replace(/\./g, '').replace(/,/g, '.')
+        normalized = strValue.replace(/\./gu, '').replace(/,/gu, '.')
       }
 
       const parsed = parseFloat(normalized)

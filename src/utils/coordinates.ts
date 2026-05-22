@@ -73,7 +73,7 @@ export function formatDD(lat: number, lon: number): string {
  * Returns null if invalid format
  */
 export function parseDD(input: string): { lat: number; lon: number } | null {
-  const match = /^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/.exec(input)
+  const match = /^(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)$/u.exec(input)
   if (!match) return null
 
   const [, latStr, lonStr] = match
@@ -103,7 +103,7 @@ export function formatDDM(dms: DMSCoordinate, type: CoordinateType): string {
   const degreesStr = degrees.toString().padStart(degreesPadding, '0')
 
   // Format minutes with up to 3 decimal places, removing trailing zeros
-  const minutesStr = minutesWithDecimal.toFixed(3).replace(/\.?0+$/, '')
+  const minutesStr = minutesWithDecimal.toFixed(3).replace(/\.?0+$/u, '')
   const [minutesInt, minutesDec] = minutesStr.split('.')
   const minutesIntPadded = (minutesInt || '0').padStart(2, '0')
   const minutesFormatted = minutesDec ? `${minutesIntPadded}.${minutesDec}` : minutesIntPadded
@@ -124,7 +124,7 @@ export function formatDMS(dms: DMSCoordinate, type: CoordinateType): string {
   const minutesStr = minutes.toString().padStart(2, '0')
 
   // Format seconds with up to 2 decimal places, removing trailing zeros
-  const secondsStr = seconds.toFixed(2).replace(/\.?0+$/, '')
+  const secondsStr = seconds.toFixed(2).replace(/\.?0+$/u, '')
 
   return `${hemisphere} ${degreesStr}° ${minutesStr}′ ${secondsStr}″`
 }
@@ -136,7 +136,7 @@ export function formatDMS(dms: DMSCoordinate, type: CoordinateType): string {
  */
 export function parseDDM(input: string): DMSCoordinate | null {
   // Format: N 36° 12.345′ or N 36° 12′ or N 36° (degrees only)
-  const match = /^([NSEW])\s+(\d+)°(?:\s+(\d+(?:\.\d+)?)′)?$/.exec(input)
+  const match = /^([NSEW])\s+(\d+)°(?:\s+(\d+(?:\.\d+)?)′)?$/u.exec(input)
   if (!match) return null
 
   const [, hemisphere, degreesStr, minutesStr] = match
@@ -161,7 +161,7 @@ export function parseDDM(input: string): DMSCoordinate | null {
  */
 export function parseDMS(input: string): DMSCoordinate | null {
   // Format: N 36° 12′ 21″ or N 36° 12′ 21.5″
-  const match = /^([NSEW])\s+(\d+)°\s+(\d+)′\s+(\d+(?:\.\d+)?)″$/.exec(input)
+  const match = /^([NSEW])\s+(\d+)°\s+(\d+)′\s+(\d+(?:\.\d+)?)″$/u.exec(input)
   if (!match) return null
 
   const [, hemisphere, degreesStr, minutesStr, secondsStr] = match

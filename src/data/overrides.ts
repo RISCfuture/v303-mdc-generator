@@ -43,7 +43,7 @@ export function parsePath(path: string): (string | number)[] {
 
   // Match property names and array indices
   // Pattern: word followed by optional [number]
-  const pattern = /([^.[]+)|\[(\d+)\]/g
+  const pattern = /([^.[]+)|\[(\d+)\]/gu
   let match: RegExpExecArray | null
 
   while ((match = pattern.exec(path)) !== null) {

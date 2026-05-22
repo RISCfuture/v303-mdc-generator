@@ -40,10 +40,10 @@ describe('formatters', () => {
 
     it('should use correct decimal places for each unit', () => {
       // Bytes: no decimals
-      expect(formatFileSize(500)).not.toMatch(/\./)
+      expect(formatFileSize(500)).not.toMatch(/\./u)
 
       // Kilobytes: no decimals (values that stay under 1 MB)
-      expect(formatFileSize(500 * 1024)).not.toMatch(/\./)
+      expect(formatFileSize(500 * 1024)).not.toMatch(/\./u)
 
       // Megabytes: 1 decimal
       expect(formatFileSize(1.23 * 1024 * 1024)).toBe('1.2 MB')

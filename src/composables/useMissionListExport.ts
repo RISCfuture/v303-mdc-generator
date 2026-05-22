@@ -135,7 +135,7 @@ export function useMissionListExport() {
 
       // Create filename using mission name and date
       const missionName = mission.name || 'untitled-mission'
-      const sanitizedName = missionName.replace(/[^a-z0-9]+/gi, '-').toLowerCase()
+      const sanitizedName = missionName.replace(/[^a-z0-9]+/giu, '-').toLowerCase()
       const date = new Date().toISOString().split('T')[0]
       const filename = `${sanitizedName}-${date}.json`
 

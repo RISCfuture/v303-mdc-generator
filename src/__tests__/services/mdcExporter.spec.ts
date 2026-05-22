@@ -1140,8 +1140,8 @@ describe('MDC Exporter', () => {
     it('should format coordinates as DDM', () => {
       const result = exportA10DCSDTC(mockMissionA10)
       // DDM format from formatF16LatLon
-      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/)
-      expect(result.Waypoints.Waypoints[0].Longitude).toMatch(/^[EW]\s/)
+      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/u)
+      expect(result.Waypoints.Waypoints[0].Longitude).toMatch(/^[EW]\s/u)
     })
 
     it('should map first 2 radios correctly', () => {
@@ -1222,7 +1222,7 @@ describe('MDC Exporter', () => {
 
     it('should format coordinates as DDM', () => {
       const result = exportC130DCSDTC(mockMissionC130)
-      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/)
+      expect(result.Waypoints.Waypoints[0].Latitude).toMatch(/^[NS]\s/u)
     })
 
     it('should map radios correctly', () => {

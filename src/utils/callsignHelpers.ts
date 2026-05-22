@@ -10,7 +10,7 @@ import type { Mission } from '@/types'
  */
 export function getFlightNumber(flightCallsign: string): string {
   if (!flightCallsign) return '1'
-  const match = /(\d)$/.exec(flightCallsign)
+  const match = /(\d)$/u.exec(flightCallsign)
   return match?.[1] ?? '1'
 }
 

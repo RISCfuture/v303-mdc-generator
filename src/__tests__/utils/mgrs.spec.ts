@@ -35,7 +35,7 @@ describe('MGRS Utilities', () => {
       const formatted = formatMGRSWithSpaces(compact)
 
       expect(formatted).toContain(' ')
-      expect(formatted).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}\s+\d+\s+\d+/)
+      expect(formatted).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}\s+\d+\s+\d+/u)
     })
 
     it('should handle short MGRS strings', () => {

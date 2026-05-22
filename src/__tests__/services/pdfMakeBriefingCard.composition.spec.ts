@@ -121,12 +121,12 @@ describe('pdfMakeBriefingCard — per-squadron composition characterization', ()
       // minimal: page 1 + the static definitions page (one page break)
       await generatePdfMakeBriefingCard(makeMission(squadron, false))
       const minimal = JSON.stringify(captured!.content)
-      expect(minimal.match(/"pageBreak":"after"/g) ?? []).toHaveLength(1)
+      expect(minimal.match(/"pageBreak":"after"/gu) ?? []).toHaveLength(1)
 
       // full: page 2 + notes + definitions => multiple page breaks
       await generatePdfMakeBriefingCard(makeMission(squadron, true))
       const fullStr = JSON.stringify(captured!.content)
-      const breaks = (fullStr.match(/"pageBreak":"after"/g) ?? []).length
+      const breaks = (fullStr.match(/"pageBreak":"after"/gu) ?? []).length
       expect(breaks).toBeGreaterThanOrEqual(2)
 
       // header background hex: v303 red, v93/v757 blue

@@ -148,8 +148,8 @@ export function exportF15EJAFDTC(
   const uid = crypto.randomUUID()
   const filename = mission.name
     .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_-]/g, '')
+    .replace(/\s+/gu, '_')
+    .replace(/[^a-z0-9_-]/gu, '')
 
   const missionData: JAFDTCF15EMDC = {
     STPT: {

@@ -34,7 +34,7 @@ export function latLonToMGRS(lat: number, lon: number, precision = 5): string {
 export function mgrsToLatLon(mgrsString: string): { lat: number; lon: number } | null {
   try {
     // Remove spaces and normalize input
-    const compact = mgrsString.replace(/\s+/g, '').toUpperCase()
+    const compact = mgrsString.replace(/\s+/gu, '').toUpperCase()
 
     if (!compact || compact.length < 5) return null
 
@@ -67,11 +67,11 @@ export function mgrsToLatLon(mgrsString: string): { lat: number; lon: number } |
 export function parseMGRS(input: string): string | null {
   try {
     // Remove spaces and normalize
-    const compact = input.replace(/\s+/g, '').toUpperCase()
+    const compact = input.replace(/\s+/gu, '').toUpperCase()
 
     // Basic format validation
     // MGRS format: [1-2 digits][letter][2 letters][0-10 digits for coordinates]
-    const match = /^(\d{1,2}[A-Z][A-Z]{2})(\d{0,10})$/.exec(compact)
+    const match = /^(\d{1,2}[A-Z][A-Z]{2})(\d{0,10})$/u.exec(compact)
     if (!match) return null
 
     // Try to convert to lat/lon and back to validate it's a real MGRS coordinate
@@ -100,7 +100,7 @@ export function detectMGRSPrecision(mgrsString: string): number | null {
   if (!parsed) return null
 
   // Extract the coordinate portion (after grid zone and 100km square)
-  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(parsed)
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/u.exec(parsed)
   if (!gridZoneMatch?.[1]) return null
 
   const gridZone = gridZoneMatch[1]
@@ -133,7 +133,7 @@ export function formatMGRSWithSpaces(compact: string): string {
   // Northing: 84000 (variable length)
 
   // Find where the 100km square identifier ends (first 2 letters after grid zone)
-  const gridZoneMatch = /^(\d{1,2}[A-Z])/.exec(compact)
+  const gridZoneMatch = /^(\d{1,2}[A-Z])/u.exec(compact)
   if (!gridZoneMatch?.[1]) return compact
 
   const gridZone = gridZoneMatch[1]

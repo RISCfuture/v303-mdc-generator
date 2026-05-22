@@ -469,7 +469,7 @@ export function getDragIndex(clsid: string, category?: string): number {
 
   // Try with braces added/removed
   const withBraces = clsid.startsWith('{') ? clsid : `{${clsid}}`
-  const withoutBraces = clsid.replace(/^{|}$/g, '')
+  const withoutBraces = clsid.replace(/^\{|\}$/gu, '')
 
   if (withBraces in DRAG_INDEX_LOOKUP) {
     return DRAG_INDEX_LOOKUP[withBraces]

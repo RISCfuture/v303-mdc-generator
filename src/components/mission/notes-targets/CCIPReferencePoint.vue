@@ -34,7 +34,7 @@ const formatElevation = (value: number | null): string => {
 const parseElevation = (input: string): number | null => {
   if (!input || input.trim() === '') return null
   // Remove + sign if present, then parse
-  const cleaned = input.replace(/^\+/, '')
+  const cleaned = input.replace(/^\+/u, '')
   return parseInteger(cleaned)
 }
 </script>

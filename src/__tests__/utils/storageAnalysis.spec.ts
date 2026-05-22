@@ -130,7 +130,7 @@ describe('storageAnalysis', () => {
       const status = await getStorageStatus()
 
       expect(status.stats.percentUsed).toBeGreaterThanOrEqual(0.75) // 75% as decimal
-      expect(status.level).toMatch(/warning|critical/)
+      expect(status.level).toMatch(/warning|critical/u)
       expect(status.shouldWarn).toBe(true)
     })
   })

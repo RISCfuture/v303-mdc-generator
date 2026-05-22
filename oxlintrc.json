@@ -29,6 +29,7 @@
     "no-plusplus": "off",
     "no-continue": "off",
     "no-negated-condition": "off",
+    "unicorn/no-negated-condition": "off",
     "no-eq-null": "off",
     "no-nested-ternary": "off",
     "no-else-return": "off",

@@ -112,7 +112,7 @@ describe('crew', () => {
       Object.values(crewBySquadron).forEach((pilots) => {
         pilots.forEach((pilot) => {
           expect(pilot.link16Prefix.length).toBe(2)
-          expect(pilot.link16Prefix).toMatch(/^[A-Z]{2}$/)
+          expect(pilot.link16Prefix).toMatch(/^[A-Z]{2}$/u)
         })
       })
     })

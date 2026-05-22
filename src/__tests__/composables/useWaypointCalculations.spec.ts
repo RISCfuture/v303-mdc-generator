@@ -187,7 +187,7 @@ describe('useWaypointCalculations', () => {
       expect(placeholders[0]).toBe('1200z')
       // WP2 should have calculated TOT (exact value depends on distance)
       expect(placeholders[1]).not.toBe('----')
-      expect(placeholders[1]).toMatch(/\d{4}z/)
+      expect(placeholders[1]).toMatch(/\d{4}z/u)
     })
 
     it('should reset calculation at each entered TOT', () => {

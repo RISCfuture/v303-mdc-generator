@@ -83,7 +83,7 @@ describe('generateTargetTable — secondary target coords', () => {
 
     const result = (await generateTargetTable(mission)) as TableShape
     const secondaryCoords = result.table.body[COORDS_ROW]?.[SECONDARY_COORDS_COL]?.text
-    expect(secondaryCoords).toMatch(/^N 31° .* E 064° /)
+    expect(secondaryCoords).toMatch(/^N 31° .* E 064° /u)
     expect(secondaryCoords).not.toBe('')
   })
 

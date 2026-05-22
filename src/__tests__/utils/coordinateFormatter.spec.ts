@@ -29,7 +29,7 @@ describe('coordinateFormatter', () => {
     it('should format MGRS', () => {
       const result = formatCoordinate(testLat, testLon, 'MGRS')
       expect(result).toBeTruthy()
-      expect(result).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}/)
+      expect(result).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}/u)
     })
 
     it('should handle null coordinates', () => {
@@ -164,14 +164,14 @@ describe('coordinateFormatter', () => {
       const input = '36.2057583, -115.1234567'
       const result = convertCoordinate(input, 'DD', 'MGRS')
       expect(result).toBeTruthy()
-      expect(result).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}/)
+      expect(result).toMatch(/\d{1,2}[A-Z]\s+[A-Z]{2}/u)
     })
 
     it('should convert MGRS to DD', () => {
       const input = '11S PA 44000 84000'
       const result = convertCoordinate(input, 'MGRS', 'DD')
       expect(result).toContain(',')
-      expect(result).toMatch(/-?\d+\.\d+,\s*-?\d+\.\d+/)
+      expect(result).toMatch(/-?\d+\.\d+,\s*-?\d+\.\d+/u)
     })
 
     it('should handle DMS to DDM conversion', () => {

@@ -50,10 +50,10 @@ export function parseTOT(tot: string | undefined): number | null {
   if (!tot) return null
 
   // Remove 'z' or 'Z' suffix if present
-  const cleaned = tot.trim().replace(/[zZ]$/i, '')
+  const cleaned = tot.trim().replace(/[zZ]$/iu, '')
 
   // Try HH:MM format
-  const colonMatch = /^(\d{1,2}):(\d{2})$/.exec(cleaned)
+  const colonMatch = /^(\d{1,2}):(\d{2})$/u.exec(cleaned)
   if (colonMatch?.[1] && colonMatch[2]) {
     const hours = parseInt(colonMatch[1], 10)
     const minutes = parseInt(colonMatch[2], 10)
@@ -63,7 +63,7 @@ export function parseTOT(tot: string | undefined): number | null {
   }
 
   // Try HHMM format
-  const noColonMatch = /^(\d{2})(\d{2})$/.exec(cleaned)
+  const noColonMatch = /^(\d{2})(\d{2})$/u.exec(cleaned)
   if (noColonMatch?.[1] && noColonMatch[2]) {
     const hours = parseInt(noColonMatch[1], 10)
     const minutes = parseInt(noColonMatch[2], 10)

@@ -34,7 +34,7 @@ const imageDataMap = ref(new Map<string, string>()) // Map of imageId -> base64 
  */
 const extractImageIdsFromMarkdown = (markdown: string): Set<string> => {
   const ids = new Set<string>()
-  const regex = /!\[.*?\]\((img_\d+_[a-z0-9]+)\)/g
+  const regex = /!\[.*?\]\((img_\d+_[a-z0-9]+)\)/gu
   let match: RegExpExecArray | null
   while ((match = regex.exec(markdown)) !== null) {
     if (match[1]) {
@@ -49,7 +49,7 @@ const extractImageIdsFromMarkdown = (markdown: string): Set<string> => {
  */
 const replaceImageIdsWithData = (markdown: string): string => {
   return markdown.replace(
-    /!\[(.*?)\]\((img_\d+_[a-z0-9]+)\)/g,
+    /!\[(.*?)\]\((img_\d+_[a-z0-9]+)\)/gu,
     (match, alt: string, imageId: string) => {
       const dataUrl = imageDataMap.value.get(imageId)
       if (dataUrl) {

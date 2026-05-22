@@ -88,7 +88,7 @@ describe('squadrons', () => {
 
       expect(v303Squadron).toBeDefined()
       const airframe = getSquadronAirframe(v303Squadron![0] as SquadronId)
-      expect(airframe).toMatch(/A-10C/)
+      expect(airframe).toMatch(/A-10C/u)
     })
 
     it('should return F-16C variant for v93 FS', () => {
@@ -99,7 +99,7 @@ describe('squadrons', () => {
 
       expect(v93Squadron).toBeDefined()
       const airframe = getSquadronAirframe(v93Squadron![0] as SquadronId)
-      expect(airframe).toMatch(/F-16C/)
+      expect(airframe).toMatch(/F-16C/u)
     })
   })
 

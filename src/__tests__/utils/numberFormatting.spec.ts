@@ -6,7 +6,7 @@ describe('numberFormatting', () => {
     it('should format integers with group separators', () => {
       const result = formatInteger(25000)
       // Should contain a separator (either , or . depending on locale)
-      expect(result).toMatch(/25[,.]000/)
+      expect(result).toMatch(/25[,.]000/u)
     })
 
     it('should handle null values', () => {
@@ -60,12 +60,12 @@ describe('numberFormatting', () => {
   describe('formatDecimal', () => {
     it('should format decimals with default 2 places', () => {
       const result = formatDecimal(1234.5)
-      expect(result).toMatch(/1[,.]234[,.]50/)
+      expect(result).toMatch(/1[,.]234[,.]50/u)
     })
 
     it('should format decimals with custom decimal places', () => {
       const result = formatDecimal(1234.56789, 3)
-      expect(result).toMatch(/1[,.]234[,.]568/)
+      expect(result).toMatch(/1[,.]234[,.]568/u)
     })
 
     it('should handle null values', () => {

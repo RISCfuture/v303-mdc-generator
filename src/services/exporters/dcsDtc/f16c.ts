@@ -253,7 +253,7 @@ export function exportF16MDC(
   for (let i = 0; i < F16_DATALINK_TEAM_SIZE; i++) {
     if (i < mission.crew.length) {
       const crewMember = mission.crew[i]
-      const stn = parseInt(crewMember.stn.replace(/\s/g, ''))
+      const stn = parseInt(crewMember.stn.replace(/\s/gu, ''))
       members.push(stn)
       tdoaMembers.push(stn !== 0)
     } else {

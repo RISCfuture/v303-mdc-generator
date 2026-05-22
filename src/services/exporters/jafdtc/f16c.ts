@@ -156,7 +156,7 @@ export function exportF16JAFDTC(
   template?: DeepPartial<JAFDTCF16MDC>,
 ): JAFDTCF16MDC {
   const selectedCrewMember = mission.crew[crewMemberIndex]
-  const laserCode = selectedCrewMember.laser.replace(/\s/g, '')
+  const laserCode = selectedCrewMember.laser.replace(/\s/gu, '')
 
   // Parse TACAN
   const tacan = parseTACAN(selectedCrewMember.aaTcn)
@@ -208,7 +208,7 @@ export function exportF16JAFDTC(
     for (let i = 0; i < F16_DATALINK_TEAM_SIZE; i++) {
       if (i < mission.crew.length) {
         const crew = mission.crew[i]
-        const stn = crew.stn.replace(/\s/g, '')
+        const stn = crew.stn.replace(/\s/gu, '')
         teamMembers.push({
           TDOA: stn !== '' && stn !== '0',
           TNDL: stn,
@@ -383,8 +383,8 @@ export function exportF16JAFDTC(
   const uid = crypto.randomUUID()
   const filename = mission.name
     .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_-]/g, '')
+    .replace(/\s+/gu, '_')
+    .replace(/[^a-z0-9_-]/gu, '')
 
   const missionData: JAFDTCF16MDC = {
     CMDS: {

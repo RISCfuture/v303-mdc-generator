@@ -76,14 +76,14 @@ function getAirportName(airportId: string, theater: string): string {
 }
 
 function formatZuluTime(timeString: string): string {
-  const cleaned = timeString.trim().replace(/[zZ]$/i, '')
-  const colonMatch = /^(\d{1,2}):(\d{2})$/.exec(cleaned)
+  const cleaned = timeString.trim().replace(/[zZ]$/iu, '')
+  const colonMatch = /^(\d{1,2}):(\d{2})$/u.exec(cleaned)
   if (colonMatch?.[1] && colonMatch[2]) {
     const hours = colonMatch[1].padStart(2, '0')
     const minutes = colonMatch[2]
     return `${hours}${minutes}z`
   }
-  const noColonMatch = /^(\d{2})(\d{2})$/.exec(cleaned)
+  const noColonMatch = /^(\d{2})(\d{2})$/u.exec(cleaned)
   if (noColonMatch) {
     return `${cleaned}z`
   }
@@ -118,7 +118,7 @@ async function markdownToPdfMake(
 
   try {
     // Split markdown by image boundaries to preserve image positions
-    const imagePattern = /!\[([^\]]*)\]\((img_\d+_[a-z0-9]+)\)/g
+    const imagePattern = /!\[([^\]]*)\]\((img_\d+_[a-z0-9]+)\)/gu
     const parts: {
       type: 'text' | 'image'
       content: string
@@ -236,7 +236,7 @@ async function markdownToPdfMake(
  */
 function calculateReciprocalTacan(tacan: string | undefined): string {
   if (!tacan) return ''
-  const match = /^(\d+)([XY])$/i.exec(tacan)
+  const match = /^(\d+)([XY])$/iu.exec(tacan)
   if (!match?.[1] || !match[2]) return ''
   const channel = parseInt(match[1])
   const band = match[2].toUpperCase()
@@ -1492,7 +1492,7 @@ function generateAirbaseNavTable(mission: Mission): unknown[] {
         elevation: af.position.elevation,
         runwayName: runway?.name ?? src.runwayName ?? '',
         ils,
-        atc: atc != null ? atc.toFixed(3).replace(/\.?0+$/, '') : '',
+        atc: atc != null ? atc.toFixed(3).replace(/\.?0+$/u, '') : '',
       }
     })
     .filter((r): r is NonNullable<typeof r> => r !== null)

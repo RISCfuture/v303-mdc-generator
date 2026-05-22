@@ -132,7 +132,7 @@ export function useMissionValidation(
       else if (path.endsWith('/cr') || path.includes('/cr/')) errorMap.set('crew', message)
       else if (path.includes('/wp/') || path.includes('/wp')) {
         // For waypoint errors, include the waypoint index if available
-        const wpMatch = /\/wp\/(\d+)/.exec(path)
+        const wpMatch = /\/wp\/(\d+)/u.exec(path)
         if (wpMatch?.[1]) {
           const wpIndex = parseInt(wpMatch[1], 10)
           const wpNumber = wpIndex + 1 // Convert to 1-based for display

@@ -170,7 +170,7 @@ function fullyPopulate(squadron: Squadron): Mission {
   if (prefab) {
     m.loadout = prefab.stations.map((s) => ({ station: s.station, item: s.item }))
   }
-  m.gunAmmoType = m.gunAmmoType ?? 'CM - Combat Mix'
+  m.gunAmmoType ??= 'CM - Combat Mix'
   m.cmdsProfile = 'PRGM 1'
   m.ecmProgram = 'XMIT 1'
 

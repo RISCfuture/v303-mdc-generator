@@ -33,7 +33,7 @@ export const CHUNK_RELOAD_COOLDOWN_MS = 10_000
 
 export const isChunkLoadError = (error: unknown): boolean =>
   error instanceof Error &&
-  /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module|Unable to preload CSS|Unable to preload module/i.test(
+  /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module|Unable to preload CSS|Unable to preload module/iu.test(
     error.message,
   )
 

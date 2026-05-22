@@ -10,7 +10,7 @@ import {
 describe('Formatting Utilities', () => {
   describe('formatNumber', () => {
     it('should format numbers without decimals', () => {
-      expect(formatNumber(1000)).toMatch(/1[,\s]?000/)
+      expect(formatNumber(1000)).toMatch(/1[,\s]?000/u)
     })
 
     it('should handle undefined', () => {
@@ -29,7 +29,7 @@ describe('Formatting Utilities', () => {
   describe('formatWeight', () => {
     it('should format weight with lb/lbs unit', () => {
       const result = formatWeight(12000)
-      expect(result).toMatch(/\blb[s]?\b/) // Match 'lb' or 'lbs'
+      expect(result).toMatch(/\blb[s]?\b/u) // Match 'lb' or 'lbs'
       expect(result).toContain('12')
     })
 
@@ -89,12 +89,12 @@ describe('Formatting Utilities', () => {
   describe('formatDateForStorage', () => {
     it('should format date to YYYY-MM-DD from Date object', () => {
       const result = formatDateForStorage(new Date('2025-10-13'))
-      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/u)
     })
 
     it('should format date to YYYY-MM-DD from timestamp', () => {
       const result = formatDateForStorage(new Date('2025-10-13').getTime())
-      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+      expect(result).toMatch(/^\d{4}-\d{2}-\d{2}$/u)
     })
 
     it('should handle undefined', () => {

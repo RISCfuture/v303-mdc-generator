@@ -66,7 +66,7 @@ export function useMissionCallsigns(
   function generateLink16Prefix(callsign: string) {
     if (!callsign) return
 
-    const letters = callsign.replace(/[^A-Za-z]/g, '')
+    const letters = callsign.replace(/[^A-Za-z]/gu, '')
     if (letters.length >= 2) {
       const firstLetter = letters.charAt(0)
       const lastLetter = letters.charAt(letters.length - 1)
