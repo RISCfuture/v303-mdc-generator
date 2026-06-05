@@ -121,7 +121,7 @@ Comprehensive unit tests validate:
 Run tests:
 
 ```bash
-yarn test:unit f16RotationCalculator
+pnpm test:unit f16RotationCalculator
 ```
 
 ## Notes

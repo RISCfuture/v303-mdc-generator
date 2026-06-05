@@ -153,7 +153,7 @@ Distance (1000 ft) = 0.141*factor² + 1.369*factor + 0.242
 Run tests:
 
 ```bash
-yarn test:unit f16TakeoffDistanceCalculator
+pnpm test:unit f16TakeoffDistanceCalculator
 ```
 
 ## Notes

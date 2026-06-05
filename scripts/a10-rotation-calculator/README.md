@@ -131,7 +131,7 @@ Comprehensive unit tests validate:
 Run tests:
 
 ```bash
-yarn test:unit a10RotationCalculator
+pnpm test:unit a10RotationCalculator
 ```
 
 ## Data Ranges

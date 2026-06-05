@@ -66,6 +66,7 @@
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/no-import-type-side-effects": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
+    "@typescript-eslint/method-signature-style": "off",
     "unicorn/no-null": "off",
     "unicorn/filename-case": "off",
     "unicorn/numeric-separators-style": "off",

@@ -162,7 +162,7 @@ Flaps 7° provides approximately 10-15% reduction in takeoff distance.
 Run tests:
 
 ```bash
-yarn test:unit a10TakeoffDistanceCalculator
+pnpm test:unit a10TakeoffDistanceCalculator
 ```
 
 ## Notes

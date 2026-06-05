@@ -17,7 +17,7 @@
  */
 import { describe, it, expect } from 'vitest'
 import { mkdirSync, readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
+import path from 'node:path'
 import { createRequire } from 'node:module'
 import { useMissionsStore } from '@/stores/missions'
 import { setupTestEnvironment } from '@/__tests__/helpers'
@@ -371,10 +371,10 @@ describe.skipIf(!process.env.GEN_SAMPLES)('generate sample MDC PDFs', () => {
   setupTestEnvironment({ pinia: true, localStorage: true })
 
   it('writes ./out/sample-mdc-<squadron>.pdf for each squadron', async () => {
-    const outDir = resolve(process.cwd(), 'out')
+    const outDir = path.resolve(process.cwd(), 'out')
     mkdirSync(outDir, { recursive: true })
     for (const squadron of SQUADRONS) {
-      const file = resolve(outDir, `sample-mdc-${squadron}.pdf`)
+      const file = path.resolve(outDir, `sample-mdc-${squadron}.pdf`)
       await renderPdf(fullyPopulate(squadron), file)
       const head = readFileSync(file).subarray(0, 5).toString('latin1')
       expect(head).toBe('%PDF-')

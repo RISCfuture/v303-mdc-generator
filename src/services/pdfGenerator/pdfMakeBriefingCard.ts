@@ -77,13 +77,13 @@ function getAirportName(airportId: string, theater: string): string {
 
 function formatZuluTime(timeString: string): string {
   const cleaned = timeString.trim().replace(/[zZ]$/iu, '')
-  const colonMatch = /^(\d{1,2}):(\d{2})$/u.exec(cleaned)
-  if (colonMatch?.[1] && colonMatch[2]) {
-    const hours = colonMatch[1].padStart(2, '0')
-    const minutes = colonMatch[2]
+  const colonMatch = /^(?<hours>\d{1,2}):(?<minutes>\d{2})$/u.exec(cleaned)
+  if (colonMatch?.groups?.hours && colonMatch.groups.minutes) {
+    const hours = colonMatch.groups.hours.padStart(2, '0')
+    const minutes = colonMatch.groups.minutes
     return `${hours}${minutes}z`
   }
-  const noColonMatch = /^(\d{2})(\d{2})$/u.exec(cleaned)
+  const noColonMatch = /^(?<hours>\d{2})(?<minutes>\d{2})$/u.exec(cleaned)
   if (noColonMatch) {
     return `${cleaned}z`
   }
@@ -118,7 +118,7 @@ async function markdownToPdfMake(
 
   try {
     // Split markdown by image boundaries to preserve image positions
-    const imagePattern = /!\[([^\]]*)\]\((img_\d+_[a-z0-9]+)\)/gu
+    const imagePattern = /!\[(?<alt>[^\]]*)\]\((?<imageId>img_\d+_[a-z0-9]+)\)/gu
     const parts: {
       type: 'text' | 'image'
       content: string
@@ -142,8 +142,8 @@ async function markdownToPdfMake(
       parts.push({
         type: 'image',
         content: match[0],
-        imageId: match[2],
-        alt: match[1],
+        imageId: match.groups?.imageId,
+        alt: match.groups?.alt,
       })
 
       lastIndex = match.index + match[0].length
@@ -236,10 +236,10 @@ async function markdownToPdfMake(
  */
 function calculateReciprocalTacan(tacan: string | undefined): string {
   if (!tacan) return ''
-  const match = /^(\d+)([XY])$/iu.exec(tacan)
-  if (!match?.[1] || !match[2]) return ''
-  const channel = parseInt(match[1])
-  const band = match[2].toUpperCase()
+  const match = /^(?<channel>\d+)(?<band>[XY])$/iu.exec(tacan)
+  if (!match?.groups?.channel || !match.groups.band) return ''
+  const channel = parseInt(match.groups.channel)
+  const band = match.groups.band.toUpperCase()
   let newChannel = channel + 63
   if (newChannel > 126) newChannel -= 126
   return `${newChannel}${band}`

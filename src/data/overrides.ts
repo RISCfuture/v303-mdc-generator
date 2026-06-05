@@ -43,16 +43,16 @@ export function parsePath(path: string): (string | number)[] {
 
   // Match property names and array indices
   // Pattern: word followed by optional [number]
-  const pattern = /([^.[]+)|\[(\d+)\]/gu
+  const pattern = /(?<property>[^.[]+)|\[(?<index>\d+)\]/gu
   let match: RegExpExecArray | null
 
   while ((match = pattern.exec(path)) !== null) {
-    if (match[1]) {
+    if (match.groups?.property) {
       // Property name
-      segments.push(match[1])
-    } else if (match[2]) {
+      segments.push(match.groups.property)
+    } else if (match.groups?.index) {
       // Array index
-      segments.push(parseInt(match[2], 10))
+      segments.push(parseInt(match.groups.index, 10))
     }
   }
 

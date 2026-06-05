@@ -172,14 +172,14 @@ function formatDDMInput(input: string): string {
   let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′]/gu, '')
 
   // Remove leading digits before any hemisphere letter (must start with hemisphere)
-  cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/u, '$1')
+  cleaned = cleaned.replace(/^[\d°′.\s]+(?<hemisphere>[NSEW])/u, '$<hemisphere>')
 
   // Auto-insert comma when transitioning from lat hemisphere (N/S) to lon hemisphere (E/W)
   // Match: hemisphere + digits (with optional symbols) + another hemisphere
   // This catches: "N3622354W" or "N 36° 12.354′ W" etc.
-  cleaned = cleaned.replace(/([NS][\d°′.\s]+)([EW])/gu, '$1, $2')
+  cleaned = cleaned.replace(/(?<lat>[NS][\d°′.\s]+)(?<lon>[EW])/gu, '$<lat>, $<lon>')
   // Also handle the reverse: lon to lat
-  cleaned = cleaned.replace(/([EW][\d°′.\s]+)([NS])/gu, '$1, $2')
+  cleaned = cleaned.replace(/(?<lon>[EW][\d°′.\s]+)(?<lat>[NS])/gu, '$<lon>, $<lat>')
 
   // Split by comma to handle lat and lon separately
   const parts = cleaned.split(',')
@@ -274,12 +274,12 @@ function formatDMSInput(input: string): string {
   let cleaned = input.toUpperCase().replace(/[^NSEW\d.,\s°′″]/gu, '')
 
   // Remove leading digits before any hemisphere letter (must start with hemisphere)
-  cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/u, '$1')
+  cleaned = cleaned.replace(/^[\d°′″.\s]+(?<hemisphere>[NSEW])/u, '$<hemisphere>')
 
   // Auto-insert comma when transitioning from lat hemisphere (N/S) to lon hemisphere (E/W)
-  cleaned = cleaned.replace(/([NS][\d°′″.\s]+)([EW])/gu, '$1, $2')
+  cleaned = cleaned.replace(/(?<lat>[NS][\d°′″.\s]+)(?<lon>[EW])/gu, '$<lat>, $<lon>')
   // Also handle the reverse: lon to lat
-  cleaned = cleaned.replace(/([EW][\d°′″.\s]+)([NS])/gu, '$1, $2')
+  cleaned = cleaned.replace(/(?<lon>[EW][\d°′″.\s]+)(?<lat>[NS])/gu, '$<lon>, $<lat>')
 
   // Split by comma to handle lat and lon separately
   const parts = cleaned.split(',')
@@ -388,9 +388,9 @@ function formatMGRSInput(input: string): string {
   let remaining = cleaned.replace(/\s/gu, '')
 
   // Grid zone (1-2 digits + 1 letter)
-  const gridZoneMatch = /^(\d{1,2}[A-Z])/u.exec(remaining)
-  if (gridZoneMatch?.[1]) {
-    const gridZone = gridZoneMatch[1]
+  const gridZoneMatch = /^(?<gridZone>\d{1,2}[A-Z])/u.exec(remaining)
+  if (gridZoneMatch?.groups?.gridZone) {
+    const gridZone = gridZoneMatch.groups.gridZone
     formatted.push(gridZone)
     remaining = remaining.slice(gridZone.length)
   }
@@ -440,13 +440,13 @@ function handleInput(value: string) {
       // Allow hemisphere letters, digits, comma, spaces, and coordinate symbols
       cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′]/gu, '')
       // Don't allow leading digits before first hemisphere
-      cleaned = cleaned.replace(/^[\d°′.\s]+([NSEW])/u, '$1')
+      cleaned = cleaned.replace(/^[\d°′.\s]+(?<hemisphere>[NSEW])/u, '$<hemisphere>')
       break
     case 'DMS':
       // Allow hemisphere letters, digits, comma, spaces, and coordinate symbols
       cleaned = value.toUpperCase().replace(/[^NSEW\d.,\s°′″]/gu, '')
       // Don't allow leading digits before first hemisphere
-      cleaned = cleaned.replace(/^[\d°′″.\s]+([NSEW])/u, '$1')
+      cleaned = cleaned.replace(/^[\d°′″.\s]+(?<hemisphere>[NSEW])/u, '$<hemisphere>')
       break
     case 'MGRS':
       // Allow uppercase letters, digits, spaces

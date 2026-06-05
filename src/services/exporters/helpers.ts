@@ -7,9 +7,12 @@ import { FEET_PER_NAUTICAL_MILE, RADIO_MODE } from './constants'
  * Returns null if the string doesn't match the expected format.
  */
 export function parseTACAN(aaTcn: string): { channel: number; band: 'X' | 'Y' } | null {
-  const match = /(\d+)([XY])/iu.exec(aaTcn)
-  if (!match?.[1] || !match[2]) return null
-  return { channel: parseInt(match[1]), band: match[2].toUpperCase() as 'X' | 'Y' }
+  const match = /(?<channel>\d+)(?<band>[XY])/iu.exec(aaTcn)
+  if (!match?.groups?.channel || !match.groups.band) return null
+  return {
+    channel: parseInt(match.groups.channel),
+    band: match.groups.band.toUpperCase() as 'X' | 'Y',
+  }
 }
 
 /**

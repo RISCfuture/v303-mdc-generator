@@ -53,20 +53,20 @@ export function parseTOT(tot: string | undefined): number | null {
   const cleaned = tot.trim().replace(/[zZ]$/iu, '')
 
   // Try HH:MM format
-  const colonMatch = /^(\d{1,2}):(\d{2})$/u.exec(cleaned)
-  if (colonMatch?.[1] && colonMatch[2]) {
-    const hours = parseInt(colonMatch[1], 10)
-    const minutes = parseInt(colonMatch[2], 10)
+  const colonMatch = /^(?<hours>\d{1,2}):(?<minutes>\d{2})$/u.exec(cleaned)
+  if (colonMatch?.groups?.hours && colonMatch.groups.minutes) {
+    const hours = parseInt(colonMatch.groups.hours, 10)
+    const minutes = parseInt(colonMatch.groups.minutes, 10)
     if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59) {
       return hours * 60 + minutes
     }
   }
 
   // Try HHMM format
-  const noColonMatch = /^(\d{2})(\d{2})$/u.exec(cleaned)
-  if (noColonMatch?.[1] && noColonMatch[2]) {
-    const hours = parseInt(noColonMatch[1], 10)
-    const minutes = parseInt(noColonMatch[2], 10)
+  const noColonMatch = /^(?<hours>\d{2})(?<minutes>\d{2})$/u.exec(cleaned)
+  if (noColonMatch?.groups?.hours && noColonMatch.groups.minutes) {
+    const hours = parseInt(noColonMatch.groups.hours, 10)
+    const minutes = parseInt(noColonMatch.groups.minutes, 10)
     if (hours >= 0 && hours <= 23 && minutes >= 0 && minutes <= 59) {
       return hours * 60 + minutes
     }

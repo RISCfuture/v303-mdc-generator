@@ -260,10 +260,10 @@ export function mockWaypointCalculations(customReturnValue?: (tot: string) => nu
   const defaultParseTOT = vi.fn((tot: string) => {
     if (!tot) return null
     const cleanTot = tot.toUpperCase().replace(/[^0-9:]/gu, '')
-    const match = /^(\d{1,2}):?(\d{2})$/u.exec(cleanTot)
-    if (!match) return null
-    const hours = parseInt(match[1])
-    const minutes = parseInt(match[2])
+    const match = /^(?<hours>\d{1,2}):?(?<minutes>\d{2})$/u.exec(cleanTot)
+    if (!match?.groups) return null
+    const hours = parseInt(match.groups.hours)
+    const minutes = parseInt(match.groups.minutes)
     if (hours >= 24 || minutes >= 60) return null
     return hours * 60 + minutes
   })

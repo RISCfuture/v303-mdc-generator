@@ -36,13 +36,13 @@ The v303 MDC Generator is built with modern web technologies using Vue 3 and Typ
 ### Technology Stack
 
 - **Frontend Framework**: Vue 3.5 (Composition API)
-- **Build Tool**: Vite 7.1
-- **Language**: TypeScript 5.9 (strict mode)
+- **Build Tool**: Vite 8.0
+- **Language**: TypeScript 6.0 (strict mode)
 - **State Management**: Pinia 3.0 (composition-style stores)
-- **UI Library**: Naive UI 2.43 (with custom theming)
-- **Testing**: Vitest 3.2 (unit), Playwright 1.56 (e2e)
-- **PDF Generation**: jsPDF 3.0 with jsPDF-autotable
-- **Error Tracking**: Sentry 10.22
+- **UI Library**: Naive UI 2.44 (with custom theming)
+- **Testing**: Vitest 4.1 (unit), Playwright 1.60 (e2e)
+- **PDF Generation**: jsPDF 4.2 with jsPDF-autotable 5.0
+- **Error Tracking**: Sentry 10.56
 
 ### Architecture Pattern
 
@@ -267,7 +267,7 @@ Validates all JSON data files against their corresponding JSON Schema definition
 **Usage**:
 
 ```sh
-yarn validate:schemas
+pnpm validate:schemas
 # or
 jiti scripts/validate-schemas.ts
 ```
@@ -595,7 +595,7 @@ python scripts/f16-rotation-calculator/extract_regression.py
 
 **TypeScript Scripts** (run via jiti):
 
-- `validate-schemas.ts` → executed via `yarn validate:schemas`
+- `validate-schemas.ts` → executed via `pnpm validate:schemas`
 
 ## Recommended IDE Setup
 
@@ -621,25 +621,25 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 ## Project Setup
 
 ```sh
-yarn install
+pnpm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-yarn build
+pnpm build
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-yarn test:unit
+pnpm test:unit
 ```
 
 ### Run End-to-End Tests with [Playwright](https://playwright.dev)
@@ -649,28 +649,28 @@ yarn test:unit
 npx playwright install
 
 # When testing on CI, must build the project first
-yarn build
+pnpm build
 
 # Runs the end-to-end tests
-yarn test:e2e
+pnpm test:e2e
 # Runs the tests only on Chromium
-yarn test:e2e -- --project=chromium
+pnpm test:e2e --project=chromium
 # Runs the tests of a specific file
-yarn test:e2e -- tests/example.spec.ts
+pnpm test:e2e tests/example.spec.ts
 # Runs the tests in debug mode
-yarn test:e2e -- --debug
+pnpm test:e2e --debug
 ```
 
 ### Validate Data Schemas
 
 ```sh
-yarn validate:schemas
+pnpm validate:schemas
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-yarn lint
+pnpm lint
 ```
 
 ## License

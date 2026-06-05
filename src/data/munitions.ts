@@ -88,7 +88,8 @@ function parseLoadoutId(itemId: string): {
 
   // Check for DCS composite format: RACK_QTY*MUNITION or RACK*MUNITION
   // Examples: "TER_9A_3*MK-82", "LAU-105_2*AIM-9L", "BRU-42_3*Mk-82AIR"
-  const compositeMatch = /^([^*]+)_(\d+)([LR]?)\*(.+)$/u.exec(cleanId)
+  const compositeMatch =
+    /^(?<rackBase>[^*]+)_(?<quantity>\d+)(?<lrSuffix>[LR]?)\*(?<munitionId>.+)$/u.exec(cleanId)
 
   if (compositeMatch?.[1] && compositeMatch[2] && compositeMatch[4]) {
     const rackBase = compositeMatch[1]
@@ -116,7 +117,7 @@ function parseLoadoutId(itemId: string): {
 
   // Check for simple composite without quantity in name: "RACK*MUNITION"
   // Example: "BRU-42*Mk-82"
-  const simpleCompositeMatch = /^([^*_\d]+)\*(.+)$/u.exec(cleanId)
+  const simpleCompositeMatch = /^(?<rackBase>[^*_\d]+)\*(?<munitionId>.+)$/u.exec(cleanId)
 
   if (simpleCompositeMatch?.[1] && simpleCompositeMatch[2]) {
     const rackBase = simpleCompositeMatch[1]
@@ -255,9 +256,9 @@ export function getFuelCapacity(itemId: string): number {
   }
 
   // Fallback: Match patterns like "370 GAL", "{DFT-370gal}", "300 GAL", "600 GAL"
-  const galMatch = /(\d+)\s*GAL/iu.exec(itemId)
-  if (galMatch) {
-    const gallons = parseInt(galMatch[1], 10)
+  const galMatch = /(?<gallons>\d+)\s*GAL/iu.exec(itemId)
+  if (galMatch?.groups?.gallons) {
+    const gallons = parseInt(galMatch.groups.gallons, 10)
     return gallons * 6.7 // lb/gal
   }
 
@@ -459,9 +460,9 @@ export function buildStationLoadoutOptions(
         if (clsid.includes('*')) {
           const cleanClsid = clsid.replace(/^\{|\}$/gu, '')
           // Match patterns like: BRU42LS_2*LAU68_HYDRA_70_MK1_L
-          const match = /^([^*]+)\*(.+)$/u.exec(cleanClsid)
-          if (match?.[2]) {
-            const lastMunitionId = match[2]
+          const match = /^(?<rackBase>[^*]+)\*(?<lastMunitionId>.+)$/u.exec(cleanClsid)
+          if (match?.groups?.lastMunitionId) {
+            const lastMunitionId = match.groups.lastMunitionId
 
             const lastMunitionData =
               munitionsDatabase[`{${lastMunitionId}}`] ?? munitionsDatabase[lastMunitionId]

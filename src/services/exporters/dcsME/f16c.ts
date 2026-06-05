@@ -119,11 +119,11 @@ export type DCSMissionEditorDTC = {
  */
 function tosToSeconds(tos: string | undefined): number {
   if (!tos) return -1
-  const parts = /^(\d{1,2}):(\d{2}):?(\d{2})?/u.exec(tos)
-  if (!parts) return -1
-  const hours = parseInt(parts[1])
-  const minutes = parseInt(parts[2])
-  const seconds = parseInt(parts[3] || '0')
+  const parts = /^(?<hours>\d{1,2}):(?<minutes>\d{2}):?(?<seconds>\d{2})?/u.exec(tos)
+  if (!parts?.groups) return -1
+  const hours = parseInt(parts.groups.hours)
+  const minutes = parseInt(parts.groups.minutes)
+  const seconds = parseInt(parts.groups.seconds || '0')
   return hours * 3600 + minutes * 60 + seconds
 }
 
