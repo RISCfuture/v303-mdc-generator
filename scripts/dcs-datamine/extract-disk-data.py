@@ -76,13 +76,9 @@ def parse_radio_lua(filepath):
     range_match = re.search(r"range\s*=\s*\{([^}]+)\}", content)
     if range_match:
         block = range_match.group(1)
-        for field, var in [("min", "min_hz"), ("max", "max_hz"), ("step", "step_hz")]:
+        for field in ("min", "max", "step"):
             fm = re.search(rf"{field}\s*=\s*([0-9eE.+\-]+)", block)
             if fm:
-                try:
-                    locals()[var]  # just to avoid lint warning
-                except:
-                    pass
                 val = float(fm.group(1))
                 if field == "min":
                     min_hz = val

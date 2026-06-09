@@ -15,10 +15,9 @@ Author: Generated for v303 MDC Generator
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Any
-import math
 
 
 class TerrainDataProcessor:
@@ -31,9 +30,9 @@ class TerrainDataProcessor:
         if not self.input_dir.exists():
             raise FileNotFoundError(f"Input directory not found: {self.input_dir}")
 
-    def find_export_files(self) -> List[Path]:
+    def find_export_files(self) -> list[Path]:
         """Find all terrain export JSON files in input directory."""
-        export_files = list(self.input_dir.glob('terrain_export_*.json'))
+        export_files = list(self.input_dir.glob("terrain_export_*.json"))
 
         if not export_files:
             print(f"Warning: No terrain export files found in {self.input_dir}")
@@ -41,7 +40,7 @@ class TerrainDataProcessor:
 
         return export_files
 
-    def match_beacon_to_airfield(self, beacon: Dict, airfields: List[Dict]) -> Optional[Dict]:
+    def match_beacon_to_airfield(self, beacon: dict, airfields: list[dict]) -> dict | None:
         """
         Match a beacon to an airfield by proximity.
 
@@ -52,11 +51,11 @@ class TerrainDataProcessor:
         Returns:
             Matching airfield or None
         """
-        if not beacon.get('positionGeo'):
+        if not beacon.get("positionGeo"):
             return None
 
-        beacon_lat = beacon['positionGeo'].get('latitude')
-        beacon_lon = beacon['positionGeo'].get('longitude')
+        beacon_lat = beacon["positionGeo"].get("latitude")
+        beacon_lon = beacon["positionGeo"].get("longitude")
 
         if beacon_lat is None or beacon_lon is None:
             return None
@@ -67,15 +66,15 @@ class TerrainDataProcessor:
         closest_distance = MAX_DISTANCE
 
         for airfield in airfields:
-            af_pos = airfield.get('position', {})
-            af_lat = af_pos.get('latitude')
-            af_lon = af_pos.get('longitude')
+            af_pos = airfield.get("position", {})
+            af_lat = af_pos.get("latitude")
+            af_lon = af_pos.get("longitude")
 
             if af_lat is None or af_lon is None:
                 continue
 
             # Simple distance calculation (Pythagorean approximation)
-            distance = math.sqrt((beacon_lat - af_lat)**2 + (beacon_lon - af_lon)**2)
+            distance = math.sqrt((beacon_lat - af_lat) ** 2 + (beacon_lon - af_lon) ** 2)
 
             if distance < closest_distance:
                 closest_distance = distance
@@ -97,8 +96,7 @@ class TerrainDataProcessor:
         # For now, return None to indicate we need to use beacon data coordinates
         return (None, None)
 
-
-    def process_terrain_export(self, export_file: Path) -> Optional[Path]:
+    def process_terrain_export(self, export_file: Path) -> Path | None:
         """
         Process a single terrain export file.
 
@@ -110,7 +108,7 @@ class TerrainDataProcessor:
         """
         # Extract terrain name from filename
         filename = export_file.stem  # e.g., 'terrain_export_Caucasus'
-        terrain_name = filename.replace('terrain_export_', '')
+        terrain_name = filename.replace("terrain_export_", "")
 
         print(f"\nProcessing {terrain_name}...")
 
@@ -120,47 +118,45 @@ class TerrainDataProcessor:
         # on the Nevada map) trip strict UTF-8 decoding. Try UTF-8 first,
         # then fall back to cp1252.
         try:
-            with open(export_file, 'r', encoding='utf-8') as f:
+            with open(export_file, encoding="utf-8") as f:
                 dcs_data = json.load(f)
         except UnicodeDecodeError:
-            with open(export_file, 'r', encoding='cp1252') as f:
+            with open(export_file, encoding="cp1252") as f:
                 dcs_data = json.load(f)
         except Exception as e:
             print(f"  Error loading export file: {e}")
             return None
 
         # Extract beacons from DCS export
-        beacons = dcs_data.get('beacons', [])
+        beacons = dcs_data.get("beacons", [])
         print(f"  Found {len(beacons)} beacons in export")
 
         # Group beacons by type
         BEACON_TYPE_TACAN = 4
         BEACON_TYPE_ILS_LOCALIZER = 16640
-        BEACON_TYPE_ILS_GLIDESLOPE = 16896
 
         # Create lists of beacons by type for easier processing
-        tacan_beacons = [b for b in beacons if b.get('type') == BEACON_TYPE_TACAN]
-        ils_loc_beacons = [b for b in beacons if b.get('type') == BEACON_TYPE_ILS_LOCALIZER]
-        ils_gs_beacons = [b for b in beacons if b.get('type') == BEACON_TYPE_ILS_GLIDESLOPE]
+        tacan_beacons = [b for b in beacons if b.get("type") == BEACON_TYPE_TACAN]
+        ils_loc_beacons = [b for b in beacons if b.get("type") == BEACON_TYPE_ILS_LOCALIZER]
 
         print(f"    TACAN: {len(tacan_beacons)}, ILS: {len(ils_loc_beacons)}")
 
         # Process airfields
         processed_airfields = []
 
-        for dcs_airfield in dcs_data.get('airfields', []):
-            name = dcs_airfield.get('name', '')
+        for dcs_airfield in dcs_data.get("airfields", []):
+            name = dcs_airfield.get("name", "")
             print(f"  Processing: {name}")
 
             # Build airfield entry with DCS data (has proper lat/lon now!)
-            dcs_pos = dcs_airfield.get('position', {})
+            dcs_pos = dcs_airfield.get("position", {})
             airfield = {
-                'name': name,
-                'position': {
-                    'latitude': dcs_pos.get('latitude'),
-                    'longitude': dcs_pos.get('longitude'),
-                    'elevation': int(round(dcs_pos.get('altitude', 0)))  # Convert to integer feet
-                }
+                "name": name,
+                "position": {
+                    "latitude": dcs_pos.get("latitude"),
+                    "longitude": dcs_pos.get("longitude"),
+                    "elevation": int(round(dcs_pos.get("altitude", 0))),  # Convert to integer feet
+                },
             }
 
             # Find TACAN beacon for this airfield
@@ -168,24 +164,24 @@ class TerrainDataProcessor:
             for beacon in tacan_beacons:
                 if self.match_beacon_to_airfield(beacon, [airfield]):
                     tacan = {
-                        'channel': beacon.get('channel'),
-                        'callsign': beacon.get('callsign'),
-                        'band': 'X'  # DCS TACANs are typically X band
+                        "channel": beacon.get("channel"),
+                        "callsign": beacon.get("callsign"),
+                        "band": "X",  # DCS TACANs are typically X band
                     }
                     print(f"    TACAN: {tacan['channel']}{tacan['band']} ({tacan['callsign']})")
                     break
 
-            airfield['tacan'] = tacan
+            airfield["tacan"] = tacan
 
             # Process runways and match ILS
             # DCS only returns one end of each runway, so we need to create both ends
             runways = []
-            for dcs_runway in dcs_airfield.get('runways', []):
-                rwy_name = dcs_runway.get('name', '')
-                rwy_heading = dcs_runway.get('heading', 0)
-                rwy_length = dcs_runway.get('length')  # Already in feet from Lua export
-                rwy_width = dcs_runway.get('width')  # Already in feet from Lua export
-                rwy_pos = dcs_runway.get('position', {})
+            for dcs_runway in dcs_airfield.get("runways", []):
+                rwy_name = dcs_runway.get("name", "")
+                rwy_heading = dcs_runway.get("heading", 0)
+                rwy_length = dcs_runway.get("length")  # Already in feet from Lua export
+                rwy_width = dcs_runway.get("width")  # Already in feet from Lua export
+                rwy_pos = dcs_runway.get("position", {})
 
                 # Normalize heading to 0-359
                 rwy_heading = rwy_heading % 360
@@ -203,92 +199,87 @@ class TerrainDataProcessor:
                 ils_reciprocal = None
 
                 for ils_beacon in ils_loc_beacons:
-                    ils_pos = ils_beacon.get('positionGeo', {})
-                    ils_lat = ils_pos.get('latitude')
-                    ils_lon = ils_pos.get('longitude')
+                    ils_pos = ils_beacon.get("positionGeo", {})
+                    ils_lat = ils_pos.get("latitude")
+                    ils_lon = ils_pos.get("longitude")
 
-                    if ils_lat and ils_lon and rwy_pos.get('latitude') and rwy_pos.get('longitude'):
+                    if ils_lat and ils_lon and rwy_pos.get("latitude") and rwy_pos.get("longitude"):
                         distance = math.sqrt(
-                            (ils_lat - rwy_pos['latitude'])**2 +
-                            (ils_lon - rwy_pos['longitude'])**2
+                            (ils_lat - rwy_pos["latitude"]) ** 2
+                            + (ils_lon - rwy_pos["longitude"]) ** 2
                         )
 
                         if distance < 0.05:  # Within ~5km
-                            freq = ils_beacon.get('frequency')
+                            freq = ils_beacon.get("frequency")
                             freq_mhz = str(freq / 1000000) if freq else None
 
                             ils_data = {
-                                'name': ils_beacon.get('callsign'),
-                                'frequency': freq_mhz,
-                                'channel': ils_beacon.get('channel'),
-                                'position': {
-                                    'latitude': ils_lat,
-                                    'longitude': ils_lon
-                                }
+                                "name": ils_beacon.get("callsign"),
+                                "frequency": freq_mhz,
+                                "channel": ils_beacon.get("channel"),
+                                "position": {"latitude": ils_lat, "longitude": ils_lon},
                             }
 
                             # Determine which runway end this ILS serves based on heading alignment
                             # ILS typically points in the direction of the runway heading
                             # For now, assign to primary (we'd need glideslope angle to be certain)
                             ils_primary = ils_data
-                            print(f"    ILS: {ils_data['name']} @ {ils_data['frequency']} MHz for RWY {rwy_name}")
+                            print(
+                                f"    ILS: {ils_data['name']} @ {ils_data['frequency']} MHz for RWY {rwy_name}"
+                            )
                             break
 
                 # Create the runway end that DCS returned
                 # Ensure heading is in range 0-359 (handle rounding edge cases)
                 primary_hdg = int(round(rwy_heading)) % 360
-                runway = {
-                    'name': str(rwy_name),
-                    'heading': primary_hdg,
-                    'ils': ils_primary
-                }
+                runway = {"name": str(rwy_name), "heading": primary_hdg, "ils": ils_primary}
                 # Add length and width if available (round to nearest foot)
                 if rwy_length is not None:
-                    runway['length'] = int(round(rwy_length))
+                    runway["length"] = int(round(rwy_length))
                 if rwy_width is not None:
-                    runway['width'] = int(round(rwy_width))
+                    runway["width"] = int(round(rwy_width))
                 runways.append(runway)
 
                 # Create the reciprocal runway end
                 recip_hdg = int(round(reciprocal_heading)) % 360
                 reciprocal_runway = {
-                    'name': reciprocal_name,
-                    'heading': recip_hdg,
-                    'ils': ils_reciprocal
+                    "name": reciprocal_name,
+                    "heading": recip_hdg,
+                    "ils": ils_reciprocal,
                 }
                 # Both ends share the same length and width
                 if rwy_length is not None:
-                    reciprocal_runway['length'] = int(round(rwy_length))
+                    reciprocal_runway["length"] = int(round(rwy_length))
                 if rwy_width is not None:
-                    reciprocal_runway['width'] = int(round(rwy_width))
+                    reciprocal_runway["width"] = int(round(rwy_width))
                 runways.append(reciprocal_runway)
 
-            airfield['runways'] = runways
+            airfield["runways"] = runways
             print(f"    Runways: {len(runways)}")
 
             # ATC radio matrix sourced from Mods/terrains/<map>/Radio.lua in
             # the DCS extraction step. Shape is { callsign?, frequencies:
             # { facility: { band: mhz } } }. Airfields missing from Radio.lua
             # (or where it has empty frequency = {}) come through as None.
-            airfield['radio'] = dcs_airfield.get('radio')
+            airfield["radio"] = dcs_airfield.get("radio")
 
             processed_airfields.append(airfield)
 
         # Sort airfields by name
-        processed_airfields.sort(key=lambda a: a.get('name', ''))
+        processed_airfields.sort(key=lambda a: a.get("name", ""))
 
         # Write output file
-        output_file = self.output_dir / f'{terrain_name}.json'
+        output_file = self.output_dir / f"{terrain_name}.json"
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(processed_airfields, f, indent=2, ensure_ascii=False)
 
         print(f"  ✓ Wrote {len(processed_airfields)} airfields to {output_file}")
 
         return output_file
 
-    def process_all_exports(self) -> Dict[str, Optional[Path]]:
+    def process_all_exports(self) -> dict[str, Path | None]:
         """Process all terrain export files found."""
         export_files = self.find_export_files()
 
@@ -299,7 +290,7 @@ class TerrainDataProcessor:
         results = {}
 
         for export_file in export_files:
-            terrain_name = export_file.stem.replace('terrain_export_', '')
+            terrain_name = export_file.stem.replace("terrain_export_", "")
             output_file = self.process_terrain_export(export_file)
             results[terrain_name] = output_file
 
@@ -308,7 +299,7 @@ class TerrainDataProcessor:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Process DCS terrain export data',
+        description="Process DCS terrain export data",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -324,28 +315,24 @@ This script:
      - Accurate elevations from DCS terrain
      - Runway dimensions (length, width)
      - ILS/TACAN/radio data from beacons
-        """
+        """,
     )
 
     parser.add_argument(
-        '--input-dir',
+        "--input-dir",
         type=Path,
         required=True,
-        help='Directory containing terrain_export_*.json files'
+        help="Directory containing terrain_export_*.json files",
     )
 
     parser.add_argument(
-        '--output-dir',
+        "--output-dir",
         type=Path,
-        default=Path(__file__).parent.parent.parent / 'src' / 'data' / 'json' / 'airfields',
-        help='Output directory for processed JSON files'
+        default=Path(__file__).parent.parent.parent / "src" / "data" / "json" / "airfields",
+        help="Output directory for processed JSON files",
     )
 
-    parser.add_argument(
-        '--terrain',
-        type=str,
-        help='Process specific terrain only'
-    )
+    parser.add_argument("--terrain", type=str, help="Process specific terrain only")
 
     args = parser.parse_args()
 
@@ -360,7 +347,7 @@ This script:
 
         if args.terrain:
             # Process specific terrain
-            export_file = processor.input_dir / f'terrain_export_{args.terrain}.json'
+            export_file = processor.input_dir / f"terrain_export_{args.terrain}.json"
             if not export_file.exists():
                 print(f"ERROR: Export file not found: {export_file}")
                 sys.exit(1)
@@ -392,9 +379,10 @@ This script:
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

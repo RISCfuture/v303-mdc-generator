@@ -88,7 +88,7 @@ Common setup operations for test suites.
 
 - `setupTestEnvironment(options?)` - Creates a beforeEach hook with specified setup
 
-### Examples
+### Examples (Test Setup)
 
 ```typescript
 // Manual setup
@@ -152,7 +152,7 @@ Simplified assertion patterns for common test scenarios.
 
 - `expectCalledWith(mockFn, args, index?)` - Assert mock called with args
 
-### Examples
+### Examples (Assertion Helpers)
 
 ```typescript
 // Before: verbose
@@ -184,7 +184,7 @@ Reusable configurations for commonly mocked modules.
 - `mockWaypointCalculations(customReturnValue?)` - Mocks waypoint calculations
 - `mockStorageMonitor(overrides?)` - Mocks storage monitor composable
 
-### Examples
+### Examples (Module Mocks)
 
 ```typescript
 // In test file setup
@@ -216,7 +216,7 @@ beforeEach(() => {
 
 Utilities for testing components that use Naive UI components.
 
-### Available Functions
+### Available Functions (Naive UI)
 
 - `selectNSelectValue(wrapper, handlerName, value)` - Select value in NSelect
 - `getNInputValue(wrapper, refOrStateName)` - Get NInput value
@@ -226,7 +226,7 @@ Utilities for testing components that use Naive UI components.
 - `getNSelectOptions(wrapper, optionsPropertyName)` - Get NSelect options
 - `hasNaiveUIComponent(wrapper, componentIndicator)` - Check component exists
 
-### Examples
+### Examples (Naive UI)
 
 ```typescript
 import { selectNSelectValue } from '@/__tests__/helpers'

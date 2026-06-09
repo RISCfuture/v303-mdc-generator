@@ -48,7 +48,7 @@ The v303 MDC Generator is built with modern web technologies using Vue 3 and Typ
 
 The application follows a **layered architecture**:
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │          Views (Pages)                  │
 │  MissionList, MissionEditor             │

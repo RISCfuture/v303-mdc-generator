@@ -4,14 +4,15 @@ Extract chart data using image processing and fit polynomial regression curves.
 This will replace the manual digitization with automated curve fitting.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
-from pathlib import Path
 import json
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # For now, let's use manual sampling but with polynomial regression
 # A fully automated solution would require more complex image processing
+
 
 def fit_polynomial_to_data(x_data, y_data, degree=2):
     """
@@ -27,6 +28,7 @@ def fit_polynomial_to_data(x_data, y_data, degree=2):
     r_squared = 1 - (ss_res / ss_tot)
 
     return coefficients, r_squared
+
 
 def create_rotation_regression():
     """
@@ -65,19 +67,20 @@ def create_rotation_regression():
     coeffs_7, r2_7 = fit_polynomial_to_data(gw_flaps_7, speed_flaps_7, 2)
 
     return {
-        'flaps0': {
-            'coefficients': coeffs_0.tolist(),
-            'r_squared': float(r2_0),
-            'degree': 2,
-            'equation': f'{coeffs_0[0]:.6f}*gw² + {coeffs_0[1]:.6f}*gw + {coeffs_0[2]:.6f}'
+        "flaps0": {
+            "coefficients": coeffs_0.tolist(),
+            "r_squared": float(r2_0),
+            "degree": 2,
+            "equation": f"{coeffs_0[0]:.6f}*gw² + {coeffs_0[1]:.6f}*gw + {coeffs_0[2]:.6f}",
         },
-        'flaps7': {
-            'coefficients': coeffs_7.tolist(),
-            'r_squared': float(r2_7),
-            'degree': 2,
-            'equation': f'{coeffs_7[0]:.6f}*gw² + {coeffs_7[1]:.6f}*gw + {coeffs_7[2]:.6f}'
-        }
+        "flaps7": {
+            "coefficients": coeffs_7.tolist(),
+            "r_squared": float(r2_7),
+            "degree": 2,
+            "equation": f"{coeffs_7[0]:.6f}*gw² + {coeffs_7[1]:.6f}*gw + {coeffs_7[2]:.6f}",
+        },
     }
+
 
 def create_refusal_regression():
     """
@@ -110,10 +113,10 @@ def create_refusal_regression():
         print(f"\nGW {weight}k lbs - R² = {r2:.6f}")
         print(f"  Coefficients: {coeffs}")
 
-        refusal_regressions[f'gw{weight}'] = {
-            'coefficients': coeffs.tolist(),
-            'r_squared': float(r2),
-            'degree': 2
+        refusal_regressions[f"gw{weight}"] = {
+            "coefficients": coeffs.tolist(),
+            "r_squared": float(r2),
+            "degree": 2,
         }
 
     # Now we need to fit cross-weight interpolation
@@ -135,11 +138,14 @@ def create_refusal_regression():
             coeffs_weight, r2_weight = fit_polynomial_to_data(
                 np.array(weights),
                 np.array(speeds_at_rcr),
-                1  # Linear seems reasonable for weight
+                1,  # Linear seems reasonable for weight
             )
-            print(f"RCR {sample_rcr}: Speed = {coeffs_weight[0]:.4f}*gw + {coeffs_weight[1]:.4f} (R²={r2_weight:.6f})")
+            print(
+                f"RCR {sample_rcr}: Speed = {coeffs_weight[0]:.4f}*gw + {coeffs_weight[1]:.4f} (R²={r2_weight:.6f})"
+            )
 
     return refusal_regressions
+
 
 def visualize_fits():
     """
@@ -169,13 +175,13 @@ def visualize_fits():
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
 
     # Rotation speed
-    ax1.scatter(gw_flaps_0, speed_flaps_0, color='blue', label='Flaps 0° (sampled)', s=50, zorder=3)
-    ax1.plot(gw_smooth, speed_fit_0, 'b-', label='Flaps 0° (quadratic fit)', linewidth=2)
-    ax1.scatter(gw_flaps_7, speed_flaps_7, color='red', label='Flaps 7° (sampled)', s=50, zorder=3)
-    ax1.plot(gw_smooth, speed_fit_7, 'r-', label='Flaps 7° (quadratic fit)', linewidth=2)
-    ax1.set_xlabel('Gross Weight (1,000 lbs)', fontsize=12)
-    ax1.set_ylabel('Rotation Speed (KIAS)', fontsize=12)
-    ax1.set_title('A-10C Rotation Speed - Polynomial Regression', fontsize=14, fontweight='bold')
+    ax1.scatter(gw_flaps_0, speed_flaps_0, color="blue", label="Flaps 0° (sampled)", s=50, zorder=3)
+    ax1.plot(gw_smooth, speed_fit_0, "b-", label="Flaps 0° (quadratic fit)", linewidth=2)
+    ax1.scatter(gw_flaps_7, speed_flaps_7, color="red", label="Flaps 7° (sampled)", s=50, zorder=3)
+    ax1.plot(gw_smooth, speed_fit_7, "r-", label="Flaps 7° (quadratic fit)", linewidth=2)
+    ax1.set_xlabel("Gross Weight (1,000 lbs)", fontsize=12)
+    ax1.set_ylabel("Rotation Speed (KIAS)", fontsize=12)
+    ax1.set_title("A-10C Rotation Speed - Polynomial Regression", fontsize=14, fontweight="bold")
     ax1.grid(True, alpha=0.3)
     ax1.legend()
 
@@ -193,29 +199,30 @@ def visualize_fits():
 
     rcr_smooth = np.linspace(4, 23, 100)
 
-    ax2.scatter(rcr_points, refusal_30k, color='blue', label='30k lbs', s=50, zorder=3)
-    ax2.plot(rcr_smooth, np.polyval(coeffs_30, rcr_smooth), 'b-', linewidth=2)
+    ax2.scatter(rcr_points, refusal_30k, color="blue", label="30k lbs", s=50, zorder=3)
+    ax2.plot(rcr_smooth, np.polyval(coeffs_30, rcr_smooth), "b-", linewidth=2)
 
-    ax2.scatter(rcr_points, refusal_35k, color='green', label='35k lbs', s=50, zorder=3)
-    ax2.plot(rcr_smooth, np.polyval(coeffs_35, rcr_smooth), 'g-', linewidth=2)
+    ax2.scatter(rcr_points, refusal_35k, color="green", label="35k lbs", s=50, zorder=3)
+    ax2.plot(rcr_smooth, np.polyval(coeffs_35, rcr_smooth), "g-", linewidth=2)
 
-    ax2.scatter(rcr_points, refusal_40k, color='orange', label='40k lbs', s=50, zorder=3)
-    ax2.plot(rcr_smooth, np.polyval(coeffs_40, rcr_smooth), color='orange', linewidth=2)
+    ax2.scatter(rcr_points, refusal_40k, color="orange", label="40k lbs", s=50, zorder=3)
+    ax2.plot(rcr_smooth, np.polyval(coeffs_40, rcr_smooth), color="orange", linewidth=2)
 
-    ax2.scatter(rcr_points, refusal_45k, color='red', label='45k lbs', s=50, zorder=3)
-    ax2.plot(rcr_smooth, np.polyval(coeffs_45, rcr_smooth), 'r-', linewidth=2)
+    ax2.scatter(rcr_points, refusal_45k, color="red", label="45k lbs", s=50, zorder=3)
+    ax2.plot(rcr_smooth, np.polyval(coeffs_45, rcr_smooth), "r-", linewidth=2)
 
-    ax2.set_xlabel('RCR (Runway Condition Reading)', fontsize=12)
-    ax2.set_ylabel('Refusal Speed (KIAS)', fontsize=12)
-    ax2.set_title('A-10C Refusal Speed - Polynomial Regression', fontsize=14, fontweight='bold')
+    ax2.set_xlabel("RCR (Runway Condition Reading)", fontsize=12)
+    ax2.set_ylabel("Refusal Speed (KIAS)", fontsize=12)
+    ax2.set_title("A-10C Refusal Speed - Polynomial Regression", fontsize=14, fontweight="bold")
     ax2.grid(True, alpha=0.3)
     ax2.legend()
     ax2.invert_xaxis()  # RCR decreases left to right
 
     plt.tight_layout()
-    output_path = Path(__file__).parent / 'regression_fit.png'
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    output_path = Path(__file__).parent / "regression_fit.png"
+    plt.savefig(output_path, dpi=150, bbox_inches="tight")
     print(f"Visualization saved to: {output_path}")
+
 
 def main():
     rotation_data = create_rotation_regression()
@@ -223,29 +230,29 @@ def main():
 
     # Save regression data
     regression_data = {
-        'aircraft': 'A-10A',
-        'engines': '(2) TF34-GE-100/-100A',
-        'source': 'TO 1A-10A-1 Flight Manual, Pages 437, 446 (Figures A2-2, A2-11)',
-        'date': '30 November 1982',
-        'method': 'Polynomial regression (degree 2)',
-        'notes': [
-            'Polynomial regression provides better fit for slightly curved chart lines',
-            'Quadratic fit (degree 2) provides R² > 0.9999 for all curves',
-            'Coefficients in descending order: [a, b, c] for a*x² + b*x + c',
-            'For rotation: x = gross weight in thousands of lbs',
-            'For refusal: x = RCR value, separate coefficients for each weight'
+        "aircraft": "A-10A",
+        "engines": "(2) TF34-GE-100/-100A",
+        "source": "TO 1A-10A-1 Flight Manual, Pages 437, 446 (Figures A2-2, A2-11)",
+        "date": "30 November 1982",
+        "method": "Polynomial regression (degree 2)",
+        "notes": [
+            "Polynomial regression provides better fit for slightly curved chart lines",
+            "Quadratic fit (degree 2) provides R² > 0.9999 for all curves",
+            "Coefficients in descending order: [a, b, c] for a*x² + b*x + c",
+            "For rotation: x = gross weight in thousands of lbs",
+            "For refusal: x = RCR value, separate coefficients for each weight",
         ],
-        'rotationSpeed': rotation_data,
-        'refusalSpeed': {
-            'flaps0or7': {
-                'speedBrakesOpen': refusal_data,
-                'method': '2D interpolation: polynomial in RCR for each weight, linear between weights'
+        "rotationSpeed": rotation_data,
+        "refusalSpeed": {
+            "flaps0or7": {
+                "speedBrakesOpen": refusal_data,
+                "method": "2D interpolation: polynomial in RCR for each weight, linear between weights",
             }
-        }
+        },
     }
 
     output_file = Path(__file__).parent / "regression_data.json"
-    with open(output_file, 'w') as f:
+    with open(output_file, "w") as f:
         json.dump(regression_data, f, indent=2)
 
     print(f"\n✅ Regression data saved to: {output_file}")
@@ -256,6 +263,7 @@ def main():
     print("\n" + "=" * 70)
     print("✅ REGRESSION ANALYSIS COMPLETE")
     print("=" * 70)
+
 
 if __name__ == "__main__":
     main()

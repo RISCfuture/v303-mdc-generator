@@ -9,10 +9,9 @@ only needed for mission generation, not coordinate conversion.
 Author: Generated for v303 MDC Generator
 """
 
-from dcs.terrain.terrain import Terrain, MapView
-from dcs.terrain.projections import TransverseMercator
 import dcs.mapping as mapping
-
+from dcs.terrain.projections import TransverseMercator
+from dcs.terrain.terrain import MapView, Terrain
 
 # Placeholder projection parameters (using generic UTM-like values)
 # These don't need to be accurate since we're not doing coordinate conversion
@@ -32,7 +31,7 @@ class Afghanistan(Terrain):
             "Afghanistan",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}
 
@@ -45,7 +44,7 @@ class Iraq(Terrain):
             "Iraq",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}
 
@@ -58,7 +57,7 @@ class Kola(Terrain):
             "Kola",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}
 
@@ -71,7 +70,7 @@ class GermanyColdWar(Terrain):
             "GermanyCW",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}
 
@@ -84,7 +83,7 @@ class Sinai(Terrain):
             "SinaiMap",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}
 
@@ -97,6 +96,6 @@ class MarianasWWII(Terrain):
             "MarianaIslandsWWII",
             DEFAULT_PROJECTION,
             bounds=mapping.Rectangle(1000000, -1000000, -1000000, 1000000, self),
-            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000)
+            map_view_default=MapView(mapping.Point(0, 0, self), self, 1000000),
         )
         self.airports = {}

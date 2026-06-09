@@ -99,7 +99,7 @@ After running on gaming PC, transfer the output JSON files to your development m
 
 **Purpose**: Loads extracted DCS beacon/town data, adds elevations, and writes to navaid files. This **replaces** any existing navaid data.
 
-### Usage
+### Usage (Load)
 
 ```bash
 # Load files from directory
@@ -145,7 +145,7 @@ The script automatically maps DCS directory names to internal names:
 
 **Purpose**: Scrapes manually curated tactical navaids from the v303 FG website and **merges** them with existing navaid data from Step 2.
 
-### Usage
+### Usage (Scrape)
 
 ```bash
 # Scrape all theatres
@@ -174,7 +174,7 @@ For each theatre:
    - Existing entries not in scraped data are kept
 4. Sort by name and write final JSON
 
-### Features
+### Features (Scrape & Merge)
 
 - **Multi-format parser**: Handles Google Sheets embedded, JavaScript JSON objects, and HTML tables
 - **Local DEM elevations**: Uses SRTM/NASA data (cached in `~/.cache/srtm`)
@@ -199,7 +199,7 @@ python scrape_navaids.py
 
 ---
 
-## Output
+## Combined Output
 
 Final JSON files in `src/data/json/navaids/`:
 
@@ -248,7 +248,7 @@ All output conforms to `src/data/json/schemas/navaids.schema.json`:
 
 1. **DCS World Beacons**: `{DCS}\mods\terrains\*\beacons.lua`
 2. **DCS World Towns**: `{DCS}\mods\terrains\*\map\towns.lua`
-3. **v303rd Fighter Group Website**: https://www.v303rdfightergroup.com/index.php?pages/navaids/
+3. **v303rd Fighter Group Website**: <https://www.v303rdfightergroup.com/index.php?pages/navaids/>
 4. **Elevations**: SRTM/NASA Digital Elevation Model
 
 ---

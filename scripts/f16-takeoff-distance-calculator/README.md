@@ -98,14 +98,14 @@ const totalDragIndex = calculateTotalDragIndex([
 
 ### Takeoff Factor (Figure B2-1)
 
-```
+```text
 AB Factor = 1.110 + 0.00631*temp_F + 0.172*alt_1000ft + 0.000968*temp_F*alt_1000ft
 MIL Factor = AB Factor * 1.76  (from manual: 2.54/1.44)
 ```
 
 ### Base Takeoff Distance (Figure B2-3)
 
-```
+```text
 Distance (1000 ft) = 0.141*factor² + 1.369*factor + 0.242
 ```
 

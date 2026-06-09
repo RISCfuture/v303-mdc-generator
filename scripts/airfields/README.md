@@ -273,7 +273,7 @@ If validation fails, error messages will indicate:
 
 ## Files Overview
 
-```
+```text
 scripts/
 ├── generate_extraction_missions.py    # Creates .miz mission files
 ├── process_terrain_exports.py         # Converts DCS exports to JSON

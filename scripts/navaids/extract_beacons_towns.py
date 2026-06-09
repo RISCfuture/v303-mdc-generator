@@ -21,7 +21,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Any
 
 try:
     from lupa import LuaRuntime
@@ -67,7 +67,16 @@ BEACON_TYPES = {
 
 # Beacon types we want to extract as navaids (VOR, TACAN, etc.)
 # Exclude ILS components and airport-specific beacons
-NAVAID_BEACON_TYPES = {1, 2, 3, 4, 5, 6, 8, 19}  # VOR, DME, VOR_DME, TACAN, VORTAC, RSBN, HOMER, NAUTICAL_HOMER
+NAVAID_BEACON_TYPES = {
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    19,
+}  # VOR, DME, VOR_DME, TACAN, VORTAC, RSBN, HOMER, NAUTICAL_HOMER
 
 # Map DCS beacon type numbers to output type strings
 # HOMER (8) and NAUTICAL_HOMER (19) are non-directional beacons
@@ -78,8 +87,8 @@ BEACON_TYPE_TO_OUTPUT = {
     4: "TACAN",
     5: "VORTAC",
     6: "RSBN",
-    8: "NDB",      # HOMER
-    19: "NDB",     # NAUTICAL_HOMER
+    8: "NDB",  # HOMER
+    19: "NDB",  # NAUTICAL_HOMER
 }
 
 
@@ -195,19 +204,19 @@ class BeaconTownExtractor:
 
         try:
             # Check if it's a Lua table
-            if not hasattr(lua_table, 'items'):
+            if not hasattr(lua_table, "items"):
                 return lua_table
 
             # Convert to dict first
             result = {}
             for key, value in lua_table.items():
                 # Convert key to Python type
-                if hasattr(key, 'items'):
+                if hasattr(key, "items"):
                     # Key is a table - skip it (can't use as dict key)
                     continue
 
                 # Recursively convert nested tables
-                if hasattr(value, 'items'):
+                if hasattr(value, "items"):
                     value = self._lua_table_to_python(value)
                 result[key] = value
 
@@ -218,17 +227,20 @@ class BeaconTownExtractor:
                 max_key = max(int_keys)
                 if min_key == 1 and max_key == len(result):
                     # It's a Lua array, convert to Python list
-                    return [result.get(i) or result.get(float(i)) for i in range(1, len(result) + 1)]
+                    return [
+                        result.get(i) or result.get(float(i)) for i in range(1, len(result) + 1)
+                    ]
 
             return result
 
         except Exception as e:
             print(f"    WARNING: Failed to convert Lua table: {e}")
             import traceback
+
             traceback.print_exc()
             return None
 
-    def find_terrains(self) -> List[Path]:
+    def find_terrains(self) -> list[Path]:
         """Find all terrain directories in DCS installation."""
         terrains_dir = self.dcs_dir / "Mods" / "terrains"
 
@@ -248,7 +260,7 @@ class BeaconTownExtractor:
 
         return sorted(terrains)
 
-    def extract_beacons(self, terrain_dir: Path) -> List[Dict]:
+    def extract_beacons(self, terrain_dir: Path) -> list[dict]:
         """
         Extract navigation beacons from terrain's beacons.lua file.
 
@@ -261,7 +273,7 @@ class BeaconTownExtractor:
 
         try:
             # Read and execute the Lua file
-            lua_content = beacons_file.read_text(encoding='utf-8', errors='replace')
+            lua_content = beacons_file.read_text(encoding="utf-8", errors="replace")
 
             # Reset beacons table
             self.lua.execute("beacons = {}")
@@ -271,7 +283,7 @@ class BeaconTownExtractor:
 
             lua_beacons = self.lua.globals().beacons
 
-            if not lua_beacons or not hasattr(lua_beacons, 'items'):
+            if not lua_beacons or not hasattr(lua_beacons, "items"):
                 return []
 
             # Process beacons directly from Lua table
@@ -279,10 +291,16 @@ class BeaconTownExtractor:
             for key, beacon in lua_beacons.items():
                 try:
                     # Get beacon type
-                    beacon_type = beacon.type if hasattr(beacon, 'type') else beacon.get('type', 0) if isinstance(beacon, dict) else 0
+                    beacon_type = (
+                        beacon.type
+                        if hasattr(beacon, "type")
+                        else beacon.get("type", 0)
+                        if isinstance(beacon, dict)
+                        else 0
+                    )
 
                     # Convert to int if needed
-                    if hasattr(beacon_type, '__float__'):
+                    if hasattr(beacon_type, "__float__"):
                         beacon_type = int(beacon_type)
 
                     # Filter by beacon type - only include navigation beacons
@@ -293,9 +311,9 @@ class BeaconTownExtractor:
                     callsign = None
                     display_name = None
 
-                    if hasattr(beacon, 'callsign'):
+                    if hasattr(beacon, "callsign"):
                         callsign = beacon.callsign
-                    if hasattr(beacon, 'display_name'):
+                    if hasattr(beacon, "display_name"):
                         display_name = beacon.display_name
 
                     name = callsign or display_name
@@ -303,7 +321,7 @@ class BeaconTownExtractor:
                         continue
 
                     # Get position from positionGeo (contains latitude/longitude)
-                    pos_geo = beacon.positionGeo if hasattr(beacon, 'positionGeo') else None
+                    pos_geo = beacon.positionGeo if hasattr(beacon, "positionGeo") else None
 
                     if pos_geo is None:
                         continue
@@ -311,21 +329,23 @@ class BeaconTownExtractor:
                     latitude = None
                     longitude = None
 
-                    if hasattr(pos_geo, 'latitude'):
+                    if hasattr(pos_geo, "latitude"):
                         latitude = pos_geo.latitude
-                    if hasattr(pos_geo, 'longitude'):
+                    if hasattr(pos_geo, "longitude"):
                         longitude = pos_geo.longitude
 
                     if latitude is None or longitude is None:
                         continue
 
-                    navaids.append({
-                        'name': str(name).strip(),
-                        'type': BEACON_TYPE_TO_OUTPUT.get(beacon_type, 'VOR'),
-                        'latitude': float(latitude),
-                        'longitude': float(longitude),
-                        'elevation': None  # Will be filled by merge script
-                    })
+                    navaids.append(
+                        {
+                            "name": str(name).strip(),
+                            "type": BEACON_TYPE_TO_OUTPUT.get(beacon_type, "VOR"),
+                            "latitude": float(latitude),
+                            "longitude": float(longitude),
+                            "elevation": None,  # Will be filled by merge script
+                        }
+                    )
                 except Exception as e:
                     print(f"    WARNING: Failed to process beacon: {e}")
                     continue
@@ -336,7 +356,7 @@ class BeaconTownExtractor:
             print(f"    WARNING: Failed to parse beacons.lua: {e}")
             return []
 
-    def extract_beacons_fallback(self, terrain_dir: Path) -> List[Dict]:
+    def extract_beacons_fallback(self, terrain_dir: Path) -> list[dict]:
         """
         Fallback beacon extraction using regex when Lua parsing fails.
         """
@@ -346,42 +366,23 @@ class BeaconTownExtractor:
             return []
 
         try:
-            content = beacons_file.read_text(encoding='utf-8', errors='replace')
+            content = beacons_file.read_text(encoding="utf-8", errors="replace")
             navaids = []
 
-            # Pattern to match beacon entries with lat/lon
-            # Looking for patterns like:
-            # callsign = "HAM",
-            # ...
-            # lat = 53.685493,
-            # lon = 10.205137,
-
-            # Find all beacon blocks
-            beacon_pattern = re.compile(
-                r'\{\s*'
-                r'(?:[^}]*?)'  # Any content
-                r'(?:callsign|display_name)\s*=\s*["\']([^"\']+)["\']'  # Name
-                r'(?:[^}]*?)'  # Any content
-                r'type\s*=\s*(?:BEACON_TYPE_)?(\w+)'  # Type
-                r'(?:[^}]*?)'  # Any content
-                r'(?=.*?lat\s*=\s*(-?[\d.]+))'  # Latitude (lookahead)
-                r'(?=.*?lon\s*=\s*(-?[\d.]+))'  # Longitude (lookahead)
-                r'[^}]*\}',
-                re.DOTALL | re.IGNORECASE
-            )
-
-            # Simpler pattern - find individual beacons by structure
-            # Each beacon is a table with specific fields
-            block_pattern = re.compile(r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}', re.DOTALL)
+            # Find individual beacons by structure.
+            # Each beacon is a table with specific fields.
+            block_pattern = re.compile(r"\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}", re.DOTALL)
 
             for block_match in block_pattern.finditer(content):
                 block = block_match.group(0)
 
                 # Extract fields from this block
-                name_match = re.search(r'(?:callsign|display_name)\s*=\s*["\']([^"\']+)["\']', block)
-                type_match = re.search(r'type\s*=\s*(?:BEACON_TYPE_)?(\w+)', block)
-                lat_match = re.search(r'\blat\s*=\s*(-?[\d.]+)', block)
-                lon_match = re.search(r'\blon\s*=\s*(-?[\d.]+)', block)
+                name_match = re.search(
+                    r'(?:callsign|display_name)\s*=\s*["\']([^"\']+)["\']', block
+                )
+                type_match = re.search(r"type\s*=\s*(?:BEACON_TYPE_)?(\w+)", block)
+                lat_match = re.search(r"\blat\s*=\s*(-?[\d.]+)", block)
+                lon_match = re.search(r"\blon\s*=\s*(-?[\d.]+)", block)
 
                 if not (name_match and lat_match and lon_match):
                     continue
@@ -391,8 +392,14 @@ class BeaconTownExtractor:
                     beacon_type_str = type_match.group(1).upper()
                     # Map string to type number
                     type_map = {
-                        'VOR': 1, 'DME': 2, 'VOR_DME': 3, 'TACAN': 4,
-                        'VORTAC': 5, 'RSBN': 6, 'HOMER': 8, 'NAUTICAL_HOMER': 19
+                        "VOR": 1,
+                        "DME": 2,
+                        "VOR_DME": 3,
+                        "TACAN": 4,
+                        "VORTAC": 5,
+                        "RSBN": 6,
+                        "HOMER": 8,
+                        "NAUTICAL_HOMER": 19,
                     }
                     beacon_type = type_map.get(beacon_type_str, 0)
                     if beacon_type not in NAVAID_BEACON_TYPES:
@@ -403,16 +410,18 @@ class BeaconTownExtractor:
                 longitude = float(lon_match.group(1))
 
                 # Skip duplicates
-                if any(n['name'] == name for n in navaids):
+                if any(n["name"] == name for n in navaids):
                     continue
 
-                navaids.append({
-                    'name': name,
-                    'type': BEACON_TYPE_TO_OUTPUT.get(beacon_type, 'VOR'),
-                    'latitude': latitude,
-                    'longitude': longitude,
-                    'elevation': None
-                })
+                navaids.append(
+                    {
+                        "name": name,
+                        "type": BEACON_TYPE_TO_OUTPUT.get(beacon_type, "VOR"),
+                        "latitude": latitude,
+                        "longitude": longitude,
+                        "elevation": None,
+                    }
+                )
 
             return navaids
 
@@ -420,7 +429,7 @@ class BeaconTownExtractor:
             print(f"    WARNING: Fallback beacon extraction failed: {e}")
             return []
 
-    def extract_towns(self, terrain_dir: Path) -> List[Dict]:
+    def extract_towns(self, terrain_dir: Path) -> list[dict]:
         """
         Extract town/city locations from terrain's towns.lua file.
 
@@ -433,7 +442,7 @@ class BeaconTownExtractor:
 
         try:
             # Read and execute the Lua file
-            lua_content = towns_file.read_text(encoding='utf-8', errors='replace')
+            lua_content = towns_file.read_text(encoding="utf-8", errors="replace")
 
             # Reset towns table
             self.lua.execute("towns = {}")
@@ -444,7 +453,7 @@ class BeaconTownExtractor:
             # Get the towns table
             lua_towns = self.lua.globals().towns
 
-            if not lua_towns or not hasattr(lua_towns, 'items'):
+            if not lua_towns or not hasattr(lua_towns, "items"):
                 return []
 
             # Process towns directly from Lua table
@@ -462,45 +471,47 @@ class BeaconTownExtractor:
                         name = key
 
                     # Try to get data from town object
-                    if hasattr(town, 'items'):
+                    if hasattr(town, "items"):
                         # It's a table, extract fields
-                        if hasattr(town, 'name'):
+                        if hasattr(town, "name"):
                             name = town.name
-                        if hasattr(town, 'display_name') and not name:
+                        if hasattr(town, "display_name") and not name:
                             name = town.display_name
 
                         # Try positionGeo first (like beacons)
-                        if hasattr(town, 'positionGeo'):
+                        if hasattr(town, "positionGeo"):
                             pos_geo = town.positionGeo
-                            if hasattr(pos_geo, 'latitude'):
+                            if hasattr(pos_geo, "latitude"):
                                 latitude = pos_geo.latitude
-                            if hasattr(pos_geo, 'longitude'):
+                            if hasattr(pos_geo, "longitude"):
                                 longitude = pos_geo.longitude
 
                         # Fall back to direct latitude/longitude
-                        if latitude is None and hasattr(town, 'latitude'):
+                        if latitude is None and hasattr(town, "latitude"):
                             latitude = town.latitude
-                        if longitude is None and hasattr(town, 'longitude'):
+                        if longitude is None and hasattr(town, "longitude"):
                             longitude = town.longitude
 
                         # Also try lat/lon variants
-                        if latitude is None and hasattr(town, 'lat'):
+                        if latitude is None and hasattr(town, "lat"):
                             latitude = town.lat
-                        if longitude is None and hasattr(town, 'lon'):
+                        if longitude is None and hasattr(town, "lon"):
                             longitude = town.lon
 
                     if not name or latitude is None or longitude is None:
                         continue
 
-                    locations.append({
-                        'name': str(name).strip(),
-                        'type': 'TOWN',
-                        'latitude': float(latitude),
-                        'longitude': float(longitude),
-                        'elevation': None
-                    })
+                    locations.append(
+                        {
+                            "name": str(name).strip(),
+                            "type": "TOWN",
+                            "latitude": float(latitude),
+                            "longitude": float(longitude),
+                            "elevation": None,
+                        }
+                    )
 
-                except Exception as e:
+                except Exception:
                     continue
 
             return locations
@@ -509,7 +520,7 @@ class BeaconTownExtractor:
             print(f"    WARNING: Failed to parse towns.lua: {e}")
             return []
 
-    def extract_towns_fallback(self, terrain_dir: Path) -> List[Dict]:
+    def extract_towns_fallback(self, terrain_dir: Path) -> list[dict]:
         """
         Fallback town extraction using regex when Lua parsing fails.
         """
@@ -519,7 +530,7 @@ class BeaconTownExtractor:
             return []
 
         try:
-            content = towns_file.read_text(encoding='utf-8', errors='replace')
+            content = towns_file.read_text(encoding="utf-8", errors="replace")
             locations = []
 
             # Pattern to match town entries
@@ -529,9 +540,9 @@ class BeaconTownExtractor:
             # Pattern 1: Named table entries
             pattern1 = re.compile(
                 r'\["([^"]+)"\]\s*=\s*\{[^}]*'
-                r'lat\s*=\s*(-?[\d.]+)[^}]*'
-                r'lon\s*=\s*(-?[\d.]+)',
-                re.DOTALL
+                r"lat\s*=\s*(-?[\d.]+)[^}]*"
+                r"lon\s*=\s*(-?[\d.]+)",
+                re.DOTALL,
             )
 
             for match in pattern1.finditer(content):
@@ -539,21 +550,23 @@ class BeaconTownExtractor:
                 latitude = float(match.group(2))
                 longitude = float(match.group(3))
 
-                if not any(loc['name'] == name for loc in locations):
-                    locations.append({
-                        'name': name,
-                        'type': 'TOWN',
-                        'latitude': latitude,
-                        'longitude': longitude,
-                        'elevation': None
-                    })
+                if not any(loc["name"] == name for loc in locations):
+                    locations.append(
+                        {
+                            "name": name,
+                            "type": "TOWN",
+                            "latitude": latitude,
+                            "longitude": longitude,
+                            "elevation": None,
+                        }
+                    )
 
             # Pattern 2: Array entries with name field
             pattern2 = re.compile(
                 r'name\s*=\s*["\']([^"\']+)["\'][^}]*'
-                r'lat\s*=\s*(-?[\d.]+)[^}]*'
-                r'lon\s*=\s*(-?[\d.]+)',
-                re.DOTALL
+                r"lat\s*=\s*(-?[\d.]+)[^}]*"
+                r"lon\s*=\s*(-?[\d.]+)",
+                re.DOTALL,
             )
 
             for match in pattern2.finditer(content):
@@ -561,14 +574,16 @@ class BeaconTownExtractor:
                 latitude = float(match.group(2))
                 longitude = float(match.group(3))
 
-                if not any(loc['name'] == name for loc in locations):
-                    locations.append({
-                        'name': name,
-                        'type': 'TOWN',
-                        'latitude': latitude,
-                        'longitude': longitude,
-                        'elevation': None
-                    })
+                if not any(loc["name"] == name for loc in locations):
+                    locations.append(
+                        {
+                            "name": name,
+                            "type": "TOWN",
+                            "latitude": latitude,
+                            "longitude": longitude,
+                            "elevation": None,
+                        }
+                    )
 
             return locations
 
@@ -576,7 +591,7 @@ class BeaconTownExtractor:
             print(f"    WARNING: Fallback town extraction failed: {e}")
             return []
 
-    def extract_terrain(self, terrain_dir: Path) -> Optional[Path]:
+    def extract_terrain(self, terrain_dir: Path) -> Path | None:
         """
         Extract all navaids (beacons + towns) from a terrain.
 
@@ -586,7 +601,7 @@ class BeaconTownExtractor:
         print(f"\nProcessing {terrain_name}...")
 
         # Extract beacons
-        print(f"  Extracting beacons...")
+        print("  Extracting beacons...")
         beacons = self.extract_beacons(terrain_dir)
 
         # If Lua parsing failed, try fallback
@@ -596,7 +611,7 @@ class BeaconTownExtractor:
         print(f"    Found {len(beacons)} navigation beacons")
 
         # Extract towns
-        print(f"  Extracting towns...")
+        print("  Extracting towns...")
         towns = self.extract_towns(terrain_dir)
 
         # If Lua parsing failed, try fallback
@@ -610,7 +625,7 @@ class BeaconTownExtractor:
         seen_names = set()
 
         for navaid in beacons + towns:
-            name = navaid['name']
+            name = navaid["name"]
             if name not in seen_names:
                 all_navaids.append(navaid)
                 seen_names.add(name)
@@ -620,19 +635,19 @@ class BeaconTownExtractor:
             return None
 
         # Sort by name
-        all_navaids.sort(key=lambda n: n['name'])
+        all_navaids.sort(key=lambda n: n["name"])
 
         # Write output file
         self.output_dir.mkdir(parents=True, exist_ok=True)
         output_file = self.output_dir / f"{terrain_name}.json"
 
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(all_navaids, f, indent=2, ensure_ascii=False)
 
         print(f"  ✓ Wrote {len(all_navaids)} navaids to {output_file}")
         return output_file
 
-    def extract_all(self) -> Dict[str, Optional[Path]]:
+    def extract_all(self) -> dict[str, Path | None]:
         """Extract navaids from all terrains."""
         results = {}
 
@@ -650,7 +665,7 @@ class BeaconTownExtractor:
         return results
 
 
-def find_dcs_installation() -> Optional[Path]:
+def find_dcs_installation() -> Path | None:
     """Find DCS World installation directory."""
     for path in DEFAULT_DCS_PATHS:
         if path.exists() and (path / "bin").exists():
@@ -660,7 +675,7 @@ def find_dcs_installation() -> Optional[Path]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Extract beacons and towns from DCS World installation',
+        description="Extract beacons and towns from DCS World installation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -673,26 +688,20 @@ Notes:
   - Requires 'lupa' library: pip install lupa
   - Transfer output JSON files to your development machine for merging
   - Elevations are set to null and will be populated by merge_beacons_towns.py
-        """
+        """,
+    )
+
+    parser.add_argument("--dcs-dir", type=Path, help="Path to DCS World installation directory")
+
+    parser.add_argument(
+        "--terrain", type=str, help="Extract specific terrain only (e.g., Caucasus, Syria)"
     )
 
     parser.add_argument(
-        '--dcs-dir',
+        "--output-dir",
         type=Path,
-        help='Path to DCS World installation directory'
-    )
-
-    parser.add_argument(
-        '--terrain',
-        type=str,
-        help='Extract specific terrain only (e.g., Caucasus, Syria)'
-    )
-
-    parser.add_argument(
-        '--output-dir',
-        type=Path,
-        default=Path('./extracted_navaids'),
-        help='Output directory for JSON files (default: ./extracted_navaids)'
+        default=Path("./extracted_navaids"),
+        help="Output directory for JSON files (default: ./extracted_navaids)",
     )
 
     args = parser.parse_args()
@@ -761,9 +770,10 @@ Notes:
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

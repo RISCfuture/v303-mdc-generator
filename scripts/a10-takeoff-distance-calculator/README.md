@@ -111,7 +111,7 @@ const directHeadwind = calculateHeadwindComponent(20, 360, 360)
 
 ### Takeoff Index
 
-```
+```text
 index = 4.524 + 0.0405*temp_C + 0.597*alt_1000ft + 0.00621*temp_C*alt_1000ft
 ```
 
@@ -120,7 +120,7 @@ index = 4.524 + 0.0405*temp_C + 0.597*alt_1000ft + 0.00621*temp_C*alt_1000ft
 
 ### Takeoff Ground Run
 
-```
+```text
 distance_1000ft = c0 + c1*index + c2*index² + c3*weight_k + c4*weight_k² + c5*index*weight_k
 ```
 

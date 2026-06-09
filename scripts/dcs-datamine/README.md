@@ -16,13 +16,13 @@ The datamine system consists of two components:
 
 1. Copy the hook file to your DCS Scripts/Hooks directory:
 
-   ```
+   ```text
    hooks/v303-datamine-hook.lua → DCS World\Scripts\Hooks\
    ```
 
    The typical path is:
 
-   ```
+   ```text
    C:\Program Files\Eagle Dynamics\DCS World\Scripts\Hooks\
    ```
 
@@ -34,7 +34,7 @@ The datamine system consists of two components:
 
 4. Find exported files at:
 
-   ```
+   ```text
    %USERPROFILE%\Saved Games\DCS\v303-datamine\
    ```
 
@@ -84,7 +84,7 @@ The datamine system consists of two components:
 
 ## File Structure
 
-```
+```text
 scripts/dcs-datamine/
 ├── hooks/
 │   └── v303-datamine-hook.lua    # DCS hook (copy to DCS installation)

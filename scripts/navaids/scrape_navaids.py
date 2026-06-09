@@ -17,7 +17,6 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 
 import requests
 from bs4 import BeautifulSoup
@@ -25,11 +24,13 @@ from bs4 import BeautifulSoup
 # Try to import elevation library
 try:
     import srtm
-    ELEVATION_LIB = 'srtm'
+
+    ELEVATION_LIB = "srtm"
 except ImportError:
     try:
-        import elevation
-        ELEVATION_LIB = 'elevation'
+        import elevation  # noqa: F401  # imported only to probe availability
+
+        ELEVATION_LIB = "elevation"
     except ImportError:
         print("ERROR: No DEM library found. Please install one of:")
         print("  pip install srtm.py")
@@ -39,15 +40,15 @@ except ImportError:
 
 # Theatre name mapping: filename -> URL slug
 THEATRES = {
-    'Nevada': 'nevada_navaids',
-    'MarianaIslands': 'marianas_navaids',
-    'Syria': 'syria_navaids',
-    'Afghanistan': 'afghanistan_navaids',
-    'GermanyCW': 'germany_navaids',
-    'Kola': 'kola_navaids',
+    "Nevada": "nevada_navaids",
+    "MarianaIslands": "marianas_navaids",
+    "Syria": "syria_navaids",
+    "Afghanistan": "afghanistan_navaids",
+    "GermanyCW": "germany_navaids",
+    "Kola": "kola_navaids",
 }
 
-BASE_URL = 'https://www.v303rdfightergroup.com/index.php?pages/'
+BASE_URL = "https://www.v303rdfightergroup.com/index.php?pages/"
 
 
 class NavaidScraper:
@@ -56,16 +57,16 @@ class NavaidScraper:
     def __init__(self, output_dir: Path):
         self.output_dir = output_dir
         self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (compatible; v303-navaid-scraper/1.0)'
-        })
+        self.session.headers.update(
+            {"User-Agent": "Mozilla/5.0 (compatible; v303-navaid-scraper/1.0)"}
+        )
 
         # Initialize elevation data getter
-        if ELEVATION_LIB == 'srtm':
+        if ELEVATION_LIB == "srtm":
             self.elevation_data = srtm.get_data()
-            print(f"Using SRTM elevation data")
+            print("Using SRTM elevation data")
         else:
-            print(f"Using elevation library")
+            print("Using elevation library")
 
     def parse_coordinate(self, coord_str: str, is_longitude: bool = False) -> float:
         """
@@ -88,7 +89,7 @@ class NavaidScraper:
         if not match:
             raise ValueError(f"Invalid coordinate format: {coord_str}")
 
-        sign = -1 if match.group(1) == '-' else 1
+        sign = -1 if match.group(1) == "-" else 1
         degrees = float(match.group(2))
         minutes = float(match.group(3))
 
@@ -97,7 +98,7 @@ class NavaidScraper:
 
         return decimal
 
-    def scrape_theatre_table(self, url: str) -> List[Dict]:
+    def scrape_theatre_table(self, url: str) -> list[dict]:
         """
         Scrape navaid table from theatre page.
 
@@ -113,10 +114,10 @@ class NavaidScraper:
             print(f"  ERROR: Failed to fetch page: {e}")
             return []
 
-        soup = BeautifulSoup(response.text, 'html.parser')
+        soup = BeautifulSoup(response.text, "html.parser")
 
         # Try to find all HTML tables on the page
-        tables = soup.find_all('table')
+        tables = soup.find_all("table")
         navaids = []
 
         for table in tables:
@@ -132,7 +133,7 @@ class NavaidScraper:
 
         # Fallback: parse from raw text if still no results
         if not navaids:
-            print(f"  Table parsing failed, trying text extraction...")
+            print("  Table parsing failed, trying text extraction...")
             # Get text content without HTML tags
             text_content = soup.get_text()
             navaids = self._parse_from_text(text_content)
@@ -140,14 +141,14 @@ class NavaidScraper:
         print(f"  Found {len(navaids)} navaids")
         return navaids
 
-    def _parse_html_table(self, table) -> List[Dict]:
+    def _parse_html_table(self, table) -> list[dict]:
         """Parse standard HTML table."""
         navaids = []
-        rows = table.find_all('tr')
+        rows = table.find_all("tr")
 
         # Skip header row
         for row in rows[1:]:
-            cols = row.find_all('td')
+            cols = row.find_all("td")
             if len(cols) < 4:
                 continue
 
@@ -161,19 +162,21 @@ class NavaidScraper:
                 latitude = self.parse_coordinate(lat_str, is_longitude=False)
                 longitude = self.parse_coordinate(lon_str, is_longitude=True)
 
-                navaids.append({
-                    'name': name,
-                    'type': 'WAYPOINT',
-                    'latitude': latitude,
-                    'longitude': longitude,
-                })
+                navaids.append(
+                    {
+                        "name": name,
+                        "type": "WAYPOINT",
+                        "latitude": latitude,
+                        "longitude": longitude,
+                    }
+                )
             except (ValueError, IndexError) as e:
                 print(f"  WARNING: Skipping row due to error: {e}")
                 continue
 
         return navaids
 
-    def _parse_javascript_data(self, html_text: str) -> List[Dict]:
+    def _parse_javascript_data(self, html_text: str) -> list[dict]:
         """
         Parse JavaScript embedded navaid data.
 
@@ -197,50 +200,50 @@ class NavaidScraper:
                     latitude = self.parse_coordinate(lat_str, is_longitude=False)
                     longitude = self.parse_coordinate(lon_str, is_longitude=True)
 
-                    navaids.append({
-                        'name': name,
-                        'type': 'WAYPOINT',
-                        'latitude': latitude,
-                        'longitude': longitude,
-                    })
-            except Exception as e:
+                    navaids.append(
+                        {
+                            "name": name,
+                            "type": "WAYPOINT",
+                            "latitude": latitude,
+                            "longitude": longitude,
+                        }
+                    )
+            except Exception:
                 # print(f"  WARNING: Failed to parse JS object: {e}")
                 continue
 
         return navaids
 
-    def _parse_google_sheets(self, soup) -> List[Dict]:
+    def _parse_google_sheets(self, soup) -> list[dict]:
         """Parse Google Sheets embedded table (div-based waffle format)."""
-        navaids = []
-
         # Look for the waffle container
-        waffle = soup.find('div', class_='waffle')
+        waffle = soup.find("div", class_="waffle")
         if not waffle:
             # Try to find iframe containing Google Sheets
-            iframe = soup.find('iframe')
-            if iframe and iframe.get('src'):
-                iframe_url = iframe['src']
+            iframe = soup.find("iframe")
+            if iframe and iframe.get("src"):
+                iframe_url = iframe["src"]
                 print(f"  Found iframe, fetching: {iframe_url[:100]}...")
 
                 try:
                     response = self.session.get(iframe_url, timeout=30)
                     response.raise_for_status()
-                    soup = BeautifulSoup(response.text, 'html.parser')
-                    waffle = soup.find('div', class_='waffle')
+                    soup = BeautifulSoup(response.text, "html.parser")
+                    waffle = soup.find("div", class_="waffle")
                 except Exception as e:
                     print(f"  ERROR: Failed to fetch iframe: {e}")
                     return []
 
         if not waffle:
-            print(f"  ERROR: Could not find table data (no waffle div or iframe)")
+            print("  ERROR: Could not find table data (no waffle div or iframe)")
             return []
 
         # Find all rows in the waffle (they're divs with s# classes)
         # Look for divs that contain the cell data
-        rows = waffle.find_all('div', class_='ritz-cell')
+        rows = waffle.find_all("div", class_="ritz-cell")
         if not rows:
             # Alternative: look for table within waffle
-            table = waffle.find('table')
+            table = waffle.find("table")
             if table:
                 return self._parse_html_table(table)
 
@@ -249,7 +252,7 @@ class NavaidScraper:
         text_content = soup.get_text()
         return self._parse_from_text(text_content)
 
-    def _parse_from_text(self, text: str) -> List[Dict]:
+    def _parse_from_text(self, text: str) -> list[dict]:
         """
         Fallback: parse navaids from raw text by looking for coordinate patterns.
 
@@ -292,12 +295,14 @@ class NavaidScraper:
                     latitude = self.parse_coordinate(lat_str, is_longitude=False)
                     longitude = self.parse_coordinate(lon_str, is_longitude=True)
 
-                    navaids.append({
-                        'name': name,
-                        'type': 'WAYPOINT',
-                        'latitude': latitude,
-                        'longitude': longitude,
-                    })
+                    navaids.append(
+                        {
+                            "name": name,
+                            "type": "WAYPOINT",
+                            "latitude": latitude,
+                            "longitude": longitude,
+                        }
+                    )
             except Exception:
                 continue
 
@@ -313,12 +318,14 @@ class NavaidScraper:
                         latitude = self.parse_coordinate(lat_str, is_longitude=False)
                         longitude = self.parse_coordinate(lon_str, is_longitude=True)
 
-                        navaids.append({
-                            'name': name,
-                            'type': 'WAYPOINT',
-                            'latitude': latitude,
-                            'longitude': longitude,
-                        })
+                        navaids.append(
+                            {
+                                "name": name,
+                                "type": "WAYPOINT",
+                                "latitude": latitude,
+                                "longitude": longitude,
+                            }
+                        )
                 except Exception:
                     continue
 
@@ -329,7 +336,7 @@ class NavaidScraper:
         if not name or len(name) < 2:
             return False
         # Skip header-like text
-        if any(word in name for word in ['Lat', 'Long', 'MGRS', 'Nav', 'Point']):
+        if any(word in name for word in ["Lat", "Long", "MGRS", "Nav", "Point"]):
             return False
         return True
 
@@ -341,7 +348,7 @@ class NavaidScraper:
             Elevation in feet (rounded to nearest foot)
         """
         try:
-            if ELEVATION_LIB == 'srtm':
+            if ELEVATION_LIB == "srtm":
                 # srtm.py returns elevation in meters
                 elevation_m = self.elevation_data.get_elevation(latitude, longitude)
                 if elevation_m is None:
@@ -361,7 +368,7 @@ class NavaidScraper:
             print(f"    WARNING: Failed to get elevation for {latitude}, {longitude}: {e}")
             return 0
 
-    def process_theatre(self, theatre_name: str, url_slug: str) -> Optional[Path]:
+    def process_theatre(self, theatre_name: str, url_slug: str) -> Path | None:
         """
         Process a single theatre: scrape, fetch elevations, merge with existing, write JSON.
 
@@ -379,27 +386,27 @@ class NavaidScraper:
         # Scrape the table
         scraped_navaids = self.scrape_theatre_table(url)
         if not scraped_navaids:
-            print(f"  ERROR: No navaids found")
+            print("  ERROR: No navaids found")
             return None
 
         # Fetch elevations for scraped navaids
-        print(f"  Fetching elevations for scraped navaids...")
+        print("  Fetching elevations for scraped navaids...")
         for i, navaid in enumerate(scraped_navaids):
             if (i + 1) % 50 == 0:
                 print(f"    {i + 1}/{len(scraped_navaids)}...")
 
-            elevation = self.fetch_elevation(navaid['latitude'], navaid['longitude'])
-            navaid['elevation'] = elevation
+            elevation = self.fetch_elevation(navaid["latitude"], navaid["longitude"])
+            navaid["elevation"] = elevation
 
         # Load existing data and merge
-        output_file = self.output_dir / f'{theatre_name}.json'
+        output_file = self.output_dir / f"{theatre_name}.json"
         existing_by_name = {}
 
         if output_file.exists():
             try:
-                with open(output_file, 'r', encoding='utf-8') as f:
+                with open(output_file, encoding="utf-8") as f:
                     existing_data = json.load(f)
-                existing_by_name = {entry['name']: entry for entry in existing_data}
+                existing_by_name = {entry["name"]: entry for entry in existing_data}
                 print(f"  Loaded {len(existing_data)} existing entries")
             except Exception as e:
                 print(f"  WARNING: Failed to read existing file: {e}")
@@ -410,7 +417,7 @@ class NavaidScraper:
         updated_count = 0
 
         for navaid in scraped_navaids:
-            name = navaid['name']
+            name = navaid["name"]
             if name in merged_by_name:
                 merged_by_name[name] = navaid
                 updated_count += 1
@@ -418,22 +425,24 @@ class NavaidScraper:
                 merged_by_name[name] = navaid
                 added_count += 1
 
-        print(f"  Merged: {added_count} added, {updated_count} updated, "
-              f"{len(existing_by_name) - updated_count} kept from existing")
+        print(
+            f"  Merged: {added_count} added, {updated_count} updated, "
+            f"{len(existing_by_name) - updated_count} kept from existing"
+        )
 
         # Sort by name
-        merged_data = sorted(merged_by_name.values(), key=lambda n: n['name'])
+        merged_data = sorted(merged_by_name.values(), key=lambda n: n["name"])
 
         # Write output file
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(merged_data, f, indent=2, ensure_ascii=False)
 
         print(f"  ✓ Wrote {len(merged_data)} navaids to {output_file}")
         return output_file
 
-    def process_all_theatres(self) -> Dict[str, Optional[Path]]:
+    def process_all_theatres(self) -> dict[str, Path | None]:
         """Process all theatres."""
         results = {}
 
@@ -446,7 +455,7 @@ class NavaidScraper:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Scrape navaid data from v303rdfightergroup.com',
+        description="Scrape navaid data from v303rdfightergroup.com",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -455,21 +464,18 @@ Examples:
 
 Theatres:
   Nevada, MarianaIslands, Syria, Afghanistan, GermanyCW, Kola
-        """
+        """,
     )
 
     parser.add_argument(
-        '--theatre',
-        type=str,
-        choices=list(THEATRES.keys()),
-        help='Process specific theatre only'
+        "--theatre", type=str, choices=list(THEATRES.keys()), help="Process specific theatre only"
     )
 
     parser.add_argument(
-        '--output-dir',
+        "--output-dir",
         type=Path,
-        default=Path(__file__).parent.parent.parent / 'src' / 'data' / 'json' / 'navaids',
-        help='Output directory for JSON files'
+        default=Path(__file__).parent.parent.parent / "src" / "data" / "json" / "navaids",
+        help="Output directory for JSON files",
     )
 
     args = parser.parse_args()
@@ -512,9 +518,10 @@ Theatres:
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

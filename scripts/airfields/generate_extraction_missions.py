@@ -21,32 +21,39 @@ Author: Generated for v303 MDC Generator
 """
 
 import argparse
+import os
+import shutil
 import sys
 import warnings
-from pathlib import Path
 import zipfile
-import shutil
+from pathlib import Path
 
 # Suppress pydcs warnings about DCS not being installed
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
 
 # Suppress "Couldn't detect DCS World" and platform warning messages
-import os
 _original_stderr = sys.stderr
 _original_stdout = sys.stdout
-sys.stderr = open(os.devnull, 'w')
-sys.stdout = open(os.devnull, 'w')
+sys.stderr = open(os.devnull, "w")
+sys.stdout = open(os.devnull, "w")
 
 try:
     import dcs
-    from dcs.triggers import TriggerStart, Event
+
+    # Import custom terrain classes for terrains not in pydcs
+    from custom_terrains import Afghanistan, GermanyColdWar, Iraq, Kola, MarianasWWII, Sinai
     from dcs.action import DoScriptFile
     from dcs.terrain import (
-        Caucasus, Nevada, PersianGulf, Syria,
-        Falklands, Normandy, TheChannel, MarianaIslands
+        Caucasus,
+        Falklands,
+        MarianaIslands,
+        Nevada,
+        Normandy,
+        PersianGulf,
+        Syria,
+        TheChannel,
     )
-    # Import custom terrain classes for terrains not in pydcs
-    from custom_terrains import Afghanistan, Iraq, Kola, GermanyColdWar, Sinai, MarianasWWII
+    from dcs.triggers import Event, TriggerStart
 
     # Restore stderr/stdout after imports
     sys.stderr.close()
@@ -68,21 +75,21 @@ class MissionGenerator:
 
     # Map terrain names to pydcs terrain classes
     TERRAINS = {
-        'Caucasus': Caucasus,
-        'Nevada': Nevada,
-        'PersianGulf': PersianGulf,
-        'Syria': Syria,
-        'Sinai': Sinai,
-        'Falklands': Falklands,
-        'Normandy': Normandy,
-        'TheChannel': TheChannel,
-        'MarianaIslands': MarianaIslands,
+        "Caucasus": Caucasus,
+        "Nevada": Nevada,
+        "PersianGulf": PersianGulf,
+        "Syria": Syria,
+        "Sinai": Sinai,
+        "Falklands": Falklands,
+        "Normandy": Normandy,
+        "TheChannel": TheChannel,
+        "MarianaIslands": MarianaIslands,
         # Custom terrains (not in pydcs)
-        'Afghanistan': Afghanistan,
-        'Iraq': Iraq,
-        'Kola': Kola,
-        'GermanyColdWar': GermanyColdWar,
-        'MarianasWWII': MarianasWWII,
+        "Afghanistan": Afghanistan,
+        "Iraq": Iraq,
+        "Kola": Kola,
+        "GermanyColdWar": GermanyColdWar,
+        "MarianasWWII": MarianasWWII,
     }
 
     def __init__(self, output_dir: Path, dcs_export_dir: Path):
@@ -90,8 +97,8 @@ class MissionGenerator:
         self.dcs_export_dir = dcs_export_dir
 
         # Verify required files exist
-        self.export_script = dcs_export_dir / 'export_terrain_data.lua'
-        self.moose_lib = dcs_export_dir / 'Moose.lua'
+        self.export_script = dcs_export_dir / "export_terrain_data.lua"
+        self.moose_lib = dcs_export_dir / "Moose.lua"
 
         if not self.export_script.exists():
             raise FileNotFoundError(f"Export script not found: {self.export_script}")
@@ -129,10 +136,10 @@ class MissionGenerator:
         # Register the script files in mapResource FIRST
         # This maps the script names to actual .lua files in l10n/DEFAULT/
         # add_resource_file returns a resource key that we use in DoScriptFile
-        print(f"  Registering MOOSE framework...")
+        print("  Registering MOOSE framework...")
         moose_key = mission.map_resource.add_resource_file("moose", "Moose.lua")
 
-        print(f"  Registering terrain export script...")
+        print("  Registering terrain export script...")
         export_key = mission.map_resource.add_resource_file("export", "export_terrain_data.lua")
 
         # Create a trigger that runs at mission start
@@ -140,10 +147,10 @@ class MissionGenerator:
 
         # Add actions to load MOOSE and our export script
         # Order matters: MOOSE must be loaded first
-        print(f"  Adding MOOSE framework to trigger...")
+        print("  Adding MOOSE framework to trigger...")
         trigger.add_action(DoScriptFile(moose_key))
 
-        print(f"  Adding terrain export script to trigger...")
+        print("  Adding terrain export script to trigger...")
         trigger.add_action(DoScriptFile(export_key))
 
         # Add trigger to mission
@@ -158,7 +165,7 @@ class MissionGenerator:
 
         # Now we need to add the actual .lua files to the .miz archive
         # A .miz file is just a ZIP archive, so we can add files to it
-        print(f"  Embedding MOOSE and export script into mission...")
+        print("  Embedding MOOSE and export script into mission...")
         self._embed_scripts_in_miz(mission_path, terrain_name)
 
         print(f"  ✓ Created {mission_filename}")
@@ -178,24 +185,24 @@ class MissionGenerator:
 
         try:
             # Extract the .miz file
-            with zipfile.ZipFile(miz_path, 'r') as zip_ref:
+            with zipfile.ZipFile(miz_path, "r") as zip_ref:
                 zip_ref.extractall(temp_dir)
 
             # Ensure l10n/DEFAULT directory exists
-            l10n_dir = temp_dir / 'l10n' / 'DEFAULT'
+            l10n_dir = temp_dir / "l10n" / "DEFAULT"
             l10n_dir.mkdir(parents=True, exist_ok=True)
 
             # Copy MOOSE framework
-            shutil.copy2(self.moose_lib, l10n_dir / 'Moose.lua')
+            shutil.copy2(self.moose_lib, l10n_dir / "Moose.lua")
 
             # Copy export script
-            shutil.copy2(self.export_script, l10n_dir / 'export_terrain_data.lua')
+            shutil.copy2(self.export_script, l10n_dir / "export_terrain_data.lua")
 
             # Update mapResource file to register our scripts
             # The file should be in Lua format: mapResource = { ["key"] = "filename" }
             # We need BOTH the custom keys (moose, export) AND the ResKey mappings
             # that pydcs generates
-            mapResource_path = l10n_dir / 'mapResource'
+            mapResource_path = l10n_dir / "mapResource"
             mapResource_content = """mapResource=
 {
 \t["ResKey_5"]="Moose.lua",
@@ -204,13 +211,13 @@ class MissionGenerator:
 \t["export"]="export_terrain_data.lua",
 }
 """
-            with open(mapResource_path, 'w', encoding='utf-8') as f:
+            with open(mapResource_path, "w", encoding="utf-8") as f:
                 f.write(mapResource_content)
 
             # Re-create the .miz file (ZIP archive)
-            with zipfile.ZipFile(miz_path, 'w', zipfile.ZIP_DEFLATED) as zip_ref:
+            with zipfile.ZipFile(miz_path, "w", zipfile.ZIP_DEFLATED) as zip_ref:
                 # Add all files from temp directory
-                for file_path in temp_dir.rglob('*'):
+                for file_path in temp_dir.rglob("*"):
                     if file_path.is_file():
                         # Get the path relative to temp_dir
                         arcname = file_path.relative_to(temp_dir)
@@ -239,6 +246,7 @@ class MissionGenerator:
             except Exception as e:
                 print(f"  ✗ Error generating mission for {terrain_name}: {e}")
                 import traceback
+
                 traceback.print_exc()
                 results[terrain_name] = None
 
@@ -247,7 +255,7 @@ class MissionGenerator:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Generate DCS terrain data extraction missions with MOOSE framework',
+        description="Generate DCS terrain data extraction missions with MOOSE framework",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -260,28 +268,28 @@ After generating missions:
   2. Load each mission in DCS
   3. Wait for "Terrain data exported" message
   4. Exit and process the exported data
-        """
+        """,
     )
 
     parser.add_argument(
-        '--terrain',
+        "--terrain",
         type=str,
         choices=list(MissionGenerator.TERRAINS.keys()),
-        help='Generate mission for specific terrain only'
+        help="Generate mission for specific terrain only",
     )
 
     parser.add_argument(
-        '--output-dir',
+        "--output-dir",
         type=Path,
-        default=Path('./extraction_missions'),
-        help='Output directory for mission files (default: ./extraction_missions)'
+        default=Path("./extraction_missions"),
+        help="Output directory for mission files (default: ./extraction_missions)",
     )
 
     parser.add_argument(
-        '--dcs-export-dir',
+        "--dcs-export-dir",
         type=Path,
-        default=Path(__file__).parent / 'dcs_export',
-        help='Directory containing export scripts (default: ./dcs_export)'
+        default=Path(__file__).parent / "dcs_export",
+        help="Directory containing export scripts (default: ./dcs_export)",
     )
 
     args = parser.parse_args()
@@ -329,9 +337,10 @@ After generating missions:
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

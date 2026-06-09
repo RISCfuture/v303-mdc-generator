@@ -1,0 +1,10 @@
+# Ruff configuration for the Python helper scripts under scripts/.
+# The main application is a Vue/TypeScript project; these scripts are
+# standalone data-extraction and scraping utilities.
+target-version = "py314"
+line-length = 100
+
+[lint]
+# Ruff's defaults (pyflakes F + pycodestyle E subset) plus import-sorting (I)
+# and pyupgrade (UP). E501 line-length is not part of the default set.
+extend-select = ["I", "UP"]

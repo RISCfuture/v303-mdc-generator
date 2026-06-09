@@ -16,16 +16,17 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional
 
 # Try to import elevation library
 try:
     import srtm
-    ELEVATION_LIB = 'srtm'
+
+    ELEVATION_LIB = "srtm"
 except ImportError:
     try:
-        import elevation
-        ELEVATION_LIB = 'elevation'
+        import elevation  # noqa: F401  # imported only to probe availability
+
+        ELEVATION_LIB = "elevation"
     except ImportError:
         print("ERROR: No DEM library found. Please install one of:")
         print("  pip install srtm.py")
@@ -36,9 +37,9 @@ except ImportError:
 # Terrain name mapping: directory name -> internal DCS name
 # Based on scripts/airfields/dcs_export/export_terrain_data.lua line 88
 TERRAIN_NAME_MAPPING = {
-    'GermanyColdWar': 'GermanyCW',
-    'Sinai': 'SinaiMap',
-    'MarianasWWII': 'MarianaIslandsWWII',
+    "GermanyColdWar": "GermanyCW",
+    "Sinai": "SinaiMap",
+    "MarianasWWII": "MarianaIslandsWWII",
 }
 
 
@@ -50,11 +51,11 @@ class NavaidLoader:
         self.output_dir = output_dir
 
         # Initialize elevation data getter
-        if ELEVATION_LIB == 'srtm':
+        if ELEVATION_LIB == "srtm":
             self.elevation_data = srtm.get_data()
-            print(f"Using SRTM elevation data")
+            print("Using SRTM elevation data")
         else:
-            print(f"Using elevation library")
+            print("Using elevation library")
 
     def map_terrain_name(self, directory_name: str) -> str:
         """
@@ -76,7 +77,7 @@ class NavaidLoader:
             Elevation in feet (rounded to nearest foot)
         """
         try:
-            if ELEVATION_LIB == 'srtm':
+            if ELEVATION_LIB == "srtm":
                 # srtm.py returns elevation in meters
                 elevation_m = self.elevation_data.get_elevation(latitude, longitude)
                 if elevation_m is None:
@@ -96,7 +97,7 @@ class NavaidLoader:
             print(f"    WARNING: Failed to get elevation for {latitude}, {longitude}: {e}")
             return 0
 
-    def load_theatre(self, input_file: Path, theatre_name: str) -> Optional[Path]:
+    def load_theatre(self, input_file: Path, theatre_name: str) -> Path | None:
         """
         Load navaid data for one theatre from extracted beacon/town data.
 
@@ -111,20 +112,20 @@ class NavaidLoader:
 
         # Read extracted data
         try:
-            with open(input_file, 'r', encoding='utf-8') as f:
+            with open(input_file, encoding="utf-8") as f:
                 extracted_data = json.load(f)
             print(f"  Loaded {len(extracted_data)} entries from {input_file.name}")
         except Exception as e:
             print(f"  ERROR: Failed to read {input_file}: {e}")
             return None
 
-        output_file = self.output_dir / f'{theatre_name}.json'
+        output_file = self.output_dir / f"{theatre_name}.json"
 
         # Deduplicate by name
         extracted_by_name = {}
         duplicate_count = 0
         for entry in extracted_data:
-            name = entry['name']
+            name = entry["name"]
             if name in extracted_by_name:
                 duplicate_count += 1
             else:
@@ -135,14 +136,14 @@ class NavaidLoader:
         print(f"  Processing {len(merged_data)} unique entries")
 
         # Fetch elevations for entries with null elevation
-        entries_needing_elevation = [e for e in merged_data if e.get('elevation') is None]
+        entries_needing_elevation = [e for e in merged_data if e.get("elevation") is None]
         total_needed = len(entries_needing_elevation)
 
         if total_needed > 0:
             print(f"  Fetching elevations for {total_needed} entries...")
             for i, entry in enumerate(entries_needing_elevation):
-                elevation = self.fetch_elevation(entry['latitude'], entry['longitude'])
-                entry['elevation'] = elevation
+                elevation = self.fetch_elevation(entry["latitude"], entry["longitude"])
+                entry["elevation"] = elevation
 
                 # Progress every 25 entries or at completion
                 if (i + 1) % 25 == 0 or (i + 1) == total_needed:
@@ -151,16 +152,16 @@ class NavaidLoader:
 
             print(f"  ✓ Fetched {total_needed} elevations")
         else:
-            print(f"  All entries already have elevations")
+            print("  All entries already have elevations")
 
         # Sort by name
-        merged_data.sort(key=lambda n: n['name'])
+        merged_data.sort(key=lambda n: n["name"])
 
         # Write output file
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         try:
-            with open(output_file, 'w', encoding='utf-8') as f:
+            with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(merged_data, f, indent=2, ensure_ascii=False)
             print(f"  ✓ Wrote {len(merged_data)} entries to {output_file}")
             return output_file
@@ -168,7 +169,7 @@ class NavaidLoader:
             print(f"  ERROR: Failed to write {output_file}: {e}")
             return None
 
-    def load_all(self) -> Dict[str, Optional[Path]]:
+    def load_all(self) -> dict[str, Path | None]:
         """
         Load all extracted JSON files found in input directory.
 
@@ -178,7 +179,7 @@ class NavaidLoader:
         results = {}
 
         # Find all JSON files in input directory
-        json_files = sorted(self.input_dir.glob('*.json'))
+        json_files = sorted(self.input_dir.glob("*.json"))
 
         if not json_files:
             print(f"ERROR: No JSON files found in {self.input_dir}")
@@ -202,7 +203,7 @@ class NavaidLoader:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Load extracted DCS beacon/town data into navaid files',
+        description="Load extracted DCS beacon/town data into navaid files",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -214,21 +215,21 @@ Notes:
   - Fetches elevations using SRTM/DEM data for entries with null elevation
   - Deduplicates entries by name
   - Automatically maps terrain directory names to internal DCS names
-        """
+        """,
     )
 
     parser.add_argument(
-        '--input-dir',
+        "--input-dir",
         type=Path,
         required=True,
-        help='Directory containing extracted JSON files from DCS (required)'
+        help="Directory containing extracted JSON files from DCS (required)",
     )
 
     parser.add_argument(
-        '--output-dir',
+        "--output-dir",
         type=Path,
-        default=Path(__file__).parent.parent.parent / 'src' / 'data' / 'json' / 'navaids',
-        help='Output directory for navaid JSON files (default: src/data/json/navaids)'
+        default=Path(__file__).parent.parent.parent / "src" / "data" / "json" / "navaids",
+        help="Output directory for navaid JSON files (default: src/data/json/navaids)",
     )
 
     args = parser.parse_args()
@@ -274,9 +275,10 @@ Notes:
     except Exception as e:
         print(f"\nERROR: {e}")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
