@@ -10,11 +10,6 @@ import { test, expect } from './fixtures/fixtures'
  */
 
 test.describe('Fuel & Loadout Integration', () => {
-  test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-  })
-
   test('fuel weight and gross weight update when adding fuel tanks and adjusting slider', async ({
     missionListPage,
     missionEditorPage,

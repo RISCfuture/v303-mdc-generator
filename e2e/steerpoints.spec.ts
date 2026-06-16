@@ -1,11 +1,6 @@
 import { test, expect } from './fixtures/fixtures'
 
 test.describe('Steerpoint Departure Airport Behavior', () => {
-  test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-  })
-
   test('should update existing default steerpoint when departure airport is selected', async ({
     missionListPage,
     missionEditorPage,

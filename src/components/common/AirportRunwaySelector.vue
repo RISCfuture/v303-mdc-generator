@@ -19,6 +19,8 @@ type Props = {
   isAirportIncomplete?: boolean
   isRunwayIncomplete?: boolean
   isProcedureIncomplete?: boolean
+  /** Prefix for stable data-testid attributes on the airport/runway selects (e.g. "departure" -> "departure-airport-select") */
+  testIdPrefix?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -35,7 +37,16 @@ const props = withDefaults(defineProps<Props>(), {
   isAirportIncomplete: false,
   isRunwayIncomplete: false,
   isProcedureIncomplete: false,
+  testIdPrefix: undefined,
 })
+
+// Stable test ids for the airport/runway selects, derived from the prefix
+const airportTestId = computed(() =>
+  props.testIdPrefix ? `${props.testIdPrefix}-airport-select` : undefined,
+)
+const runwayTestId = computed(() =>
+  props.testIdPrefix ? `${props.testIdPrefix}-runway-select` : undefined,
+)
 
 const emit = defineEmits<{
   'update:airportId': [value: string | undefined]
@@ -118,6 +129,7 @@ function handleRunwayChange(value: string | null) {
         :options="airfieldOptions"
         :status="isAirportIncomplete ? 'error' : undefined"
         :placeholder="airportPlaceholder"
+        :data-testid="airportTestId"
         filterable
         clearable
       />
@@ -131,6 +143,7 @@ function handleRunwayChange(value: string | null) {
         :status="isRunwayIncomplete ? 'error' : undefined"
         :disabled="!selectedAirfield"
         :placeholder="runwayPlaceholder"
+        :data-testid="runwayTestId"
         clearable
       />
     </NFormItem>

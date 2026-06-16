@@ -2,9 +2,6 @@ import { test, expect } from './fixtures/fixtures'
 
 test.describe('Comm Ladder and Radio Default Functionality', () => {
   test.beforeEach(async ({ missionListPage, missionEditorPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-
     // Create a new F-16C mission
     await missionListPage.createMissionSimple()
 

@@ -83,6 +83,7 @@ const totValidationRule = {
     "
   >
     <CoordinateField
+      data-testid="waypoint-coordinate"
       :latitude="waypoint.latitude"
       :longitude="waypoint.longitude"
       :format="waypoint.coordinateFormat ?? 'DDM'"
@@ -111,6 +112,7 @@ const totValidationRule = {
       size="small"
       :status="isWaypointFieldIncomplete?.(waypoint, 'altitude') ? 'error' : undefined"
       aria-label="Altitude"
+      data-testid="waypoint-altitude"
     >
       <template #suffix>ft</template>
     </NInputNumber>
@@ -147,6 +149,7 @@ const totValidationRule = {
         waypoint.timeOnTarget && parseTOT(waypoint.timeOnTarget) === null ? 'error' : undefined
       "
       autocorrect="off"
+      data-testid="waypoint-tot"
     >
       <template #suffix>Z</template>
     </NInput>
