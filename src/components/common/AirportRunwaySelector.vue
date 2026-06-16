@@ -19,6 +19,8 @@ type Props = {
   isAirportIncomplete?: boolean
   isRunwayIncomplete?: boolean
   isProcedureIncomplete?: boolean
+  airportTestId?: string
+  runwayTestId?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -35,6 +37,8 @@ const props = withDefaults(defineProps<Props>(), {
   isAirportIncomplete: false,
   isRunwayIncomplete: false,
   isProcedureIncomplete: false,
+  airportTestId: undefined,
+  runwayTestId: undefined,
 })
 
 const emit = defineEmits<{
@@ -118,6 +122,7 @@ function handleRunwayChange(value: string | null) {
         :options="airfieldOptions"
         :status="isAirportIncomplete ? 'error' : undefined"
         :placeholder="airportPlaceholder"
+        :data-testid="airportTestId"
         filterable
         clearable
       />
@@ -131,6 +136,7 @@ function handleRunwayChange(value: string | null) {
         :status="isRunwayIncomplete ? 'error' : undefined"
         :disabled="!selectedAirfield"
         :placeholder="runwayPlaceholder"
+        :data-testid="runwayTestId"
         clearable
       />
     </NFormItem>

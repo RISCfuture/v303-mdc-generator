@@ -38,29 +38,17 @@ export class BasicInfoPanel {
 
   /** Select a departure airport by typing a search string and picking the first result */
   async selectDepartureAirport(searchText: string) {
-    const depCard = this.page.locator('.n-card', { hasText: 'Departure' })
-    const depAirportSelect = depCard.locator('.n-base-selection').first()
-    await depAirportSelect.click()
-
-    const depAirportInput = depCard.locator('input').first()
-    await depAirportInput.fill(searchText)
-    await depAirportInput.press('ArrowDown')
-    await depAirportInput.press('Enter')
+    await this.selectAirport('departure-airport-select', searchText)
   }
 
   /** Select the first available departure runway */
   async selectDepartureRunway() {
-    const depCard = this.page.locator('.n-card', { hasText: 'Departure' })
-    const depRunwaySelect = depCard.locator('.n-base-selection').nth(1)
-    await depRunwaySelect.click()
-    await this.page.keyboard.press('ArrowDown')
-    await this.page.keyboard.press('Enter')
+    await this.selectFirstRunway('departure-runway-select')
   }
 
   /** Clear the departure airport selection */
   async clearDepartureAirport() {
-    const depCard = this.page.locator('.n-card', { hasText: 'Departure' })
-    const depAirportSelect = depCard.locator('.n-base-selection').first()
+    const depAirportSelect = this.page.getByTestId('departure-airport-select')
     const clearButton = depAirportSelect.locator('.n-base-clear')
     const isClearVisible = await clearButton.isVisible()
     if (isClearVisible) {
@@ -70,34 +58,40 @@ export class BasicInfoPanel {
 
   /** Clear and re-select a departure airport */
   async changeDepartureAirport(searchText: string) {
-    const depCard = this.page.locator('.n-card', { hasText: 'Departure' })
-    const depAirportSelect = depCard.locator('.n-base-selection').first()
-    await depAirportSelect.click()
-
-    const depAirportInput = depCard.locator('input').first()
-    await depAirportInput.clear()
-    await depAirportInput.fill(searchText)
-    await depAirportInput.press('ArrowDown')
-    await depAirportInput.press('Enter')
+    await this.selectAirport('departure-airport-select', searchText, { clearFirst: true })
   }
 
   /** Select a recovery airport by typing a search string and picking the first result */
   async selectRecoveryAirport(searchText: string) {
-    const recCard = this.page.locator('.n-card', { hasText: 'Recovery' })
-    const recAirportSelect = recCard.locator('.n-base-selection').first()
-    await recAirportSelect.click()
-
-    const recAirportInput = recCard.locator('input').first()
-    await recAirportInput.fill(searchText)
-    await recAirportInput.press('ArrowDown')
-    await recAirportInput.press('Enter')
+    await this.selectAirport('recovery-airport-select', searchText)
   }
 
   /** Select the first available recovery runway */
   async selectRecoveryRunway() {
-    const recCard = this.page.locator('.n-card', { hasText: 'Recovery' })
-    const recRunwaySelect = recCard.locator('.n-base-selection').nth(1)
-    await recRunwaySelect.click()
+    await this.selectFirstRunway('recovery-runway-select')
+  }
+
+  /** Open an airport select by test id, type a search string, and pick the first match */
+  private async selectAirport(
+    testId: string,
+    searchText: string,
+    options: { clearFirst?: boolean } = {},
+  ) {
+    const select = this.page.getByTestId(testId)
+    await select.click()
+
+    const searchInput = select.locator('input')
+    if (options.clearFirst) {
+      await searchInput.clear()
+    }
+    await searchInput.fill(searchText)
+    await searchInput.press('ArrowDown')
+    await searchInput.press('Enter')
+  }
+
+  /** Open a runway select by test id and pick the first available option */
+  private async selectFirstRunway(testId: string) {
+    await this.page.getByTestId(testId).click()
     await this.page.keyboard.press('ArrowDown')
     await this.page.keyboard.press('Enter')
   }

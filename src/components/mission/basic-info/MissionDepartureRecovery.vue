@@ -70,6 +70,8 @@ function updateAlternateAirport(airportName: string | null) {
           :is-procedure-incomplete="props.isFieldIncomplete?.('departureProcedure')"
           airport-placeholder="Select departure airport"
           runway-placeholder="Select departure runway"
+          airport-test-id="departure-airport-select"
+          runway-test-id="departure-runway-select"
           @update:airport-id="
             (v: string | undefined) => updateDepartureField('departureAirportId', v)
           "
@@ -104,6 +106,8 @@ function updateAlternateAirport(airportName: string | null) {
           :is-procedure-incomplete="props.isFieldIncomplete?.('recoveryProcedure')"
           airport-placeholder="Select recovery airport"
           runway-placeholder="Select recovery runway"
+          airport-test-id="recovery-airport-select"
+          runway-test-id="recovery-runway-select"
           @update:airport-id="
             (v: string | undefined) => updateRecoveryField('recoveryAirportId', v)
           "

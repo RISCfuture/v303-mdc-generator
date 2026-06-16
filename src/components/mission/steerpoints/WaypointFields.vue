@@ -54,6 +54,7 @@ const totValidationRule = {
       size="small"
       :status="isWaypointFieldIncomplete?.(waypoint, 'name') ? 'error' : undefined"
       aria-label="Name"
+      data-testid="waypoint-name"
       autocorrect="off"
     />
   </NFormItem>
@@ -91,6 +92,7 @@ const totValidationRule = {
       @update:format="(v: CoordinateFormat) => emit('update-field', 'coordinateFormat', v)"
       size="small"
       label=""
+      input-test-id="waypoint-coordinate"
     />
   </NFormItem>
   <NFormItem
@@ -111,6 +113,7 @@ const totValidationRule = {
       size="small"
       :status="isWaypointFieldIncomplete?.(waypoint, 'altitude') ? 'error' : undefined"
       aria-label="Altitude"
+      data-testid="waypoint-altitude"
     >
       <template #suffix>ft</template>
     </NInputNumber>
@@ -146,6 +149,7 @@ const totValidationRule = {
       :status="
         waypoint.timeOnTarget && parseTOT(waypoint.timeOnTarget) === null ? 'error' : undefined
       "
+      data-testid="waypoint-tot"
       autocorrect="off"
     >
       <template #suffix>Z</template>

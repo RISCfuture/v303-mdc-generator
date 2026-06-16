@@ -105,6 +105,10 @@ const installLoadCounter = async (page: Page) => {
 }
 
 test.describe('Chunk-load error recovery (V303-8 / V303-9)', () => {
+  // This suite installs init scripts before the first navigation, so it owns
+  // its own reset rather than relying on the freshStorage fixture.
+  test.use({ resetStorage: false })
+
   test.beforeEach(async ({ page, missionListPage }) => {
     await installLoadCounter(page)
     await installSwNeutralization(page)

@@ -44,7 +44,7 @@ export class SteerpointsPanel {
     await this.waypointCards.first().waitFor({ state: 'visible' })
 
     const card = this.waypointCards.nth(index)
-    const nameInput = card.locator('input').first()
+    const nameInput = card.getByTestId('waypoint-name').locator('input')
     await nameInput.waitFor({ state: 'visible' })
     return nameInput.inputValue()
   }
@@ -62,15 +62,15 @@ export class SteerpointsPanel {
     await this.waypointCards.nth(countBefore).waitFor({ state: 'visible' })
 
     const lastCard = this.waypointCards.nth(countBefore)
-    const nameInput = lastCard.locator('input').first()
+    const nameInput = lastCard.getByTestId('waypoint-name').locator('input')
     await nameInput.waitFor({ state: 'visible' })
     await nameInput.fill(name)
 
-    const latInput = lastCard.locator('input').nth(2)
-    await latInput.fill('32.000000')
+    const coordinateInput = lastCard.getByTestId('waypoint-coordinate').locator('input')
+    await coordinateInput.fill('N 32 00.000, E 066 00.000')
 
-    const lonInput = lastCard.locator('input').nth(3)
-    await lonInput.fill('66.000000')
+    const altitudeInput = lastCard.getByTestId('waypoint-altitude').locator('input')
+    await altitudeInput.fill('25000')
   }
 
   /** Remove the first steerpoint */
@@ -89,7 +89,7 @@ export class SteerpointsPanel {
   async fillAltitude(cardIndex: number, altitude: string) {
     const card = this.waypointCards.nth(cardIndex)
     await card.waitFor({ state: 'visible' })
-    const altitudeInput = card.locator('input[aria-label="Altitude"]')
+    const altitudeInput = card.getByTestId('waypoint-altitude').locator('input')
     const isVisible = await altitudeInput.isVisible()
     if (isVisible) {
       await altitudeInput.clear()
@@ -101,8 +101,7 @@ export class SteerpointsPanel {
   async fillTot(cardIndex: number, tot: string) {
     const card = this.waypointCards.nth(cardIndex)
     await card.waitFor({ state: 'visible' })
-    const totFormItem = card.locator('.n-form-item').filter({ hasText: 'TOT' })
-    const totInput = totFormItem.locator('input')
+    const totInput = card.getByTestId('waypoint-tot').locator('input')
     const isVisible = await totInput.isVisible()
     if (isVisible) {
       await totInput.fill(tot)
@@ -113,7 +112,7 @@ export class SteerpointsPanel {
   async getTotValue(cardIndex: number): Promise<string | null> {
     const card = this.waypointCards.nth(cardIndex)
     await card.waitFor({ state: 'visible' })
-    const totInput = card.locator('input').nth(5)
+    const totInput = card.getByTestId('waypoint-tot').locator('input')
     const isVisible = await totInput.isVisible()
     if (isVisible) {
       return totInput.inputValue()

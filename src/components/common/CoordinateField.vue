@@ -20,12 +20,15 @@ const props = withDefaults(
     placeholder?: string
     /** Label for the field */
     label?: string
+    /** Test id applied to the coordinate text input (for e2e locators) */
+    inputTestId?: string
   }>(),
   {
     size: 'medium',
     placeholder: '',
     label: 'Coordinate',
     format: 'DDM',
+    inputTestId: undefined,
   },
 )
 
@@ -562,6 +565,7 @@ function handleBlur() {
         :size="size"
         :status="!isValid && displayValue.length > 0 ? 'error' : undefined"
         class="coordinate-input"
+        :data-testid="inputTestId"
         @input="handleInput"
         @blur="handleBlur"
         autocorrect="off"

@@ -7,11 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 test.describe('Mission List Export/Import', () => {
-  test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearAllStorageAndReload()
-    await missionListPage.disableAnimations()
-  })
+  test.use({ resetStorage: 'all', disableAnimations: true })
 
   test('should export missions and download JSON file', async ({ missionListPage }) => {
     await missionListPage.goto()

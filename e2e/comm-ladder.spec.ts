@@ -2,10 +2,7 @@ import { test, expect } from './fixtures/fixtures'
 
 test.describe('Comm Ladder and Radio Default Functionality', () => {
   test.beforeEach(async ({ missionListPage, missionEditorPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-
-    // Create a new F-16C mission
+    // Create a new F-16C mission (storage reset handled by the freshStorage fixture)
     await missionListPage.createMissionSimple()
 
     // Navigate to Radios tab and switch to first radio (UHF)
