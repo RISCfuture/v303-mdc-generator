@@ -1,11 +1,6 @@
 import { test, expect } from './fixtures/fixtures'
 
 test.describe('Flight Member Integration', () => {
-  test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-  })
-
   test('should add and remove crew members', async ({ missionListPage, missionEditorPage }) => {
     await missionListPage.goto()
     await missionListPage.createMissionSimple()

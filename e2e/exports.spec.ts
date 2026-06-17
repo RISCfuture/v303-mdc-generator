@@ -1,11 +1,6 @@
 import { test, expect } from './fixtures/fixtures'
 
 test.describe('Mission Export Operations', () => {
-  test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearStorageAndReload()
-  })
-
   test('should trigger PDF download when clicking Export PDF', async ({
     missionListPage,
     missionEditorPage,

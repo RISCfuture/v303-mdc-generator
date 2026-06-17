@@ -7,9 +7,10 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 test.describe('Mission List Export/Import', () => {
+  // This suite uploads images, so clear IndexedDB during the automatic reset.
+  test.use({ resetImages: true })
+
   test.beforeEach(async ({ missionListPage }) => {
-    await missionListPage.goto()
-    await missionListPage.clearAllStorageAndReload()
     await missionListPage.disableAnimations()
   })
 
